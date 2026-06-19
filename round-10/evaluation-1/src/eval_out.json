@@ -1,0 +1,2082 @@
+{
+  "metadata": {
+    "evaluation_name": "iter-10 $0 re-analysis scaffold: stronger-verifier n=60 rigor fix + 4 MINOR fixes + abstract FORK for GEN_PAPER_TEXT",
+    "description": "Pure $0 ($0 LLM, no network) re-analysis of three frozen iter-8/iter-9 experiment outputs (S1 located-in, S2 verifier, S3 booster). Reproduction/no-spend gate recompute-from-rows; RIGOR MAJOR = stronger-verifier n=60 SEPARATE table + corrected tab:locatedin (0.100 removed); retires 4 MINORs (evidence/presentation/scope/novelty) + the significance FORK + updated one-thesis contribution table. Extends the iter-9 precedent eval (art_4xy3D05YxvRr).",
+    "budget": {
+      "cumulative_usd": 0.0,
+      "n_llm_calls": 0
+    },
+    "seeds": {
+      "reproduction_seed": 20260618,
+      "eval_seed": 20260617
+    },
+    "reproduction_gate": {
+      "all_ok": true,
+      "n_checks": 87,
+      "n_passed": 87,
+      "tolerance_rates": 0.005,
+      "tolerance_fractions": 0.0001,
+      "tolerance_ci_mc": 0.01,
+      "checks": [
+        {
+          "name": "locatedin.count_present",
+          "recomputed": 515.0,
+          "carried": 515.0,
+          "tol": 0,
+          "ok": true
+        },
+        {
+          "name": "locatedin.count_sibling_absent",
+          "recomputed": 450.0,
+          "carried": 450.0,
+          "tol": 0,
+          "ok": true
+        },
+        {
+          "name": "locatedin.count_diffcomponent_absent",
+          "recomputed": 250.0,
+          "carried": 250.0,
+          "tol": 0,
+          "ok": true
+        },
+        {
+          "name": "locatedin.FACT_A.same_component_sibling",
+          "recomputed": 0.3,
+          "carried": 0.3,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "locatedin.FACT_A.different_component",
+          "recomputed": 0.06,
+          "carried": 0.06,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "locatedin.FACT_A.n_hallucinated_sibling",
+          "recomputed": 135.0,
+          "carried": 135.0,
+          "tol": 0,
+          "ok": true
+        },
+        {
+          "name": "locatedin.FACT_A.n_hallucinated_diffcomp",
+          "recomputed": 15.0,
+          "carried": 15.0,
+          "tol": 0,
+          "ok": true
+        },
+        {
+          "name": "locatedin.FACT_A.mean_conf",
+          "recomputed": 0.9422,
+          "carried": 0.9422,
+          "tol": 0.001,
+          "ok": true
+        },
+        {
+          "name": "locatedin.FACT_A.frac_ge_0.9",
+          "recomputed": 0.9481,
+          "carried": 0.9481,
+          "tol": 0.001,
+          "ok": true
+        },
+        {
+          "name": "locatedin.crux.n_raw_confident_wrong",
+          "recomputed": 135.0,
+          "carried": 135.0,
+          "tol": 0,
+          "ok": true
+        },
+        {
+          "name": "locatedin.caught.certificate",
+          "recomputed": 0.7852,
+          "carried": 0.7852,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "locatedin.caught.ct_verbalized",
+          "recomputed": 0.4,
+          "carried": 0.4,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "locatedin.caught.ct_sc_margin",
+          "recomputed": 0.0667,
+          "carried": 0.0667,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "locatedin.caught.ct_ptrue",
+          "recomputed": 0.3037,
+          "carried": 0.3037,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "locatedin.caught.ct_negent",
+          "recomputed": 0.0667,
+          "carried": 0.0667,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "locatedin.caught.queryside_verifier",
+          "recomputed": 0.2741,
+          "carried": 0.2741,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "locatedin.caught.queryside_selfverify",
+          "recomputed": 0.4593,
+          "carried": 0.4593,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "locatedin.natural_cw.certificate",
+          "recomputed": 0.073333,
+          "carried": 0.0733,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "locatedin.natural_cw.ct_verbalized",
+          "recomputed": 0.3,
+          "carried": 0.3,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "locatedin.natural_cw.queryside_verifier",
+          "recomputed": 0.217778,
+          "carried": 0.2178,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "locatedin.natural_cw.queryside_selfverify",
+          "recomputed": 0.162222,
+          "carried": 0.1622,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "locatedin.abst.certificate_named_total",
+          "recomputed": 59.0,
+          "carried": 59.0,
+          "tol": 0,
+          "ok": true
+        },
+        {
+          "name": "locatedin.abst.over_abstain_present_rate",
+          "recomputed": 0.949515,
+          "carried": 0.9495,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "locatedin.abst.correct_absent_abstention_rate",
+          "recomputed": 0.926667,
+          "carried": 0.9267,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "locatedin.abst.present_coverage_llm_read",
+          "recomputed": 0.050485,
+          "carried": 0.0505,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "locatedin.gold_read_ceiling.present_coverage",
+          "recomputed": 1.0,
+          "carried": 1.0,
+          "tol": 0,
+          "ok": true
+        },
+        {
+          "name": "locatedin.gold_read_ceiling.correct_absent_abstention_rate",
+          "recomputed": 1.0,
+          "carried": 1.0,
+          "tol": 0,
+          "ok": true
+        },
+        {
+          "name": "locatedin.gold_read_ceiling.present_selective_accuracy",
+          "recomputed": 1.0,
+          "carried": 1.0,
+          "tol": 0,
+          "ok": true
+        },
+        {
+          "name": "locatedin.view1_absent.reduction_carried",
+          "recomputed": 0.2267,
+          "carried": 0.2267,
+          "tol": 0.0001,
+          "ok": true
+        },
+        {
+          "name": "locatedin.view1_absent.identity(0.30-0.0733)",
+          "recomputed": 0.226667,
+          "carried": 0.2267,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "locatedin.mixed.certificate_confident_wrong",
+          "recomputed": 0.034197,
+          "carried": 0.0342,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "locatedin.mixed.reduction_point",
+          "recomputed": -0.034197,
+          "carried": -0.0342,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "locatedin.build_stats.absent_same_component_sibling",
+          "recomputed": 20814.0,
+          "carried": 20814.0,
+          "tol": 0,
+          "ok": true
+        },
+        {
+          "name": "locatedin.atomic.recall_converse_invariant",
+          "recomputed": 0.1478,
+          "carried": 0.1478,
+          "tol": 0.0001,
+          "ok": true
+        },
+        {
+          "name": "locatedin.atomic.precision_converse_invariant",
+          "recomputed": 0.6649,
+          "carried": 0.6649,
+          "tol": 0.0001,
+          "ok": true
+        },
+        {
+          "name": "locatedin.atomic.recall_strict",
+          "recomputed": 0.1421,
+          "carried": 0.1421,
+          "tol": 0.0001,
+          "ok": true
+        },
+        {
+          "name": "verifier.count.clutrr_present",
+          "recomputed": 102.0,
+          "carried": 102.0,
+          "tol": 0,
+          "ok": true
+        },
+        {
+          "name": "verifier.count.clutrr_absent",
+          "recomputed": 180.0,
+          "carried": 180.0,
+          "tol": 0,
+          "ok": true
+        },
+        {
+          "name": "verifier.count.redocred_present",
+          "recomputed": 360.0,
+          "carried": 360.0,
+          "tol": 0,
+          "ok": true
+        },
+        {
+          "name": "verifier.count.redocred_absent",
+          "recomputed": 368.0,
+          "carried": 368.0,
+          "tol": 0,
+          "ok": true
+        },
+        {
+          "name": "verifier.count.docred_present",
+          "recomputed": 116.0,
+          "carried": 116.0,
+          "tol": 0,
+          "ok": true
+        },
+        {
+          "name": "verifier.clutrr.n_fabrications",
+          "recomputed": 85.0,
+          "carried": 85.0,
+          "tol": 0,
+          "ok": true
+        },
+        {
+          "name": "verifier.redocred.n_fabrications",
+          "recomputed": 120.0,
+          "carried": 120.0,
+          "tol": 0,
+          "ok": true
+        },
+        {
+          "name": "verifier.caught.clutrr.certificate",
+          "recomputed": 0.941176,
+          "carried": 0.9412,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "verifier.caught.clutrr.queryside_verifier",
+          "recomputed": 0.588235,
+          "carried": 0.5882,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "verifier.caught.clutrr.queryside_selfverify",
+          "recomputed": 0.823529,
+          "carried": 0.8235,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "verifier.caught.redocred.certificate",
+          "recomputed": 0.85,
+          "carried": 0.85,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "verifier.caught.redocred.queryside_verifier",
+          "recomputed": 0.1,
+          "carried": 0.1,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "verifier.caught.redocred.queryside_selfverify",
+          "recomputed": 0.541667,
+          "carried": 0.5417,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "verifier.clutrr_present.certificate_coverage",
+          "recomputed": 0.686275,
+          "carried": 0.6863,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "verifier.clutrr_present.certificate_selective_accuracy",
+          "recomputed": 0.885714,
+          "carried": 0.8857,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "verifier.clutrr_present.certificate_cw_among_covered",
+          "recomputed": 0.114286,
+          "carried": 0.1143,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "verifier.clutrr.cert_minus_verifier_gap_point",
+          "recomputed": 0.3529,
+          "carried": 0.3529,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "verifier.redocred.cert_minus_verifier_gap_point",
+          "recomputed": 0.75,
+          "carried": 0.75,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "kinship.count_present",
+          "recomputed": 360.0,
+          "carried": 360.0,
+          "tol": 0,
+          "ok": true
+        },
+        {
+          "name": "kinship.count_absent",
+          "recomputed": 368.0,
+          "carried": 368.0,
+          "tol": 0,
+          "ok": true
+        },
+        {
+          "name": "kinship.FACT_A",
+          "recomputed": 0.326087,
+          "carried": 0.3261,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "kinship.certificate_absent_confident_wrong",
+          "recomputed": 0.070652,
+          "carried": 0.0707,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "kinship.crux.n_raw_confident_wrong",
+          "recomputed": 120.0,
+          "carried": 120.0,
+          "tol": 0,
+          "ok": true
+        },
+        {
+          "name": "kinship.caught.ct_verbalized",
+          "recomputed": 0.4917,
+          "carried": 0.4917,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "kinship.caught.ct_sc_margin",
+          "recomputed": 0.15,
+          "carried": 0.15,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "kinship.caught.ct_ptrue",
+          "recomputed": 0.5167,
+          "carried": 0.5167,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "kinship.caught.ct_negent",
+          "recomputed": 0.15,
+          "carried": 0.15,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "kinship.survival.ct_verbalized",
+          "recomputed": 0.5083,
+          "carried": 0.5083,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "kinship.survival.ct_sc_margin",
+          "recomputed": 0.85,
+          "carried": 0.85,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "kinship.survival.ct_ptrue",
+          "recomputed": 0.4833,
+          "carried": 0.4833,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "kinship.survival.ct_negent",
+          "recomputed": 0.85,
+          "carried": 0.85,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "booster.stronger_verifier.two_copy_consistency",
+          "recomputed": 1.0,
+          "carried": 1.0,
+          "tol": 0,
+          "ok": true
+        },
+        {
+          "name": "booster.stronger_verifier.n_sibling",
+          "recomputed": 250.0,
+          "carried": 250.0,
+          "tol": 0,
+          "ok": true
+        },
+        {
+          "name": "booster.stronger_verifier.n_raw_hallucinations",
+          "recomputed": 60.0,
+          "carried": 60.0,
+          "tol": 0,
+          "ok": true
+        },
+        {
+          "name": "booster.stronger_verifier.n_calls_zero",
+          "recomputed": 0.0,
+          "carried": 0.0,
+          "tol": 0,
+          "ok": true
+        },
+        {
+          "name": "booster.stronger_verifier.cost_usd_zero",
+          "recomputed": 0.0,
+          "carried": 0.0,
+          "tol": 0,
+          "ok": true
+        },
+        {
+          "name": "booster.stronger_verifier.caught.certificate",
+          "recomputed": 0.6667,
+          "carried": 0.6667,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "booster.stronger_verifier.caught.weak_same_model",
+          "recomputed": 0.2,
+          "carried": 0.2,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "booster.stronger_verifier.caught.strong_xfamily",
+          "recomputed": 0.1,
+          "carried": 0.1,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "booster.stronger_verifier.caught.selfverify_strong",
+          "recomputed": 0.5333,
+          "carried": 0.5333,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "booster.stronger_verifier.within_subsample_ordering",
+          "recomputed": 1.0,
+          "carried": 1.0,
+          "tol": 0,
+          "ok": true
+        },
+        {
+          "name": "booster.stronger_verifier.cw.certificate",
+          "recomputed": 0.096,
+          "carried": 0.096,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "booster.stronger_verifier.cw.strong_xfamily",
+          "recomputed": 0.216,
+          "carried": 0.216,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "booster.frontier.locatedin_min_over6_ci_lo_vs_recall_slope",
+          "recomputed": -0.3038,
+          "carried": -0.3038,
+          "tol": 0.001,
+          "ok": true
+        },
+        {
+          "name": "booster.frontier.kinship_min_over6_ci_lo_vs_recall_slope",
+          "recomputed": -0.6724,
+          "carried": -0.6724,
+          "tol": 0.001,
+          "ok": true
+        },
+        {
+          "name": "booster.frontier.locatedin_present_coverage_vs_recall_slope",
+          "recomputed": 0.9202,
+          "carried": 0.9202,
+          "tol": 0.001,
+          "ok": true
+        },
+        {
+          "name": "booster.S0_default.atomic_recall_canon",
+          "recomputed": 0.1478,
+          "carried": 0.1478,
+          "tol": 0.0001,
+          "ok": true
+        },
+        {
+          "name": "booster.S0_default.present_coverage",
+          "recomputed": 0.0505,
+          "carried": 0.0505,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "booster.S0_default.absent_sibling_confident_wrong_certificate",
+          "recomputed": 0.0733,
+          "carried": 0.0733,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "booster.S0_default.certificate_fraction_caught_sibling",
+          "recomputed": 0.7852,
+          "carried": 0.7852,
+          "tol": 0.005,
+          "ok": true
+        },
+        {
+          "name": "booster.S0_default.gold_read_present_coverage",
+          "recomputed": 1.0,
+          "carried": 1.0,
+          "tol": 0,
+          "ok": true
+        }
+      ],
+      "soft_cross_checks": [
+        {
+          "name": "locatedin.mixed.reduction_ci_lo",
+          "recomputed": -0.0502,
+          "carried": -0.0502,
+          "tol": 0.01,
+          "ok": true,
+          "note": "MC doc-clustered"
+        },
+        {
+          "name": "locatedin.mixed.reduction_ci_hi",
+          "recomputed": -0.0204,
+          "carried": -0.0204,
+          "tol": 0.01,
+          "ok": true,
+          "note": "MC doc-clustered"
+        },
+        {
+          "name": "verifier.clutrr_present.signal_verbalized_selacc",
+          "recomputed": 0.542857,
+          "carried": 0.5429,
+          "tol": 0.005,
+          "ok": true,
+          "note": "tie-break-sensitive (source order)"
+        },
+        {
+          "name": "verifier.clutrr.gap_ci_lo",
+          "recomputed": 0.1868,
+          "carried": 0.187,
+          "tol": 0.02,
+          "ok": true,
+          "note": "MC doc-clustered"
+        },
+        {
+          "name": "verifier.redocred.gap_ci_lo",
+          "recomputed": 0.6195,
+          "carried": 0.62,
+          "tol": 0.02,
+          "ok": true,
+          "note": "MC doc-clustered"
+        }
+      ],
+      "note": "every paper-facing literal recomputed from the per-query rows (S1 located-in, S2 verifier+Re-DocRED) and hard-asserted against the carried metadata (mirrors exp_2's 32/32 gate and the iter-9 precedent's 68/68); the stronger-verifier block is aggregate-only in S3 so it is verified via two-copy consistency + strict within-subsample ordering; frontier slopes + S0-default reproduce iter-8 from S3; soft checks are doc-clustered bootstrap CIs reproduced to Monte-Carlo tolerance and tie-break-sensitive selaccs.",
+      "caught_fraction_leaderboard_n450": {
+        "denominator": "the 135 raw-LLM confident absent-sibling fabrications (identical for every method)",
+        "leaderboard": {
+          "certificate": {
+            "fraction_caught": 0.7852,
+            "evidence_tag": "REPRODUCED-FROM-ROWS"
+          },
+          "ct_verbalized": {
+            "fraction_caught": 0.4,
+            "cert_minus_method_caught_gap": {
+              "gap": 0.3852,
+              "ci95": [
+                0.2441,
+                0.5203
+              ],
+              "p_one_sided": 0.0001,
+              "ci_excludes_0": true,
+              "n_boot": 10000
+            },
+            "evidence_tag": "RE-ANALYSIS-DERIVED"
+          },
+          "ct_sc_margin": {
+            "fraction_caught": 0.0667,
+            "cert_minus_method_caught_gap": {
+              "gap": 0.7185,
+              "ci95": [
+                0.632,
+                0.8
+              ],
+              "p_one_sided": 0.0001,
+              "ci_excludes_0": true,
+              "n_boot": 10000
+            },
+            "evidence_tag": "RE-ANALYSIS-DERIVED"
+          },
+          "ct_ptrue": {
+            "fraction_caught": 0.3037,
+            "cert_minus_method_caught_gap": {
+              "gap": 0.4815,
+              "ci95": [
+                0.365,
+                0.5962
+              ],
+              "p_one_sided": 0.0001,
+              "ci_excludes_0": true,
+              "n_boot": 10000
+            },
+            "evidence_tag": "RE-ANALYSIS-DERIVED"
+          },
+          "ct_negent": {
+            "fraction_caught": 0.0667,
+            "cert_minus_method_caught_gap": {
+              "gap": 0.7185,
+              "ci95": [
+                0.632,
+                0.8
+              ],
+              "p_one_sided": 0.0001,
+              "ci_excludes_0": true,
+              "n_boot": 10000
+            },
+            "evidence_tag": "RE-ANALYSIS-DERIVED"
+          },
+          "queryside_verifier": {
+            "fraction_caught": 0.2741,
+            "cert_minus_method_caught_gap": {
+              "gap": 0.5111,
+              "ci95": [
+                0.3986,
+                0.6198
+              ],
+              "p_one_sided": 0.0001,
+              "ci_excludes_0": true,
+              "n_boot": 10000
+            },
+            "evidence_tag": "RE-ANALYSIS-DERIVED"
+          },
+          "queryside_selfverify": {
+            "fraction_caught": 0.4593,
+            "cert_minus_method_caught_gap": {
+              "gap": 0.3259,
+              "ci95": [
+                0.2071,
+                0.442
+              ],
+              "p_one_sided": 0.0001,
+              "ci_excludes_0": true,
+              "n_boot": 10000
+            },
+            "evidence_tag": "RE-ANALYSIS-DERIVED"
+          }
+        },
+        "new_bootstrap": {
+          "seed": 20260617,
+          "B": 10000,
+          "cluster": "metadata_doc_id",
+          "gaps_with_ci_excluding_0": [
+            "ct_verbalized",
+            "ct_sc_margin",
+            "ct_ptrue",
+            "ct_negent",
+            "queryside_verifier",
+            "queryside_selfverify"
+          ]
+        },
+        "pure_absent_identity_note": "on a pure-absent pool named-rate == confident-wrong == 'coverage', so the old '0.2267 reduction at matched coverage' is mechanically (0.30 - 0.0733) = 0.2267, a re-expression of the caught-fraction gap, NOT a risk-coverage gain",
+        "honest_mixed_pool_reduction_point": -0.0342,
+        "honest_mixed_pool_reduction_ci95_MC": [
+          -0.0502,
+          -0.0204
+        ],
+        "evidence_tag": "RE-ANALYSIS-DERIVED"
+      }
+    },
+    "rigor_major": {
+      "stronger_verifier_own_subsample_table": {
+        "denominator_note": "deepseek/deepseek-v3.2 k=5 verifier on a 250-pair sibling SUBSAMPLE carrying 60 raw gemini fabrications \u2014 this denominator DIFFERS from the main n_sibling=450 / 135-fabrication pool; numbers here are NOT comparable to the main column",
+        "model": "deepseek/deepseek-v3.2",
+        "k_self_consistency": 5,
+        "n_sibling": 250,
+        "n_raw_fabrications": 60,
+        "fraction_caught": {
+          "certificate": 0.667,
+          "queryside_selfverify_strong": 0.533,
+          "queryside_verifier_weak_same_model": 0.2,
+          "queryside_verifier_strong_xfamily": 0.1
+        },
+        "natural_confident_wrong": {
+          "certificate": 0.096,
+          "queryside_selfverify_strong": 0.112,
+          "queryside_verifier_weak_same_model": 0.192,
+          "queryside_verifier_strong_xfamily": 0.216
+        },
+        "within_subsample_ordering": "certificate 0.667 > self-verify-strong 0.533 > weak same-model 0.20 > stronger x-family 0.10",
+        "qualitative_conclusion": "a STRONGER, larger, different-family verifier is NO BETTER (in fact WORSE: a better geographer over-infers co-regional containment); both verifiers sit far below the certificate -> certificate-necessity is intrinsic to running the premise check on a generative LLM, not an artifact of a weak same-model verifier (retires methodology MINOR #5)",
+        "denominator_hygiene_note": "in THIS table the same-model weak verifier value is 0.20 (its value RESTRICTED to the n=60 subsample), NOT 0.274 (the full n=450/135 pool value); the two are kept in separate tables by construction",
+        "two_copy_consistency_checked": true,
+        "evidence_tag": "CARRIED-FROM-BLOCK / REPRODUCED-FROM-CONSISTENCY"
+      },
+      "stronger_verifier_latex_table_body": "% Table~\\ref{tab:stronger-verifier} \u2014 stronger cross-family verifier on its OWN n=60 subsample\n\\begin{tabular}{lcc}\n\\toprule\nmethod (deepseek-v3.2, $k{=}5$; $n_{\\text{sibling}}{=}250$, 60 fabrications) & frac.\\ caught & nat.\\ conf-wrong \\\\\n\\midrule\n\\textbf{certificate (no-derivation)} & \\textbf{0.667} & 0.096 \\\\\nself-verification (strong) & 0.533 & 0.112 \\\\\nquery-side verifier (weak, same-model) & 0.200 & 0.192 \\\\\nquery-side verifier (strong, x-family) & 0.100 & 0.216 \\\\\n\\bottomrule\n\\end{tabular}",
+      "corrected_tab_locatedin": {
+        "denominator": "n_sibling=450 / 135 raw-LLM confident fabrications (identical for every method in this column)",
+        "methods": [
+          {
+            "method_key": "certificate",
+            "label": "certificate (no-derivation)",
+            "fraction_caught": 0.7852,
+            "evidence_tag": "REPRODUCED-FROM-ROWS"
+          },
+          {
+            "method_key": "ct_verbalized",
+            "label": "verbalized confidence",
+            "fraction_caught": 0.4,
+            "evidence_tag": "RE-ANALYSIS-DERIVED",
+            "cert_minus_method_caught_gap": {
+              "gap": 0.3852,
+              "ci95": [
+                0.2441,
+                0.5203
+              ],
+              "ci_excludes_0": true,
+              "n_boot": 10000
+            }
+          },
+          {
+            "method_key": "ct_ptrue",
+            "label": "Kadavath P(True)",
+            "fraction_caught": 0.3037,
+            "evidence_tag": "RE-ANALYSIS-DERIVED",
+            "cert_minus_method_caught_gap": {
+              "gap": 0.4815,
+              "ci95": [
+                0.365,
+                0.5962
+              ],
+              "ci_excludes_0": true,
+              "n_boot": 10000
+            }
+          },
+          {
+            "method_key": "ct_sc_margin",
+            "label": "self-consistency margin",
+            "fraction_caught": 0.0667,
+            "evidence_tag": "RE-ANALYSIS-DERIVED",
+            "cert_minus_method_caught_gap": {
+              "gap": 0.7185,
+              "ci95": [
+                0.632,
+                0.8
+              ],
+              "ci_excludes_0": true,
+              "n_boot": 10000
+            }
+          },
+          {
+            "method_key": "ct_negent",
+            "label": "semantic-entropy",
+            "fraction_caught": 0.0667,
+            "evidence_tag": "RE-ANALYSIS-DERIVED",
+            "cert_minus_method_caught_gap": {
+              "gap": 0.7185,
+              "ci95": [
+                0.632,
+                0.8
+              ],
+              "ci_excludes_0": true,
+              "n_boot": 10000
+            }
+          },
+          {
+            "method_key": "queryside_verifier_same_model",
+            "label": "query-side verifier (same-model)",
+            "fraction_caught": 0.2741,
+            "evidence_tag": "RE-ANALYSIS-DERIVED",
+            "cert_minus_method_caught_gap": {
+              "gap": 0.5111,
+              "ci95": [
+                0.3986,
+                0.6198
+              ],
+              "ci_excludes_0": true,
+              "n_boot": 10000
+            }
+          },
+          {
+            "method_key": "queryside_selfverify",
+            "label": "self-verification",
+            "fraction_caught": 0.4593,
+            "evidence_tag": "RE-ANALYSIS-DERIVED",
+            "cert_minus_method_caught_gap": {
+              "gap": 0.3259,
+              "ci95": [
+                0.2071,
+                0.442
+              ],
+              "ci_excludes_0": true,
+              "n_boot": 10000
+            }
+          }
+        ],
+        "footnote_pointer": "The stronger cross-family verifier (deepseek-v3.2, k=5) is reported on its OWN n=60 subsample in Table~\\ref{tab:stronger-verifier}; its 0.10 caught fraction is computed on a different denominator (n_sibling=250, 60 fabrications) and is NOT comparable to this column.",
+        "n_caught_gaps_excluding_0_of_6": 6,
+        "all_six_gaps_exclude_0": true,
+        "stronger_xfamily_0100_row_removed": true,
+        "latex_table_body": "% Table~\\ref{tab:locatedin} \u2014 CORRECTED caught-fraction (n_sibling=450, 135 fabrications; identical denom.)\n% NOTE: the stronger x-family verifier 0.100 is DELIBERATELY ABSENT \u2014 see footnote / Table~\\ref{tab:stronger-verifier}.\n\\begin{tabular}{lccc}\n\\toprule\nmethod & frac.\\ caught & cert$-$method gap & 95\\% CI \\\\\n\\midrule\n\\textbf{certificate (no-derivation)} & \\textbf{0.785} & -- & -- \\\\\nverbalized confidence & 0.400 & 0.385 & [0.244, 0.520] \\\\\nKadavath P(True) & 0.304 & 0.481 & [0.365, 0.596] \\\\\nself-consistency margin & 0.067 & 0.719 & [0.632, 0.800] \\\\\nsemantic-entropy & 0.067 & 0.719 & [0.632, 0.800] \\\\\nquery-side verifier (same-model) & 0.274 & 0.511 & [0.399, 0.620] \\\\\nself-verification & 0.459 & 0.326 & [0.207, 0.442] \\\\\n\\bottomrule\n\\end{tabular}",
+        "evidence_tag": "RE-ANALYSIS-DERIVED"
+      },
+      "rigor_major_retired": true,
+      "retired_iff": "(corrected table excludes 0.100) AND (separate n=60 table present) AND (within-subsample qualitative conclusion / ordering holds)",
+      "block_note": "the stronger_verifier_block is AGGREGATE-only in S3 (n_calls=0, n_cache_hits=2500), so the four literals are CARRIED and verified via the two-copy consistency check (located_in.stronger_verifier_block.fraction_caught vs headline_summary.stronger_verifier_fraction_caught) + the strict within-subsample ordering assertion, rather than row-recompute",
+      "evidence_tag": "CARRIED-FROM-BLOCK"
+    },
+    "evidence_minor": {
+      "paired_caveat_sentences": {
+        "abstract": "On a non-by-construction natural same-component-sibling regime the no-derivation certificate catches 0.785 of the raw reader's high-confidence absent-relation fabrications versus 0.274 for the strongest query-side verifier and <=0.40 for every confidence signal (all six certificate-minus-competitor caught-gaps exclude 0); we report this as TARGETING QUALITY, not a deployment win \u2014 the catching objective on a pure-absent pool structurally favors high-abstention methods (it measures only how well a method's abstentions target the fabrications), and the certificate's NET utility on mixed present/absent natural prose remains extraction-gated.",
+        "intro": "Our headline safety number is a TARGETING-QUALITY result, not a deployment win: the certificate turns 0.785 of the raw reader's high-confidence sibling fabrications into abstentions (vs 0.274 for the strongest query-side verifier), but because this catching objective is scored on a pure-absent pool it structurally favors methods that abstain more on absent pairs, and the certificate's NET utility on mixed present/absent natural prose stays extraction-gated.",
+        "contribution_3": "Third, we isolate a one-sided catching win as TARGETING QUALITY rather than a deployment win: on the natural sibling-absent pool the certificate catches 0.785 of the raw fabrications against 0.274 for the strongest query-side verifier, while acknowledging that the pure-absent catching objective structurally rewards high-abstention methods and that the net mixed-pool utility remains extraction-gated.",
+        "conclusion": "In sum the certificate catches 0.785 of the confident absent-relation fabrications versus 0.274 for the strongest query-side verifier, a TARGETING-QUALITY win and not a deployment win \u2014 the catching objective on a pure-absent pool structurally favors high-abstention methods, so the certificate's NET deployable utility on mixed natural prose remains extraction-gated until a precision-preserving extractor lifts present coverage."
+      },
+      "per_sentence_both_clauses_present": {
+        "abstract": true,
+        "intro": true,
+        "contribution_3": true,
+        "conclusion": true
+      },
+      "clause_i": "net-utility caveat (extraction-gated, NOT a deployment win)",
+      "clause_ii": "the catching objective on a PURE-ABSENT pool inherently favors high-abstention methods (it measures only how well abstentions target the fabrications, structurally rewarding abstaining more on absent pairs) -> establishes TARGETING QUALITY, not deployable net utility",
+      "evidence_minor_retired": true,
+      "evidence_tag": "RE-ANALYSIS-DERIVED"
+    },
+    "presentation_minor": {
+      "de_densification_checklist": [
+        "[1] Evidence-class tags (REAL-LLM-READ, GOLD-ONLY-GATE, SYNTHETIC-CHANNEL, THEOREM, REAL-LLM-READ-ON-SYNTHETIC) appear ONLY in the spine table + section headers; DELETE every inline \\textsc{...} marker in results prose.",
+        "[2] Rewrite reviewer-response meta-narration as declarative claims-with-caveats \u2014 replace 'a skeptical reviewer rightly observed...', 'stated without spin', 'we never let that number carry the contribution' with plain assertions of the caveated claim.",
+        "[3] Collapse the 7 bold-headed intro paragraphs into <=3 so the contributions list + headline numbers (FACT A rate; capability gap; caught 0.785) appear within the first ~half page.",
+        "[4] Flag duplicated / near-duplicate consecutive sentences and any '...'-truncated fragments.",
+        "[5] Every selective-accuracy / confident-wrong number must carry its coverage/abstention qualifier."
+      ],
+      "lean_intro_skeleton": [
+        {
+          "block": 1,
+          "role": "problem + thesis",
+          "bullets": [
+            "(a) PROBLEM: confident absent-relation hallucination as a compositional false-premise failure in the deduction sub-module of a text->FOL pipeline.",
+            "(b) THESIS (one sentence): a high-recall disjunctive reader + compose-through-exact-table + abstain-on-no-derivation; the certificate MECHANISM is the INHERITED NeSy premise (+0.673 inherited / +0.0025 novel)."
+          ]
+        },
+        {
+          "block": 2,
+          "role": "three contributions + headline numbers",
+          "bullets": [
+            "(c1) a corpus/domain/reader-robust DIAGNOSTIC = FACT A (confident absent-fabrication rate 0.30 sibling / 0.06 diffcomponent, transfers across readers+corpora) + a signal-agnostic capability gap.",
+            "(c2) a one-sided TARGETING-QUALITY catching win (caught 0.785) that beats the confidence family (<=0.40) AND the same-model verifier (0.274) AND the stronger cross-family verifier (0.10 on its own n=60 subsample).",
+            "(c3) a QUANTIFIED recall-precision frontier proving the natural-prose net-utility boundary is FUNDAMENTAL for prompt-only extraction (slope -0.30 located-in / -0.67 kinship; gold-read ceiling 1.0/1.0/1.0)."
+          ]
+        },
+        {
+          "block": 3,
+          "role": "scope + venue",
+          "bullets": [
+            "(d) OUT-OF-SCOPE (stated in the intro, not the appendix): OpenCyc grounding, atomic re-extraction, general fuzzy unification, genuine ~3000-char documents = future work.",
+            "(e) VENUE: ACL Knowledge Extraction PRIMARY, NeSy fallback."
+          ]
+        }
+      ],
+      "n_intro_blocks": 3,
+      "presentation_minor_retired": true,
+      "evidence_tag": "RE-ANALYSIS-DERIVED"
+    },
+    "scope_minor": {
+      "appendix_title": "Appendix A \u2014 Feasibility on commodity hardware (NOT a substantive contribution)",
+      "preamble": "Both notes below are FEASIBILITY demonstrations on commodity hardware, NOT substantive contributions; the substantive contributions are the diagnostic, the targeting-quality catching win, and the recall-precision frontier (intro).",
+      "subsection_1": {
+        "title": "A.1 Operational ~3000-char bracket-selected case study",
+        "source_artifacts": [
+          "art_WQoePKrpsTPo"
+        ],
+        "content": "95 Prolog programs discharged & executed in swipl 9.0.4; hallucination reduction 0.27-0.60 (mean 0.45) at Mode-A coverage 0-0.33; atomic recall ~0.49 is the binding ceiling. CUT the concatenated-kinship arm (56/56 cross-story abstentions are trivial by construction). LABEL the documents bracket-selected. STATE: the pipeline RUNS at length, NOT that it is USEFUL at length.",
+        "evidence_tag": "CARRIED-LITERAL"
+      },
+      "subsection_2": {
+        "title": "A.2 Fuzzy-unification feasibility note",
+        "source_artifacts": [
+          "art_I22c-J7-OcXl",
+          "art_0MDLD-w-RXOu"
+        ],
+        "content": "vague prepositions / informal kinship -> calibrated sub-1.0 disjunctions; fraction-at-1.0 0.00 vs Mode-P 1.00; per-candidate ECE 0.142 spatial / 0.111 kinship; Mode-B catches around->{NTPPi,TPPi} 5/5 sound-violating spatial reads (kinship UNTESTED). Supporting query-level cert confident-wrong 0.000 vs commit-argmax 0.364/0.216 WITH the query-vs-edge unit-of-analysis caveat.",
+        "evidence_tag": "CARRIED-LITERAL"
+      },
+      "out_of_scope_statement_location": "INTRO (not the appendix)",
+      "layout": "ONE appendix, ONE title, TWO subsections (A.1, A.2)",
+      "scope_minor_retired": true,
+      "evidence_tag": "RE-ANALYSIS-DERIVED"
+    },
+    "novelty_minor": {
+      "distinguishing_sentence_slot": {
+        "label": "NOVELTY-DISTINGUISHING-SENTENCE (filled by parallel research artifact)",
+        "purpose": "one sentence separating the no-derivation certificate (per-query, gold-free, training-free, NO-external-KB abstention from deductive closure over the document-INTERNAL relation graph) from ontology-grounded POST-EXTRACTION structural CORRECTION (e.g. arXiv:2605.29168), which repairs/commits a labeling against EXTERNAL ontology structure \u2014 preserving the gold-free / training-free / no-external-KB delta",
+        "placeholder_text": "<<FILL: no-derivation certificate vs ontology-grounded post-extraction correction \u2014 verified content from the parallel research artifact>>",
+        "status": "PENDING-PARALLEL-RESEARCH-ARTIFACT",
+        "evidence_tag": "PENDING-PARALLEL-EXPERIMENT"
+      }
+    },
+    "significance": {
+      "abstract_first_results_fork": {
+        "FORK_A_demonstrated_fix": "... + a DEMONSTRATED net-utility fix on natural prose via a PRECISION-PRESERVING extractor: on a mixed present / same-component-sibling-absent pool the certificate's Holm-adjusted, doc-clustered mixed-pool confident-wrong reduction CI EXCLUDES 0 at extraction recall R*, matching/beating the query-side verifier ...",
+        "FORK_B_honest_boundary": "... + a targeting-quality catching win (caught-fraction cert 0.785 vs verifier 0.274, extraction-gated, not a deployment win) + a net-utility boundary shown FUNDAMENTAL even for precision-preserving extraction (deeper than prompt-only) ...",
+        "selection_rule": "Use FORK_A IFF the parallel iter-10 precision-preserving-extractor experiment flips the mixed-pool confident-wrong reduction CI to EXCLUDE 0 on a natural (non-structural-by-construction) regime AND the certificate matches/beats the query-side verifier; otherwise use FORK_B. GEN_PAPER_TEXT reads the extractor experiment verdict and selects.",
+        "status": "PENDING-PARALLEL-EXPERIMENT",
+        "evidence_tag": "PENDING-PARALLEL-EXPERIMENT"
+      },
+      "contribution_table": {
+        "rows": [
+          {
+            "contribution": "ROBUST DIAGNOSTIC (FACT A + signal-agnostic mixed-pool capability gap)",
+            "status": "ESTABLISHED",
+            "evidence_tag": "REAL-LLM-READ"
+          },
+          {
+            "contribution": "TARGETING-QUALITY CATCHING WIN (0.785, one-sided, extraction-gated; beats confidence family + same-model + stronger x-family verifier)",
+            "status": "ESTABLISHED-BUT-ONE-SIDED",
+            "evidence_tag": "RE-ANALYSIS-DERIVED"
+          },
+          {
+            "contribution": "RECALL-PRECISION FRONTIER (prompt-only natural-prose net-utility boundary FUNDAMENTAL; slope -0.30/-0.67, gold-read ceiling 1.0/1.0/1.0)",
+            "status": "ESTABLISHED",
+            "evidence_tag": "REAL-LLM-READ"
+          },
+          {
+            "contribution": "certificate MECHANISM (forward least-fixpoint closure -> abstain)",
+            "status": "INHERITED NeSy premise (+0.673 inherited / +0.0025 novel)",
+            "evidence_tag": "INHERITED-NESY-PREMISE"
+          },
+          {
+            "contribution": "DEMONSTRATED-FIX-OR-DEEPER-BOUNDARY (net mixed-pool reduction CI excluding 0 on a natural regime via precision-preserving extraction, OR the boundary shown fundamental even there)",
+            "status": "PENDING-EXTRACTOR-EXPERIMENT (FORK)",
+            "evidence_tag": "PENDING-PARALLEL-EXPERIMENT"
+          }
+        ],
+        "markdown": "### contribution table (one thesis)\n\n| contribution | status |\n|---|---|\n| ROBUST DIAGNOSTIC (FACT A + signal-agnostic mixed-pool capability gap) | ESTABLISHED [REAL-LLM-READ] |\n| TARGETING-QUALITY CATCHING WIN (0.785, one-sided, extraction-gated; beats confidence family + same-model + stronger x-family verifier) | ESTABLISHED-BUT-ONE-SIDED [RE-ANALYSIS-DERIVED] |\n| RECALL-PRECISION FRONTIER (prompt-only natural-prose net-utility boundary FUNDAMENTAL; slope -0.30/-0.67, gold-read ceiling 1.0/1.0/1.0) | ESTABLISHED [REAL-LLM-READ] |\n| certificate MECHANISM (forward least-fixpoint closure -> abstain) | INHERITED NeSy premise (+0.673 inherited / +0.0025 novel) [INHERITED-NESY-PREMISE] |\n| DEMONSTRATED-FIX-OR-DEEPER-BOUNDARY (net mixed-pool reduction CI excluding 0 on a natural regime via precision-preserving extraction, OR the boundary shown fundamental even there) | PENDING-EXTRACTOR-EXPERIMENT (FORK) [PENDING-PARALLEL-EXPERIMENT] |",
+        "evidence_tag": "RE-ANALYSIS-DERIVED"
+      }
+    },
+    "count_reconciliation": {
+      "kinship_redocred_primary_slice": {
+        "present_multihop": 360,
+        "present_composed_only_non_circular": 222,
+        "absent": 368,
+        "engine_round_trip_present_combined": 476,
+        "engine_round_trip_absent_combined": 577,
+        "docred_present": 116,
+        "docred_absent": 209,
+        "docred_absent_false_negative_frac": 0.646,
+        "explanation": "the 476/476 present and 577/577 absent engine round-trip is the COMBINED re-docred (360/368) + docred (116/209, whose absent gold is downgraded ~64.6% false-negatives); removes the apparent 360!=476 / 368!=577 inconsistency",
+        "evidence_tag": "CARRIED-LITERAL (present/absent 360/368 + docred_present 116 reproduced from S2 rows)"
+      },
+      "locatedin": {
+        "present": 515,
+        "same_component_sibling_absent": 450,
+        "different_component_absent": 250,
+        "never_annotated": 115,
+        "held_out": 400,
+        "n_docs": 283,
+        "note": "present 515 = held_out 400 + never_annotated 115",
+        "evidence_tag": "REPRODUCED-FROM-ROWS"
+      },
+      "evidence_tag": "REPRODUCED-FROM-ROWS / CARRIED-LITERAL"
+    },
+    "capability_gap_table": {
+      "rows": [
+        {
+          "corpus": "Re-DocRED",
+          "reader": "gemini",
+          "tag": "REPRODUCED-FROM-ROWS (S2)",
+          "survival": {
+            "verbalized": 0.5083,
+            "sc_margin": 0.85,
+            "ptrue": 0.4833,
+            "negent": 0.85
+          },
+          "caught": {
+            "verbalized": 0.4917,
+            "sc_margin": 0.15,
+            "ptrue": 0.5167,
+            "negent": 0.15
+          }
+        },
+        {
+          "corpus": "Re-DocRED",
+          "reader": "deepseek",
+          "tag": "CARRIED-LITERAL",
+          "survival": {
+            "verbalized": 0.4118,
+            "sc_margin": 0.2941,
+            "ptrue": 0.3235,
+            "negent": 0.2941
+          },
+          "caught": {
+            "verbalized": 0.5882,
+            "sc_margin": 0.7059,
+            "ptrue": 0.6765,
+            "negent": 0.7059
+          },
+          "note": "cross-family is aggregate-only in the source; carried (cross-checked vs precedent eval X)"
+        },
+        {
+          "corpus": "CLUTRR",
+          "reader": "gemini",
+          "tag": "CARRIED-LITERAL",
+          "survival": {
+            "verbalized": 0.4353,
+            "sc_margin": 0.7176,
+            "ptrue": 0.2471,
+            "negent": 0.7176
+          },
+          "caught": {
+            "verbalized": 0.5647,
+            "sc_margin": 0.2824,
+            "ptrue": 0.7529,
+            "negent": 0.2824
+          },
+          "note": "cross-checked against S2 (verifier) reproduction_gate which re-derived them"
+        },
+        {
+          "corpus": "CLUTRR",
+          "reader": "deepseek",
+          "tag": "CARRIED-LITERAL",
+          "survival": {
+            "verbalized": 0.672,
+            "sc_margin": 0.224,
+            "ptrue": 0.103,
+            "negent": 0.224
+          },
+          "caught": {
+            "verbalized": 0.328,
+            "sc_margin": 0.776,
+            "ptrue": 0.897,
+            "negent": 0.776
+          },
+          "note": "THREE of four dispersion signals catch 78-90% for the stronger deepseek reader"
+        }
+      ],
+      "FACT_A_robust_corpus_and_reader_transferable": {
+        "CLUTRR_gemini": 0.472,
+        "CLUTRR_deepseek": 0.483,
+        "ReDocRED_gemini": 0.3261,
+        "ReDocRED_deepseek": 0.318,
+        "locatedin_sibling_gemini": 0.3,
+        "locatedin_sibling_mistral": 0.4378,
+        "statement": "the raw confident-fabrication RATE transfers across readers AND corpora (the ROBUST fact)",
+        "evidence_tag": "REAL-LLM-READ"
+      },
+      "FACT_B_reader_and_signal_dependent": {
+        "statement": "which signals catch the fabrications is READER- and SIGNAL-dependent: verbalized confidence is the most robustly BLIND signal; dispersion signals catch the MAJORITY for the stronger deepseek reader but commit most under gemini",
+        "evidence_tag": "RE-ANALYSIS-DERIVED"
+      }
+    },
+    "verdict_mirrors": {
+      "locatedin": {
+        "overall": "EXTRACTION-LIMITED-BOUNDARY",
+        "certificate_beats_all_6_baselines_holm": false,
+        "verifier_suffices": false
+      },
+      "verifier": {
+        "overall": "CERTIFICATE_NECESSARY_BOTH_VENUES",
+        "reproduction_gate_32_32": true
+      },
+      "booster": {
+        "overall": "EXTRACTION-LIMITED-BOUNDARY-CONFIRMED",
+        "stronger_verifier_methodology_minor5_retired": true
+      },
+      "rigor_major_retired": true,
+      "evidence_minor_retired": true,
+      "presentation_minor_retired": true,
+      "scope_minor_retired": true,
+      "novelty_minor_status": "PENDING-PARALLEL-RESEARCH-ARTIFACT",
+      "significance_fork_status": "PENDING-PARALLEL-EXPERIMENT"
+    },
+    "evidence_tag_vocabulary": [
+      "CARRIED-LITERAL",
+      "REPRODUCED-FROM-ROWS",
+      "RE-ANALYSIS-DERIVED",
+      "CARRIED-FROM-BLOCK",
+      "PENDING-PARALLEL-EXPERIMENT",
+      "REAL-LLM-READ",
+      "NATURAL-PROSE",
+      "GOLD-READ-CEILING",
+      "STRUCTURAL-BY-CONSTRUCTION",
+      "INHERITED-NESY-PREMISE"
+    ]
+  },
+  "metrics_agg": {
+    "reproduction_gate_n_hard_checks": 87.0,
+    "reproduction_gate_n_passed": 87.0,
+    "reproduction_gate_all_ok": 1.0,
+    "reproduction_gate_n_soft_checks": 5.0,
+    "reproduction_gate_n_soft_passed": 5.0,
+    "locatedin_FACT_A_sibling": 0.3,
+    "locatedin_FACT_A_diffcomponent": 0.06,
+    "locatedin_caught_fraction_certificate": 0.7852,
+    "locatedin_caught_fraction_verbalized": 0.4,
+    "locatedin_caught_fraction_ptrue": 0.3037,
+    "locatedin_caught_fraction_sc_margin": 0.0667,
+    "locatedin_caught_fraction_negent": 0.0667,
+    "locatedin_caught_fraction_queryside_verifier_same_model": 0.2741,
+    "locatedin_caught_fraction_queryside_selfverify": 0.4593,
+    "locatedin_natural_confident_wrong_certificate": 0.0733,
+    "locatedin_natural_confident_wrong_verifier": 0.2178,
+    "locatedin_mixed_reduction_point": -0.0342,
+    "n_caught_gaps_excluding_0_of_6": 6.0,
+    "stronger_verifier_n60_caught_certificate": 0.667,
+    "stronger_verifier_n60_caught_selfverify_strong": 0.533,
+    "stronger_verifier_n60_caught_weak_same_model": 0.2,
+    "stronger_verifier_n60_caught_strong_xfamily": 0.1,
+    "stronger_verifier_two_copy_consistent": 1.0,
+    "stronger_verifier_within_subsample_ordering_ok": 1.0,
+    "corrected_tab_locatedin_excludes_0100": 1.0,
+    "frontier_slope_locatedin": -0.3038,
+    "frontier_slope_kinship": -0.6724,
+    "frontier_present_coverage_vs_recall_slope_locatedin": 0.9202,
+    "verifier_caught_clutrr_certificate": 0.9412,
+    "verifier_caught_clutrr_verifier": 0.5882,
+    "verifier_caught_redocred_certificate": 0.85,
+    "verifier_caught_redocred_verifier": 0.1,
+    "verifier_cert_minus_verifier_gap_clutrr": 0.3529,
+    "verifier_cert_minus_verifier_gap_redocred": 0.75,
+    "kinship_FACT_A": 0.3261,
+    "kinship_certificate_absent_confident_wrong": 0.0707,
+    "rigor_major_retired": 1.0,
+    "evidence_minor_retired": 1.0,
+    "presentation_minor_retired": 1.0,
+    "scope_minor_retired": 1.0,
+    "budget_cumulative_usd": 0.0,
+    "n_llm_calls": 0.0
+  },
+  "datasets": [
+    {
+      "dataset": "rigor_major",
+      "examples": [
+        {
+          "input": "rigor_major.stronger_verifier_own_subsample_table :: n=60 SEPARATE table (own denominator)",
+          "output": "{\"denominator_note\": \"deepseek/deepseek-v3.2 k=5 verifier on a 250-pair sibling SUBSAMPLE carrying 60 raw gemini fabrications \\u2014 this denominator DIFFERS from the main n_sibling=450 / 135-fabrication pool; numbers here are NOT comparable to the main column\", \"model\": \"deepseek/deepseek-v3.2\", \"k_self_consistency\": 5, \"n_sibling\": 250, \"n_raw_fabrications\": 60, \"fraction_caught\": {\"certificate\": 0.667, \"queryside_selfverify_strong\": 0.533, \"queryside_verifier_weak_same_model\": 0.2, \"queryside_verifier_strong_xfamily\": 0.1}, \"natural_confident_wrong\": {\"certificate\": 0.096, \"queryside_selfverify_strong\": 0.112, \"queryside_verifier_weak_same_model\": 0.192, \"queryside_verifier_strong_xfamily\": 0.216}, \"within_subsample_ordering\": \"certificate 0.667 > self-verify-strong 0.533 > weak same-model 0.20 > stronger x-family 0.10\", \"qualitative_conclusion\": \"a STRONGER, larger, different-family verifier is NO BETTER (in fact WORSE: a better geographer over-infers co-regional containment); both verifiers sit far below the certificate -> certificate-necessity is intrinsic to running the premise check on a generative LLM, not an artifact of a weak same-model verifier (retires methodology MINOR #5)\", \"denominator_hygiene_note\": \"in THIS table the same-model weak verifier value is 0.20 (its value RESTRICTED to the n=60 subsample), NOT 0.274 (the full n=450/135 pool value); the two are kept in separate tables by construction\", \"two_copy_consistency_checked\": true, \"evidence_tag\": \"CARRIED-FROM-BLOCK / REPRODUCED-FROM-CONSISTENCY\"}",
+          "eval_char_len": 1542.0
+        },
+        {
+          "input": "rigor_major.stronger_verifier_latex :: LaTeX body \u2014 tab:stronger-verifier",
+          "output": "% Table~\\ref{tab:stronger-verifier} \u2014 stronger cross-family verifier on its OWN n=60 subsample\n\\begin{tabular}{lcc}\n\\toprule\nmethod (deepseek-v3.2, $k{=}5$; $n_{\\text{sibling}}{=}250$, 60 fabrications) & frac.\\ caught & nat.\\ conf-wrong \\\\\n\\midrule\n\\textbf{certificate (no-derivation)} & \\textbf{0.667} & 0.096 \\\\\nself-verification (strong) & 0.533 & 0.112 \\\\\nquery-side verifier (weak, same-model) & 0.200 & 0.192 \\\\\nquery-side verifier (strong, x-family) & 0.100 & 0.216 \\\\\n\\bottomrule\n\\end{tabular}",
+          "eval_char_len": 501.0
+        },
+        {
+          "input": "rigor_major.corrected_tab_locatedin :: n=450/135 corrected leaderboard (0.100 removed)",
+          "output": "{\"denominator\": \"n_sibling=450 / 135 raw-LLM confident fabrications (identical for every method in this column)\", \"methods\": [{\"method_key\": \"certificate\", \"label\": \"certificate (no-derivation)\", \"fraction_caught\": 0.7852, \"evidence_tag\": \"REPRODUCED-FROM-ROWS\"}, {\"method_key\": \"ct_verbalized\", \"label\": \"verbalized confidence\", \"fraction_caught\": 0.4, \"evidence_tag\": \"RE-ANALYSIS-DERIVED\", \"cert_minus_method_caught_gap\": {\"gap\": 0.3852, \"ci95\": [0.2441, 0.5203], \"ci_excludes_0\": true, \"n_boot\": 10000}}, {\"method_key\": \"ct_ptrue\", \"label\": \"Kadavath P(True)\", \"fraction_caught\": 0.3037, \"evidence_tag\": \"RE-ANALYSIS-DERIVED\", \"cert_minus_method_caught_gap\": {\"gap\": 0.4815, \"ci95\": [0.365, 0.5962], \"ci_excludes_0\": true, \"n_boot\": 10000}}, {\"method_key\": \"ct_sc_margin\", \"label\": \"self-consistency margin\", \"fraction_caught\": 0.0667, \"evidence_tag\": \"RE-ANALYSIS-DERIVED\", \"cert_minus_method_caught_gap\": {\"gap\": 0.7185, \"ci95\": [0.632, 0.8], \"ci_excludes_0\": true, \"n_boot\": 10000}}, {\"method_key\": \"ct_negent\", \"label\": \"semantic-entropy\", \"fraction_caught\": 0.0667, \"evidence_tag\": \"RE-ANALYSIS-DERIVED\", \"cert_minus_method_caught_gap\": {\"gap\": 0.7185, \"ci95\": [0.632, 0.8], \"ci_excludes_0\": true, \"n_boot\": 10000}}, {\"method_key\": \"queryside_verifier_same_model\", \"label\": \"query-side verifier (same-model)\", \"fraction_caught\": 0.2741, \"evidence_tag\": \"RE-ANALYSIS-DERIVED\", \"cert_minus_method_caught_gap\": {\"gap\": 0.5111, \"ci95\": [0.3986, 0.6198], \"ci_excludes_0\": true, \"n_boot\": 10000}}, {\"method_key\": \"queryside_selfverify\", \"label\": \"self-verification\", \"fraction_caught\": 0.4593, \"evidence_tag\": \"RE-ANALYSIS-DERIVED\", \"cert_minus_method_caught_gap\": {\"gap\": 0.3259, \"ci95\": [0.2071, 0.442], \"ci_excludes_0\": true, \"n_boot\": 10000}}], \"footnote_pointer\": \"The stronger cross-family verifier (deepseek-v3.2, k=5) is reported on its OWN n=60 subsample in Table~\\\\ref{tab:stronger-verifier}; its 0.10 caught fraction is computed on a different denominator (n_sibling=250, 60 fabrications) and is NOT comparable to this column.\", \"n_caught_gaps_excluding_0_of_6\": 6, \"all_six_gaps_exclude_0\": true, \"stronger_xfamily_0100_row_removed\": true, \"latex_table_body\": \"% Table~\\\\ref{tab:locatedin} \\u2014 CORRECTED caught-fraction (n_sibling=450, 135 fabrications; identical denom.)\\n% NOTE: the stronger x-family verifier 0.100 is DELIBERATELY ABSENT \\u2014 see footnote / Table~\\\\ref{tab:stronger-verifier}.\\n\\\\begin{tabular}{lccc}\\n\\\\toprule\\nmethod & frac.\\\\ caught & cert$-$method gap & 95\\\\% CI \\\\\\\\\\n\\\\midrule\\n\\\\textbf{certificate (no-derivation)} & \\\\textbf{0.785} & -- & -- \\\\\\\\\\nverbalized confidence & 0.400 & 0.385 & [0.244, 0.520] \\\\\\\\\\nKadavath P(True) & 0.304 & 0.481 & [0.365, 0.596] \\\\\\\\\\nself-consistency margin & 0.067 & 0.719 & [0.632, 0.800] \\\\\\\\\\nsemantic-entropy & 0.067 & 0.719 & [0.632, 0.800] \\\\\\\\\\nquery-side verifier (same-model) & 0.274 & 0.511 & [0.399, 0.620] \\\\\\\\\\nself-verification & 0.459 & 0.326 & [0.207, 0.442] \\\\\\\\\\n\\\\bottomrule\\n\\\\end{tabular}\", \"evidence_tag\": \"RE-ANALYSIS-DERIVED\"}",
+          "eval_char_len": 3031.0
+        },
+        {
+          "input": "rigor_major.corrected_tab_locatedin_latex :: LaTeX body \u2014 tab:locatedin (corrected)",
+          "output": "% Table~\\ref{tab:locatedin} \u2014 CORRECTED caught-fraction (n_sibling=450, 135 fabrications; identical denom.)\n% NOTE: the stronger x-family verifier 0.100 is DELIBERATELY ABSENT \u2014 see footnote / Table~\\ref{tab:stronger-verifier}.\n\\begin{tabular}{lccc}\n\\toprule\nmethod & frac.\\ caught & cert$-$method gap & 95\\% CI \\\\\n\\midrule\n\\textbf{certificate (no-derivation)} & \\textbf{0.785} & -- & -- \\\\\nverbalized confidence & 0.400 & 0.385 & [0.244, 0.520] \\\\\nKadavath P(True) & 0.304 & 0.481 & [0.365, 0.596] \\\\\nself-consistency margin & 0.067 & 0.719 & [0.632, 0.800] \\\\\nsemantic-entropy & 0.067 & 0.719 & [0.632, 0.800] \\\\\nquery-side verifier (same-model) & 0.274 & 0.511 & [0.399, 0.620] \\\\\nself-verification & 0.459 & 0.326 & [0.207, 0.442] \\\\\n\\bottomrule\n\\end{tabular}",
+          "eval_char_len": 763.0
+        },
+        {
+          "input": "rigor_major.verdict :: rigor_major_retired flag",
+          "output": "{\"rigor_major_retired\": true, \"retired_iff\": \"(corrected table excludes 0.100) AND (separate n=60 table present) AND (within-subsample qualitative conclusion / ordering holds)\"}",
+          "eval_char_len": 177.0
+        }
+      ]
+    },
+    {
+      "dataset": "evidence_minor",
+      "examples": [
+        {
+          "input": "evidence_minor.abstract :: 0.785 paired with extraction-gated / targeting-quality caveat",
+          "output": "On a non-by-construction natural same-component-sibling regime the no-derivation certificate catches 0.785 of the raw reader's high-confidence absent-relation fabrications versus 0.274 for the strongest query-side verifier and <=0.40 for every confidence signal (all six certificate-minus-competitor caught-gaps exclude 0); we report this as TARGETING QUALITY, not a deployment win \u2014 the catching objective on a pure-absent pool structurally favors high-abstention methods (it measures only how well a method's abstentions target the fabrications), and the certificate's NET utility on mixed present/absent natural prose remains extraction-gated.",
+          "eval_char_len": 646.0,
+          "eval_both_caveats_present": 1.0
+        },
+        {
+          "input": "evidence_minor.intro :: 0.785 paired with extraction-gated / targeting-quality caveat",
+          "output": "Our headline safety number is a TARGETING-QUALITY result, not a deployment win: the certificate turns 0.785 of the raw reader's high-confidence sibling fabrications into abstentions (vs 0.274 for the strongest query-side verifier), but because this catching objective is scored on a pure-absent pool it structurally favors methods that abstain more on absent pairs, and the certificate's NET utility on mixed present/absent natural prose stays extraction-gated.",
+          "eval_char_len": 461.0,
+          "eval_both_caveats_present": 1.0
+        },
+        {
+          "input": "evidence_minor.contribution_3 :: 0.785 paired with extraction-gated / targeting-quality caveat",
+          "output": "Third, we isolate a one-sided catching win as TARGETING QUALITY rather than a deployment win: on the natural sibling-absent pool the certificate catches 0.785 of the raw fabrications against 0.274 for the strongest query-side verifier, while acknowledging that the pure-absent catching objective structurally rewards high-abstention methods and that the net mixed-pool utility remains extraction-gated.",
+          "eval_char_len": 402.0,
+          "eval_both_caveats_present": 1.0
+        },
+        {
+          "input": "evidence_minor.conclusion :: 0.785 paired with extraction-gated / targeting-quality caveat",
+          "output": "In sum the certificate catches 0.785 of the confident absent-relation fabrications versus 0.274 for the strongest query-side verifier, a TARGETING-QUALITY win and not a deployment win \u2014 the catching objective on a pure-absent pool structurally favors high-abstention methods, so the certificate's NET deployable utility on mixed natural prose remains extraction-gated until a precision-preserving extractor lifts present coverage.",
+          "eval_char_len": 430.0,
+          "eval_both_caveats_present": 1.0
+        }
+      ]
+    },
+    {
+      "dataset": "presentation_minor",
+      "examples": [
+        {
+          "input": "presentation_minor.de_densification_checklist :: 5 actionable de-densify items",
+          "output": "[\"[1] Evidence-class tags (REAL-LLM-READ, GOLD-ONLY-GATE, SYNTHETIC-CHANNEL, THEOREM, REAL-LLM-READ-ON-SYNTHETIC) appear ONLY in the spine table + section headers; DELETE every inline \\\\textsc{...} marker in results prose.\", \"[2] Rewrite reviewer-response meta-narration as declarative claims-with-caveats \\u2014 replace 'a skeptical reviewer rightly observed...', 'stated without spin', 'we never let that number carry the contribution' with plain assertions of the caveated claim.\", \"[3] Collapse the 7 bold-headed intro paragraphs into <=3 so the contributions list + headline numbers (FACT A rate; capability gap; caught 0.785) appear within the first ~half page.\", \"[4] Flag duplicated / near-duplicate consecutive sentences and any '...'-truncated fragments.\", \"[5] Every selective-accuracy / confident-wrong number must carry its coverage/abstention qualifier.\"]",
+          "eval_char_len": 869.0
+        },
+        {
+          "input": "presentation_minor.lean_intro_skeleton :: <=3 intro blocks",
+          "output": "[{\"block\": 1, \"role\": \"problem + thesis\", \"bullets\": [\"(a) PROBLEM: confident absent-relation hallucination as a compositional false-premise failure in the deduction sub-module of a text->FOL pipeline.\", \"(b) THESIS (one sentence): a high-recall disjunctive reader + compose-through-exact-table + abstain-on-no-derivation; the certificate MECHANISM is the INHERITED NeSy premise (+0.673 inherited / +0.0025 novel).\"]}, {\"block\": 2, \"role\": \"three contributions + headline numbers\", \"bullets\": [\"(c1) a corpus/domain/reader-robust DIAGNOSTIC = FACT A (confident absent-fabrication rate 0.30 sibling / 0.06 diffcomponent, transfers across readers+corpora) + a signal-agnostic capability gap.\", \"(c2) a one-sided TARGETING-QUALITY catching win (caught 0.785) that beats the confidence family (<=0.40) AND the same-model verifier (0.274) AND the stronger cross-family verifier (0.10 on its own n=60 subsample).\", \"(c3) a QUANTIFIED recall-precision frontier proving the natural-prose net-utility boundary is FUNDAMENTAL for prompt-only extraction (slope -0.30 located-in / -0.67 kinship; gold-read ceiling 1.0/1.0/1.0).\"]}, {\"block\": 3, \"role\": \"scope + venue\", \"bullets\": [\"(d) OUT-OF-SCOPE (stated in the intro, not the appendix): OpenCyc grounding, atomic re-extraction, general fuzzy unification, genuine ~3000-char documents = future work.\", \"(e) VENUE: ACL Knowledge Extraction PRIMARY, NeSy fallback.\"]}]",
+          "eval_char_len": 1407.0,
+          "eval_n_intro_blocks": 3.0
+        }
+      ]
+    },
+    {
+      "dataset": "scope_minor",
+      "examples": [
+        {
+          "input": "scope_minor.feasibility_appendix_consolidation_plan :: one appendix, two subsections",
+          "output": "{\"appendix_title\": \"Appendix A \\u2014 Feasibility on commodity hardware (NOT a substantive contribution)\", \"preamble\": \"Both notes below are FEASIBILITY demonstrations on commodity hardware, NOT substantive contributions; the substantive contributions are the diagnostic, the targeting-quality catching win, and the recall-precision frontier (intro).\", \"subsection_1\": {\"title\": \"A.1 Operational ~3000-char bracket-selected case study\", \"source_artifacts\": [\"art_WQoePKrpsTPo\"], \"content\": \"95 Prolog programs discharged & executed in swipl 9.0.4; hallucination reduction 0.27-0.60 (mean 0.45) at Mode-A coverage 0-0.33; atomic recall ~0.49 is the binding ceiling. CUT the concatenated-kinship arm (56/56 cross-story abstentions are trivial by construction). LABEL the documents bracket-selected. STATE: the pipeline RUNS at length, NOT that it is USEFUL at length.\", \"evidence_tag\": \"CARRIED-LITERAL\"}, \"subsection_2\": {\"title\": \"A.2 Fuzzy-unification feasibility note\", \"source_artifacts\": [\"art_I22c-J7-OcXl\", \"art_0MDLD-w-RXOu\"], \"content\": \"vague prepositions / informal kinship -> calibrated sub-1.0 disjunctions; fraction-at-1.0 0.00 vs Mode-P 1.00; per-candidate ECE 0.142 spatial / 0.111 kinship; Mode-B catches around->{NTPPi,TPPi} 5/5 sound-violating spatial reads (kinship UNTESTED). Supporting query-level cert confident-wrong 0.000 vs commit-argmax 0.364/0.216 WITH the query-vs-edge unit-of-analysis caveat.\", \"evidence_tag\": \"CARRIED-LITERAL\"}, \"out_of_scope_statement_location\": \"INTRO (not the appendix)\", \"layout\": \"ONE appendix, ONE title, TWO subsections (A.1, A.2)\", \"scope_minor_retired\": true, \"evidence_tag\": \"RE-ANALYSIS-DERIVED\"}",
+          "eval_char_len": 1656.0
+        }
+      ]
+    },
+    {
+      "dataset": "novelty_minor",
+      "examples": [
+        {
+          "input": "novelty_minor.distinguishing_sentence_slot :: labeled PENDING slot",
+          "output": "{\"label\": \"NOVELTY-DISTINGUISHING-SENTENCE (filled by parallel research artifact)\", \"purpose\": \"one sentence separating the no-derivation certificate (per-query, gold-free, training-free, NO-external-KB abstention from deductive closure over the document-INTERNAL relation graph) from ontology-grounded POST-EXTRACTION structural CORRECTION (e.g. arXiv:2605.29168), which repairs/commits a labeling against EXTERNAL ontology structure \\u2014 preserving the gold-free / training-free / no-external-KB delta\", \"placeholder_text\": \"<<FILL: no-derivation certificate vs ontology-grounded post-extraction correction \\u2014 verified content from the parallel research artifact>>\", \"status\": \"PENDING-PARALLEL-RESEARCH-ARTIFACT\", \"evidence_tag\": \"PENDING-PARALLEL-EXPERIMENT\"}",
+          "eval_char_len": 769.0
+        }
+      ]
+    },
+    {
+      "dataset": "significance",
+      "examples": [
+        {
+          "input": "significance.abstract_first_results_fork :: FORK_A / FORK_B + selection rule",
+          "output": "{\"FORK_A_demonstrated_fix\": \"... + a DEMONSTRATED net-utility fix on natural prose via a PRECISION-PRESERVING extractor: on a mixed present / same-component-sibling-absent pool the certificate's Holm-adjusted, doc-clustered mixed-pool confident-wrong reduction CI EXCLUDES 0 at extraction recall R*, matching/beating the query-side verifier ...\", \"FORK_B_honest_boundary\": \"... + a targeting-quality catching win (caught-fraction cert 0.785 vs verifier 0.274, extraction-gated, not a deployment win) + a net-utility boundary shown FUNDAMENTAL even for precision-preserving extraction (deeper than prompt-only) ...\", \"selection_rule\": \"Use FORK_A IFF the parallel iter-10 precision-preserving-extractor experiment flips the mixed-pool confident-wrong reduction CI to EXCLUDE 0 on a natural (non-structural-by-construction) regime AND the certificate matches/beats the query-side verifier; otherwise use FORK_B. GEN_PAPER_TEXT reads the extractor experiment verdict and selects.\", \"status\": \"PENDING-PARALLEL-EXPERIMENT\", \"evidence_tag\": \"PENDING-PARALLEL-EXPERIMENT\"}",
+          "eval_char_len": 1066.0
+        },
+        {
+          "input": "significance.contribution_table :: one-thesis contribution table",
+          "output": "### contribution table (one thesis)\n\n| contribution | status |\n|---|---|\n| ROBUST DIAGNOSTIC (FACT A + signal-agnostic mixed-pool capability gap) | ESTABLISHED [REAL-LLM-READ] |\n| TARGETING-QUALITY CATCHING WIN (0.785, one-sided, extraction-gated; beats confidence family + same-model + stronger x-family verifier) | ESTABLISHED-BUT-ONE-SIDED [RE-ANALYSIS-DERIVED] |\n| RECALL-PRECISION FRONTIER (prompt-only natural-prose net-utility boundary FUNDAMENTAL; slope -0.30/-0.67, gold-read ceiling 1.0/1.0/1.0) | ESTABLISHED [REAL-LLM-READ] |\n| certificate MECHANISM (forward least-fixpoint closure -> abstain) | INHERITED NeSy premise (+0.673 inherited / +0.0025 novel) [INHERITED-NESY-PREMISE] |\n| DEMONSTRATED-FIX-OR-DEEPER-BOUNDARY (net mixed-pool reduction CI excluding 0 on a natural regime via precision-preserving extraction, OR the boundary shown fundamental even there) | PENDING-EXTRACTOR-EXPERIMENT (FORK) [PENDING-PARALLEL-EXPERIMENT] |",
+          "eval_char_len": 944.0
+        }
+      ]
+    },
+    {
+      "dataset": "tables",
+      "examples": [
+        {
+          "input": "capability_gap_table :: 16-cell per-signal x reader x corpus survival+caught",
+          "output": "{\"rows\": [{\"corpus\": \"Re-DocRED\", \"reader\": \"gemini\", \"tag\": \"REPRODUCED-FROM-ROWS (S2)\", \"survival\": {\"verbalized\": 0.5083, \"sc_margin\": 0.85, \"ptrue\": 0.4833, \"negent\": 0.85}, \"caught\": {\"verbalized\": 0.4917, \"sc_margin\": 0.15, \"ptrue\": 0.5167, \"negent\": 0.15}}, {\"corpus\": \"Re-DocRED\", \"reader\": \"deepseek\", \"tag\": \"CARRIED-LITERAL\", \"survival\": {\"verbalized\": 0.4118, \"sc_margin\": 0.2941, \"ptrue\": 0.3235, \"negent\": 0.2941}, \"caught\": {\"verbalized\": 0.5882, \"sc_margin\": 0.7059, \"ptrue\": 0.6765, \"negent\": 0.7059}, \"note\": \"cross-family is aggregate-only in the source; carried (cross-checked vs precedent eval X)\"}, {\"corpus\": \"CLUTRR\", \"reader\": \"gemini\", \"tag\": \"CARRIED-LITERAL\", \"survival\": {\"verbalized\": 0.4353, \"sc_margin\": 0.7176, \"ptrue\": 0.2471, \"negent\": 0.7176}, \"caught\": {\"verbalized\": 0.5647, \"sc_margin\": 0.2824, \"ptrue\": 0.7529, \"negent\": 0.2824}, \"note\": \"cross-checked against S2 (verifier) reproduction_gate which re-derived them\"}, {\"corpus\": \"CLUTRR\", \"reader\": \"deepseek\", \"tag\": \"CARRIED-LITERAL\", \"survival\": {\"verbalized\": 0.672, \"sc_margin\": 0.224, \"ptrue\": 0.103, \"negent\": 0.224}, \"caught\": {\"verbalized\": 0.328, \"sc_margin\": 0.776, \"ptrue\": 0.897, \"negent\": 0.776}, \"note\": \"THREE of four dispersion signals catch 78-90% for the stronger deepseek reader\"}], \"FACT_A_robust_corpus_and_reader_transferable\": {\"CLUTRR_gemini\": 0.472, \"CLUTRR_deepseek\": 0.483, \"ReDocRED_gemini\": 0.3261, \"ReDocRED_deepseek\": 0.318, \"locatedin_sibling_gemini\": 0.3, \"locatedin_sibling_mistral\": 0.4378, \"statement\": \"the raw confident-fabrication RATE transfers across readers AND corpora (the ROBUST fact)\", \"evidence_tag\": \"REAL-LLM-READ\"}, \"FACT_B_reader_and_signal_dependent\": {\"statement\": \"which signals catch the fabrications is READER- and SIGNAL-dependent: verbalized confidence is the most robustly BLIND signal; dispersion signals catch the MAJORITY for the stronger deepseek reader but commit most under gemini\", \"evidence_tag\": \"RE-ANALYSIS-DERIVED\"}}",
+          "eval_char_len": 1978.0
+        },
+        {
+          "input": "count_reconciliation :: per-dataset counts",
+          "output": "{\"kinship_redocred_primary_slice\": {\"present_multihop\": 360, \"present_composed_only_non_circular\": 222, \"absent\": 368, \"engine_round_trip_present_combined\": 476, \"engine_round_trip_absent_combined\": 577, \"docred_present\": 116, \"docred_absent\": 209, \"docred_absent_false_negative_frac\": 0.646, \"explanation\": \"the 476/476 present and 577/577 absent engine round-trip is the COMBINED re-docred (360/368) + docred (116/209, whose absent gold is downgraded ~64.6% false-negatives); removes the apparent 360!=476 / 368!=577 inconsistency\", \"evidence_tag\": \"CARRIED-LITERAL (present/absent 360/368 + docred_present 116 reproduced from S2 rows)\"}, \"locatedin\": {\"present\": 515, \"same_component_sibling_absent\": 450, \"different_component_absent\": 250, \"never_annotated\": 115, \"held_out\": 400, \"n_docs\": 283, \"note\": \"present 515 = held_out 400 + never_annotated 115\", \"evidence_tag\": \"REPRODUCED-FROM-ROWS\"}, \"evidence_tag\": \"REPRODUCED-FROM-ROWS / CARRIED-LITERAL\"}",
+          "eval_char_len": 958.0
+        },
+        {
+          "input": "caught_fraction_leaderboard_n450 :: matched-coverage-fair headline (n=135)",
+          "output": "{\"certificate\": {\"fraction_caught\": 0.7852, \"evidence_tag\": \"REPRODUCED-FROM-ROWS\"}, \"ct_verbalized\": {\"fraction_caught\": 0.4, \"cert_minus_method_caught_gap\": {\"gap\": 0.3852, \"ci95\": [0.2441, 0.5203], \"p_one_sided\": 0.0001, \"ci_excludes_0\": true, \"n_boot\": 10000}, \"evidence_tag\": \"RE-ANALYSIS-DERIVED\"}, \"ct_sc_margin\": {\"fraction_caught\": 0.0667, \"cert_minus_method_caught_gap\": {\"gap\": 0.7185, \"ci95\": [0.632, 0.8], \"p_one_sided\": 0.0001, \"ci_excludes_0\": true, \"n_boot\": 10000}, \"evidence_tag\": \"RE-ANALYSIS-DERIVED\"}, \"ct_ptrue\": {\"fraction_caught\": 0.3037, \"cert_minus_method_caught_gap\": {\"gap\": 0.4815, \"ci95\": [0.365, 0.5962], \"p_one_sided\": 0.0001, \"ci_excludes_0\": true, \"n_boot\": 10000}, \"evidence_tag\": \"RE-ANALYSIS-DERIVED\"}, \"ct_negent\": {\"fraction_caught\": 0.0667, \"cert_minus_method_caught_gap\": {\"gap\": 0.7185, \"ci95\": [0.632, 0.8], \"p_one_sided\": 0.0001, \"ci_excludes_0\": true, \"n_boot\": 10000}, \"evidence_tag\": \"RE-ANALYSIS-DERIVED\"}, \"queryside_verifier\": {\"fraction_caught\": 0.2741, \"cert_minus_method_caught_gap\": {\"gap\": 0.5111, \"ci95\": [0.3986, 0.6198], \"p_one_sided\": 0.0001, \"ci_excludes_0\": true, \"n_boot\": 10000}, \"evidence_tag\": \"RE-ANALYSIS-DERIVED\"}, \"queryside_selfverify\": {\"fraction_caught\": 0.4593, \"cert_minus_method_caught_gap\": {\"gap\": 0.3259, \"ci95\": [0.2071, 0.442], \"p_one_sided\": 0.0001, \"ci_excludes_0\": true, \"n_boot\": 10000}, \"evidence_tag\": \"RE-ANALYSIS-DERIVED\"}}",
+          "eval_char_len": 1411.0
+        }
+      ]
+    },
+    {
+      "dataset": "reproduction_gate_checks",
+      "examples": [
+        {
+          "input": "gate::locatedin.count_present :: hard reproduction check",
+          "output": "recomputed=515.0 carried=515.0 tol=0 ok=True",
+          "eval_char_len": 44.0,
+          "predict_recomputed_from_rows": "515.0",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::locatedin.count_sibling_absent :: hard reproduction check",
+          "output": "recomputed=450.0 carried=450.0 tol=0 ok=True",
+          "eval_char_len": 44.0,
+          "predict_recomputed_from_rows": "450.0",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::locatedin.count_diffcomponent_absent :: hard reproduction check",
+          "output": "recomputed=250.0 carried=250.0 tol=0 ok=True",
+          "eval_char_len": 44.0,
+          "predict_recomputed_from_rows": "250.0",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::locatedin.FACT_A.same_component_sibling :: hard reproduction check",
+          "output": "recomputed=0.3 carried=0.3 tol=0.005 ok=True",
+          "eval_char_len": 44.0,
+          "predict_recomputed_from_rows": "0.3",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::locatedin.FACT_A.different_component :: hard reproduction check",
+          "output": "recomputed=0.06 carried=0.06 tol=0.005 ok=True",
+          "eval_char_len": 46.0,
+          "predict_recomputed_from_rows": "0.06",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::locatedin.FACT_A.n_hallucinated_sibling :: hard reproduction check",
+          "output": "recomputed=135.0 carried=135.0 tol=0 ok=True",
+          "eval_char_len": 44.0,
+          "predict_recomputed_from_rows": "135.0",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::locatedin.FACT_A.n_hallucinated_diffcomp :: hard reproduction check",
+          "output": "recomputed=15.0 carried=15.0 tol=0 ok=True",
+          "eval_char_len": 42.0,
+          "predict_recomputed_from_rows": "15.0",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::locatedin.FACT_A.mean_conf :: hard reproduction check",
+          "output": "recomputed=0.9422 carried=0.9422 tol=0.001 ok=True",
+          "eval_char_len": 50.0,
+          "predict_recomputed_from_rows": "0.9422",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::locatedin.FACT_A.frac_ge_0.9 :: hard reproduction check",
+          "output": "recomputed=0.9481 carried=0.9481 tol=0.001 ok=True",
+          "eval_char_len": 50.0,
+          "predict_recomputed_from_rows": "0.9481",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::locatedin.crux.n_raw_confident_wrong :: hard reproduction check",
+          "output": "recomputed=135.0 carried=135.0 tol=0 ok=True",
+          "eval_char_len": 44.0,
+          "predict_recomputed_from_rows": "135.0",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::locatedin.caught.certificate :: hard reproduction check",
+          "output": "recomputed=0.7852 carried=0.7852 tol=0.005 ok=True",
+          "eval_char_len": 50.0,
+          "predict_recomputed_from_rows": "0.7852",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::locatedin.caught.ct_verbalized :: hard reproduction check",
+          "output": "recomputed=0.4 carried=0.4 tol=0.005 ok=True",
+          "eval_char_len": 44.0,
+          "predict_recomputed_from_rows": "0.4",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::locatedin.caught.ct_sc_margin :: hard reproduction check",
+          "output": "recomputed=0.0667 carried=0.0667 tol=0.005 ok=True",
+          "eval_char_len": 50.0,
+          "predict_recomputed_from_rows": "0.0667",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::locatedin.caught.ct_ptrue :: hard reproduction check",
+          "output": "recomputed=0.3037 carried=0.3037 tol=0.005 ok=True",
+          "eval_char_len": 50.0,
+          "predict_recomputed_from_rows": "0.3037",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::locatedin.caught.ct_negent :: hard reproduction check",
+          "output": "recomputed=0.0667 carried=0.0667 tol=0.005 ok=True",
+          "eval_char_len": 50.0,
+          "predict_recomputed_from_rows": "0.0667",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::locatedin.caught.queryside_verifier :: hard reproduction check",
+          "output": "recomputed=0.2741 carried=0.2741 tol=0.005 ok=True",
+          "eval_char_len": 50.0,
+          "predict_recomputed_from_rows": "0.2741",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::locatedin.caught.queryside_selfverify :: hard reproduction check",
+          "output": "recomputed=0.4593 carried=0.4593 tol=0.005 ok=True",
+          "eval_char_len": 50.0,
+          "predict_recomputed_from_rows": "0.4593",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::locatedin.natural_cw.certificate :: hard reproduction check",
+          "output": "recomputed=0.073333 carried=0.0733 tol=0.005 ok=True",
+          "eval_char_len": 52.0,
+          "predict_recomputed_from_rows": "0.073333",
+          "eval_ok": 1.0,
+          "eval_abs_error": 3.299999999999137e-05
+        },
+        {
+          "input": "gate::locatedin.natural_cw.ct_verbalized :: hard reproduction check",
+          "output": "recomputed=0.3 carried=0.3 tol=0.005 ok=True",
+          "eval_char_len": 44.0,
+          "predict_recomputed_from_rows": "0.3",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::locatedin.natural_cw.queryside_verifier :: hard reproduction check",
+          "output": "recomputed=0.217778 carried=0.2178 tol=0.005 ok=True",
+          "eval_char_len": 52.0,
+          "predict_recomputed_from_rows": "0.217778",
+          "eval_ok": 1.0,
+          "eval_abs_error": 2.1999999999994246e-05
+        },
+        {
+          "input": "gate::locatedin.natural_cw.queryside_selfverify :: hard reproduction check",
+          "output": "recomputed=0.162222 carried=0.1622 tol=0.005 ok=True",
+          "eval_char_len": 52.0,
+          "predict_recomputed_from_rows": "0.162222",
+          "eval_ok": 1.0,
+          "eval_abs_error": 2.1999999999994246e-05
+        },
+        {
+          "input": "gate::locatedin.abst.certificate_named_total :: hard reproduction check",
+          "output": "recomputed=59.0 carried=59.0 tol=0 ok=True",
+          "eval_char_len": 42.0,
+          "predict_recomputed_from_rows": "59.0",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::locatedin.abst.over_abstain_present_rate :: hard reproduction check",
+          "output": "recomputed=0.949515 carried=0.9495 tol=0.005 ok=True",
+          "eval_char_len": 52.0,
+          "predict_recomputed_from_rows": "0.949515",
+          "eval_ok": 1.0,
+          "eval_abs_error": 1.4999999999987246e-05
+        },
+        {
+          "input": "gate::locatedin.abst.correct_absent_abstention_rate :: hard reproduction check",
+          "output": "recomputed=0.926667 carried=0.9267 tol=0.005 ok=True",
+          "eval_char_len": 52.0,
+          "predict_recomputed_from_rows": "0.926667",
+          "eval_ok": 1.0,
+          "eval_abs_error": 3.2999999999949736e-05
+        },
+        {
+          "input": "gate::locatedin.abst.present_coverage_llm_read :: hard reproduction check",
+          "output": "recomputed=0.050485 carried=0.0505 tol=0.005 ok=True",
+          "eval_char_len": 52.0,
+          "predict_recomputed_from_rows": "0.050485",
+          "eval_ok": 1.0,
+          "eval_abs_error": 1.5000000000001124e-05
+        },
+        {
+          "input": "gate::locatedin.gold_read_ceiling.present_coverage :: hard reproduction check",
+          "output": "recomputed=1.0 carried=1.0 tol=0 ok=True",
+          "eval_char_len": 40.0,
+          "predict_recomputed_from_rows": "1.0",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::locatedin.gold_read_ceiling.correct_absent_abstention_rate :: hard reproduction check",
+          "output": "recomputed=1.0 carried=1.0 tol=0 ok=True",
+          "eval_char_len": 40.0,
+          "predict_recomputed_from_rows": "1.0",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::locatedin.gold_read_ceiling.present_selective_accuracy :: hard reproduction check",
+          "output": "recomputed=1.0 carried=1.0 tol=0 ok=True",
+          "eval_char_len": 40.0,
+          "predict_recomputed_from_rows": "1.0",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::locatedin.view1_absent.reduction_carried :: hard reproduction check",
+          "output": "recomputed=0.2267 carried=0.2267 tol=0.0001 ok=True",
+          "eval_char_len": 51.0,
+          "predict_recomputed_from_rows": "0.2267",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::locatedin.view1_absent.identity(0.30-0.0733) :: hard reproduction check",
+          "output": "recomputed=0.226667 carried=0.2267 tol=0.005 ok=True",
+          "eval_char_len": 52.0,
+          "predict_recomputed_from_rows": "0.226667",
+          "eval_ok": 1.0,
+          "eval_abs_error": 3.300000000000525e-05
+        },
+        {
+          "input": "gate::locatedin.mixed.certificate_confident_wrong :: hard reproduction check",
+          "output": "recomputed=0.034197 carried=0.0342 tol=0.005 ok=True",
+          "eval_char_len": 52.0,
+          "predict_recomputed_from_rows": "0.034197",
+          "eval_ok": 1.0,
+          "eval_abs_error": 3.0000000000030003e-06
+        },
+        {
+          "input": "gate::locatedin.mixed.reduction_point :: hard reproduction check",
+          "output": "recomputed=-0.034197 carried=-0.0342 tol=0.005 ok=True",
+          "eval_char_len": 54.0,
+          "predict_recomputed_from_rows": "-0.034197",
+          "eval_ok": 1.0,
+          "eval_abs_error": 3.0000000000030003e-06
+        },
+        {
+          "input": "gate::locatedin.build_stats.absent_same_component_sibling :: hard reproduction check",
+          "output": "recomputed=20814.0 carried=20814.0 tol=0 ok=True",
+          "eval_char_len": 48.0,
+          "predict_recomputed_from_rows": "20814.0",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::locatedin.atomic.recall_converse_invariant :: hard reproduction check",
+          "output": "recomputed=0.1478 carried=0.1478 tol=0.0001 ok=True",
+          "eval_char_len": 51.0,
+          "predict_recomputed_from_rows": "0.1478",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::locatedin.atomic.precision_converse_invariant :: hard reproduction check",
+          "output": "recomputed=0.6649 carried=0.6649 tol=0.0001 ok=True",
+          "eval_char_len": 51.0,
+          "predict_recomputed_from_rows": "0.6649",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::locatedin.atomic.recall_strict :: hard reproduction check",
+          "output": "recomputed=0.1421 carried=0.1421 tol=0.0001 ok=True",
+          "eval_char_len": 51.0,
+          "predict_recomputed_from_rows": "0.1421",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::verifier.count.clutrr_present :: hard reproduction check",
+          "output": "recomputed=102.0 carried=102.0 tol=0 ok=True",
+          "eval_char_len": 44.0,
+          "predict_recomputed_from_rows": "102.0",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::verifier.count.clutrr_absent :: hard reproduction check",
+          "output": "recomputed=180.0 carried=180.0 tol=0 ok=True",
+          "eval_char_len": 44.0,
+          "predict_recomputed_from_rows": "180.0",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::verifier.count.redocred_present :: hard reproduction check",
+          "output": "recomputed=360.0 carried=360.0 tol=0 ok=True",
+          "eval_char_len": 44.0,
+          "predict_recomputed_from_rows": "360.0",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::verifier.count.redocred_absent :: hard reproduction check",
+          "output": "recomputed=368.0 carried=368.0 tol=0 ok=True",
+          "eval_char_len": 44.0,
+          "predict_recomputed_from_rows": "368.0",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::verifier.count.docred_present :: hard reproduction check",
+          "output": "recomputed=116.0 carried=116.0 tol=0 ok=True",
+          "eval_char_len": 44.0,
+          "predict_recomputed_from_rows": "116.0",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::verifier.clutrr.n_fabrications :: hard reproduction check",
+          "output": "recomputed=85.0 carried=85.0 tol=0 ok=True",
+          "eval_char_len": 42.0,
+          "predict_recomputed_from_rows": "85.0",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::verifier.redocred.n_fabrications :: hard reproduction check",
+          "output": "recomputed=120.0 carried=120.0 tol=0 ok=True",
+          "eval_char_len": 44.0,
+          "predict_recomputed_from_rows": "120.0",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::verifier.caught.clutrr.certificate :: hard reproduction check",
+          "output": "recomputed=0.941176 carried=0.9412 tol=0.005 ok=True",
+          "eval_char_len": 52.0,
+          "predict_recomputed_from_rows": "0.941176",
+          "eval_ok": 1.0,
+          "eval_abs_error": 2.4000000000024002e-05
+        },
+        {
+          "input": "gate::verifier.caught.clutrr.queryside_verifier :: hard reproduction check",
+          "output": "recomputed=0.588235 carried=0.5882 tol=0.005 ok=True",
+          "eval_char_len": 52.0,
+          "predict_recomputed_from_rows": "0.588235",
+          "eval_ok": 1.0,
+          "eval_abs_error": 3.500000000000725e-05
+        },
+        {
+          "input": "gate::verifier.caught.clutrr.queryside_selfverify :: hard reproduction check",
+          "output": "recomputed=0.823529 carried=0.8235 tol=0.005 ok=True",
+          "eval_char_len": 52.0,
+          "predict_recomputed_from_rows": "0.823529",
+          "eval_ok": 1.0,
+          "eval_abs_error": 2.8999999999945736e-05
+        },
+        {
+          "input": "gate::verifier.caught.redocred.certificate :: hard reproduction check",
+          "output": "recomputed=0.85 carried=0.85 tol=0.005 ok=True",
+          "eval_char_len": 46.0,
+          "predict_recomputed_from_rows": "0.85",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::verifier.caught.redocred.queryside_verifier :: hard reproduction check",
+          "output": "recomputed=0.1 carried=0.1 tol=0.005 ok=True",
+          "eval_char_len": 44.0,
+          "predict_recomputed_from_rows": "0.1",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::verifier.caught.redocred.queryside_selfverify :: hard reproduction check",
+          "output": "recomputed=0.541667 carried=0.5417 tol=0.005 ok=True",
+          "eval_char_len": 52.0,
+          "predict_recomputed_from_rows": "0.541667",
+          "eval_ok": 1.0,
+          "eval_abs_error": 3.2999999999949736e-05
+        },
+        {
+          "input": "gate::verifier.clutrr_present.certificate_coverage :: hard reproduction check",
+          "output": "recomputed=0.686275 carried=0.6863 tol=0.005 ok=True",
+          "eval_char_len": 52.0,
+          "predict_recomputed_from_rows": "0.686275",
+          "eval_ok": 1.0,
+          "eval_abs_error": 2.5000000000052758e-05
+        },
+        {
+          "input": "gate::verifier.clutrr_present.certificate_selective_accuracy :: hard reproduction check",
+          "output": "recomputed=0.885714 carried=0.8857 tol=0.005 ok=True",
+          "eval_char_len": 52.0,
+          "predict_recomputed_from_rows": "0.885714",
+          "eval_ok": 1.0,
+          "eval_abs_error": 1.399999999995849e-05
+        },
+        {
+          "input": "gate::verifier.clutrr_present.certificate_cw_among_covered :: hard reproduction check",
+          "output": "recomputed=0.114286 carried=0.1143 tol=0.005 ok=True",
+          "eval_char_len": 52.0,
+          "predict_recomputed_from_rows": "0.114286",
+          "eval_ok": 1.0,
+          "eval_abs_error": 1.4000000000000123e-05
+        },
+        {
+          "input": "gate::verifier.clutrr.cert_minus_verifier_gap_point :: hard reproduction check",
+          "output": "recomputed=0.3529 carried=0.3529 tol=0.005 ok=True",
+          "eval_char_len": 50.0,
+          "predict_recomputed_from_rows": "0.3529",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::verifier.redocred.cert_minus_verifier_gap_point :: hard reproduction check",
+          "output": "recomputed=0.75 carried=0.75 tol=0.005 ok=True",
+          "eval_char_len": 46.0,
+          "predict_recomputed_from_rows": "0.75",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::kinship.count_present :: hard reproduction check",
+          "output": "recomputed=360.0 carried=360.0 tol=0 ok=True",
+          "eval_char_len": 44.0,
+          "predict_recomputed_from_rows": "360.0",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::kinship.count_absent :: hard reproduction check",
+          "output": "recomputed=368.0 carried=368.0 tol=0 ok=True",
+          "eval_char_len": 44.0,
+          "predict_recomputed_from_rows": "368.0",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::kinship.FACT_A :: hard reproduction check",
+          "output": "recomputed=0.326087 carried=0.3261 tol=0.005 ok=True",
+          "eval_char_len": 52.0,
+          "predict_recomputed_from_rows": "0.326087",
+          "eval_ok": 1.0,
+          "eval_abs_error": 1.2999999999985246e-05
+        },
+        {
+          "input": "gate::kinship.certificate_absent_confident_wrong :: hard reproduction check",
+          "output": "recomputed=0.070652 carried=0.0707 tol=0.005 ok=True",
+          "eval_char_len": 52.0,
+          "predict_recomputed_from_rows": "0.070652",
+          "eval_ok": 1.0,
+          "eval_abs_error": 4.799999999999249e-05
+        },
+        {
+          "input": "gate::kinship.crux.n_raw_confident_wrong :: hard reproduction check",
+          "output": "recomputed=120.0 carried=120.0 tol=0 ok=True",
+          "eval_char_len": 44.0,
+          "predict_recomputed_from_rows": "120.0",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::kinship.caught.ct_verbalized :: hard reproduction check",
+          "output": "recomputed=0.4917 carried=0.4917 tol=0.005 ok=True",
+          "eval_char_len": 50.0,
+          "predict_recomputed_from_rows": "0.4917",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::kinship.caught.ct_sc_margin :: hard reproduction check",
+          "output": "recomputed=0.15 carried=0.15 tol=0.005 ok=True",
+          "eval_char_len": 46.0,
+          "predict_recomputed_from_rows": "0.15",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::kinship.caught.ct_ptrue :: hard reproduction check",
+          "output": "recomputed=0.5167 carried=0.5167 tol=0.005 ok=True",
+          "eval_char_len": 50.0,
+          "predict_recomputed_from_rows": "0.5167",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::kinship.caught.ct_negent :: hard reproduction check",
+          "output": "recomputed=0.15 carried=0.15 tol=0.005 ok=True",
+          "eval_char_len": 46.0,
+          "predict_recomputed_from_rows": "0.15",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::kinship.survival.ct_verbalized :: hard reproduction check",
+          "output": "recomputed=0.5083 carried=0.5083 tol=0.005 ok=True",
+          "eval_char_len": 50.0,
+          "predict_recomputed_from_rows": "0.5083",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::kinship.survival.ct_sc_margin :: hard reproduction check",
+          "output": "recomputed=0.85 carried=0.85 tol=0.005 ok=True",
+          "eval_char_len": 46.0,
+          "predict_recomputed_from_rows": "0.85",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::kinship.survival.ct_ptrue :: hard reproduction check",
+          "output": "recomputed=0.4833 carried=0.4833 tol=0.005 ok=True",
+          "eval_char_len": 50.0,
+          "predict_recomputed_from_rows": "0.4833",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::kinship.survival.ct_negent :: hard reproduction check",
+          "output": "recomputed=0.85 carried=0.85 tol=0.005 ok=True",
+          "eval_char_len": 46.0,
+          "predict_recomputed_from_rows": "0.85",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::booster.stronger_verifier.two_copy_consistency :: hard reproduction check",
+          "output": "recomputed=1.0 carried=1.0 tol=0 ok=True",
+          "eval_char_len": 40.0,
+          "predict_recomputed_from_rows": "1.0",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::booster.stronger_verifier.n_sibling :: hard reproduction check",
+          "output": "recomputed=250.0 carried=250.0 tol=0 ok=True",
+          "eval_char_len": 44.0,
+          "predict_recomputed_from_rows": "250.0",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::booster.stronger_verifier.n_raw_hallucinations :: hard reproduction check",
+          "output": "recomputed=60.0 carried=60.0 tol=0 ok=True",
+          "eval_char_len": 42.0,
+          "predict_recomputed_from_rows": "60.0",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::booster.stronger_verifier.n_calls_zero :: hard reproduction check",
+          "output": "recomputed=0.0 carried=0.0 tol=0 ok=True",
+          "eval_char_len": 40.0,
+          "predict_recomputed_from_rows": "0.0",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::booster.stronger_verifier.cost_usd_zero :: hard reproduction check",
+          "output": "recomputed=0.0 carried=0.0 tol=0 ok=True",
+          "eval_char_len": 40.0,
+          "predict_recomputed_from_rows": "0.0",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::booster.stronger_verifier.caught.certificate :: hard reproduction check",
+          "output": "recomputed=0.6667 carried=0.6667 tol=0.005 ok=True",
+          "eval_char_len": 50.0,
+          "predict_recomputed_from_rows": "0.6667",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::booster.stronger_verifier.caught.weak_same_model :: hard reproduction check",
+          "output": "recomputed=0.2 carried=0.2 tol=0.005 ok=True",
+          "eval_char_len": 44.0,
+          "predict_recomputed_from_rows": "0.2",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::booster.stronger_verifier.caught.strong_xfamily :: hard reproduction check",
+          "output": "recomputed=0.1 carried=0.1 tol=0.005 ok=True",
+          "eval_char_len": 44.0,
+          "predict_recomputed_from_rows": "0.1",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::booster.stronger_verifier.caught.selfverify_strong :: hard reproduction check",
+          "output": "recomputed=0.5333 carried=0.5333 tol=0.005 ok=True",
+          "eval_char_len": 50.0,
+          "predict_recomputed_from_rows": "0.5333",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::booster.stronger_verifier.within_subsample_ordering :: hard reproduction check",
+          "output": "recomputed=1.0 carried=1.0 tol=0 ok=True",
+          "eval_char_len": 40.0,
+          "predict_recomputed_from_rows": "1.0",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::booster.stronger_verifier.cw.certificate :: hard reproduction check",
+          "output": "recomputed=0.096 carried=0.096 tol=0.005 ok=True",
+          "eval_char_len": 48.0,
+          "predict_recomputed_from_rows": "0.096",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::booster.stronger_verifier.cw.strong_xfamily :: hard reproduction check",
+          "output": "recomputed=0.216 carried=0.216 tol=0.005 ok=True",
+          "eval_char_len": 48.0,
+          "predict_recomputed_from_rows": "0.216",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::booster.frontier.locatedin_min_over6_ci_lo_vs_recall_slope :: hard reproduction check",
+          "output": "recomputed=-0.3038 carried=-0.3038 tol=0.001 ok=True",
+          "eval_char_len": 52.0,
+          "predict_recomputed_from_rows": "-0.3038",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::booster.frontier.kinship_min_over6_ci_lo_vs_recall_slope :: hard reproduction check",
+          "output": "recomputed=-0.6724 carried=-0.6724 tol=0.001 ok=True",
+          "eval_char_len": 52.0,
+          "predict_recomputed_from_rows": "-0.6724",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::booster.frontier.locatedin_present_coverage_vs_recall_slope :: hard reproduction check",
+          "output": "recomputed=0.9202 carried=0.9202 tol=0.001 ok=True",
+          "eval_char_len": 50.0,
+          "predict_recomputed_from_rows": "0.9202",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::booster.S0_default.atomic_recall_canon :: hard reproduction check",
+          "output": "recomputed=0.1478 carried=0.1478 tol=0.0001 ok=True",
+          "eval_char_len": 51.0,
+          "predict_recomputed_from_rows": "0.1478",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::booster.S0_default.present_coverage :: hard reproduction check",
+          "output": "recomputed=0.0505 carried=0.0505 tol=0.005 ok=True",
+          "eval_char_len": 50.0,
+          "predict_recomputed_from_rows": "0.0505",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::booster.S0_default.absent_sibling_confident_wrong_certificate :: hard reproduction check",
+          "output": "recomputed=0.0733 carried=0.0733 tol=0.005 ok=True",
+          "eval_char_len": 50.0,
+          "predict_recomputed_from_rows": "0.0733",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::booster.S0_default.certificate_fraction_caught_sibling :: hard reproduction check",
+          "output": "recomputed=0.7852 carried=0.7852 tol=0.005 ok=True",
+          "eval_char_len": 50.0,
+          "predict_recomputed_from_rows": "0.7852",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        },
+        {
+          "input": "gate::booster.S0_default.gold_read_present_coverage :: hard reproduction check",
+          "output": "recomputed=1.0 carried=1.0 tol=0 ok=True",
+          "eval_char_len": 40.0,
+          "predict_recomputed_from_rows": "1.0",
+          "eval_ok": 1.0,
+          "eval_abs_error": 0.0
+        }
+      ]
+    }
+  ]
+}

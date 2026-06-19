@@ -1,0 +1,254 @@
+{
+  "name": "CLUTRR kinship gold graphs",
+  "provenance": {
+    "dataset": "CLUTRR: A Diagnostic Benchmark for Inductive Reasoning from Text",
+    "authors": "Sinha, Sodhani, Dong, Pineau, Hamilton",
+    "venue": "EMNLP 2019 (ACL Anthology D19-1458)",
+    "arxiv": "1908.06177",
+    "csv_source": "https://raw.githubusercontent.com/kliang5/CLUTRR_huggingface_dataset/main (the GitHub raw mirror HF CLUTRR/v1 v1.py downloads)",
+    "hf_dataset": "CLUTRR/v1",
+    "composition_source": "facebookresearch/clutrr (rules_store.yaml, relations_store.yaml)",
+    "license": "CLUTRR is released by Facebook under a research/non-commercial license (see facebookresearch/clutrr LICENSE; CC-BY-NC-style). Use for research only."
+  },
+  "datasets_overview": {
+    "clutrr_gen": {
+      "role": "core_clean_systematic_generalization",
+      "hf_config": "gen_train234_test2to10",
+      "doc": "Clean stories. Train hops 2-3-4, test hops 2..10 -> the multi-hop accuracy-vs-chain-length curve + atomic-extraction P/R + trace-graph.",
+      "n_examples": 16131
+    },
+    "clutrr_disc": {
+      "role": "disconnected_noise_absent_pairs",
+      "hf_config": "rob_train_disc_23_test_all_23",
+      "doc": "Disconnected-fact noise: a second, structurally separate family chain => genuine within-document ABSENT-relation pairs for the hallucination demo.",
+      "n_examples": 10545
+    }
+  },
+  "build_qa": {
+    "rows_total": 26676,
+    "empirical_label_map_matches_canonical": true,
+    "flags": {}
+  },
+  "descriptive_counts": {
+    "overall": {
+      "n_stories": 26676,
+      "n_entities_total": 124819,
+      "n_atomic_edges_total": 78472,
+      "n_noise_edges_total": 10545,
+      "fold_counts": {
+        "dev": 5039,
+        "test": 1493,
+        "train": 20144
+      },
+      "hop_count_distribution": {
+        "2": 10235,
+        "3": 10514,
+        "4": 5101,
+        "5": 185,
+        "6": 105,
+        "7": 155,
+        "8": 135,
+        "9": 124,
+        "10": 122
+      },
+      "relation_label_distribution": {
+        "aunt": 1241,
+        "brother": 2831,
+        "daughter": 1454,
+        "daughter-in-law": 342,
+        "father": 1863,
+        "father-in-law": 579,
+        "granddaughter": 2178,
+        "grandfather": 1409,
+        "grandmother": 1404,
+        "grandson": 2210,
+        "mother": 1868,
+        "mother-in-law": 617,
+        "nephew": 1440,
+        "niece": 1421,
+        "sister": 2835,
+        "son": 1412,
+        "son-in-law": 340,
+        "uncle": 1232
+      },
+      "noise_type_distribution": {
+        "disconnected": 10244,
+        "irrelevant": 101,
+        "none": 16231,
+        "supporting": 100
+      },
+      "component_count_distribution": {
+        "1": 16432,
+        "2": 10244
+      },
+      "n_stories_with_absent_pairs": 10244,
+      "total_absent_pairs": 71684,
+      "story_char_length": {
+        "min": 39,
+        "max": 871,
+        "mean": 210.7,
+        "median": 201,
+        "p90": 308,
+        "n_ge_2000_chars": 0,
+        "n_ge_3000_chars": 0
+      }
+    },
+    "per_corpus": {
+      "clutrr_gen": {
+        "n_stories": 16131,
+        "n_entities_total": 67084,
+        "n_atomic_edges_total": 51971,
+        "n_noise_edges_total": 0,
+        "fold_counts": {
+          "dev": 3019,
+          "test": 1048,
+          "train": 12064
+        },
+        "hop_count_distribution": {
+          "2": 5101,
+          "3": 5103,
+          "4": 5101,
+          "5": 185,
+          "6": 105,
+          "7": 155,
+          "8": 135,
+          "9": 124,
+          "10": 122
+        },
+        "relation_label_distribution": {
+          "aunt": 822,
+          "brother": 1742,
+          "daughter": 831,
+          "daughter-in-law": 195,
+          "father": 1072,
+          "father-in-law": 324,
+          "granddaughter": 1280,
+          "grandfather": 829,
+          "grandmother": 824,
+          "grandson": 1272,
+          "mother": 1054,
+          "mother-in-law": 346,
+          "nephew": 988,
+          "niece": 969,
+          "sister": 1744,
+          "son": 833,
+          "son-in-law": 193,
+          "uncle": 813
+        },
+        "noise_type_distribution": {
+          "none": 16131
+        },
+        "component_count_distribution": {
+          "1": 16131
+        },
+        "n_stories_with_absent_pairs": 0,
+        "total_absent_pairs": 0,
+        "story_char_length": {
+          "min": 39,
+          "max": 871,
+          "mean": 202.7,
+          "median": 187,
+          "p90": 307,
+          "n_ge_2000_chars": 0,
+          "n_ge_3000_chars": 0
+        }
+      },
+      "clutrr_disc": {
+        "n_stories": 10545,
+        "n_entities_total": 57735,
+        "n_atomic_edges_total": 26501,
+        "n_noise_edges_total": 10545,
+        "fold_counts": {
+          "dev": 2020,
+          "test": 445,
+          "train": 8080
+        },
+        "hop_count_distribution": {
+          "2": 5134,
+          "3": 5411
+        },
+        "relation_label_distribution": {
+          "aunt": 419,
+          "brother": 1089,
+          "daughter": 623,
+          "daughter-in-law": 147,
+          "father": 791,
+          "father-in-law": 255,
+          "granddaughter": 898,
+          "grandfather": 580,
+          "grandmother": 580,
+          "grandson": 938,
+          "mother": 814,
+          "mother-in-law": 271,
+          "nephew": 452,
+          "niece": 452,
+          "sister": 1091,
+          "son": 579,
+          "son-in-law": 147,
+          "uncle": 419
+        },
+        "noise_type_distribution": {
+          "disconnected": 10244,
+          "irrelevant": 101,
+          "none": 100,
+          "supporting": 100
+        },
+        "component_count_distribution": {
+          "1": 301,
+          "2": 10244
+        },
+        "n_stories_with_absent_pairs": 10244,
+        "total_absent_pairs": 71684,
+        "story_char_length": {
+          "min": 46,
+          "max": 724,
+          "mean": 222.9,
+          "median": 217,
+          "p90": 308,
+          "n_ge_2000_chars": 0,
+          "n_ge_3000_chars": 0
+        }
+      }
+    }
+  },
+  "composition_table_summary": {
+    "n_relation_types": 11,
+    "relation_types": [
+      "child",
+      "inv-child",
+      "SO",
+      "sibling",
+      "grand",
+      "inv-grand",
+      "in-law",
+      "inv-in-law",
+      "sibling-in-law",
+      "un",
+      "inv-un"
+    ],
+    "n_composition_rule_entries": 16,
+    "label_map": {
+      "0": "aunt",
+      "1": "son-in-law",
+      "2": "grandfather",
+      "3": "brother",
+      "4": "sister",
+      "5": "father",
+      "6": "mother",
+      "7": "grandmother",
+      "8": "uncle",
+      "9": "daughter-in-law",
+      "10": "grandson",
+      "11": "granddaughter",
+      "12": "father-in-law",
+      "13": "mother-in-law",
+      "14": "nephew",
+      "15": "son",
+      "16": "daughter",
+      "17": "niece",
+      "18": "husband",
+      "19": "wife",
+      "20": "sister-in-law"
+    }
+  }
+}

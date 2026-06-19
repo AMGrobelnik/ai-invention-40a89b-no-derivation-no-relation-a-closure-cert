@@ -1,0 +1,1052 @@
+{
+  "metadata": {
+    "method_name": "Minimal LLM fuzzy-unification (composition-cell gap-filling) -- EXPLORATORY",
+    "tag": "REAL-LLM-READ",
+    "scope_statement": "This is composition-CELL gap-filling (a missing/ambiguous cell of an EXACT qualitative or kinship composition table filled by a probabilistic LLM read). It is NOT OpenCyc/upper-ontology grounding and ...",
+    "reader_model": "google/gemini-3.1-flash-lite",
+    "model_fallbacks": [
+      "deepseek/deepseek-v3.2",
+      "google/gemini-3-flash-preview"
+    ],
+    "temperature": 0.0,
+    "seed": 20260617,
+    "headline_K": 0.2,
+    "net_faithful_bar": 0.5,
+    "composition_accuracy_by_algebra": {
+      "point": {
+        "n_cells": 9,
+        "exact_match_acc": 0.6666666666666666,
+        "soundness_rate": 0.7777777777777778,
+        "mean_jaccard": 0.8518518518518517,
+        "mean_precision": 0.9259259259259258,
+        "mean_recall": 0.9259259259259258,
+        "n_parse_fail": 1,
+        "mean_pred_size": 1.4444444444444444,
+        "mean_true_size": 1.4444444444444444,
+        "by_true_size": {
+          "singleton": {
+            "n_cells": 7,
+            "exact_match_acc": 0.8571428571428571,
+            "soundness_rate": 1.0,
+            "mean_jaccard": 0.9047619047619049,
+            "mean_precision": 0.9047619047619049,
+            "mean_recall": 1.0,
+            "n_parse_fail": 1,
+            "mean_pred_size": 1.2857142857142858,
+            "mean_true_size": 1.0
+          },
+          "small_2_3": {
+            "n_cells": 2,
+            "exact_match_acc": 0.0,
+            "soundness_rate": 0.0,
+            "mean_jaccard": 0.6666666666666666,
+            "mean_precision": 1.0,
+            "mean_recall": 0.6666666666666666,
+            "n_parse_fail": 0,
+            "mean_pred_size": 2.0,
+            "mean_true_size": 3.0
+          },
+          "large_4plus": {}
+        }
+      },
+      "allen": {
+        "n_cells": 169,
+        "exact_match_acc": 0.38461538461538464,
+        "soundness_rate": 0.4437869822485207,
+        "mean_jaccard": 0.46517601399258207,
+        "mean_precision": 0.566164538945604,
+        "mean_recall": 0.5232893339402215,
+        "n_parse_fail": 0,
+        "mean_pred_size": 2.1834319526627217,
+        "mean_true_size": 2.4201183431952664,
+        "by_true_size": {
+          "singleton": {
+            "n_cells": 97,
+            "exact_match_acc": 0.6288659793814433,
+            "soundness_rate": 0.6907216494845361,
+            "mean_jaccard": 0.6463917525773195,
+            "mean_precision": 0.6463917525773195,
+            "mean_recall": 0.6907216494845361,
+            "n_parse_fail": 0,
+            "mean_pred_size": 1.4639175257731958,
+            "mean_true_size": 1.0
+          },
+          "small_2_3": {
+            "n_cells": 42,
+            "exact_match_acc": 0.047619047619047616,
+            "soundness_rate": 0.11904761904761904,
+            "mean_jaccard": 0.2051079872508444,
+            "mean_precision": 0.3252601895459038,
+            "mean_recall": 0.3095238095238095,
+            "n_parse_fail": 0,
+            "mean_pred_size": 2.9761904761904763,
+            "mean_true_size": 3.0
+          },
+          "large_4plus": {
+            "n_cells": 30,
+            "exact_match_acc": 0.06666666666666667,
+            "soundness_rate": 0.1,
+            "mean_jaccard": 0.24334036334036338,
+            "mean_precision": 0.644029304029304,
+            "mean_recall": 0.28119658119658114,
+            "n_parse_fail": 0,
+            "mean_pred_size": 3.4,
+            "mean_true_size": 6.2
+          }
+        }
+      },
+      "rcc8": {
+        "n_cells": 64,
+        "exact_match_acc": 0.515625,
+        "soundness_rate": 0.78125,
+        "mean_jaccard": 0.7126116071428572,
+        "mean_precision": 0.7691964285714286,
+        "mean_recall": 0.8854166666666666,
+        "n_parse_fail": 0,
+        "mean_pred_size": 3.71875,
+        "mean_true_size": 3.015625,
+        "by_true_size": {
+          "singleton": {
+            "n_cells": 27,
+            "exact_match_acc": 0.7777777777777778,
+            "soundness_rate": 1.0,
+            "mean_jaccard": 0.8382716049382716,
+            "mean_precision": 0.8382716049382716,
+            "mean_recall": 1.0,
+            "n_parse_fail": 0,
+            "mean_pred_size": 1.7037037037037037,
+            "mean_true_size": 1.0
+          },
+          "small_2_3": {
+            "n_cells": 12,
+            "exact_match_acc": 0.16666666666666666,
+            "soundness_rate": 0.75,
+            "mean_jaccard": 0.5046626984126984,
+            "mean_precision": 0.5252976190476191,
+            "mean_recall": 0.8333333333333334,
+            "n_parse_fail": 0,
+            "mean_pred_size": 4.666666666666667,
+            "mean_true_size": 2.6666666666666665
+          },
+          "large_4plus": {
+            "n_cells": 25,
+            "exact_match_acc": 0.4,
+            "soundness_rate": 0.56,
+            "mean_jaccard": 0.6767142857142858,
+            "mean_precision": 0.8116666666666668,
+            "mean_recall": 0.7866666666666667,
+            "n_parse_fail": 0,
+            "mean_pred_size": 5.44,
+            "mean_true_size": 5.36
+          }
+        }
+      }
+    },
+    "composition_accuracy_by_true_cell_size": {
+      "singleton": {
+        "n_cells": 131,
+        "exact_match_acc": 0.6717557251908397,
+        "soundness_rate": 0.7709923664122137,
+        "mean_jaccard": 0.6997455470737913,
+        "mean_precision": 0.6997455470737913,
+        "mean_recall": 0.7709923664122137,
+        "n_parse_fail": 1,
+        "mean_pred_size": 1.5038167938931297,
+        "mean_true_size": 1.0
+      },
+      "small_2_3": {
+        "n_cells": 56,
+        "exact_match_acc": 0.07142857142857142,
+        "soundness_rate": 0.25,
+        "mean_jaccard": 0.28578252105037816,
+        "mean_precision": 0.39222320338391764,
+        "mean_recall": 0.4345238095238095,
+        "n_parse_fail": 0,
+        "mean_pred_size": 3.3035714285714284,
+        "mean_true_size": 2.9285714285714284
+      },
+      "large_4plus": {
+        "n_cells": 55,
+        "exact_match_acc": 0.21818181818181817,
+        "soundness_rate": 0.3090909090909091,
+        "mean_jaccard": 0.4403285098739644,
+        "mean_precision": 0.7202281052281052,
+        "mean_recall": 0.5109557109557109,
+        "n_parse_fail": 0,
+        "mean_pred_size": 4.327272727272727,
+        "mean_true_size": 5.818181818181818
+      }
+    },
+    "composition_richness_curve": {
+      "point": {
+        "n_relations": 3,
+        "exact_match_acc": 0.6666666666666666,
+        "soundness_rate": 0.7777777777777778,
+        "mean_jaccard": 0.8518518518518517
+      },
+      "rcc8": {
+        "n_relations": 8,
+        "exact_match_acc": 0.515625,
+        "soundness_rate": 0.78125,
+        "mean_jaccard": 0.7126116071428572
+      },
+      "allen": {
+        "n_relations": 13,
+        "exact_match_acc": 0.38461538461538464,
+        "soundness_rate": 0.4437869822485207,
+        "mean_jaccard": 0.46517601399258207
+      },
+      "kinship": {
+        "n_relations": 11,
+        "exact_match_acc": 1.0,
+        "soundness_rate": null,
+        "mean_jaccard": null
+      }
+    },
+    "kinship_composition_cell_accuracy": {
+      "n_cells": 16,
+      "exact_match_acc": 1.0,
+      "parse_fail": 0
+    },
+    "end_to_end_synthetic_gapfill": {
+      "point": {
+        "path_recompose_check": {
+          "n": 760,
+          "ok": 760,
+          "rate": 1.0
+        },
+        "by_K": {
+          "0.10": {
+            "n_networks": 500,
+            "n_ablated_cells": 0,
+            "coverage_full": 0.362,
+            "coverage_gap": 0.362,
+            "coverage_llm": 0.362,
+            "acc_among_answered_full": 1.0,
+            "acc_among_answered_gap": 1.0,
+            "acc_among_answered_llm": 1.0,
+            "confident_wrong_rate_llm": 0.0,
+            "recovered_coverage": 0.0,
+            "recovered_n": 0,
+            "recovered_precision": null,
+            "recovered_correct": 0,
+            "recovered_wrong": 0
+          },
+          "0.20": {
+            "n_networks": 500,
+            "n_ablated_cells": 2,
+            "coverage_full": 0.362,
+            "coverage_gap": 0.18,
+            "coverage_llm": 0.362,
+            "acc_among_answered_full": 1.0,
+            "acc_among_answered_gap": 1.0,
+            "acc_among_answered_llm": 1.0,
+            "confident_wrong_rate_llm": 0.0,
+            "recovered_coverage": 0.182,
+            "recovered_n": 91,
+            "recovered_precision": 1.0,
+            "recovered_correct": 91,
+            "recovered_wrong": 0
+          },
+          "0.30": {
+            "n_networks": 500,
+            "n_ablated_cells": 4,
+            "coverage_full": 0.362,
+            "coverage_gap": 0.09,
+            "coverage_llm": 0.362,
+            "acc_among_answered_full": 1.0,
+            "acc_among_answered_gap": 1.0,
+            "acc_among_answered_llm": 1.0,
+            "confident_wrong_rate_llm": 0.0,
+            "recovered_coverage": 0.272,
+            "recovered_n": 136,
+            "recovered_precision": 1.0,
+            "recovered_correct": 136,
+            "recovered_wrong": 0
+          }
+        }
+      },
+      "allen": {
+        "path_recompose_check": {
+          "n": 631,
+          "ok": 631,
+          "rate": 1.0
+        },
+        "by_K": {
+          "0.10": {
+            "n_networks": 500,
+            "n_ablated_cells": 14,
+            "coverage_full": 0.26,
+            "coverage_gap": 0.222,
+            "coverage_llm": 0.25,
+            "acc_among_answered_full": 1.0,
+            "acc_among_answered_gap": 1.0,
+            "acc_among_answered_llm": 0.912,
+            "confident_wrong_rate_llm": 0.022,
+            "recovered_coverage": 0.028,
+            "recovered_n": 23,
+            "recovered_precision": 0.5217391304347826,
+            "recovered_correct": 12,
+            "recovered_wrong": 11
+          },
+          "0.20": {
+            "n_networks": 500,
+            "n_ablated_cells": 35,
+            "coverage_full": 0.26,
+            "coverage_gap": 0.18,
+            "coverage_llm": 0.26,
+            "acc_among_answered_full": 1.0,
+            "acc_among_answered_gap": 1.0,
+            "acc_among_answered_llm": 0.7538461538461538,
+            "confident_wrong_rate_llm": 0.064,
+            "recovered_coverage": 0.08,
+            "recovered_n": 58,
+            "recovered_precision": 0.4482758620689655,
+            "recovered_correct": 26,
+            "recovered_wrong": 32
+          },
+          "0.30": {
+            "n_networks": 500,
+            "n_ablated_cells": 69,
+            "coverage_full": 0.26,
+            "coverage_gap": 0.132,
+            "coverage_llm": 0.3,
+            "acc_among_answered_full": 1.0,
+            "acc_among_answered_gap": 1.0,
+            "acc_among_answered_llm": 0.4266666666666667,
+            "confident_wrong_rate_llm": 0.172,
+            "recovered_coverage": 0.168,
+            "recovered_n": 122,
+            "recovered_precision": 0.29508196721311475,
+            "recovered_correct": 36,
+            "recovered_wrong": 86
+          }
+        }
+      },
+      "rcc8": {
+        "path_recompose_check": {
+          "n": 485,
+          "ok": 485,
+          "rate": 1.0
+        },
+        "by_K": {
+          "0.10": {
+            "n_networks": 500,
+            "n_ablated_cells": 11,
+            "coverage_full": 0.12,
+            "coverage_gap": 0.102,
+            "coverage_llm": 0.114,
+            "acc_among_answered_full": 1.0,
+            "acc_among_answered_gap": 1.0,
+            "acc_among_answered_llm": 1.0,
+            "confident_wrong_rate_llm": 0.0,
+            "recovered_coverage": 0.012,
+            "recovered_n": 6,
+            "recovered_precision": 1.0,
+            "recovered_correct": 6,
+            "recovered_wrong": 0
+          },
+          "0.20": {
+            "n_networks": 500,
+            "n_ablated_cells": 19,
+            "coverage_full": 0.12,
+            "coverage_gap": 0.078,
+            "coverage_llm": 0.104,
+            "acc_among_answered_full": 1.0,
+            "acc_among_answered_gap": 1.0,
+            "acc_among_answered_llm": 1.0,
+            "confident_wrong_rate_llm": 0.0,
+            "recovered_coverage": 0.026,
+            "recovered_n": 13,
+            "recovered_precision": 1.0,
+            "recovered_correct": 13,
+            "recovered_wrong": 0
+          },
+          "0.30": {
+            "n_networks": 500,
+            "n_ablated_cells": 31,
+            "coverage_full": 0.12,
+            "coverage_gap": 0.036,
+            "coverage_llm": 0.084,
+            "acc_among_answered_full": 1.0,
+            "acc_among_answered_gap": 1.0,
+            "acc_among_answered_llm": 1.0,
+            "confident_wrong_rate_llm": 0.0,
+            "recovered_coverage": 0.048,
+            "recovered_n": 25,
+            "recovered_precision": 1.0,
+            "recovered_correct": 25,
+            "recovered_wrong": 0
+          }
+        }
+      }
+    },
+    "clutrr_gap_pool_counts": {
+      "n_mixed_pool": 663,
+      "n_manufactured_gaps": 391,
+      "n_natural_gaps_total": 244,
+      "n_natural_conflict": 244,
+      "n_natural_no_path": 0,
+      "n_normal_in_pool": 272,
+      "n_distinct_ablated_cells": 5
+    },
+    "clutrr_ablation_cells_removed": [
+      [
+        "SO",
+        "inv-child"
+      ],
+      [
+        "child",
+        "SO"
+      ],
+      [
+        "child",
+        "inv-un"
+      ]
+    ],
+    "clutrr_gapfill_risk_coverage": {
+      "n_gap_pool": 391,
+      "symbolic_abstain": {
+        "n_pool": 391,
+        "coverage": 0.0,
+        "acc_among_answered": null,
+        "confident_wrong_rate": 0.0,
+        "n_answered": 0,
+        "n_correct": 0,
+        "n_wrong": 0
+      },
+      "gapfill_P": {
+        "n_pool": 391,
+        "coverage": 1.0,
+        "acc_among_answered": 1.0,
+        "confident_wrong_rate": 0.0,
+        "n_answered": 391,
+        "n_correct": 391,
+        "n_wrong": 0,
+        "recovered_coverage": 1.0,
+        "recovered_precision": 1.0,
+        "net_recovered_correct_minus_wrong": 391,
+        "net_faithful": true
+      },
+      "gapfill_S": {
+        "n_pool": 391,
+        "coverage": 0.9948849104859335,
+        "acc_among_answered": 0.32904884318766064,
+        "confident_wrong_rate": 0.6675191815856778,
+        "n_answered": 389,
+        "n_correct": 128,
+        "n_wrong": 261,
+        "recovered_coverage": 0.9948849104859335,
+        "recovered_precision": 0.32904884318766064,
+        "net_recovered_correct_minus_wrong": -133,
+        "net_faithful": false
+      },
+      "raw_llm": {
+        "n_pool": 391,
+        "coverage": 1.0,
+        "acc_among_answered": 0.39641943734015345,
+        "confident_wrong_rate": 0.6035805626598465,
+        "n_answered": 391,
+        "n_correct": 155,
+        "n_wrong": 236,
+        "recovered_coverage": 1.0,
+        "recovered_precision": 0.39641943734015345,
+        "net_recovered_correct_minus_wrong": -81,
+        "net_faithful": false
+      }
+    },
+    "clutrr_manufactured_K_sweep": {
+      "0.10": {
+        "n_ablated_cells": 1,
+        "n_manufactured_gaps": 252,
+        "modeP_recovered_coverage": 1.0,
+        "modeP_recovered_precision": 1.0,
+        "modeP_confident_wrong": 0.0,
+        "modeP_recovered_correct": 252,
+        "modeP_recovered_wrong": 0,
+        "still_abstain": 0
+      },
+      "0.20": {
+        "n_ablated_cells": 5,
+        "n_manufactured_gaps": 391,
+        "modeP_recovered_coverage": 1.0,
+        "modeP_recovered_precision": 1.0,
+        "modeP_confident_wrong": 0.0,
+        "modeP_recovered_correct": 391,
+        "modeP_recovered_wrong": 0,
+        "still_abstain": 0
+      },
+      "0.30": {
+        "n_ablated_cells": 5,
+        "n_manufactured_gaps": 391,
+        "modeP_recovered_coverage": 1.0,
+        "modeP_recovered_precision": 1.0,
+        "modeP_confident_wrong": 0.0,
+        "modeP_recovered_correct": 391,
+        "modeP_recovered_wrong": 0,
+        "still_abstain": 0
+      }
+    },
+    "clutrr_gapfill_mixed_pool_curve": {
+      "n_pool": 663,
+      "symbolic_abstain": [
+        {
+          "tau": 0.0,
+          "coverage": 0.41025641025641024,
+          "selective_accuracy": 1.0,
+          "n_covered": 272
+        },
+        {
+          "tau": 0.05,
+          "coverage": 0.41025641025641024,
+          "selective_accuracy": 1.0,
+          "n_covered": 272
+        },
+        {
+          "tau": 0.1,
+          "coverage": 0.41025641025641024,
+          "selective_accuracy": 1.0,
+          "n_covered": 272
+        }
+      ],
+      "gapfill_P": [
+        {
+          "tau": 0.0,
+          "coverage": 1.0,
+          "selective_accuracy": 1.0,
+          "n_covered": 663
+        },
+        {
+          "tau": 0.05,
+          "coverage": 1.0,
+          "selective_accuracy": 1.0,
+          "n_covered": 663
+        },
+        {
+          "tau": 0.1,
+          "coverage": 1.0,
+          "selective_accuracy": 1.0,
+          "n_covered": 663
+        }
+      ],
+      "gapfill_S": [
+        {
+          "tau": 0.0,
+          "coverage": 0.9969834087481146,
+          "selective_accuracy": 0.6051437216338881,
+          "n_covered": 661
+        },
+        {
+          "tau": 0.05,
+          "coverage": 0.9969834087481146,
+          "selective_accuracy": 0.6051437216338881,
+          "n_covered": 661
+        },
+        {
+          "tau": 0.1,
+          "coverage": 0.9969834087481146,
+          "selective_accuracy": 0.6051437216338881,
+          "n_covered": 661
+        }
+      ],
+      "raw_llm": [
+        {
+          "tau": 0.0,
+          "coverage": 1.0,
+          "selective_accuracy": 0.4781297134238311,
+          "n_covered": 663
+        },
+        {
+          "tau": 0.05,
+          "coverage": 1.0,
+          "selective_accuracy": 0.4781297134238311,
+          "n_covered": 663
+        },
+        {
+          "tau": 0.1,
+          "coverage": 1.0,
+          "selective_accuracy": 0.4781297134238311,
+          "n_covered": 663
+        }
+      ]
+    },
+    "clutrr_full_coverage_point": {
+      "symbolic": {
+        "n_pool": 663,
+        "coverage": 0.41025641025641024,
+        "acc_among_answered": 1.0,
+        "confident_wrong_rate": 0.0,
+        "n_answered": 272,
+        "n_correct": 272,
+        "n_wrong": 0
+      },
+      "gapfill_P": {
+        "n_pool": 663,
+        "coverage": 1.0,
+        "acc_among_answered": 1.0,
+        "confident_wrong_rate": 0.0,
+        "n_answered": 663,
+        "n_correct": 663,
+        "n_wrong": 0
+      },
+      "gapfill_S": {
+        "n_pool": 663,
+        "coverage": 0.9969834087481146,
+        "acc_among_answered": 0.6051437216338881,
+        "confident_wrong_rate": 0.3936651583710407,
+        "n_answered": 661,
+        "n_correct": 400,
+        "n_wrong": 261
+      },
+      "raw_llm": {
+        "n_pool": 663,
+        "coverage": 1.0,
+        "acc_among_answered": 0.4781297134238311,
+        "confident_wrong_rate": 0.521870286576169,
+        "n_answered": 663,
+        "n_correct": 317,
+        "n_wrong": 346
+      }
+    },
+    "clutrr_hallucination_reduction": {
+      "confident_wrong_rate_raw_llm": 0.521870286576169,
+      "confident_wrong_rate_gapfill_S": 0.3936651583710407,
+      "confident_wrong_rate_gapfill_P": 0.0,
+      "confident_wrong_rate_symbolic": 0.0,
+      "abs_reduction_S_vs_raw": 0.12820512820512825,
+      "rel_reduction_S_vs_raw": 0.24566473988439314,
+      "abs_reduction_P_vs_raw": 0.521870286576169,
+      "rel_reduction_P_vs_raw": 1.0
+    },
+    "llm_resolved_step_accuracy": {
+      "mode_P": {
+        "n_cells": 16,
+        "exact_match_acc": 1.0,
+        "parse_fail": 0,
+        "per_cell": {
+          "child|child": {
+            "pred_type": "grand",
+            "true_type": "grand",
+            "correct": true,
+            "confidence": 1.0
+          },
+          "child|SO": {
+            "pred_type": "in-law",
+            "true_type": "in-law",
+            "correct": true,
+            "confidence": 1.0
+          },
+          "child|sibling": {
+            "pred_type": "child",
+            "true_type": "child",
+            "correct": true,
+            "confidence": 1.0
+          },
+          "child|inv-un": {
+            "pred_type": "sibling",
+            "true_type": "sibling",
+            "correct": true,
+            "confidence": 1.0
+          },
+          "child|inv-grand": {
+            "pred_type": "inv-child",
+            "true_type": "inv-child",
+            "correct": true,
+            "confidence": 1.0
+          },
+          "inv-child|child": {
+            "pred_type": "sibling",
+            "true_type": "sibling",
+            "correct": true,
+            "confidence": 1.0
+          },
+          "inv-child|inv-child": {
+            "pred_type": "inv-grand",
+            "true_type": "inv-grand",
+            "correct": true,
+            "confidence": 1.0
+          },
+          "inv-child|sibling": {
+            "pred_type": "inv-un",
+            "true_type": "inv-un",
+            "correct": true,
+            "confidence": 1.0
+          },
+          "SO|inv-child": {
+            "pred_type": "inv-in-law",
+            "true_type": "inv-in-law",
+            "correct": true,
+            "confidence": 1.0
+          },
+          "SO|grand": {
+            "pred_type": "grand",
+            "true_type": "grand",
+            "correct": true,
+            "confidence": 1.0
+          },
+          "SO|child": {
+            "pred_type": "child",
+            "true_type": "child",
+            "correct": true,
+            "confidence": 1.0
+          },
+          "sibling|sibling": {
+            "pred_type": "sibling",
+            "true_type": "sibling",
+            "correct": true,
+            "confidence": 1.0
+          },
+          "sibling|inv-grand": {
+            "pred_type": "inv-grand",
+            "true_type": "inv-grand",
+            "correct": true,
+            "confidence": 1.0
+          },
+          "sibling|child": {
+            "pred_type": "un",
+            "true_type": "un",
+            "correct": true,
+            "confidence": 1.0
+          },
+          "sibling|inv-child": {
+            "pred_type": "inv-child",
+            "true_type": "inv-child",
+            "correct": true,
+            "confidence": 1.0
+          },
+          "grand|sibling": {
+            "pred_type": "grand",
+            "true_type": "grand",
+            "correct": true,
+            "confidence": 1.0
+          }
+        }
+      },
+      "mode_S": {
+        "manufactured": {
+          "n_pool": 391,
+          "coverage": 0.9948849104859335,
+          "acc_among_answered": 0.32904884318766064,
+          "confident_wrong_rate": 0.6675191815856778,
+          "n_answered": 389,
+          "n_correct": 128,
+          "n_wrong": 261
+        },
+        "natural_conflict": {
+          "n_natural_conflicts": 244,
+          "symbolic_abstain": {
+            "coverage": 0.0,
+            "acc_among_answered": null,
+            "note": "ambiguous under the full table -> abstains by construction"
+          },
+          "gapfill_S": {
+            "coverage": 0.9631147540983607,
+            "acc_among_answered": 0.40425531914893614,
+            "overall_resolved_rate": 0.38934426229508196,
+            "n_answered": 235
+          },
+          "raw_llm": {
+            "coverage": 1.0,
+            "acc_among_answered": 0.3483606557377049,
+            "overall_resolved_rate": 0.3483606557377049
+          },
+          "modeS_beats_raw_on_conflicts": true
+        }
+      },
+      "story_conditioning_helps_manufactured": false
+    },
+    "bootstrap_cis": {
+      "gapfill_S_acc_among_answered": [
+        0.2827763496143959,
+        0.37532133676092544
+      ],
+      "gapfill_P_acc_among_answered": [
+        1.0,
+        1.0
+      ],
+      "raw_confident_wrong_rate": [
+        0.4871417797888386,
+        0.5565987933634993
+      ],
+      "gapfill_S_confident_wrong_rate": [
+        0.358974358974359,
+        0.43137254901960786
+      ]
+    },
+    "flagged_fuzzy_step_traces": [
+      {
+        "doc_id": "1e8d47fa-2f44-46d8-80f9-2078b04c6042",
+        "qsrc": "James",
+        "qtgt": "Francisco",
+        "gold": "son",
+        "gap_origin": "manufactured",
+        "gap_kind": "no_path",
+        "story": "Lynn was always arguing with her mother's husband James. Lynn asked her daughter, Felicia, if she would like to go to a movie with her on Saturday night. Felicia was excited because today she was goin...",
+        "trace": [
+          {
+            "a": "Lynn",
+            "b": "Felicia",
+            "c": "Francisco",
+            "t1": "child",
+            "t2": "inv-un",
+            "t3": "sibling",
+            "source": "llm_fuzzy",
+            "llm_confidence": 1.0,
+            "llm_predicted_t3": "sibling",
+            "matches_true_cell": true
+          },
+          {
+            "a": "James",
+            "b": "Lynn",
+            "c": "Francisco",
+            "t1": "child",
+            "t2": "sibling",
+            "t3": "child",
+            "source": "exact_table"
+          }
+        ],
+        "final_answer": "son",
+        "correct": true,
+        "n_llm_fuzzy_steps": 1
+      },
+      {
+        "doc_id": "2d3f144b-3176-48f4-9bc6-8cd031ec1666",
+        "qsrc": "Frances",
+        "qtgt": "Francisco",
+        "gold": "son",
+        "gap_origin": "manufactured",
+        "gap_kind": "no_path",
+        "story": "Tina and her uncle Francisco went to the pet shop. Tina saw a puppy that she loved, so Francisco bought it for her. Frances went to the mall, because she wanted to look for a present for her daughter,...",
+        "trace": [
+          {
+            "a": "Lena",
+            "b": "Tina",
+            "c": "Francisco",
+            "t1": "child",
+            "t2": "inv-un",
+            "t3": "sibling",
+            "source": "llm_fuzzy",
+            "llm_confidence": 1.0,
+            "llm_predicted_t3": "sibling",
+            "matches_true_cell": true
+          },
+          {
+            "a": "Frances",
+            "b": "Lena",
+            "c": "Francisco",
+            "t1": "child",
+            "t2": "sibling",
+            "t3": "child",
+            "source": "exact_table"
+          }
+        ],
+        "final_answer": "son",
+        "correct": true,
+        "n_llm_fuzzy_steps": 1
+      },
+      {
+        "doc_id": "2fbc5e33-21f1-4458-b71e-8c9cdf16ae10",
+        "qsrc": "Frances",
+        "qtgt": "Joshua",
+        "gold": "son",
+        "gap_origin": "manufactured",
+        "gap_kind": "no_path",
+        "story": "Marie went to the baseball game with her uncle Joshua. Marie went to dinner with her daughter David. They then went to the park afterwards. Frances asked her daughter, David, if she would like to go t...",
+        "trace": [
+          {
+            "a": "David",
+            "b": "Marie",
+            "c": "Joshua",
+            "t1": "child",
+            "t2": "inv-un",
+            "t3": "sibling",
+            "source": "llm_fuzzy",
+            "llm_confidence": 1.0,
+            "llm_predicted_t3": "sibling",
+            "matches_true_cell": true
+          },
+          {
+            "a": "Frances",
+            "b": "David",
+            "c": "Joshua",
+            "t1": "child",
+            "t2": "sibling",
+            "t3": "child",
+            "source": "exact_table"
+          }
+        ],
+        "final_answer": "son",
+        "correct": true,
+        "n_llm_fuzzy_steps": 1
+      }
+    ],
+    "honesty_caveats": [
+      "CLUTRR is a TEMPLATED kinship benchmark (max 871 chars), not natural text",
+      "gaps are composition CELLS, not ontology/common-sense grounding",
+      "manufactured gaps are clearly labelled and separated from natural gaps"
+    ],
+    "budget": {
+      "cumulative_usd": 0.0,
+      "n_llm_calls": 0,
+      "n_cache_hits": 1800,
+      "n_parse_fail": 1,
+      "n_errors": 0,
+      "model": "google/gemini-3.1-flash-lite",
+      "fallbacks": [
+        "deepseek/deepseek-v3.2",
+        "google/gemini-3-flash-preview"
+      ],
+      "temperature": 0.0,
+      "budget_hard": 9.0,
+      "budget_soft": 2.0,
+      "total_api_spend_all_runs_usd": 0.278487,
+      "n_cached_calls_on_disk": 1797,
+      "note": "cumulative_usd is THIS invocation's marginal cost (0 when fully cache-served); total_api_spend_all_runs_usd is the real money spent to build the sha256 cache, which makes the experiment reproducible a..."
+    },
+    "verdict": {
+      "adds_net_faithful_coverage_clutrr": "YES",
+      "recovered_precision": 1.0,
+      "net_recovered_correct_minus_wrong": 391,
+      "best_mode": "gapfill_P",
+      "composition_accuracy_degrades_with_richness": true,
+      "cell_fill_beats_story_fill": true,
+      "story_conditioning_helps_natural_conflicts": true,
+      "hallucination_rel_reduction_bestmode_vs_raw": 1.0,
+      "hallucination_rel_reduction_S_vs_raw": 0.24566473988439314,
+      "summary": "LLM abstract composition-cell exact-match falls with algebra richness (point=0.67/3rels, rcc8=0.52/8rels, allen=0.38/13rels; allen soundness only 0.44), so an LLM composes RICH algebras poorly and a n..."
+    },
+    "runtime_sec": 34.3
+  },
+  "datasets": [
+    {
+      "dataset": "synthetic_composition_cells",
+      "examples": [
+        {
+          "input": "point: < ; <",
+          "output": "<",
+          "predict_llm": "<",
+          "metadata_algebra": "point",
+          "metadata_r1": "<",
+          "metadata_r2": "<",
+          "metadata_exact": true,
+          "metadata_sound": true,
+          "metadata_jaccard": 1.0,
+          "metadata_true_size": 1,
+          "metadata_pred_size": 1,
+          "metadata_parse_fail": false
+        },
+        {
+          "input": "point: < ; =",
+          "output": "<",
+          "predict_llm": "<",
+          "metadata_algebra": "point",
+          "metadata_r1": "<",
+          "metadata_r2": "=",
+          "metadata_exact": true,
+          "metadata_sound": true,
+          "metadata_jaccard": 1.0,
+          "metadata_true_size": 1,
+          "metadata_pred_size": 1,
+          "metadata_parse_fail": false
+        },
+        {
+          "input": "point: < ; >",
+          "output": "< = >",
+          "predict_llm": "< >",
+          "metadata_algebra": "point",
+          "metadata_r1": "<",
+          "metadata_r2": ">",
+          "metadata_exact": false,
+          "metadata_sound": false,
+          "metadata_jaccard": 0.6666666666666666,
+          "metadata_true_size": 3,
+          "metadata_pred_size": 2,
+          "metadata_parse_fail": false
+        }
+      ]
+    },
+    {
+      "dataset": "clutrr_gapfill",
+      "examples": [
+        {
+          "input": "Lynn was always arguing with her mother's husband James. Lynn asked her daughter, Felicia, if she would like to go to a movie with her on Saturday night. Felicia was excited because today she was goin...",
+          "output": "son",
+          "predict_symbolic": "ABSTAIN",
+          "predict_gapfill_P": "son",
+          "predict_gapfill_S": "son",
+          "predict_raw_llm": "son",
+          "metadata_doc_id": "1e8d47fa-2f44-46d8-80f9-2078b04c6042",
+          "metadata_qsrc": "James",
+          "metadata_qtgt": "Francisco",
+          "metadata_hop": 3,
+          "metadata_gap_origin": "manufactured",
+          "metadata_gap_kind": "no_path",
+          "metadata_blocked_cell": [
+            [
+              "child",
+              "inv-un"
+            ]
+          ],
+          "metadata_correct_symbolic": false,
+          "metadata_correct_P": true,
+          "metadata_correct_S": true,
+          "metadata_correct_raw": true,
+          "metadata_conf_S": 1.0,
+          "metadata_conf_raw": 0.8
+        },
+        {
+          "input": "Tina and her uncle Francisco went to the pet shop. Tina saw a puppy that she loved, so Francisco bought it for her. Frances went to the mall, because she wanted to look for a present for her daughter,...",
+          "output": "son",
+          "predict_symbolic": "ABSTAIN",
+          "predict_gapfill_P": "son",
+          "predict_gapfill_S": "brother",
+          "predict_raw_llm": "no-relation",
+          "metadata_doc_id": "2d3f144b-3176-48f4-9bc6-8cd031ec1666",
+          "metadata_qsrc": "Frances",
+          "metadata_qtgt": "Francisco",
+          "metadata_hop": 3,
+          "metadata_gap_origin": "manufactured",
+          "metadata_gap_kind": "no_path",
+          "metadata_blocked_cell": [
+            [
+              "child",
+              "inv-un"
+            ]
+          ],
+          "metadata_correct_symbolic": false,
+          "metadata_correct_P": true,
+          "metadata_correct_S": false,
+          "metadata_correct_raw": false,
+          "metadata_conf_S": 1.0,
+          "metadata_conf_raw": 0.8
+        },
+        {
+          "input": "Marie went to the baseball game with her uncle Joshua. Marie went to dinner with her daughter David. They then went to the park afterwards. Frances asked her daughter, David, if she would like to go t...",
+          "output": "son",
+          "predict_symbolic": "ABSTAIN",
+          "predict_gapfill_P": "son",
+          "predict_gapfill_S": "brother",
+          "predict_raw_llm": "husband",
+          "metadata_doc_id": "2fbc5e33-21f1-4458-b71e-8c9cdf16ae10",
+          "metadata_qsrc": "Frances",
+          "metadata_qtgt": "Joshua",
+          "metadata_hop": 3,
+          "metadata_gap_origin": "manufactured",
+          "metadata_gap_kind": "no_path",
+          "metadata_blocked_cell": [
+            [
+              "child",
+              "inv-un"
+            ]
+          ],
+          "metadata_correct_symbolic": false,
+          "metadata_correct_P": true,
+          "metadata_correct_S": false,
+          "metadata_correct_raw": false,
+          "metadata_conf_S": 0.9,
+          "metadata_conf_raw": 1.0
+        }
+      ]
+    }
+  ]
+}

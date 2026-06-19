@@ -1,0 +1,1004 @@
+{
+  "metadata": {
+    "description": "Canonical fold-split gold temporal relation graphs over real-text TimeML corpora (NarrativeTime, TDDMan, MATRES; + optional TimeBank-Dense). One row per (corpus, document): input=document text, output...",
+    "builder_versions": {
+      "nltk": "3.9.4",
+      "networkx": "3.6.1",
+      "python": "3.12.13"
+    },
+    "sentence_segmentation": {
+      "narrativetime": "nltk_punkt_pretrained_english",
+      "tddman": "nltk_punkt_pretrained_english",
+      "timebank_dense": "nltk_punkt_pretrained_english",
+      "matres": "qiangning_sentid (per-token sentence ids from the EMNLP19 preprocessing); SENTDIFF used as authoritative sentence distance"
+    },
+    "sources": {
+      "narrativetime": "https://github.com/text-machine-lab/narrative_time (Rogers et al., NarrativeTime: Dense Temporal Annotation on a Timeline, arXiv:1908.11443). Relations derived by the authors' own narrative_time packa...",
+      "tddman": "https://github.com/aakanksha19/TDDiscourse (TDDiscourse, Naik et al. SIGDIAL 2019), TDDMan/ manual subset only (NOT TDDAuto). Text substrate = TimeBank-Dense .tml.",
+      "matres": "https://github.com/CogComp/MATRES (Ning et al. ACL 2018) via preprocessed XML from https://github.com/qiangning/NeuralTemporalRelation-EMNLP19 (trainset=TimeBank+AQUAINT, testset=Platinum). Real .tml ...",
+      "timebank_dense": "https://github.com/muk343/TimeBank-dense (Cassidy et al. ACL 2014); TLINKs as gold."
+    },
+    "canonical_mappings": {
+      "narrativetime_native_to_allen": {
+        "BEFORE": [
+          "b",
+          "m"
+        ],
+        "AFTER": [
+          "bi",
+          "mi"
+        ],
+        "INCLUDES": [
+          "di",
+          "si",
+          "fi"
+        ],
+        "IS_INCLUDED": [
+          "d",
+          "s",
+          "f"
+        ],
+        "SIMULTANEOUS": [
+          "eq"
+        ],
+        "OVERLAP": [
+          "o",
+          "oi"
+        ],
+        "VAGUE": [
+          "b",
+          "bi",
+          "m"
+        ]
+      },
+      "narrativetime_native_to_point": {
+        "BEFORE": [
+          "<",
+          "="
+        ],
+        "AFTER": [
+          ">",
+          "="
+        ],
+        "INCLUDES": [
+          "<",
+          "="
+        ],
+        "IS_INCLUDED": [
+          ">",
+          "="
+        ],
+        "SIMULTANEOUS": [
+          "="
+        ],
+        "OVERLAP": [
+          "<",
+          ">"
+        ],
+        "VAGUE": [
+          "<",
+          "=",
+          ">"
+        ]
+      },
+      "tddman_code_map": {
+        "b": {
+          "native": "before",
+          "allen": [
+            "b"
+          ],
+          "superset": [
+            "b",
+            "m"
+          ],
+          "point": [
+            "<"
+          ]
+        },
+        "a": {
+          "native": "after",
+          "allen": [
+            "bi"
+          ],
+          "superset": [
+            "bi",
+            "mi"
+          ],
+          "point": [
+            ">"
+          ]
+        },
+        "s": {
+          "native": "simultaneous",
+          "allen": [
+            "eq"
+          ],
+          "superset": [
+            "eq"
+          ],
+          "point": [
+            "="
+          ]
+        },
+        "i": {
+          "native": "includes",
+          "allen": [
+            "di"
+          ],
+          "superset": [
+            "di",
+            "si",
+            "fi"
+          ],
+          "point": [
+            "<",
+            "="
+          ]
+        },
+        "ii": {
+          "native": "is_included",
+          "allen": [
+            "d"
+          ],
+          "superset": [
+            "d",
+            "s",
+            "f"
+          ],
+          "point": [
+            "=",
+            ">"
+          ]
+        }
+      },
+      "matres_label_to_point": {
+        "BEFORE": [
+          "<"
+        ],
+        "AFTER": [
+          ">"
+        ],
+        "EQUAL": [
+          "="
+        ],
+        "VAGUE": [
+          "<",
+          "=",
+          ">"
+        ]
+      },
+      "timebank_dense_map": {
+        "BEFORE": {
+          "allen": [
+            "b"
+          ],
+          "superset": [
+            "b",
+            "m"
+          ],
+          "point": [
+            "<"
+          ]
+        },
+        "AFTER": {
+          "allen": [
+            "bi"
+          ],
+          "superset": [
+            "bi",
+            "mi"
+          ],
+          "point": [
+            ">"
+          ]
+        },
+        "INCLUDES": {
+          "allen": [
+            "di"
+          ],
+          "superset": [
+            "di",
+            "si",
+            "fi"
+          ],
+          "point": [
+            "<",
+            "="
+          ]
+        },
+        "IS_INCLUDED": {
+          "allen": [
+            "d"
+          ],
+          "superset": [
+            "d",
+            "s",
+            "f"
+          ],
+          "point": [
+            "=",
+            ">"
+          ]
+        },
+        "SIMULTANEOUS": {
+          "allen": [
+            "eq"
+          ],
+          "superset": [
+            "eq"
+          ],
+          "point": [
+            "="
+          ]
+        },
+        "VAGUE": {
+          "allen": [
+            "b",
+            "bi",
+            "m"
+          ],
+          "superset": [
+            "b",
+            "bi",
+            "m"
+          ],
+          "point": [
+            "<",
+            "=",
+            ">"
+          ]
+        }
+      },
+      "allen_relations": [
+        "b",
+        "bi",
+        "m"
+      ],
+      "point_relations": [
+        "<",
+        "=",
+        ">"
+      ],
+      "note": "canonical_relation_set is the tightest sound base-relation set; coarse_superset_set (when present) is a coarser still-sound alternative; startpoint_relation_set is the convex point-algebra relation ov..."
+    },
+    "fold": "Document-level fold = TimeBank-Dense 22/5/9 split (train/dev/test) for NT/TDDMan/TBD; MATRES fold = train(TimeBank+AQUAINT)/test(Platinum). TDDMan edges also carry the native per-edge split (edge_fold...",
+    "iaa_context": {
+      "narrativetime": "Krippendorff alpha ~0.68, full TLink coverage (paper).",
+      "matres": "all pairs intra/adjacent-sentence by construction (main-axis verbs).",
+      "tddman": "manual long-distance pairs not auto-inferable (non-circularity anchor)."
+    },
+    "aggregate_descriptive_counts": {
+      "narrativetime": {
+        "n_documents": 36,
+        "n_events": 1715,
+        "n_timex": 253,
+        "n_dct": 36,
+        "n_nodes": 2004,
+        "n_edges": 103748,
+        "n_edges_event_event": 79001,
+        "vague_widened_count": 124,
+        "native_relation_dist": {
+          "SIMULTANEOUS": 7319,
+          "AFTER": 25066,
+          "VAGUE": 31809,
+          "BEFORE": 23742,
+          "IS_INCLUDED": 7988,
+          "INCLUDES": 7542,
+          "OVERLAP": 282
+        },
+        "sentence_distance_dist": {
+          "intra": 3869,
+          "adjacent": 6520,
+          "long_distance": 93359,
+          "undefined": 0
+        },
+        "structure_event_event_informative": {
+          "n_informative_edges": 53322,
+          "n_nodes_in_graph": 1699,
+          "n_triangles": 1581149,
+          "n_query_edges_ge2_intermediates": 53308,
+          "cyclomatic_number": 51659,
+          "n_pairs_path_len_ge3": 861,
+          "max_node_degree": 1612
+        },
+        "structure_all_nodes_informative": {
+          "n_informative_edges": 71939,
+          "n_nodes_in_graph": 1987,
+          "n_triangles": 2442616,
+          "n_query_edges_ge2_intermediates": 71929,
+          "cyclomatic_number": 69988,
+          "n_pairs_path_len_ge3": 1030,
+          "max_node_degree": 1896
+        },
+        "long_distance_fraction": 0.8999,
+        "adjacent_fraction": 0.0628,
+        "intra_fraction": 0.0373
+      },
+      "tddman": {
+        "n_documents": 34,
+        "n_events": 1449,
+        "n_timex": 243,
+        "n_dct": 34,
+        "n_nodes": 1726,
+        "n_edges": 6137,
+        "n_edges_event_event": 6137,
+        "vague_widened_count": 0,
+        "native_relation_dist": {
+          "after": 1054,
+          "is_included": 1382,
+          "before": 1556,
+          "includes": 2005,
+          "simultaneous": 140
+        },
+        "sentence_distance_dist": {
+          "intra": 0,
+          "adjacent": 7,
+          "long_distance": 6130,
+          "undefined": 0
+        },
+        "structure_event_event_informative": {
+          "n_informative_edges": 6125,
+          "n_nodes_in_graph": 1100,
+          "n_triangles": 16415,
+          "n_query_edges_ge2_intermediates": 4650,
+          "cyclomatic_number": 5060,
+          "n_pairs_path_len_ge3": 2284,
+          "max_node_degree": 928
+        },
+        "structure_all_nodes_informative": {
+          "n_informative_edges": 6125,
+          "n_nodes_in_graph": 1100,
+          "n_triangles": 16415,
+          "n_query_edges_ge2_intermediates": 4650,
+          "cyclomatic_number": 5060,
+          "n_pairs_path_len_ge3": 2284,
+          "max_node_degree": 928
+        },
+        "long_distance_fraction": 0.9989,
+        "adjacent_fraction": 0.0011,
+        "intra_fraction": 0.0
+      },
+      "matres": {
+        "n_documents": 275,
+        "n_events": 6099,
+        "n_timex": 0,
+        "n_dct": 0,
+        "n_nodes": 6099,
+        "n_edges": 13577,
+        "n_edges_event_event": 13577,
+        "vague_widened_count": 0,
+        "native_relation_dist": {
+          "BEFORE": 6852,
+          "VAGUE": 1525,
+          "AFTER": 4752,
+          "EQUAL": 448
+        },
+        "sentence_distance_dist": {
+          "intra": 4135,
+          "adjacent": 9442,
+          "long_distance": 0,
+          "undefined": 0
+        },
+        "structure_event_event_informative": {
+          "n_informative_edges": 12052,
+          "n_nodes_in_graph": 6017,
+          "n_triangles": 12115,
+          "n_query_edges_ge2_intermediates": 8739,
+          "cyclomatic_number": 6747,
+          "n_pairs_path_len_ge3": 27418,
+          "max_node_degree": 1507
+        },
+        "structure_all_nodes_informative": {
+          "n_informative_edges": 12052,
+          "n_nodes_in_graph": 6017,
+          "n_triangles": 12115,
+          "n_query_edges_ge2_intermediates": 8739,
+          "cyclomatic_number": 6747,
+          "n_pairs_path_len_ge3": 27418,
+          "max_node_degree": 1507
+        },
+        "long_distance_fraction": 0.0,
+        "adjacent_fraction": 0.6954,
+        "intra_fraction": 0.3046
+      }
+    },
+    "doc_id_overlap": {
+      "n_unique_docs": 276,
+      "n_shared_nt_tddman_matres": 33,
+      "shared_nt_tddman_matres": [
+        "abc19980108.1830.0711",
+        "abc19980114.1830.0611",
+        "abc19980120.1830.0957"
+      ],
+      "table": [
+        {
+          "norm_doc_id": "abc19980108.1830.0711",
+          "in_narrativetime": true,
+          "in_tddman": true,
+          "in_matres": true,
+          "in_timebank_dense": false,
+          "n_corpora": 3,
+          "orig_ids": {
+            "narrativetime": "ABC19980108.1830.0711",
+            "tddman": "ABC19980108.1830.0711",
+            "matres": "ABC19980108.1830.0711"
+          }
+        },
+        {
+          "norm_doc_id": "abc19980114.1830.0611",
+          "in_narrativetime": true,
+          "in_tddman": true,
+          "in_matres": true,
+          "in_timebank_dense": false,
+          "n_corpora": 3,
+          "orig_ids": {
+            "narrativetime": "ABC19980114.1830.0611",
+            "tddman": "ABC19980114.1830.0611",
+            "matres": "ABC19980114.1830.0611"
+          }
+        },
+        {
+          "norm_doc_id": "abc19980120.1830.0957",
+          "in_narrativetime": true,
+          "in_tddman": true,
+          "in_matres": true,
+          "in_timebank_dense": false,
+          "n_corpora": 3,
+          "orig_ids": {
+            "narrativetime": "ABC19980120.1830.0957",
+            "tddman": "ABC19980120.1830.0957",
+            "matres": "ABC19980120.1830.0957"
+          }
+        }
+      ]
+    },
+    "coverage_gaps": {
+      "tddman_unmatched_docid_eid": [
+        {
+          "doc_id": "APW19980213.1310",
+          "eid": "e257",
+          "reason": "eid_not_in_tml",
+          "n_pairs_dropped": 13
+        }
+      ],
+      "matres_docs_empty_text": []
+    },
+    "boundary_note": "DATASET provides sizes/labels/locality/triangle/cycle structural descriptors. GATED statistics (deduction-required N*, bite-after-widening, singleton-resolution) require composition closure / held-out..."
+  },
+  "datasets": [
+    {
+      "dataset": "narrativetime",
+      "examples": [
+        {
+          "input": "ABC 19980108 .1830.0711\n    NEWS STORY\n    On the other hand, it's turning out to be another very bad financial week for Asia. The financial assistance from the World Bank and the International Moneta...",
+          "output": "{\"doc_id\": \"ABC19980108.1830.0711\", \"corpus\": \"narrativetime\", \"fold\": \"train\", \"nodes\": [{\"node_id\": \"ABC19980108.1830.0711::ei375\", \"node_type\": \"event\", \"surface\": \"turning\", \"char_start\": 67, \"cha...",
+          "metadata_corpus": "narrativetime",
+          "metadata_doc_id": "ABC19980108.1830.0711",
+          "metadata_fold": "train",
+          "metadata_n_nodes": 64,
+          "metadata_n_edges": 2016,
+          "metadata_n_events": 53,
+          "metadata_long_distance_edges": 1836,
+          "metadata_descriptive_counts": {
+            "n_documents": 1,
+            "n_events": 53,
+            "n_timex": 10,
+            "n_dct": 1,
+            "n_nodes": 64,
+            "n_edges": 2016,
+            "n_edges_event_event": 1378,
+            "native_relation_dist": {
+              "SIMULTANEOUS": 169,
+              "AFTER": 348,
+              "VAGUE": 532,
+              "BEFORE": 728,
+              "IS_INCLUDED": 121,
+              "INCLUDES": 118
+            },
+            "canonical_relation_set_dist": {
+              "eq": 169,
+              "bi|mi": 348,
+              "b|bi|m|mi|o|oi|s|si|d|di|f|fi|eq": 532,
+              "b|m": 728,
+              "d|s|f": 121,
+              "di|si|fi": 118
+            },
+            "sentence_distance_dist": {
+              "intra": 70,
+              "adjacent": 110,
+              "long_distance": 1836,
+              "undefined": 0
+            },
+            "vague_widened_count": 0,
+            "structure_event_event_informative": {
+              "n_informative_edges": 1070,
+              "n_nodes_in_graph": 52,
+              "n_triangles": 14428,
+              "n_query_edges_ge2_intermediates": 1068,
+              "cyclomatic_number": 1019,
+              "n_pairs_path_len_ge3": 10,
+              "max_node_degree": 48
+            },
+            "structure_all_nodes_informative": {
+              "n_informative_edges": 1484,
+              "n_nodes_in_graph": 62,
+              "n_triangles": 23675,
+              "n_query_edges_ge2_intermediates": 1481,
+              "cyclomatic_number": 1423,
+              "n_pairs_path_len_ge3": 18,
+              "max_node_degree": 57
+            }
+          }
+        },
+        {
+          "input": "ABC 19980114 .1830.0611\n    NEWS STORY\n    In Washington today , the Federal Aviation Administration released air traffic control tapes from the night the TWA Flight eight hundred went down. There's n...",
+          "output": "{\"doc_id\": \"ABC19980114.1830.0611\", \"corpus\": \"narrativetime\", \"fold\": \"train\", \"nodes\": [{\"node_id\": \"ABC19980114.1830.0611::t52\", \"node_type\": \"dct\", \"surface\": \"19980114\", \"char_start\": 4, \"char_en...",
+          "metadata_corpus": "narrativetime",
+          "metadata_doc_id": "ABC19980114.1830.0611",
+          "metadata_fold": "train",
+          "metadata_n_nodes": 28,
+          "metadata_n_edges": 378,
+          "metadata_n_events": 24,
+          "metadata_long_distance_edges": 315,
+          "metadata_descriptive_counts": {
+            "n_documents": 1,
+            "n_events": 24,
+            "n_timex": 3,
+            "n_dct": 1,
+            "n_nodes": 28,
+            "n_edges": 378,
+            "n_edges_event_event": 276,
+            "native_relation_dist": {
+              "AFTER": 117,
+              "SIMULTANEOUS": 25,
+              "INCLUDES": 57,
+              "BEFORE": 170,
+              "IS_INCLUDED": 9
+            },
+            "canonical_relation_set_dist": {
+              "bi|mi": 117,
+              "eq": 25,
+              "di|si|fi": 57,
+              "b|m": 170,
+              "d|s|f": 9
+            },
+            "sentence_distance_dist": {
+              "intra": 26,
+              "adjacent": 37,
+              "long_distance": 315,
+              "undefined": 0
+            },
+            "vague_widened_count": 0,
+            "structure_event_event_informative": {
+              "n_informative_edges": 276,
+              "n_nodes_in_graph": 24,
+              "n_triangles": 2024,
+              "n_query_edges_ge2_intermediates": 276,
+              "cyclomatic_number": 253,
+              "n_pairs_path_len_ge3": 0,
+              "max_node_degree": 23
+            },
+            "structure_all_nodes_informative": {
+              "n_informative_edges": 378,
+              "n_nodes_in_graph": 28,
+              "n_triangles": 3276,
+              "n_query_edges_ge2_intermediates": 378,
+              "cyclomatic_number": 351,
+              "n_pairs_path_len_ge3": 0,
+              "max_node_degree": 27
+            }
+          }
+        },
+        {
+          "input": "ABC 19980120 .1830.0957\n    NEWS STORY\n    For his part, Fidel Castro is the ultimate political survivor. People have predicted his demise so many times, and the US has tried to hasten it on several o...",
+          "output": "{\"doc_id\": \"ABC19980120.1830.0957\", \"corpus\": \"narrativetime\", \"fold\": \"train\", \"nodes\": [{\"node_id\": \"ABC19980120.1830.0957::t93\", \"node_type\": \"dct\", \"surface\": \"19980120\", \"char_start\": 4, \"char_en...",
+          "metadata_corpus": "narrativetime",
+          "metadata_doc_id": "ABC19980120.1830.0957",
+          "metadata_fold": "train",
+          "metadata_n_nodes": 53,
+          "metadata_n_edges": 1378,
+          "metadata_n_events": 51,
+          "metadata_long_distance_edges": 1157,
+          "metadata_descriptive_counts": {
+            "n_documents": 1,
+            "n_events": 51,
+            "n_timex": 1,
+            "n_dct": 1,
+            "n_nodes": 53,
+            "n_edges": 1378,
+            "n_edges_event_event": 1275,
+            "native_relation_dist": {
+              "AFTER": 186,
+              "BEFORE": 499,
+              "IS_INCLUDED": 295,
+              "VAGUE": 93,
+              "SIMULTANEOUS": 93,
+              "INCLUDES": 196,
+              "OVERLAP": 16
+            },
+            "canonical_relation_set_dist": {
+              "bi|mi": 186,
+              "b|m": 499,
+              "d|s|f": 295,
+              "b|bi|m|mi|o|oi|s|si|d|di|f|fi|eq": 93,
+              "eq": 93,
+              "di|si|fi": 196,
+              "o|oi": 16
+            },
+            "sentence_distance_dist": {
+              "intra": 77,
+              "adjacent": 144,
+              "long_distance": 1157,
+              "undefined": 0
+            },
+            "vague_widened_count": 9,
+            "structure_event_event_informative": {
+              "n_informative_edges": 1187,
+              "n_nodes_in_graph": 51,
+              "n_triangles": 17605,
+              "n_query_edges_ge2_intermediates": 1187,
+              "cyclomatic_number": 1137,
+              "n_pairs_path_len_ge3": 0,
+              "max_node_degree": 50
+            },
+            "structure_all_nodes_informative": {
+              "n_informative_edges": 1285,
+              "n_nodes_in_graph": 53,
+              "n_triangles": 19901,
+              "n_query_edges_ge2_intermediates": 1285,
+              "cyclomatic_number": 1233,
+              "n_pairs_path_len_ge3": 0,
+              "max_node_degree": 52
+            }
+          }
+        }
+      ]
+    },
+    {
+      "dataset": "tddman",
+      "examples": [
+        {
+          "input": "\nMOSCOW (AP)_ The mayor of Moscow has allocated funds to help build a museum in honor of Mikhail Kalashnikov, the Russian who gave his name to the world's most widely wielded weapon, according to a ne...",
+          "output": "{\"doc_id\": \"APW19980227.0468\", \"corpus\": \"tddman\", \"fold\": \"train\", \"nodes\": [{\"node_id\": \"APW19980227.0468::e1\", \"node_type\": \"event\", \"surface\": \"allocated\", \"char_start\": 38, \"char_end\": 47, \"globa...",
+          "metadata_corpus": "tddman",
+          "metadata_doc_id": "APW19980227.0468",
+          "metadata_fold": "train",
+          "metadata_n_nodes": 14,
+          "metadata_n_edges": 13,
+          "metadata_n_events": 11,
+          "metadata_long_distance_edges": 13,
+          "metadata_descriptive_counts": {
+            "n_documents": 1,
+            "n_events": 11,
+            "n_timex": 2,
+            "n_dct": 1,
+            "n_nodes": 14,
+            "n_edges": 13,
+            "n_edges_event_event": 13,
+            "native_relation_dist": {
+              "after": 4,
+              "is_included": 2,
+              "before": 7
+            },
+            "canonical_relation_set_dist": {
+              "bi": 4,
+              "d": 2,
+              "b": 7
+            },
+            "sentence_distance_dist": {
+              "intra": 0,
+              "adjacent": 0,
+              "long_distance": 13,
+              "undefined": 0
+            },
+            "vague_widened_count": 0,
+            "structure_event_event_informative": {
+              "n_informative_edges": 13,
+              "n_nodes_in_graph": 8,
+              "n_triangles": 0,
+              "n_query_edges_ge2_intermediates": 0,
+              "cyclomatic_number": 6,
+              "n_pairs_path_len_ge3": 3,
+              "max_node_degree": 4
+            },
+            "structure_all_nodes_informative": {
+              "n_informative_edges": 13,
+              "n_nodes_in_graph": 8,
+              "n_triangles": 0,
+              "n_query_edges_ge2_intermediates": 0,
+              "cyclomatic_number": 6,
+              "n_pairs_path_len_ge3": 3,
+              "max_node_degree": 4
+            }
+          }
+        },
+        {
+          "input": "\nCANBERRA, Australia (AP)_ Qantas will almost double its flights between Australia and India by August in the search for new markets untouched by the crippling Asian financial crisis. This move comes ...",
+          "output": "{\"doc_id\": \"APW19980213.1320\", \"corpus\": \"tddman\", \"fold\": \"train\", \"nodes\": [{\"node_id\": \"APW19980213.1320::e1\", \"node_type\": \"event\", \"surface\": \"double\", \"char_start\": 46, \"char_end\": 52, \"global_t...",
+          "metadata_corpus": "tddman",
+          "metadata_doc_id": "APW19980213.1320",
+          "metadata_fold": "train",
+          "metadata_n_nodes": 31,
+          "metadata_n_edges": 69,
+          "metadata_n_events": 21,
+          "metadata_long_distance_edges": 69,
+          "metadata_descriptive_counts": {
+            "n_documents": 1,
+            "n_events": 21,
+            "n_timex": 9,
+            "n_dct": 1,
+            "n_nodes": 31,
+            "n_edges": 69,
+            "n_edges_event_event": 69,
+            "native_relation_dist": {
+              "is_included": 5,
+              "before": 11,
+              "after": 7,
+              "includes": 46
+            },
+            "canonical_relation_set_dist": {
+              "d": 5,
+              "b": 11,
+              "bi": 7,
+              "di": 46
+            },
+            "sentence_distance_dist": {
+              "intra": 0,
+              "adjacent": 0,
+              "long_distance": 69,
+              "undefined": 0
+            },
+            "vague_widened_count": 0,
+            "structure_event_event_informative": {
+              "n_informative_edges": 69,
+              "n_nodes_in_graph": 16,
+              "n_triangles": 104,
+              "n_query_edges_ge2_intermediates": 65,
+              "cyclomatic_number": 54,
+              "n_pairs_path_len_ge3": 0,
+              "max_node_degree": 11
+            },
+            "structure_all_nodes_informative": {
+              "n_informative_edges": 69,
+              "n_nodes_in_graph": 16,
+              "n_triangles": 104,
+              "n_query_edges_ge2_intermediates": 65,
+              "cyclomatic_number": 54,
+              "n_pairs_path_len_ge3": 0,
+              "max_node_degree": 11
+            }
+          }
+        },
+        {
+          "input": "\nCNN headline news, I'm Sachi Koto. Diplomacy appears to be making headway in resolving the united nation's standoff with Iraq. A UN spokesman says UN secretary general Kofi Annan is on the verge of a...",
+          "output": "{\"doc_id\": \"CNN19980222.1130.0084\", \"corpus\": \"tddman\", \"fold\": \"train\", \"nodes\": [{\"node_id\": \"CNN19980222.1130.0084::e1\", \"node_type\": \"event\", \"surface\": \"appears\", \"char_start\": 46, \"char_end\": 53...",
+          "metadata_corpus": "tddman",
+          "metadata_doc_id": "CNN19980222.1130.0084",
+          "metadata_fold": "train",
+          "metadata_n_nodes": 21,
+          "metadata_n_edges": 9,
+          "metadata_n_events": 16,
+          "metadata_long_distance_edges": 9,
+          "metadata_descriptive_counts": {
+            "n_documents": 1,
+            "n_events": 16,
+            "n_timex": 4,
+            "n_dct": 1,
+            "n_nodes": 21,
+            "n_edges": 9,
+            "n_edges_event_event": 9,
+            "native_relation_dist": {
+              "before": 3,
+              "after": 2,
+              "is_included": 1,
+              "includes": 3
+            },
+            "canonical_relation_set_dist": {
+              "b": 3,
+              "bi": 2,
+              "d": 1,
+              "di": 3
+            },
+            "sentence_distance_dist": {
+              "intra": 0,
+              "adjacent": 0,
+              "long_distance": 9,
+              "undefined": 0
+            },
+            "vague_widened_count": 0,
+            "structure_event_event_informative": {
+              "n_informative_edges": 9,
+              "n_nodes_in_graph": 7,
+              "n_triangles": 0,
+              "n_query_edges_ge2_intermediates": 0,
+              "cyclomatic_number": 3,
+              "n_pairs_path_len_ge3": 1,
+              "max_node_degree": 5
+            },
+            "structure_all_nodes_informative": {
+              "n_informative_edges": 9,
+              "n_nodes_in_graph": 7,
+              "n_triangles": 0,
+              "n_query_edges_ge2_intermediates": 0,
+              "cyclomatic_number": 3,
+              "n_pairs_path_len_ge3": 1,
+              "max_node_degree": 5
+            }
+          }
+        }
+      ]
+    },
+    {
+      "dataset": "matres",
+      "examples": [
+        {
+          "input": "People have predicted his demise so many times , and the US has tried to hasten it on several occasions . Time and again , he endures . He has outlasted and sometimes outsmarted eight American preside...",
+          "output": "{\"doc_id\": \"ABC19980120.1830.0957\", \"corpus\": \"matres\", \"fold\": \"train\", \"nodes\": [{\"node_id\": \"ABC19980120.1830.0957::tok415\", \"node_type\": \"event\", \"surface\": \"predicted\", \"char_start\": 12, \"char_en...",
+          "metadata_corpus": "matres",
+          "metadata_doc_id": "ABC19980120.1830.0957",
+          "metadata_fold": "train",
+          "metadata_n_nodes": 17,
+          "metadata_n_edges": 28,
+          "metadata_n_events": 17,
+          "metadata_long_distance_edges": 0,
+          "metadata_descriptive_counts": {
+            "n_documents": 1,
+            "n_events": 17,
+            "n_timex": 0,
+            "n_dct": 0,
+            "n_nodes": 17,
+            "n_edges": 28,
+            "n_edges_event_event": 28,
+            "native_relation_dist": {
+              "BEFORE": 14,
+              "VAGUE": 5,
+              "AFTER": 9
+            },
+            "canonical_relation_set_dist": {
+              "<": 14,
+              "<|=|>": 5,
+              ">": 9
+            },
+            "sentence_distance_dist": {
+              "intra": 8,
+              "adjacent": 20,
+              "long_distance": 0,
+              "undefined": 0
+            },
+            "vague_widened_count": 0,
+            "structure_event_event_informative": {
+              "n_informative_edges": 23,
+              "n_nodes_in_graph": 17,
+              "n_triangles": 8,
+              "n_query_edges_ge2_intermediates": 3,
+              "cyclomatic_number": 9,
+              "n_pairs_path_len_ge3": 6,
+              "max_node_degree": 5
+            },
+            "structure_all_nodes_informative": {
+              "n_informative_edges": 23,
+              "n_nodes_in_graph": 17,
+              "n_triangles": 8,
+              "n_query_edges_ge2_intermediates": 3,
+              "cyclomatic_number": 9,
+              "n_pairs_path_len_ge3": 6,
+              "max_node_degree": 5
+            }
+          }
+        },
+        {
+          "input": "Norwood Partners Limited Partnership of Boston said it may make a tender offer for some or all of Phoenix Technologies Ltd. 's common shares . Norwood , Mass. - based Phoenix , a once-high-flying make...",
+          "output": "{\"doc_id\": \"wsj_0791\", \"corpus\": \"matres\", \"fold\": \"train\", \"nodes\": [{\"node_id\": \"wsj_0791::tok190\", \"node_type\": \"event\", \"surface\": \"said\", \"char_start\": 441, \"char_end\": 445, \"global_token_index\":...",
+          "metadata_corpus": "matres",
+          "metadata_doc_id": "wsj_0791",
+          "metadata_fold": "train",
+          "metadata_n_nodes": 12,
+          "metadata_n_edges": 18,
+          "metadata_n_events": 12,
+          "metadata_long_distance_edges": 0,
+          "metadata_descriptive_counts": {
+            "n_documents": 1,
+            "n_events": 12,
+            "n_timex": 0,
+            "n_dct": 0,
+            "n_nodes": 12,
+            "n_edges": 18,
+            "n_edges_event_event": 18,
+            "native_relation_dist": {
+              "AFTER": 6,
+              "VAGUE": 2,
+              "BEFORE": 10
+            },
+            "canonical_relation_set_dist": {
+              ">": 6,
+              "<|=|>": 2,
+              "<": 10
+            },
+            "sentence_distance_dist": {
+              "intra": 5,
+              "adjacent": 13,
+              "long_distance": 0,
+              "undefined": 0
+            },
+            "vague_widened_count": 0,
+            "structure_event_event_informative": {
+              "n_informative_edges": 16,
+              "n_nodes_in_graph": 12,
+              "n_triangles": 9,
+              "n_query_edges_ge2_intermediates": 9,
+              "cyclomatic_number": 7,
+              "n_pairs_path_len_ge3": 0,
+              "max_node_degree": 5
+            },
+            "structure_all_nodes_informative": {
+              "n_informative_edges": 16,
+              "n_nodes_in_graph": 12,
+              "n_triangles": 9,
+              "n_query_edges_ge2_intermediates": 9,
+              "cyclomatic_number": 7,
+              "n_pairs_path_len_ge3": 0,
+              "max_node_degree": 5
+            }
+          }
+        },
+        {
+          "input": "Afghanistan has been at war for twenty years , leaving a large part of the country 's male population dead or in exile . The United Nations says women and children make up about seventy-five percent o...",
+          "output": "{\"doc_id\": \"VOA19980305.1800.2603\", \"corpus\": \"matres\", \"fold\": \"train\", \"nodes\": [{\"node_id\": \"VOA19980305.1800.2603::tok436\", \"node_type\": \"event\", \"surface\": \"says\", \"char_start\": 140, \"char_end\": ...",
+          "metadata_corpus": "matres",
+          "metadata_doc_id": "VOA19980305.1800.2603",
+          "metadata_fold": "train",
+          "metadata_n_nodes": 21,
+          "metadata_n_edges": 30,
+          "metadata_n_events": 21,
+          "metadata_long_distance_edges": 0,
+          "metadata_descriptive_counts": {
+            "n_documents": 1,
+            "n_events": 21,
+            "n_timex": 0,
+            "n_dct": 0,
+            "n_nodes": 21,
+            "n_edges": 30,
+            "n_edges_event_event": 30,
+            "native_relation_dist": {
+              "AFTER": 12,
+              "BEFORE": 15,
+              "EQUAL": 2,
+              "VAGUE": 1
+            },
+            "canonical_relation_set_dist": {
+              ">": 12,
+              "<": 15,
+              "=": 2,
+              "<|=|>": 1
+            },
+            "sentence_distance_dist": {
+              "intra": 12,
+              "adjacent": 18,
+              "long_distance": 0,
+              "undefined": 0
+            },
+            "vague_widened_count": 0,
+            "structure_event_event_informative": {
+              "n_informative_edges": 29,
+              "n_nodes_in_graph": 21,
+              "n_triangles": 18,
+              "n_query_edges_ge2_intermediates": 16,
+              "cyclomatic_number": 13,
+              "n_pairs_path_len_ge3": 9,
+              "max_node_degree": 4
+            },
+            "structure_all_nodes_informative": {
+              "n_informative_edges": 29,
+              "n_nodes_in_graph": 21,
+              "n_triangles": 18,
+              "n_query_edges_ge2_intermediates": 16,
+              "cyclomatic_number": 13,
+              "n_pairs_path_len_ge3": 9,
+              "max_node_degree": 4
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

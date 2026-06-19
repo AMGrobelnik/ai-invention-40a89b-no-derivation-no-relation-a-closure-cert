@@ -1,0 +1,30 @@
+[project]
+name = "closure-certificate-supervised-extractor"
+version = "1.0.0"
+description = "iter-10 S_supervised: a precision-preserving SUPERVISED located_in extractor (calibrated GBDT/logistic over engineered per-pair features + fine-tuned deberta-v3-small encoder) trained DOC-DISJOINT on the gold distribution over gold-mention entity pairs of the natural Re-DocRED located-in corpus, replacing the refuted prompt-only PATH-2 extraction. Its threshold-tunable edges feed the FROZEN closure-certificate engine (kinship.py forward-union, held_out ablation) at >=7 precision-preserving operating points; the iter-8/9 MIXED-POOL (present + same_component_sibling-absent) matched-coverage confident-wrong reduction vs the 4 dispersion signals AND the query-side verifier is re-run with doc-clustered Holm B=10000 CIs. ALL competitor predictions REPLAYED byte-identical at $0 from the SHA-256 cache; only modeA/certificate is recomputed. Traces the precision-preserving recall->net-utility frontier, OVERLAYS iter-9's negative prompt-only frontier (slope -0.30/-0.67), and resolves the fork DEMONSTRATED-FIX-NATURAL-PROSE vs NET-UTILITY-BOUNDARY-STRUCTURAL. Reuses the iter-8 method.py verbatim as core.py."
+requires-python = ">=3.12"
+# Exact versions installed in .venv (uv pip freeze). torch is the cu124 build:
+#   uv pip install --index-strategy unsafe-best-match torch==2.6.0 --extra-index-url https://download.pytorch.org/whl/cu124
+# (installed as torch==2.6.0+cu124; on a CPU-only host the PyPI torch==2.6.0 wheel is used).
+# lightgbm needs libgomp.so.1 at runtime -> LD_LIBRARY_PATH=extra_libs (symlink to torch/lib's libgomp).
+dependencies = [
+    "numpy==2.4.6",
+    "scipy==1.17.1",
+    "scikit-learn==1.7.2",
+    "lightgbm==4.6.0",
+    "torch==2.6.0",
+    "transformers==4.49.0",
+    "accelerate==1.4.0",
+    "sentencepiece==0.2.0",
+    "protobuf==5.29.3",
+    "tokenizers==0.21.4",
+    "huggingface-hub==0.36.2",
+    "safetensors==0.8.0",
+    "httpx==0.28.1",
+    "loguru==0.7.3",
+    "jsonschema==4.26.0",
+    "tqdm==4.67.1",
+]
+
+[tool.setuptools]
+py-modules = ["method", "extractor", "run_supervised", "core", "queryside_kinship", "dataio_locatedin", "readers_locatedin", "queryside", "dataio_redocred", "readers_kinship", "llm", "stats", "kinship", "baselines", "prolog", "tests"]

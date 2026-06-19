@@ -1,0 +1,669 @@
+#!/usr/bin/env python3
+"""Assemble research_out.json for iter-6 gen_art_research_1.
+
+Three workstreams:
+  A) Confidence/uncertainty selective-prediction family vs structural no-derivation certificate.
+  B) NeSy / temporal-qualitative-reasoning venue reposition (timing-aware as of 2026-06-18).
+  C) Re-DocRED natural absent-relation host + kinship coverage + alt natural kinship hosts.
+
+All facts verified against primary pages fetched this run (see SOURCES).
+"""
+import json
+import os
+
+WS = "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_6/gen_art/gen_art_research_1"
+
+# Reuse Zhou2026 BibTeX verbatim from dependency art_fFOG-OJakRw-.
+ZHOU2026_BIB = (
+    "@inproceedings{Zhou2026,\n"
+    "  author        = {Xinyu Zhou and Chang Jin and Carsten Eickhoff and Zhijiang Guo and Seyed Ali Bahrainian},\n"
+    "  title         = {When Silence Is Golden: Can {LLMs} Learn to Abstain in Temporal {QA} and Beyond?},\n"
+    "  booktitle     = {Proceedings of the International Conference on Learning Representations ({ICLR})},\n"
+    "  year          = {2026},\n"
+    "  eprint        = {2602.04755},\n"
+    "  archivePrefix = {arXiv},\n"
+    "  primaryClass  = {cs.CL},\n"
+    "  doi           = {10.48550/arXiv.2602.04755},\n"
+    "  note          = {arXiv:2602.04755; accepted to ICLR 2026 (OpenReview PhUCxfS0yf)}\n"
+    "}"
+)
+
+# ---------------------------------------------------------------------------
+# WORKSTREAM A: method records
+# ---------------------------------------------------------------------------
+workstream_a = [
+    {
+        "key": "Lin2022",
+        "name": "Verbalized confidence (teach models to state uncertainty in words)",
+        "arxiv_or_anthology_id": "arXiv:2205.14334 (TMLR 2022; OpenReview 8s8K2UZGTZ)",
+        "abstention_signal": "A model-emitted natural-language confidence level (e.g. '90% confidence' / 'high confidence') mapped to a calibrated probability, produced as output tokens (no logits).",
+        "driven_by": "self-assessed confidence (verbalized probability)",
+        "reads_on_confident_absent": "HIGH verbalized confidence (the model states it is sure of the asserted relation).",
+        "abstains": "No",
+        "bibtex": (
+            "@article{Lin2022,\n"
+            "  author        = {Stephanie Lin and Jacob Hilton and Owain Evans},\n"
+            "  title         = {Teaching Models to Express Their Uncertainty in Words},\n"
+            "  journal       = {Transactions on Machine Learning Research (TMLR)},\n"
+            "  year          = {2022},\n"
+            "  eprint        = {2205.14334},\n"
+            "  archivePrefix = {arXiv},\n"
+            "  primaryClass  = {cs.CL},\n"
+            "  note          = {arXiv:2205.14334; OpenReview 8s8K2UZGTZ}\n"
+            "}"
+        ),
+        "verbatim_quote": "\"the model generates both an answer and a level of confidence (e.g. '90% confidence' or 'high confidence'). These levels map to probabilities that are well calibrated\" (arXiv:2205.14334).",
+    },
+    {
+        "key": "Tian2023",
+        "name": "Just Ask for Calibration (eliciting calibrated verbalized confidence from RLHF models)",
+        "arxiv_or_anthology_id": "arXiv:2305.14975 ; ACL Anthology 2023.emnlp-main.330 (EMNLP 2023)",
+        "abstention_signal": "Verbalized confidence scores prompted out of an RLHF-tuned LLM as output tokens; defer/abstain when the elicited score is low.",
+        "driven_by": "self-assessed confidence (verbalized probability)",
+        "reads_on_confident_absent": "HIGH elicited confidence -> answer kept; defer-to-human only triggers when the score is low.",
+        "abstains": "No",
+        "bibtex": (
+            "@inproceedings{Tian2023,\n"
+            "  author    = {Katherine Tian and Eric Mitchell and Allan Zhou and Archit Sharma and Rafael Rafailov and Huaxiu Yao and Chelsea Finn and Christopher D. Manning},\n"
+            "  title     = {Just Ask for Calibration: Strategies for Eliciting Calibrated Confidence Scores from Language Models Fine-Tuned with Human Feedback},\n"
+            "  booktitle = {Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing (EMNLP)},\n"
+            "  month     = dec,\n"
+            "  year      = {2023},\n"
+            "  address   = {Singapore},\n"
+            "  publisher = {Association for Computational Linguistics},\n"
+            "  url       = {https://aclanthology.org/2023.emnlp-main.330/},\n"
+            "  note      = {arXiv:2305.14975}\n"
+            "}"
+        ),
+        "verbatim_quote": "\"verbalized confidences emitted as output tokens are typically better-calibrated than the model's conditional probabilities on the TriviaQA, SciQ, and TruthfulQA benchmarks\" (arXiv:2305.14975).",
+    },
+    {
+        "key": "Wang2023",
+        "name": "Self-consistency / vote-margin over sampled reasoning paths",
+        "arxiv_or_anthology_id": "arXiv:2203.11171 (ICLR 2023)",
+        "abstention_signal": "Agreement (majority / vote-margin) across multiple stochastically sampled chain-of-thought answers; treat large agreement as confidence.",
+        "driven_by": "sample agreement / dispersion across reasoning paths",
+        "reads_on_confident_absent": "Samples AGREE on the same wrong relation -> large vote-margin -> reads as confident.",
+        "abstains": "No",
+        "bibtex": (
+            "@inproceedings{Wang2023,\n"
+            "  author        = {Xuezhi Wang and Jason Wei and Dale Schuurmans and Quoc Le and Ed H. Chi and Sharan Narang and Aakanksha Chowdhery and Denny Zhou},\n"
+            "  title         = {Self-Consistency Improves Chain of Thought Reasoning in Language Models},\n"
+            "  booktitle     = {International Conference on Learning Representations (ICLR)},\n"
+            "  year          = {2023},\n"
+            "  eprint        = {2203.11171},\n"
+            "  archivePrefix = {arXiv},\n"
+            "  primaryClass  = {cs.CL}\n"
+            "}"
+        ),
+        "verbatim_quote": "\"a complex reasoning problem typically admits multiple different ways of thinking leading to its unique correct answer\" -- agreement among sampled paths is used as the selection / confidence signal (arXiv:2203.11171).",
+    },
+    {
+        "key": "Kadavath2022",
+        "name": "P(True) / P(IK) self-evaluation",
+        "arxiv_or_anthology_id": "arXiv:2207.05221",
+        "abstention_signal": "The model's self-estimated probability that its own proposed answer is correct, P(True), and a learned P(IK) ('probability I know') head.",
+        "driven_by": "self-evaluated confidence probability",
+        "reads_on_confident_absent": "HIGH P(True)/P(IK) on a fluent, self-consistent relation it 'believes'.",
+        "abstains": "No",
+        "bibtex": (
+            "@article{Kadavath2022,\n"
+            "  author        = {Saurav Kadavath and Tom Conerly and Amanda Askell and Tom Henighan and Dawn Drain and Ethan Perez and Nicholas Schiefer and Zac Hatfield-Dodds and Nova DasSarma and Eli Tran-Johnson and others},\n"
+            "  title         = {Language Models (Mostly) Know What They Know},\n"
+            "  journal       = {arXiv preprint arXiv:2207.05221},\n"
+            "  year          = {2022},\n"
+            "  eprint        = {2207.05221},\n"
+            "  archivePrefix = {arXiv},\n"
+            "  primaryClass  = {cs.CL}\n"
+            "}"
+        ),
+        "verbatim_quote": "P(True) = the model evaluates 'the probability that a proposed response is correct'; P(IK) = 'the probability that I know the answer'. The paper itself notes models 'struggle with calibration of P(IK) on new tasks' (arXiv:2207.05221).",
+    },
+    {
+        "key": "Kuhn2023",
+        "name": "Semantic entropy (entropy over meaning-clustered samples)",
+        "arxiv_or_anthology_id": "arXiv:2302.09664 (ICLR 2023, Spotlight)",
+        "abstention_signal": "Entropy computed over semantically-clustered sampled generations; LOW entropy => trust/keep, HIGH entropy => flag as uncertain/hallucinated.",
+        "driven_by": "dispersion of meaning across samples (entropy)",
+        "reads_on_confident_absent": "A confident, self-consistent hallucination yields LOW semantic entropy (samples share one meaning) -> kept.",
+        "abstains": "No",
+        "bibtex": (
+            "@inproceedings{Kuhn2023,\n"
+            "  author        = {Lorenz Kuhn and Yarin Gal and Sebastian Farquhar},\n"
+            "  title         = {Semantic Uncertainty: Linguistic Invariances for Uncertainty Estimation in Natural Language Generation},\n"
+            "  booktitle     = {International Conference on Learning Representations (ICLR)},\n"
+            "  year          = {2023},\n"
+            "  eprint        = {2302.09664},\n"
+            "  archivePrefix = {arXiv},\n"
+            "  primaryClass  = {cs.CL}\n"
+            "}"
+        ),
+        "verbatim_quote": "Lower entropy = concentrated probability on semantically consistent outputs (confidence); higher entropy = scattered meanings (uncertainty / potential hallucination); the method decides 'when we can trust the natural language outputs of foundation models' (arXiv:2302.09664).",
+    },
+    {
+        "key": "Farquhar2024",
+        "name": "Semantic entropy for confabulation detection (Nature)",
+        "arxiv_or_anthology_id": "Nature 630(8017):625-630, doi:10.1038/s41586-024-07421-0",
+        "abstention_signal": "Semantic-entropy estimator that flags 'confabulations' (arbitrary, incorrect generations) via high entropy over meaning clusters.",
+        "driven_by": "dispersion of meaning across samples (entropy)",
+        "reads_on_confident_absent": "Targets 'confabulations' = arbitrary/uncertain generations; a confident, low-entropy false relation is NOT flagged.",
+        "abstains": "No",
+        "bibtex": (
+            "@article{Farquhar2024,\n"
+            "  author  = {Sebastian Farquhar and Jannik Kossen and Lorenz Kuhn and Yarin Gal},\n"
+            "  title   = {Detecting Hallucinations in Large Language Models Using Semantic Entropy},\n"
+            "  journal = {Nature},\n"
+            "  volume  = {630},\n"
+            "  number  = {8017},\n"
+            "  pages   = {625--630},\n"
+            "  year    = {2024},\n"
+            "  doi     = {10.1038/s41586-024-07421-0}\n"
+            "}"
+        ),
+        "verbatim_quote": "Detects 'confabulations -- a subset of hallucinations -- which are arbitrary and incorrect generations' using semantic entropy; the signal is uncertainty over sampled meanings (Nature 630:625-630).",
+    },
+    {
+        "key": "Manakul2023",
+        "name": "SelfCheckGPT (sampled-response consistency)",
+        "arxiv_or_anthology_id": "arXiv:2303.08896 ; ACL Anthology 2023.emnlp-main.557, pp. 9004-9017 (EMNLP 2023)",
+        "abstention_signal": "Consistency among stochastically sampled responses to the same prompt; consistent => factual/keep, divergent/contradictory => hallucinated/flag.",
+        "driven_by": "cross-sample consistency / dispersion",
+        "reads_on_confident_absent": "Sampled responses are CONSISTENT about the same fabricated relation -> deemed factual -> kept.",
+        "abstains": "No",
+        "bibtex": (
+            "@inproceedings{Manakul2023,\n"
+            "  author    = {Potsawee Manakul and Adian Liusie and Mark J. F. Gales},\n"
+            "  title     = {{SelfCheckGPT}: Zero-Resource Black-Box Hallucination Detection for Generative Large Language Models},\n"
+            "  booktitle = {Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing (EMNLP)},\n"
+            "  month     = dec,\n"
+            "  year      = {2023},\n"
+            "  address   = {Singapore},\n"
+            "  publisher = {Association for Computational Linguistics},\n"
+            "  pages     = {9004--9017},\n"
+            "  url       = {https://aclanthology.org/2023.emnlp-main.557/},\n"
+            "  note      = {arXiv:2303.08896}\n"
+            "}"
+        ),
+        "verbatim_quote": "\"if an LLM has knowledge of a given concept, sampled responses are likely to be similar and contain consistent facts. However, for hallucinated facts, stochastically sampled responses are likely to diverge and contradict one another\" (arXiv:2303.08896).",
+    },
+    {
+        "key": "Wen2024",
+        "name": "Know Your Limits: A Survey of Abstention in LLMs (framing of the family)",
+        "arxiv_or_anthology_id": "arXiv:2407.18418 (TACL 2024)",
+        "abstention_signal": "Survey: organises abstention from three perspectives -- the query (answerability a(x)), the model (confidence/knowledge c(x,y)), and human values h(x); abstain when c(x,y) falls below a threshold.",
+        "driven_by": "uncertainty/confidence threshold + calibration (by the survey's own framing)",
+        "reads_on_confident_absent": "Confidence-threshold abstention does not trigger when c(x,y) is high; the survey notes confidence cannot capture answerability either.",
+        "abstains": "No (frames the whole family as confidence/calibration-driven)",
+        "bibtex": (
+            "@article{Wen2024,\n"
+            "  author  = {Bingbing Wen and Jihan Yao and Shangbin Feng and Chenjun Xu and Yulia Tsvetkov and Bill Howe and Lucy Lu Wang},\n"
+            "  title   = {Know Your Limits: A Survey of Abstention in Large Language Models},\n"
+            "  journal = {Transactions of the Association for Computational Linguistics (TACL)},\n"
+            "  year    = {2024},\n"
+            "  eprint  = {2407.18418},\n"
+            "  archivePrefix = {arXiv},\n"
+            "  note    = {arXiv:2407.18418}\n"
+            "}"
+        ),
+        "verbatim_quote": "\"a framework to examine abstention from three perspectives: the query, the model, and human values\"; \"Current methods to encourage abstention typically rely on calibration techniques\"; abstain when \"the model's confidence in the response c(x, y) is too low\" / a \"confidence score for a given response falls below some threshold\" (arXiv:2407.18418).",
+    },
+    {
+        "key": "Zhou2026",
+        "name": "When Silence Is Golden (learned/trained temporal-QA abstention)",
+        "arxiv_or_anthology_id": "arXiv:2602.04755 (ICLR 2026)",
+        "abstention_signal": "A TRAINED abstention skill: Chain-of-Thought supervision + RL with abstention-aware rewards, at the QA-answer level.",
+        "driven_by": "learned uncertainty (trained on an answerable/unanswerable distribution)",
+        "reads_on_confident_absent": "Depends on training distribution; answer-level, not a per-edge structural test; a confident in-distribution false relation can still be answered.",
+        "abstains": "Partial/No (learned, not structural, not gold-free)",
+        "bibtex": ZHOU2026_BIB,
+        "verbatim_quote": "Trains abstention via CoT supervision + RL with abstention-aware rewards on temporal QA; abstention is a learned answer-level skill, not a structural certificate (reused verbatim from dependency art_fFOG-OJakRw-).",
+    },
+    {
+        "key": "Song2026",
+        "name": "Internal-state probing + structured-reasoning consistency (adversarial near-neighbor)",
+        "arxiv_or_anthology_id": "arXiv:2510.11529 (v2, 8 Jan 2026)",
+        "abstention_signal": "Trained probes over hidden activations (Internal State Probing) plus CoT-verification; the paper itself documents a 'Detection Dilemma'.",
+        "driven_by": "learned classifier over internal states / externalized reasoning (still calibration/representation-based, needs training)",
+        "reads_on_confident_absent": "Internal-state probing is explicitly 'ineffective on logic-intensive tasks ... where models are confidently wrong'; CoT verification fails on fact-intensive tasks -- a confident, logically-coherent false relation is the documented blind spot.",
+        "abstains": "Partial/No (learned, answer-level, not a gold-free per-edge algebraic certificate; cannot localise WHICH read is at fault)",
+        "bibtex": (
+            "@article{Song2026,\n"
+            "  author        = {Yusheng Song and Lirong Qiu and Xi Zhang and Zhihao Tang},\n"
+            "  title         = {Hallucination Detection via Internal States and Structured Reasoning Consistency in Large Language Models},\n"
+            "  journal       = {arXiv preprint arXiv:2510.11529},\n"
+            "  year          = {2026},\n"
+            "  eprint        = {2510.11529},\n"
+            "  archivePrefix = {arXiv},\n"
+            "  primaryClass  = {cs.CL},\n"
+            "  note          = {arXiv:2510.11529, v2 Jan 2026}\n"
+            "}"
+        ),
+        "verbatim_quote": "\"Internal State Probing is ineffective on logic-intensive tasks like mathematical reasoning where models are confidently wrong\" -- and CoT Verification \"fails on fact-intensive tasks ... where reasoning is ungrounded\" (arXiv:2510.11529 abstract).",
+    },
+    {
+        "key": "OurCertificate",
+        "name": "OUR structural no-derivation closure certificate",
+        "arxiv_or_anthology_id": "(this work)",
+        "abstention_signal": "After composing the LLM's high-recall per-edge relation reads through the EXACT relation-algebra composition table and iterating path-consistency, abstain iff the queried pair has NO derivation path (disconnected in the closed QCN) or the closure COLLAPSES to the empty relation (Mode-B sound-violation).",
+        "driven_by": "structural derivability in a relation algebra (gold-free, training-free, confidence-independent)",
+        "reads_on_confident_absent": "No derivation path exists regardless of how confident/consistent the model is -> the certificate fires.",
+        "abstains": "YES (gold-free + training-free; orthogonal to confidence)",
+        "bibtex": "(this work)",
+        "verbatim_quote": "Catches exactly the confident-consistent absent-relation / no-derivation hallucinations the uncertainty family keeps; scope-honest: ties confidence baselines on ordinary uncertain deduction (matched-coverage), wins on the no-derivation/absent-relation stratum.",
+    },
+]
+
+signals_vs_catches_table = """\
+| Method | Cite key | Abstention signal (what it computes) | Driven by | On a CONFIDENT absent-relation hallucination the signal reads | Abstains on it? |
+|---|---|---|---|---|---|
+| Verbalized confidence | [Lin2022; Tian2023] | Model-stated confidence emitted as output tokens | self-assessed confidence | HIGH confidence | No |
+| Self-consistency / vote-margin | [Wang2023] | Agreement across sampled reasoning paths | sample agreement / dispersion | samples AGREE (large vote-margin) | No |
+| P(True) / P(IK) | [Kadavath2022] | Self-estimated prob. the answer is correct / known | self-evaluated confidence | HIGH P(True)/P(IK) | No |
+| Semantic entropy | [Kuhn2023; Farquhar2024] | Entropy over meaning-clustered samples | dispersion of meaning (entropy) | LOW entropy | No |
+| SelfCheckGPT | [Manakul2023] | Consistency across stochastic samples | cross-sample consistency | CONSISTENT (deemed factual) | No |
+| Internal-state probe + CoT-verify | [Song2026] | Trained probe over hidden states / reasoning | learned classifier (needs training) | confidently-wrong logic = documented blind spot | Partial/No |
+| Learned temporal abstention | [Zhou2026] | CoT+RL trained abstain skill (answer-level) | learned uncertainty (train dist.) | depends on training distribution | Partial/No |
+| **Structural no-derivation certificate (ours)** | **(this work)** | **No derivation path in the closed relation-algebra QCN (per-edge)** | **structural derivability (gold-free, training-free)** | **no path exists regardless of confidence** | **YES** |
+"""
+
+differentiation_paragraph = (
+    "Selective prediction and abstention in LLMs are dominated by one family of signals, each a monotone "
+    "function of the model's own prediction dispersion or self-assessed confidence: verbalized confidence "
+    "emitted as output tokens [Lin2022; Tian2023], self-consistency / vote-margin over sampled reasoning "
+    "paths [Wang2023], the self-evaluated P(True)/P(IK) [Kadavath2022], semantic entropy over "
+    "meaning-clustered samples [Kuhn2023; Farquhar2024], and SelfCheckGPT's cross-sample consistency "
+    "[Manakul2023]; recent surveys frame the whole field as abstaining when a confidence score c(x,y) "
+    "falls below a threshold [Wen2024], and even learned temporal abstention is trained on answer-level "
+    "uncertainty [Zhou2026]. By construction every such signal reads 'certain' on a CONFIDENT, "
+    "self-consistent absent-relation hallucination: the model repeatedly asserts the same non-existent "
+    "relation, so verbalized confidence is high, samples agree, P(True) is high, semantic entropy is low, "
+    "and SelfCheckGPT is consistent -- so the answer is kept. This is a calibration blind spot the family "
+    "inherits: it catches known-unknowns (high variance) but not confident unknown-unknowns; even "
+    "internal-state probes are 'ineffective on logic-intensive tasks ... where models are confidently "
+    "wrong' [Song2026]. Our certificate is orthogonal to confidence: it abstains because, after composing "
+    "the LLM's per-edge reads through the EXACT relation-algebra table, the queried pair has no derivation "
+    "path in the closed QCN -- a structural, gold-free, training-free property that fires regardless of how "
+    "confident or self-consistent the model is, catching exactly the confident-consistent hallucinations the "
+    "uncertainty family cannot. Scope-honestly: on ordinary deduction queries where the model is genuinely "
+    "uncertain, confidence/entropy baselines are competitive (a confidence-thresholded abstainer ties at "
+    "matched coverage on our spatial RCC-8 stratum); the certificate's distinctive edge is the "
+    "no-derivation / absent-relation stratum and Mode-B sound-violation catches."
+)
+
+adversarial_check = (
+    "ADVERSARIAL / FAILURE CHECK (A4). We actively searched for uncertainty methods that claim to catch "
+    "CONFIDENT hallucinations -- internal-state probes, P(IK), 'confidently-wrong' detectors, stable-"
+    "miscalibration analyses. The strongest recent neighbour, Song et al. 2026 (arXiv:2510.11529), names "
+    "exactly this gap as a 'Detection Dilemma' and reports that Internal State Probing is 'ineffective on "
+    "logic-intensive tasks ... where models are confidently wrong', while CoT-verification fails on "
+    "fact-intensive tasks; it then proposes a unified TRAINED framework. Related work (arXiv:2407.03282 "
+    "'LLM Internal States Reveal Hallucination Risk'; arXiv:2510.14925 'Stable but Miscalibrated') shows "
+    "internal reasoning can be self-consistent yet systematically wrong ('stable miscalibration'). These "
+    "do not defeat our novelty: every such method is (i) LEARNED / calibration-based and needs labelled "
+    "training data, (ii) answer-level rather than a per-edge structural test, (iii) unable to localise "
+    "WHICH read is at fault, and (iv) not gold-free. Our certificate is a training-free, gold-free, "
+    "per-edge algebraic derivability test over a relation algebra -- structurally different from any "
+    "learned confident-hallucination detector, and it pinpoints the offending edge."
+)
+
+# ---------------------------------------------------------------------------
+# WORKSTREAM B: venue records (timing relative to 2026-06-18)
+# ---------------------------------------------------------------------------
+workstream_b = [
+    {
+        "name": "Neurosymbolic Artificial Intelligence (NAI) journal (IOS Press / SAGE)",
+        "host": "IOS Press / SAGE; the official journal of the Neurosymbolic AI Association (neurosymbolic-ai-journal.com)",
+        "location_dates": "Open access, continuous (rolling) publication; articles appear online as soon as production completes",
+        "format": "Full journal article (open, transparent public peer review); APC applies",
+        "portal": "neurosymbolic-ai-journal.com (open review portal)",
+        "next_window_relative_to_june_2026": "OPEN NOW (rolling / continuous submission) -- the only NeSy-family venue with an immediately actionable deadline as of 2026-06-18. Active special issues incl. 'Explainable Neurosymbolic AI (X-NeSy)' and 'Neurosymbolic Generative Models'.",
+        "fit_rationale": "A deduction/consistency CERTIFICATE + faithfulness-by-abstention over a relation algebra is squarely neuro-symbolic: a frozen LLM supplies high-recall per-edge reads, a symbolic path-consistency engine composes and abstains. The journal explicitly values 'better explanations of AI via knowledge representations that can be inspected', matching our human-auditable trace-graphs. Rolling submission removes all deadline risk; X-NeSy is a natural home for the auditability angle.",
+    },
+    {
+        "name": "NeSy 2026 -- 20th Intl Conf on Neural-Symbolic Learning and Reasoning",
+        "host": "Faculty of Sciences, University of Lisbon (FCUL); Neurosymbolic AI Association",
+        "location_dates": "Lisbon, Portugal, 1-4 September 2026",
+        "format": "Full papers <=10 pp (excl. refs/supp.), short <=5 pp; OpenReview; accepted papers eligible for a NAI-journal special issue",
+        "portal": "OpenReview (main track); EasyChair (industry track)",
+        "next_window_relative_to_june_2026": "MAIN TRACK CLOSED as of 2026-06-18: Phase-1 paper 3 Mar 2026 (past); Phase-2 abstract 9 Jun 2026 / submission 16 Jun 2026 (past by ~2 days). Only the INDUSTRY track is still open (submission 17 Jul 2026), but it is application-framed. => target the NAI journal now and/or NeSy 2027 for the flagship conference.",
+        "fit_rationale": "Best topical fit for the contribution; NeSy reviewers can deeply evaluate path-consistency closure, qualitative relation algebras, and neuro-symbolic output contracts. Unfortunately the 2026 research-track windows have just closed; the equivalent target is NeSy 2027 (or the rolling NAI journal, which also feeds NeSy special issues).",
+    },
+    {
+        "name": "*SEM (Joint Conf on Lexical and Computational Semantics) -- 2026 / next cycle",
+        "host": "ACL SIGLEX/SIGSEM; co-located with ACL",
+        "location_dates": "*SEM 2026: San Diego, CA, one-day, 3 July 2026 (co-located with ACL 2026)",
+        "format": "Long/short papers; OpenReview; *SEM 2026 used DIRECT submission (not ARR)",
+        "portal": "OpenReview (aclweb.org/StarSEM/2026/Conference)",
+        "next_window_relative_to_june_2026": "CLOSED: direct-submission deadline 13 Feb 2026 (past); ARR-commitment 10 Apr 2026 (past); notification 5 May 2026. => target *SEM 2027 (next annual cycle, expected co-located with ACL 2027).",
+        "fit_rationale": "Strong fit: *SEM welcomes formal/computational semantics and symbolic+neural methods; mapping text to a relation algebra and reasoning over it is in-scope. A natural ACL-family home that, unlike a Knowledge-Extraction track, will not penalise deliberate abstention as 'lower recall'.",
+    },
+    {
+        "name": "KR 2026 -- 23rd Intl Conf on Principles of Knowledge Representation and Reasoning",
+        "host": "Part of FLoC 2026; KR organisation",
+        "location_dates": "Lisbon, Portugal, 20-23 July 2026 (Federated Logic Conference)",
+        "format": "Main track + 'KR meets ML and Explanation' + 'KR in the Wild' tracks",
+        "portal": "kr.org/KR2026 (submission opened 19 Jan 2026)",
+        "next_window_relative_to_june_2026": "CLOSED: main-track abstract 8 Feb 2026 (past). => target KR 2027. Listed topics EXPLICITLY include 'Qualitative reasoning', 'Geometric/spatial/temporal reasoning', 'Reasoning in knowledge graphs', and 'Common-sense reasoning' -- an ideal-fit but currently-closed venue.",
+        "fit_rationale": "KR is the canonical home for qualitative spatial/temporal calculi (Allen, RCC-8, point algebra) and path-consistency. Reviewers can evaluate the relation-algebra machinery at a depth no NLP track can. The 'KR meets ML and Explanation' track is tailor-made for an LLM-fed certificate with auditable traces.",
+    },
+    {
+        "name": "STRL 2026 -- 5th Intl Workshop on Spatio-Temporal Reasoning and Learning",
+        "host": "Co-located with IJCAI-ECAI 2026",
+        "location_dates": "University of Bremen, Germany, 16 August 2026",
+        "format": "Regular 8 pp / short 4 pp / extended abstract 2 pp (excl. refs); NON-ARCHIVAL (may be under review elsewhere)",
+        "portal": "ChairingTool (chairingtool.com/conferences/strl2026)",
+        "next_window_relative_to_june_2026": "CLOSED: submission 24 May 2026 (extended to 25 May 2026), notification 10 Jun 2026 -- both past as of 2026-06-18. Non-archival, so it is a venue for early feedback rather than a publication of record; target STRL 2027. Topics include 'Neuro-symbolic approaches to spatio-temporal reasoning' and 'spatio-temporal commonsense reasoning'.",
+        "fit_rationale": "Ideal workshop home for the spatial/temporal qualitative-algebra angle; being non-archival, it could host a preliminary version WITHOUT blocking a journal/main-conference submission of the full paper.",
+    },
+    {
+        "name": "EMNLP 2026 (and the ARR pipeline: AACL/EACL/ACL 2027)",
+        "host": "ACL; via ACL Rolling Review (ARR)",
+        "location_dates": "EMNLP 2026: Budapest, Hungary, 24-29 October 2026",
+        "format": "Long/short papers via ARR; commitment after reviews",
+        "portal": "ACL Rolling Review (OpenReview) -> commit to EMNLP 2026",
+        "next_window_relative_to_june_2026": "EMNLP 2026 effectively CLOSED for new work: it is fed by the ARR MAY-2026 cycle (ARR submission 25 May 2026, past; commitment deadline 2 Aug 2026 needs an already-reviewed paper). => the next actionable ARR submission (the cycle after May 2026, ~Jul-Aug 2026) commits to a LATER venue (AACL 2026 / EACL 2027 / ACL 2027). Use this only as the LLM/KE-flavoured FALLBACK.",
+        "fit_rationale": "EMNLP/ACL Findings remain credible fallbacks if the paper is framed around the LLM relation-extraction + hallucination-reduction empirics, but the main-track reviewer pool optimises extraction F1 and is a worse fit for a deliberate-abstention contribution than NeSy/KR/*SEM.",
+    },
+]
+
+why_not_acl_ke = (
+    "WHY NOT the ACL 'Knowledge Extraction' track (primary->fallback swap). The contribution is NOT "
+    "extraction. Atomic fact extraction is MEASURED, not improved (CLUTRR atomic precision/recall/F1 "
+    "~0.534 in the iter-5 execution), and it is deliberately kept high-recall and DISJUNCTIVE rather than "
+    "committed. The substantive contribution is a DEDUCTION/CONSISTENCY certificate that INVERTS the "
+    "F1-maximising single-label commit contract (precisely the contract Fan & Strube 2025 optimise): we "
+    "keep a sound relation-algebra disjunction, narrow it only by cross-path composition, and ABSTAIN on "
+    "no-derivation / closure-collapse. A Knowledge-Extraction track rewards extraction recall/F1 and a "
+    "KG-population mindset; its reviewers would read a calibrated abstention as 'lower recall' and "
+    "mis-frame a faithfulness contribution whose headline metric is confident-wrong (hallucination) "
+    "reduction at MATCHED coverage -- not extraction recall. NeSy / qualitative-and-temporal-reasoning / "
+    "KR reviewers, by contrast, can evaluate path-consistency closure, relation-algebra composition, the "
+    "gold-free per-edge certificate, and human-auditable trace-graphs on their own terms. We therefore "
+    "recommend SWAPPING the original venue plan: make a neuro-symbolic / qualitative-reasoning venue the "
+    "PRIMARY target and treat an LLM/KE (ACL/EMNLP) track only as a fallback."
+)
+
+primary_recommendation = (
+    "SWAP primary<->fallback. PRIMARY (neuro-symbolic / qualitative-reasoning): given that nearly every "
+    "2026 conference deadline is already past on 2026-06-18, submit to the Neurosymbolic Artificial "
+    "Intelligence (NAI) journal NOW (rolling submission; also feeds NeSy special issues), and target NeSy "
+    "2027 as the flagship conference; KR 2027 and *SEM 2027 are strong topical alternates, and STRL 2027 "
+    "(non-archival) is a low-risk early-feedback workshop for the spatial/temporal arm. FALLBACK "
+    "(LLM/KE): the next ARR cycle (~Jul-Aug 2026) committing to AACL 2026 / EACL 2027 / ACL 2027, or "
+    "EMNLP/ACL Findings, framed around the LLM-RE + hallucination-reduction empirics. The reposition "
+    "directly retires the reviewer venue MINOR."
+)
+
+# ---------------------------------------------------------------------------
+# WORKSTREAM C: Re-DocRED + kinship coverage + absent-gold methodology + alt hosts
+# ---------------------------------------------------------------------------
+kinship_props = [
+    {"pid": "P22", "name": "father", "present": True, "freq_if_known": "rel2id index 30 (KD-DocRE/Re-DocRED schema); appears in DocRED family-relation triples"},
+    {"pid": "P25", "name": "mother", "present": True, "freq_if_known": "rel2id index 81"},
+    {"pid": "P26", "name": "spouse", "present": True, "freq_if_known": "rel2id index 26"},
+    {"pid": "P40", "name": "child", "present": True, "freq_if_known": "rel2id index 20 (VERIFIED present -- the planner flagged this as uncertain; it IS in the 96-relation schema and is the inverse of P22/P25, enabling parent<->child composition)"},
+    {"pid": "P3373", "name": "sibling", "present": True, "freq_if_known": "rel2id index 19"},
+    {"pid": "P1038", "name": "relative", "present": False, "freq_if_known": "ABSENT -- P1038 is NOT in the DocRED/Re-DocRED 96-relation schema (verified against the full rel2id.json; no P1038 entry). 'relative' must be handled by composition/closure or treated as out-of-schema."},
+]
+
+absent_gold_methodology = (
+    "ABSENT-RELATION (NO-DERIVATION) GOLD METHODOLOGY.\n"
+    "(i) DO NOT use ORIGINAL DocRED for absent gold. In DocRED an un-annotated within-document entity pair "
+    "is NOT reliably 'no relation': the paper measures that ~64.6% of all triples are missing (false "
+    "negatives) -- DocRED dev has ~12.3 annotated triples/doc vs ~34.7 in Re-DocRED dev/test -- and a model "
+    "trained on DocRED reaches only 32.07 recall vs 69.40 on Re-DocRED. Absent-relation gold built on "
+    "DocRED would be massively contaminated by false negatives.\n"
+    "(ii) USE Re-DocRED. Re-DocRED re-annotates the 4,053 documents to be (near-)exhaustive for the covered "
+    "96-relation schema, so an un-annotated within-document pair is a far more trustworthy 'no relation' for "
+    "relations IN SCOPE -- the right host for an absent-relation / no-derivation stratum.\n"
+    "(iii) RESIDUAL CAVEATS for iter-7. Completeness is only WITHIN the annotated 96-relation schema -- a "
+    "pair could still hold a relation OUTSIDE the schema. Therefore (a) restrict every 'no relation' claim "
+    "to the CLOSED kinship sub-schema {P22 father, P25 mother, P26 spouse, P40 child, P3373 sibling} "
+    "(P1038 'relative' is out-of-schema); and (b) construct absent pairs as entity pairs in DISCONNECTED "
+    "kinship components -- truthful 'no relation' BY GRAPH STRUCTURE -- mirroring the CLUTRR "
+    "disconnected-component construction, so the certificate's 'no derivation path => abstain' is tested "
+    "against trustworthy gold rather than against possibly-missing annotations.\n"
+    "(iv) GOLD RECOVERY. Build the kinship sub-graph from the in-schema kinship triples of each document, "
+    "hold out a query edge for the certificate, and report BOTH atomic recall (per-edge extraction) and "
+    "per-edge breadth so that closure outcomes can be attributed to extraction vs composition. NOTE that "
+    "DocRED's kinship schema is FLAT (father/mother/spouse/child/sibling) and contains no "
+    "grandfather/uncle/etc.; multi-hop COMPOSED relations (e.g. father o father = grandfather) fall outside "
+    "the schema, so the 'present multi-hop' stratum needs an extended CLUTRR-style kinship composition "
+    "table (reuse the project's prolog_kinship.py fixpoint engine + rules_store-derived table from the "
+    "iter-5 execution), while the absent stratum is tested purely structurally via disconnected components."
+)
+
+alt_hosts = [
+    {
+        "name": "Re-DocRED kinship subset (PRIMARY)",
+        "id": "HF tonytan48/Re-DocRED ; arXiv:2205.12696 ; ACL 2022.emnlp-main.580",
+        "is_natural": "Yes -- natural Wikipedia prose (introductory sections of Wikipedia articles)",
+        "has_absent_pairs": "Yes -- disconnected kinship components give truthful 'no relation' by structure; exhaustive within the 96-relation schema",
+        "gold_recoverable": "Yes -- vertexSet entities + labels (relation r=Pxx, head h, tail t, evidence sentences); MIT license; splits train 3,053 / dev 500 / test 500",
+        "verdict": "RECOMMENDED iter-7 STEP-B host: largest, natural, exhaustive-within-schema, permissive license; all five core kinship relations present (P22/P25/P26/P40/P3373).",
+    },
+    {
+        "name": "CustFRE (secondary natural host, atomic absent-relation)",
+        "id": "Mumtaz, Qadir & Saeed 2022 ; Mendeley Data DOI 10.17632/jps7rfkytr.1 ; CC BY",
+        "is_natural": "Yes -- naturally written prose from MIXED domains: short stories, Wikipedia articles about individuals, and news/magazine (BBC, The Guardian, Dunya News)",
+        "has_absent_pairs": "Yes, EXPLICITLY -- a 'no_relation' label is annotated for person pairs with no family relation; 1,175 of 2,716 annotations (43%) are no_relation",
+        "gold_recoverable": "Yes -- 6 classes (per:spouse, per:children, per:parents, per:siblings, per:other_family, no_relation); 2,716 annotations over 248 sentences (avg 35 tokens); CC BY",
+        "verdict": "PROMISING complementary host for the ATOMIC absent-relation arm: it ships explicit no_relation gold (the property we need) on genuinely natural text with an open license. Caveats: small (248 sentences) and sentence-level, so it tests atomic absent-relation, not document-level multi-hop no-derivation closure -- use it ALONGSIDE Re-DocRED, not instead of it. iter-7 should verify exact text/licensing before use.",
+    },
+    {
+        "name": "Wikipedia genealogical relation corpus (small natural alternative)",
+        "id": "Genealogical relationship extraction from Wikipedia (104 manually coref-resolved Wikipedia documents; sibling-of/parent-of/child-of/spouse-of)",
+        "is_natural": "Yes -- natural Wikipedia prose with manual coreference resolution",
+        "has_absent_pairs": "Partially -- token pairs annotated for the four genealogical relations; absent pairs derivable but exhaustiveness not as clearly stated as CustFRE/Re-DocRED",
+        "gold_recoverable": "Limited -- only 104 documents; availability/license less clear; intended for genealogical-network extraction",
+        "verdict": "MARGINAL backup: natural and kinship-focused but very small and with less clearly-exhaustive absent gold; keep only as a qualitative natural-text example, not a primary evaluation host.",
+    },
+    {
+        "name": "KinshipQA / 'Kinship Data Benchmark for Multi-hop Reasoning'",
+        "id": "Sun & Kazakov 2026 ; arXiv:2601.07794",
+        "is_natural": "No -- a GENERATIVE pipeline produces synthetic, culture-specific genealogies, from which textual inference tasks are derived",
+        "has_absent_pairs": "Yes (controllable), but over SYNTHETIC genealogies",
+        "gold_recoverable": "Yes (by construction), but the gold is generated, not natural",
+        "verdict": "FAILS the 'genuinely natural' bar -- treat like CLUTRR (templated/synthetic). Useful as an additional SYNTHETIC multi-hop stress-test, NOT as the natural STEP-B host. Confirms the planner's flag.",
+    },
+]
+
+iter7_stepb_recommendation = (
+    "iter-7 STEP-B RECOMMENDATION. Use Re-DocRED as the PRIMARY natural no-derivation host: extract "
+    "in-schema kinship triples span-locally from the Wikipedia prose (high-recall disjunctive per-edge "
+    "reads), compose through the hand-supplied kinship table (reuse prolog_kinship.py fixpoint + "
+    "rules_store-derived table), draw ABSENT/no-derivation queries from DISCONNECTED kinship components "
+    "(truthful 'no relation' by structure), and report atomic recall + per-edge breadth for attribution. "
+    "Run the decisive comparison -- structural no-derivation certificate vs a confidence-thresholded "
+    "abstainer (verbalized confidence / self-consistency / semantic-entropy proxy) at MATCHED coverage -- "
+    "on this natural absent-relation stratum; the certificate should abstain on confident-but-absent pairs "
+    "that the confidence baselines keep. Optionally add CustFRE as a second natural host for the ATOMIC "
+    "absent-relation arm (it ships explicit no_relation gold) and KinshipQA/CLUTRR as a SYNTHETIC multi-hop "
+    "stress-test. HONEST FALLBACK: if no clean natural corpus beyond Re-DocRED (and CustFRE) yields genuine "
+    "absent pairs with recoverable gold, scope STEP-B to Re-DocRED + the confidence-baseline result and "
+    "reposition to NeSy / qualitative-reasoning (the CLAIM-2 fork), which the venue analysis already "
+    "supports."
+)
+
+redocred_record = {
+    "hf_id": "tonytan48/Re-DocRED",
+    "arxiv_id": "2205.12696",
+    "anthology_id": "2022.emnlp-main.580 (EMNLP 2022, pp. 8472-8487)",
+    "splits": "train 3,053 docs / dev 500 docs / test 500 docs (Re-DocRED). Avg triples/doc: train 28.1, dev 34.6, test 34.9 (vs DocRED dev 12.3). 96 relation types + explicit 'Na' (NA / no_relation, id 0).",
+    "completeness_facts": (
+        "VERBATIM: 'approximately 64.6% of all triples are missing in the original DocRED dataset' "
+        "(~12.3 triples/doc in DocRED dev vs ~34.7 in Re-DocRED dev+test). 4,053 documents re-annotated. "
+        "Round-1 Fleiss kappa 0.73, round-2 kappa 0.66. Models trained+evaluated on Re-DocRED gain ~13 F1 "
+        "points; recall rises from 32.07 (DocRED) to 69.40 (Re-DocRED), demonstrating the severity of the "
+        "false-negative problem. Total annotated triples: DocRED 50,503 vs Re-DocRED 120,664."
+    ),
+    "license": "MIT (confirmed on the HF dataset card and the GitHub repo).",
+    "kinship_props": kinship_props,
+    "kinship_summary": "Core kinship sub-schema PRESENT (5/6 targets): P22 father, P25 mother, P26 spouse, P40 child, P3373 sibling. P1038 'relative' is ABSENT from the 96-relation schema. P40 (child), which the planner flagged as uncertain, is VERIFIED present (rel2id index 20).",
+    "absent_gold_methodology": absent_gold_methodology,
+    "alt_hosts": alt_hosts,
+    "iter7_stepb_recommendation": iter7_stepb_recommendation,
+    "extraction_pipeline_note": (
+        "For the certificate pipeline on Re-DocRED: the LLM reads kinship triples span-locally from the "
+        "natural prose as a high-recall disjunction; composition runs through the hand-supplied kinship "
+        "table (reuse prolog_kinship.py fixpoint engine + rules_store-derived table from iter-5; cf. memory "
+        "project_closurecert_experiment3_iter5_exec, noting the der(Src,Type,Tgt) arg-order gotcha and "
+        "max_tokens>=1500 for extraction); absent/no-derivation queries are drawn from disconnected "
+        "components. This is a pointer, not a re-implementation."
+    ),
+}
+
+# ---------------------------------------------------------------------------
+# SOURCES
+# ---------------------------------------------------------------------------
+sources = [
+    {"index": 1, "url": "https://arxiv.org/abs/2205.14334", "title": "Teaching Models to Express Their Uncertainty in Words (Lin, Hilton, Evans, TMLR 2022)", "summary": "Primary abstract page: verified title/authors/year; 'verbalized probability' -- model emits a stated confidence level mapped to a calibrated probability. Anchors the verbalized-confidence baseline (high confidence => keep)."},
+    {"index": 2, "url": "https://openreview.net/forum?id=8s8K2UZGTZ", "title": "Lin et al. 2022 on OpenReview (TMLR venue confirmation)", "summary": "Confirms the paper was published in Transactions on Machine Learning Research (TMLR) 2022; OpenReview id 8s8K2UZGTZ -- used to pin the venue in BibTeX."},
+    {"index": 3, "url": "https://arxiv.org/abs/2305.14975", "title": "Just Ask for Calibration (Tian et al., EMNLP 2023)", "summary": "Primary abstract page: 'verbalized confidences emitted as output tokens are typically better-calibrated than the model's conditional probabilities'. Verbalized-confidence elicitation baseline; abstain only when score is low."},
+    {"index": 4, "url": "https://aclanthology.org/2023.emnlp-main.330/", "title": "Just Ask for Calibration -- ACL Anthology (EMNLP 2023)", "summary": "Anthology landing page confirming anthology id 2023.emnlp-main.330, title and the 8-author list (Tian, Mitchell, Zhou, Sharma, Rafailov, Yao, Finn, Manning)."},
+    {"index": 5, "url": "https://arxiv.org/abs/2203.11171", "title": "Self-Consistency Improves Chain of Thought Reasoning (Wang et al., ICLR 2023)", "summary": "Primary abstract page: majority vote over multiple sampled reasoning paths; agreement is the selection/confidence signal -> grounds the self-consistency/vote-margin abstainer (agreement => keep)."},
+    {"index": 6, "url": "https://arxiv.org/abs/2207.05221", "title": "Language Models (Mostly) Know What They Know (Kadavath et al., 2022)", "summary": "Primary abstract page: P(True) self-evaluation and P(IK) ('probability I know'); the paper itself notes P(IK) calibration 'struggles on new tasks'. Grounds the P(True) baseline and part of the adversarial check."},
+    {"index": 7, "url": "https://arxiv.org/abs/2302.09664", "title": "Semantic Uncertainty (Kuhn, Gal, Farquhar, ICLR 2023)", "summary": "Primary abstract page: semantic entropy over meaning-clustered samples; LOW entropy => trust, HIGH entropy => flag. CRUX: a confident, self-consistent hallucination has LOW entropy and is kept."},
+    {"index": 8, "url": "https://www.nature.com/articles/s41586-024-07421-0", "title": "Detecting hallucinations in LLMs using semantic entropy (Farquhar et al., Nature 2024)", "summary": "Nature 630(8017):625-630, doi:10.1038/s41586-024-07421-0. Semantic entropy detects 'confabulations' (arbitrary/incorrect generations) -- an uncertainty signal that targets high-entropy outputs, not confident ones. (Page is paywalled; metadata/claim cross-checked with the Kuhn 2023 ICLR version.)"},
+    {"index": 9, "url": "https://arxiv.org/abs/2303.08896", "title": "SelfCheckGPT (Manakul, Liusie, Gales, EMNLP 2023)", "summary": "Primary abstract page: 'if an LLM has knowledge of a given concept, sampled responses are likely to be similar and contain consistent facts ... for hallucinated facts ... diverge'. Consistency=>factual => a consistent hallucination passes."},
+    {"index": 10, "url": "https://aclanthology.org/2023.emnlp-main.557/", "title": "SelfCheckGPT -- ACL Anthology (EMNLP 2023, pp. 9004-9017)", "summary": "Anthology landing page confirming id 2023.emnlp-main.557 and page range 9004-9017 for the pinned BibTeX."},
+    {"index": 11, "url": "https://arxiv.org/abs/2407.18418", "title": "Know Your Limits: A Survey of Abstention in LLMs (Wen et al., TACL 2024)", "summary": "Primary PDF (grepped): framework of three perspectives -- query (answerability), model (confidence c(x,y)), human values; 'Current methods to encourage abstention typically rely on calibration techniques'; abstain when 'a confidence score ... falls below some threshold'. Frames the whole family as confidence/calibration-driven."},
+    {"index": 12, "url": "https://arxiv.org/abs/2510.11529", "title": "Hallucination Detection via Internal States and Structured Reasoning Consistency (Song et al., 2026)", "summary": "ADVERSARIAL anchor (grepped abstract): names the 'Detection Dilemma' and states 'Internal State Probing is ineffective on logic-intensive tasks like mathematical reasoning where models are confidently wrong'. Confirms even internal-state probes miss confident-coherent hallucinations; still learned/answer-level, not a structural per-edge certificate."},
+    {"index": 13, "url": "https://2026.nesyconf.org/", "title": "NeSy 2026 conference site", "summary": "20th Intl Conf on Neural-Symbolic Learning and Reasoning; FCUL, Lisbon, 1-4 Sep 2026; accepted papers eligible for a Neurosymbolic AI journal special issue."},
+    {"index": 14, "url": "https://raw.githubusercontent.com/nesyconf/nesy2026/main/callforpapers.md", "title": "NeSy 2026 Call for Papers (raw)", "summary": "Important dates: Phase-1 abstract 24 Feb / paper 3 Mar 2026; Phase-2 abstract 9 Jun / submission 16 Jun 2026; Industry submission 17 Jul 2026. Full papers <=10 pp, short <=5 pp; OpenReview; NAI-journal special issue. (As of 2026-06-18 the research-track windows have just closed.)"},
+    {"index": 15, "url": "https://neurosymbolic-ai-journal.com/content/about-neurosymbolic-artificial-intelligence", "title": "Neurosymbolic Artificial Intelligence journal (IOS Press/SAGE) -- About", "summary": "Open-access, transparently peer-reviewed, CONTINUOUS (rolling) publication journal -- the only NeSy-family venue with an immediately actionable deadline as of June 2026; active X-NeSy and Neurosymbolic-Generative-Models special issues."},
+    {"index": 16, "url": "https://www.aclweb.org/portal/content/call-papers-sem2026-15th-joint-conference-lexical-and-computational-semantics-san-diego-ca", "title": "*SEM 2026 Call for Papers (ACL portal)", "summary": "15th Joint Conf on Lexical and Computational Semantics, San Diego, one-day 3 Jul 2026, co-located ACL 2026; DIRECT submission (not ARR), deadline 13 Feb 2026 (past); notification 5 May 2026. => *SEM 2027 next cycle."},
+    {"index": 17, "url": "https://kr.org/KR2026/", "title": "KR 2026 -- 23rd Intl Conf on Principles of Knowledge Representation and Reasoning", "summary": "Lisbon, 20-23 Jul 2026 (FLoC 2026); main-track abstract 8 Feb 2026 (past). Topics EXPLICITLY include 'Qualitative reasoning', 'Geometric/spatial/temporal reasoning', 'Reasoning in knowledge graphs'. Ideal-fit but currently closed => KR 2027."},
+    {"index": 18, "url": "https://strl-workshop.github.io/strl2026/", "title": "STRL 2026 -- 5th Workshop on Spatio-Temporal Reasoning and Learning", "summary": "Co-located IJCAI-ECAI 2026, Bremen, 16 Aug 2026; submission 24/25 May 2026 (past), notification 10 Jun 2026; NON-ARCHIVAL; 8/4/2-page formats; 'Neuro-symbolic approaches to spatio-temporal reasoning' in scope."},
+    {"index": 19, "url": "https://2026.emnlp.org/calls/main_conference_papers/", "title": "EMNLP 2026 Call for Main Conference Papers", "summary": "Budapest, 24-29 Oct 2026; fed by ARR May-2026 cycle (ARR submission 25 May 2026 past; commitment 2 Aug 2026 requires an already-reviewed paper). Next actionable ARR submission (~Jul-Aug 2026) commits to a later venue. Fallback LLM/KE route."},
+    {"index": 20, "url": "https://huggingface.co/datasets/tonytan48/Re-DocRED", "title": "Re-DocRED HF dataset card (tonytan48/Re-DocRED)", "summary": "Confirms MIT license, JSON format, fields vertexSet/labels(relation r, head h, tail t)/evidence, and that Re-DocRED corrects DocRED's incomplete (false-negative) annotation. arXiv:2205.12696."},
+    {"index": 21, "url": "https://arxiv.org/pdf/2205.12696", "title": "Revisiting DocRED -- Addressing the False Negative Problem (Tan et al., EMNLP 2022) PDF", "summary": "Primary PDF (grepped): '~64.6% of all triples are missing in the original DocRED'; 4,053 docs re-annotated; ~13 F1 gain; recall 32.07->69.40; splits train 3,053/dev 500/test 500; 96 relations; avg triples/doc DocRED-dev 12.3 vs Re-DocRED 34.6-34.9."},
+    {"index": 22, "url": "https://aclanthology.org/2022.emnlp-main.580/", "title": "Revisiting DocRED -- ACL Anthology (EMNLP 2022, pp. 8472-8487)", "summary": "Anthology landing page confirming id 2022.emnlp-main.580, full author list (Tan, Xu, Bing, Ng, Aljunied) and page range 8472-8487."},
+    {"index": 23, "url": "https://github.com/tonytan48/Re-DocRED", "title": "Re-DocRED GitHub repository", "summary": "Confirms train 3,053 / dev 500 / test 500 split document counts and MIT license; data files data/{train,dev,test}_revised.json."},
+    {"index": 24, "url": "https://raw.githubusercontent.com/tonytan48/KD-DocRE/main/meta/rel2id.json", "title": "DocRED/Re-DocRED rel2id.json (tonytan48 KD-DocRE)", "summary": "Authoritative 96-relation schema map (+ 'Na':0). Confirms kinship props: P22:30 (father), P25:81 (mother), P26:26 (spouse), P40:20 (child), P3373:19 (sibling) all PRESENT; P1038 ('relative') ABSENT."},
+    {"index": 25, "url": "https://arxiv.org/abs/2601.07794", "title": "Kinship Data Benchmark for Multi-hop Reasoning (Sun & Kazakov, 2026)", "summary": "Primary abstract page: KinshipQA is built by a GENERATIVE pipeline over synthetic, culture-specific genealogies (textual inference tasks derived from synthetic trees) -> NOT natural text; treat like CLUTRR. Confirms the planner's flag."},
+    {"index": 26, "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8885562/", "title": "CustFRE: An Annotated Dataset for Extraction of Family Relations from English Text (Mumtaz et al., 2022)", "summary": "Natural prose (short stories, Wikipedia bios, BBC/Guardian/Dunya news), 2,716 annotations / 248 sentences, 6 classes incl. EXPLICIT no_relation (1,175 = 43%); CC BY (Mendeley DOI 10.17632/jps7rfkytr.1). Secondary natural host with explicit absent gold for the atomic arm."},
+    {"index": 27, "url": "https://digitalcommons.calpoly.edu/cgi/viewcontent.cgi?article=1283&context=csse_fac", "title": "Genealogical relationship extraction from Wikipedia (104-document corpus)", "summary": "104 manually coref-resolved Wikipedia documents annotated for sibling-of/parent-of/child-of/spouse-of -- a small, natural, kinship-focused alternative; less clearly-exhaustive absent gold than CustFRE/Re-DocRED."},
+    {"index": 28, "url": "https://arxiv.org/abs/2510.14925", "title": "Stable but Miscalibrated: A Kantian View on Overconfidence (2025/26)", "summary": "Search-identified support for the adversarial check: internal reasoning can be self-consistent and robust to perturbations yet systematically misaligned with truth ('stable miscalibration') -- i.e. confident-but-wrong evades dispersion-based detection."},
+]
+
+answer = (
+    "This research supplies the two contribution-defining moves the empirical artifacts cannot themselves "
+    "produce, plus the methodology that de-risks iter-7's single open experiment.\n\n"
+    "(A) NOVELTY. The entire confidence/uncertainty selective-prediction family -- verbalized confidence "
+    "[1,3], self-consistency/vote-margin [5], P(True)/P(IK) [6], semantic entropy [7,8], and SelfCheckGPT "
+    "[9], with surveys framing abstention as a confidence-threshold decision [11] and even learned "
+    "temporal abstention trained on answer-level uncertainty -- shares one structural property: every "
+    "signal is a monotone function of the model's prediction DISPERSION or self-assessed confidence. By "
+    "construction it reads 'certain' on a CONFIDENT, self-consistent absent-relation hallucination "
+    "(verbalized confidence high, samples agree, P(True) high, semantic entropy LOW, SelfCheckGPT "
+    "consistent) and therefore KEEPS it. Our certificate is orthogonal: it abstains because no derivation "
+    "path exists after composing per-edge reads through the EXACT relation algebra -- gold-free, "
+    "training-free, confidence-independent. The adversarial check confirms even internal-state probes are "
+    "'ineffective on logic-intensive tasks where models are confidently wrong' [12], and they remain "
+    "learned/answer-level rather than a per-edge structural test [28]. The drop-in differentiation "
+    "paragraph + signals-vs-catches table become the paper's novelty backbone; scope is kept honest "
+    "(confidence baselines tie at matched coverage on ordinary uncertain deduction).\n\n"
+    "(B) VENUE. We recommend SWAPPING the original plan's primary<->fallback: make a neuro-symbolic / "
+    "qualitative-reasoning venue PRIMARY and an LLM/KE (ACL/EMNLP) track only a fallback, because the "
+    "contribution is a deduction/consistency CERTIFICATE that inverts the F1-maximising commit contract, "
+    "not extraction (atomic F1 ~0.534 is measured, not improved). As of 2026-06-18 nearly all 2026 "
+    "conference deadlines are past (NeSy-2026 research tracks [14], *SEM-2026 [16], KR-2026 [17], "
+    "STRL-2026 [18], EMNLP-2026 ARR [19]); the only immediately actionable NeSy-family target is the "
+    "rolling Neurosymbolic AI journal [15], with NeSy 2027 / KR 2027 / *SEM 2027 as the conference cycle.\n\n"
+    "(C) NATURAL ABSENT-RELATION HOST. Re-DocRED [20,21,22] is the right host: original DocRED is ~64.6% "
+    "false-negative so its un-annotated pairs are NOT 'no relation', whereas Re-DocRED is "
+    "exhaustive-within-schema (MIT; train 3,053/dev 500/test 500). All five core kinship relations are "
+    "present (P22/P25/P26/P40/P3373) and P1038 'relative' is absent [24]. Build absent gold from "
+    "DISCONNECTED kinship components (truthful 'no relation' by structure), restricted to the closed "
+    "kinship sub-schema. CustFRE [26] adds a natural secondary host with explicit no_relation gold (atomic "
+    "arm); KinshipQA [25] is generated (fails the natural bar). This de-risks iter-7 STEP-B: certificate vs "
+    "confidence-thresholded abstainer at matched coverage on a natural no-derivation stratum."
+)
+
+follow_up_questions = [
+    "Exact per-relation frequencies of P22/P25/P26/P40/P3373 in the Re-DocRED test split (and the count of disconnected-component absent kinship pairs) -- needed to size iter-7 STEP-B and check statistical power before spending.",
+    "Is CustFRE's text/license re-distributable for our pipeline, and how many of its 1,175 no_relation pairs survive once restricted to PERSON-PERSON pairs with both entities in a kinship context (so 'no relation' is a genuine absent kinship edge rather than an unrelated pair)?",
+    "Should the paper submit the full work to the rolling Neurosymbolic AI journal now (immediate, X-NeSy special issue) or hold for NeSy 2027 / KR 2027 main-track for higher conference prestige, given all 2026 conference windows are closed?",
+    "Does any internal-state / confident-hallucination detector (e.g. Song et al. 2026, arXiv:2510.11529) provide runnable code we could include as an additional STEP-A baseline to show that even a learned confident-hallucination detector under-performs the gold-free structural certificate on the absent-relation stratum?",
+    "For the 'present multi-hop' stratum, does the project's CLUTRR-style extended kinship composition table (grandfather/uncle/etc.) compose consistently with Re-DocRED's flat schema, and what is the gold for composed relations that fall outside DocRED's 96 types?",
+]
+
+bibtex_block = "\n\n".join([m["bibtex"] for m in workstream_a if m["bibtex"] != "(this work)"]) + "\n\n" + \
+    redocred_record_bib if False else None  # placeholder, set below
+
+# Build a clean BibTeX block (A methods + Re-DocRED + DocRED + CustFRE + KinshipQA)
+extra_bib = (
+    "@inproceedings{Tan2022,\n"
+    "  author    = {Qingyu Tan and Lu Xu and Lidong Bing and Hwee Tou Ng and Sharifah Mahani Aljunied},\n"
+    "  title     = {Revisiting {DocRED} -- Addressing the False Negative Problem in Relation Extraction},\n"
+    "  booktitle = {Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing (EMNLP)},\n"
+    "  month     = dec,\n  year      = {2022},\n  address   = {Abu Dhabi, United Arab Emirates},\n"
+    "  publisher = {Association for Computational Linguistics},\n  pages     = {8472--8487},\n"
+    "  url       = {https://aclanthology.org/2022.emnlp-main.580/},\n  note      = {arXiv:2205.12696}\n}\n\n"
+    "@inproceedings{Yao2019,\n"
+    "  author    = {Yuan Yao and Deming Ye and Peng Li and Xu Han and Yankai Lin and Zhenghao Liu and Zhiyuan Liu and Lixin Huang and Jie Zhou and Maosong Sun},\n"
+    "  title     = {{DocRED}: A Large-Scale Document-Level Relation Extraction Dataset},\n"
+    "  booktitle = {Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics (ACL)},\n"
+    "  year      = {2019},\n  pages     = {764--777},\n  url       = {https://aclanthology.org/P19-1074/}\n}\n\n"
+    "@misc{Mumtaz2022,\n"
+    "  author = {Raabia Mumtaz and Muhammad Abdul Qadir and Asif Saeed},\n"
+    "  title  = {{CustFRE}: An Annotated Dataset for Extraction of Family Relations from English Text},\n"
+    "  year   = {2022},\n  howpublished = {Mendeley Data},\n  note = {CC BY; DOI 10.17632/jps7rfkytr.1}\n}\n\n"
+    "@misc{Sun2026,\n"
+    "  author        = {Tianda Sun and Dimitar Kazakov},\n"
+    "  title         = {Kinship Data Benchmark for Multi-hop Reasoning},\n"
+    "  year          = {2026},\n  eprint        = {2601.07794},\n  archivePrefix = {arXiv},\n"
+    "  primaryClass  = {cs.CL},\n  note          = {arXiv:2601.07794; GENERATED synthetic genealogies (not natural text)}\n}"
+)
+bibtex_block = "\n\n".join([m["bibtex"] for m in workstream_a if m["bibtex"] != "(this work)"]) + "\n\n" + extra_bib
+
+out = {
+    "title": "Structural No-Derivation Abstention vs the Confidence/Uncertainty Family; NeSy Venue Reposition; Re-DocRED Natural Absent-Relation Host",
+    "summary": (
+        "Pure-web research bundle ($0) for iter-6/iter-7 of the closure-certificate project, across three "
+        "workstreams. (A) Pins the confidence/uncertainty selective-prediction family our STEP-A battery "
+        "competes against -- verbalized confidence [Lin2022; Tian2023], self-consistency [Wang2023], "
+        "P(True)/P(IK) [Kadavath2022], semantic entropy [Kuhn2023; Farquhar2024], SelfCheckGPT "
+        "[Manakul2023], the abstention survey [Wen2024], learned temporal abstention [Zhou2026], and the "
+        "adversarial internal-state-probe neighbour [Song2026] -- with verified BibTeX, per-method "
+        "abstention signals + verbatim quotes, a paper-ready signals-vs-catches table, and a ~250-word "
+        "drop-in differentiation paragraph arguing every signal is dispersion/confidence-driven and "
+        "therefore BLIND to a confident, self-consistent absent-relation hallucination, whereas the "
+        "certificate abstains STRUCTURALLY (no derivation path) regardless of confidence -- with honest "
+        "scope (confidence baselines tie at matched coverage on ordinary uncertain deduction). (B) A "
+        "timing-aware (as-of 2026-06-18) NeSy / qualitative-reasoning venue shortlist -- Neurosymbolic AI "
+        "journal (rolling, the only open NeSy-family target now), NeSy 2026/2027, *SEM, KR 2026 "
+        "(qualitative reasoning in scope), STRL, EMNLP/ARR -- a crisp 'why not ACL Knowledge Extraction' "
+        "statement, and a recommendation to SWAP primary<->fallback. (C) Verifies Re-DocRED "
+        "(tonytan48/Re-DocRED, arXiv:2205.12696, 2022.emnlp-main.580, MIT, splits 3,053/500/500, "
+        "'~64.6% of triples missing' in original DocRED, recall 32.07->69.40), confirms kinship coverage "
+        "(P22/P25/P26/P40/P3373 PRESENT; P1038 ABSENT), documents the false-negative pitfall + "
+        "disconnected-component absent-gold methodology, and scouts alternative natural hosts (CustFRE = "
+        "natural prose with explicit no_relation gold; KinshipQA = generated/synthetic, fails the natural "
+        "bar). Directly retires the reviewer novelty MAJOR + venue MINOR and de-risks iter-7 STEP-B."
+    ),
+    "answer": answer,
+    "workstream_a": workstream_a,
+    "signals_vs_catches_table": signals_vs_catches_table,
+    "differentiation_paragraph": differentiation_paragraph,
+    "adversarial_check": adversarial_check,
+    "workstream_b": workstream_b,
+    "why_not_acl_ke": why_not_acl_ke,
+    "primary_recommendation": primary_recommendation,
+    "workstream_c": redocred_record,
+    "bibtex_block": bibtex_block,
+    "zhou2026_bibtex_reused_from_dependency": ZHOU2026_BIB,
+    "sources": sources,
+    "follow_up_questions": follow_up_questions,
+}
+
+with open(os.path.join(WS, "research_out.json"), "w") as f:
+    json.dump(out, f, indent=2, ensure_ascii=True)
+
+print("WROTE research_out.json")
+print("workstream_a methods:", len(workstream_a))
+print("workstream_b venues:", len(workstream_b))
+print("alt_hosts:", len(redocred_record["alt_hosts"]))
+print("sources:", len(sources))
+print("bytes:", os.path.getsize(os.path.join(WS, "research_out.json")))

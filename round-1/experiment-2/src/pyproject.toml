@@ -1,0 +1,13 @@
+[project]
+name = "qcn-closure-derisking"
+version = "1.0.0"
+description = "Synthetic de-risking of H3 (iterated path-consistency closure > naive single-pass intersection) and H4 (recall-dependent redundancy inverted-U) via controlled QCNs and a simulated reader channel. Convex point algebra primary; optional Allen interval generality arm."
+requires-python = ">=3.12"
+dependencies = [
+    "numpy==2.4.6",
+    "scipy==1.17.1",
+    "matplotlib==3.11.0",
+]
+
+[tool.setuptools]
+py-modules = ["method", "allen_arm"]

@@ -1,0 +1,1166 @@
+{
+  "metadata": {
+    "method_name": "CLUTRR kinship closure-certificate (forward-closure Mode-A) end-to-end",
+    "reader_model": "google/gemini-3.1-flash-lite",
+    "model_fallbacks": [
+      "deepseek/deepseek-v3.2",
+      "google/gemini-3-flash-preview"
+    ],
+    "seed": 20260617,
+    "reader_note": "Primary reader = google/gemini-3.1-flash-lite with automatic same-prompt fallback to ['deepseek/deepseek-v3.2', 'google/gemini-3-flash-preview'] on transient rate-limit/5xx (llm.py cost-guarded). Atom...",
+    "temperature": 0.0,
+    "sc_k": 5,
+    "absent_sc_k": 3,
+    "pot_max_paths": 3,
+    "absent_cap_per_story": 6,
+    "n_present_queries": 102,
+    "n_absent_queries": 180,
+    "n_unique_stories": 102,
+    "story_char_caveat": "CLUTRR stories are short (max 871 chars); none reach the umbrella's ~3000-char target -- longer documents live only in the temporal corpora. CLUTRR delivers the goal NUMBERS on clean non-synthetic non...",
+    "entity_grounding_note": "Entity set + gender are taken from gold for surface realization; entity grounding is NOT the contribution (the LLM read of atomic relations + the closure certificate are).",
+    "engine_note": "CLUTRR's table is a finite composition table, NOT a relation algebra; the sound closure is a forward least-fixpoint UNION derivation over defined compositions (PC-2 converse-intersection is unsound he...",
+    "atomic_pr": {
+      "precision": 0.5361,
+      "recall": 0.5324,
+      "f1": 0.5343,
+      "tp": 230,
+      "n_pred": 429,
+      "n_gold": 432,
+      "n_stories": 72,
+      "precision_ci": [
+        0.48591500678710625,
+        0.5889963217396008
+      ],
+      "recall_ci": [
+        0.4831689927184466,
+        0.5831361081179327
+      ],
+      "f1_ci": [
+        0.4847726453553407,
+        0.5859927520316275
+      ],
+      "by_hop": {
+        "10": {
+          "precision": 0.4878,
+          "recall": 0.5,
+          "f1": 0.4938,
+          "tp": 40,
+          "n_pred": 82,
+          "n_gold": 80
+        },
+        "2": {
+          "precision": 0.5,
+          "recall": 0.5625,
+          "f1": 0.5294,
+          "tp": 9,
+          "n_pred": 18,
+          "n_gold": 16
+        },
+        "3": {
+          "precision": 0.5417,
+          "recall": 0.5417,
+          "f1": 0.5417,
+          "tp": 13,
+          "n_pred": 24,
+          "n_gold": 24
+        },
+        "4": {
+          "precision": 0.5161,
+          "recall": 0.5,
+          "f1": 0.5079,
+          "tp": 16,
+          "n_pred": 31,
+          "n_gold": 32
+        },
+        "5": {
+          "precision": 0.4359,
+          "recall": 0.425,
+          "f1": 0.4304,
+          "tp": 17,
+          "n_pred": 39,
+          "n_gold": 40
+        },
+        "6": {
+          "precision": 0.6383,
+          "recall": 0.625,
+          "f1": 0.6316,
+          "tp": 30,
+          "n_pred": 47,
+          "n_gold": 48
+        },
+        "7": {
+          "precision": 0.5636,
+          "recall": 0.5536,
+          "f1": 0.5586,
+          "tp": 31,
+          "n_pred": 55,
+          "n_gold": 56
+        },
+        "8": {
+          "precision": 0.55,
+          "recall": 0.5156,
+          "f1": 0.5323,
+          "tp": 33,
+          "n_pred": 60,
+          "n_gold": 64
+        },
+        "9": {
+          "precision": 0.5616,
+          "recall": 0.5694,
+          "f1": 0.5655,
+          "tp": 41,
+          "n_pred": 73,
+          "n_gold": 72
+        }
+      },
+      "by_noise_type": {
+        "none": {
+          "precision": 0.5361,
+          "recall": 0.5324,
+          "f1": 0.5343,
+          "tp": 230,
+          "n_pred": 429,
+          "n_gold": 432
+        }
+      }
+    },
+    "atomic_pr_disc_noise_robustness": {
+      "precision": 0.3761,
+      "recall": 0.5432,
+      "f1": 0.4444,
+      "tp": 44,
+      "n_pred": 117,
+      "n_gold": 81,
+      "n_stories": 30,
+      "precision_ci": [
+        0.29912280701754385,
+        0.4622043261749144
+      ],
+      "recall_ci": [
+        0.44155844155844154,
+        0.653358024691358
+      ],
+      "f1_ci": [
+        0.3553176682495497,
+        0.5388689931931321
+      ],
+      "by_hop": {
+        "2": {
+          "precision": 0.3448,
+          "recall": 0.5556,
+          "f1": 0.4255,
+          "tp": 10,
+          "n_pred": 29,
+          "n_gold": 18
+        },
+        "3": {
+          "precision": 0.3864,
+          "recall": 0.5397,
+          "f1": 0.4503,
+          "tp": 34,
+          "n_pred": 88,
+          "n_gold": 63
+        }
+      },
+      "by_noise_type": {
+        "disconnected": {
+          "precision": 0.3761,
+          "recall": 0.5432,
+          "f1": 0.4444,
+          "tp": 44,
+          "n_pred": 117,
+          "n_gold": 81
+        }
+      }
+    },
+    "deduction_matched_coverage": {
+      "c_star": 0.6862745098039216,
+      "ref": "modeA",
+      "leaderboard": {
+        "modeA": {
+          "coverage": 0.6862745098039216,
+          "selective_accuracy": 0.8857,
+          "n_covered": 70
+        },
+        "naive": {
+          "coverage_matched": 0.6862745098039216,
+          "natural_coverage": 0.21568627450980393,
+          "selective_accuracy": 0.2286,
+          "n_covered": 70
+        },
+        "raw": {
+          "coverage_matched": 0.6862745098039216,
+          "natural_coverage": 0.7941176470588235,
+          "selective_accuracy": 0.5429,
+          "n_covered": 70
+        },
+        "sc": {
+          "coverage_matched": 0.6862745098039216,
+          "natural_coverage": 0.7941176470588235,
+          "selective_accuracy": 0.5571,
+          "n_covered": 70
+        },
+        "pot": {
+          "coverage_matched": 0.6862745098039216,
+          "natural_coverage": 0.8823529411764706,
+          "selective_accuracy": 0.4571,
+          "n_covered": 70
+        },
+        "off": {
+          "coverage_matched": 0.6862745098039216,
+          "natural_coverage": 0.0,
+          "selective_accuracy": 0.0,
+          "n_covered": 70
+        }
+      },
+      "gaps": {
+        "naive": {
+          "gap": 0.6571428571428571,
+          "ci95": [
+            0.5456246365574724,
+            0.7655425932347883
+          ],
+          "p_one_sided": 0.0004997501249375312,
+          "selacc_a": 0.8857142857142857,
+          "selacc_b": 0.22857142857142856,
+          "cov_a": 0.6862745098039216,
+          "cov_b": 0.6862745098039216,
+          "n_boot": 2000
+        },
+        "raw": {
+          "gap": 0.34285714285714286,
+          "ci95": [
+            0.220956655059916,
+            0.4638413700727133
+          ],
+          "p_one_sided": 0.0004997501249375312,
+          "selacc_a": 0.8857142857142857,
+          "selacc_b": 0.5428571428571428,
+          "cov_a": 0.6862745098039216,
+          "cov_b": 0.6862745098039216,
+          "n_boot": 2000
+        },
+        "sc": {
+          "gap": 0.3285714285714285,
+          "ci95": [
+            0.2052428082670018,
+            0.45811901927598314
+          ],
+          "p_one_sided": 0.0004997501249375312,
+          "selacc_a": 0.8857142857142857,
+          "selacc_b": 0.5571428571428572,
+          "cov_a": 0.6862745098039216,
+          "cov_b": 0.6862745098039216,
+          "n_boot": 2000
+        },
+        "pot": {
+          "gap": 0.42857142857142855,
+          "ci95": [
+            0.2981117035738213,
+            0.5574053891947058
+          ],
+          "p_one_sided": 0.0004997501249375312,
+          "selacc_a": 0.8857142857142857,
+          "selacc_b": 0.45714285714285713,
+          "cov_a": 0.6862745098039216,
+          "cov_b": 0.6862745098039216,
+          "n_boot": 2000
+        },
+        "off": {
+          "gap": 0.8857142857142857,
+          "ci95": [
+            0.8051406926406927,
+            0.9552238805970149
+          ],
+          "p_one_sided": 0.0004997501249375312,
+          "selacc_a": 0.8857142857142857,
+          "selacc_b": 0.0,
+          "cov_a": 0.6862745098039216,
+          "cov_b": 0.6862745098039216,
+          "n_boot": 2000
+        }
+      },
+      "n_queries": 102
+    },
+    "deduction_goldread_oracle": {
+      "c_star": 0.9509803921568627,
+      "ref": "modeA",
+      "leaderboard": {
+        "modeA": {
+          "coverage": 0.9509803921568627,
+          "selective_accuracy": 1.0,
+          "n_covered": 97
+        },
+        "raw": {
+          "coverage_matched": 0.9509803921568627,
+          "natural_coverage": 0.7941176470588235,
+          "selective_accuracy": 0.433,
+          "n_covered": 97
+        },
+        "pot": {
+          "coverage_matched": 0.9509803921568627,
+          "natural_coverage": 0.8823529411764706,
+          "selective_accuracy": 0.433,
+          "n_covered": 97
+        }
+      },
+      "gaps": {
+        "raw": {
+          "gap": 0.5670103092783505,
+          "ci95": [
+            0.4693877551020408,
+            0.6666666666666667
+          ],
+          "p_one_sided": 0.0004997501249375312,
+          "selacc_a": 1.0,
+          "selacc_b": 0.4329896907216495,
+          "cov_a": 0.9509803921568627,
+          "cov_b": 0.9509803921568627,
+          "n_boot": 2000
+        },
+        "pot": {
+          "gap": 0.5670103092783505,
+          "ci95": [
+            0.4693718112244898,
+            0.6666666666666667
+          ],
+          "p_one_sided": 0.0004997501249375312,
+          "selacc_a": 1.0,
+          "selacc_b": 0.4329896907216495,
+          "cov_a": 0.9509803921568627,
+          "cov_b": 0.9509803921568627,
+          "n_boot": 2000
+        }
+      },
+      "n_queries": 102
+    },
+    "accuracy_vs_hop": {
+      "2": {
+        "n": 17,
+        "modeA": {
+          "coverage": 0.9412,
+          "selective_accuracy": 0.75
+        },
+        "naive": {
+          "coverage": 0.9412,
+          "selective_accuracy": 0.75
+        },
+        "raw": {
+          "coverage": 1.0,
+          "selective_accuracy": 0.7059
+        },
+        "sc": {
+          "coverage": 1.0,
+          "selective_accuracy": 0.7059
+        },
+        "pot": {
+          "coverage": 1.0,
+          "selective_accuracy": 0.7059
+        },
+        "full_minus_naive_coverage_gap": 0.0
+      },
+      "3": {
+        "n": 29,
+        "modeA": {
+          "coverage": 0.5862,
+          "selective_accuracy": 0.9412
+        },
+        "naive": {
+          "coverage": 0.0,
+          "selective_accuracy": NaN
+        },
+        "raw": {
+          "coverage": 0.931,
+          "selective_accuracy": 0.4444
+        },
+        "sc": {
+          "coverage": 0.931,
+          "selective_accuracy": 0.4074
+        },
+        "pot": {
+          "coverage": 0.9655,
+          "selective_accuracy": 0.3571
+        },
+        "full_minus_naive_coverage_gap": 0.5862
+      },
+      "4": {
+        "n": 8,
+        "modeA": {
+          "coverage": 0.625,
+          "selective_accuracy": 0.8
+        },
+        "naive": {
+          "coverage": 0.375,
+          "selective_accuracy": 0.3333
+        },
+        "raw": {
+          "coverage": 0.75,
+          "selective_accuracy": 0.6667
+        },
+        "sc": {
+          "coverage": 0.75,
+          "selective_accuracy": 0.6667
+        },
+        "pot": {
+          "coverage": 1.0,
+          "selective_accuracy": 0.25
+        },
+        "full_minus_naive_coverage_gap": 0.25
+      },
+      "5": {
+        "n": 8,
+        "modeA": {
+          "coverage": 0.875,
+          "selective_accuracy": 1.0
+        },
+        "naive": {
+          "coverage": 0.125,
+          "selective_accuracy": 1.0
+        },
+        "raw": {
+          "coverage": 0.875,
+          "selective_accuracy": 0.7143
+        },
+        "sc": {
+          "coverage": 0.75,
+          "selective_accuracy": 0.8333
+        },
+        "pot": {
+          "coverage": 0.875,
+          "selective_accuracy": 0.7143
+        },
+        "full_minus_naive_coverage_gap": 0.75
+      },
+      "6": {
+        "n": 8,
+        "modeA": {
+          "coverage": 0.75,
+          "selective_accuracy": 0.8333
+        },
+        "naive": {
+          "coverage": 0.0,
+          "selective_accuracy": NaN
+        },
+        "raw": {
+          "coverage": 0.625,
+          "selective_accuracy": 0.6
+        },
+        "sc": {
+          "coverage": 0.625,
+          "selective_accuracy": 0.6
+        },
+        "pot": {
+          "coverage": 1.0,
+          "selective_accuracy": 0.5
+        },
+        "full_minus_naive_coverage_gap": 0.75
+      },
+      "7": {
+        "n": 8,
+        "modeA": {
+          "coverage": 0.75,
+          "selective_accuracy": 1.0
+        },
+        "naive": {
+          "coverage": 0.125,
+          "selective_accuracy": 1.0
+        },
+        "raw": {
+          "coverage": 0.75,
+          "selective_accuracy": 0.5
+        },
+        "sc": {
+          "coverage": 0.75,
+          "selective_accuracy": 0.5
+        },
+        "pot": {
+          "coverage": 0.875,
+          "selective_accuracy": 0.4286
+        },
+        "full_minus_naive_coverage_gap": 0.625
+      },
+      "8": {
+        "n": 8,
+        "modeA": {
+          "coverage": 0.25,
+          "selective_accuracy": 1.0
+        },
+        "naive": {
+          "coverage": 0.0,
+          "selective_accuracy": NaN
+        },
+        "raw": {
+          "coverage": 0.5,
+          "selective_accuracy": 0.5
+        },
+        "sc": {
+          "coverage": 0.5,
+          "selective_accuracy": 0.5
+        },
+        "pot": {
+          "coverage": 0.5,
+          "selective_accuracy": 0.75
+        },
+        "full_minus_naive_coverage_gap": 0.25
+      },
+      "9": {
+        "n": 8,
+        "modeA": {
+          "coverage": 1.0,
+          "selective_accuracy": 0.875
+        },
+        "naive": {
+          "coverage": 0.125,
+          "selective_accuracy": 1.0
+        },
+        "raw": {
+          "coverage": 0.375,
+          "selective_accuracy": 0.3333
+        },
+        "sc": {
+          "coverage": 0.5,
+          "selective_accuracy": 0.25
+        },
+        "pot": {
+          "coverage": 0.75,
+          "selective_accuracy": 0.3333
+        },
+        "full_minus_naive_coverage_gap": 0.875
+      },
+      "10": {
+        "n": 8,
+        "modeA": {
+          "coverage": 0.375,
+          "selective_accuracy": 1.0
+        },
+        "naive": {
+          "coverage": 0.0,
+          "selective_accuracy": NaN
+        },
+        "raw": {
+          "coverage": 0.75,
+          "selective_accuracy": 0.0
+        },
+        "sc": {
+          "coverage": 0.75,
+          "selective_accuracy": 0.0
+        },
+        "pot": {
+          "coverage": 0.625,
+          "selective_accuracy": 0.2
+        },
+        "full_minus_naive_coverage_gap": 0.375
+      }
+    },
+    "absent_relation_h2": {
+      "n_absent": 180,
+      "matched_coverage": 0.4722,
+      "ref": "modeA",
+      "compare": "raw",
+      "confident_wrong_reduction": 0.4444,
+      "ci95": [
+        0.3167,
+        0.5833
+      ],
+      "p_one_sided": 0.0005,
+      "meets_0.20_bar": true,
+      "ci_excludes_0": true,
+      "natural_operating_points": {
+        "modeA": {
+          "natural_named_rate": 0.027777777777777776,
+          "natural_confident_wrong_rate": 0.027777777777777776
+        },
+        "raw": {
+          "natural_named_rate": 0.4722222222222222,
+          "natural_confident_wrong_rate": 0.4722222222222222
+        },
+        "sc": {
+          "natural_named_rate": 0.4777777777777778,
+          "natural_confident_wrong_rate": 0.4777777777777778
+        },
+        "pot": {
+          "natural_named_rate": 0.0,
+          "natural_confident_wrong_rate": 0.0
+        },
+        "naive": {
+          "natural_named_rate": 0.011111111111111112,
+          "natural_confident_wrong_rate": 0.011111111111111112
+        }
+      },
+      "matched_operating_points": {
+        "modeA": {
+          "confident_wrong_rate_at_matched_cov": 0.0278
+        },
+        "raw": {
+          "confident_wrong_rate_at_matched_cov": 0.4722
+        },
+        "sc": {
+          "confident_wrong_rate_at_matched_cov": 0.4722
+        },
+        "pot": {
+          "confident_wrong_rate_at_matched_cov": 0.0
+        },
+        "naive": {
+          "confident_wrong_rate_at_matched_cov": 0.0111
+        }
+      }
+    },
+    "risk_coverage_absent": {
+      "modeA": {
+        "points": [
+          {
+            "tau": 1.0,
+            "coverage": 0.0,
+            "confident_wrong_rate": 0.0,
+            "abstention": 1.0,
+            "selective_accuracy_present": NaN
+          },
+          {
+            "tau": 1.0,
+            "coverage": 0.0278,
+            "confident_wrong_rate": 0.0278,
+            "abstention": 0.9722,
+            "selective_accuracy_present": NaN
+          },
+          {
+            "tau": 0.5,
+            "coverage": 0.0278,
+            "confident_wrong_rate": 0.0278,
+            "abstention": 0.9722,
+            "selective_accuracy_present": NaN
+          }
+        ],
+        "n_pool": 180
+      },
+      "raw": {
+        "points": [
+          {
+            "tau": 1.0,
+            "coverage": 0.0,
+            "confident_wrong_rate": 0.0,
+            "abstention": 1.0,
+            "selective_accuracy_present": NaN
+          },
+          {
+            "tau": 1.0,
+            "coverage": 0.2056,
+            "confident_wrong_rate": 0.2056,
+            "abstention": 0.7944,
+            "selective_accuracy_present": NaN
+          },
+          {
+            "tau": 0.9,
+            "coverage": 0.4611,
+            "confident_wrong_rate": 0.4611,
+            "abstention": 0.5389,
+            "selective_accuracy_present": NaN
+          }
+        ],
+        "n_pool": 180
+      },
+      "sc": {
+        "points": [
+          {
+            "tau": 1.0,
+            "coverage": 0.0,
+            "confident_wrong_rate": 0.0,
+            "abstention": 1.0,
+            "selective_accuracy_present": NaN
+          },
+          {
+            "tau": 1.0,
+            "coverage": 0.4,
+            "confident_wrong_rate": 0.4,
+            "abstention": 0.6,
+            "selective_accuracy_present": NaN
+          },
+          {
+            "tau": 0.6667,
+            "coverage": 0.4778,
+            "confident_wrong_rate": 0.4778,
+            "abstention": 0.5222,
+            "selective_accuracy_present": NaN
+          }
+        ],
+        "n_pool": 180
+      },
+      "pot": {
+        "points": [
+          {
+            "tau": 1.0,
+            "coverage": 0.0,
+            "confident_wrong_rate": 0.0,
+            "abstention": 1.0,
+            "selective_accuracy_present": NaN
+          },
+          {
+            "tau": 0.0,
+            "coverage": 0.0,
+            "confident_wrong_rate": 0.0,
+            "abstention": 1.0,
+            "selective_accuracy_present": NaN
+          }
+        ],
+        "n_pool": 180
+      }
+    },
+    "risk_coverage_mixed_present_absent": {
+      "modeA": {
+        "points": [
+          {
+            "tau": 1.0,
+            "coverage": 0.0,
+            "confident_wrong_rate": 0.0,
+            "abstention": 1.0,
+            "selective_accuracy_present": NaN
+          },
+          {
+            "tau": 1.0,
+            "coverage": 0.266,
+            "confident_wrong_rate": 0.0461,
+            "abstention": 0.734,
+            "selective_accuracy_present": 0.8857
+          },
+          {
+            "tau": 0.5,
+            "coverage": 0.266,
+            "confident_wrong_rate": 0.0461,
+            "abstention": 0.734,
+            "selective_accuracy_present": 0.8857
+          }
+        ],
+        "n_pool": 282
+      },
+      "raw": {
+        "points": [
+          {
+            "tau": 1.0,
+            "coverage": 0.0,
+            "confident_wrong_rate": 0.0,
+            "abstention": 1.0,
+            "selective_accuracy_present": NaN
+          },
+          {
+            "tau": 1.0,
+            "coverage": 0.3121,
+            "confident_wrong_rate": 0.195,
+            "abstention": 0.6879,
+            "selective_accuracy_present": 0.6471
+          },
+          {
+            "tau": 0.95,
+            "coverage": 0.3191,
+            "confident_wrong_rate": 0.1986,
+            "abstention": 0.6809,
+            "selective_accuracy_present": 0.6415
+          }
+        ],
+        "n_pool": 282
+      }
+    },
+    "holm_family": {
+      "H1_modeA_vs_pot": {
+        "p": 0.0004997501249375312,
+        "p_adj": 0.0014992503748125937,
+        "reject": true
+      },
+      "H1_modeA_vs_sc": {
+        "p": 0.0004997501249375312,
+        "p_adj": 0.0014992503748125937,
+        "reject": true
+      },
+      "H2_absent_confident_wrong": {
+        "p": 0.0005,
+        "p_adj": 0.0014992503748125937,
+        "reject": true
+      }
+    },
+    "prolog_discharge": {
+      "n_discharged": 40,
+      "n_executed_in_swipl": 40,
+      "n_prolog_matches_python": 40,
+      "n_modeA_surface_matches_gold": 39,
+      "engines": {
+        "subprocess": 40
+      },
+      "samples": [
+        {
+          "doc_id": "0741bf9a-a8f6-4ff1-aac1-1a4f0828aed9",
+          "hop": 2,
+          "qsrc": "Ashley",
+          "qtgt": "Nicolas",
+          "engine": "subprocess",
+          "executed_in_swipl": true,
+          "prolog_results": [
+            "grand"
+          ],
+          "python_reference": [
+            "grand"
+          ],
+          "modeA_answer_type": "grand",
+          "modeA_surface": "grandson",
+          "gold": "grandson",
+          "exit_code": 0
+        },
+        {
+          "doc_id": "162070fb-1a46-44f2-91e5-50f8cc99daf3",
+          "hop": 2,
+          "qsrc": "Ashley",
+          "qtgt": "Kevin",
+          "engine": "subprocess",
+          "executed_in_swipl": true,
+          "prolog_results": [
+            "grand"
+          ],
+          "python_reference": [
+            "grand"
+          ],
+          "modeA_answer_type": "grand",
+          "modeA_surface": "grandson",
+          "gold": "grandson",
+          "exit_code": 0
+        },
+        {
+          "doc_id": "16b898d1-a77e-4e05-86d6-b6e614b030ab",
+          "hop": 2,
+          "qsrc": "Ashley",
+          "qtgt": "Charlotte",
+          "engine": "subprocess",
+          "executed_in_swipl": true,
+          "prolog_results": [
+            "grand"
+          ],
+          "python_reference": [
+            "grand"
+          ],
+          "modeA_answer_type": "grand",
+          "modeA_surface": "granddaughter",
+          "gold": "granddaughter",
+          "exit_code": 0
+        }
+      ],
+      "swipl_available": true
+    },
+    "worked_example_3entity": {
+      "doc_id": "0102334c-6264-4a27-bb07-ad211606bc8d",
+      "story": "Irvin's grandfather, James, went out to get groceries. In the mean time, Irvin's mother, Lena, cooked up some vegetables. James took his daughter Lynn out for dinner.",
+      "qsrc": "Lena",
+      "qtgt": "Lynn",
+      "gold": "sister",
+      "extracted_atomics": [
+        {
+          "a": "Irvin",
+          "b": "James",
+          "type": "inv-grand",
+          "surface": "grandfather"
+        },
+        {
+          "a": "Irvin",
+          "b": "Lena",
+          "type": "inv-child",
+          "surface": "mother"
+        },
+        {
+          "a": "James",
+          "b": "Lynn",
+          "type": "child",
+          "surface": "daughter"
+        }
+      ],
+      "modeA_narrowing_trace": [
+        {
+          "a": "Lena",
+          "b": "Irvin",
+          "c": "James",
+          "t1": "child",
+          "t2": "inv-grand",
+          "t3": "inv-child"
+        },
+        {
+          "a": "Lena",
+          "b": "James",
+          "c": "Lynn",
+          "t1": "inv-child",
+          "t2": "child",
+          "t3": "sibling"
+        }
+      ],
+      "prolog": {
+        "engine": "subprocess",
+        "executed_in_swipl": true,
+        "prolog_results": [],
+        "stdout_tail": "",
+        "program_chars": 1545
+      },
+      "one_mode_b_collapse": {
+        "doc_id": "046af756-3997-4bfa-8944-690af4cc6a77",
+        "qsrc": "Tracy",
+        "qtgt": "Shantel",
+        "f_comb": null,
+        "derived_types": "inv-child|inv-in-law",
+        "gold": "mother",
+        "explanation": "two incompatible derivations (e.g. blood vs in-law) for the same pair => Mode-B abstains rather than guess"
+      }
+    },
+    "gold_atomic_engine_sanity": {
+      "n": 72,
+      "singleton_rate": 0.9583333333333334,
+      "accuracy_on_singletons": 1.0,
+      "n_modeb_conflict": 3,
+      "n_no_path": 0
+    },
+    "cross_family_sensitivity": {
+      "reader": "deepseek/deepseek-v3.2",
+      "n_stories": 72,
+      "atomic_precision": 0.4922,
+      "atomic_recall": 0.5116,
+      "modeA_coverage": 0.625,
+      "modeA_selective_accuracy": 0.8667,
+      "raw_selective_accuracy_matched": 0.5111,
+      "modeA_vs_raw_gap": {
+        "gap": 0.3555555555555556,
+        "ci95": [
+          0.1914847363552266,
+          0.5135890630266261
+        ],
+        "p_one_sided": 0.0004997501249375312,
+        "selacc_a": 0.8666666666666667,
+        "selacc_b": 0.5111111111111111,
+        "cov_a": 0.625,
+        "cov_b": 0.625,
+        "n_boot": 2000
+      },
+      "cost_usd": 0.0142,
+      "n_calls": 144,
+      "primary_reader": "google/gemini-3.1-flash-lite",
+      "primary_atomic_recall": 0.5324
+    },
+    "budget": {
+      "cumulative_usd": 0.0,
+      "n_llm_calls": 0,
+      "n_cache_hits": 1538,
+      "n_parse_fail": 0,
+      "n_errors": 0,
+      "model": "google/gemini-3.1-flash-lite",
+      "fallbacks": [
+        "deepseek/deepseek-v3.2",
+        "google/gemini-3-flash-preview"
+      ],
+      "temperature": 0.0,
+      "budget_hard": 9.0,
+      "budget_soft": 5.0
+    },
+    "verdict": {
+      "H1_modeA_vs_pot": {
+        "gap": 0.42857142857142855,
+        "ci95": [
+          0.2981117035738213,
+          0.5574053891947058
+        ],
+        "p_adj": 0.0014992503748125937,
+        "reject": true
+      },
+      "H1_modeA_vs_sc": {
+        "gap": 0.3285714285714285,
+        "ci95": [
+          0.2052428082670018,
+          0.45811901927598314
+        ],
+        "p_adj": 0.0014992503748125937,
+        "reject": true
+      },
+      "H2_absent_confident_wrong": {
+        "reduction": 0.4444,
+        "ci95": [
+          0.3167,
+          0.5833
+        ],
+        "p_adj": 0.0014992503748125937,
+        "meets_0.20_bar": true,
+        "reject": true
+      },
+      "H3_iteration": {
+        "full_minus_naive_gap_by_hop": {
+          "2": 0.0,
+          "3": 0.5862,
+          "4": 0.25,
+          "5": 0.75,
+          "6": 0.75,
+          "7": 0.625,
+          "8": 0.25,
+          "9": 0.875,
+          "10": 0.375
+        },
+        "grows_with_hop": true
+      },
+      "overall": "CONFIRM",
+      "confirmed_claims": [
+        "H1 (matched-coverage advantage vs PoT & SC)",
+        "H2 (>=0.20 hallucination reduction on absent pairs)",
+        "H3 (iteration: full > naive on hop>=3)"
+      ]
+    },
+    "runtime_sec": 73.2,
+    "figures": [
+      "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_3/gen_art/gen_art_experiment_1/results/fig_accuracy_vs_hop.png",
+      "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_3/gen_art/gen_art_experiment_1/results/fig_coverage_vs_hop.png",
+      "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_3/gen_art/gen_art_experiment_1/results/fig_risk_coverage_absent.png"
+    ]
+  },
+  "datasets": [
+    {
+      "dataset": "clutrr_gen",
+      "examples": [
+        {
+          "input": "Belva went with her grandmother, Ashley, to the grocery store to help her while she shopped. Nicolas and his sister, Belva love it when their grandmother visits because she spoils them. She is coming ...",
+          "output": "grandson",
+          "predict_modeA": "grandson",
+          "predict_modeA_goldread": "grandson",
+          "predict_naive": "grandson",
+          "predict_raw": "grandson",
+          "predict_sc": "grandson",
+          "predict_pot": "grandson",
+          "predict_off": "ABSTAIN",
+          "metadata_doc_id": "0741bf9a-a8f6-4ff1-aac1-1a4f0828aed9",
+          "metadata_qsrc": "Ashley",
+          "metadata_qtgt": "Nicolas",
+          "metadata_hop": 2,
+          "metadata_noise_type": "none",
+          "metadata_is_absent": false,
+          "metadata_n_extracted_edges": 4,
+          "metadata_modeA_conf": 1.0,
+          "metadata_modeA_named": true,
+          "metadata_modeA_info": "",
+          "metadata_raw_conf": 1.0,
+          "metadata_sc_conf": 1.0,
+          "metadata_pot_conf": 1.0
+        },
+        {
+          "input": "Emily and her granddaughter Ashley went to the mall Michael likes to visit his sister. Her name is Emily.",
+          "output": "grandson",
+          "predict_modeA": "ABSTAIN",
+          "predict_modeA_goldread": "grandson",
+          "predict_naive": "ABSTAIN",
+          "predict_raw": "uncle",
+          "predict_sc": "uncle",
+          "predict_pot": "uncle",
+          "predict_off": "ABSTAIN",
+          "metadata_doc_id": "0f226f4d-dc2d-4051-a875-9e555ecf0f22",
+          "metadata_qsrc": "Ashley",
+          "metadata_qtgt": "Michael",
+          "metadata_hop": 2,
+          "metadata_noise_type": "none",
+          "metadata_is_absent": false,
+          "metadata_n_extracted_edges": 2,
+          "metadata_modeA_conf": 0.0,
+          "metadata_modeA_named": false,
+          "metadata_modeA_info": "",
+          "metadata_raw_conf": 0.9,
+          "metadata_sc_conf": 1.0,
+          "metadata_pot_conf": 1.0
+        },
+        {
+          "input": "Heidi went to her brother Kevin's birthday party Ashley and her granddaughter Heidi prepared dinner as a family",
+          "output": "grandson",
+          "predict_modeA": "grandson",
+          "predict_modeA_goldread": "grandson",
+          "predict_naive": "grandson",
+          "predict_raw": "grandson",
+          "predict_sc": "grandson",
+          "predict_pot": "grandson",
+          "predict_off": "ABSTAIN",
+          "metadata_doc_id": "162070fb-1a46-44f2-91e5-50f8cc99daf3",
+          "metadata_qsrc": "Ashley",
+          "metadata_qtgt": "Kevin",
+          "metadata_hop": 2,
+          "metadata_noise_type": "none",
+          "metadata_is_absent": false,
+          "metadata_n_extracted_edges": 2,
+          "metadata_modeA_conf": 1.0,
+          "metadata_modeA_named": true,
+          "metadata_modeA_info": "",
+          "metadata_raw_conf": 1.0,
+          "metadata_sc_conf": 1.0,
+          "metadata_pot_conf": 1.0
+        }
+      ]
+    },
+    {
+      "dataset": "clutrr_disc",
+      "examples": [
+        {
+          "input": "Rebecca invited her daughter-in-law Amanda to her birthday party. Stephen is his grandfather, Willie's favorite person Jerry took his son Willie to see his sister Patricia",
+          "output": "father",
+          "predict_modeA": "ABSTAIN",
+          "predict_modeA_goldread": "father",
+          "predict_naive": "ABSTAIN",
+          "predict_raw": "grandfather",
+          "predict_sc": "grandfather",
+          "predict_pot": "grandfather",
+          "predict_off": "ABSTAIN",
+          "metadata_doc_id": "00255bf0-6440-4796-940a-5d7011062ffe",
+          "metadata_qsrc": "Patricia",
+          "metadata_qtgt": "Stephen",
+          "metadata_hop": 3,
+          "metadata_noise_type": "disconnected",
+          "metadata_is_absent": false,
+          "metadata_n_extracted_edges": 3,
+          "metadata_modeA_conf": 0.0,
+          "metadata_modeA_named": false,
+          "metadata_modeA_info": "",
+          "metadata_raw_conf": 1.0,
+          "metadata_sc_conf": 1.0,
+          "metadata_pot_conf": 1.0
+        },
+        {
+          "input": "Rebecca invited her daughter-in-law Amanda to her birthday party. Stephen is his grandfather, Willie's favorite person Jerry took his son Willie to see his sister Patricia",
+          "output": "no-relation",
+          "predict_modeA": "ABSTAIN",
+          "predict_modeA_goldread": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_raw": "ABSTAIN",
+          "predict_sc": "ABSTAIN",
+          "predict_pot": "ABSTAIN",
+          "predict_off": "ABSTAIN",
+          "metadata_doc_id": "00255bf0-6440-4796-940a-5d7011062ffe",
+          "metadata_qsrc": "Patricia",
+          "metadata_qtgt": "Rebecca",
+          "metadata_hop": 3,
+          "metadata_noise_type": "disconnected",
+          "metadata_is_absent": true,
+          "metadata_n_extracted_edges": 3,
+          "metadata_modeA_conf": 0.0,
+          "metadata_modeA_named": false,
+          "metadata_modeA_info": "",
+          "metadata_raw_conf": 1.0,
+          "metadata_sc_conf": 1.0,
+          "metadata_pot_conf": 0.0
+        },
+        {
+          "input": "Rebecca invited her daughter-in-law Amanda to her birthday party. Stephen is his grandfather, Willie's favorite person Jerry took his son Willie to see his sister Patricia",
+          "output": "no-relation",
+          "predict_modeA": "ABSTAIN",
+          "predict_modeA_goldread": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_raw": "ABSTAIN",
+          "predict_sc": "ABSTAIN",
+          "predict_pot": "ABSTAIN",
+          "predict_off": "ABSTAIN",
+          "metadata_doc_id": "00255bf0-6440-4796-940a-5d7011062ffe",
+          "metadata_qsrc": "Patricia",
+          "metadata_qtgt": "Amanda",
+          "metadata_hop": 3,
+          "metadata_noise_type": "disconnected",
+          "metadata_is_absent": true,
+          "metadata_n_extracted_edges": 3,
+          "metadata_modeA_conf": 0.0,
+          "metadata_modeA_named": false,
+          "metadata_modeA_info": "",
+          "metadata_raw_conf": 1.0,
+          "metadata_sc_conf": 1.0,
+          "metadata_pot_conf": 0.0
+        }
+      ]
+    }
+  ]
+}

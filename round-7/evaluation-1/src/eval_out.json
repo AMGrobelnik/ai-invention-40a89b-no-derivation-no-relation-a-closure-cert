@@ -1,0 +1,1947 @@
+{
+  "metadata": {
+    "evaluation_name": "eval_iter7_dir3: empirical-isolation reframe + FACT-A/FACT-B re-centering + framing scaffold",
+    "description": "Pure $0 re-analysis (numpy/scipy/json only; no LLM, no network). Reproduce-verifies every carried literal from per-query rows and emits a framing scaffold so the paper reads as an EMPIRICAL-ISOLATION (confidence-blindness) contribution, not a certificate-mechanism contribution.",
+    "spend": {
+      "cumulative_usd": 0.0,
+      "n_llm_calls": 0,
+      "n_network_calls": 0
+    },
+    "seed": 20260617,
+    "bootstrap_B": 10000,
+    "signals": [
+      "verbalized",
+      "sc_margin",
+      "ptrue",
+      "negent"
+    ],
+    "source_artifacts": {
+      "reframe_source": "art_LeRQRGHJZcdQ (iter6/experiment_1)",
+      "clutrr_pipeline": "art_0a7i481ZRwS1 (iter3/experiment_1)",
+      "redocred_corpus": "art_NUWTxBVWENIJ (iter6/dataset_1)",
+      "fuzzy": "art_I22c-J7-OcXl (iter5/experiment_2)",
+      "inherited_decomposition_quoted": "art_D0cHQUJ8kY75 (prior eval; +0.673/+0.0025 not recomputed)"
+    },
+    "reproduction_gate": {
+      "n_checks": 38,
+      "n_pass": 38,
+      "reproduction_ok": true,
+      "seed": 20260617,
+      "bootstrap_B": 10000,
+      "checks": [
+        {
+          "key": "factA_raw_absent_hallucination",
+          "carried": 0.4722,
+          "recomputed": 0.4722,
+          "matches": true
+        },
+        {
+          "key": "factB_crux_survival_verbalized",
+          "carried": 0.4353,
+          "recomputed": 0.4353,
+          "matches": true
+        },
+        {
+          "key": "factB_crux_survival_sc_margin",
+          "carried": 0.7176,
+          "recomputed": 0.7176,
+          "matches": true
+        },
+        {
+          "key": "factB_crux_survival_ptrue",
+          "carried": 0.2471,
+          "recomputed": 0.2471,
+          "matches": true
+        },
+        {
+          "key": "factB_crux_survival_negent",
+          "carried": 0.7176,
+          "recomputed": 0.7176,
+          "matches": true
+        },
+        {
+          "key": "certificate_absent_confident_wrong",
+          "carried": 0.0278,
+          "recomputed": 0.0278,
+          "matches": true
+        },
+        {
+          "key": "absent_confident_wrong_reduction_vs_raw",
+          "carried": 0.4444,
+          "recomputed": 0.4444,
+          "matches": true
+        },
+        {
+          "key": "mixed_selacc_certificate",
+          "carried": 0.8267,
+          "recomputed": 0.8267,
+          "matches": true
+        },
+        {
+          "key": "mixed_selacc_ct_verbalized",
+          "carried": 0.4133,
+          "recomputed": 0.4133,
+          "matches": true
+        },
+        {
+          "key": "mixed_selacc_ct_sc_margin",
+          "carried": 0.3733,
+          "recomputed": 0.3733,
+          "matches": true
+        },
+        {
+          "key": "mixed_selacc_ct_ptrue",
+          "carried": 0.44,
+          "recomputed": 0.44,
+          "matches": true
+        },
+        {
+          "key": "mixed_selacc_ct_negent",
+          "carried": 0.3733,
+          "recomputed": 0.3733,
+          "matches": true
+        },
+        {
+          "key": "mixed_matched_coverage",
+          "carried": 0.266,
+          "recomputed": 0.266,
+          "matches": true
+        },
+        {
+          "key": "mixed_cw_reduction_verbalized",
+          "carried": 0.1099,
+          "recomputed": 0.1099,
+          "matches": true
+        },
+        {
+          "key": "mixed_cw_reduction_ci_verbalized",
+          "carried": [
+            0.0543,
+            0.1703
+          ],
+          "recomputed": [
+            0.0543,
+            0.1703
+          ],
+          "matches": true
+        },
+        {
+          "key": "mixed_cw_reduction_sc_margin",
+          "carried": 0.1206,
+          "recomputed": 0.1206,
+          "matches": true
+        },
+        {
+          "key": "mixed_cw_reduction_ci_sc_margin",
+          "carried": [
+            0.0486,
+            0.1957
+          ],
+          "recomputed": [
+            0.0486,
+            0.1957
+          ],
+          "matches": true
+        },
+        {
+          "key": "mixed_cw_reduction_ptrue",
+          "carried": 0.1028,
+          "recomputed": 0.1028,
+          "matches": true
+        },
+        {
+          "key": "mixed_cw_reduction_ci_ptrue",
+          "carried": [
+            0.0395,
+            0.1706
+          ],
+          "recomputed": [
+            0.0395,
+            0.1706
+          ],
+          "matches": true
+        },
+        {
+          "key": "mixed_cw_reduction_negent",
+          "carried": 0.1206,
+          "recomputed": 0.1206,
+          "matches": true
+        },
+        {
+          "key": "mixed_cw_reduction_ci_negent",
+          "carried": [
+            0.0486,
+            0.1957
+          ],
+          "recomputed": [
+            0.0486,
+            0.1957
+          ],
+          "matches": true
+        },
+        {
+          "key": "holm_p_adj_verbalized",
+          "carried": 0.0004,
+          "recomputed": 0.0004,
+          "matches": true
+        },
+        {
+          "key": "holm_p_adj_sc_margin",
+          "carried": 0.0027,
+          "recomputed": 0.0027,
+          "matches": true
+        },
+        {
+          "key": "holm_p_adj_ptrue",
+          "carried": 0.0027,
+          "recomputed": 0.0027,
+          "matches": true
+        },
+        {
+          "key": "holm_p_adj_negent",
+          "carried": 0.0027,
+          "recomputed": 0.0027,
+          "matches": true
+        },
+        {
+          "key": "spatial_certificate_confident_wrong",
+          "carried": 0.0219,
+          "recomputed": 0.0219,
+          "matches": true
+        },
+        {
+          "key": "spatial_raw_abstain_confident_wrong",
+          "carried": 0.0351,
+          "recomputed": 0.0351,
+          "matches": true
+        },
+        {
+          "key": "multihop_present_selacc_certificate",
+          "carried": 0.8857,
+          "recomputed": 0.8857,
+          "matches": true
+        },
+        {
+          "key": "multihop_present_selacc_ct_verbalized",
+          "carried": 0.5429,
+          "recomputed": 0.5429,
+          "matches": true
+        },
+        {
+          "key": "multihop_present_coverage",
+          "carried": 0.6863,
+          "recomputed": 0.6863,
+          "matches": true
+        },
+        {
+          "key": "deepseek_absent_hallucination",
+          "carried": 0.4833,
+          "recomputed": 0.4833,
+          "matches": true
+        },
+        {
+          "key": "deepseek_survival_verbalized",
+          "carried": 0.6724,
+          "recomputed": 0.6724,
+          "matches": true
+        },
+        {
+          "key": "deepseek_survival_sc_margin",
+          "carried": 0.2241,
+          "recomputed": 0.2241,
+          "matches": true
+        },
+        {
+          "key": "deepseek_survival_ptrue",
+          "carried": 0.1034,
+          "recomputed": 0.1034,
+          "matches": true
+        },
+        {
+          "key": "deepseek_survival_negent",
+          "carried": 0.2241,
+          "recomputed": 0.2241,
+          "matches": true
+        },
+        {
+          "key": "atomic_precision",
+          "carried": 0.5361,
+          "recomputed": 0.5361,
+          "matches": true
+        },
+        {
+          "key": "atomic_recall",
+          "carried": 0.5324,
+          "recomputed": 0.5324,
+          "matches": true
+        },
+        {
+          "key": "atomic_f1",
+          "carried": 0.5343,
+          "recomputed": 0.5343,
+          "matches": true
+        }
+      ],
+      "note": "every point estimate recomputed from the per-query rows of art_LeRQRGHJZcdQ; rows tagged recomputed=False in the ledger are separate-reader passes (deepseek) or prior-artifact CIs not reconstructable from this pool and are carried."
+    },
+    "structural_by_construction_paragraph": "A note on what the certificate's 2.8% confident-wrong rate on CLUTRR absent pairs does and does not establish. In the CLUTRR construction an absent pair is DEFINED as two entities that fall in DIFFERENT connected components of the extracted kinship graph; a SOUND forward-closure least-fixpoint over that graph therefore derives the EMPTY relation set for such a pair and ABSTAINS almost by definition. Imperfect extraction (atomic recall ~0.53) can only REMOVE edges, which can only INCREASE apparent disconnection, so it makes the certificate abstain MORE, never less, on absent pairs. The certificate's 2.8% confident-wrong on this stratum is thus NEAR-TAUTOLOGICAL given the setup: one side of the comparison is handed the answer by the way the regime is built, and this number must NOT be allowed to carry the section. The genuinely non-circular content -- the content that becomes the headline -- is a property of the RAW LLM and of the confidence signals, measured INDEPENDENTLY of the certificate. FACT A: the raw LLM confidently fabricates a kinship relation on 47.2% of these absent pairs (cross-family deepseek-v3.2: 48.3%). FACT B: not one member of a strong four-signal confidence battery -- verbalized confidence, self-consistency vote-margin, Kadavath P(True), and semantic-entropy negentropy -- removes those hallucinations at a coverage matched to the certificate; the fractions surviving a certificate-matched rule are 0.4353 / 0.7176 / 0.2471 / 0.7176, and even the single best signal, P(True), still lets 24.7% through. These two facts hold no matter how the certificate behaves. Finally, this is exactly why extraction recall and the natural-corpus run are load-bearing: on a NATURAL corpus the extracted graph -- and hence absent-detection -- is no longer trivially correct, because extraction errors can also DELETE a true edge and make the certificate OVER-abstain on a PRESENT pair (a cost the disconnected-by-construction CLUTRR regime hides). That asymmetry is what converts the iter-7 natural-corpus experiment from a confirmatory check into a DECISIVE test of whether the certificate's abstention discipline survives when the graph is no longer handed to it.",
+    "non_circular_vs_structural_ledger": [
+      {
+        "key": "FACT_A_raw_absent_hallucination",
+        "value": 0.4722,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_A_cross_family_deepseek",
+        "value": 0.4833,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_B_crux_survival_verbalized",
+        "value": 0.4353,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_B_crux_survival_sc_margin",
+        "value": 0.7176,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_B_crux_survival_ptrue",
+        "value": 0.2471,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_B_crux_survival_negent",
+        "value": 0.7176,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_B_deepseek_survival_verbalized",
+        "value": 0.6724,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_B_deepseek_survival_sc_margin",
+        "value": 0.2241,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_B_deepseek_survival_ptrue",
+        "value": 0.1034,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_B_deepseek_survival_negent",
+        "value": 0.2241,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "certificate_absent_confident_wrong",
+        "value": 0.0278,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "STRUCTURAL_BY_CONSTRUCTION",
+        "role": "SUPPORTING",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "absent_confident_wrong_reduction_vs_raw",
+        "value": 0.4444,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "STRUCTURAL_BY_CONSTRUCTION",
+        "role": "SUPPORTING",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "absent_reduction_ci95_lo",
+        "value": 0.3167,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "STRUCTURAL_BY_CONSTRUCTION",
+        "role": "SUPPORTING",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "absent_reduction_ci95_hi",
+        "value": 0.5833,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "STRUCTURAL_BY_CONSTRUCTION",
+        "role": "SUPPORTING",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "multihop_present_selacc_certificate",
+        "value": 0.8857,
+        "evidence_tag": "INHERITED",
+        "side": "INHERITED",
+        "role": "SUPPORTING",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "multihop_present_selacc_ct_verbalized",
+        "value": 0.5429,
+        "evidence_tag": "INHERITED",
+        "side": "INHERITED",
+        "role": "SUPPORTING",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "multihop_present_coverage",
+        "value": 0.6863,
+        "evidence_tag": "INHERITED",
+        "side": "INHERITED",
+        "role": "SUPPORTING",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "inherited_gap_increment",
+        "value": 0.673,
+        "evidence_tag": "INHERITED",
+        "side": "INHERITED",
+        "role": "FRAMING",
+        "source_artifact": "art_D0cHQUJ8kY75",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "novel_empirical_isolation_increment",
+        "value": 0.0025,
+        "evidence_tag": "INHERITED",
+        "side": "INHERITED",
+        "role": "FRAMING",
+        "source_artifact": "art_D0cHQUJ8kY75",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "mixed_selacc_certificate",
+        "value": 0.8267,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR_CONDITIONAL",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "mixed_selacc_ct_verbalized",
+        "value": 0.4133,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR_CONDITIONAL",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "mixed_selacc_ct_sc_margin",
+        "value": 0.3733,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR_CONDITIONAL",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "mixed_selacc_ct_ptrue",
+        "value": 0.44,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR_CONDITIONAL",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "mixed_selacc_ct_negent",
+        "value": 0.3733,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR_CONDITIONAL",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "mixed_matched_coverage",
+        "value": 0.266,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR_CONDITIONAL",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "mixed_cw_reduction_verbalized",
+        "value": 0.1099,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR_CONDITIONAL",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "mixed_cw_reduction_sc_margin",
+        "value": 0.1206,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR_CONDITIONAL",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "mixed_cw_reduction_ptrue",
+        "value": 0.1028,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR_CONDITIONAL",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "mixed_cw_reduction_negent",
+        "value": 0.1206,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR_CONDITIONAL",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "mixed_holm_p_adj_verbalized",
+        "value": 0.0004,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR_CONDITIONAL",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "mixed_holm_p_adj_sc_margin",
+        "value": 0.0027,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR_CONDITIONAL",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "mixed_holm_p_adj_ptrue",
+        "value": 0.0027,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR_CONDITIONAL",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "mixed_holm_p_adj_negent",
+        "value": 0.0027,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR_CONDITIONAL",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "spatial_certificate_confident_wrong",
+        "value": 0.0219,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "STRUCTURAL_BY_CONSTRUCTION",
+        "role": "SUPPORTING",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "spatial_raw_abstain_confident_wrong",
+        "value": 0.0351,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "STRUCTURAL_BY_CONSTRUCTION",
+        "role": "SUPPORTING",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "spatial_selacc_gap_certificate_vs_raw_abstain",
+        "value": -0.0882,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "STRUCTURAL_BY_CONSTRUCTION",
+        "role": "BOUNDARY",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "spatial_selacc_gap_ci95_lo",
+        "value": -0.2222,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "STRUCTURAL_BY_CONSTRUCTION",
+        "role": "BOUNDARY",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "spatial_selacc_gap_ci95_hi",
+        "value": 0.04,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "STRUCTURAL_BY_CONSTRUCTION",
+        "role": "BOUNDARY",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "atomic_precision",
+        "value": 0.5361,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "MEASURED",
+        "role": "SUPPORTING",
+        "source_artifact": "art_0a7i481ZRwS1",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "atomic_recall",
+        "value": 0.5324,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "MEASURED",
+        "role": "SUPPORTING",
+        "source_artifact": "art_0a7i481ZRwS1",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "atomic_f1",
+        "value": 0.5343,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "MEASURED",
+        "role": "SUPPORTING",
+        "source_artifact": "art_0a7i481ZRwS1",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "fuzzy_spatial_cw_reduction",
+        "value": 0.364,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "MEASURED",
+        "role": "SUPPORTING",
+        "source_artifact": "art_I22c-J7-OcXl",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "fuzzy_kinship_cw_reduction",
+        "value": 0.2162,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "MEASURED",
+        "role": "SUPPORTING",
+        "source_artifact": "art_I22c-J7-OcXl",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "fuzzy_spatial_unsound_reads_caught",
+        "value": 1.0,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "MEASURED",
+        "role": "SUPPORTING",
+        "source_artifact": "art_I22c-J7-OcXl",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "redocred_present_multihop",
+        "value": 360,
+        "evidence_tag": "NATURAL-CORPUS-PENDING",
+        "side": "PENDING",
+        "role": "PENDING",
+        "source_artifact": "art_NUWTxBVWENIJ",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "redocred_absent_pairs",
+        "value": 368,
+        "evidence_tag": "NATURAL-CORPUS-PENDING",
+        "side": "PENDING",
+        "role": "PENDING",
+        "source_artifact": "art_NUWTxBVWENIJ",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "combined_present_round_trip",
+        "value": 476,
+        "evidence_tag": "GOLD-ONLY-GATE",
+        "side": "STRUCTURAL_BY_CONSTRUCTION",
+        "role": "SUPPORTING",
+        "source_artifact": "art_NUWTxBVWENIJ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "combined_absent_round_trip",
+        "value": 577,
+        "evidence_tag": "GOLD-ONLY-GATE",
+        "side": "STRUCTURAL_BY_CONSTRUCTION",
+        "role": "SUPPORTING",
+        "source_artifact": "art_NUWTxBVWENIJ",
+        "recomputed": true,
+        "matches_carried": true
+      }
+    ],
+    "count_breakdown": {
+      "re_docred_primary": {
+        "present_multihop": 360,
+        "composed_only_non_circular": 222,
+        "hop_histogram": {
+          "2": 318,
+          "3": 38,
+          "4": 4
+        },
+        "absent_pairs": 368,
+        "n_docs": 575
+      },
+      "docred_secondary": {
+        "present": 116,
+        "absent": 209,
+        "n_docs": 400,
+        "absent_status": "DOWNGRADED (vanilla DocRED false-negatives)"
+      },
+      "combined_engine_round_trip": {
+        "present": 476,
+        "absent": 577,
+        "note": "476/476 present reproduced, 577/577 absent derive EMPTY"
+      },
+      "completeness_correction": {
+        "shared_titles": 400,
+        "re_docred_family_edges": 3087,
+        "docred_family_edges": 1716,
+        "extra_edges_recovered": 1371,
+        "pct_more": "+80%"
+      },
+      "arithmetic_check": {
+        "present": "360+116=476",
+        "absent": "368+209=577",
+        "passed": true
+      },
+      "fix_sentence": "The Re-DocRED natural-text corpus reports two figure pairs that are sometimes confused: the PRIMARY trustworthy-absent slice (re-docred) supplies 360 present multi-hop queries and 368 absent pairs, while the engine round-trip verification (476 present / 577 absent) is the COMBINED re-docred (360 / 368) plus secondary docred (116 / 209) total -- 360+116 = 476 and 368+209 = 577 -- so the two pairs are not in conflict; the larger pair is the union over both sources, the smaller is the load-bearing Re-DocRED slice on which absent gold is trustworthy."
+    },
+    "abstract_front_matter": "Scope. This paper studies a closure-certified DEDUCTION SUB-MODULE -- a sound symbolic forward-closure over LLM-extracted relations that abstains rather than guess -- and NOT a full operational text-to-FOL umbrella pipeline. We therefore state up front what is explicitly OUT OF SCOPE and named here as FUTURE WORK THIS PAPER DOES NOT CLAIM TO DELIVER: (a) upper-ontology / OpenCyc grounding and taxonomic background knowledge; (b) general fuzzy unification over arbitrary predicates -- our fuzzy contribution is scoped to disjunctions over a KNOWN base vocabulary (RCC-8 base relations; CLUTRR kinship primitives), not open-vocabulary predicate invention; (c) atomic re-extraction -- extraction quality is MEASURED, not improved (CLUTRR atomic precision/recall/F1 ~0.536 / 0.532 / 0.534); and (d) reasoning over genuine ~3000-character professional documents -- no benchmark document we use reaches that length (CLUTRR <=871 chars; Re-DocRED Wikipedia intros average ~1020 chars, none family-bearing reach 3000), and the operational case study is bracket-selected and concatenation-constructed rather than naturally long. Because extraction is the ceiling (~0.53 atomic recall implies only ~19% Mode-A deductive coverage on dense prose), we report real-text utility as structurally EXTRACTION-LIMITED. Accordingly we target a neuro-symbolic / temporal-and-qualitative-reasoning venue (NeSy; EMNLP Findings) rather than a full knowledge-extraction-pipeline track, and frame the contribution as an EMPIRICAL ISOLATION of confidence-blindness, not as a new end-to-end system.",
+    "operational_compression_recommendation": "Compression recommendation for the operational ~3000-char case study (art_WQoePKrpsTPo): collapse its two arms -- the bracket-selected temporal arm and the concatenation-constructed kinship arm (in which all 56/56 cross-story absent pairs are abstained trivially BY CONSTRUCTION, because concatenated stories share no entities) -- into ONE short paragraph whose only claims are that the pipeline RUNS at ~3000-character length and that EXTRACTION recall is the binding ceiling. This frees roughly a column of space for the natural-corpus (Re-DocRED) result, which is the decisive evidence; the operational study should support feasibility, not headline accuracy.",
+    "fuzzy_reframe": {
+      "prose": {
+        "lead": "The distinctive fuzzy-unification contribution is the abstain-on-collapse CATCH of SOUND-VIOLATING reads, not a calibration number. Worked case: the vague preposition 'around' is read as the RCC-8 disjunction {NTPPi, TPPi}, which DROPS the gold relation EC; the closure then collapses to the empty set, so the certificate ABSTAINS instead of committing the wrong relation DC. On the spatial setting every sound-violating read was caught: 5 of 5 unsound reads triggered collapse-or-abstain, with 0 silent-wrong answers missed (read-soundness-conditional zero-FP, asserted with 0 violations). The kinship setting had 0 unsound reads, so its catch holds only TRIVIALLY there and is reported as UNTESTED rather than as evidence.",
+        "calibration_contrast": "Supporting honesty contrast: on genuinely-vague reads the LLM emits calibrated sub-1.0 disjunctions -- the fraction of reads at confidence exactly 1.0 is 0.00 in BOTH settings, versus the memorized iter-4 Mode-P's 1.00 (which was table recall, not fuzzy unification). Per-candidate ECE is 0.142 (spatial) and 0.111 (kinship).",
+        "supporting_number": "The clean within-artifact risk-coverage comparison: the certificate has confident-wrong 0.000 at coverage 0.535 on spatial (n=228, 38 multipath) and 0.000 at coverage 0.314 on kinship (n=1013), versus commit-argmax confident-wrong 0.364 and 0.216 respectively (doc-clustered paired-bootstrap reduction CIs [0.303, 0.430] and [0.192, 0.242], both exclude 0). LEAD with the 5/5 catch; cite this as the supporting magnitude.",
+        "demoted_unit_caveat": "DEMOTED caveat (keep, but no headline table): an earlier 0.000-vs-0.415 framing is APPLES-TO-ORANGES, because the certificate's confident-wrong is measured at the closure-QUERY level while the confidence baseline's 0.415 / 0.346 thresholded-abstainer figures (from a different artifact, art_0MDLD-w-RXOu) are at the edge-READ level, matched only on coverage fraction. The unit mismatch means that contrast must not anchor a table; the query-level certificate-vs-commit-argmax comparison above is the matched one."
+      },
+      "numbers": {
+        "spatial": {
+          "n_pool": 228,
+          "certificate_confident_wrong": 0.0,
+          "certificate_coverage": 0.5351,
+          "commit_argmax_confident_wrong": 0.364,
+          "cw_reduction_ci95": [
+            0.3026,
+            0.4298
+          ],
+          "n_unsound_reads": 5,
+          "n_silent_wrong_missed": 0,
+          "certificate_caught_fraction": 1.0,
+          "ece_per_candidate": 0.1423,
+          "frac_conf_1p0": 0.0
+        },
+        "kinship": {
+          "n_pool": 1013,
+          "certificate_confident_wrong": 0.0,
+          "certificate_coverage": 0.3139,
+          "commit_argmax_confident_wrong": 0.2162,
+          "cw_reduction_ci95": [
+            0.1925,
+            0.2419
+          ],
+          "n_unsound_reads": 0,
+          "catch_status": "UNTESTED (0 unsound reads => zero-FP holds trivially)",
+          "ece_per_candidate": 0.1105,
+          "frac_conf_1p0": 0.0
+        },
+        "modeP_memorized_frac_conf_1p0": 1.0
+      }
+    },
+    "one_thesis_table": [
+      {
+        "claim_id": "SPINE/CLAIM-1",
+        "claim_text": "Empirical isolation of confidence-blindness: a raw LLM confidently fabricates absent relations (FACT A, 47.2%; deepseek 48.3%) and NO member of a strong 4-signal confidence battery removes them at matched coverage (FACT B, survival 0.4353/0.7176/0.2471/0.7176); a sound closure certificate does, winning the mixed-pool showdown (selective accuracy 0.827 vs 0.37-0.44). The closure MECHANISM is conceded INHERITED (+0.673 inherited / +0.0025 novel).",
+        "headline_numbers": "FACT A 0.4722; FACT B 0.4353/0.7176/0.2471/0.7176; mixed 0.8267 vs 0.37-0.44; Holm p_adj 0.0004/0.0027/0.0027/0.0027",
+        "evidence_tag": "REAL-LLM-READ",
+        "role": "HEADLINE",
+        "status": "ESTABLISHED (CLUTRR + cross-family)"
+      },
+      {
+        "claim_id": "CLAIM-2",
+        "claim_text": "Natural-corpus run on Re-DocRED: does the certificate still beat the confidence battery when the extracted graph is NO LONGER trivially correct (extraction can over-abstain on PRESENT pairs)? Fill FACT-A / FACT-B / mixed-pool on real Wikipedia prose; iter-8 adds a second 'located-in' domain/reader.",
+        "headline_numbers": "PENDING (Re-DocRED 360 present / 368 absent slot)",
+        "evidence_tag": "NATURAL-CORPUS-PENDING",
+        "role": "PENDING",
+        "status": "SLOT (to be filled iter-7/iter-8)"
+      },
+      {
+        "claim_id": "CLAIM-3",
+        "claim_text": "Fuzzy unification with a certificate-bounded hallucination guarantee: sound-violating reads are CAUGHT by abstain-on-collapse (spatial 5/5, 0 silent-wrong missed); calibrated sub-1.0 disjunctions (frac_conf_1p0=0.00 vs memorized 1.00).",
+        "headline_numbers": "5/5 caught; cert CW 0.000 vs commit-argmax 0.364 (spatial) / 0.216 (kinship)",
+        "evidence_tag": "REAL-LLM-READ-ON-SYNTHETIC",
+        "role": "SUPPORTING",
+        "status": "ESTABLISHED (spatial); kinship catch UNTESTED"
+      },
+      {
+        "claim_id": "CLAIM-4",
+        "claim_text": "Cross-path intersection mechanism is a SYNTHETIC-CHANNEL-ONLY negative: iterated PC beats naive single-path only on synthetic long-hop redundancy; on real text it ties at length 2.",
+        "headline_numbers": "synthetic-only positive; real-text null",
+        "evidence_tag": "SYNTHETIC-CHANNEL; GOLD-ONLY-GATE; SYNTHETIC-CONTROL",
+        "role": "SUPPORTING",
+        "status": "HONEST NEGATIVE"
+      },
+      {
+        "claim_id": "CLAIM-5",
+        "claim_text": "Natural-temporal redundancy is at best WEAKLY protective: corrected CIs include 0.",
+        "headline_numbers": "CI includes 0",
+        "evidence_tag": "REAL-LLM-READ",
+        "role": "SUPPORTING",
+        "status": "WEAK / NULL"
+      },
+      {
+        "claim_id": "CLAIM-6",
+        "claim_text": "Operational ~3000-char case study: the pipeline RUNS at length and EXTRACTION is the ceiling (bracket-selected + concatenation-constructed; 56/56 cross-story absent trivially abstained).",
+        "headline_numbers": "feasibility only (compress to one paragraph)",
+        "evidence_tag": "REAL-LLM-READ",
+        "role": "SUPPORTING-COMPRESSED",
+        "status": "FEASIBILITY"
+      },
+      {
+        "claim_id": "CLAIM-7",
+        "claim_text": "Mechanism analysis: algebra-richness scaling, redundancy inverted-U optimum, and a read-soundness-conditional zero-FP theorem.",
+        "headline_numbers": "P=1 zero-FP theorem; synthetic-channel scaling curves",
+        "evidence_tag": "THEOREM; SYNTHETIC-CHANNEL; REAL-LLM-READ-ON-SYNTHETIC",
+        "role": "APPENDIX",
+        "status": "ESTABLISHED (scoped)"
+      }
+    ],
+    "headline_structure_guidance": [
+      "LEAD with the empirical-isolation / confidence-blindness result (FACT A + FACT B + the mixed-pool showdown), NOT with the closure mechanism.",
+      "CONCEDE the mechanism up front as INHERITED: the multi-hop deduction win is a standard neuro-symbolic premise (+0.673 of the gap is inherited closure; the novel empirical-isolation increment is +0.0025). Make this concession a framing sentence, not a buried footnote.",
+      "Do NOT present the 2.8% certificate confident-wrong on CLUTRR absent pairs as the load-bearing number; it is structural-by-construction (disconnected components => sound closure abstains by definition). Use the non-circular-facts ledger to police this.",
+      "Carry a clearly-LABELED PENDING slot for the iter-7 natural-corpus run: on Re-DocRED, report FACT-A (raw absent-hallucination rate), FACT-B (signal survival), and the mixed-pool showdown; this is what makes the natural-corpus result DECISIVE (the extracted graph is no longer trivially correct).",
+      "Present evidence-class tags (THEOREM / SYNTHETIC-CHANNEL / GOLD-ONLY-GATE / REAL-LLM-READ / REAL-LLM-READ-ON-SYNTHETIC) as table COLUMNS, not inline hedges.",
+      "Keep the spatial single-path boundary (P_O honesty): on ordinary single-path RCC-8 the certificate ties/loses (selective-accuracy gap -0.088, CI brackets 0). State it plainly as the scope boundary so the paper cannot overclaim generality."
+    ],
+    "evidence_tag_legend": {
+      "REAL-LLM-READ": "genuine OpenRouter LLM completion on real text",
+      "REAL-LLM-READ-ON-SYNTHETIC": "genuine LLM read but on templated/symbolic substrate",
+      "SYNTHETIC-CHANNEL": "calibrated synthetic error channel (no LLM)",
+      "GOLD-ONLY-GATE": "deterministic gold-graph engine check (0 LLM)",
+      "THEOREM": "proved by construction",
+      "NATURAL-CORPUS-PENDING": "slot to be filled by the iter-7 Re-DocRED run",
+      "MEASURED": "directly measured quantity (not improved)"
+    },
+    "ledger_side_legend": {
+      "NON_CIRCULAR": "property of the raw LLM / signals, independent of the certificate (load-bearing)",
+      "STRUCTURAL_BY_CONSTRUCTION": "near-tautological given the disconnected-components setup; must not headline",
+      "INHERITED": "standard neuro-symbolic premise inherited from prior work",
+      "NON_CIRCULAR_CONDITIONAL": "certificate wins, interpretable only given FACT A + FACT B",
+      "PENDING": "to be filled by the natural-corpus run"
+    }
+  },
+  "metrics_agg": {
+    "total_llm_spend_usd": 0.0,
+    "n_gate_checks": 38.0,
+    "n_gate_pass": 38.0,
+    "reproduction_ok": 1.0,
+    "factA_raw_absent_hallucination": 0.4722,
+    "factA_cross_family_deepseek": 0.4833,
+    "factB_crux_survival_verbalized": 0.4353,
+    "factB_crux_survival_sc_margin": 0.7176,
+    "factB_crux_survival_ptrue": 0.2471,
+    "factB_crux_survival_negent": 0.7176,
+    "certificate_absent_confident_wrong": 0.0278,
+    "absent_confident_wrong_reduction": 0.4444,
+    "mixed_selacc_certificate": 0.8267,
+    "mixed_selacc_best_signal": 0.44,
+    "mixed_cw_reduction_verbalized": 0.1099,
+    "mixed_cw_reduction_sc_margin": 0.1206,
+    "mixed_cw_reduction_ptrue": 0.1028,
+    "mixed_cw_reduction_negent": 0.1206,
+    "mixed_holm_p_adj_verbalized": 0.0004,
+    "mixed_holm_p_adj_worst": 0.0027,
+    "multihop_present_selacc_certificate": 0.8857,
+    "multihop_present_selacc_ct_verbalized": 0.5429,
+    "spatial_certificate_confident_wrong": 0.0219,
+    "spatial_raw_abstain_confident_wrong": 0.0351,
+    "atomic_precision": 0.5361,
+    "atomic_recall": 0.5324,
+    "atomic_f1": 0.5343,
+    "count_present_combined": 476.0,
+    "count_absent_combined": 577.0,
+    "count_redocred_present": 360.0,
+    "count_redocred_absent": 368.0,
+    "fuzzy_spatial_cw_reduction_vs_argmax": 0.364,
+    "fuzzy_kinship_cw_reduction_vs_argmax": 0.2162,
+    "fuzzy_spatial_unsound_caught_fraction": 1.0,
+    "inherited_gap_increment": 0.673,
+    "novel_empirical_isolation_increment": 0.0025
+  },
+  "datasets": [
+    {
+      "dataset": "non_circular_facts_ledger",
+      "examples": [
+        {
+          "input": "FACT_A_raw_absent_hallucination",
+          "output": "0.4722",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "NON_CIRCULAR",
+          "metadata_role": "HEADLINE",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": true,
+          "metadata_matches_carried": true,
+          "eval_value": 0.4722,
+          "eval_recomputed": 1.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "FACT_A_cross_family_deepseek",
+          "output": "0.4833",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "NON_CIRCULAR",
+          "metadata_role": "HEADLINE",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": false,
+          "metadata_matches_carried": true,
+          "eval_value": 0.4833,
+          "eval_recomputed": 0.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "FACT_B_crux_survival_verbalized",
+          "output": "0.4353",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "NON_CIRCULAR",
+          "metadata_role": "HEADLINE",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": true,
+          "metadata_matches_carried": true,
+          "eval_value": 0.4353,
+          "eval_recomputed": 1.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "FACT_B_crux_survival_sc_margin",
+          "output": "0.7176",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "NON_CIRCULAR",
+          "metadata_role": "HEADLINE",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": true,
+          "metadata_matches_carried": true,
+          "eval_value": 0.7176,
+          "eval_recomputed": 1.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "FACT_B_crux_survival_ptrue",
+          "output": "0.2471",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "NON_CIRCULAR",
+          "metadata_role": "HEADLINE",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": true,
+          "metadata_matches_carried": true,
+          "eval_value": 0.2471,
+          "eval_recomputed": 1.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "FACT_B_crux_survival_negent",
+          "output": "0.7176",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "NON_CIRCULAR",
+          "metadata_role": "HEADLINE",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": true,
+          "metadata_matches_carried": true,
+          "eval_value": 0.7176,
+          "eval_recomputed": 1.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "FACT_B_deepseek_survival_verbalized",
+          "output": "0.6724",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "NON_CIRCULAR",
+          "metadata_role": "HEADLINE",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": false,
+          "metadata_matches_carried": true,
+          "eval_value": 0.6724,
+          "eval_recomputed": 0.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "FACT_B_deepseek_survival_sc_margin",
+          "output": "0.2241",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "NON_CIRCULAR",
+          "metadata_role": "HEADLINE",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": false,
+          "metadata_matches_carried": true,
+          "eval_value": 0.2241,
+          "eval_recomputed": 0.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "FACT_B_deepseek_survival_ptrue",
+          "output": "0.1034",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "NON_CIRCULAR",
+          "metadata_role": "HEADLINE",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": false,
+          "metadata_matches_carried": true,
+          "eval_value": 0.1034,
+          "eval_recomputed": 0.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "FACT_B_deepseek_survival_negent",
+          "output": "0.2241",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "NON_CIRCULAR",
+          "metadata_role": "HEADLINE",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": false,
+          "metadata_matches_carried": true,
+          "eval_value": 0.2241,
+          "eval_recomputed": 0.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "certificate_absent_confident_wrong",
+          "output": "0.0278",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "STRUCTURAL_BY_CONSTRUCTION",
+          "metadata_role": "SUPPORTING",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": true,
+          "metadata_matches_carried": true,
+          "eval_value": 0.0278,
+          "eval_recomputed": 1.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "absent_confident_wrong_reduction_vs_raw",
+          "output": "0.4444",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "STRUCTURAL_BY_CONSTRUCTION",
+          "metadata_role": "SUPPORTING",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": true,
+          "metadata_matches_carried": true,
+          "eval_value": 0.4444,
+          "eval_recomputed": 1.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "absent_reduction_ci95_lo",
+          "output": "0.3167",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "STRUCTURAL_BY_CONSTRUCTION",
+          "metadata_role": "SUPPORTING",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": false,
+          "metadata_matches_carried": true,
+          "eval_value": 0.3167,
+          "eval_recomputed": 0.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "absent_reduction_ci95_hi",
+          "output": "0.5833",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "STRUCTURAL_BY_CONSTRUCTION",
+          "metadata_role": "SUPPORTING",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": false,
+          "metadata_matches_carried": true,
+          "eval_value": 0.5833,
+          "eval_recomputed": 0.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "multihop_present_selacc_certificate",
+          "output": "0.8857",
+          "metadata_evidence_tag": "INHERITED",
+          "metadata_side": "INHERITED",
+          "metadata_role": "SUPPORTING",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": true,
+          "metadata_matches_carried": true,
+          "eval_value": 0.8857,
+          "eval_recomputed": 1.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "multihop_present_selacc_ct_verbalized",
+          "output": "0.5429",
+          "metadata_evidence_tag": "INHERITED",
+          "metadata_side": "INHERITED",
+          "metadata_role": "SUPPORTING",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": true,
+          "metadata_matches_carried": true,
+          "eval_value": 0.5429,
+          "eval_recomputed": 1.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "multihop_present_coverage",
+          "output": "0.6863",
+          "metadata_evidence_tag": "INHERITED",
+          "metadata_side": "INHERITED",
+          "metadata_role": "SUPPORTING",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": true,
+          "metadata_matches_carried": true,
+          "eval_value": 0.6863,
+          "eval_recomputed": 1.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "inherited_gap_increment",
+          "output": "0.673",
+          "metadata_evidence_tag": "INHERITED",
+          "metadata_side": "INHERITED",
+          "metadata_role": "FRAMING",
+          "metadata_source_artifact": "art_D0cHQUJ8kY75",
+          "metadata_recomputed": false,
+          "metadata_matches_carried": true,
+          "eval_value": 0.673,
+          "eval_recomputed": 0.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "novel_empirical_isolation_increment",
+          "output": "0.0025",
+          "metadata_evidence_tag": "INHERITED",
+          "metadata_side": "INHERITED",
+          "metadata_role": "FRAMING",
+          "metadata_source_artifact": "art_D0cHQUJ8kY75",
+          "metadata_recomputed": false,
+          "metadata_matches_carried": true,
+          "eval_value": 0.0025,
+          "eval_recomputed": 0.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "mixed_selacc_certificate",
+          "output": "0.8267",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "NON_CIRCULAR_CONDITIONAL",
+          "metadata_role": "HEADLINE",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": true,
+          "metadata_matches_carried": true,
+          "eval_value": 0.8267,
+          "eval_recomputed": 1.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "mixed_selacc_ct_verbalized",
+          "output": "0.4133",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "NON_CIRCULAR_CONDITIONAL",
+          "metadata_role": "HEADLINE",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": true,
+          "metadata_matches_carried": true,
+          "eval_value": 0.4133,
+          "eval_recomputed": 1.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "mixed_selacc_ct_sc_margin",
+          "output": "0.3733",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "NON_CIRCULAR_CONDITIONAL",
+          "metadata_role": "HEADLINE",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": true,
+          "metadata_matches_carried": true,
+          "eval_value": 0.3733,
+          "eval_recomputed": 1.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "mixed_selacc_ct_ptrue",
+          "output": "0.44",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "NON_CIRCULAR_CONDITIONAL",
+          "metadata_role": "HEADLINE",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": true,
+          "metadata_matches_carried": true,
+          "eval_value": 0.44,
+          "eval_recomputed": 1.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "mixed_selacc_ct_negent",
+          "output": "0.3733",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "NON_CIRCULAR_CONDITIONAL",
+          "metadata_role": "HEADLINE",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": true,
+          "metadata_matches_carried": true,
+          "eval_value": 0.3733,
+          "eval_recomputed": 1.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "mixed_matched_coverage",
+          "output": "0.266",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "NON_CIRCULAR_CONDITIONAL",
+          "metadata_role": "HEADLINE",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": true,
+          "metadata_matches_carried": true,
+          "eval_value": 0.266,
+          "eval_recomputed": 1.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "mixed_cw_reduction_verbalized",
+          "output": "0.1099",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "NON_CIRCULAR_CONDITIONAL",
+          "metadata_role": "HEADLINE",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": true,
+          "metadata_matches_carried": true,
+          "eval_value": 0.1099,
+          "eval_recomputed": 1.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "mixed_cw_reduction_sc_margin",
+          "output": "0.1206",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "NON_CIRCULAR_CONDITIONAL",
+          "metadata_role": "HEADLINE",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": true,
+          "metadata_matches_carried": true,
+          "eval_value": 0.1206,
+          "eval_recomputed": 1.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "mixed_cw_reduction_ptrue",
+          "output": "0.1028",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "NON_CIRCULAR_CONDITIONAL",
+          "metadata_role": "HEADLINE",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": true,
+          "metadata_matches_carried": true,
+          "eval_value": 0.1028,
+          "eval_recomputed": 1.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "mixed_cw_reduction_negent",
+          "output": "0.1206",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "NON_CIRCULAR_CONDITIONAL",
+          "metadata_role": "HEADLINE",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": true,
+          "metadata_matches_carried": true,
+          "eval_value": 0.1206,
+          "eval_recomputed": 1.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "mixed_holm_p_adj_verbalized",
+          "output": "0.0004",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "NON_CIRCULAR_CONDITIONAL",
+          "metadata_role": "HEADLINE",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": true,
+          "metadata_matches_carried": true,
+          "eval_value": 0.0004,
+          "eval_recomputed": 1.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "mixed_holm_p_adj_sc_margin",
+          "output": "0.0027",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "NON_CIRCULAR_CONDITIONAL",
+          "metadata_role": "HEADLINE",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": true,
+          "metadata_matches_carried": true,
+          "eval_value": 0.0027,
+          "eval_recomputed": 1.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "mixed_holm_p_adj_ptrue",
+          "output": "0.0027",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "NON_CIRCULAR_CONDITIONAL",
+          "metadata_role": "HEADLINE",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": true,
+          "metadata_matches_carried": true,
+          "eval_value": 0.0027,
+          "eval_recomputed": 1.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "mixed_holm_p_adj_negent",
+          "output": "0.0027",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "NON_CIRCULAR_CONDITIONAL",
+          "metadata_role": "HEADLINE",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": true,
+          "metadata_matches_carried": true,
+          "eval_value": 0.0027,
+          "eval_recomputed": 1.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "spatial_certificate_confident_wrong",
+          "output": "0.0219",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "STRUCTURAL_BY_CONSTRUCTION",
+          "metadata_role": "SUPPORTING",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": true,
+          "metadata_matches_carried": true,
+          "eval_value": 0.0219,
+          "eval_recomputed": 1.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "spatial_raw_abstain_confident_wrong",
+          "output": "0.0351",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "STRUCTURAL_BY_CONSTRUCTION",
+          "metadata_role": "SUPPORTING",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": true,
+          "metadata_matches_carried": true,
+          "eval_value": 0.0351,
+          "eval_recomputed": 1.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "spatial_selacc_gap_certificate_vs_raw_abstain",
+          "output": "-0.0882",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "STRUCTURAL_BY_CONSTRUCTION",
+          "metadata_role": "BOUNDARY",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": false,
+          "metadata_matches_carried": true,
+          "eval_value": -0.0882,
+          "eval_recomputed": 0.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "spatial_selacc_gap_ci95_lo",
+          "output": "-0.2222",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "STRUCTURAL_BY_CONSTRUCTION",
+          "metadata_role": "BOUNDARY",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": false,
+          "metadata_matches_carried": true,
+          "eval_value": -0.2222,
+          "eval_recomputed": 0.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "spatial_selacc_gap_ci95_hi",
+          "output": "0.04",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "STRUCTURAL_BY_CONSTRUCTION",
+          "metadata_role": "BOUNDARY",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": false,
+          "metadata_matches_carried": true,
+          "eval_value": 0.04,
+          "eval_recomputed": 0.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "atomic_precision",
+          "output": "0.5361",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "MEASURED",
+          "metadata_role": "SUPPORTING",
+          "metadata_source_artifact": "art_0a7i481ZRwS1",
+          "metadata_recomputed": true,
+          "metadata_matches_carried": true,
+          "eval_value": 0.5361,
+          "eval_recomputed": 1.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "atomic_recall",
+          "output": "0.5324",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "MEASURED",
+          "metadata_role": "SUPPORTING",
+          "metadata_source_artifact": "art_0a7i481ZRwS1",
+          "metadata_recomputed": true,
+          "metadata_matches_carried": true,
+          "eval_value": 0.5324,
+          "eval_recomputed": 1.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "atomic_f1",
+          "output": "0.5343",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "MEASURED",
+          "metadata_role": "SUPPORTING",
+          "metadata_source_artifact": "art_0a7i481ZRwS1",
+          "metadata_recomputed": true,
+          "metadata_matches_carried": true,
+          "eval_value": 0.5343,
+          "eval_recomputed": 1.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "fuzzy_spatial_cw_reduction",
+          "output": "0.364",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "MEASURED",
+          "metadata_role": "SUPPORTING",
+          "metadata_source_artifact": "art_I22c-J7-OcXl",
+          "metadata_recomputed": false,
+          "metadata_matches_carried": true,
+          "eval_value": 0.364,
+          "eval_recomputed": 0.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "fuzzy_kinship_cw_reduction",
+          "output": "0.2162",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "MEASURED",
+          "metadata_role": "SUPPORTING",
+          "metadata_source_artifact": "art_I22c-J7-OcXl",
+          "metadata_recomputed": false,
+          "metadata_matches_carried": true,
+          "eval_value": 0.2162,
+          "eval_recomputed": 0.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "fuzzy_spatial_unsound_reads_caught",
+          "output": "1.0",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "MEASURED",
+          "metadata_role": "SUPPORTING",
+          "metadata_source_artifact": "art_I22c-J7-OcXl",
+          "metadata_recomputed": false,
+          "metadata_matches_carried": true,
+          "eval_value": 1.0,
+          "eval_recomputed": 0.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "redocred_present_multihop",
+          "output": "360",
+          "metadata_evidence_tag": "NATURAL-CORPUS-PENDING",
+          "metadata_side": "PENDING",
+          "metadata_role": "PENDING",
+          "metadata_source_artifact": "art_NUWTxBVWENIJ",
+          "metadata_recomputed": false,
+          "metadata_matches_carried": true,
+          "eval_value": 360.0,
+          "eval_recomputed": 0.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "redocred_absent_pairs",
+          "output": "368",
+          "metadata_evidence_tag": "NATURAL-CORPUS-PENDING",
+          "metadata_side": "PENDING",
+          "metadata_role": "PENDING",
+          "metadata_source_artifact": "art_NUWTxBVWENIJ",
+          "metadata_recomputed": false,
+          "metadata_matches_carried": true,
+          "eval_value": 368.0,
+          "eval_recomputed": 0.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "combined_present_round_trip",
+          "output": "476",
+          "metadata_evidence_tag": "GOLD-ONLY-GATE",
+          "metadata_side": "STRUCTURAL_BY_CONSTRUCTION",
+          "metadata_role": "SUPPORTING",
+          "metadata_source_artifact": "art_NUWTxBVWENIJ",
+          "metadata_recomputed": true,
+          "metadata_matches_carried": true,
+          "eval_value": 476.0,
+          "eval_recomputed": 1.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "combined_absent_round_trip",
+          "output": "577",
+          "metadata_evidence_tag": "GOLD-ONLY-GATE",
+          "metadata_side": "STRUCTURAL_BY_CONSTRUCTION",
+          "metadata_role": "SUPPORTING",
+          "metadata_source_artifact": "art_NUWTxBVWENIJ",
+          "metadata_recomputed": true,
+          "metadata_matches_carried": true,
+          "eval_value": 577.0,
+          "eval_recomputed": 1.0,
+          "eval_matches_carried": 1.0
+        }
+      ]
+    },
+    {
+      "dataset": "one_thesis_contribution_table",
+      "examples": [
+        {
+          "input": "SPINE/CLAIM-1",
+          "output": "Empirical isolation of confidence-blindness: a raw LLM confidently fabricates absent relations (FACT A, 47.2%; deepseek 48.3%) and NO member of a strong 4-signal confidence battery removes them at matched coverage (FACT B, survival 0.4353/0.7176/0.2471/0.7176); a sound closure certificate does, winning the mixed-pool showdown (selective accuracy 0.827 vs 0.37-0.44). The closure MECHANISM is conceded INHERITED (+0.673 inherited / +0.0025 novel).",
+          "metadata_headline_numbers": "FACT A 0.4722; FACT B 0.4353/0.7176/0.2471/0.7176; mixed 0.8267 vs 0.37-0.44; Holm p_adj 0.0004/0.0027/0.0027/0.0027",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_role": "HEADLINE",
+          "metadata_status": "ESTABLISHED (CLUTRR + cross-family)",
+          "eval_is_headline": 1.0,
+          "eval_is_pending": 0.0
+        },
+        {
+          "input": "CLAIM-2",
+          "output": "Natural-corpus run on Re-DocRED: does the certificate still beat the confidence battery when the extracted graph is NO LONGER trivially correct (extraction can over-abstain on PRESENT pairs)? Fill FACT-A / FACT-B / mixed-pool on real Wikipedia prose; iter-8 adds a second 'located-in' domain/reader.",
+          "metadata_headline_numbers": "PENDING (Re-DocRED 360 present / 368 absent slot)",
+          "metadata_evidence_tag": "NATURAL-CORPUS-PENDING",
+          "metadata_role": "PENDING",
+          "metadata_status": "SLOT (to be filled iter-7/iter-8)",
+          "eval_is_headline": 0.0,
+          "eval_is_pending": 1.0
+        },
+        {
+          "input": "CLAIM-3",
+          "output": "Fuzzy unification with a certificate-bounded hallucination guarantee: sound-violating reads are CAUGHT by abstain-on-collapse (spatial 5/5, 0 silent-wrong missed); calibrated sub-1.0 disjunctions (frac_conf_1p0=0.00 vs memorized 1.00).",
+          "metadata_headline_numbers": "5/5 caught; cert CW 0.000 vs commit-argmax 0.364 (spatial) / 0.216 (kinship)",
+          "metadata_evidence_tag": "REAL-LLM-READ-ON-SYNTHETIC",
+          "metadata_role": "SUPPORTING",
+          "metadata_status": "ESTABLISHED (spatial); kinship catch UNTESTED",
+          "eval_is_headline": 0.0,
+          "eval_is_pending": 0.0
+        },
+        {
+          "input": "CLAIM-4",
+          "output": "Cross-path intersection mechanism is a SYNTHETIC-CHANNEL-ONLY negative: iterated PC beats naive single-path only on synthetic long-hop redundancy; on real text it ties at length 2.",
+          "metadata_headline_numbers": "synthetic-only positive; real-text null",
+          "metadata_evidence_tag": "SYNTHETIC-CHANNEL; GOLD-ONLY-GATE; SYNTHETIC-CONTROL",
+          "metadata_role": "SUPPORTING",
+          "metadata_status": "HONEST NEGATIVE",
+          "eval_is_headline": 0.0,
+          "eval_is_pending": 0.0
+        },
+        {
+          "input": "CLAIM-5",
+          "output": "Natural-temporal redundancy is at best WEAKLY protective: corrected CIs include 0.",
+          "metadata_headline_numbers": "CI includes 0",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_role": "SUPPORTING",
+          "metadata_status": "WEAK / NULL",
+          "eval_is_headline": 0.0,
+          "eval_is_pending": 0.0
+        },
+        {
+          "input": "CLAIM-6",
+          "output": "Operational ~3000-char case study: the pipeline RUNS at length and EXTRACTION is the ceiling (bracket-selected + concatenation-constructed; 56/56 cross-story absent trivially abstained).",
+          "metadata_headline_numbers": "feasibility only (compress to one paragraph)",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_role": "SUPPORTING-COMPRESSED",
+          "metadata_status": "FEASIBILITY",
+          "eval_is_headline": 0.0,
+          "eval_is_pending": 0.0
+        },
+        {
+          "input": "CLAIM-7",
+          "output": "Mechanism analysis: algebra-richness scaling, redundancy inverted-U optimum, and a read-soundness-conditional zero-FP theorem.",
+          "metadata_headline_numbers": "P=1 zero-FP theorem; synthetic-channel scaling curves",
+          "metadata_evidence_tag": "THEOREM; SYNTHETIC-CHANNEL; REAL-LLM-READ-ON-SYNTHETIC",
+          "metadata_role": "APPENDIX",
+          "metadata_status": "ESTABLISHED (scoped)",
+          "eval_is_headline": 0.0,
+          "eval_is_pending": 0.0
+        }
+      ]
+    },
+    {
+      "dataset": "reproduction_gate",
+      "examples": [
+        {
+          "input": "factA_raw_absent_hallucination",
+          "output": "0.4722",
+          "metadata_carried": "0.4722",
+          "metadata_matches": true,
+          "eval_matches": 1.0
+        },
+        {
+          "input": "factB_crux_survival_verbalized",
+          "output": "0.4353",
+          "metadata_carried": "0.4353",
+          "metadata_matches": true,
+          "eval_matches": 1.0
+        },
+        {
+          "input": "factB_crux_survival_sc_margin",
+          "output": "0.7176",
+          "metadata_carried": "0.7176",
+          "metadata_matches": true,
+          "eval_matches": 1.0
+        },
+        {
+          "input": "factB_crux_survival_ptrue",
+          "output": "0.2471",
+          "metadata_carried": "0.2471",
+          "metadata_matches": true,
+          "eval_matches": 1.0
+        },
+        {
+          "input": "factB_crux_survival_negent",
+          "output": "0.7176",
+          "metadata_carried": "0.7176",
+          "metadata_matches": true,
+          "eval_matches": 1.0
+        },
+        {
+          "input": "certificate_absent_confident_wrong",
+          "output": "0.0278",
+          "metadata_carried": "0.0278",
+          "metadata_matches": true,
+          "eval_matches": 1.0
+        },
+        {
+          "input": "absent_confident_wrong_reduction_vs_raw",
+          "output": "0.4444",
+          "metadata_carried": "0.4444",
+          "metadata_matches": true,
+          "eval_matches": 1.0
+        },
+        {
+          "input": "mixed_selacc_certificate",
+          "output": "0.8267",
+          "metadata_carried": "0.8267",
+          "metadata_matches": true,
+          "eval_matches": 1.0
+        },
+        {
+          "input": "mixed_selacc_ct_verbalized",
+          "output": "0.4133",
+          "metadata_carried": "0.4133",
+          "metadata_matches": true,
+          "eval_matches": 1.0
+        },
+        {
+          "input": "mixed_selacc_ct_sc_margin",
+          "output": "0.3733",
+          "metadata_carried": "0.3733",
+          "metadata_matches": true,
+          "eval_matches": 1.0
+        },
+        {
+          "input": "mixed_selacc_ct_ptrue",
+          "output": "0.44",
+          "metadata_carried": "0.44",
+          "metadata_matches": true,
+          "eval_matches": 1.0
+        },
+        {
+          "input": "mixed_selacc_ct_negent",
+          "output": "0.3733",
+          "metadata_carried": "0.3733",
+          "metadata_matches": true,
+          "eval_matches": 1.0
+        },
+        {
+          "input": "mixed_matched_coverage",
+          "output": "0.266",
+          "metadata_carried": "0.266",
+          "metadata_matches": true,
+          "eval_matches": 1.0
+        },
+        {
+          "input": "mixed_cw_reduction_verbalized",
+          "output": "0.1099",
+          "metadata_carried": "0.1099",
+          "metadata_matches": true,
+          "eval_matches": 1.0
+        },
+        {
+          "input": "mixed_cw_reduction_ci_verbalized",
+          "output": "[0.0543, 0.1703]",
+          "metadata_carried": "[0.0543, 0.1703]",
+          "metadata_matches": true,
+          "eval_matches": 1.0
+        },
+        {
+          "input": "mixed_cw_reduction_sc_margin",
+          "output": "0.1206",
+          "metadata_carried": "0.1206",
+          "metadata_matches": true,
+          "eval_matches": 1.0
+        },
+        {
+          "input": "mixed_cw_reduction_ci_sc_margin",
+          "output": "[0.0486, 0.1957]",
+          "metadata_carried": "[0.0486, 0.1957]",
+          "metadata_matches": true,
+          "eval_matches": 1.0
+        },
+        {
+          "input": "mixed_cw_reduction_ptrue",
+          "output": "0.1028",
+          "metadata_carried": "0.1028",
+          "metadata_matches": true,
+          "eval_matches": 1.0
+        },
+        {
+          "input": "mixed_cw_reduction_ci_ptrue",
+          "output": "[0.0395, 0.1706]",
+          "metadata_carried": "[0.0395, 0.1706]",
+          "metadata_matches": true,
+          "eval_matches": 1.0
+        },
+        {
+          "input": "mixed_cw_reduction_negent",
+          "output": "0.1206",
+          "metadata_carried": "0.1206",
+          "metadata_matches": true,
+          "eval_matches": 1.0
+        },
+        {
+          "input": "mixed_cw_reduction_ci_negent",
+          "output": "[0.0486, 0.1957]",
+          "metadata_carried": "[0.0486, 0.1957]",
+          "metadata_matches": true,
+          "eval_matches": 1.0
+        },
+        {
+          "input": "holm_p_adj_verbalized",
+          "output": "0.0004",
+          "metadata_carried": "0.0004",
+          "metadata_matches": true,
+          "eval_matches": 1.0
+        },
+        {
+          "input": "holm_p_adj_sc_margin",
+          "output": "0.0027",
+          "metadata_carried": "0.0027",
+          "metadata_matches": true,
+          "eval_matches": 1.0
+        },
+        {
+          "input": "holm_p_adj_ptrue",
+          "output": "0.0027",
+          "metadata_carried": "0.0027",
+          "metadata_matches": true,
+          "eval_matches": 1.0
+        },
+        {
+          "input": "holm_p_adj_negent",
+          "output": "0.0027",
+          "metadata_carried": "0.0027",
+          "metadata_matches": true,
+          "eval_matches": 1.0
+        },
+        {
+          "input": "spatial_certificate_confident_wrong",
+          "output": "0.0219",
+          "metadata_carried": "0.0219",
+          "metadata_matches": true,
+          "eval_matches": 1.0
+        },
+        {
+          "input": "spatial_raw_abstain_confident_wrong",
+          "output": "0.0351",
+          "metadata_carried": "0.0351",
+          "metadata_matches": true,
+          "eval_matches": 1.0
+        },
+        {
+          "input": "multihop_present_selacc_certificate",
+          "output": "0.8857",
+          "metadata_carried": "0.8857",
+          "metadata_matches": true,
+          "eval_matches": 1.0
+        },
+        {
+          "input": "multihop_present_selacc_ct_verbalized",
+          "output": "0.5429",
+          "metadata_carried": "0.5429",
+          "metadata_matches": true,
+          "eval_matches": 1.0
+        },
+        {
+          "input": "multihop_present_coverage",
+          "output": "0.6863",
+          "metadata_carried": "0.6863",
+          "metadata_matches": true,
+          "eval_matches": 1.0
+        },
+        {
+          "input": "deepseek_absent_hallucination",
+          "output": "0.4833",
+          "metadata_carried": "0.4833",
+          "metadata_matches": true,
+          "eval_matches": 1.0
+        },
+        {
+          "input": "deepseek_survival_verbalized",
+          "output": "0.6724",
+          "metadata_carried": "0.6724",
+          "metadata_matches": true,
+          "eval_matches": 1.0
+        },
+        {
+          "input": "deepseek_survival_sc_margin",
+          "output": "0.2241",
+          "metadata_carried": "0.2241",
+          "metadata_matches": true,
+          "eval_matches": 1.0
+        },
+        {
+          "input": "deepseek_survival_ptrue",
+          "output": "0.1034",
+          "metadata_carried": "0.1034",
+          "metadata_matches": true,
+          "eval_matches": 1.0
+        },
+        {
+          "input": "deepseek_survival_negent",
+          "output": "0.2241",
+          "metadata_carried": "0.2241",
+          "metadata_matches": true,
+          "eval_matches": 1.0
+        },
+        {
+          "input": "atomic_precision",
+          "output": "0.5361",
+          "metadata_carried": "0.5361",
+          "metadata_matches": true,
+          "eval_matches": 1.0
+        },
+        {
+          "input": "atomic_recall",
+          "output": "0.5324",
+          "metadata_carried": "0.5324",
+          "metadata_matches": true,
+          "eval_matches": 1.0
+        },
+        {
+          "input": "atomic_f1",
+          "output": "0.5343",
+          "metadata_carried": "0.5343",
+          "metadata_matches": true,
+          "eval_matches": 1.0
+        }
+      ]
+    }
+  ]
+}

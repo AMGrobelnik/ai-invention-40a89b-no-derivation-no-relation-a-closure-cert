@@ -1,0 +1,15 @@
+[project]
+name = "closure-certificate-extraction-recall-booster"
+version = "1.0.0"
+description = "iter-9 extraction-recall booster: sweep >=4 prompt extraction strategies (few-shot-enum, sentence-wise+coref, self-consistency-union, multi-model-union, +high-precision variants) to raise natural-prose atomic located-in/kinship recall above the iter-8 floor, recompute ONLY the closure certificate per strategy while the 6 confident-wrong competitors stay FIXED (replayed from the iter-8/iter-7 sha256 caches at $0), and test whether the same-component-sibling mixed-pool confident-wrong reduction flips (Holm, B=10000, doc-clustered). Plus a stronger cross-family (deepseek-v3.2, k=5) query-side false-premise verifier. Verdict: EXTRACTION-LIMITED-BOUNDARY-CONFIRMED (recall is precision-bought; the fix needs precision-preserving extraction). Reuses the iter-8 method.py verbatim as core.py."
+requires-python = ">=3.12"
+dependencies = [
+    "numpy==2.4.6",
+    "scipy==1.17.1",
+    "httpx==0.28.1",
+    "loguru==0.7.3",
+    "jsonschema==4.26.0",
+]
+
+[tool.setuptools]
+py-modules = ["method", "booster", "core", "kinship_pipeline", "queryside_kinship", "dataio_locatedin", "readers_locatedin", "queryside", "dataio_redocred", "readers_kinship", "llm", "stats", "kinship", "baselines", "prolog", "tests", "test_booster"]

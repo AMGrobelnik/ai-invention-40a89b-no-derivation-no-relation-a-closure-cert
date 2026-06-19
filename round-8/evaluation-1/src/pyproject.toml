@@ -1,0 +1,10 @@
+[project]
+name = "eval-iter8-dir4"
+version = "0.1.0"
+description = "Zero-spend re-analysis + capability-gap spine pivot + 16-cell caught scaffold (eval_iter8_dir4)"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy==2.4.6",
+    "scipy==1.17.1",
+    "loguru==0.7.3",
+]

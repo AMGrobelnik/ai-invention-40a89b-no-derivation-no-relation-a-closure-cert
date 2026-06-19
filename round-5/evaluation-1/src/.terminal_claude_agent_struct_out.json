@@ -1,0 +1,16 @@
+{
+  "title": "Iter-5 $0 re-analysis: synthetic-Allen small-bite + one-thesis tags-in-columns table",
+  "layman_summary": "A $0 statistical re-analysis showing the method's real value is answering precisely (not answering more), and packaging all evidence into one clearly-tagged contribution table for the paper writer.",
+  "summary": "Pure $0 re-analysis (numpy+scipy only, deterministic seed=20260617, B=10000 paired bootstrap, ~1s CPU) EXTENDING the validated iter-4 re-analysis; 0 reproduction mismatches against iter-4 headline numbers. Deliverables: (1) MINOR #5 small-bite caveat. Reproduced the synthetic Allen positive-control recall_95 cell EXACTLY (intersection cov 0.250/selacc 0.976; best_single 0.226/0.717; naive 0.316/0.842) and added paired-bootstrap CIs: cross-path COVERAGE gain +0.024, 95% CI [-0.022,0.070], boot_p=0.17 -> CI INCLUDES 0 (small, not sig); SELECTIVE-ACCURACY gain +0.259, 95% CI [0.177,0.349], boot_p=0.0 -> EXCLUDES 0 (large, real). Auditable precision decomposition: of best_single's 113 answers, 50 both-resolve (perfect agreement, aligned gain 0.000), 75 intersection-only @0.96 acc, and 32 wrong best_single commitments AVOIDED by collapse. Inverted-U recovered on the realized-coverage axis (realized_cov = benefit + cost_silent_wrong = 1-abstain-collapse, identity verified <1e-9) per (recall,K) bin with Wilson + Newcombe CIs; peak K*=[2,4,7,10,16], silent-wrong 0.006->0.146; honest recall-dependence + K1-vs-best-single caveat (large K-gains only at unreachable high recall). Net reframe: PRECISION of committed answers, not expanded coverage. (2) MAJOR #3: one_thesis_contribution_table with evidence tags as COLUMNS (claim|evidence_tag|where_it_holds|status|key_numbers): two-row SPINE (gold-free abstain-on-collapse CERTIFICATE @CLUTRR; read-informativeness precision/recall IMPOSSIBILITY), scaling-law + inverted-U DEMOTED to supporting, marginal-temporal + scope as footnotes, spatial-RCC-8 SpaRTUN left as a labeled PENDING slot. Plus carried corrected_temporal (neither Holm gateway clears, CIs include 0, 42.5% confident-wrong) and deduction-submodule ceiling (0.53 atomic recall->19% coverage). Outputs: eval.py, make_digest.py, eval_out.json (+full/mini/preview, all aii-json exp_eval_sol_out VALIDATED) with 38 flat numeric metrics_agg scalars and datasets[] = 8 synthetic-Allen worked examples + carried 282 CLUTRR + 600 temporal per-record examples, and eval_digest.md (paper-facing: small-bite table, inverted-U realized-coverage table, the contribution table, headline-structure guidance). $0 LLM spend, no OpenRouter client instantiated.",
+  "out_expected_files": {
+    "script": "eval.py",
+    "full_output": "full_eval_out.json",
+    "mini_output": "mini_eval_out.json",
+    "preview_output": "preview_eval_out.json"
+  },
+  "upload_ignore_regexes": [
+    "(^|/)\\.venv/",
+    "(^|/)__pycache__/",
+    "\\.ptylog$"
+  ]
+}

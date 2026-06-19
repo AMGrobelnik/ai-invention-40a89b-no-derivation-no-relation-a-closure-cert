@@ -1,0 +1,15 @@
+[project]
+name = "queryside-verifier-vs-certificate"
+version = "1.0.0"
+description = "iter-8 experiment_2: Query-side false-premise VERIFIER + self-verify baseline vs the no-derivation closure certificate and the 4-signal confidence battery, on the cached CLUTRR (iter-6) + Re-DocRED (iter-7) kinship prediction pools. $0 reproduction gate + <$1 new verifier spend; matched-coverage selective accuracy, fraction-caught crux tables, per-venue certificate-necessity verdict."
+requires-python = ">=3.12"
+dependencies = [
+    "numpy==2.4.6",
+    "scipy==1.17.1",
+    "httpx==0.28.1",
+    "loguru==0.7.3",
+    "jsonschema==4.26.0",
+]
+
+[tool.setuptools]
+py-modules = ["method", "llm", "stats", "kinship", "baselines"]

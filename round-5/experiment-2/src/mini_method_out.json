@@ -1,0 +1,1595 @@
+{
+  "metadata": {
+    "method_name": "Genuine LLM fuzzy-unification with a certificate-bounded hallucination guarantee",
+    "tag": "REAL-LLM-FUZZY-READ",
+    "scope_statement": "Two GENUINELY-fuzzy read settings constructed from existing gold: vague/out-of-table spatial RCC-8 (SpaRP-PS1) and ambiguous/paraphrased kinship (CLUTRR). The LLM emits a CALIBRATED sub-1.0 disjunction; an abstain-on-collapse CERTIFICATE bounds the hallucination cost when that disjunction is fed into the sound closure engine. This is the honest replacement for the circular memorized Mode-P (confidence exactly 1.0).",
+    "reader_model": "google/gemini-3.1-flash-lite",
+    "model_fallbacks": [
+      "deepseek/deepseek-v3.2",
+      "google/gemini-3-flash-preview"
+    ],
+    "sens_model": "deepseek/deepseek-v3.2",
+    "temperature": 0.0,
+    "seed": 20260617,
+    "vague_term_maps": {
+      "spatial_rcc8": {
+        "near": [
+          "DC",
+          "EC"
+        ],
+        "touching": [
+          "EC",
+          "PO",
+          "TPP",
+          "TPPi"
+        ],
+        "around": [
+          "TPPi",
+          "NTPPi",
+          "EC"
+        ],
+        "inside": [
+          "TPP",
+          "NTPP"
+        ],
+        "overlapping": [
+          "PO",
+          "TPP",
+          "TPPi"
+        ]
+      },
+      "kinship_types": {
+        "guardian": [
+          "inv-child",
+          "inv-grand"
+        ],
+        "descendant": [
+          "child",
+          "grand"
+        ],
+        "family elder": [
+          "inv-child",
+          "inv-grand",
+          "inv-un"
+        ],
+        "sibling-figure": [
+          "sibling",
+          "sibling-in-law"
+        ],
+        "relative by marriage": [
+          "SO",
+          "in-law",
+          "inv-in-law",
+          "sibling-in-law"
+        ],
+        "younger relative": [
+          "child",
+          "grand",
+          "un"
+        ]
+      }
+    },
+    "symbolic_self_tests": {
+      "T1a_spatial_exact_path_soundness": {
+        "n": 200,
+        "sound": 200,
+        "rate": 1.0
+      },
+      "T1b_kinship_goldclean_recovery": {
+        "n": 200,
+        "correct": 200,
+        "rate": 1.0
+      },
+      "T2_disjunctive_seed": {
+        "sound_contains_gold": true,
+        "unsound_not_falsely_correct": true,
+        "sound_Dq": [
+          "inv-grand",
+          "inv-in-law"
+        ],
+        "unsound_Dq": [
+          "inv-in-law"
+        ],
+        "gold_type": "inv-grand"
+      }
+    },
+    "setting1_spatial_calibration": {
+      "n_reads": 1500,
+      "soundness_rate": 0.9333333333333333,
+      "mean_breadth": 2.7213333333333334,
+      "frac_over_universe": 0.0,
+      "frac_at_conf_1p0": 0.0,
+      "mean_top1_conf": 0.7022666666666667,
+      "top1_accuracy": 0.416,
+      "n_parse_fail": 0,
+      "ECE_per_candidate": 0.14228319451249388,
+      "n_candidate_pairs": 4082,
+      "reliability_per_candidate": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.1,
+          "mean_conf": 0.04999999999999999,
+          "mean_acc": 0.23314606741573032,
+          "count": 356
+        },
+        {
+          "bin_lo": 0.1,
+          "bin_hi": 0.2,
+          "mean_conf": 0.09999999999999999,
+          "mean_acc": 0.21137521222410866,
+          "count": 1178
+        },
+        {
+          "bin_lo": 0.2,
+          "bin_hi": 0.3,
+          "mean_conf": 0.2,
+          "mean_acc": 0.2619718309859155,
+          "count": 710
+        },
+        {
+          "bin_lo": 0.3,
+          "bin_hi": 0.4,
+          "mean_conf": null,
+          "mean_acc": null,
+          "count": 0
+        },
+        {
+          "bin_lo": 0.4,
+          "bin_hi": 0.5,
+          "mean_conf": null,
+          "mean_acc": null,
+          "count": 0
+        },
+        {
+          "bin_lo": 0.5,
+          "bin_hi": 0.6,
+          "mean_conf": 0.5,
+          "mean_acc": 0.5,
+          "count": 676
+        },
+        {
+          "bin_lo": 0.6,
+          "bin_hi": 0.7,
+          "mean_conf": null,
+          "mean_acc": null,
+          "count": 0
+        },
+        {
+          "bin_lo": 0.7,
+          "bin_hi": 0.8,
+          "mean_conf": 0.7,
+          "mean_acc": 0.23672566371681417,
+          "count": 452
+        },
+        {
+          "bin_lo": 0.8,
+          "bin_hi": 0.9,
+          "mean_conf": 0.8,
+          "mean_acc": 0.6154929577464788,
+          "count": 710
+        },
+        {
+          "bin_lo": 0.9,
+          "bin_hi": 1.0,
+          "mean_conf": null,
+          "mean_acc": null,
+          "count": 0
+        }
+      ],
+      "ECE_top1": 0.2862666666666667,
+      "n_top1": 1500,
+      "reliability_top1": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.1,
+          "mean_conf": null,
+          "mean_acc": null,
+          "count": 0
+        },
+        {
+          "bin_lo": 0.1,
+          "bin_hi": 0.2,
+          "mean_conf": null,
+          "mean_acc": null,
+          "count": 0
+        },
+        {
+          "bin_lo": 0.2,
+          "bin_hi": 0.3,
+          "mean_conf": null,
+          "mean_acc": null,
+          "count": 0
+        },
+        {
+          "bin_lo": 0.3,
+          "bin_hi": 0.4,
+          "mean_conf": null,
+          "mean_acc": null,
+          "count": 0
+        },
+        {
+          "bin_lo": 0.4,
+          "bin_hi": 0.5,
+          "mean_conf": null,
+          "mean_acc": null,
+          "count": 0
+        },
+        {
+          "bin_lo": 0.5,
+          "bin_hi": 0.6,
+          "mean_conf": 0.5,
+          "mean_acc": 0.23668639053254437,
+          "count": 338
+        },
+        {
+          "bin_lo": 0.6,
+          "bin_hi": 0.7,
+          "mean_conf": null,
+          "mean_acc": null,
+          "count": 0
+        },
+        {
+          "bin_lo": 0.7,
+          "bin_hi": 0.8,
+          "mean_conf": 0.7,
+          "mean_acc": 0.23672566371681417,
+          "count": 452
+        },
+        {
+          "bin_lo": 0.8,
+          "bin_hi": 0.9,
+          "mean_conf": 0.8,
+          "mean_acc": 0.6154929577464788,
+          "count": 710
+        },
+        {
+          "bin_lo": 0.9,
+          "bin_hi": 1.0,
+          "mean_conf": null,
+          "mean_acc": null,
+          "count": 0
+        }
+      ]
+    },
+    "setting1_spatial_risk_coverage": {
+      "n_pool": 228,
+      "certificate": {
+        "coverage": 0.5350877192982456,
+        "n_committed": 122,
+        "acc_among_answered": 1.0,
+        "confident_wrong_rate": 0.0,
+        "n_confident_wrong": 0
+      },
+      "commit_argmax": {
+        "coverage": 1.0,
+        "n_committed": 228,
+        "acc_among_answered": 0.6359649122807017,
+        "confident_wrong_rate": 0.36403508771929827,
+        "n_confident_wrong": 83
+      },
+      "abstain_always": {
+        "coverage": 0.0,
+        "n_committed": 0,
+        "acc_among_answered": null,
+        "confident_wrong_rate": 0.0,
+        "n_confident_wrong": 0
+      },
+      "recovered_coverage_cert_vs_abstain": 0.5350877192982456,
+      "confident_wrong_reduction_cert_vs_argmax": 0.36403508771929827,
+      "n_unsound_reads": 5,
+      "n_silent_wrong_missed_by_cert": 0,
+      "certificate_caught_fraction": 1.0,
+      "unsound_collapse_or_abstain_fraction": 0.2,
+      "n_sound_reads": 223,
+      "zero_fp_holds": true,
+      "n_zero_fp_violations": 0,
+      "cert_decision_breakdown": {
+        "COMMIT": 122,
+        "ABSTAIN": 106,
+        "COLLAPSE": 0
+      }
+    },
+    "setting1_spatial_pool_provenance": {
+      "n_kept": 228,
+      "n_dropped_no_rcc8_path": 0,
+      "n_multipath": 38,
+      "n_calibration_edges": 1500
+    },
+    "setting2_kinship_calibration": {
+      "n_reads": 1500,
+      "soundness_rate": 1.0,
+      "mean_breadth": 3.408,
+      "frac_over_universe": 0.0,
+      "frac_at_conf_1p0": 0.0,
+      "mean_top1_conf": 0.42839999999999995,
+      "top1_accuracy": 0.43466666666666665,
+      "n_parse_fail": 0,
+      "ECE_per_candidate": 0.11051447574334897,
+      "n_candidate_pairs": 5112,
+      "reliability_per_candidate": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.1,
+          "mean_conf": 0.049999999999999996,
+          "mean_acc": 0.0,
+          "count": 413
+        },
+        {
+          "bin_lo": 0.1,
+          "bin_hi": 0.2,
+          "mean_conf": 0.12590799031476999,
+          "mean_acc": 0.0,
+          "count": 413
+        },
+        {
+          "bin_lo": 0.2,
+          "bin_hi": 0.3,
+          "mean_conf": 0.19999999999999998,
+          "mean_acc": 0.34022556390977443,
+          "count": 2128
+        },
+        {
+          "bin_lo": 0.3,
+          "bin_hi": 0.4,
+          "mean_conf": 0.3,
+          "mean_acc": 0.17364341085271318,
+          "count": 645
+        },
+        {
+          "bin_lo": 0.4,
+          "bin_hi": 0.5,
+          "mean_conf": 0.3999999999999999,
+          "mean_acc": 0.3464203233256351,
+          "count": 1299
+        },
+        {
+          "bin_lo": 0.5,
+          "bin_hi": 0.6,
+          "mean_conf": null,
+          "mean_acc": null,
+          "count": 0
+        },
+        {
+          "bin_lo": 0.6,
+          "bin_hi": 0.7,
+          "mean_conf": null,
+          "mean_acc": null,
+          "count": 0
+        },
+        {
+          "bin_lo": 0.7,
+          "bin_hi": 0.8,
+          "mean_conf": null,
+          "mean_acc": null,
+          "count": 0
+        },
+        {
+          "bin_lo": 0.8,
+          "bin_hi": 0.9,
+          "mean_conf": 0.7999999999999999,
+          "mean_acc": 1.0,
+          "count": 214
+        },
+        {
+          "bin_lo": 0.9,
+          "bin_hi": 1.0,
+          "mean_conf": null,
+          "mean_acc": null,
+          "count": 0
+        }
+      ],
+      "ECE_top1": 0.05079999999999998,
+      "n_top1": 1500,
+      "reliability_top1": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.1,
+          "mean_conf": null,
+          "mean_acc": null,
+          "count": 0
+        },
+        {
+          "bin_lo": 0.1,
+          "bin_hi": 0.2,
+          "mean_conf": null,
+          "mean_acc": null,
+          "count": 0
+        },
+        {
+          "bin_lo": 0.2,
+          "bin_hi": 0.3,
+          "mean_conf": null,
+          "mean_acc": null,
+          "count": 0
+        },
+        {
+          "bin_lo": 0.3,
+          "bin_hi": 0.4,
+          "mean_conf": 0.2999999999999999,
+          "mean_acc": 0.26046511627906976,
+          "count": 430
+        },
+        {
+          "bin_lo": 0.4,
+          "bin_hi": 0.5,
+          "mean_conf": 0.4,
+          "mean_acc": 0.3808411214953271,
+          "count": 856
+        },
+        {
+          "bin_lo": 0.5,
+          "bin_hi": 0.6,
+          "mean_conf": null,
+          "mean_acc": null,
+          "count": 0
+        },
+        {
+          "bin_lo": 0.6,
+          "bin_hi": 0.7,
+          "mean_conf": null,
+          "mean_acc": null,
+          "count": 0
+        },
+        {
+          "bin_lo": 0.7,
+          "bin_hi": 0.8,
+          "mean_conf": null,
+          "mean_acc": null,
+          "count": 0
+        },
+        {
+          "bin_lo": 0.8,
+          "bin_hi": 0.9,
+          "mean_conf": 0.7999999999999999,
+          "mean_acc": 1.0,
+          "count": 214
+        },
+        {
+          "bin_lo": 0.9,
+          "bin_hi": 1.0,
+          "mean_conf": null,
+          "mean_acc": null,
+          "count": 0
+        }
+      ]
+    },
+    "setting2_kinship_risk_coverage": {
+      "n_pool": 1013,
+      "certificate": {
+        "coverage": 0.3139190523198421,
+        "n_committed": 318,
+        "acc_among_answered": 1.0,
+        "confident_wrong_rate": 0.0,
+        "n_confident_wrong": 0
+      },
+      "commit_argmax": {
+        "coverage": 1.0,
+        "n_committed": 1013,
+        "acc_among_answered": 0.7838104639684107,
+        "confident_wrong_rate": 0.21618953603158933,
+        "n_confident_wrong": 219
+      },
+      "abstain_always": {
+        "coverage": 0.0,
+        "n_committed": 0,
+        "acc_among_answered": null,
+        "confident_wrong_rate": 0.0,
+        "n_confident_wrong": 0
+      },
+      "recovered_coverage_cert_vs_abstain": 0.3139190523198421,
+      "confident_wrong_reduction_cert_vs_argmax": 0.21618953603158933,
+      "n_unsound_reads": 0,
+      "n_silent_wrong_missed_by_cert": 0,
+      "certificate_caught_fraction": null,
+      "unsound_collapse_or_abstain_fraction": null,
+      "n_sound_reads": 1013,
+      "zero_fp_holds": true,
+      "n_zero_fp_violations": 0,
+      "cert_decision_breakdown": {
+        "COMMIT": 318,
+        "ABSTAIN": 695,
+        "COLLAPSE": 0
+      }
+    },
+    "setting2_kinship_pool_provenance": {
+      "n_kept": 1013,
+      "n_dropped_unclean": 35,
+      "n_calibration_edges": 1500
+    },
+    "calibration_contrast_vs_modeP": {
+      "note": "Mode-P (iter-4) was MEMORIZED-CALCULUS atomic-rule recall: the LLM was asked to compose two EXACT kinship cells, which it knows by heart (16/16 cells correct at confidence EXACTLY 1.0). That is table recall, NOT fuzzy unification. THIS experiment is the genuine fuzzy case: vague/ambiguous reads with no single answer, where the LLM emits calibrated sub-1.0 disjunctions.",
+      "modeP_memorized": {
+        "n": 16,
+        "frac_conf_1p0": 1.0,
+        "mean_conf": 1.0,
+        "exact_match_acc": 1.0,
+        "source": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_4/gen_art/gen_art_experiment_2/method_out.json"
+      },
+      "setting1_spatial_fuzzy": {
+        "n": 1500,
+        "frac_conf_1p0": 0.0,
+        "mean_top1_conf": 0.7022666666666667,
+        "ECE_per_candidate": 0.14228319451249388,
+        "ECE_top1": 0.2862666666666667,
+        "soundness_rate": 0.9333333333333333
+      },
+      "setting2_kinship_fuzzy": {
+        "n": 1500,
+        "frac_conf_1p0": 0.0,
+        "mean_top1_conf": 0.42839999999999995,
+        "ECE_per_candidate": 0.11051447574334897,
+        "ECE_top1": 0.05079999999999998,
+        "soundness_rate": 1.0
+      }
+    },
+    "cross_family_sensitivity": {
+      "model": "deepseek/deepseek-v3.2",
+      "spatial": {
+        "n_reads": 300,
+        "soundness_rate": 1.0,
+        "mean_breadth": 4.54,
+        "frac_at_conf_1p0": 0.0,
+        "ECE_per_candidate": 0.0936857562408223,
+        "ECE_top1": 0.2073333333333332
+      },
+      "kinship": {
+        "n_reads": 300,
+        "soundness_rate": 1.0,
+        "mean_breadth": 6.1866666666666665,
+        "frac_at_conf_1p0": 0.0,
+        "ECE_per_candidate": 0.07796336206896554,
+        "ECE_top1": 0.19933333333333336
+      },
+      "budget_usd": 0.0
+    },
+    "flagged_fuzzy_step_traces": {
+      "spatial": [
+        {
+          "setting": "spatial",
+          "doc_id": "SpaRP-PS1_test_1486",
+          "query": [
+            "1x1",
+            "0"
+          ],
+          "gold": "NTPP",
+          "n_paths": 3,
+          "Dquery": [
+            "NTPP"
+          ],
+          "all_reads_sound": false,
+          "certificate_decision": "COMMIT",
+          "certificate_answer": "NTPP",
+          "correct": true,
+          "commit_argmax_answer": "NTPP",
+          "trace": [
+            {
+              "path": 0,
+              "src": "1x1",
+              "dst": "1",
+              "source": "llm_fuzzy",
+              "exact_relation": "NTPP",
+              "vague_term": "inside",
+              "emitted_disjunction": [
+                "NTPP",
+                "TPP"
+              ],
+              "gold_retained": true
+            },
+            {
+              "path": 0,
+              "src": "1",
+              "dst": "0",
+              "source": "exact_table",
+              "exact_relation": "NTPP"
+            },
+            {
+              "path": 1,
+              "src": "1x1",
+              "dst": "1x2",
+              "source": "llm_fuzzy",
+              "exact_relation": "EC",
+              "vague_term": "around",
+              "emitted_disjunction": [
+                "NTPPi",
+                "TPPi"
+              ],
+              "gold_retained": false
+            },
+            {
+              "path": 1,
+              "src": "1x2",
+              "dst": "1",
+              "source": "exact_table",
+              "exact_relation": "NTPP"
+            },
+            {
+              "path": 1,
+              "src": "1",
+              "dst": "0",
+              "source": "exact_table",
+              "exact_relation": "NTPP"
+            },
+            {
+              "path": 2,
+              "src": "1x1",
+              "dst": "1x0",
+              "source": "exact_table",
+              "exact_relation": "EC"
+            },
+            {
+              "path": 2,
+              "src": "1x0",
+              "dst": "1",
+              "source": "exact_table",
+              "exact_relation": "TPP"
+            },
+            {
+              "path": 2,
+              "src": "1",
+              "dst": "0",
+              "source": "llm_fuzzy",
+              "exact_relation": "NTPP",
+              "vague_term": "inside",
+              "emitted_disjunction": [
+                "NTPP",
+                "TPP"
+              ],
+              "gold_retained": true
+            }
+          ],
+          "caught_unsound": false,
+          "silent_wrong_missed": false
+        },
+        {
+          "setting": "spatial",
+          "doc_id": "SpaRP-PS1_test_1715",
+          "query": [
+            "0x2",
+            "1"
+          ],
+          "gold": "NTPP",
+          "n_paths": 2,
+          "Dquery": [
+            "NTPP",
+            "PO",
+            "TPP"
+          ],
+          "all_reads_sound": false,
+          "certificate_decision": "ABSTAIN",
+          "certificate_answer": null,
+          "correct": false,
+          "commit_argmax_answer": "DC",
+          "trace": [
+            {
+              "path": 0,
+              "src": "0x2",
+              "dst": "0",
+              "source": "exact_table",
+              "exact_relation": "NTPP"
+            },
+            {
+              "path": 0,
+              "src": "0",
+              "dst": "1",
+              "source": "llm_fuzzy",
+              "exact_relation": "TPP",
+              "vague_term": "touching",
+              "emitted_disjunction": [
+                "EC",
+                "EQ",
+                "TPP",
+                "TPPi"
+              ],
+              "gold_retained": true
+            },
+            {
+              "path": 1,
+              "src": "0x2",
+              "dst": "0x1",
+              "source": "llm_fuzzy",
+              "exact_relation": "EC",
+              "vague_term": "around",
+              "emitted_disjunction": [
+                "NTPPi",
+                "TPPi"
+              ],
+              "gold_retained": false
+            },
+            {
+              "path": 1,
+              "src": "0x1",
+              "dst": "0",
+              "source": "exact_table",
+              "exact_relation": "NTPP"
+            },
+            {
+              "path": 1,
+              "src": "0",
+              "dst": "1",
+              "source": "exact_table",
+              "exact_relation": "TPP"
+            }
+          ],
+          "caught_unsound": true,
+          "silent_wrong_missed": false
+        },
+        {
+          "setting": "spatial",
+          "doc_id": "SpaRP-PS1_test_1",
+          "query": [
+            "0x0",
+            "1"
+          ],
+          "gold": "NTPP",
+          "n_paths": 1,
+          "Dquery": [
+            "EQ",
+            "NTPP",
+            "NTPPi",
+            "PO",
+            "TPP",
+            "TPPi"
+          ],
+          "all_reads_sound": true,
+          "certificate_decision": "ABSTAIN",
+          "certificate_answer": null,
+          "correct": false,
+          "commit_argmax_answer": "PO",
+          "trace": [
+            {
+              "path": 0,
+              "src": "0x0",
+              "dst": "0",
+              "source": "llm_fuzzy",
+              "exact_relation": "TPP",
+              "vague_term": "overlapping",
+              "emitted_disjunction": [
+                "NTPP",
+                "NTPPi",
+                "PO",
+                "TPP",
+                "TPPi"
+              ],
+              "gold_retained": true
+            },
+            {
+              "path": 0,
+              "src": "0",
+              "dst": "1",
+              "source": "exact_table",
+              "exact_relation": "NTPP"
+            }
+          ],
+          "caught_unsound": false,
+          "silent_wrong_missed": false
+        },
+        {
+          "setting": "spatial",
+          "doc_id": "SpaRP-PS1_test_10",
+          "query": [
+            "2x0",
+            "0"
+          ],
+          "gold": "NTPP",
+          "n_paths": 1,
+          "Dquery": [
+            "NTPP",
+            "PO",
+            "TPP"
+          ],
+          "all_reads_sound": true,
+          "certificate_decision": "ABSTAIN",
+          "certificate_answer": null,
+          "correct": false,
+          "commit_argmax_answer": "PO",
+          "trace": [
+            {
+              "path": 0,
+              "src": "2x0",
+              "dst": "2",
+              "source": "llm_fuzzy",
+              "exact_relation": "TPP",
+              "vague_term": "touching",
+              "emitted_disjunction": [
+                "EC",
+                "EQ",
+                "TPP",
+                "TPPi"
+              ],
+              "gold_retained": true
+            },
+            {
+              "path": 0,
+              "src": "2",
+              "dst": "0",
+              "source": "exact_table",
+              "exact_relation": "NTPP"
+            }
+          ],
+          "caught_unsound": false,
+          "silent_wrong_missed": false
+        },
+        {
+          "setting": "spatial",
+          "doc_id": "SpaRP-PS1_test_1022",
+          "query": [
+            "2",
+            "1x1"
+          ],
+          "gold": "NTPPi",
+          "n_paths": 1,
+          "Dquery": [
+            "NTPPi"
+          ],
+          "all_reads_sound": true,
+          "certificate_decision": "COMMIT",
+          "certificate_answer": "NTPPi",
+          "correct": true,
+          "commit_argmax_answer": "NTPPi",
+          "trace": [
+            {
+              "path": 0,
+              "src": "2",
+              "dst": "1",
+              "source": "llm_fuzzy",
+              "exact_relation": "NTPPi",
+              "vague_term": "around",
+              "emitted_disjunction": [
+                "NTPPi",
+                "TPPi"
+              ],
+              "gold_retained": true
+            },
+            {
+              "path": 0,
+              "src": "1",
+              "dst": "1x1",
+              "source": "exact_table",
+              "exact_relation": "NTPPi"
+            }
+          ],
+          "caught_unsound": false,
+          "silent_wrong_missed": false
+        },
+        {
+          "setting": "spatial",
+          "doc_id": "SpaRP-PS1_test_1036",
+          "query": [
+            "1x0",
+            "2"
+          ],
+          "gold": "NTPP",
+          "n_paths": 1,
+          "Dquery": [
+            "NTPP",
+            "TPP"
+          ],
+          "all_reads_sound": true,
+          "certificate_decision": "ABSTAIN",
+          "certificate_answer": null,
+          "correct": false,
+          "commit_argmax_answer": "TPP",
+          "trace": [
+            {
+              "path": 0,
+              "src": "1x0",
+              "dst": "1",
+              "source": "exact_table",
+              "exact_relation": "TPP"
+            },
+            {
+              "path": 0,
+              "src": "1",
+              "dst": "2",
+              "source": "llm_fuzzy",
+              "exact_relation": "NTPP",
+              "vague_term": "inside",
+              "emitted_disjunction": [
+                "NTPP",
+                "TPP"
+              ],
+              "gold_retained": true
+            }
+          ],
+          "caught_unsound": false,
+          "silent_wrong_missed": false
+        }
+      ],
+      "kinship": [
+        {
+          "setting": "kinship",
+          "doc_id": "0057eda6-1ca8-4950-9b59-b3e843557a52",
+          "query": [
+            "Victoria",
+            "Guadalupe"
+          ],
+          "gold": "sister",
+          "fuzzy_edge": [
+            "Charles",
+            "Richard"
+          ],
+          "vague_term": "sibling-figure",
+          "emitted_disjunction": [
+            "inv-un",
+            "sibling",
+            "sibling-in-law"
+          ],
+          "gold_type_retained": true,
+          "Dquery": [
+            "child",
+            "grand",
+            "inv-un",
+            "sibling",
+            "un"
+          ],
+          "certificate_decision": "ABSTAIN",
+          "certificate_answer": null,
+          "correct": false,
+          "commit_argmax_answer": "sister",
+          "story": "Richard went to the Farmer's market with his mother Victoria and his brother Charles. Charles likes to watch baseball with his brother. His name is Richard. Donald was so excited to surprise his son, Richard, with the tickets to the playoffs. Guadalupe planned a trip to the zoo for her brother, Donald. They had a great time.",
+          "proof_skeleton": [
+            {
+              "a": "Victoria",
+              "b": "Richard",
+              "c": "Charles",
+              "t1": "child",
+              "t2": "sibling",
+              "t3": "child",
+              "source": "exact_table"
+            },
+            {
+              "a": "Donald",
+              "b": "Richard",
+              "c": "Charles",
+              "t1": "child",
+              "t2": "sibling",
+              "t3": "child",
+              "source": "exact_table"
+            },
+            {
+              "a": "Charles",
+              "b": "Donald",
+              "c": "Guadalupe",
+              "t1": "inv-child",
+              "t2": "sibling",
+              "t3": "inv-un",
+              "source": "exact_table"
+            },
+            {
+              "a": "Victoria",
+              "b": "Charles",
+              "c": "Guadalupe",
+              "t1": "child",
+              "t2": "inv-un",
+              "t3": "sibling",
+              "source": "exact_table"
+            }
+          ],
+          "caught_unsound": false,
+          "silent_wrong_missed": false
+        },
+        {
+          "setting": "kinship",
+          "doc_id": "00a4f439-f207-4ede-999f-f258b4f6bead",
+          "query": [
+            "William",
+            "Kyle"
+          ],
+          "gold": "nephew",
+          "fuzzy_edge": [
+            "Daniel",
+            "Jerry"
+          ],
+          "vague_term": "descendant",
+          "emitted_disjunction": [
+            "child",
+            "grand"
+          ],
+          "gold_type_retained": true,
+          "Dquery": [
+            "inv-un",
+            "sibling",
+            "un"
+          ],
+          "certificate_decision": "ABSTAIN",
+          "certificate_answer": null,
+          "correct": false,
+          "commit_argmax_answer": "grandson",
+          "story": "Daniel took his son Jerry to the park to feed the squirrels. Michael wanted to buy his mother Marguerite a gift for her birthday. He asked Ethel, Marguerite's daughter, to drive him to the mall. Ethel agreed, as long as she could bring her brother Kyle. Daniel took his nephew Jose to the football game. Michael was thrilled his brother, Jerry, was able to make it to the party. William 'son, Jose, aced his math class and made his father proud.",
+          "proof_skeleton": [
+            {
+              "a": "Jerry",
+              "b": "Michael",
+              "c": "Marguerite",
+              "t1": "sibling",
+              "t2": "inv-child",
+              "t3": "inv-child",
+              "source": "exact_table"
+            },
+            {
+              "a": "William",
+              "b": "Jose",
+              "c": "Daniel",
+              "t1": "child",
+              "t2": "inv-un",
+              "t3": "sibling",
+              "source": "exact_table"
+            },
+            {
+              "a": "William",
+              "b": "Daniel",
+              "c": "Jerry",
+              "t1": "sibling",
+              "t2": "child",
+              "t3": "un",
+              "source": "exact_table"
+            },
+            {
+              "a": "Marguerite",
+              "b": "Jerry",
+              "c": "William",
+              "t1": "child",
+              "t2": "inv-un",
+              "t3": "sibling",
+              "source": "exact_table"
+            },
+            {
+              "a": "Marguerite",
+              "b": "Ethel",
+              "c": "Kyle",
+              "t1": "child",
+              "t2": "sibling",
+              "t3": "child",
+              "source": "exact_table"
+            },
+            {
+              "a": "William",
+              "b": "Marguerite",
+              "c": "Kyle",
+              "t1": "sibling",
+              "t2": "child",
+              "t3": "un",
+              "source": "exact_table"
+            }
+          ],
+          "caught_unsound": false,
+          "silent_wrong_missed": false
+        },
+        {
+          "setting": "kinship",
+          "doc_id": "00ef91d2-5aad-4adf-b87e-ba003f48a992",
+          "query": [
+            "Luis",
+            "Richard"
+          ],
+          "gold": "grandson",
+          "fuzzy_edge": [
+            "Elizabeth",
+            "James"
+          ],
+          "vague_term": "younger relative",
+          "emitted_disjunction": [
+            "child",
+            "grand",
+            "sibling",
+            "un"
+          ],
+          "gold_type_retained": true,
+          "Dquery": [
+            "grand",
+            "un"
+          ],
+          "certificate_decision": "ABSTAIN",
+          "certificate_answer": null,
+          "correct": false,
+          "commit_argmax_answer": "grandson",
+          "story": "Marge went to dinner with her daughter Elizabeth. They then went to the park afterwards. James and his children Lucas and Leslie visited his mother Elizabeth in the nursing home. Jeffery enjoys going fishing with his brother. His name is Lucas. Richard enjoys going fishing with his brother. His name is Jeffery. Luis wrote a poem for his wife Elizabeth. Elizabeth had a daughter named Marge.",
+          "proof_skeleton": [
+            {
+              "a": "Luis",
+              "b": "Elizabeth",
+              "c": "James",
+              "t1": "SO",
+              "t2": "child",
+              "t3": "child",
+              "source": "exact_table"
+            },
+            {
+              "a": "Luis",
+              "b": "James",
+              "c": "Leslie",
+              "t1": "child",
+              "t2": "child",
+              "t3": "grand",
+              "source": "exact_table"
+            },
+            {
+              "a": "Luis",
+              "b": "Leslie",
+              "c": "Lucas",
+              "t1": "grand",
+              "t2": "sibling",
+              "t3": "grand",
+              "source": "exact_table"
+            },
+            {
+              "a": "Luis",
+              "b": "Lucas",
+              "c": "Jeffery",
+              "t1": "grand",
+              "t2": "sibling",
+              "t3": "grand",
+              "source": "exact_table"
+            },
+            {
+              "a": "Luis",
+              "b": "Jeffery",
+              "c": "Richard",
+              "t1": "grand",
+              "t2": "sibling",
+              "t3": "grand",
+              "source": "exact_table"
+            }
+          ],
+          "caught_unsound": false,
+          "silent_wrong_missed": false
+        },
+        {
+          "setting": "kinship",
+          "doc_id": "0102334c-6264-4a27-bb07-ad211606bc8d",
+          "query": [
+            "Lena",
+            "Lynn"
+          ],
+          "gold": "sister",
+          "fuzzy_edge": [
+            "Irvin",
+            "James"
+          ],
+          "vague_term": "family elder",
+          "emitted_disjunction": [
+            "inv-child",
+            "inv-grand",
+            "inv-un"
+          ],
+          "gold_type_retained": true,
+          "Dquery": [
+            "child",
+            "grand",
+            "inv-un",
+            "sibling",
+            "un"
+          ],
+          "certificate_decision": "ABSTAIN",
+          "certificate_answer": null,
+          "correct": false,
+          "commit_argmax_answer": "daughter",
+          "story": "Irvin's grandfather, James, went out to get groceries. In the mean time, Irvin's mother, Lena, cooked up some vegetables. James took his daughter Lynn out for dinner.",
+          "proof_skeleton": [
+            {
+              "a": "Lena",
+              "b": "Irvin",
+              "c": "James",
+              "t1": "child",
+              "t2": "inv-grand",
+              "t3": "inv-child",
+              "source": "exact_table"
+            },
+            {
+              "a": "Lena",
+              "b": "James",
+              "c": "Lynn",
+              "t1": "inv-child",
+              "t2": "child",
+              "t3": "sibling",
+              "source": "exact_table"
+            }
+          ],
+          "caught_unsound": false,
+          "silent_wrong_missed": false
+        },
+        {
+          "setting": "kinship",
+          "doc_id": "010a2195-2693-4e39-a6a5-007e8b626a50",
+          "query": [
+            "Maryann",
+            "Ronald"
+          ],
+          "gold": "uncle",
+          "fuzzy_edge": [
+            "John",
+            "Mark"
+          ],
+          "vague_term": "sibling-figure",
+          "emitted_disjunction": [
+            "inv-un",
+            "sibling",
+            "sibling-in-law"
+          ],
+          "gold_type_retained": true,
+          "Dquery": [
+            "inv-un"
+          ],
+          "certificate_decision": "COMMIT",
+          "certificate_answer": "uncle",
+          "correct": true,
+          "commit_argmax_answer": "uncle",
+          "story": "Cheryl was excited because she was meeting her father, Kyle, for lunch. Mark was thrilled his brother, John, was able to make it to the party. Cheryl enjoys playing cards with her brother. His name is Albert. Kyle bought a steak dinner for himself and his brother John. Frank bought gifts for his lovely sister, Cheryl Bonita baked chocolate muffins for her son Frank and daughter Maryann. Mark's brother, Ronald, recently made it into town. Cheryl and her brother Albert went to see a movie.",
+          "proof_skeleton": [
+            {
+              "a": "Maryann",
+              "b": "Bonita",
+              "c": "Frank",
+              "t1": "inv-child",
+              "t2": "child",
+              "t3": "sibling",
+              "source": "exact_table"
+            },
+            {
+              "a": "Maryann",
+              "b": "Frank",
+              "c": "Cheryl",
+              "t1": "sibling",
+              "t2": "sibling",
+              "t3": "sibling",
+              "source": "exact_table"
+            },
+            {
+              "a": "Maryann",
+              "b": "Cheryl",
+              "c": "Kyle",
+              "t1": "sibling",
+              "t2": "inv-child",
+              "t3": "inv-child",
+              "source": "exact_table"
+            },
+            {
+              "a": "Kyle",
+              "b": "John",
+              "c": "Mark",
+              "t1": "sibling",
+              "t2": "sibling",
+              "t3": "sibling",
+              "source": "exact_table"
+            },
+            {
+              "a": "Kyle",
+              "b": "Mark",
+              "c": "Ronald",
+              "t1": "sibling",
+              "t2": "sibling",
+              "t3": "sibling",
+              "source": "exact_table"
+            },
+            {
+              "a": "Maryann",
+              "b": "Kyle",
+              "c": "Ronald",
+              "t1": "inv-child",
+              "t2": "sibling",
+              "t3": "inv-un",
+              "source": "exact_table"
+            }
+          ],
+          "caught_unsound": false,
+          "silent_wrong_missed": false
+        },
+        {
+          "setting": "kinship",
+          "doc_id": "011690ba-3f31-4c69-8eed-a3f84e9df5e1",
+          "query": [
+            "Susan",
+            "Timothy"
+          ],
+          "gold": "nephew",
+          "fuzzy_edge": [
+            "Susan",
+            "Loren"
+          ],
+          "vague_term": "younger relative",
+          "emitted_disjunction": [
+            "child",
+            "grand",
+            "sibling",
+            "un"
+          ],
+          "gold_type_retained": true,
+          "Dquery": [
+            "grand",
+            "un"
+          ],
+          "certificate_decision": "ABSTAIN",
+          "certificate_answer": null,
+          "correct": false,
+          "commit_argmax_answer": "nephew",
+          "story": "Bryan was playing tennis with his sister Thelma. Afterwards, he was planning on playing chess with his sister Amanda. Susan spent a great day shopping with her daughter, Loren. Timothy and his sister, Amanda love it when their grandmother visits because she spoils them. She is coming this week to watch them while their parents are out of town. Ronald took his son Milton to the park to feed the squirrels. Willie went to the mall, because she wanted to look for a present for her daughter, Thelma. Milton has a aunt named Willie, routinely he went to school with his aunt Ronald and his daughter Santa loved to play soccer together. Unfortunately, her sister Loren did not like sports.",
+          "proof_skeleton": [
+            {
+              "a": "Susan",
+              "b": "Loren",
+              "c": "Santa",
+              "t1": "child",
+              "t2": "sibling",
+              "t3": "child",
+              "source": "llm_fuzzy"
+            },
+            {
+              "a": "Santa",
+              "b": "Ronald",
+              "c": "Milton",
+              "t1": "inv-child",
+              "t2": "child",
+              "t3": "sibling",
+              "source": "exact_table"
+            },
+            {
+              "a": "Susan",
+              "b": "Santa",
+              "c": "Milton",
+              "t1": "child",
+              "t2": "sibling",
+              "t3": "child",
+              "source": "exact_table"
+            },
+            {
+              "a": "Susan",
+              "b": "Milton",
+              "c": "Willie",
+              "t1": "child",
+              "t2": "inv-un",
+              "t3": "sibling",
+              "source": "exact_table"
+            },
+            {
+              "a": "Willie",
+              "b": "Thelma",
+              "c": "Bryan",
+              "t1": "child",
+              "t2": "sibling",
+              "t3": "child",
+              "source": "exact_table"
+            },
+            {
+              "a": "Willie",
+              "b": "Bryan",
+              "c": "Amanda",
+              "t1": "child",
+              "t2": "sibling",
+              "t3": "child",
+              "source": "exact_table"
+            },
+            {
+              "a": "Willie",
+              "b": "Amanda",
+              "c": "Timothy",
+              "t1": "child",
+              "t2": "sibling",
+              "t3": "child",
+              "source": "exact_table"
+            },
+            {
+              "a": "Susan",
+              "b": "Willie",
+              "c": "Timothy",
+              "t1": "sibling",
+              "t2": "child",
+              "t3": "un",
+              "source": "exact_table"
+            }
+          ],
+          "caught_unsound": false,
+          "silent_wrong_missed": false
+        }
+      ]
+    },
+    "bootstrap_cis": {
+      "spatial": {
+        "soundness_rate": [
+          0.9198073936026209,
+          0.9461326404498316
+        ],
+        "top1_accuracy": [
+          0.39168422156097504,
+          0.44239648685092325
+        ],
+        "confident_wrong_diff": {
+          "diff": 0.36403508771929827,
+          "ci95": [
+            0.3026315789473684,
+            0.4298245614035088
+          ],
+          "n": 228,
+          "n_docs": 228
+        },
+        "certificate_coverage": [
+          0.4692982456140351,
+          0.6008771929824561
+        ]
+      },
+      "kinship": {
+        "soundness_rate": [
+          1.0,
+          1.0
+        ],
+        "top1_accuracy": [
+          0.40437529744503214,
+          0.4656141146778466
+        ],
+        "confident_wrong_diff": {
+          "diff": 0.21618953603158933,
+          "ci95": [
+            0.192497532082922,
+            0.2418558736426456
+          ],
+          "n": 1013,
+          "n_docs": 1013
+        },
+        "certificate_coverage": [
+          0.2872408687068114,
+          0.3435340572556762
+        ]
+      }
+    },
+    "honesty_caveats": [
+      "the vague/ambiguous TERM is the unit of fuzziness: reads are term-conditioned (temp 0, sha256-cached), so ~6 distinct reads per setting drive hundreds of per-edge calibration records; the empirical gold mix per term is the calibration target",
+      "SpaRP-PS1 uses SYMBOLIC region ids (char_spans=[]) and templated text -- the vague rendering is a minimal stand-alone sentence (the gold RCC-8 relation is the construction target)",
+      "CLUTRR is a templated kinship benchmark (max 871 chars), not natural long-form text",
+      "soundness = gold IN the emitted set; an UNSOUND read is the silent-wrong-narrowing failure mode that the certificate is designed to catch (collapse/abstain)",
+      "the read-soundness-conditional zero-FP invariant is asserted on the all-sound subset, NOT an unconditional guarantee -- an unsound read can still slip a wrong singleton through (reported as certificate_caught_fraction < 1)",
+      "Mode-P contrast is loaded from the iter-4 method_out.json (memorized recall, conf 1.0)"
+    ],
+    "budget": {
+      "cumulative_usd": 0.0,
+      "n_llm_calls": 0,
+      "n_cache_hits": 11,
+      "n_parse_fail": 0,
+      "n_errors": 0,
+      "model": "google/gemini-3.1-flash-lite",
+      "fallbacks": [
+        "deepseek/deepseek-v3.2",
+        "google/gemini-3-flash-preview"
+      ],
+      "temperature": 0.0,
+      "budget_hard": 9.0,
+      "budget_soft": 2.0,
+      "sens_budget": {
+        "cumulative_usd": 0.0,
+        "n_llm_calls": 0,
+        "n_cache_hits": 11,
+        "n_parse_fail": 0,
+        "n_errors": 0,
+        "model": "deepseek/deepseek-v3.2",
+        "fallbacks": [],
+        "temperature": 0.0,
+        "budget_hard": 9.0,
+        "budget_soft": 2.0
+      },
+      "total_api_spend_all_runs_usd": 0.002885,
+      "n_cached_calls_on_disk": 22,
+      "note": "cumulative_usd is THIS invocation's marginal cost (0 when cache-served); total_api_spend_all_runs_usd is the real money spent to build the sha256 cache."
+    },
+    "verdict": {
+      "spatial": {
+        "label": "YES",
+        "cert_coverage": 0.5350877192982456,
+        "cert_acc_among_answered": 1.0,
+        "cert_confident_wrong": 0.0,
+        "argmax_confident_wrong": 0.36403508771929827,
+        "cw_reduction_ci_excludes_0": true,
+        "genuinely_fuzzy": true,
+        "calibrated_ece_lt_0p2": true,
+        "zero_fp_holds": true
+      },
+      "kinship": {
+        "label": "YES",
+        "cert_coverage": 0.3139190523198421,
+        "cert_acc_among_answered": 1.0,
+        "cert_confident_wrong": 0.0,
+        "argmax_confident_wrong": 0.21618953603158933,
+        "cw_reduction_ci_excludes_0": true,
+        "genuinely_fuzzy": true,
+        "calibrated_ece_lt_0p2": true,
+        "zero_fp_holds": true
+      },
+      "modeP_was_memorized_not_fuzzy": true,
+      "summary": "the memorized Mode-P emitted confidence EXACTLY 1.0 on 100% of cells (mean_conf=1.0), i.e. table recall not fuzzy unification. on genuinely-vague spatial RCC-8 reads the LLM emits calibrated disjunctions (frac_conf_1p0=0.00, mean_breadth=2.72, soundness=0.93, ECE_cand=0.14228319451249388, ECE_top1=0.2862666666666667). on genuinely-vague kinship reads the LLM emits calibrated disjunctions (frac_conf_1p0=0.00, mean_breadth=3.41, soundness=1.00, ECE_cand=0.11051447574334897, ECE_top1=0.05079999999999998). the spatial certificate covers 0.54 at acc=1.0 with confident-wrong 0.000 vs commit-argmax 0.364 (caught 1.0 of unsound reads; zero-FP on sound reads=True). the kinship certificate covers 0.31 at acc=1.0 with confident-wrong 0.000 vs commit-argmax 0.216 (caught None of unsound reads; zero-FP on sound reads=True)."
+    },
+    "runtime_sec": 9.9
+  },
+  "datasets": [
+    {
+      "dataset": "spatial_fuzzy_rcc8",
+      "examples": [
+        {
+          "input": "Region 1 is near region 2.",
+          "output": "{\"gold\": \"DC\", \"emitted\": [\"DC\", \"EC\"], \"confidences\": {\"DC\": 0.8, \"EC\": 0.2}, \"sound\": true, \"top1\": \"DC\"}",
+          "predict_top1": "DC",
+          "metadata_record_kind": "edge_read",
+          "metadata_doc_id": "SpaRP-PS1_test_1054",
+          "metadata_vague_term": "near",
+          "metadata_gold": "DC",
+          "metadata_sound": true,
+          "metadata_breadth": 2,
+          "metadata_top1_conf": 0.8,
+          "metadata_top1_correct": true,
+          "metadata_parse_fail": false
+        },
+        {
+          "input": "Region 1x1 is touching region 1x0.",
+          "output": "{\"gold\": \"EC\", \"emitted\": [\"EC\", \"EQ\", \"TPP\", \"TPPi\"], \"confidences\": {\"EC\": 0.7, \"TPPi\": 0.1, \"EQ\": 0.1, \"TPP\": 0.1}, \"sound\": true, \"top1\": \"EC\"}",
+          "predict_top1": "EC",
+          "metadata_record_kind": "edge_read",
+          "metadata_doc_id": "SpaRP-PS1_test_0",
+          "metadata_vague_term": "touching",
+          "metadata_gold": "EC",
+          "metadata_sound": true,
+          "metadata_breadth": 4,
+          "metadata_top1_conf": 0.7,
+          "metadata_top1_correct": true,
+          "metadata_parse_fail": false
+        },
+        {
+          "input": "Region 0 is inside region 1.",
+          "output": "{\"gold\": \"NTPP\", \"emitted\": [\"NTPP\", \"TPP\"], \"confidences\": {\"NTPP\": 0.5, \"TPP\": 0.5}, \"sound\": true, \"top1\": \"TPP\"}",
+          "predict_top1": "TPP",
+          "metadata_record_kind": "edge_read",
+          "metadata_doc_id": "SpaRP-PS1_test_0",
+          "metadata_vague_term": "inside",
+          "metadata_gold": "NTPP",
+          "metadata_sound": true,
+          "metadata_breadth": 2,
+          "metadata_top1_conf": 0.5,
+          "metadata_top1_correct": false,
+          "metadata_parse_fail": false
+        }
+      ]
+    },
+    {
+      "dataset": "kinship_fuzzy_paraphrase",
+      "examples": [
+        {
+          "input": "Lynn is Joshua's relative by marriage.",
+          "output": "{\"gold_type\": \"SO\", \"emitted\": [\"SO\", \"in-law\", \"inv-in-law\", \"sibling-in-law\"], \"confidences\": {\"sibling-in-law\": 0.2, \"in-law\": 0.3, \"SO\": 0.2, \"inv-in-law\": 0.3}, \"sound\": true, \"top1\": \"in-law\"}",
+          "predict_top1": "in-law",
+          "metadata_record_kind": "edge_read",
+          "metadata_doc_id": "0001ba90-fb7a-4e80-8253-0dd9b60a679c",
+          "metadata_ambiguous_term": "relative by marriage",
+          "metadata_gold_type": "SO",
+          "metadata_sound": true,
+          "metadata_breadth": 4,
+          "metadata_top1_conf": 0.3,
+          "metadata_top1_correct": false,
+          "metadata_parse_fail": false
+        },
+        {
+          "input": "Andrea is Lynn's descendant.",
+          "output": "{\"gold_type\": \"child\", \"emitted\": [\"child\", \"grand\"], \"confidences\": {\"grand\": 0.3, \"child\": 0.2}, \"sound\": true, \"top1\": \"grand\"}",
+          "predict_top1": "grand",
+          "metadata_record_kind": "edge_read",
+          "metadata_doc_id": "0001ba90-fb7a-4e80-8253-0dd9b60a679c",
+          "metadata_ambiguous_term": "descendant",
+          "metadata_gold_type": "child",
+          "metadata_sound": true,
+          "metadata_breadth": 2,
+          "metadata_top1_conf": 0.3,
+          "metadata_top1_correct": false,
+          "metadata_parse_fail": false
+        },
+        {
+          "input": "Johnson is Frances's descendant.",
+          "output": "{\"gold_type\": \"grand\", \"emitted\": [\"child\", \"grand\"], \"confidences\": {\"grand\": 0.3, \"child\": 0.2}, \"sound\": true, \"top1\": \"grand\"}",
+          "predict_top1": "grand",
+          "metadata_record_kind": "edge_read",
+          "metadata_doc_id": "000370f9-73a3-4c56-97c4-99d37f659786",
+          "metadata_ambiguous_term": "descendant",
+          "metadata_gold_type": "grand",
+          "metadata_sound": true,
+          "metadata_breadth": 2,
+          "metadata_top1_conf": 0.3,
+          "metadata_top1_correct": true,
+          "metadata_parse_fail": false
+        }
+      ]
+    }
+  ]
+}

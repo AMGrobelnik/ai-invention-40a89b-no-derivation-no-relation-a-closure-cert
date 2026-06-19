@@ -1,0 +1,366 @@
+#!/usr/bin/env python3
+"""Assemble research_out.json + the struct-out JSON for the iter-4 research dossier.
+Pure data assembly from already-verified web findings (no network calls)."""
+import json, os
+
+WS = "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_4/gen_art/gen_art_research_1"
+
+# ----------------------------------------------------------------------------- SOURCES
+sources = [
+ (1,"https://arxiv.org/abs/2508.20828","GDLLM arXiv abstract (Zhao et al., EMNLP 2025 Findings)","Re-confirmed title, 5 authors (Jie Zhao, Wanting Ning, Yuxiao Fei, Yubo Feng, Lishuang Li), submitted 28 Aug 2025, comment 'Proceedings of EMNLP 2025 (Findings)', arXiv license. Abstract: GAT distance-aware + soft-inference LLM for Event Temporal Relation Extraction (ETRE), SOTA on TB-Dense & MATRES."),
+ (2,"https://arxiv.org/html/2508.20828v1","GDLLM full HTML (output contract)","Confirms the COMMIT/classification contract: 'imbalanced classification datasets', 'minority class relations', fine-tuned LLMs, 'hard classification (0/1 decision labels)' vs soft probability edge features into GAT. No relation-algebra disjunction, no abstention."),
+ (3,"https://api.semanticscholar.org/graph/v1/paper/ARXIV:2508.20828","Semantic Scholar record for GDLLM","Supplied verified metadata: venue=EMNLP 2025, pages 8080-8091, DBLP key conf/emnlp/ZhaoNFFL25, DOI 10.48550/arXiv.2508.20828, CorpusId 280950193, author order Zhao/Ning/Fei/Feng/Li."),
+ (4,"https://arxiv.org/abs/2511.13095","BeDiscovER arXiv abstract (Li & Carenini, EACL 2026)","Re-confirmed title, authors Chuyuan Li & Giuseppe Carenini, v1 17 Nov 2025 / v2 25 Jan 2026, comment 'Camera-ready version of eacl 2026', license CC BY 4.0. Abstract: evaluation suite of 5 discourse tasks / 52 datasets incl. temporal relation extraction; evaluates Qwen3, DeepSeek-R1, GPT-5-mini."),
+ (5,"https://arxiv.org/html/2511.13095v2","BeDiscovER full HTML (corpus statistics)","Verified exact stats: 'around 30,000 test instances across 52 publicly available datasets ... 16 languages, and 6 frameworks'; 3 levels / 5 tasks; 'our goal is to develop a comprehensive evaluation suite' -> instrument, not a method. Temporal Relation is one evaluated sub-task (Sec 5.1)."),
+ (6,"https://github.com/HLR/SpartQA_generation/blob/main/Readme.md","SpartQA generation README (HLR)","SpartQA-Auto built on NLVR images via CFG stories + spatial reasoning rules; q-types FR/FB/CO/YN; open-world DK option; annotation includes the SCENE GRAPH of each scene. States SpaRTUN is the updated SpartQA-Auto with more relations/rules; gives data-zip URLs for SPARTUN.zip, ReSQ.zip, SpartQA_Auto/Human."),
+ (7,"https://arxiv.org/pdf/2210.16952","Mirzaee & Kordjamshidi, EMNLP 2022 (SpaRTUN + ReSQ)","Source for: 16 spatial relation types (Table 1: RCC-8 topological DC/EC/PO/EQ/TPP/NTPP/TPPI/NTPPI; directional left/right,above/below,front/behind; distance far/near); Table 3 sizes (SPARTUN YN 20334/3152/3193, FR 18400/2818/2830; ReSQ 1008/333/610; StepGame 50000/1000/10000; SpartQA-Human YN 162/51/143, FR 149/28/77; SpartQA-Auto FR 25744/3780/3797); SPARTUN story avg 8 sentences / 91 tokens; multi-object nested-box scene example."),
+ (8,"https://github.com/HLR/SpaRTUN","SpaRTUN GitHub repository (HLR)","Verified MIT license (LICENSE.md); ships prolog/ rules (spatial_rules.pl, main.py, rules_text.ipynb), Generate_graph.py, Creating_story_v2.py, Random_multistep_choice.py, data_format.txt. data_format.txt shows objs_rels stores the TRANSITIVE CLOSURE (edges 0-1,1-2 AND derived 0-2) -> multi-path analysis must use the story-stated subgraph, not objs_rels."),
+ (9,"https://github.com/HLR/SpaRTUN/blob/master/prolog/spatial_rules.pl","SpaRTUN spatial_rules.pl (composition/transitivity rules)","The generator's own rules: converse/symmetry per relation; JEPD 'not' (only one base relation holds); transitivity where DIRECTIONAL composition is per-axis (left_2 chains only left_1; above_2 only above_1; behind_2 only behind_1) -> confirms directional = product of independent point-algebra axes; RCC-8 topological transitivity with EQ handling."),
+ (10,"https://arxiv.org/abs/2406.04566","SpaRC & SpaRP, ACL 2024 (Rizvi, Zhu, Gurevych)","Verified title/authors, 'Accepted at ACL 2024 (Main)', license CC BY-SA 4.0. Datasets repackage SpaRTUN/StepGame with explicit spatial reasoning PATHS for LLM evaluation; topological vs directional split; F1 metric."),
+ (11,"https://huggingface.co/datasets/UKPLab/sparp","SpaRP HuggingFace dataset card","Verified license cc-by-sa-4.0; 8 subsets incl. SpaRP-PS1 (SpaRTUN) 21.2k rows, SpaRP-PS2 (StepGame) 154k, PS3 (StepGame-Ext-01) 128k, PS4 (StepGame-Ext-02) 99.5k, and small-* 3.5k variants. Confirms SpaRP-PS1 == SpaRTUN config."),
+ (12,"https://arxiv.org/pdf/2204.08292","StepGame, AAAI 2022 (Shi, Zhang, Lipani)","Story generation uses 8 directional relations; the ANSWER set has 9 labels {top-left,top-right,top,left,overlap,right,down-left,down-right,down} because 'sampling is unconstrained, entities can overlap'. Stories are a 'sequence of linked entities' (SINGLE CHAIN); k_hop = chain length (1-10)."),
+ (13,"https://huggingface.co/datasets/michaelszx/StepGame","StepGame HuggingFace dataset (michaelszx)","Verified MIT license; splits train 50000 / validation 5000 / test 100000 (10k per k=1..10); features [story, question, label, k_hop]. (Original EMNLP'22 Table-3 reporting used test 10000.)"),
+ (14,"https://raw.githubusercontent.com/ZhengxiangShi/StepGame/main/Code/template.py","StepGame template.py (relation indices)","Generator relation map '# down, up, left, right, left-down, right-up, left-up, right-down  # 0..7' -> 8 base directional relations used to BUILD stories (file named parameterized_step_game_8relation.py)."),
+ (15,"https://github.com/m-westphal/gqr/tree/master/data","GQR calculi data/ directory (Westphal, Gantner, Woelfl)","Machine-readable calculi specs: cd.spec (Cardinal Direction, size 9, identity Eq), rcc8.spec (size 8, identity EQ), point.spec (size 3, identity =), allen.spec, plus combination files point+point+point.combination (size 27) and rcc8+point.combination. Each .spec points to comp_table/converse/weights files."),
+ (16,"https://raw.githubusercontent.com/m-westphal/gqr/master/data/cd/calculus/cd.comp","GQR cardinal-direction composition table cd.comp","The exact 9x9 projection-cardinal base composition table (e.g. 'N : E :: ( NE )', 'N : S :: ( Eq S N )', 'NE : SW :: ( Eq S N W SW NW E SE NE )'). Independently reproduced cell-for-cell by component-wise product of two point algebras -> confirms reuse insight."),
+ (17,"https://raw.githubusercontent.com/m-westphal/gqr/master/data/rcc8/calculus/rcc8.comp","GQR RCC-8 composition table rcc8.comp","The exact 8x8 RCC-8 base composition table (e.g. 'DC:DC :: full', 'PO:PO :: ( DC EC PO TPP NTPP TPPI NTPPI EQ )', 'TPP:NTPP :: ( NTPP )'). Covers SpaRTUN/SpartQA topological vocabulary exactly."),
+ (18,"https://raw.githubusercontent.com/m-westphal/gqr/master/data/point/calculus/point.comp","GQR point-algebra composition table point.comp","The 3x3 point composition (only non-trivial cells '> : < :: ( < = > )' and '< : > :: ( < = > )'); the reusable factor that GENERATES the cardinal (2-axis) and SpaRTUN-directional (3-axis) tables."),
+ (19,"https://doi.org/10.1080/02693799608902079","Frank (1996), Qualitative Spatial Reasoning: Cardinal Directions as an Example","Primary citation for the projection-based cardinal-direction model (IJGIS 10(3):269-290). Verified via Semantic Scholar (author A. Frank, pages 269-290, year 1996)."),
+ (20,"https://dblp.org/rec/journals/vlc/Ligozat98","Ligozat (1998), Reasoning about Cardinal Directions","Primary citation for the POINT-based cardinal-direction calculus and its tractability (J. Visual Languages & Computing 9(1):23-44). Verified via DBLP (key journals/vlc/Ligozat98, author Gerard Ligozat)."),
+ (21,"https://doi.org/10.1016/S0004-3702(03)00137-1","Skiadopoulos & Koubarakis (2004), Composing Cardinal Direction Relations","The REGION-based Cardinal Direction Calculus (direction-relation matrices) to DISTINGUISH-AND-EXCLUDE (Artif. Intell. 152(2):143-171). Verified via Semantic Scholar (authors Skiadopoulos & Koubarakis, pages 143-171)."),
+ (22,"https://dblp.org/rec/conf/kr/RandellCC92","Randell, Cui & Cohn (1992), A Spatial Logic based on Regions and Connection","Origin of the RCC family / RCC-8 base relations (KR 1992, pages 165-176). Verified via DBLP (key conf/kr/RandellCC92)."),
+ (23,"https://aclanthology.org/2021.naacl-main.364/","Mirzaee et al. (2021), SPARTQA: A Textual QA Benchmark for Spatial Reasoning","Original SpartQA paper (NAACL 2021, anthology 2021.naacl-main.364, DOI 10.18653/v1/2021.naacl-main.364). Verified via Semantic Scholar (DBLP conf/naacl/MirzaeeFNK21)."),
+ (24,"https://www.uni-bamberg.de/fileadmin/sme/SparQ/SparQ-Manual.pdf","SparQ Toolbox User Manual (Wolter, Wallgruen, Dylla; Univ. Bremen SFB/TR8)","Secondary machine-readable calculi source: SparQ ships specifications for common spatial calculi incl. cardinal-direction and RCC families. Cross-reference/alternative to GQR for composition tables."),
+ (25,"https://www.hindawi.com/journals/aai/2013/205261/","Kor & Bennett (2013), Hybrid Reasoning for Cardinal Directions (projection-model description)","Independent description of the projection-based 9-tile cardinal model {NW,N,NE,W,O(neutral/Eq),E,SW,S,SE} partitioned by Horizontal & Vertical Constraints -> corroborates the product-of-two-axes structure and the 9-relation count."),
+ (26,"https://huggingface.co/api/datasets/tasksource/spartqa-yn","HuggingFace dataset existence/license checks (SpartQA/StepGame/SpaRP mirrors)","Verified mirror availability & licenses: tasksource/spartqa-yn (apache-2.0), tasksource/spartqa-mchoice (mit), metaeval/spartqa-yn (apache-2.0), mteb/SpartQA (mit), michaelszx/StepGame (mit), UKPLab/sparp (cc-by-sa-4.0)."),
+ (27,"file:///ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_3/gen_art/gen_art_research_1/research_out.json","Iter-3 near-neighbor bundle (internal dependency)","Source of the schema/key style and the four already-pinned neighbors (NeSTR/Liang2026, TReMu/Ge2025, Fan2025, Zhou2026); flagged GDLLM (key Mu2025gdllm) and BeDiscovER (key Li2026bediscover) as unpinned near-neighbors -> retired here, with the GDLLM first-author key correction (Zhao not Mu)."),
+]
+SRC = [{"index":i,"url":u,"title":t,"summary":s} for (i,u,t,s) in sources]
+
+# ----------------------------------------------------------------------------- CITATIONS (Part A)
+gdllm_bibtex = (
+"@inproceedings{ZhaoGDLLM2025,\n"
+"  author        = {Jie Zhao and Wanting Ning and Yuxiao Fei and Yubo Feng and Lishuang Li},\n"
+"  title         = {{GDLLM}: A Global Distance-aware Modeling Approach Based on Large Language Models for Event Temporal Relation Extraction},\n"
+"  booktitle     = {Findings of the Association for Computational Linguistics: EMNLP 2025},\n"
+"  year          = {2025},\n"
+"  pages         = {8080--8091},\n"
+"  publisher     = {Association for Computational Linguistics},\n"
+"  eprint        = {2508.20828},\n"
+"  archivePrefix = {arXiv},\n"
+"  primaryClass  = {cs.CL},\n"
+"  doi           = {10.48550/arXiv.2508.20828},\n"
+"  note          = {EMNLP 2025 Findings; DBLP conf/emnlp/ZhaoNFFL25; arXiv:2508.20828}\n"
+"}")
+bediscover_bibtex = (
+"@inproceedings{LiBeDiscovER2026,\n"
+"  author        = {Chuyuan Li and Giuseppe Carenini},\n"
+"  title         = {{BeDiscovER}: The Benchmark of Discourse Understanding in the Era of Reasoning Language Models},\n"
+"  booktitle     = {Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics (EACL)},\n"
+"  year          = {2026},\n"
+"  eprint        = {2511.13095},\n"
+"  archivePrefix = {arXiv},\n"
+"  primaryClass  = {cs.CL},\n"
+"  doi           = {10.48550/arXiv.2511.13095},\n"
+"  note          = {To appear, EACL 2026 (camera-ready, arXiv:2511.13095v2 dated 25 Jan 2026)}\n"
+"}")
+
+citations = [
+ {
+  "id_key":"ZhaoGDLLM2025",
+  "arxiv_id":"2508.20828",
+  "title":"GDLLM: A Global Distance-aware Modeling Approach Based on Large Language Models for Event Temporal Relation Extraction",
+  "authors":["Jie Zhao","Wanting Ning","Yuxiao Fei","Yubo Feng","Lishuang Li"],
+  "venue":"Findings of the Association for Computational Linguistics: EMNLP 2025 (pp. 8080-8091)",
+  "bibtex":gdllm_bibtex,
+  "objective_summary":"A TRAINED/fine-tuned LLM coupled with a distance-aware Graph Attention Network (GAT) for Event Temporal Relation Extraction (ETRE). It injects the LLM's soft probability distribution (rather than hard 0/1 edges) into the GAT to capture long-distance dependencies and improve minority-class relations in imbalanced classification datasets, reaching SOTA F1 on TB-Dense and MATRES.",
+  "output_contract":"Single-label COMMIT: per event pair, predict THE one temporal relation that maximizes classification F1 (multi-class classification). No relation-algebra disjunction, no cross-path intersection, no gold-free certificate, no abstention.",
+  "one_sentence_differentiation":"GDLLM trains an LLM+GAT to COMMIT to a single temporal label per pair to maximize F1, whereas we keep the read as a high-recall relation-algebra DISJUNCTION, narrow it only by exact-table cross-path intersection, and ABSTAIN (gold-free, training-free, per-edge) when closure leaves a non-singleton."
+ },
+ {
+  "id_key":"LiBeDiscovER2026",
+  "arxiv_id":"2511.13095",
+  "title":"BeDiscovER: The Benchmark of Discourse Understanding in the Era of Reasoning Language Models",
+  "authors":["Chuyuan Li","Giuseppe Carenini"],
+  "venue":"To appear, EACL 2026 (camera-ready; arXiv:2511.13095v2, 25 Jan 2026); license CC BY 4.0",
+  "bibtex":bediscover_bibtex,
+  "objective_summary":"An EVALUATION BENCHMARK SUITE (not a method): compiles 5 discourse tasks across 3 levels into 52 datasets (~30,000 test instances, 16 languages, 6 frameworks), including discourse parsing and temporal relation extraction, and measures reasoning LLMs (Qwen3, DeepSeek-R1, GPT-5-mini). Finding: strong on arithmetic temporal reasoning, weak on full-document reasoning and subtle discourse phenomena.",
+  "output_contract":"MEASUREMENT instrument: reports task metrics (e.g. F1/accuracy) of off-the-shelf LLMs on discourse/temporal sub-tasks. Contributes no reasoning mechanism; it neither preserves a disjunction, intersects across paths, certifies a reading error, nor abstains.",
+  "one_sentence_differentiation":"BeDiscovER is an evaluation BENCHMARK that measures whether reasoning LLMs get discourse/temporal relations right; it is a measurement instrument, not a method, contributing no mechanism that preserves a relation-algebra disjunction, intersects across paths, certifies a reading error, or abstains -- which is precisely our method-level contribution."
+ },
+]
+
+# ----------------------------------------------------------------------------- DIFFERENTIATION PARAGRAPH (A3)
+differentiation_paragraph = (
+"Organized by output contract, none of the closest neighbors adopts ours. (i) Single-label COMMIT for F1: GDLLM [ZhaoGDLLM2025] "
+"trains an LLM+GAT to classify the one temporal relation per event pair, exactly the contract also taken by Fan and Strube's "
+"Consistent Discourse-level TRE [Fan2025], the global zero-shot temporal-graph ILP-commit line [Eirew2025], and the established "
+"Kougia/Knez supervised TRE setting; all maximize agreement with a single gold label and therefore preserve no relation-algebra "
+"disjunction and never abstain. (ii) Abductive REPAIR / code-generation: NeSTR [Liang2026] repairs detected inconsistencies toward "
+"one revised conclusion and TReMu [Ge2025] generates Python over dialogue memory to compute one answer -- both commit after "
+"correction rather than preserving an under-determined reading. (iii) TRAINED abstention: When Silence Is Golden [Zhou2026] learns "
+"to abstain in temporal QA via CoT supervision and RL with abstention-aware rewards, an answer-level learned-uncertainty signal "
+"rather than a structural certificate. (iv) EVALUATION benchmark (no method): BeDiscovER [LiBeDiscovER2026] measures whether "
+"reasoning LLMs get discourse/temporal relations right across 52 datasets but contributes no reasoning mechanism at all. Across all "
+"four contracts, none PRESERVES a relation-algebra disjunction and ABSTAINS on closure-collapse with a gold-free, training-free, "
+"per-edge certificate -- our positive output contract -- which we keep cleanly separate from the (synthetic-only) cross-path-"
+"intersection coding-rate mechanism whose real-text status the spatial multi-path experiment is designed to test."
+)
+
+# ----------------------------------------------------------------------------- NOVELTY SENTENCE (A4)
+sharpened_novelty_sentence = (
+"Our end-to-end-demonstrated novelty is a TRAINING-FREE, PER-EDGE, GOLD-FREE ABSTAIN-ON-COLLAPSE CERTIFICATE over LLM-extracted "
+"relational facts -- preserving the relation-algebra disjunction and abstaining whenever exact-table closure leaves a non-singleton, "
+"thereby inverting the F1-maximizing single-label commit contract of prior temporal/spatial relation extractors -- a contribution "
+"distinct from, and not to be conflated with, the cross-path-intersection error-correcting-code mechanism, which this work "
+"establishes only on a synthetic channel and whose real-text status the decisive multi-path-redundancy experiment is designed to determine."
+)
+novelty_sentence_variants = [
+ # compressed (abstract)
+ "We contribute a training-free, gold-free, per-edge certificate that preserves the relation-algebra disjunction of an LLM read and "
+ "abstains when exact-table closure fails to collapse it to a singleton -- inverting the F1-maximizing single-label commit contract -- "
+ "and separately characterize, on a synthetic channel only, a cross-path-intersection coding-rate mechanism.",
+ # expanded (intro)
+ "Unlike prior neuro-symbolic temporal/spatial systems that COMMIT to one F1-maximizing label per pair (GDLLM, Fan & Strube, ILP-commit), "
+ "repair-then-commit (NeSTR, TReMu), or LEARN to abstain (When Silence Is Golden), our method keeps each LLM-extracted relation as a "
+ "high-recall relation-algebra DISJUNCTION and issues a gold-free, training-free, per-edge CERTIFICATE that abstains exactly when "
+ "deductive path-consistency closure over an exact composition table leaves the queried relation under-determined; this end-to-end, "
+ "real-benchmark contribution is deliberately kept separate from our second, SYNTHETIC-ONLY finding that redundant cross-paths act as an "
+ "error-correcting code whose intersection narrows the disjunction, a mechanism whose real-text validity remains open and is the target "
+ "of the multi-path-redundancy experiment."
+]
+
+# ----------------------------------------------------------------------------- ID CORRECTIONS
+id_corrections = [
+ "CARRY-FORWARD (iter-3): TReMu = arXiv:2502.01630, Findings-ACL 2025 (2025.findings-acl.972), pages 18974-18988 (NOT 18605-18622, which are Fan & Strube's); setting is multi-session DIALOGUE temporal QA, not single-document TRE.",
+ "CARRY-FORWARD (iter-3): When Silence Is Golden second author canonical spelling 'Chang Jin' (arXiv), not Semantic Scholar's 'Changhong Jin'.",
+ "NEW: GDLLM project key in the iter-3 bundle ('Mu2025gdllm') is INCORRECT -- there is no author named 'Mu'; the first author is Jie ZHAO (authors: Jie Zhao, Wanting Ning, Yuxiao Fei, Yubo Feng, Lishuang Li). Use key 'ZhaoGDLLM2025' (disambiguated from any other Zhao2025).",
+ "NEW: GDLLM venue/pages pinned: Findings of EMNLP 2025, pages 8080-8091 (Semantic Scholar / DBLP conf/emnlp/ZhaoNFFL25); it was a preprint-only note in iter-3.",
+ "NEW: BeDiscovER project key disambiguated to 'LiBeDiscovER2026' (iter-3 used 'Li2026bediscover'); venue is 'to appear, EACL 2026' per the authors' arXiv camera-ready note. The anthology id '2026.eacl-long.207' asserted in the iter-3 bundle was NOT independently verified here (EACL 2026 proceedings page not confirmed) -- treat as TO-CONFIRM; cite the arXiv preprint v2 in the meantime.",
+ "NOTE: BeDiscovER statistics independently verified from the paper body: 52 datasets, ~30,000 test instances, 16 languages, 6 frameworks, 3 levels / 5 tasks (planner's figures all correct)."
+]
+
+# ----------------------------------------------------------------------------- SPATIAL CORPUS TABLE (B1)
+spatial_corpus_table = [
+ {"name":"SpaRTUN","origin":"synthetic (NLVR block-world scenes; updated/expanded SpartQA-Auto)",
+  "size":"YN 20334/3152/3193 (train/dev/test); FR 18400/2818/2830 [Table 3, Mirzaee&Kordjamshidi 2022]",
+  "availability":"GitHub HLR/SpaRTUN; data zip https://www.cse.msu.edu/~kordjams/data/SPARTUN.zip; HF UKPLab/sparp config 'SpaRP-PS1 (SpaRTUN)' (21.2k rows)",
+  "license":"MIT (HLR/SpaRTUN LICENSE.md); HF SpaRP mirror CC-BY-SA-4.0",
+  "relation_vocabulary":"16 types: topological RCC-8 {DC,EC,PO,EQ,TPP,NTPP,TPPI,NTPPI}; directional {left,right,above,below,front,behind}; distance {far,near}",
+  "question_types":"FR (find relation), FB (find block), CO (choose object), YN (yes/no/DK)",
+  "doc_length":"avg 8 sentences / ~91 tokens per story (~450-550 chars) -- WELL UNDER the ~3000-char target (flag: short)",
+  "reasoning_depth":"multi-hop; reasoning-depth label per question (annotated)",
+  "multi_path_redundancy":"STRONGEST CANDIDATE / LIKELY HOSTS -- multi-object nested-box scene graphs combine directional (3-axis) AND topological (containment) constraints, plausibly yielding >=2 edge-disjoint constraining paths between a query pair; BUT prevalence of multipath-WITH-BITE must be measured on the STORY-stated subgraph (objs_rels stores the full closure, so it cannot be used directly)."},
+ {"name":"SpartQA-Auto","origin":"synthetic (NLVR scenes, CFG stories) -- superseded by SpaRTUN",
+  "size":"FR 25744/3780/3797 (train/dev/test); YN comparable [Table 3]",
+  "availability":"GitHub HLR/SpartQA_generation; data zip https://www.cse.msu.edu/~kordjams/data/SpartQA_Auto.zip; HF mteb/SpartQA, tasksource/spartqa-yn|mchoice",
+  "license":"MIT (code); HF mirrors apache-2.0 (tasksource/spartqa-yn, metaeval/spartqa-yn) or mit (mteb/SpartQA, tasksource/spartqa-mchoice)",
+  "relation_vocabulary":"RCC-8 topological + directional + distance (subset of SpaRTUN's 16; SpaRTUN adds relations/rules)",
+  "question_types":"FR, FB, CO, YN (DK)",
+  "doc_length":"multi-sentence NLVR scene stories (short, < ~1000 chars)",
+  "reasoning_depth":"multi-hop scene-graph reasoning",
+  "multi_path_redundancy":"LIKELY HOSTS (same block-world scene-graph structure as SpaRTUN) -- but use SpaRTUN, which supersedes it with richer relations/rules."},
+ {"name":"SpartQA-Human","origin":"human-generated (NLVR scenes, crowd questions)",
+  "size":"YN 162/51/143; FR 149/28/77 (train/dev/test) [Table 3]",
+  "availability":"data zip https://www.cse.msu.edu/~kordjams/data/SpartQA_Human.zip",
+  "license":"MIT (HLR code)",
+  "relation_vocabulary":"same families as SpartQA (topological/directional/distance)",
+  "question_types":"YN (Yes/No/DK), FR",
+  "doc_length":"multi-sentence human scene descriptions (short)",
+  "reasoning_depth":"multi-hop (human-authored)",
+  "multi_path_redundancy":"TOO SMALL for power -- only ~143 (YN) / ~77 (FR) test items; even if scenes host multipath, n is far below what a powered selective-accuracy test needs. Use only as a small human realism anchor."},
+ {"name":"ReSQ","origin":"human-generated, built on mSpRL/CLEF real image-caption corpus (real-world)",
+  "size":"1008/333/610 (train/dev/test) [Table 3]; YN-only; ~50/50 Yes/No",
+  "availability":"data zip https://www.cse.msu.edu/~kordjams/data/ReSQ.zip (HLR)",
+  "license":"UNVERIFIED -- HLR code repo is MIT, but ReSQ is built on the mSpRL / IAPR TC-12 image-caption corpus, which carries its own terms; CONFIRM BEFORE USE.",
+  "relation_vocabulary":"natural spatial language (maps loosely to topological/directional); not a closed synthetic relation set",
+  "question_types":"YN only",
+  "doc_length":"short real image descriptions (a few sentences, < ~600 chars)",
+  "reasoning_depth":"shallow (mostly k=1-2); often needs commonsense, not deep deduction",
+  "multi_path_redundancy":"DOES NOT HOST multipath at depth -- shallow real-world QA where the answer leans on commonsense; valuable as a REALISM anchor / out-of-distribution probe, not as the multi-path deduction host."},
+ {"name":"StepGame","origin":"synthetic (template-generated entity chains on a grid)",
+  "size":"50000/5000/100000 (HF michaelszx, test=10k per k=1..10); EMNLP'22 Table 3 reports 50000/1000/10000",
+  "availability":"GitHub ZhengxiangShi/StepGame; HF michaelszx/StepGame; HF UKPLab/sparp 'SpaRP-PS2 (StepGame)' 154k",
+  "license":"MIT",
+  "relation_vocabulary":"8 directional generation relations {left,right,top/up,down,top-left,top-right,down-left,down-right}; 9-value ANSWER label set adds 'overlap' (same cell)",
+  "question_types":"FR only (relative position of two entities)",
+  "doc_length":"very short (~k+1 sentences; < ~500 chars)",
+  "reasoning_depth":"k=1..10 hops (the cleanest depth ladder of all corpora)",
+  "multi_path_redundancy":"SINGLE-CHAIN ONLY (confirmed) -- stories are a 'sequence of linked entities'; a unique k-hop path connects the query pair, so there is no edge-disjoint redundancy. Canonical SINGLE-CHAIN CONTRAST arm (the spatial analogue of CLUTRR's single-chain kinship), NOT a multi-path host."},
+ {"name":"SpaRP / SpaRC","origin":"repackaging of SpaRTUN (PS1) and StepGame (PS2-4) with explicit spatial reasoning PATHS for LLM evaluation",
+  "size":"PS1 (SpaRTUN) 21.2k; PS2 (StepGame) 154k; PS3 128k; PS4 99.5k; small-* 3.5k each",
+  "availability":"HF UKPLab/sparp; GitHub UKPLab/acl2024-sparc-and-sparp; arXiv:2406.04566 (ACL 2024 Main)",
+  "license":"CC-BY-SA-4.0",
+  "relation_vocabulary":"inherits SpaRTUN (PS1: topological+directional+distance) and StepGame (PS2-4: 8 directions + overlap)",
+  "question_types":"FR / topological & directional probing with chain-of-reasoning paths",
+  "doc_length":"same short substrates as SpaRTUN/StepGame",
+  "reasoning_depth":"annotated reasoning-path length; characterization framework (SpaRC)",
+  "multi_path_redundancy":"PS1 == SpaRTUN -> same multipath profile (LIKELY HOSTS) PLUS ready-made reasoning-path annotations that aid path identification; PS2-4 == StepGame -> single-chain. Recommended convenience source for the SpaRTUN arm."},
+]
+
+# ----------------------------------------------------------------------------- MULTI-PATH VERDICT (B2)
+multi_path_redundancy_verdict = {
+ "decisive_criterion":"A query pair (A,?,B) must be reachable via >=2 EDGE-DISJOINT constraining paths in the STORY-STATED constraint graph, where neither path alone yields a singleton (so cross-path INTERSECTION can narrow the disjunction) and the direct A-B edge is NOT stated (so the test is non-trivial) -- the spatial analogue of the temporal 'genuine_multipath_with_bite' statistic.",
+ "per_corpus":{
+   "SpaRTUN":"LIKELY HOSTS (strongest) -- requires empirical confirmation",
+   "SpartQA-Auto":"LIKELY HOSTS (same scene-graph structure) -- use SpaRTUN instead",
+   "SpartQA-Human":"TOO SMALL (n<=143 YN / 77 FR test) -- underpowered",
+   "ReSQ":"DOES NOT HOST (shallow k=1-2, commonsense, YN-only) -- realism anchor only",
+   "StepGame":"SINGLE-CHAIN ONLY (confirmed) -- single-chain contrast arm",
+   "SpaRP/SpaRC":"PS1=SpaRTUN hosts (with path annotations); PS2-4=StepGame single-chain"
+ },
+ "key_caveat":"SpaRTUN's data_format.txt stores the FULL transitive closure in objs_rels (direct + derived edges). The multi-path measurement MUST be run on the subgraph of relations actually VERBALIZED in the story (the constraints an extractor would recover), not on objs_rels; otherwise every pair appears 1-hop and bite vanishes by construction.",
+ "recommended_host":"SpaRTUN (equivalently SpaRP-PS1, which adds reasoning-path annotations). Run a networkx edge-disjoint-paths audit (analogous to the temporal arm): build the story-stated constraint graph per scene, and for each FR query pair count edge-disjoint constraining paths whose per-path closure is non-singleton and whose direct edge is unstated. Report the prevalence of multipath-WITH-BITE before any LLM spend.",
+ "fallback":"If the measured prevalence is below the level needed to power a selective-accuracy test (the most likely outcome, given that synthetic generators tend to verbalize near-spanning-tree constraint sets), adopt the SAME synthetic+real split as the temporal arm: a Renz-Nebel-style synthetic RCC-8 / projection-cardinal QCN generator with CONTROLLABLE multi-path density as the powered multi-path host, and SpaRTUN as the real-text realism anchor. State this openly -- a real corpus failing to exercise multipath is itself a reportable finding, exactly as the temporal venues (dense NarrativeTime transitively closed; sparse TDDMan too few multipath queries) did.",
+ "honesty_note":"The spatial venue is being de-risked precisely BECAUSE the temporal cross-path-intersection signal was not significant at power (Claim 2). This dossier establishes only that a powered ATTEMPT is FEASIBLE; it does not predict the spatial experiment will succeed."
+}
+
+# ----------------------------------------------------------------------------- CORPUS -> ALGEBRA MAP (B3)
+corpus_to_algebra_map = [
+ {"corpus":"StepGame","relation_set":"{left,right,top,down,top-left,top-right,down-left,down-right} + answer-only 'overlap'",
+  "algebra":"Projection-based CARDINAL-DIRECTION calculus (9 base relations)",
+  "mapping":"top=N, down=S, right=E, left=W, top-right=NE, top-left=NW, down-right=SE, down-left=SW, overlap=Eq. Perfect 9<->9 fit.",
+  "composition_table":"cardinal (GQR cd.comp) = product of TWO point algebras"},
+ {"corpus":"SpaRTUN / SpartQA (topological)","relation_set":"{DC,EC,PO,EQ,TPP,NTPP,TPPI,NTPPI}",
+  "algebra":"RCC-8",
+  "mapping":"identity (the SpaRTUN topological vocabulary IS RCC-8, EQ included).",
+  "composition_table":"RCC-8 (GQR rcc8.comp) -- the team's already-validated table"},
+ {"corpus":"SpaRTUN / SpartQA (directional)","relation_set":"{left,right,above,below,front,behind}",
+  "algebra":"PRODUCT OF THREE POINT ALGEBRAS (x: left/right; y: above/below; z: front/behind)",
+  "mapping":"each directional relation = a per-axis point relation; SpaRTUN's spatial_rules.pl composes each axis independently (left_2 chains only left_1, etc.). The 2-axis restriction is exactly the cardinal calculus; GQR ships point+point+point.combination (size 27) for the 3-axis case.",
+  "composition_table":"generated component-wise from the point-algebra table; self-test against GQR point+point+point.combination"},
+ {"corpus":"SpaRTUN / SpartQA (distance)","relation_set":"{near,far}",
+  "algebra":"NONE (no standard composition table)",
+  "mapping":"qualitative distance has no JEPD composition algebra of this kind.",
+  "composition_table":"NON-COMPOSABLE -- EXCLUDE from the closure arm or keep as a side annotation only"},
+]
+
+# ----------------------------------------------------------------------------- SPATIAL ALGEBRA TABLES (Part C)
+cardinal_disambiguation = (
+"TWO distinct 'cardinal direction' formalisms exist; the engine MUST pin the SIMPLE one. (1) POINT/PROJECTION-BASED cardinal-"
+"direction calculus (Frank 1996 projection variant; Ligozat 1998) -- 9 JEPD base relations {N,NE,E,SE,S,SW,W,NW,Eq}, exact, "
+"tractable, isomorphic to the product of two point algebras, and the one matching StepGame. (2) REGION-BASED Cardinal Direction "
+"Calculus / CDC (Goyal & Egenhofer; Skiadopoulos & Koubarakis 2004) -- direction-relation matrices with 218 basic relations and "
+"hard composition. SELECT (1): our relations are between point-like located objects, composition is component-wise point-algebra "
+"composition (polynomial), and it directly reuses the team's validated point engine; (2) is explicitly NOT used."
+)
+spatial_algebra_tables = [
+ {"algebra":"Projection-based cardinal-direction calculus (point-based)",
+  "relations":["N","NE","E","SE","S","SW","W","NW","Eq"],
+  "table_source_citation":"Frank (1996), IJGIS 10(3):269-290 [19]; Ligozat (1998), JVLC 9(1):23-44 [20]. Machine-readable: GQR cd.comp [16].",
+  "machine_readable_url":"https://raw.githubusercontent.com/m-westphal/gqr/master/data/cd/calculus/cd.comp (converse cd.conv; spec cd.spec, calculus_size 9, identity Eq)",
+  "point_algebra_product_note":"VERIFIED: each cardinal relation = (rx,ry) with rx,ry in {<,=,>} (x = west<.. >east, y = south<.. >north); comp((rx1,ry1),(rx2,ry2)) = (comp_PA(rx1,rx2), comp_PA(ry1,ry2)). An independent component-wise reconstruction from GQR point.comp [18] reproduced GQR cd.comp cells EXACTLY (N o E = NE; N o S = {Eq,N,S}; N o SE = {E,SE,NE}; NE o SW = full 9; E o W = {Eq,W,E}). => the team's validated point engine GENERATES the 9x9 cardinal table for free; no 9x9 table need be hand-entered. Tractability follows from the point-algebra factors (van Beek; Ligozat 1998 pre-convexity).",
+  "cells_needing_self_test":["N:S (={Eq,N,S})","S:N (={Eq,N,S})","E:W (={Eq,W,E})","W:E","N:SE / NE:S / etc. (3-element disjunctions)","NE:SW and SW:NE (full universe)","SE:NW and NW:SE (full universe)","all opposite-corner compositions (universal result)"]},
+ {"algebra":"RCC-8",
+  "relations":["DC","EC","PO","TPP","NTPP","TPPI","NTPPI","EQ"],
+  "table_source_citation":"Randell, Cui & Cohn (1992), KR'92 [22] (base relations); standard composition table (Duentsch/Woelfl verification; Wikipedia RCC). Machine-readable: GQR rcc8.comp [17].",
+  "machine_readable_url":"https://raw.githubusercontent.com/m-westphal/gqr/master/data/rcc8/calculus/rcc8.comp (spec rcc8.spec, calculus_size 8, identity EQ)",
+  "point_algebra_product_note":"Not a point-algebra product (genuine 8x8 table); already validated by the team in a prior iteration (point + Allen + RCC-8 synthetic arm).",
+  "cells_needing_self_test":["DC:DC (full universe)","PO:PO (={DC,EC,PO,TPP,NTPP,TPPI,NTPPI,EQ})","PO:TPPI / PO:NTPPI (5-element)","EC:EC (={DC,EC,PO,TPP,TPPI,EQ})","TPP:TPPI and NTPP:NTPPI (large disjunctions)","any cell that yields the universal relation"]},
+ {"algebra":"Point algebra (the reusable factor)",
+  "relations":["<","=",">"],
+  "table_source_citation":"Vilain, Kautz & van Beek (point algebra); already validated by the team. Machine-readable: GQR point.comp [18].",
+  "machine_readable_url":"https://raw.githubusercontent.com/m-westphal/gqr/master/data/point/calculus/point.comp (and point+point+point.combination, size 27, for SpaRTUN 3-axis directional)",
+  "point_algebra_product_note":"This IS the factor. Only two non-trivial cells: (> o <) = {<,=,>} and (< o >) = {<,=,>}; all others are deterministic.",
+  "cells_needing_self_test":["> o < (= full)","< o > (= full)"]},
+ {"algebra":"Region-based Cardinal Direction Calculus / CDC (DISTINGUISH-AND-EXCLUDE)",
+  "relations":["218 basic direction-relation-matrix relations (NOT USED)"],
+  "table_source_citation":"Skiadopoulos & Koubarakis (2004), Artif. Intell. 152(2):143-171 [21]; 'Reasoning with Cardinal Directions: An Efficient Algorithm', AAAI 2008.",
+  "machine_readable_url":"n/a -- intentionally not loaded",
+  "point_algebra_product_note":"Region-based, NOT a point-algebra product; composition is hard. Named only to document why we use the projection/point-based calculus instead.",
+  "cells_needing_self_test":[]},
+]
+
+# ----------------------------------------------------------------------------- RCC-8 COVERAGE CHECK (C4)
+rcc8_coverage_check = {
+ "covers_corpus_topological_set":True,
+ "detail":"The 8 RCC-8 base relations {DC,EC,PO,EQ,TPP,NTPP,TPPI,NTPPI} cover SpaRTUN/SpartQA's topological vocabulary EXACTLY (Table 1 of Mirzaee & Kordjamshidi 2022 lists all 8, EQ included). No table change is needed.",
+ "eq_question":"SpaRTUN's relation VOCABULARY includes EQ (so the question of whether it uses 7-of-8 is resolved at the vocabulary level: it is the full 8). Whether EQ actually OCCURS in generated data is rare (two distinct boxes/objects are seldom co-located); if a particular split contains no EQ instances, the full table is still a correct superset and needs no edit.",
+ "already_validated":"The team validated an RCC-8 table in a prior iteration (point + Allen + RCC-8 ran as a synthetic real-LLM arm). Recommend re-running the brute-force consistency self-test (as done for the Allen 169-entry and convex-point tables) on the cardinal-direction table BEFORE any LLM spend, cross-checking the point-algebra-product-generated cardinal table against GQR cd.comp [16].",
+ "cells_needing_self_test_summary":"Prioritize self-testing the universal-producing cells (DC:DC, PO:PO, opposite-corner cardinal compositions) and the disjunction-producing cells, since those are where an off-by-one in the generated table would silently widen or narrow the closure."
+}
+
+# ----------------------------------------------------------------------------- ANSWER (prose, with [n] citations) ----------
+answer_prose = """PART A -- CITATIONS + NOVELTY (retires reviewer MINOR #6).
+
+Both near-neighbors resolve to real papers and are now pinned. GDLLM [1,2,3] ("GDLLM: A Global Distance-aware Modeling Approach Based on Large Language Models for Event Temporal Relation Extraction", Jie Zhao, Wanting Ning, Yuxiao Fei, Yubo Feng, Lishuang Li) is a Findings-of-EMNLP-2025 paper (pp. 8080-8091; DBLP conf/emnlp/ZhaoNFFL25) [3]. Its output contract is a single-label COMMIT: a fine-tuned LLM whose soft probability distribution feeds a distance-aware Graph Attention Network to CLASSIFY the one temporal relation per event pair on imbalanced datasets, reaching SOTA F1 on TB-Dense and MATRES [1,2]. It preserves no relation-algebra disjunction, performs no cross-path intersection, issues no certificate, and never abstains [2]. BeDiscovER [4,5] ("BeDiscovER: The Benchmark of Discourse Understanding in the Era of Reasoning Language Models", Chuyuan Li & Giuseppe Carenini; arXiv v2 25 Jan 2026, "Camera-ready version of eacl 2026"; CC BY 4.0) is an EVALUATION SUITE -- "around 30,000 test instances across 52 publicly available datasets ... 16 languages, and 6 frameworks", 3 levels / 5 tasks, including temporal relation extraction -- whose stated goal is "a comprehensive evaluation suite" [5]. It contributes no reasoning mechanism, hence no disjunction preservation, intersection, certificate, or abstention [4,5].
+
+Differentiated by output contract, the related-work cluster splits into: (i) single-label COMMIT for F1 -- GDLLM [1], Fan & Strube, the ILP-commit/Kougia line; (ii) abductive REPAIR / code-gen -- NeSTR, TReMu; (iii) TRAINED abstention -- When Silence Is Golden; (iv) EVALUATION benchmark (no method) -- BeDiscovER [4]. None preserves a relation-algebra disjunction AND abstains on closure-collapse with a gold-free, training-free, per-edge certificate -- our positive contribution. The sharpened novelty sentence (kept cleanly separate from the synthetic-only coding-rate thesis) is delivered in research_out.json with two variants (abstract/intro). An ID correction is recorded [3,27]: the iter-3 bundle keyed GDLLM as 'Mu2025gdllm', but there is no author 'Mu' -- the first author is Jie ZHAO, so the key is 'ZhaoGDLLM2025'; BeDiscovER becomes 'LiBeDiscovER2026' (venue "to appear, EACL 2026"; the iter-3-claimed anthology id 2026.eacl-long.207 was NOT independently verified and is flagged TO-CONFIRM).
+
+PART B -- SPATIAL CORPUS DOSSIER.
+
+Five corpus families were verified for the decisive multi-path-redundancy test [6,7,8,10,11,12,13,14,26]. SpaRTUN and ReSQ both originate from Mirzaee & Kordjamshidi (EMNLP 2022) [7]; SpartQA from NAACL 2021 [23]; StepGame from AAAI 2022 [12]; SpaRP/SpaRC from ACL 2024 [10]. Verified sizes (Table 3 [7]): SpaRTUN YN 20334/3152/3193 and FR 18400/2818/2830; ReSQ 1008/333/610; StepGame 50000/1000/10000 (HF test 100000 [13]); SpartQA-Human YN 162/51/143, FR 149/28/77; SpartQA-Auto FR 25744/3780/3797. Licenses: SpaRTUN/SpartQA/StepGame code MIT [8,13]; SpaRP CC-BY-SA-4.0 [10,11]; HF SpartQA mirrors apache-2.0 or mit [26]; ReSQ license is UNVERIFIED (built on the mSpRL/IAPR TC-12 corpus -- confirm before use). SpaRTUN's relation vocabulary is 16 types [7]: RCC-8 topological {DC,EC,PO,EQ,TPP,NTPP,TPPI,NTPPI}, directional {left,right,above,below,front,behind}, distance {far,near}. Document length is a flag: SpaRTUN stories average 8 sentences / ~91 tokens (~450-550 chars) [7], far under the ~3000-char target; all spatial corpora are short.
+
+Multi-path verdict: StepGame is SINGLE-CHAIN -- its stories are "a sequence of linked entities" with a unique k-hop path (k=1..10), and its 9th answer label 'overlap' appears only because "sampling is unconstrained, entities can overlap" [12,14]; it is the canonical single-chain CONTRAST arm (the spatial CLUTRR analogue), not a multi-path host. ReSQ is too shallow (k=1-2, commonsense, YN-only) and SpartQA-Human too small (n<=143) to host a powered multi-path test. SpaRTUN (and SpaRP-PS1, which equals SpaRTUN with reasoning-path annotations [11]) is the STRONGEST CANDIDATE: its NLVR block-world scenes place many objects in nested boxes with BOTH directional and topological constraints [6,7], plausibly yielding >=2 edge-disjoint constraining paths per query pair. A critical caveat: SpaRTUN's data_format.txt stores the FULL transitive closure in objs_rels [8], so the multipath measurement must be run on the STORY-stated subgraph, not objs_rels, or bite vanishes by construction. The honest recommendation is to MEASURE multipath-with-bite prevalence on SpaRTUN (networkx edge-disjoint-paths audit) before any LLM spend, and -- because synthetic generators tend to verbalize near-spanning-tree constraint sets -- to keep ready, as a fallback, a Renz-Nebel-style synthetic RCC-8/cardinal QCN generator with controllable multipath density as the powered host, with SpaRTUN as the realism anchor (mirroring the temporal arm's synthetic+real split). This de-risking is needed precisely because the temporal cross-path signal was not significant at power; the dossier shows the spatial attempt is FEASIBLE, not that it will succeed.
+
+PART C -- SPATIAL-ALGEBRA COMPOSITION TABLES (engine inputs).
+
+The engine must pin the SIMPLE cardinal formalism: the POINT/PROJECTION-BASED cardinal-direction calculus (Frank 1996 [19]; Ligozat 1998 [20]) with 9 JEPD relations {N,NE,E,SE,S,SW,W,NW,Eq} (the 9-tile projection model is independently described by Kor & Bennett, partitioned by horizontal/vertical constraints [25]), NOT the region-based CDC (Skiadopoulos & Koubarakis 2004 [21]; 218 relations, hard composition). The key reuse insight is VERIFIED, not merely asserted: the projection cardinal calculus is isomorphic to the product of two point algebras (each relation = (rx,ry) with rx,ry in {<,=,>}), and composition is component-wise point composition. An independent reconstruction from GQR's 3x3 point.comp [18] reproduced GQR's 9x9 cardinal cd.comp [16] cell-for-cell (N o E = NE; N o S = {Eq,N,S}; N o SE = {E,SE,NE}; NE o SW = the full universe; E o W = {Eq,W,E}) [15,16,18]. Therefore the team's already-validated point-algebra engine GENERATES the cardinal table for free -- no 9x9 table need be hand-entered -- and SpaRTUN's 3-axis directional calculus is the product of THREE point algebras (GQR even ships point+point+point.combination, size 27 [15]), with SpaRTUN's own spatial_rules.pl composing each axis independently [9]. Machine-readable tables for the next-iter engine are pinned: GQR cd.comp (cardinal) [16], rcc8.comp (RCC-8) [17], point.comp [18]; SparQ is an alternative source [24]. RCC-8 coverage check: the 8 base relations (origin: Randell, Cui & Cohn 1992 [22]) cover SpaRTUN/SpartQA's topological set exactly (EQ included; no 7-of-8 issue at the vocabulary level) [7,17], and distance {near,far} is NON-COMPOSABLE and must be excluded from the closure arm. Before any LLM spend, the engine should brute-force self-test the point-algebra-product-generated cardinal table against GQR cd.comp, prioritizing the universal-producing cells (opposite-corner cardinal compositions, DC:DC, PO:PO) and disjunction-producing cells, exactly as was done for the Allen 169-entry and convex-point tables.
+"""
+
+# ----------------------------------------------------------------------------- ASSEMBLE research_out.json
+answer_obj = {
+ "part_A_citations_and_novelty":{
+   "citations":citations,
+   "differentiation_paragraph":differentiation_paragraph,
+   "sharpened_novelty_sentence":sharpened_novelty_sentence,
+   "novelty_sentence_variants":novelty_sentence_variants,
+   "bibtex_block":gdllm_bibtex + "\n\n" + bediscover_bibtex,
+   "no_closer_competitor_found":True,
+   "novelty_scout_note":"Adding GDLLM and BeDiscovER to the iter-3 four (NeSTR, TReMu, Fan&Strube, When Silence Is Golden) leaves the conclusion intact: across single-label-commit, abductive-repair, code-gen, trained-abstention, and benchmark contracts, NO competitor both preserves a relation-algebra disjunction AND abstains on closure-collapse via a gold-free/training-free/per-edge certificate."
+ },
+ "id_corrections":id_corrections,
+ "part_B_spatial_corpus":{
+   "spatial_corpus_table":spatial_corpus_table,
+   "multi_path_redundancy_verdict":multi_path_redundancy_verdict,
+   "corpus_to_algebra_map":corpus_to_algebra_map
+ },
+ "part_C_spatial_algebra_tables":{
+   "cardinal_disambiguation":cardinal_disambiguation,
+   "spatial_algebra_tables":spatial_algebra_tables,
+   "rcc8_coverage_check":rcc8_coverage_check
+ }
+}
+
+research_out = {
+ "title":"Iter-4 dossier: GDLLM/BeDiscovER citations + sharpened novelty, and a spatial multi-path-redundancy + composition-table de-risking pack",
+ "summary":("Two-part $0 web dossier. PART A retires reviewer MINOR #6 by pinning the two near-neighbor citations -- GDLLM "
+  "(Zhao et al., EMNLP 2025 Findings; a fine-tuned LLM+GAT single-label COMMIT classifier) and BeDiscovER (Li & Carenini, EACL 2026; "
+  "a 52-dataset EVALUATION benchmark) -- with verified BibTeX, objective+output-contract per paper, a drop-in differentiation paragraph "
+  "folding them alongside the iter-3 four, and a sharpened one-sentence novelty (training-free/per-edge/gold-free abstain-on-collapse "
+  "certificate) cleanly separated from the synthetic-only cross-path coding-rate thesis; corrects the iter-3 GDLLM key (Zhao not Mu). "
+  "PART B/C de-risk the decisive spatial experiment: a verified corpus table (SpaRTUN/SpartQA/ReSQ/StepGame/SpaRP -- sizes, licenses, "
+  "relation vocabularies, doc-lengths), a multi-path-redundancy verdict (StepGame single-chain; ReSQ/SpartQA-Human too shallow/small; "
+  "SpaRTUN the strongest LIKELY-HOSTS candidate pending an edge-disjoint-paths audit on the STORY-stated subgraph; fallback = synthetic "
+  "QCN host + SpaRTUN realism anchor), a corpus->algebra map, and EXACT composition tables. The key engine insight is VERIFIED: the "
+  "projection-based cardinal calculus = product of two point algebras (an independent reconstruction reproduced GQR's cd.comp cell-for-cell), "
+  "so the team's validated point engine generates the cardinal table for free; machine-readable GQR cd.comp/rcc8.comp/point.comp URLs are pinned."),
+ "answer":answer_prose,
+ "structured_deliverables":answer_obj,
+ "sources":SRC,
+ "follow_up_questions":[
+   "What is the MEASURED prevalence of multipath-with-bite in SpaRTUN -- i.e., on the story-stated constraint graph, what fraction of FR query pairs have >=2 edge-disjoint constraining paths, neither path singleton, with the direct edge unstated? (Needs a networkx audit; determines go/no-go vs the synthetic-QCN fallback.)",
+   "Should the next-iter engine DOWNLOAD GQR's cd.comp/rcc8.comp tables or GENERATE the cardinal table from the validated point-algebra product and self-test against GQR? (The product reconstruction already matches GQR cell-for-cell, favouring generate-and-self-test.)",
+   "Is BeDiscovER's EACL 2026 anthology id (iter-3 claimed 2026.eacl-long.207) live yet, and should the citation be upgraded from the arXiv preprint to the anthology entry once the proceedings publish?"
+ ]
+}
+
+with open(os.path.join(WS,"research_out.json"),"w") as f:
+    json.dump(research_out, f, indent=2, ensure_ascii=False)
+print("WROTE research_out.json", os.path.getsize(os.path.join(WS,"research_out.json")), "bytes")
+
+# ----------------------------------------------------------------------------- struct out
+struct = {
+ "title":"GDLLM/BeDiscovER citation+novelty pin and spatial composition-table de-risk",
+ "layman_summary":("Pins two missing related-work citations and sharpens the paper's novelty claim, then checks which spatial "
+   "datasets and math tables a future spatial-reasoning experiment would need."),
+ "summary":research_out["summary"],
+ "out_expected_files":{"output":"research_out.json"},
+ "upload_ignore_regexes":[],
+ "answer":answer_prose,
+ "sources":SRC,
+ "follow_up_questions":research_out["follow_up_questions"],
+}
+with open(os.path.join(WS,".terminal_claude_agent_struct_out.json"),"w") as f:
+    json.dump(struct, f, indent=2, ensure_ascii=False)
+print("WROTE .terminal_claude_agent_struct_out.json", os.path.getsize(os.path.join(WS,".terminal_claude_agent_struct_out.json")), "bytes")

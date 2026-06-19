@@ -1,0 +1,16 @@
+[project]
+name = "llm-fuzzy-unification-gapfill"
+version = "1.0.0"
+description = "Minimal LLM-as-probabilistic-composition-reasoner (fuzzy-unification gap-filling) demo: composition-cell accuracy on Allen/RCC-8/Point + end-to-end gap-fill risk-coverage on CLUTRR kinship. Measures how well a real LLM fills GAPS in an exact qualitative/kinship composition table, scored exactly vs the withheld true cell, plus end-to-end recovered-coverage vs added confident-wrong cost (risk-coverage), with source-tagged auditable trace-graphs."
+requires-python = ">=3.12"
+dependencies = [
+    "numpy==2.4.6",
+    "scipy==1.17.1",
+    "matplotlib==3.11.0",
+    "httpx==0.28.1",
+    "loguru==0.7.3",
+    "jsonschema==4.26.0",
+]
+
+[tool.setuptools]
+py-modules = ["method", "llm", "stats", "dataio", "kinship"]

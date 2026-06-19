@@ -1,0 +1,3039 @@
+{
+  "metadata": {
+    "method_name": "Query-side false-premise verifier + self-verify vs the no-derivation closure certificate",
+    "step": "iter-8 experiment_2: reviewer-mandated DISCONFIRM test. Reuses the cached CLUTRR (iter-6) + Re-DocRED (iter-7) kinship prediction pools; adds a query-side verifier + self-verify baseline at matched co...",
+    "headline_summary": {
+      "question": "Is the no-derivation closure certificate's absent-relation hallucination-safety just a re-skin of a query-side false-premise verifier the LLM could run directly?",
+      "verifier_primary_model": "google/gemini-3.1-flash-lite",
+      "verifier_sensitivity_model": "deepseek/deepseek-v3.2",
+      "reader_note": "Both cached pools carry per-row predictions from the GEMINI reader only; the verifier is therefore reader-matched to gemini. The deepseek FACT-A is reproduced from each pool's carried cross-family agg...",
+      "fraction_caught_headline": {
+        "clutrr": {
+          "certificate": 0.9412,
+          "queryside_verifier": 0.5882,
+          "queryside_selfverify": 0.8235
+        },
+        "redocred": {
+          "certificate": 0.85,
+          "queryside_verifier": 0.1,
+          "queryside_selfverify": 0.5417
+        }
+      },
+      "overall_verdict": "CERTIFICATE_NECESSARY_BOTH_VENUES"
+    },
+    "reproduction_gate": {
+      "all_ok": true,
+      "n_checks": 32,
+      "n_passed": 32,
+      "tolerance": 0.005,
+      "checks": [
+        {
+          "name": "clutrr.count_present",
+          "recomputed": 102.0,
+          "carried": 102.0,
+          "published": 102.0,
+          "tol": 0,
+          "ok": true
+        },
+        {
+          "name": "clutrr.count_absent",
+          "recomputed": 180.0,
+          "carried": 180.0,
+          "published": 180.0,
+          "tol": 0,
+          "ok": true
+        },
+        {
+          "name": "clutrr.gemini.FACT_A",
+          "recomputed": 0.472222,
+          "carried": 0.4722,
+          "published": 0.472,
+          "tol": 0.005,
+          "ok": true
+        }
+      ],
+      "note": "All certificate/FACT-A/crux numbers are order-independent and reproduce exactly; the signal mixed selective-accuracies are tie-break sensitive (heavy conf=1.0 ties) and reproduce exactly only after th..."
+    },
+    "config": {
+      "primary_model": "google/gemini-3.1-flash-lite",
+      "cross_model": "deepseek/deepseek-v3.2",
+      "fallbacks": [
+        "google/gemini-3-flash-preview"
+      ],
+      "bootstrap_B": 10000,
+      "seed": 20260618,
+      "alpha": 0.05,
+      "tolerance": 0.005,
+      "signals": [
+        "verbalized",
+        "sc_margin",
+        "ptrue"
+      ],
+      "methods": [
+        "certificate",
+        "ct_verbalized",
+        "ct_sc_margin"
+      ]
+    },
+    "leaderboards": {
+      "clutrr_present": {
+        "label": "CLUTRR present (multi-hop deduction)",
+        "n": 102,
+        "c_star": 0.6863,
+        "ref": "certificate",
+        "leaderboard": {
+          "certificate": {
+            "coverage": 0.6863,
+            "selective_accuracy": 0.8857,
+            "confident_wrong_rate_among_covered": 0.1143,
+            "n_covered": 70,
+            "tag": "REAL-LLM-READ"
+          },
+          "ct_verbalized": {
+            "coverage_matched": 0.6863,
+            "natural_coverage": 0.7941,
+            "selective_accuracy": 0.5429,
+            "confident_wrong_rate_among_covered": 0.4571,
+            "n_covered": 70,
+            "selacc_gap_cert_minus_method": 0.3429,
+            "selacc_gap_ci95": [
+              0.22646598177941463,
+              0.4637451769245247
+            ],
+            "selacc_gap_p_one_sided": 9.999000099990002e-05,
+            "cw_reduction_cert_vs_method": 0.2353,
+            "cw_reduction_ci95": [
+              0.1373,
+              0.3333
+            ],
+            "cw_reduction_p_one_sided": 0.0001,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 9.999000099990002e-05,
+              "p_adj": 0.0007999200079992001,
+              "reject": true
+            },
+            "cw_reduction_holm": {
+              "p": 0.0001,
+              "p_adj": 0.0008,
+              "reject": true
+            }
+          },
+          "ct_sc_margin": {
+            "coverage_matched": 0.6863,
+            "natural_coverage": 0.7941,
+            "selective_accuracy": 0.5429,
+            "confident_wrong_rate_among_covered": 0.4571,
+            "n_covered": 70,
+            "selacc_gap_cert_minus_method": 0.3429,
+            "selacc_gap_ci95": [
+              0.21989388404121113,
+              0.46969730225875966
+            ],
+            "selacc_gap_p_one_sided": 9.999000099990002e-05,
+            "cw_reduction_cert_vs_method": 0.2353,
+            "cw_reduction_ci95": [
+              0.1373,
+              0.3333
+            ],
+            "cw_reduction_p_one_sided": 0.0001,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 9.999000099990002e-05,
+              "p_adj": 0.0007999200079992001,
+              "reject": true
+            },
+            "cw_reduction_holm": {
+              "p": 0.0001,
+              "p_adj": 0.0008,
+              "reject": true
+            }
+          },
+          "ct_ptrue": {
+            "coverage_matched": 0.6863,
+            "natural_coverage": 0.7941,
+            "selective_accuracy": 0.5429,
+            "confident_wrong_rate_among_covered": 0.4571,
+            "n_covered": 70,
+            "selacc_gap_cert_minus_method": 0.3429,
+            "selacc_gap_ci95": [
+              0.22743037575945874,
+              0.4666392173423423
+            ],
+            "selacc_gap_p_one_sided": 9.999000099990002e-05,
+            "cw_reduction_cert_vs_method": 0.2353,
+            "cw_reduction_ci95": [
+              0.1471,
+              0.3333
+            ],
+            "cw_reduction_p_one_sided": 0.0001,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 9.999000099990002e-05,
+              "p_adj": 0.0007999200079992001,
+              "reject": true
+            },
+            "cw_reduction_holm": {
+              "p": 0.0001,
+              "p_adj": 0.0008,
+              "reject": true
+            }
+          },
+          "ct_negent": {
+            "coverage_matched": 0.6863,
+            "natural_coverage": 0.7941,
+            "selective_accuracy": 0.5429,
+            "confident_wrong_rate_among_covered": 0.4571,
+            "n_covered": 70,
+            "selacc_gap_cert_minus_method": 0.3429,
+            "selacc_gap_ci95": [
+              0.21989388404121113,
+              0.46969730225875966
+            ],
+            "selacc_gap_p_one_sided": 9.999000099990002e-05,
+            "cw_reduction_cert_vs_method": 0.2353,
+            "cw_reduction_ci95": [
+              0.1373,
+              0.3333
+            ],
+            "cw_reduction_p_one_sided": 0.0001,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 9.999000099990002e-05,
+              "p_adj": 0.0007999200079992001,
+              "reject": true
+            },
+            "cw_reduction_holm": {
+              "p": 0.0001,
+              "p_adj": 0.0008,
+              "reject": true
+            }
+          },
+          "queryside_verifier": {
+            "coverage_matched": 0.6863,
+            "natural_coverage": 0.7255,
+            "selective_accuracy": 0.5571,
+            "confident_wrong_rate_among_covered": 0.4429,
+            "n_covered": 70,
+            "selacc_gap_cert_minus_method": 0.3286,
+            "selacc_gap_ci95": [
+              0.2059855213369771,
+              0.4553230925962293
+            ],
+            "selacc_gap_p_one_sided": 9.999000099990002e-05,
+            "cw_reduction_cert_vs_method": 0.2255,
+            "cw_reduction_ci95": [
+              0.1275,
+              0.3235
+            ],
+            "cw_reduction_p_one_sided": 0.0001,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 9.999000099990002e-05,
+              "p_adj": 0.0007999200079992001,
+              "reject": true
+            },
+            "cw_reduction_holm": {
+              "p": 0.0001,
+              "p_adj": 0.0008,
+              "reject": true
+            }
+          },
+          "queryside_selfverify": {
+            "coverage_matched": 0.6863,
+            "natural_coverage": 0.4118,
+            "selective_accuracy": 0.4,
+            "confident_wrong_rate_among_covered": 0.2,
+            "n_covered": 70,
+            "selacc_gap_cert_minus_method": 0.4857,
+            "selacc_gap_ci95": [
+              0.35991616364855805,
+              0.613165628255279
+            ],
+            "selacc_gap_p_one_sided": 9.999000099990002e-05,
+            "cw_reduction_cert_vs_method": 0.0588,
+            "cw_reduction_ci95": [
+              -0.0196,
+              0.1373
+            ],
+            "cw_reduction_p_one_sided": 0.0795,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 9.999000099990002e-05,
+              "p_adj": 0.0007999200079992001,
+              "reject": true
+            },
+            "cw_reduction_holm": {
+              "p": 0.0795,
+              "p_adj": 0.0795,
+              "reject": false
+            }
+          },
+          "verifier_as_signal": {
+            "coverage_matched": 0.6863,
+            "natural_coverage": 0.7941,
+            "selective_accuracy": 0.5571,
+            "confident_wrong_rate_among_covered": 0.4429,
+            "n_covered": 70,
+            "selacc_gap_cert_minus_method": 0.3286,
+            "selacc_gap_ci95": [
+              0.2059855213369771,
+              0.4553230925962293
+            ],
+            "selacc_gap_p_one_sided": 9.999000099990002e-05,
+            "cw_reduction_cert_vs_method": 0.2255,
+            "cw_reduction_ci95": [
+              0.1275,
+              0.3235
+            ],
+            "cw_reduction_p_one_sided": 0.0001,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 9.999000099990002e-05,
+              "p_adj": 0.0007999200079992001,
+              "reject": true
+            },
+            "cw_reduction_holm": {
+              "p": 0.0001,
+              "p_adj": 0.0008,
+              "reject": true
+            }
+          },
+          "commit_argmax": {
+            "coverage_matched": 0.6863,
+            "natural_coverage": 0.7941,
+            "selective_accuracy": 0.5429,
+            "confident_wrong_rate_among_covered": 0.4571,
+            "n_covered": 70,
+            "selacc_gap_cert_minus_method": 0.3429,
+            "selacc_gap_ci95": [
+              0.22646598177941463,
+              0.4637451769245247
+            ],
+            "selacc_gap_p_one_sided": 9.999000099990002e-05,
+            "cw_reduction_cert_vs_method": 0.2353,
+            "cw_reduction_ci95": [
+              0.1373,
+              0.3333
+            ],
+            "cw_reduction_p_one_sided": 0.0001,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 9.999000099990002e-05,
+              "p_adj": 0.0007999200079992001,
+              "reject": true
+            },
+            "cw_reduction_holm": {
+              "p": 0.0001,
+              "p_adj": 0.0008,
+              "reject": true
+            }
+          }
+        },
+        "holm_selacc_family": {
+          "ct_verbalized": {
+            "p": 9.999000099990002e-05,
+            "p_adj": 0.0007999200079992001,
+            "reject": true
+          },
+          "ct_sc_margin": {
+            "p": 9.999000099990002e-05,
+            "p_adj": 0.0007999200079992001,
+            "reject": true
+          },
+          "ct_ptrue": {
+            "p": 9.999000099990002e-05,
+            "p_adj": 0.0007999200079992001,
+            "reject": true
+          },
+          "ct_negent": {
+            "p": 9.999000099990002e-05,
+            "p_adj": 0.0007999200079992001,
+            "reject": true
+          },
+          "queryside_verifier": {
+            "p": 9.999000099990002e-05,
+            "p_adj": 0.0007999200079992001,
+            "reject": true
+          },
+          "queryside_selfverify": {
+            "p": 9.999000099990002e-05,
+            "p_adj": 0.0007999200079992001,
+            "reject": true
+          },
+          "verifier_as_signal": {
+            "p": 9.999000099990002e-05,
+            "p_adj": 0.0007999200079992001,
+            "reject": true
+          },
+          "commit_argmax": {
+            "p": 9.999000099990002e-05,
+            "p_adj": 0.0007999200079992001,
+            "reject": true
+          }
+        },
+        "holm_cw_family": {
+          "ct_verbalized": {
+            "p": 0.0001,
+            "p_adj": 0.0008,
+            "reject": true
+          },
+          "ct_sc_margin": {
+            "p": 0.0001,
+            "p_adj": 0.0008,
+            "reject": true
+          },
+          "ct_ptrue": {
+            "p": 0.0001,
+            "p_adj": 0.0008,
+            "reject": true
+          },
+          "ct_negent": {
+            "p": 0.0001,
+            "p_adj": 0.0008,
+            "reject": true
+          },
+          "queryside_verifier": {
+            "p": 0.0001,
+            "p_adj": 0.0008,
+            "reject": true
+          },
+          "verifier_as_signal": {
+            "p": 0.0001,
+            "p_adj": 0.0008,
+            "reject": true
+          },
+          "commit_argmax": {
+            "p": 0.0001,
+            "p_adj": 0.0008,
+            "reject": true
+          },
+          "queryside_selfverify": {
+            "p": 0.0795,
+            "p_adj": 0.0795,
+            "reject": false
+          }
+        }
+      },
+      "clutrr_absent": {
+        "label": "CLUTRR absent (no-derivation)",
+        "n": 180,
+        "c_star": 0.0278,
+        "ref": "certificate",
+        "leaderboard": {
+          "certificate": {
+            "coverage": 0.0278,
+            "selective_accuracy": 0.0,
+            "confident_wrong_rate_among_covered": 1.0,
+            "n_covered": 5,
+            "tag": "REAL-LLM-READ"
+          },
+          "ct_verbalized": {
+            "coverage_matched": 0.0278,
+            "natural_coverage": 0.4722,
+            "selective_accuracy": 0.0,
+            "confident_wrong_rate_among_covered": 1.0,
+            "n_covered": 5,
+            "selacc_gap_cert_minus_method": 0.0,
+            "selacc_gap_ci95": [
+              0.0,
+              0.0
+            ],
+            "selacc_gap_p_one_sided": 1.0,
+            "cw_reduction_cert_vs_method": 0.0,
+            "cw_reduction_ci95": [
+              -0.0611,
+              0.0556
+            ],
+            "cw_reduction_p_one_sided": 0.5217,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 1.0,
+              "p_adj": 1.0,
+              "reject": false
+            },
+            "cw_reduction_holm": {
+              "p": 0.5217,
+              "p_adj": 1.0,
+              "reject": false
+            }
+          },
+          "ct_sc_margin": {
+            "coverage_matched": 0.0278,
+            "natural_coverage": 0.4722,
+            "selective_accuracy": 0.0,
+            "confident_wrong_rate_among_covered": 1.0,
+            "n_covered": 5,
+            "selacc_gap_cert_minus_method": 0.0,
+            "selacc_gap_ci95": [
+              0.0,
+              0.0
+            ],
+            "selacc_gap_p_one_sided": 1.0,
+            "cw_reduction_cert_vs_method": 0.0,
+            "cw_reduction_ci95": [
+              -0.0611,
+              0.0556
+            ],
+            "cw_reduction_p_one_sided": 0.5217,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 1.0,
+              "p_adj": 1.0,
+              "reject": false
+            },
+            "cw_reduction_holm": {
+              "p": 0.5217,
+              "p_adj": 1.0,
+              "reject": false
+            }
+          },
+          "ct_ptrue": {
+            "coverage_matched": 0.0278,
+            "natural_coverage": 0.4722,
+            "selective_accuracy": 0.0,
+            "confident_wrong_rate_among_covered": 1.0,
+            "n_covered": 5,
+            "selacc_gap_cert_minus_method": 0.0,
+            "selacc_gap_ci95": [
+              0.0,
+              0.0
+            ],
+            "selacc_gap_p_one_sided": 1.0,
+            "cw_reduction_cert_vs_method": 0.0,
+            "cw_reduction_ci95": [
+              -0.0611,
+              0.05
+            ],
+            "cw_reduction_p_one_sided": 0.5085,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 1.0,
+              "p_adj": 1.0,
+              "reject": false
+            },
+            "cw_reduction_holm": {
+              "p": 0.5085,
+              "p_adj": 1.0,
+              "reject": false
+            }
+          },
+          "ct_negent": {
+            "coverage_matched": 0.0278,
+            "natural_coverage": 0.4722,
+            "selective_accuracy": 0.0,
+            "confident_wrong_rate_among_covered": 1.0,
+            "n_covered": 5,
+            "selacc_gap_cert_minus_method": 0.0,
+            "selacc_gap_ci95": [
+              0.0,
+              0.0
+            ],
+            "selacc_gap_p_one_sided": 1.0,
+            "cw_reduction_cert_vs_method": 0.0,
+            "cw_reduction_ci95": [
+              -0.0611,
+              0.0556
+            ],
+            "cw_reduction_p_one_sided": 0.5217,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 1.0,
+              "p_adj": 1.0,
+              "reject": false
+            },
+            "cw_reduction_holm": {
+              "p": 0.5217,
+              "p_adj": 1.0,
+              "reject": false
+            }
+          },
+          "queryside_verifier": {
+            "coverage_matched": 0.0278,
+            "natural_coverage": 0.1944,
+            "selective_accuracy": 0.0,
+            "confident_wrong_rate_among_covered": 1.0,
+            "n_covered": 5,
+            "selacc_gap_cert_minus_method": 0.0,
+            "selacc_gap_ci95": [
+              0.0,
+              0.0
+            ],
+            "selacc_gap_p_one_sided": 1.0,
+            "cw_reduction_cert_vs_method": 0.0,
+            "cw_reduction_ci95": [
+              -0.0667,
+              0.0667
+            ],
+            "cw_reduction_p_one_sided": 0.6455,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 1.0,
+              "p_adj": 1.0,
+              "reject": false
+            },
+            "cw_reduction_holm": {
+              "p": 0.6455,
+              "p_adj": 1.0,
+              "reject": false
+            }
+          },
+          "queryside_selfverify": {
+            "coverage_matched": 0.0278,
+            "natural_coverage": 0.0833,
+            "selective_accuracy": 0.0,
+            "confident_wrong_rate_among_covered": 1.0,
+            "n_covered": 5,
+            "selacc_gap_cert_minus_method": 0.0,
+            "selacc_gap_ci95": [
+              0.0,
+              0.0
+            ],
+            "selacc_gap_p_one_sided": 1.0,
+            "cw_reduction_cert_vs_method": 0.0,
+            "cw_reduction_ci95": [
+              -0.0556,
+              0.0389
+            ],
+            "cw_reduction_p_one_sided": 0.5026,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 1.0,
+              "p_adj": 1.0,
+              "reject": false
+            },
+            "cw_reduction_holm": {
+              "p": 0.5026,
+              "p_adj": 1.0,
+              "reject": false
+            }
+          },
+          "verifier_as_signal": {
+            "coverage_matched": 0.0278,
+            "natural_coverage": 0.4722,
+            "selective_accuracy": 0.0,
+            "confident_wrong_rate_among_covered": 1.0,
+            "n_covered": 5,
+            "selacc_gap_cert_minus_method": 0.0,
+            "selacc_gap_ci95": [
+              0.0,
+              0.0
+            ],
+            "selacc_gap_p_one_sided": 1.0,
+            "cw_reduction_cert_vs_method": 0.0,
+            "cw_reduction_ci95": [
+              -0.0667,
+              0.0667
+            ],
+            "cw_reduction_p_one_sided": 0.6455,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 1.0,
+              "p_adj": 1.0,
+              "reject": false
+            },
+            "cw_reduction_holm": {
+              "p": 0.6455,
+              "p_adj": 1.0,
+              "reject": false
+            }
+          },
+          "commit_argmax": {
+            "coverage_matched": 0.0278,
+            "natural_coverage": 0.4722,
+            "selective_accuracy": 0.0,
+            "confident_wrong_rate_among_covered": 1.0,
+            "n_covered": 5,
+            "selacc_gap_cert_minus_method": 0.0,
+            "selacc_gap_ci95": [
+              0.0,
+              0.0
+            ],
+            "selacc_gap_p_one_sided": 1.0,
+            "cw_reduction_cert_vs_method": 0.0,
+            "cw_reduction_ci95": [
+              -0.0611,
+              0.0556
+            ],
+            "cw_reduction_p_one_sided": 0.5217,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 1.0,
+              "p_adj": 1.0,
+              "reject": false
+            },
+            "cw_reduction_holm": {
+              "p": 0.5217,
+              "p_adj": 1.0,
+              "reject": false
+            }
+          }
+        },
+        "holm_selacc_family": {
+          "ct_verbalized": {
+            "p": 1.0,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "ct_sc_margin": {
+            "p": 1.0,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "ct_ptrue": {
+            "p": 1.0,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "ct_negent": {
+            "p": 1.0,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "queryside_verifier": {
+            "p": 1.0,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "queryside_selfverify": {
+            "p": 1.0,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "verifier_as_signal": {
+            "p": 1.0,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "commit_argmax": {
+            "p": 1.0,
+            "p_adj": 1.0,
+            "reject": false
+          }
+        },
+        "holm_cw_family": {
+          "queryside_selfverify": {
+            "p": 0.5026,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "ct_ptrue": {
+            "p": 0.5085,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "ct_verbalized": {
+            "p": 0.5217,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "ct_sc_margin": {
+            "p": 0.5217,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "ct_negent": {
+            "p": 0.5217,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "commit_argmax": {
+            "p": 0.5217,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "queryside_verifier": {
+            "p": 0.6455,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "verifier_as_signal": {
+            "p": 0.6455,
+            "p_adj": 1.0,
+            "reject": false
+          }
+        }
+      },
+      "clutrr_mixed": {
+        "label": "CLUTRR mixed (present+absent) [DECISIVE]",
+        "n": 282,
+        "c_star": 0.266,
+        "ref": "certificate",
+        "leaderboard": {
+          "certificate": {
+            "coverage": 0.266,
+            "selective_accuracy": 0.8267,
+            "confident_wrong_rate_among_covered": 0.1733,
+            "n_covered": 75,
+            "tag": "REAL-LLM-READ"
+          },
+          "ct_verbalized": {
+            "coverage_matched": 0.266,
+            "natural_coverage": 0.5887,
+            "selective_accuracy": 0.4133,
+            "confident_wrong_rate_among_covered": 0.5867,
+            "n_covered": 75,
+            "selacc_gap_cert_minus_method": 0.4133,
+            "selacc_gap_ci95": [
+              0.27509779113751703,
+              0.5427380952380951
+            ],
+            "selacc_gap_p_one_sided": 9.999000099990002e-05,
+            "cw_reduction_cert_vs_method": 0.1099,
+            "cw_reduction_ci95": [
+              0.0543,
+              0.17
+            ],
+            "cw_reduction_p_one_sided": 0.0001,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 9.999000099990002e-05,
+              "p_adj": 0.0007999200079992001,
+              "reject": true
+            },
+            "cw_reduction_holm": {
+              "p": 0.0001,
+              "p_adj": 0.0008,
+              "reject": true
+            }
+          },
+          "ct_sc_margin": {
+            "coverage_matched": 0.266,
+            "natural_coverage": 0.5887,
+            "selective_accuracy": 0.3733,
+            "confident_wrong_rate_among_covered": 0.6267,
+            "n_covered": 75,
+            "selacc_gap_cert_minus_method": 0.4533,
+            "selacc_gap_ci95": [
+              0.2728110025247754,
+              0.6081087784212784
+            ],
+            "selacc_gap_p_one_sided": 9.999000099990002e-05,
+            "cw_reduction_cert_vs_method": 0.1206,
+            "cw_reduction_ci95": [
+              0.0486,
+              0.1937
+            ],
+            "cw_reduction_p_one_sided": 0.0011,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 9.999000099990002e-05,
+              "p_adj": 0.0007999200079992001,
+              "reject": true
+            },
+            "cw_reduction_holm": {
+              "p": 0.0011,
+              "p_adj": 0.0033,
+              "reject": true
+            }
+          },
+          "ct_ptrue": {
+            "coverage_matched": 0.266,
+            "natural_coverage": 0.5887,
+            "selective_accuracy": 0.44,
+            "confident_wrong_rate_among_covered": 0.56,
+            "n_covered": 75,
+            "selacc_gap_cert_minus_method": 0.3867,
+            "selacc_gap_ci95": [
+              0.22780812222780492,
+              0.5379785731318509
+            ],
+            "selacc_gap_p_one_sided": 9.999000099990002e-05,
+            "cw_reduction_cert_vs_method": 0.1028,
+            "cw_reduction_ci95": [
+              0.0407,
+              0.1703
+            ],
+            "cw_reduction_p_one_sided": 0.0001,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 9.999000099990002e-05,
+              "p_adj": 0.0007999200079992001,
+              "reject": true
+            },
+            "cw_reduction_holm": {
+              "p": 0.0001,
+              "p_adj": 0.0008,
+              "reject": true
+            }
+          },
+          "ct_negent": {
+            "coverage_matched": 0.266,
+            "natural_coverage": 0.5887,
+            "selective_accuracy": 0.3733,
+            "confident_wrong_rate_among_covered": 0.6267,
+            "n_covered": 75,
+            "selacc_gap_cert_minus_method": 0.4533,
+            "selacc_gap_ci95": [
+              0.2728110025247754,
+              0.6081087784212784
+            ],
+            "selacc_gap_p_one_sided": 9.999000099990002e-05,
+            "cw_reduction_cert_vs_method": 0.1206,
+            "cw_reduction_ci95": [
+              0.0486,
+              0.1937
+            ],
+            "cw_reduction_p_one_sided": 0.0011,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 9.999000099990002e-05,
+              "p_adj": 0.0007999200079992001,
+              "reject": true
+            },
+            "cw_reduction_holm": {
+              "p": 0.0011,
+              "p_adj": 0.0033,
+              "reject": true
+            }
+          },
+          "queryside_verifier": {
+            "coverage_matched": 0.266,
+            "natural_coverage": 0.3865,
+            "selective_accuracy": 0.4133,
+            "confident_wrong_rate_among_covered": 0.5867,
+            "n_covered": 75,
+            "selacc_gap_cert_minus_method": 0.4133,
+            "selacc_gap_ci95": [
+              0.2861671909158109,
+              0.538097606821933
+            ],
+            "selacc_gap_p_one_sided": 9.999000099990002e-05,
+            "cw_reduction_cert_vs_method": 0.1099,
+            "cw_reduction_ci95": [
+              0.0617,
+              0.1667
+            ],
+            "cw_reduction_p_one_sided": 0.0001,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 9.999000099990002e-05,
+              "p_adj": 0.0007999200079992001,
+              "reject": true
+            },
+            "cw_reduction_holm": {
+              "p": 0.0001,
+              "p_adj": 0.0008,
+              "reject": true
+            }
+          },
+          "queryside_selfverify": {
+            "coverage_matched": 0.266,
+            "natural_coverage": 0.2021,
+            "selective_accuracy": 0.3733,
+            "confident_wrong_rate_among_covered": 0.3867,
+            "n_covered": 75,
+            "selacc_gap_cert_minus_method": 0.4533,
+            "selacc_gap_ci95": [
+              0.33333333333333337,
+              0.5793650793650793
+            ],
+            "selacc_gap_p_one_sided": 9.999000099990002e-05,
+            "cw_reduction_cert_vs_method": 0.0567,
+            "cw_reduction_ci95": [
+              0.02,
+              0.0957
+            ],
+            "cw_reduction_p_one_sided": 0.0011,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 9.999000099990002e-05,
+              "p_adj": 0.0007999200079992001,
+              "reject": true
+            },
+            "cw_reduction_holm": {
+              "p": 0.0011,
+              "p_adj": 0.0033,
+              "reject": true
+            }
+          },
+          "verifier_as_signal": {
+            "coverage_matched": 0.266,
+            "natural_coverage": 0.5887,
+            "selective_accuracy": 0.4133,
+            "confident_wrong_rate_among_covered": 0.5867,
+            "n_covered": 75,
+            "selacc_gap_cert_minus_method": 0.4133,
+            "selacc_gap_ci95": [
+              0.2861671909158109,
+              0.538097606821933
+            ],
+            "selacc_gap_p_one_sided": 9.999000099990002e-05,
+            "cw_reduction_cert_vs_method": 0.1099,
+            "cw_reduction_ci95": [
+              0.0617,
+              0.1667
+            ],
+            "cw_reduction_p_one_sided": 0.0001,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 9.999000099990002e-05,
+              "p_adj": 0.0007999200079992001,
+              "reject": true
+            },
+            "cw_reduction_holm": {
+              "p": 0.0001,
+              "p_adj": 0.0008,
+              "reject": true
+            }
+          },
+          "commit_argmax": {
+            "coverage_matched": 0.266,
+            "natural_coverage": 0.5887,
+            "selective_accuracy": 0.4133,
+            "confident_wrong_rate_among_covered": 0.5867,
+            "n_covered": 75,
+            "selacc_gap_cert_minus_method": 0.4133,
+            "selacc_gap_ci95": [
+              0.27509779113751703,
+              0.5427380952380951
+            ],
+            "selacc_gap_p_one_sided": 9.999000099990002e-05,
+            "cw_reduction_cert_vs_method": 0.1099,
+            "cw_reduction_ci95": [
+              0.0543,
+              0.17
+            ],
+            "cw_reduction_p_one_sided": 0.0001,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 9.999000099990002e-05,
+              "p_adj": 0.0007999200079992001,
+              "reject": true
+            },
+            "cw_reduction_holm": {
+              "p": 0.0001,
+              "p_adj": 0.0008,
+              "reject": true
+            }
+          }
+        },
+        "holm_selacc_family": {
+          "ct_verbalized": {
+            "p": 9.999000099990002e-05,
+            "p_adj": 0.0007999200079992001,
+            "reject": true
+          },
+          "ct_sc_margin": {
+            "p": 9.999000099990002e-05,
+            "p_adj": 0.0007999200079992001,
+            "reject": true
+          },
+          "ct_ptrue": {
+            "p": 9.999000099990002e-05,
+            "p_adj": 0.0007999200079992001,
+            "reject": true
+          },
+          "ct_negent": {
+            "p": 9.999000099990002e-05,
+            "p_adj": 0.0007999200079992001,
+            "reject": true
+          },
+          "queryside_verifier": {
+            "p": 9.999000099990002e-05,
+            "p_adj": 0.0007999200079992001,
+            "reject": true
+          },
+          "queryside_selfverify": {
+            "p": 9.999000099990002e-05,
+            "p_adj": 0.0007999200079992001,
+            "reject": true
+          },
+          "verifier_as_signal": {
+            "p": 9.999000099990002e-05,
+            "p_adj": 0.0007999200079992001,
+            "reject": true
+          },
+          "commit_argmax": {
+            "p": 9.999000099990002e-05,
+            "p_adj": 0.0007999200079992001,
+            "reject": true
+          }
+        },
+        "holm_cw_family": {
+          "ct_verbalized": {
+            "p": 0.0001,
+            "p_adj": 0.0008,
+            "reject": true
+          },
+          "ct_ptrue": {
+            "p": 0.0001,
+            "p_adj": 0.0008,
+            "reject": true
+          },
+          "queryside_verifier": {
+            "p": 0.0001,
+            "p_adj": 0.0008,
+            "reject": true
+          },
+          "verifier_as_signal": {
+            "p": 0.0001,
+            "p_adj": 0.0008,
+            "reject": true
+          },
+          "commit_argmax": {
+            "p": 0.0001,
+            "p_adj": 0.0008,
+            "reject": true
+          },
+          "ct_sc_margin": {
+            "p": 0.0011,
+            "p_adj": 0.0033,
+            "reject": true
+          },
+          "ct_negent": {
+            "p": 0.0011,
+            "p_adj": 0.0033,
+            "reject": true
+          },
+          "queryside_selfverify": {
+            "p": 0.0011,
+            "p_adj": 0.0033,
+            "reject": true
+          }
+        }
+      },
+      "redocred_present": {
+        "label": "Re-DocRED present (natural deduction)",
+        "n": 360,
+        "c_star": 0.4833,
+        "ref": "certificate",
+        "leaderboard": {
+          "certificate": {
+            "coverage": 0.4833,
+            "selective_accuracy": 0.546,
+            "confident_wrong_rate_among_covered": 0.454,
+            "n_covered": 174,
+            "tag": "REAL-LLM-READ"
+          },
+          "ct_verbalized": {
+            "coverage_matched": 0.4833,
+            "natural_coverage": 0.8389,
+            "selective_accuracy": 0.8678,
+            "confident_wrong_rate_among_covered": 0.1322,
+            "n_covered": 174,
+            "selacc_gap_cert_minus_method": -0.3218,
+            "selacc_gap_ci95": [
+              -0.5066645007976838,
+              -0.10906761697176391
+            ],
+            "selacc_gap_p_one_sided": 0.999,
+            "cw_reduction_cert_vs_method": -0.1556,
+            "cw_reduction_ci95": [
+              -0.2743,
+              -0.0329
+            ],
+            "cw_reduction_p_one_sided": 0.9956,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 0.999,
+              "p_adj": 1.0,
+              "reject": false
+            },
+            "cw_reduction_holm": {
+              "p": 0.9956,
+              "p_adj": 1.0,
+              "reject": false
+            }
+          },
+          "ct_sc_margin": {
+            "coverage_matched": 0.4833,
+            "natural_coverage": 0.8389,
+            "selective_accuracy": 0.8908,
+            "confident_wrong_rate_among_covered": 0.1092,
+            "n_covered": 174,
+            "selacc_gap_cert_minus_method": -0.3448,
+            "selacc_gap_ci95": [
+              -0.5360543737970399,
+              -0.12133977230309825
+            ],
+            "selacc_gap_p_one_sided": 0.9994,
+            "cw_reduction_cert_vs_method": -0.1667,
+            "cw_reduction_ci95": [
+              -0.2827,
+              -0.0493
+            ],
+            "cw_reduction_p_one_sided": 0.9987,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 0.9994,
+              "p_adj": 1.0,
+              "reject": false
+            },
+            "cw_reduction_holm": {
+              "p": 0.9987,
+              "p_adj": 1.0,
+              "reject": false
+            }
+          },
+          "ct_ptrue": {
+            "coverage_matched": 0.4833,
+            "natural_coverage": 0.8389,
+            "selective_accuracy": 0.8736,
+            "confident_wrong_rate_among_covered": 0.1264,
+            "n_covered": 174,
+            "selacc_gap_cert_minus_method": -0.3276,
+            "selacc_gap_ci95": [
+              -0.5207889073566899,
+              -0.10224705935675321
+            ],
+            "selacc_gap_p_one_sided": 0.9992,
+            "cw_reduction_cert_vs_method": -0.1583,
+            "cw_reduction_ci95": [
+              -0.2765,
+              -0.0377
+            ],
+            "cw_reduction_p_one_sided": 0.9972,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 0.9992,
+              "p_adj": 1.0,
+              "reject": false
+            },
+            "cw_reduction_holm": {
+              "p": 0.9972,
+              "p_adj": 1.0,
+              "reject": false
+            }
+          },
+          "ct_negent": {
+            "coverage_matched": 0.4833,
+            "natural_coverage": 0.8389,
+            "selective_accuracy": 0.8908,
+            "confident_wrong_rate_among_covered": 0.1092,
+            "n_covered": 174,
+            "selacc_gap_cert_minus_method": -0.3448,
+            "selacc_gap_ci95": [
+              -0.5360543737970399,
+              -0.12133977230309825
+            ],
+            "selacc_gap_p_one_sided": 0.9994,
+            "cw_reduction_cert_vs_method": -0.1667,
+            "cw_reduction_ci95": [
+              -0.2827,
+              -0.0493
+            ],
+            "cw_reduction_p_one_sided": 0.9987,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 0.9994,
+              "p_adj": 1.0,
+              "reject": false
+            },
+            "cw_reduction_holm": {
+              "p": 0.9987,
+              "p_adj": 1.0,
+              "reject": false
+            }
+          },
+          "queryside_verifier": {
+            "coverage_matched": 0.4833,
+            "natural_coverage": 0.825,
+            "selective_accuracy": 0.8621,
+            "confident_wrong_rate_among_covered": 0.1379,
+            "n_covered": 174,
+            "selacc_gap_cert_minus_method": -0.3161,
+            "selacc_gap_ci95": [
+              -0.5167136231040562,
+              -0.07926637657819563
+            ],
+            "selacc_gap_p_one_sided": 0.9971,
+            "cw_reduction_cert_vs_method": -0.1528,
+            "cw_reduction_ci95": [
+              -0.2739,
+              -0.0295
+            ],
+            "cw_reduction_p_one_sided": 0.9947,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 0.9971,
+              "p_adj": 1.0,
+              "reject": false
+            },
+            "cw_reduction_holm": {
+              "p": 0.9947,
+              "p_adj": 1.0,
+              "reject": false
+            }
+          },
+          "queryside_selfverify": {
+            "coverage_matched": 0.4833,
+            "natural_coverage": 0.7528,
+            "selective_accuracy": 0.8851,
+            "confident_wrong_rate_among_covered": 0.1149,
+            "n_covered": 174,
+            "selacc_gap_cert_minus_method": -0.3391,
+            "selacc_gap_ci95": [
+              -0.528224231569007,
+              -0.12280492518865933
+            ],
+            "selacc_gap_p_one_sided": 0.9994,
+            "cw_reduction_cert_vs_method": -0.1639,
+            "cw_reduction_ci95": [
+              -0.2802,
+              -0.0441
+            ],
+            "cw_reduction_p_one_sided": 0.998,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 0.9994,
+              "p_adj": 1.0,
+              "reject": false
+            },
+            "cw_reduction_holm": {
+              "p": 0.998,
+              "p_adj": 1.0,
+              "reject": false
+            }
+          },
+          "verifier_as_signal": {
+            "coverage_matched": 0.4833,
+            "natural_coverage": 0.8389,
+            "selective_accuracy": 0.8621,
+            "confident_wrong_rate_among_covered": 0.1379,
+            "n_covered": 174,
+            "selacc_gap_cert_minus_method": -0.3161,
+            "selacc_gap_ci95": [
+              -0.5167136231040562,
+              -0.07926637657819563
+            ],
+            "selacc_gap_p_one_sided": 0.9971,
+            "cw_reduction_cert_vs_method": -0.1528,
+            "cw_reduction_ci95": [
+              -0.2739,
+              -0.0295
+            ],
+            "cw_reduction_p_one_sided": 0.9947,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 0.9971,
+              "p_adj": 1.0,
+              "reject": false
+            },
+            "cw_reduction_holm": {
+              "p": 0.9947,
+              "p_adj": 1.0,
+              "reject": false
+            }
+          },
+          "commit_argmax": {
+            "coverage_matched": 0.4833,
+            "natural_coverage": 0.8389,
+            "selective_accuracy": 0.8678,
+            "confident_wrong_rate_among_covered": 0.1322,
+            "n_covered": 174,
+            "selacc_gap_cert_minus_method": -0.3218,
+            "selacc_gap_ci95": [
+              -0.5066645007976838,
+              -0.10906761697176391
+            ],
+            "selacc_gap_p_one_sided": 0.999,
+            "cw_reduction_cert_vs_method": -0.1556,
+            "cw_reduction_ci95": [
+              -0.2743,
+              -0.0329
+            ],
+            "cw_reduction_p_one_sided": 0.9956,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 0.999,
+              "p_adj": 1.0,
+              "reject": false
+            },
+            "cw_reduction_holm": {
+              "p": 0.9956,
+              "p_adj": 1.0,
+              "reject": false
+            }
+          }
+        },
+        "holm_selacc_family": {
+          "queryside_verifier": {
+            "p": 0.9971,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "verifier_as_signal": {
+            "p": 0.9971,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "ct_verbalized": {
+            "p": 0.999,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "commit_argmax": {
+            "p": 0.999,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "ct_ptrue": {
+            "p": 0.9992,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "ct_sc_margin": {
+            "p": 0.9994,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "ct_negent": {
+            "p": 0.9994,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "queryside_selfverify": {
+            "p": 0.9994,
+            "p_adj": 1.0,
+            "reject": false
+          }
+        },
+        "holm_cw_family": {
+          "queryside_verifier": {
+            "p": 0.9947,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "verifier_as_signal": {
+            "p": 0.9947,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "ct_verbalized": {
+            "p": 0.9956,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "commit_argmax": {
+            "p": 0.9956,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "ct_ptrue": {
+            "p": 0.9972,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "queryside_selfverify": {
+            "p": 0.998,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "ct_sc_margin": {
+            "p": 0.9987,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "ct_negent": {
+            "p": 0.9987,
+            "p_adj": 1.0,
+            "reject": false
+          }
+        }
+      },
+      "redocred_absent": {
+        "label": "Re-DocRED absent (no-derivation)",
+        "n": 368,
+        "c_star": 0.0707,
+        "ref": "certificate",
+        "leaderboard": {
+          "certificate": {
+            "coverage": 0.0707,
+            "selective_accuracy": 0.0,
+            "confident_wrong_rate_among_covered": 1.0,
+            "n_covered": 26,
+            "tag": "REAL-LLM-READ"
+          },
+          "ct_verbalized": {
+            "coverage_matched": 0.0707,
+            "natural_coverage": 0.3261,
+            "selective_accuracy": 0.0,
+            "confident_wrong_rate_among_covered": 1.0,
+            "n_covered": 26,
+            "selacc_gap_cert_minus_method": 0.0,
+            "selacc_gap_ci95": [
+              0.0,
+              0.0
+            ],
+            "selacc_gap_p_one_sided": 1.0,
+            "cw_reduction_cert_vs_method": 0.0,
+            "cw_reduction_ci95": [
+              -0.0673,
+              0.0723
+            ],
+            "cw_reduction_p_one_sided": 0.5237,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 1.0,
+              "p_adj": 1.0,
+              "reject": false
+            },
+            "cw_reduction_holm": {
+              "p": 0.5237,
+              "p_adj": 1.0,
+              "reject": false
+            }
+          },
+          "ct_sc_margin": {
+            "coverage_matched": 0.0707,
+            "natural_coverage": 0.3261,
+            "selective_accuracy": 0.0,
+            "confident_wrong_rate_among_covered": 1.0,
+            "n_covered": 26,
+            "selacc_gap_cert_minus_method": 0.0,
+            "selacc_gap_ci95": [
+              0.0,
+              0.0
+            ],
+            "selacc_gap_p_one_sided": 1.0,
+            "cw_reduction_cert_vs_method": 0.0,
+            "cw_reduction_ci95": [
+              -0.067,
+              0.0736
+            ],
+            "cw_reduction_p_one_sided": 0.5224,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 1.0,
+              "p_adj": 1.0,
+              "reject": false
+            },
+            "cw_reduction_holm": {
+              "p": 0.5224,
+              "p_adj": 1.0,
+              "reject": false
+            }
+          },
+          "ct_ptrue": {
+            "coverage_matched": 0.0707,
+            "natural_coverage": 0.3261,
+            "selective_accuracy": 0.0,
+            "confident_wrong_rate_among_covered": 1.0,
+            "n_covered": 26,
+            "selacc_gap_cert_minus_method": 0.0,
+            "selacc_gap_ci95": [
+              0.0,
+              0.0
+            ],
+            "selacc_gap_p_one_sided": 1.0,
+            "cw_reduction_cert_vs_method": 0.0,
+            "cw_reduction_ci95": [
+              -0.0681,
+              0.0742
+            ],
+            "cw_reduction_p_one_sided": 0.5242,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 1.0,
+              "p_adj": 1.0,
+              "reject": false
+            },
+            "cw_reduction_holm": {
+              "p": 0.5242,
+              "p_adj": 1.0,
+              "reject": false
+            }
+          },
+          "ct_negent": {
+            "coverage_matched": 0.0707,
+            "natural_coverage": 0.3261,
+            "selective_accuracy": 0.0,
+            "confident_wrong_rate_among_covered": 1.0,
+            "n_covered": 26,
+            "selacc_gap_cert_minus_method": 0.0,
+            "selacc_gap_ci95": [
+              0.0,
+              0.0
+            ],
+            "selacc_gap_p_one_sided": 1.0,
+            "cw_reduction_cert_vs_method": 0.0,
+            "cw_reduction_ci95": [
+              -0.067,
+              0.0736
+            ],
+            "cw_reduction_p_one_sided": 0.5224,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 1.0,
+              "p_adj": 1.0,
+              "reject": false
+            },
+            "cw_reduction_holm": {
+              "p": 0.5224,
+              "p_adj": 1.0,
+              "reject": false
+            }
+          },
+          "queryside_verifier": {
+            "coverage_matched": 0.0707,
+            "natural_coverage": 0.2935,
+            "selective_accuracy": 0.0,
+            "confident_wrong_rate_among_covered": 1.0,
+            "n_covered": 26,
+            "selacc_gap_cert_minus_method": 0.0,
+            "selacc_gap_ci95": [
+              0.0,
+              0.0
+            ],
+            "selacc_gap_p_one_sided": 1.0,
+            "cw_reduction_cert_vs_method": 0.0,
+            "cw_reduction_ci95": [
+              -0.0677,
+              0.0762
+            ],
+            "cw_reduction_p_one_sided": 0.5265,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 1.0,
+              "p_adj": 1.0,
+              "reject": false
+            },
+            "cw_reduction_holm": {
+              "p": 0.5265,
+              "p_adj": 1.0,
+              "reject": false
+            }
+          },
+          "queryside_selfverify": {
+            "coverage_matched": 0.0707,
+            "natural_coverage": 0.1495,
+            "selective_accuracy": 0.0,
+            "confident_wrong_rate_among_covered": 1.0,
+            "n_covered": 26,
+            "selacc_gap_cert_minus_method": 0.0,
+            "selacc_gap_ci95": [
+              0.0,
+              0.0
+            ],
+            "selacc_gap_p_one_sided": 1.0,
+            "cw_reduction_cert_vs_method": 0.0,
+            "cw_reduction_ci95": [
+              -0.0487,
+              0.054
+            ],
+            "cw_reduction_p_one_sided": 0.5182,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 1.0,
+              "p_adj": 1.0,
+              "reject": false
+            },
+            "cw_reduction_holm": {
+              "p": 0.5182,
+              "p_adj": 1.0,
+              "reject": false
+            }
+          },
+          "verifier_as_signal": {
+            "coverage_matched": 0.0707,
+            "natural_coverage": 0.3261,
+            "selective_accuracy": 0.0,
+            "confident_wrong_rate_among_covered": 1.0,
+            "n_covered": 26,
+            "selacc_gap_cert_minus_method": 0.0,
+            "selacc_gap_ci95": [
+              0.0,
+              0.0
+            ],
+            "selacc_gap_p_one_sided": 1.0,
+            "cw_reduction_cert_vs_method": 0.0,
+            "cw_reduction_ci95": [
+              -0.0677,
+              0.0762
+            ],
+            "cw_reduction_p_one_sided": 0.5265,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 1.0,
+              "p_adj": 1.0,
+              "reject": false
+            },
+            "cw_reduction_holm": {
+              "p": 0.5265,
+              "p_adj": 1.0,
+              "reject": false
+            }
+          },
+          "commit_argmax": {
+            "coverage_matched": 0.0707,
+            "natural_coverage": 0.3261,
+            "selective_accuracy": 0.0,
+            "confident_wrong_rate_among_covered": 1.0,
+            "n_covered": 26,
+            "selacc_gap_cert_minus_method": 0.0,
+            "selacc_gap_ci95": [
+              0.0,
+              0.0
+            ],
+            "selacc_gap_p_one_sided": 1.0,
+            "cw_reduction_cert_vs_method": 0.0,
+            "cw_reduction_ci95": [
+              -0.0673,
+              0.0723
+            ],
+            "cw_reduction_p_one_sided": 0.5237,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 1.0,
+              "p_adj": 1.0,
+              "reject": false
+            },
+            "cw_reduction_holm": {
+              "p": 0.5237,
+              "p_adj": 1.0,
+              "reject": false
+            }
+          }
+        },
+        "holm_selacc_family": {
+          "ct_verbalized": {
+            "p": 1.0,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "ct_sc_margin": {
+            "p": 1.0,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "ct_ptrue": {
+            "p": 1.0,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "ct_negent": {
+            "p": 1.0,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "queryside_verifier": {
+            "p": 1.0,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "queryside_selfverify": {
+            "p": 1.0,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "verifier_as_signal": {
+            "p": 1.0,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "commit_argmax": {
+            "p": 1.0,
+            "p_adj": 1.0,
+            "reject": false
+          }
+        },
+        "holm_cw_family": {
+          "queryside_selfverify": {
+            "p": 0.5182,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "ct_sc_margin": {
+            "p": 0.5224,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "ct_negent": {
+            "p": 0.5224,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "ct_verbalized": {
+            "p": 0.5237,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "commit_argmax": {
+            "p": 0.5237,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "ct_ptrue": {
+            "p": 0.5242,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "queryside_verifier": {
+            "p": 0.5265,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "verifier_as_signal": {
+            "p": 0.5265,
+            "p_adj": 1.0,
+            "reject": false
+          }
+        }
+      },
+      "redocred_mixed": {
+        "label": "Re-DocRED mixed (present+absent) [DECISIVE]",
+        "n": 728,
+        "c_star": 0.2747,
+        "ref": "certificate",
+        "leaderboard": {
+          "certificate": {
+            "coverage": 0.2747,
+            "selective_accuracy": 0.475,
+            "confident_wrong_rate_among_covered": 0.525,
+            "n_covered": 200,
+            "tag": "REAL-LLM-READ"
+          },
+          "ct_verbalized": {
+            "coverage_matched": 0.2747,
+            "natural_coverage": 0.5797,
+            "selective_accuracy": 0.675,
+            "confident_wrong_rate_among_covered": 0.325,
+            "n_covered": 200,
+            "selacc_gap_cert_minus_method": -0.2,
+            "selacc_gap_ci95": [
+              -0.3707874278718234,
+              -0.02414213666195766
+            ],
+            "selacc_gap_p_one_sided": 0.9883,
+            "cw_reduction_cert_vs_method": -0.0549,
+            "cw_reduction_ci95": [
+              -0.1302,
+              0.0133
+            ],
+            "cw_reduction_p_one_sided": 0.9397,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 0.9883,
+              "p_adj": 1.0,
+              "reject": false
+            },
+            "cw_reduction_holm": {
+              "p": 0.9397,
+              "p_adj": 1.0,
+              "reject": false
+            }
+          },
+          "ct_sc_margin": {
+            "coverage_matched": 0.2747,
+            "natural_coverage": 0.5797,
+            "selective_accuracy": 0.6,
+            "confident_wrong_rate_among_covered": 0.4,
+            "n_covered": 200,
+            "selacc_gap_cert_minus_method": -0.125,
+            "selacc_gap_ci95": [
+              -0.347508402957125,
+              0.10611060005448039
+            ],
+            "selacc_gap_p_one_sided": 0.8425,
+            "cw_reduction_cert_vs_method": -0.0343,
+            "cw_reduction_ci95": [
+              -0.1145,
+              0.0396
+            ],
+            "cw_reduction_p_one_sided": 0.8057,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 0.8425,
+              "p_adj": 1.0,
+              "reject": false
+            },
+            "cw_reduction_holm": {
+              "p": 0.8057,
+              "p_adj": 1.0,
+              "reject": false
+            }
+          },
+          "ct_ptrue": {
+            "coverage_matched": 0.2747,
+            "natural_coverage": 0.5797,
+            "selective_accuracy": 0.645,
+            "confident_wrong_rate_among_covered": 0.355,
+            "n_covered": 200,
+            "selacc_gap_cert_minus_method": -0.17,
+            "selacc_gap_ci95": [
+              -0.37268662645094147,
+              0.03780695398743035
+            ],
+            "selacc_gap_p_one_sided": 0.9405,
+            "cw_reduction_cert_vs_method": -0.0467,
+            "cw_reduction_ci95": [
+              -0.1223,
+              0.023
+            ],
+            "cw_reduction_p_one_sided": 0.8956,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 0.9405,
+              "p_adj": 1.0,
+              "reject": false
+            },
+            "cw_reduction_holm": {
+              "p": 0.8956,
+              "p_adj": 1.0,
+              "reject": false
+            }
+          },
+          "ct_negent": {
+            "coverage_matched": 0.2747,
+            "natural_coverage": 0.5797,
+            "selective_accuracy": 0.6,
+            "confident_wrong_rate_among_covered": 0.4,
+            "n_covered": 200,
+            "selacc_gap_cert_minus_method": -0.125,
+            "selacc_gap_ci95": [
+              -0.347508402957125,
+              0.10611060005448039
+            ],
+            "selacc_gap_p_one_sided": 0.8425,
+            "cw_reduction_cert_vs_method": -0.0343,
+            "cw_reduction_ci95": [
+              -0.1145,
+              0.0396
+            ],
+            "cw_reduction_p_one_sided": 0.8057,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 0.8425,
+              "p_adj": 1.0,
+              "reject": false
+            },
+            "cw_reduction_holm": {
+              "p": 0.8057,
+              "p_adj": 1.0,
+              "reject": false
+            }
+          },
+          "queryside_verifier": {
+            "coverage_matched": 0.2747,
+            "natural_coverage": 0.5563,
+            "selective_accuracy": 0.595,
+            "confident_wrong_rate_among_covered": 0.405,
+            "n_covered": 200,
+            "selacc_gap_cert_minus_method": -0.12,
+            "selacc_gap_ci95": [
+              -0.34158344705712773,
+              0.10494360269360263
+            ],
+            "selacc_gap_p_one_sided": 0.8345,
+            "cw_reduction_cert_vs_method": -0.033,
+            "cw_reduction_ci95": [
+              -0.1134,
+              0.0406
+            ],
+            "cw_reduction_p_one_sided": 0.7929,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 0.8345,
+              "p_adj": 1.0,
+              "reject": false
+            },
+            "cw_reduction_holm": {
+              "p": 0.7929,
+              "p_adj": 1.0,
+              "reject": false
+            }
+          },
+          "queryside_selfverify": {
+            "coverage_matched": 0.2747,
+            "natural_coverage": 0.4478,
+            "selective_accuracy": 0.77,
+            "confident_wrong_rate_among_covered": 0.23,
+            "n_covered": 200,
+            "selacc_gap_cert_minus_method": -0.295,
+            "selacc_gap_ci95": [
+              -0.46455516747825815,
+              -0.11121034833710892
+            ],
+            "selacc_gap_p_one_sided": 0.9996,
+            "cw_reduction_cert_vs_method": -0.081,
+            "cw_reduction_ci95": [
+              -0.1518,
+              -0.0161
+            ],
+            "cw_reduction_p_one_sided": 0.9952,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 0.9996,
+              "p_adj": 1.0,
+              "reject": false
+            },
+            "cw_reduction_holm": {
+              "p": 0.9952,
+              "p_adj": 1.0,
+              "reject": false
+            }
+          },
+          "verifier_as_signal": {
+            "coverage_matched": 0.2747,
+            "natural_coverage": 0.5797,
+            "selective_accuracy": 0.595,
+            "confident_wrong_rate_among_covered": 0.405,
+            "n_covered": 200,
+            "selacc_gap_cert_minus_method": -0.12,
+            "selacc_gap_ci95": [
+              -0.34158344705712773,
+              0.10494360269360263
+            ],
+            "selacc_gap_p_one_sided": 0.8345,
+            "cw_reduction_cert_vs_method": -0.033,
+            "cw_reduction_ci95": [
+              -0.1134,
+              0.0406
+            ],
+            "cw_reduction_p_one_sided": 0.7929,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 0.8345,
+              "p_adj": 1.0,
+              "reject": false
+            },
+            "cw_reduction_holm": {
+              "p": 0.7929,
+              "p_adj": 1.0,
+              "reject": false
+            }
+          },
+          "commit_argmax": {
+            "coverage_matched": 0.2747,
+            "natural_coverage": 0.5797,
+            "selective_accuracy": 0.675,
+            "confident_wrong_rate_among_covered": 0.325,
+            "n_covered": 200,
+            "selacc_gap_cert_minus_method": -0.2,
+            "selacc_gap_ci95": [
+              -0.3707874278718234,
+              -0.02414213666195766
+            ],
+            "selacc_gap_p_one_sided": 0.9883,
+            "cw_reduction_cert_vs_method": -0.0549,
+            "cw_reduction_ci95": [
+              -0.1302,
+              0.0133
+            ],
+            "cw_reduction_p_one_sided": 0.9397,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 0.9883,
+              "p_adj": 1.0,
+              "reject": false
+            },
+            "cw_reduction_holm": {
+              "p": 0.9397,
+              "p_adj": 1.0,
+              "reject": false
+            }
+          }
+        },
+        "holm_selacc_family": {
+          "queryside_verifier": {
+            "p": 0.8345,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "verifier_as_signal": {
+            "p": 0.8345,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "ct_sc_margin": {
+            "p": 0.8425,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "ct_negent": {
+            "p": 0.8425,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "ct_ptrue": {
+            "p": 0.9405,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "ct_verbalized": {
+            "p": 0.9883,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "commit_argmax": {
+            "p": 0.9883,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "queryside_selfverify": {
+            "p": 0.9996,
+            "p_adj": 1.0,
+            "reject": false
+          }
+        },
+        "holm_cw_family": {
+          "queryside_verifier": {
+            "p": 0.7929,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "verifier_as_signal": {
+            "p": 0.7929,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "ct_sc_margin": {
+            "p": 0.8057,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "ct_negent": {
+            "p": 0.8057,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "ct_ptrue": {
+            "p": 0.8956,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "ct_verbalized": {
+            "p": 0.9397,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "commit_argmax": {
+            "p": 0.9397,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "queryside_selfverify": {
+            "p": 0.9952,
+            "p_adj": 1.0,
+            "reject": false
+          }
+        }
+      },
+      "docred_present": {
+        "label": "DocRED present (corroboration; absent gold downgraded)",
+        "n": 116,
+        "c_star": 0.4914,
+        "ref": "certificate",
+        "leaderboard": {
+          "certificate": {
+            "coverage": 0.4914,
+            "selective_accuracy": 0.6316,
+            "confident_wrong_rate_among_covered": 0.3684,
+            "n_covered": 57,
+            "tag": "REAL-LLM-READ"
+          },
+          "ct_verbalized": {
+            "coverage_matched": 0.4914,
+            "natural_coverage": 0.8793,
+            "selective_accuracy": 0.8772,
+            "confident_wrong_rate_among_covered": 0.1228,
+            "n_covered": 57,
+            "selacc_gap_cert_minus_method": -0.2456,
+            "selacc_gap_ci95": [
+              -0.43960577228553505,
+              -0.057461928262016265
+            ],
+            "selacc_gap_p_one_sided": 0.9946,
+            "cw_reduction_cert_vs_method": -0.1207,
+            "cw_reduction_ci95": [
+              -0.2294,
+              -0.0189
+            ],
+            "cw_reduction_p_one_sided": 0.994,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 0.9946,
+              "p_adj": 1.0,
+              "reject": false
+            },
+            "cw_reduction_holm": {
+              "p": 0.994,
+              "p_adj": 1.0,
+              "reject": false
+            }
+          },
+          "ct_sc_margin": {
+            "coverage_matched": 0.4914,
+            "natural_coverage": 0.8793,
+            "selective_accuracy": 0.8947,
+            "confident_wrong_rate_among_covered": 0.1053,
+            "n_covered": 57,
+            "selacc_gap_cert_minus_method": -0.2632,
+            "selacc_gap_ci95": [
+              -0.4470356908297168,
+              -0.07903895703051622
+            ],
+            "selacc_gap_p_one_sided": 0.9981,
+            "cw_reduction_cert_vs_method": -0.1293,
+            "cw_reduction_ci95": [
+              -0.2358,
+              -0.0323
+            ],
+            "cw_reduction_p_one_sided": 0.9968,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 0.9981,
+              "p_adj": 1.0,
+              "reject": false
+            },
+            "cw_reduction_holm": {
+              "p": 0.9968,
+              "p_adj": 1.0,
+              "reject": false
+            }
+          },
+          "ct_ptrue": {
+            "coverage_matched": 0.4914,
+            "natural_coverage": 0.8793,
+            "selective_accuracy": 0.8246,
+            "confident_wrong_rate_among_covered": 0.1754,
+            "n_covered": 57,
+            "selacc_gap_cert_minus_method": -0.193,
+            "selacc_gap_ci95": [
+              -0.4022555782694144,
+              0.01851851851851849
+            ],
+            "selacc_gap_p_one_sided": 0.9654,
+            "cw_reduction_cert_vs_method": -0.0948,
+            "cw_reduction_ci95": [
+              -0.2143,
+              0.0202
+            ],
+            "cw_reduction_p_one_sided": 0.9533,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 0.9654,
+              "p_adj": 1.0,
+              "reject": false
+            },
+            "cw_reduction_holm": {
+              "p": 0.9533,
+              "p_adj": 1.0,
+              "reject": false
+            }
+          },
+          "ct_negent": {
+            "coverage_matched": 0.4914,
+            "natural_coverage": 0.8793,
+            "selective_accuracy": 0.8947,
+            "confident_wrong_rate_among_covered": 0.1053,
+            "n_covered": 57,
+            "selacc_gap_cert_minus_method": -0.2632,
+            "selacc_gap_ci95": [
+              -0.4470356908297168,
+              -0.07903895703051622
+            ],
+            "selacc_gap_p_one_sided": 0.9981,
+            "cw_reduction_cert_vs_method": -0.1293,
+            "cw_reduction_ci95": [
+              -0.2358,
+              -0.0323
+            ],
+            "cw_reduction_p_one_sided": 0.9968,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 0.9981,
+              "p_adj": 1.0,
+              "reject": false
+            },
+            "cw_reduction_holm": {
+              "p": 0.9968,
+              "p_adj": 1.0,
+              "reject": false
+            }
+          },
+          "queryside_verifier": {
+            "coverage_matched": 0.4914,
+            "natural_coverage": 0.8707,
+            "selective_accuracy": 0.8772,
+            "confident_wrong_rate_among_covered": 0.1228,
+            "n_covered": 57,
+            "selacc_gap_cert_minus_method": -0.2456,
+            "selacc_gap_ci95": [
+              -0.4436978412054477,
+              -0.03849953238251103
+            ],
+            "selacc_gap_p_one_sided": 0.9907,
+            "cw_reduction_cert_vs_method": -0.1207,
+            "cw_reduction_ci95": [
+              -0.2373,
+              -0.0083
+            ],
+            "cw_reduction_p_one_sided": 0.9838,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 0.9907,
+              "p_adj": 1.0,
+              "reject": false
+            },
+            "cw_reduction_holm": {
+              "p": 0.9838,
+              "p_adj": 1.0,
+              "reject": false
+            }
+          },
+          "queryside_selfverify": {
+            "coverage_matched": 0.4914,
+            "natural_coverage": 0.8276,
+            "selective_accuracy": 0.8772,
+            "confident_wrong_rate_among_covered": 0.1228,
+            "n_covered": 57,
+            "selacc_gap_cert_minus_method": -0.2456,
+            "selacc_gap_ci95": [
+              -0.4396049268192125,
+              -0.05736631191696234
+            ],
+            "selacc_gap_p_one_sided": 0.9951,
+            "cw_reduction_cert_vs_method": -0.1207,
+            "cw_reduction_ci95": [
+              -0.2294,
+              -0.0189
+            ],
+            "cw_reduction_p_one_sided": 0.994,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 0.9951,
+              "p_adj": 1.0,
+              "reject": false
+            },
+            "cw_reduction_holm": {
+              "p": 0.994,
+              "p_adj": 1.0,
+              "reject": false
+            }
+          },
+          "verifier_as_signal": {
+            "coverage_matched": 0.4914,
+            "natural_coverage": 0.8793,
+            "selective_accuracy": 0.8772,
+            "confident_wrong_rate_among_covered": 0.1228,
+            "n_covered": 57,
+            "selacc_gap_cert_minus_method": -0.2456,
+            "selacc_gap_ci95": [
+              -0.4436978412054477,
+              -0.03849953238251103
+            ],
+            "selacc_gap_p_one_sided": 0.9907,
+            "cw_reduction_cert_vs_method": -0.1207,
+            "cw_reduction_ci95": [
+              -0.2373,
+              -0.0083
+            ],
+            "cw_reduction_p_one_sided": 0.9838,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 0.9907,
+              "p_adj": 1.0,
+              "reject": false
+            },
+            "cw_reduction_holm": {
+              "p": 0.9838,
+              "p_adj": 1.0,
+              "reject": false
+            }
+          },
+          "commit_argmax": {
+            "coverage_matched": 0.4914,
+            "natural_coverage": 0.8793,
+            "selective_accuracy": 0.8772,
+            "confident_wrong_rate_among_covered": 0.1228,
+            "n_covered": 57,
+            "selacc_gap_cert_minus_method": -0.2456,
+            "selacc_gap_ci95": [
+              -0.43960577228553505,
+              -0.057461928262016265
+            ],
+            "selacc_gap_p_one_sided": 0.9946,
+            "cw_reduction_cert_vs_method": -0.1207,
+            "cw_reduction_ci95": [
+              -0.2294,
+              -0.0189
+            ],
+            "cw_reduction_p_one_sided": 0.994,
+            "tag": "REAL-LLM-READ",
+            "selacc_gap_holm": {
+              "p": 0.9946,
+              "p_adj": 1.0,
+              "reject": false
+            },
+            "cw_reduction_holm": {
+              "p": 0.994,
+              "p_adj": 1.0,
+              "reject": false
+            }
+          }
+        },
+        "holm_selacc_family": {
+          "ct_ptrue": {
+            "p": 0.9654,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "queryside_verifier": {
+            "p": 0.9907,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "verifier_as_signal": {
+            "p": 0.9907,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "ct_verbalized": {
+            "p": 0.9946,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "commit_argmax": {
+            "p": 0.9946,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "queryside_selfverify": {
+            "p": 0.9951,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "ct_sc_margin": {
+            "p": 0.9981,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "ct_negent": {
+            "p": 0.9981,
+            "p_adj": 1.0,
+            "reject": false
+          }
+        },
+        "holm_cw_family": {
+          "ct_ptrue": {
+            "p": 0.9533,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "queryside_verifier": {
+            "p": 0.9838,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "verifier_as_signal": {
+            "p": 0.9838,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "ct_verbalized": {
+            "p": 0.994,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "queryside_selfverify": {
+            "p": 0.994,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "commit_argmax": {
+            "p": 0.994,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "ct_sc_margin": {
+            "p": 0.9968,
+            "p_adj": 1.0,
+            "reject": false
+          },
+          "ct_negent": {
+            "p": 0.9968,
+            "p_adj": 1.0,
+            "reject": false
+          }
+        }
+      }
+    },
+    "fraction_caught_crux_tables": {
+      "clutrr": {
+        "pool": "clutrr",
+        "n_fabrications": 85,
+        "fabrication_def": "absent pair, raw LLM committed a relation",
+        "per_method": {
+          "certificate": {
+            "fraction_caught": 0.9412,
+            "survival": 0.0588,
+            "ci95_doc_clustered": [
+              0.8391,
+              1.0
+            ],
+            "rule": "threshold-free abstention",
+            "tag": "REAL-LLM-READ"
+          },
+          "queryside_verifier": {
+            "fraction_caught": 0.5882,
+            "survival": 0.4118,
+            "ci95_doc_clustered": [
+              0.4362,
+              0.7529
+            ],
+            "rule": "threshold-free abstention",
+            "tag": "REAL-LLM-READ"
+          },
+          "queryside_selfverify": {
+            "fraction_caught": 0.8235,
+            "survival": 0.1765,
+            "ci95_doc_clustered": [
+              0.7128,
+              0.9243
+            ],
+            "rule": "threshold-free abstention",
+            "tag": "REAL-LLM-READ"
+          },
+          "ct_verbalized": {
+            "fraction_caught": 0.5647,
+            "survival": 0.4353,
+            "ci95_doc_clustered": [
+              0.4321,
+              0.6934
+            ],
+            "rule": "below absent-pool-median confidence (certificate-matched global rule)",
+            "tag": "REAL-LLM-READ"
+          },
+          "ct_sc_margin": {
+            "fraction_caught": 0.2824,
+            "survival": 0.7176,
+            "ci95_doc_clustered": [
+              0.1724,
+              0.4051
+            ],
+            "rule": "below absent-pool-median confidence (certificate-matched global rule)",
+            "tag": "REAL-LLM-READ"
+          },
+          "ct_ptrue": {
+            "fraction_caught": 0.7529,
+            "survival": 0.2471,
+            "ci95_doc_clustered": [
+              0.6207,
+              0.8659
+            ],
+            "rule": "below absent-pool-median confidence (certificate-matched global rule)",
+            "tag": "REAL-LLM-READ"
+          },
+          "ct_negent": {
+            "fraction_caught": 0.2824,
+            "survival": 0.7176,
+            "ci95_doc_clustered": [
+              0.1724,
+              0.4051
+            ],
+            "rule": "below absent-pool-median confidence (certificate-matched global rule)",
+            "tag": "REAL-LLM-READ"
+          }
+        }
+      },
+      "redocred": {
+        "pool": "redocred",
+        "n_fabrications": 120,
+        "fabrication_def": "absent pair, raw LLM committed a relation",
+        "per_method": {
+          "certificate": {
+            "fraction_caught": 0.85,
+            "survival": 0.15,
+            "ci95_doc_clustered": [
+              0.7516,
+              0.9432
+            ],
+            "rule": "threshold-free abstention",
+            "tag": "REAL-LLM-READ"
+          },
+          "queryside_verifier": {
+            "fraction_caught": 0.1,
+            "survival": 0.9,
+            "ci95_doc_clustered": [
+              0.0347,
+              0.2235
+            ],
+            "rule": "threshold-free abstention",
+            "tag": "REAL-LLM-READ"
+          },
+          "queryside_selfverify": {
+            "fraction_caught": 0.5417,
+            "survival": 0.4583,
+            "ci95_doc_clustered": [
+              0.3697,
+              0.7037
+            ],
+            "rule": "threshold-free abstention",
+            "tag": "REAL-LLM-READ"
+          },
+          "ct_verbalized": {
+            "fraction_caught": 0.4917,
+            "survival": 0.5083,
+            "ci95_doc_clustered": [
+              0.3529,
+              0.6707
+            ],
+            "rule": "below absent-pool-median confidence (certificate-matched global rule)",
+            "tag": "REAL-LLM-READ"
+          },
+          "ct_sc_margin": {
+            "fraction_caught": 0.15,
+            "survival": 0.85,
+            "ci95_doc_clustered": [
+              0.1024,
+              0.2128
+            ],
+            "rule": "below absent-pool-median confidence (certificate-matched global rule)",
+            "tag": "REAL-LLM-READ"
+          },
+          "ct_ptrue": {
+            "fraction_caught": 0.5167,
+            "survival": 0.4833,
+            "ci95_doc_clustered": [
+              0.3483,
+              0.6833
+            ],
+            "rule": "below absent-pool-median confidence (certificate-matched global rule)",
+            "tag": "REAL-LLM-READ"
+          },
+          "ct_negent": {
+            "fraction_caught": 0.15,
+            "survival": 0.85,
+            "ci95_doc_clustered": [
+              0.1024,
+              0.2128
+            ],
+            "rule": "below absent-pool-median confidence (certificate-matched global rule)",
+            "tag": "REAL-LLM-READ"
+          }
+        }
+      }
+    },
+    "certificate_necessity_verdict": {
+      "per_venue": {
+        "clutrr": {
+          "pool": "clutrr",
+          "n_fabrications": 85,
+          "certificate_fraction_caught": 0.9412,
+          "queryside_verifier_fraction_caught": 0.5882,
+          "queryside_selfverify_fraction_caught": 0.8235,
+          "certificate_minus_verifier_caught_gap": {
+            "gap": 0.3529,
+            "ci95": [
+              0.1868,
+              0.5102
+            ],
+            "p_two_sided": 0.0,
+            "ci_excludes_0": true
+          },
+          "certificate_minus_selfverify_caught_gap": {
+            "gap": 0.1176,
+            "ci95": [
+              0.039,
+              0.202
+            ],
+            "p_two_sided": 0.0024,
+            "ci_excludes_0": true
+          },
+          "verdict_vs_verifier": "CERTIFICATE_NECESSARY",
+          "verdict_vs_selfverify": "CERTIFICATE_NECESSARY",
+          "tag": "REAL-LLM-READ"
+        },
+        "redocred": {
+          "pool": "redocred",
+          "n_fabrications": 120,
+          "certificate_fraction_caught": 0.85,
+          "queryside_verifier_fraction_caught": 0.1,
+          "queryside_selfverify_fraction_caught": 0.5417,
+          "certificate_minus_verifier_caught_gap": {
+            "gap": 0.75,
+            "ci95": [
+              0.6195,
+              0.8475
+            ],
+            "p_two_sided": 0.0,
+            "ci_excludes_0": true
+          },
+          "certificate_minus_selfverify_caught_gap": {
+            "gap": 0.3083,
+            "ci95": [
+              0.1897,
+              0.434
+            ],
+            "p_two_sided": 0.0,
+            "ci_excludes_0": true
+          },
+          "verdict_vs_verifier": "CERTIFICATE_NECESSARY",
+          "verdict_vs_selfverify": "CERTIFICATE_NECESSARY",
+          "tag": "REAL-LLM-READ"
+        }
+      },
+      "overall": {
+        "headline": "CERTIFICATE_NECESSARY_BOTH_VENUES",
+        "per_venue_vs_verifier": {
+          "clutrr": "CERTIFICATE_NECESSARY",
+          "redocred": "CERTIFICATE_NECESSARY"
+        },
+        "interpretation": "CERTIFICATE_NECESSARY: the structural no-derivation certificate catches strictly more confident absent-relation hallucinations than a query-side false-premise verifier (doc-clustered CI of the caught-..."
+      }
+    },
+    "spend_ledger": {
+      "per_pass": {
+        "primary_gemini": {
+          "model": "google/gemini-3.1-flash-lite",
+          "n_llm_calls": 0,
+          "n_cache_hits": 1816,
+          "n_errors": 0,
+          "cost_usd": 0.0,
+          "n_parse_fail_verifier": 1,
+          "n_parse_fail_selfverify": 0,
+          "n_verifier_items": 1126,
+          "n_selfverify_items": 690
+        },
+        "sensitivity_deepseek_verifier": {
+          "skipped": "disabled or cost>=$4 after primary"
+        }
+      },
+      "cumulative_usd": 0.0,
+      "hard_cap_usd": 9.0,
+      "note": "sha256-cached; re-runs replay at $0. Only the verifier + self-verify are new spend."
+    },
+    "honesty_tags": {
+      "all_new_numbers": "REAL-LLM-READ (genuine OpenRouter completions; cached replays $0)",
+      "reproduction": "order-independent certificate/FACT-A/crux numbers reproduce exactly; signal mixed selaccs reproduce exactly after source-order reconstruction",
+      "deepseek_per_row": "NOT AVAILABLE in either pool (aggregate-only) -> deepseek FACT-A reproduced from carried aggregate; per-row verifier is gemini-reader-matched",
+      "absent_structural": "absent pairs are structural (different components) -> the certificate's absent abstention is structural-by-construction; the verifier comparison tests whether a query-side LLM call recovers the same a...",
+      "prolog": "no new symbolic discharge in this artifact (the certificate predictions are reused verbatim)"
+    },
+    "runtime_sec": 59.6
+  },
+  "datasets": [
+    {
+      "dataset": "clutrr_present",
+      "examples": [
+        {
+          "input": "Belva went with her grandmother, Ashley, to the grocery store to help her while she shopped. Nicolas and his sister, Belva love it when their grandmother visits because she spoils them. She is coming ...",
+          "output": "grandson",
+          "predict_certificate": "grandson",
+          "predict_conf_thresh_verbalized": "grandson",
+          "predict_conf_thresh_sc_margin": "grandson",
+          "predict_conf_thresh_ptrue": "grandson",
+          "predict_conf_thresh_negent": "grandson",
+          "predict_commit_argmax": "grandson",
+          "predict_queryside_verifier": "grandson",
+          "predict_queryside_selfverify": "grandson",
+          "predict_verifier_as_signal": "grandson",
+          "metadata_pool": "clutrr",
+          "metadata_slice": "clutrr",
+          "metadata_reader": "gemini",
+          "metadata_is_absent": false,
+          "metadata_stratum": "ordinary_deduction",
+          "metadata_doc_id": "0741bf9a-a8f6-4ff1-aac1-1a4f0828aed9",
+          "metadata_qsrc": "Ashley",
+          "metadata_qtgt": "Nicolas",
+          "metadata_gold": "grandson",
+          "metadata_gold_primitive": null,
+          "metadata_raw_named": true,
+          "metadata_raw_answer": "grandson",
+          "metadata_conf_verbalized": 1.0,
+          "metadata_conf_sc_margin": 1.0,
+          "metadata_conf_ptrue": 1.0,
+          "metadata_conf_negent": 1.0,
+          "metadata_verifier_related": "RELATED",
+          "metadata_verifier_confidence": 1.0,
+          "metadata_p_related": 1.0,
+          "metadata_selfverify_verdict": "TRUE",
+          "metadata_conf_queryside_selfverify": 1.0,
+          "metadata_order_index": 0
+        },
+        {
+          "input": "Emily and her granddaughter Ashley went to the mall Michael likes to visit his sister. Her name is Emily.  || Q: what is Michael to Ashley?",
+          "output": "grandson",
+          "predict_certificate": "no-relation",
+          "predict_conf_thresh_verbalized": "uncle",
+          "predict_conf_thresh_sc_margin": "uncle",
+          "predict_conf_thresh_ptrue": "uncle",
+          "predict_conf_thresh_negent": "uncle",
+          "predict_commit_argmax": "uncle",
+          "predict_queryside_verifier": "uncle",
+          "predict_queryside_selfverify": "uncle",
+          "predict_verifier_as_signal": "uncle",
+          "metadata_pool": "clutrr",
+          "metadata_slice": "clutrr",
+          "metadata_reader": "gemini",
+          "metadata_is_absent": false,
+          "metadata_stratum": "ordinary_deduction",
+          "metadata_doc_id": "0f226f4d-dc2d-4051-a875-9e555ecf0f22",
+          "metadata_qsrc": "Ashley",
+          "metadata_qtgt": "Michael",
+          "metadata_gold": "grandson",
+          "metadata_gold_primitive": null,
+          "metadata_raw_named": true,
+          "metadata_raw_answer": "uncle",
+          "metadata_conf_verbalized": 0.9,
+          "metadata_conf_sc_margin": 1.0,
+          "metadata_conf_ptrue": 0.0,
+          "metadata_conf_negent": 1.0,
+          "metadata_verifier_related": "RELATED",
+          "metadata_verifier_confidence": 1.0,
+          "metadata_p_related": 1.0,
+          "metadata_selfverify_verdict": "TRUE",
+          "metadata_conf_queryside_selfverify": 0.95,
+          "metadata_order_index": 1
+        },
+        {
+          "input": "Heidi went to her brother Kevin's birthday party Ashley and her granddaughter Heidi prepared dinner as a family  || Q: what is Kevin to Ashley?",
+          "output": "grandson",
+          "predict_certificate": "grandson",
+          "predict_conf_thresh_verbalized": "grandson",
+          "predict_conf_thresh_sc_margin": "grandson",
+          "predict_conf_thresh_ptrue": "grandson",
+          "predict_conf_thresh_negent": "grandson",
+          "predict_commit_argmax": "grandson",
+          "predict_queryside_verifier": "grandson",
+          "predict_queryside_selfverify": "grandson",
+          "predict_verifier_as_signal": "grandson",
+          "metadata_pool": "clutrr",
+          "metadata_slice": "clutrr",
+          "metadata_reader": "gemini",
+          "metadata_is_absent": false,
+          "metadata_stratum": "ordinary_deduction",
+          "metadata_doc_id": "162070fb-1a46-44f2-91e5-50f8cc99daf3",
+          "metadata_qsrc": "Ashley",
+          "metadata_qtgt": "Kevin",
+          "metadata_gold": "grandson",
+          "metadata_gold_primitive": null,
+          "metadata_raw_named": true,
+          "metadata_raw_answer": "grandson",
+          "metadata_conf_verbalized": 1.0,
+          "metadata_conf_sc_margin": 1.0,
+          "metadata_conf_ptrue": 1.0,
+          "metadata_conf_negent": 1.0,
+          "metadata_verifier_related": "RELATED",
+          "metadata_verifier_confidence": 1.0,
+          "metadata_p_related": 1.0,
+          "metadata_selfverify_verdict": "TRUE",
+          "metadata_conf_queryside_selfverify": 1.0,
+          "metadata_order_index": 2
+        }
+      ]
+    },
+    {
+      "dataset": "clutrr_absent",
+      "examples": [
+        {
+          "input": "Rebecca invited her daughter-in-law Amanda to her birthday party. Stephen is his grandfather, Willie's favorite person Jerry took his son Willie to see his sister Patricia  || Q: what is Rebecca to Pa...",
+          "output": "no-relation",
+          "predict_certificate": "no-relation",
+          "predict_conf_thresh_verbalized": "ABSTAIN",
+          "predict_conf_thresh_sc_margin": "ABSTAIN",
+          "predict_conf_thresh_ptrue": "ABSTAIN",
+          "predict_conf_thresh_negent": "ABSTAIN",
+          "predict_commit_argmax": "ABSTAIN",
+          "predict_queryside_verifier": "no-relation",
+          "predict_queryside_selfverify": "no-relation",
+          "predict_verifier_as_signal": "no-relation",
+          "metadata_pool": "clutrr",
+          "metadata_slice": "clutrr",
+          "metadata_reader": "gemini",
+          "metadata_is_absent": true,
+          "metadata_stratum": "no_derivation",
+          "metadata_doc_id": "00255bf0-6440-4796-940a-5d7011062ffe",
+          "metadata_qsrc": "Patricia",
+          "metadata_qtgt": "Rebecca",
+          "metadata_gold": "no-relation",
+          "metadata_gold_primitive": null,
+          "metadata_raw_named": false,
+          "metadata_raw_answer": null,
+          "metadata_conf_verbalized": 1.0,
+          "metadata_conf_sc_margin": 1.0,
+          "metadata_conf_ptrue": 1.0,
+          "metadata_conf_negent": 1.0,
+          "metadata_verifier_related": "UNRELATED",
+          "metadata_verifier_confidence": 0.9,
+          "metadata_p_related": 0.09999999999999998,
+          "metadata_selfverify_verdict": "NA",
+          "metadata_conf_queryside_selfverify": 0.5,
+          "metadata_order_index": 73
+        },
+        {
+          "input": "Rebecca invited her daughter-in-law Amanda to her birthday party. Stephen is his grandfather, Willie's favorite person Jerry took his son Willie to see his sister Patricia  || Q: what is Amanda to Pat...",
+          "output": "no-relation",
+          "predict_certificate": "no-relation",
+          "predict_conf_thresh_verbalized": "ABSTAIN",
+          "predict_conf_thresh_sc_margin": "ABSTAIN",
+          "predict_conf_thresh_ptrue": "ABSTAIN",
+          "predict_conf_thresh_negent": "ABSTAIN",
+          "predict_commit_argmax": "ABSTAIN",
+          "predict_queryside_verifier": "no-relation",
+          "predict_queryside_selfverify": "no-relation",
+          "predict_verifier_as_signal": "no-relation",
+          "metadata_pool": "clutrr",
+          "metadata_slice": "clutrr",
+          "metadata_reader": "gemini",
+          "metadata_is_absent": true,
+          "metadata_stratum": "no_derivation",
+          "metadata_doc_id": "00255bf0-6440-4796-940a-5d7011062ffe",
+          "metadata_qsrc": "Patricia",
+          "metadata_qtgt": "Amanda",
+          "metadata_gold": "no-relation",
+          "metadata_gold_primitive": null,
+          "metadata_raw_named": false,
+          "metadata_raw_answer": null,
+          "metadata_conf_verbalized": 1.0,
+          "metadata_conf_sc_margin": 1.0,
+          "metadata_conf_ptrue": 1.0,
+          "metadata_conf_negent": 1.0,
+          "metadata_verifier_related": "UNRELATED",
+          "metadata_verifier_confidence": 0.9,
+          "metadata_p_related": 0.09999999999999998,
+          "metadata_selfverify_verdict": "NA",
+          "metadata_conf_queryside_selfverify": 0.5,
+          "metadata_order_index": 74
+        },
+        {
+          "input": "Rebecca invited her daughter-in-law Amanda to her birthday party. Stephen is his grandfather, Willie's favorite person Jerry took his son Willie to see his sister Patricia  || Q: what is Rebecca to Je...",
+          "output": "no-relation",
+          "predict_certificate": "no-relation",
+          "predict_conf_thresh_verbalized": "ABSTAIN",
+          "predict_conf_thresh_sc_margin": "ABSTAIN",
+          "predict_conf_thresh_ptrue": "ABSTAIN",
+          "predict_conf_thresh_negent": "ABSTAIN",
+          "predict_commit_argmax": "ABSTAIN",
+          "predict_queryside_verifier": "no-relation",
+          "predict_queryside_selfverify": "no-relation",
+          "predict_verifier_as_signal": "no-relation",
+          "metadata_pool": "clutrr",
+          "metadata_slice": "clutrr",
+          "metadata_reader": "gemini",
+          "metadata_is_absent": true,
+          "metadata_stratum": "no_derivation",
+          "metadata_doc_id": "00255bf0-6440-4796-940a-5d7011062ffe",
+          "metadata_qsrc": "Jerry",
+          "metadata_qtgt": "Rebecca",
+          "metadata_gold": "no-relation",
+          "metadata_gold_primitive": null,
+          "metadata_raw_named": false,
+          "metadata_raw_answer": null,
+          "metadata_conf_verbalized": 1.0,
+          "metadata_conf_sc_margin": 1.0,
+          "metadata_conf_ptrue": 1.0,
+          "metadata_conf_negent": 1.0,
+          "metadata_verifier_related": "UNRELATED",
+          "metadata_verifier_confidence": 1.0,
+          "metadata_p_related": 0.0,
+          "metadata_selfverify_verdict": "NA",
+          "metadata_conf_queryside_selfverify": 0.5,
+          "metadata_order_index": 75
+        }
+      ]
+    },
+    {
+      "dataset": "redocred_present",
+      "examples": [
+        {
+          "input": "Mário Cravo Neto (Salvador, April 20, 1947 — Salvador, August 9, 2009) was a Brazilian photographer, sculptor and draughtsman. Mário Cravo, son of the sculptor Mário Cravo Júnior, is considered one of...",
+          "output": "grandfather",
+          "predict_certificate": "grandson",
+          "predict_conf_thresh_verbalized": "grandfather",
+          "predict_conf_thresh_sc_margin": "grandfather",
+          "predict_conf_thresh_ptrue": "grandfather",
+          "predict_conf_thresh_negent": "grandfather",
+          "predict_commit_argmax": "grandfather",
+          "predict_queryside_verifier": "grandfather",
+          "predict_queryside_selfverify": "grandfather",
+          "predict_verifier_as_signal": "grandfather",
+          "metadata_pool": "redocred",
+          "metadata_slice": "re-docred",
+          "metadata_reader": "gemini",
+          "metadata_is_absent": false,
+          "metadata_stratum": "deduction_required",
+          "metadata_doc_id": "re-docred::Mário Cravo Neto",
+          "metadata_qsrc": "Christian Cravo",
+          "metadata_qtgt": "Mário Cravo Júnior",
+          "metadata_gold": "grandfather",
+          "metadata_gold_primitive": "inv-grand",
+          "metadata_raw_named": true,
+          "metadata_raw_answer": "grandfather",
+          "metadata_conf_verbalized": 1.0,
+          "metadata_conf_sc_margin": 1.0,
+          "metadata_conf_ptrue": 1.0,
+          "metadata_conf_negent": 1.0,
+          "metadata_verifier_related": "RELATED",
+          "metadata_verifier_confidence": 1.0,
+          "metadata_p_related": 1.0,
+          "metadata_selfverify_verdict": "TRUE",
+          "metadata_conf_queryside_selfverify": 1.0,
+          "metadata_order_index": 0
+        },
+        {
+          "input": "Joe Garagiola Jr. (born 1952) is the senior vice president of standards and on-field operations for Major League Baseball. He was previously senior vice president of baseball operations, and before th...",
+          "output": "brother",
+          "predict_certificate": "no-relation",
+          "predict_conf_thresh_verbalized": "father",
+          "predict_conf_thresh_sc_margin": "father",
+          "predict_conf_thresh_ptrue": "father",
+          "predict_conf_thresh_negent": "father",
+          "predict_commit_argmax": "father",
+          "predict_queryside_verifier": "father",
+          "predict_queryside_selfverify": "father",
+          "predict_verifier_as_signal": "father",
+          "metadata_pool": "redocred",
+          "metadata_slice": "re-docred",
+          "metadata_reader": "gemini",
+          "metadata_is_absent": false,
+          "metadata_stratum": "deduction_required",
+          "metadata_doc_id": "re-docred::Joe Garagiola Jr.",
+          "metadata_qsrc": "Joe Garagiola Jr.",
+          "metadata_qtgt": "Garagiola",
+          "metadata_gold": "brother",
+          "metadata_gold_primitive": "sibling",
+          "metadata_raw_named": true,
+          "metadata_raw_answer": "father",
+          "metadata_conf_verbalized": 1.0,
+          "metadata_conf_sc_margin": 1.0,
+          "metadata_conf_ptrue": 1.0,
+          "metadata_conf_negent": 1.0,
+          "metadata_verifier_related": "RELATED",
+          "metadata_verifier_confidence": 1.0,
+          "metadata_p_related": 1.0,
+          "metadata_selfverify_verdict": "TRUE",
+          "metadata_conf_queryside_selfverify": 1.0,
+          "metadata_order_index": 1
+        },
+        {
+          "input": "Paul MacDermid (born April 14, 1963 in Chesley, Ontario) is a retired professional ice hockey right winger who played 690 games in the National Hockey League (NHL) for the Hartford Whalers, Winnipeg J...",
+          "output": "brother",
+          "predict_certificate": "brother",
+          "predict_conf_thresh_verbalized": "brother",
+          "predict_conf_thresh_sc_margin": "brother",
+          "predict_conf_thresh_ptrue": "brother",
+          "predict_conf_thresh_negent": "brother",
+          "predict_commit_argmax": "brother",
+          "predict_queryside_verifier": "brother",
+          "predict_queryside_selfverify": "brother",
+          "predict_verifier_as_signal": "brother",
+          "metadata_pool": "redocred",
+          "metadata_slice": "re-docred",
+          "metadata_reader": "gemini",
+          "metadata_is_absent": false,
+          "metadata_stratum": "deduction_required",
+          "metadata_doc_id": "re-docred::Paul MacDermid",
+          "metadata_qsrc": "Kurtis",
+          "metadata_qtgt": "Lane",
+          "metadata_gold": "brother",
+          "metadata_gold_primitive": "sibling",
+          "metadata_raw_named": true,
+          "metadata_raw_answer": "brother",
+          "metadata_conf_verbalized": 1.0,
+          "metadata_conf_sc_margin": 1.0,
+          "metadata_conf_ptrue": 1.0,
+          "metadata_conf_negent": 1.0,
+          "metadata_verifier_related": "RELATED",
+          "metadata_verifier_confidence": 1.0,
+          "metadata_p_related": 1.0,
+          "metadata_selfverify_verdict": "TRUE",
+          "metadata_conf_queryside_selfverify": 1.0,
+          "metadata_order_index": 8
+        }
+      ]
+    }
+  ]
+}

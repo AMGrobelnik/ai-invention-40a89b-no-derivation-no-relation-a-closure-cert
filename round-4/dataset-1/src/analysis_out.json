@@ -1,0 +1,253 @@
+{
+ "prevalence_table": [
+  {
+   "corpus": "SpaRP-PS1",
+   "is_templated": true,
+   "is_natural_text": false,
+   "n_scenes": 2316,
+   "n_evaluable_queries": 2316,
+   "frac_deduction_required": 0.4983,
+   "frac_ge2_edge_disjoint_paths": 0.5592,
+   "n_genuine_multipath_with_bite": 316,
+   "frac_bite_of_all_queries": 0.1364,
+   "frac_bite_of_deduction_required": 0.2738,
+   "applicability_band_(on_deduction_required)": "general (>=10%)",
+   "n_bite_tight": 316,
+   "frac_bite_tight_of_deduction_required": 0.2738,
+   "band_tight_(on_deduction_required)": "general (>=10%)",
+   "frac_connected": 1.0,
+   "mean_hop_length": 1.674,
+   "median_hop_length": 1.0,
+   "mean_cyclomatic_number": 0.812,
+   "frac_hop_ge3_or_cyclic": 0.718,
+   "doc_char_len_mean": 472.1,
+   "doc_char_len_median": 464,
+   "doc_char_len_max": 1170,
+   "frac_reaching_3000_char_target": 0.0,
+   "role": "standardized"
+  },
+  {
+   "corpus": "SpaRP-PS2",
+   "is_templated": true,
+   "is_natural_text": false,
+   "n_scenes": 15000,
+   "n_evaluable_queries": 15000,
+   "frac_deduction_required": 0.5945,
+   "frac_ge2_edge_disjoint_paths": 0.1329,
+   "n_genuine_multipath_with_bite": 926,
+   "frac_bite_of_all_queries": 0.0617,
+   "frac_bite_of_deduction_required": 0.1038,
+   "applicability_band_(on_deduction_required)": "general (>=10%)",
+   "n_bite_tight": 77,
+   "frac_bite_tight_of_deduction_required": 0.0086,
+   "band_tight_(on_deduction_required)": "niche (<5%)",
+   "frac_connected": 1.0,
+   "mean_hop_length": 2.463,
+   "median_hop_length": 2.0,
+   "mean_cyclomatic_number": 0.133,
+   "frac_hop_ge3_or_cyclic": 0.4793,
+   "doc_char_len_mean": 471.5,
+   "doc_char_len_median": 489,
+   "doc_char_len_max": 1191,
+   "frac_reaching_3000_char_target": 0.0,
+   "role": "evaluated_extra"
+  },
+  {
+   "corpus": "SpartQA-Human",
+   "is_templated": false,
+   "is_natural_text": true,
+   "n_scenes": 68,
+   "n_evaluable_queries": 3613,
+   "frac_deduction_required": 1.0,
+   "frac_ge2_edge_disjoint_paths": 0.0529,
+   "n_genuine_multipath_with_bite": 191,
+   "frac_bite_of_all_queries": 0.0529,
+   "frac_bite_of_deduction_required": 0.0529,
+   "applicability_band_(on_deduction_required)": "useful_module (5-10%)",
+   "n_bite_tight": 162,
+   "frac_bite_tight_of_deduction_required": 0.0448,
+   "band_tight_(on_deduction_required)": "niche (<5%)",
+   "frac_connected": 1.0,
+   "mean_hop_length": 3.656,
+   "median_hop_length": 3,
+   "mean_cyclomatic_number": 0.083,
+   "frac_hop_ge3_or_cyclic": 0.7711,
+   "doc_char_len_mean": 563.0,
+   "doc_char_len_median": 569,
+   "doc_char_len_max": 950,
+   "frac_reaching_3000_char_target": 0.0,
+   "role": "standardized"
+  },
+  {
+   "corpus": "StepGame-clean",
+   "is_templated": true,
+   "is_natural_text": false,
+   "n_scenes": 2500,
+   "n_evaluable_queries": 2500,
+   "frac_deduction_required": 0.4336,
+   "frac_ge2_edge_disjoint_paths": 0.0,
+   "n_genuine_multipath_with_bite": 0,
+   "frac_bite_of_all_queries": 0.0,
+   "frac_bite_of_deduction_required": 0.0,
+   "applicability_band_(on_deduction_required)": "niche (<5%)",
+   "n_bite_tight": 0,
+   "frac_bite_tight_of_deduction_required": 0.0,
+   "band_tight_(on_deduction_required)": "niche (<5%)",
+   "frac_connected": 0.9892,
+   "mean_hop_length": 1.693,
+   "median_hop_length": 1,
+   "mean_cyclomatic_number": 0,
+   "frac_hop_ge3_or_cyclic": 0.1808,
+   "doc_char_len_mean": 130.0,
+   "doc_char_len_median": 127,
+   "doc_char_len_max": 347,
+   "frac_reaching_3000_char_target": 0.0,
+   "role": "standardized"
+  },
+  {
+   "corpus": "SpartQA-Auto",
+   "is_templated": true,
+   "is_natural_text": false,
+   "n_scenes": 3148,
+   "n_evaluable_queries": 68365,
+   "frac_deduction_required": 1.0,
+   "frac_ge2_edge_disjoint_paths": 0.035,
+   "n_genuine_multipath_with_bite": 2395,
+   "frac_bite_of_all_queries": 0.035,
+   "frac_bite_of_deduction_required": 0.035,
+   "applicability_band_(on_deduction_required)": "niche (<5%)",
+   "n_bite_tight": 2395,
+   "frac_bite_tight_of_deduction_required": 0.035,
+   "band_tight_(on_deduction_required)": "niche (<5%)",
+   "frac_connected": 1.0,
+   "mean_hop_length": 2.71,
+   "median_hop_length": 3,
+   "mean_cyclomatic_number": 0.047,
+   "frac_hop_ge3_or_cyclic": 0.6206,
+   "doc_char_len_mean": 535.5,
+   "doc_char_len_median": 503,
+   "doc_char_len_max": 1338,
+   "frac_reaching_3000_char_target": 0.0,
+   "role": "evaluated_extra"
+  },
+  {
+   "corpus": "ReSQ",
+   "is_templated": false,
+   "is_natural_text": true,
+   "n_scenes": 499,
+   "n_evaluable_queries": 1951,
+   "frac_deduction_required": 1.0,
+   "frac_ge2_edge_disjoint_paths": 0.0,
+   "n_genuine_multipath_with_bite": 0,
+   "frac_bite_of_all_queries": 0.0,
+   "frac_bite_of_deduction_required": 0.0,
+   "applicability_band_(on_deduction_required)": "niche (<5%)",
+   "n_bite_tight": 0,
+   "frac_bite_tight_of_deduction_required": 0.0,
+   "band_tight_(on_deduction_required)": "niche (<5%)",
+   "frac_connected": 0.0,
+   "mean_hop_length": null,
+   "median_hop_length": null,
+   "mean_cyclomatic_number": 0,
+   "frac_hop_ge3_or_cyclic": 0.0,
+   "doc_char_len_mean": 183.8,
+   "doc_char_len_median": 170,
+   "doc_char_len_max": 693,
+   "frac_reaching_3000_char_target": 0.0,
+   "role": "standardized"
+  }
+ ],
+ "emission_counts": {
+  "SpaRP-PS1": {
+   "n_full_population": 2316,
+   "n_emitted": 2316
+  },
+  "SpartQA-Human": {
+   "n_full_population": 3613,
+   "n_emitted": 1600
+  },
+  "StepGame-clean": {
+   "n_full_population": 2500,
+   "n_emitted": 1500
+  },
+  "ReSQ": {
+   "n_full_population": 1951,
+   "n_emitted": 1951
+  }
+ },
+ "relation_vocab_ledger": {
+  "rcc8_tokens": {
+   "in": 15047,
+   "ntpp": 6827,
+   "ntppi": 4712,
+   "touching the bottom edge of": 2556,
+   "tppi": 2316,
+   "tpp": 2196,
+   "ec": 1755,
+   "dc": 750,
+   "touching the right edge of": 631,
+   "touching": 92,
+   "touching the left edge of": 47,
+   "touching the top edge of": 42,
+   "po": 33
+  },
+  "cardinal_direction_tokens": {
+   "below": 69794,
+   "above": 62999,
+   "right": 60829,
+   "left": 59779
+  },
+  "distance_tokens": {
+   "near to": 833,
+   "near": 575,
+   "far": 473,
+   "far from": 140
+  },
+  "depth_out_of_cdc_tokens": {
+   "front": 493,
+   "behind": 367
+  },
+  "unmapped_tokens": {},
+  "stepgame_tokeniser_coverage": {
+   "tokenised": 7101,
+   "raw_sentence_only": 356
+  },
+  "per_corpus_edge_algebra_counts": {
+   "SpaRP-PS1": {
+    "rcc8": 17078,
+    "cardinal_direction": 6500,
+    "mixed": 1070,
+    "unmapped": 0,
+    "n_edges": 24648
+   },
+   "SpaRP-PS2": {
+    "rcc8": 0,
+    "cardinal_direction": 161979,
+    "mixed": 0,
+    "unmapped": 0,
+    "n_edges": 161979
+   },
+   "StepGame-clean": {
+    "rcc8": 0,
+    "cardinal_direction": 7457,
+    "mixed": 0,
+    "unmapped": 0,
+    "n_edges": 7457
+   },
+   "SpartQA-Auto": {
+    "rcc8": 18340,
+    "cardinal_direction": 17362,
+    "mixed": 75,
+    "unmapped": 0,
+    "n_edges": 35777
+   },
+   "SpartQA-Human": {
+    "rcc8": 441,
+    "cardinal_direction": 744,
+    "mixed": 0,
+    "unmapped": 0,
+    "n_edges": 1185
+   }
+  }
+ }
+}

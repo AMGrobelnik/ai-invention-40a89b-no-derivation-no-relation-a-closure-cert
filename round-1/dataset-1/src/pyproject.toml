@@ -1,0 +1,22 @@
+[project]
+name = "temporal-gold-graphs"
+version = "0.1.0"
+description = "Canonical fold-split gold temporal relation graphs (NarrativeTime, TDDMan, MATRES)"
+requires-python = ">=3.12"
+# Pinned to the EXACT versions installed in .venv (uv pip freeze) for reproducibility.
+dependencies = [
+    "loguru==0.7.3",
+    "networkx==3.6.1",
+    "lxml==6.1.1",
+    "beautifulsoup4==4.15.0",
+    "soupsieve==2.8.4",
+    "nltk==3.9.4",
+    "numpy==2.4.6",
+    "pandas==3.0.3",
+    "tqdm==4.68.3",
+    "click==8.4.1",
+    "joblib==1.5.3",
+    "regex==2026.5.9",
+    "python-dateutil==2.9.0.post0",
+    "six==1.17.0",
+]

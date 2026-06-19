@@ -1,0 +1,419 @@
+{
+  "metadata": {
+    "method_name": "Closure-Certified Composition -- Recall-Bite Frontier Pilot (T0)",
+    "description": "Maps the per-edge recall vs closure-singleton-resolution frontier across a >=5-setting breadth knob on three real temporal corpora + a synthetic clean battery, fixes the pre-registered LLM operating p...",
+    "config": {
+      "seed": 20260617,
+      "model": "google/gemini-3.1-flash-lite",
+      "model_fallbacks": [
+        "deepseek/deepseek-v3.2",
+        "deepseek/deepseek-v4-flash"
+      ],
+      "model_used": "google/gemini-3.1-flash-lite",
+      "temperature": 0.0,
+      "knobs": [
+        "S1_single",
+        "S2_confident",
+        "S3_plausible"
+      ],
+      "recall_gate_point": 0.9,
+      "recall_gate_allen": 0.85,
+      "applic_general": 0.1,
+      "applic_module": 0.05,
+      "budget_usd_soft": 2.0,
+      "budget_usd_hard": 9.0,
+      "n_edges_per_arm": {
+        "TBDense_dense": 240,
+        "TDDMan_noncirc": 240,
+        "MATRES_gate": 240,
+        "synthetic": 120
+      },
+      "n_triangles_per_arm": {
+        "TBDense_dense": 85,
+        "TDDMan_noncirc": 87,
+        "MATRES_gate": 88,
+        "synthetic": 51
+      },
+      "mini": false
+    },
+    "data_provenance": {
+      "TBDense_dense": "TimeBank-Dense (.tml TLINKs) -- NarrativeTime stand-in for pilot",
+      "TDDMan_noncirc": "TDDMan (manual >1-sentence pairs) + TimeBank-Dense .tml text join",
+      "MATRES_gate": "MATRES (qiangning EMNLP-19 XML, start-point convex point algebra)",
+      "synthetic": "scenario-then-abstract consistent QCNs"
+    },
+    "closure_tests_passed": true,
+    "closure_test_detail": {
+      "n_errors": 0,
+      "errors": [],
+      "allen_compose_cells": 169
+    },
+    "frontier_table": [
+      {
+        "arm": "TBDense_dense",
+        "algebra": "ALLEN",
+        "knob": "S1_single",
+        "recall": 0.5723684210526315,
+        "recall_ci95": [
+          0.4739808335868573,
+          0.6645285087719298
+        ],
+        "n_eval_edges": 152,
+        "breadth_mean": 1.0,
+        "breadth_median": 1.0,
+        "universal_rate": 0.0,
+        "unsound_rate": 0.4276315789473685,
+        "exact_correct_rate": 0.5723684210526315,
+        "sound_tight_rate": 0.0,
+        "sound_loose_rate": 0.0,
+        "overcommit_unsound_rate": 0.4276315789473684,
+        "rho_within_doc": 0.1282448661022259,
+        "_recall_mean": 0.5723684210526315,
+        "n_triangles": 85,
+        "collapse_rate": 0.17647058823529413,
+        "strict_tighten_rate": 0.17647058823529413,
+        "singleton_to_correct": 0.25882352941176473,
+        "n_deduction_triangles": 7,
+        "singleton_to_correct_DEDUCTION": 0.14285714285714285,
+        "singleton_to_correct_DEDUCTION_ci95": [
+          0.0,
+          0.3333333333333333
+        ],
+        "direct_read_singleton_to_correct_DEDUCTION": 0.14285714285714285,
+        "closure_minus_direct_DEDUCTION": 0.0,
+        "closure_gain_on_broad_deduction": NaN,
+        "n_broad_deduction": 0,
+        "J2_both_path_sound": 0.4,
+        "J3_all3_sound": 0.15,
+        "path_edge_recall": 0.5875,
+        "n_widen_events": 0
+      },
+      {
+        "arm": "TBDense_dense",
+        "algebra": "ALLEN",
+        "knob": "S2_confident",
+        "recall": 0.5986842105263158,
+        "recall_ci95": [
+          0.49655051844707015,
+          0.690815334326382
+        ],
+        "n_eval_edges": 152,
+        "breadth_mean": 1.05,
+        "breadth_median": 1.0,
+        "universal_rate": 0.004166666666666667,
+        "unsound_rate": 0.4013157894736842,
+        "exact_correct_rate": 0.5921052631578947,
+        "sound_tight_rate": 0.0,
+        "sound_loose_rate": 0.006578947368421052,
+        "overcommit_unsound_rate": 0.40131578947368424,
+        "rho_within_doc": 0.13056032411751084,
+        "_recall_mean": 0.5986842105263158,
+        "n_triangles": 85,
+        "collapse_rate": 0.16470588235294117,
+        "strict_tighten_rate": 0.16470588235294117,
+        "singleton_to_correct": 0.23529411764705882,
+        "n_deduction_triangles": 7,
+        "singleton_to_correct_DEDUCTION": 0.0,
+        "singleton_to_correct_DEDUCTION_ci95": [
+          0.0,
+          0.0
+        ],
+        "direct_read_singleton_to_correct_DEDUCTION": 0.14285714285714285,
+        "closure_minus_direct_DEDUCTION": -0.14285714285714285,
+        "closure_gain_on_broad_deduction": NaN,
+        "n_broad_deduction": 0,
+        "J2_both_path_sound": 0.45,
+        "J3_all3_sound": 0.15,
+        "path_edge_recall": 0.6375,
+        "n_widen_events": 0
+      },
+      {
+        "arm": "TBDense_dense",
+        "algebra": "ALLEN",
+        "knob": "S3_plausible",
+        "recall": 0.625,
+        "recall_ci95": [
+          0.5182230052856783,
+          0.7205012318262258
+        ],
+        "n_eval_edges": 152,
+        "breadth_mean": 1.9583333333333333,
+        "breadth_median": 1.0,
+        "universal_rate": 0.075,
+        "unsound_rate": 0.375,
+        "exact_correct_rate": 0.5723684210526315,
+        "sound_tight_rate": 0.02631578947368421,
+        "sound_loose_rate": 0.02631578947368421,
+        "overcommit_unsound_rate": 0.375,
+        "rho_within_doc": 0.1630629907821456,
+        "_recall_mean": 0.625,
+        "n_triangles": 85,
+        "collapse_rate": 0.08235294117647059,
+        "strict_tighten_rate": 0.10588235294117647,
+        "singleton_to_correct": 0.24705882352941178,
+        "n_deduction_triangles": 7,
+        "singleton_to_correct_DEDUCTION": 0.14285714285714285,
+        "singleton_to_correct_DEDUCTION_ci95": [
+          0.0,
+          0.3333333333333333
+        ],
+        "direct_read_singleton_to_correct_DEDUCTION": 0.14285714285714285,
+        "closure_minus_direct_DEDUCTION": 0.0,
+        "closure_gain_on_broad_deduction": NaN,
+        "n_broad_deduction": 0,
+        "J2_both_path_sound": 0.55,
+        "J3_all3_sound": 0.25,
+        "path_edge_recall": 0.675,
+        "n_widen_events": 0
+      }
+    ],
+    "breadth_monotone_increasing": {
+      "TBDense_dense": true,
+      "TDDMan_noncirc": true,
+      "MATRES_gate": true,
+      "synthetic": true
+    },
+    "selected_operating_point": {
+      "arm": "TBDense_dense",
+      "algebra": "ALLEN",
+      "knob": "S5_maximal",
+      "recall": 0.7960526315789473,
+      "recall_ci95": [
+        0.7184991039426524,
+        0.868434664246824
+      ],
+      "n_eval_edges": 152,
+      "breadth_mean": 5.4875,
+      "breadth_median": 1.0,
+      "universal_rate": 0.36666666666666664,
+      "unsound_rate": 0.20394736842105265,
+      "exact_correct_rate": 0.48026315789473684,
+      "sound_tight_rate": 0.039473684210526314,
+      "sound_loose_rate": 0.27631578947368424,
+      "overcommit_unsound_rate": 0.20394736842105263,
+      "rho_within_doc": 0.0778501057529899,
+      "_recall_mean": 0.7960526315789473,
+      "n_triangles": 85,
+      "collapse_rate": 0.011764705882352941,
+      "strict_tighten_rate": 0.023529411764705882,
+      "singleton_to_correct": 0.21176470588235294,
+      "n_deduction_triangles": 7,
+      "singleton_to_correct_DEDUCTION": 0.14285714285714285,
+      "singleton_to_correct_DEDUCTION_ci95": [
+        0.0,
+        0.3333333333333333
+      ],
+      "direct_read_singleton_to_correct_DEDUCTION": 0.14285714285714285,
+      "closure_minus_direct_DEDUCTION": 0.0,
+      "closure_gain_on_broad_deduction": 0.0,
+      "n_broad_deduction": 1,
+      "J2_both_path_sound": 0.675,
+      "J3_all3_sound": 0.4,
+      "path_edge_recall": 0.7875,
+      "n_widen_events": 0,
+      "below_recall_gate": true
+    },
+    "operating_point_is_gate_cleared": false,
+    "rho_selected": 0.10370222813572139,
+    "rho_knob": "S5_maximal",
+    "J_E": {
+      "2": 0.5501436781609196,
+      "3": 0.34367816091954023,
+      "r_path": 0.6926005747126437,
+      "indep_r2": 0.4796955560922843,
+      "indep_r3": 0.33223741783661737,
+      "note": "J(E) vs r_path^E over the SAME triangle path-edges: J(E) > r^E indicates positive within-document soundness correlation (sound reads cluster within a document)."
+    },
+    "deduction_required_fraction": {
+      "TBDense_dense": 0.039473684210526314,
+      "TDDMan_noncirc": 1.0,
+      "MATRES_gate": 0.0,
+      "synthetic": 0.5416666666666666
+    },
+    "bite_lost_point_vs_allen": {
+      "n": 13,
+      "allen_singleton_to_correct": 0.5384615384615384,
+      "point_singleton_to_correct": 0.5384615384615384,
+      "bite_lost": 0.0
+    },
+    "gate_validation": {
+      "matres_deduction_fraction": 0.0,
+      "matres_singleton_to_correct_DEDUCTION": 0.0,
+      "expected": "deduction_fraction ~ 0 and deduction-yield ~ 0 (near-empty by construction)",
+      "passed": true
+    },
+    "method_vs_baseline_deduction": {
+      "best_closure_singleton_to_correct_DEDUCTION": 0.1724137931034483,
+      "best_direct_read_singleton_to_correct_DEDUCTION": 0.1839080459770115,
+      "best_closure_minus_direct_DEDUCTION": 0.0,
+      "interpretation": "On real long-distance edges read with FULL-document context, iterated closure provides ~no net gain over the direct read (delta<=0): the direct read already uses global context and the path reads are ..."
+    },
+    "applicability_verdict": "NO-GO/NICHE",
+    "recall_gate_cleared": false,
+    "best_recall_gated_deduction_yield": null,
+    "synthetic": {
+      "clean_recall_by_knob": {
+        "S1_single": 0.9583333333333334,
+        "S2_confident": 0.9583333333333334,
+        "S3_plausible": 0.9583333333333334,
+        "S4_sound": 0.9583333333333334,
+        "S5_maximal": 0.9583333333333334
+      },
+      "closure_unit_tests_passed": true,
+      "tv_distance_error_types_real_vs_synth": 0.25087719298245614
+    },
+    "local_only_probe": {
+      "probe_knob": "S4_sound",
+      "n_structural_no_local_span": 0,
+      "n_local_probes": 30,
+      "local_singleton_correct": 0.26666666666666666,
+      "interpretation": "deduction-required edges that DO share a local span should rarely be pinned to the correct singleton from the local span alone; a low local_singleton_correct corroborates the sentdiff>1 proxy."
+    },
+    "cumulative_openrouter_usd": 0.0,
+    "n_llm_calls": 0,
+    "cache_hits": 4232,
+    "n_parse_fail": 0,
+    "n_api_errors": 0,
+    "figures": [
+      "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_1/gen_art/gen_art_experiment_3/results/figures/frontier.jpg",
+      "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_1/gen_art/gen_art_experiment_3/results/figures/breadth_vs_recall.jpg",
+      "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_1/gen_art/gen_art_experiment_3/results/figures/collapse_vs_knob.jpg"
+    ],
+    "elapsed_sec": 57.9,
+    "notes": "NO-GO/NICHE: no recall-gated knob reaches 5% deduction yield (recall and bite collide, or real reads stay near-universal). Recommend iter-2 demote real text to a niche safety-net and headline the synt..."
+  },
+  "datasets": [
+    {
+      "dataset": "TBDense_dense",
+      "examples": [
+        {
+          "input": "The Pentagon [[E1]]said[[/E1]] today it will [[E2]]re-examine[[/E2]] the question are the remains inside the Tomb of the Unknown from the Vietnam War, in fact, known ?\n\nCBS News first reported last ni...",
+          "output": "before",
+          "metadata_docid": "ea980120.1830.0456",
+          "metadata_algebra": "ALLEN",
+          "metadata_sentdiff": 0,
+          "metadata_deduction_required": false,
+          "predict_S1_single": "before",
+          "predict_S2_confident": "before",
+          "predict_S3_plausible": "before",
+          "predict_S4_sound": "before",
+          "predict_S5_maximal": "before"
+        },
+        {
+          "input": "The Pentagon said today it will [[E1]]re-examine[[/E1]] the question are the remains inside the Tomb of the Unknown from the Vietnam War, in fact, known ?\n\nCBS News first [[E2]]reported[[/E2]] last ni...",
+          "output": "after",
+          "metadata_docid": "ea980120.1830.0456",
+          "metadata_algebra": "ALLEN",
+          "metadata_sentdiff": 1,
+          "metadata_deduction_required": false,
+          "predict_S1_single": "after",
+          "predict_S2_confident": "after",
+          "predict_S3_plausible": "after",
+          "predict_S4_sound": "after",
+          "predict_S5_maximal": "after"
+        },
+        {
+          "input": "The Pentagon [[E2]]said[[/E2]] today it will re-examine the question are the remains inside the Tomb of the Unknown from the Vietnam War, in fact, known ?\n\nCBS News first [[E1]]reported[[/E1]] last ni...",
+          "output": "before",
+          "metadata_docid": "ea980120.1830.0456",
+          "metadata_algebra": "ALLEN",
+          "metadata_sentdiff": 1,
+          "metadata_deduction_required": false,
+          "predict_S1_single": "before",
+          "predict_S2_confident": "before",
+          "predict_S3_plausible": "before",
+          "predict_S4_sound": "before",
+          "predict_S5_maximal": "before"
+        }
+      ]
+    },
+    {
+      "dataset": "TDDMan_noncirc",
+      "examples": [
+        {
+          "input": "Live from Atalanta, good evening Lynne Russell, CNN headline news. New evidence is suggesting that a series of bombings in Atalanta and last month 's explosion at an Alabama women's clinic might be re...",
+          "output": "includes",
+          "metadata_docid": "CNN19980227.2130.0067",
+          "metadata_algebra": "ALLEN",
+          "metadata_sentdiff": 14,
+          "metadata_deduction_required": true,
+          "predict_S1_single": "after",
+          "predict_S2_confident": "after",
+          "predict_S3_plausible": "after",
+          "predict_S4_sound": "UNDERDETERMINED",
+          "predict_S5_maximal": "UNDERDETERMINED"
+        },
+        {
+          "input": "Live from Atalanta, good evening Lynne Russell, CNN headline news. New evidence is suggesting that a series of [[E1]]bombings[[/E1]] in Atalanta and last month 's explosion at an Alabama women's clini...",
+          "output": "before",
+          "metadata_docid": "CNN19980227.2130.0067",
+          "metadata_algebra": "ALLEN",
+          "metadata_sentdiff": 26,
+          "metadata_deduction_required": true,
+          "predict_S1_single": "before",
+          "predict_S2_confident": "before",
+          "predict_S3_plausible": "before",
+          "predict_S4_sound": "before",
+          "predict_S5_maximal": "before"
+        },
+        {
+          "input": "Live from Atalanta, good evening Lynne Russell, CNN headline news. New evidence is suggesting that a series of [[E1]]bombings[[/E1]] in Atalanta and last month 's explosion at an Alabama women's clini...",
+          "output": "is_included",
+          "metadata_docid": "CNN19980227.2130.0067",
+          "metadata_algebra": "ALLEN",
+          "metadata_sentdiff": 12,
+          "metadata_deduction_required": true,
+          "predict_S1_single": "before",
+          "predict_S2_confident": "before",
+          "predict_S3_plausible": "before",
+          "predict_S4_sound": "before",
+          "predict_S5_maximal": "before"
+        }
+      ]
+    },
+    {
+      "dataset": "MATRES_gate",
+      "examples": [
+        {
+          "input": "But in recent years , the market has [[E1]]moved[[/E1]] toward less expensive \" mini-component \" sets , miniaturized amplifiers and receivers and software players that could be stacked on top of each ...",
+          "output": "before",
+          "metadata_docid": "wsj_0583",
+          "metadata_algebra": "POINT",
+          "metadata_sentdiff": 1,
+          "metadata_deduction_required": false,
+          "predict_S1_single": "before",
+          "predict_S2_confident": "before",
+          "predict_S3_plausible": "before",
+          "predict_S4_sound": "before",
+          "predict_S5_maximal": "UNDERDETERMINED"
+        },
+        {
+          "input": "Some of Sansui 's fellow audio-specialty companies , such as Aiwa Co. and Pioneer Electric Corp. , responded to the challenge by quickly bringing out mini-component products of their own , by [[E1]]mo...",
+          "output": "before",
+          "metadata_docid": "wsj_0583",
+          "metadata_algebra": "POINT",
+          "metadata_sentdiff": 0,
+          "metadata_deduction_required": false,
+          "predict_S1_single": "simultaneous",
+          "predict_S2_confident": "simultaneous",
+          "predict_S3_plausible": "simultaneous",
+          "predict_S4_sound": "simultaneous",
+          "predict_S5_maximal": "simultaneous"
+        },
+        {
+          "input": "But in recent years , the market has [[E1]]moved[[/E1]] toward less expensive \" mini-component \" sets , miniaturized amplifiers and receivers and software players that could be stacked on top of each ...",
+          "output": "before",
+          "metadata_docid": "wsj_0583",
+          "metadata_algebra": "POINT",
+          "metadata_sentdiff": 1,
+          "metadata_deduction_required": false,
+          "predict_S1_single": "before",
+          "predict_S2_confident": "before",
+          "predict_S3_plausible": "before",
+          "predict_S4_sound": "before",
+          "predict_S5_maximal": "before"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+[project]
+name = "closure-certificate-natural-redocred"
+version = "1.0.0"
+description = "STEP-B (iter-7): closure certificate vs the 4-signal confidence battery on the NATURAL Re-DocRED/DocRED absent-relation kinship corpus. Reuses iter-6 readers/kinship/baselines/stats/llm/prolog verbatim; new code = natural-corpus loader + entity grounding + primitive-level scoring + natural-prose atomic P/R + certificate-abstention decomposition + pre-registered FORK verdict (CONFIRM-HEADLINE vs EXTRACTION-LIMITED-BOUNDARY)."
+requires-python = ">=3.12"
+dependencies = [
+    "numpy==2.4.6",
+    "scipy==1.17.1",
+    "httpx==0.28.1",
+    "loguru==0.7.3",
+    "jsonschema==4.26.0",
+]
+
+[tool.setuptools]
+py-modules = ["method", "dataio_redocred", "llm", "stats", "kinship", "readers", "baselines", "prolog", "tests"]

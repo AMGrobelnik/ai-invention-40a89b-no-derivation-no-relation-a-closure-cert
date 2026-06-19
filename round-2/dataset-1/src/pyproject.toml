@@ -1,0 +1,23 @@
+[project]
+name = "clutrr-kinship-gold-graphs"
+version = "1.0.0"
+description = "CLUTRR (Sinha et al. 2019) kinship gold graphs standardized to the exp_sel_data_out schema: per-story entity nodes + atomic typed kinship edges + held-out query edge + structural absent-relation pairs, with the canonical finite kinship composition table."
+requires-python = ">=3.12"
+# Direct dependencies (pinned to the exact versions installed in .venv).
+dependencies = [
+    "pandas==2.2.3",
+    "networkx==3.4.2",
+    "PyYAML==6.0.2",
+    "requests==2.32.3",
+    "loguru==0.7.3",
+    # transitive (pinned for full reproducibility)
+    "numpy==2.4.6",
+    "python-dateutil==2.9.0.post0",
+    "pytz==2026.2",
+    "tzdata==2026.2",
+    "six==1.17.0",
+    "urllib3==2.7.0",
+    "charset-normalizer==3.4.7",
+    "certifi==2026.6.17",
+    "idna==3.18",
+]

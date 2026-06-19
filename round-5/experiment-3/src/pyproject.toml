@@ -1,0 +1,16 @@
+[project]
+name = "closure-cert-3kchar-casestudy"
+version = "0.1.0"
+description = "Operational ~3000-char end-to-end case study: text -> atoms -> QCN closure -> SWI-Prolog trace-graph -> quantified hallucination reduction"
+requires-python = ">=3.12"
+dependencies = [
+    "httpx==0.28.1",
+    "loguru==0.7.3",
+    "numpy==2.4.6",
+    "scipy==1.17.1",
+    "matplotlib==3.11.0",
+    "jsonschema==4.26.0",
+]
+
+[tool.setuptools]
+py-modules = []

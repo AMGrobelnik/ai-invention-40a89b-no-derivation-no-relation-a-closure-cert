@@ -1,0 +1,1 @@
+qualreas algebra tables (Allen-13, convex Linear Point, RCC-8) copied from github.com/alreich/qualreas for self-contained engine reuse

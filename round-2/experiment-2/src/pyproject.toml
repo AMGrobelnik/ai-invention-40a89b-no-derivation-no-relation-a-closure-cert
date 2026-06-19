@@ -1,0 +1,10 @@
+[project]
+name = "realism-matched-synthetic-channel"
+version = "0.2.0"
+description = "Realism-matched synthetic reader channel: re-establish H3 / H4 / silent-wrong curve under a TV-calibrated breadth knob"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy==2.4.6",
+    "scipy==1.17.1",
+    "matplotlib==3.11.0",
+]

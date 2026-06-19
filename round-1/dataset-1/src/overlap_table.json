@@ -1,0 +1,3107 @@
+[
+  {
+    "norm_doc_id": "abc19980108.1830.0711",
+    "in_narrativetime": true,
+    "in_tddman": true,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 3,
+    "orig_ids": {
+      "narrativetime": "ABC19980108.1830.0711",
+      "tddman": "ABC19980108.1830.0711",
+      "matres": "ABC19980108.1830.0711"
+    }
+  },
+  {
+    "norm_doc_id": "abc19980114.1830.0611",
+    "in_narrativetime": true,
+    "in_tddman": true,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 3,
+    "orig_ids": {
+      "narrativetime": "ABC19980114.1830.0611",
+      "tddman": "ABC19980114.1830.0611",
+      "matres": "ABC19980114.1830.0611"
+    }
+  },
+  {
+    "norm_doc_id": "abc19980120.1830.0957",
+    "in_narrativetime": true,
+    "in_tddman": true,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 3,
+    "orig_ids": {
+      "narrativetime": "ABC19980120.1830.0957",
+      "tddman": "ABC19980120.1830.0957",
+      "matres": "ABC19980120.1830.0957"
+    }
+  },
+  {
+    "norm_doc_id": "abc19980304.1830.1636",
+    "in_narrativetime": true,
+    "in_tddman": true,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 3,
+    "orig_ids": {
+      "narrativetime": "ABC19980304.1830.1636",
+      "tddman": "ABC19980304.1830.1636",
+      "matres": "ABC19980304.1830.1636"
+    }
+  },
+  {
+    "norm_doc_id": "ap900815-0044",
+    "in_narrativetime": true,
+    "in_tddman": true,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 3,
+    "orig_ids": {
+      "narrativetime": "AP900815-0044",
+      "tddman": "AP900815-0044",
+      "matres": "AP900815-0044"
+    }
+  },
+  {
+    "norm_doc_id": "ap900816-0139",
+    "in_narrativetime": true,
+    "in_tddman": true,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 3,
+    "orig_ids": {
+      "narrativetime": "AP900816-0139",
+      "tddman": "AP900816-0139",
+      "matres": "AP900816-0139"
+    }
+  },
+  {
+    "norm_doc_id": "ap_20130322",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "AP_20130322"
+    }
+  },
+  {
+    "norm_doc_id": "apw19980213.1310",
+    "in_narrativetime": true,
+    "in_tddman": true,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 3,
+    "orig_ids": {
+      "narrativetime": "APW19980213.1310",
+      "tddman": "APW19980213.1310",
+      "matres": "APW19980213.1310"
+    }
+  },
+  {
+    "norm_doc_id": "apw19980213.1320",
+    "in_narrativetime": true,
+    "in_tddman": true,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 3,
+    "orig_ids": {
+      "narrativetime": "APW19980213.1320",
+      "tddman": "APW19980213.1320",
+      "matres": "APW19980213.1320"
+    }
+  },
+  {
+    "norm_doc_id": "apw19980213.1380",
+    "in_narrativetime": true,
+    "in_tddman": true,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 3,
+    "orig_ids": {
+      "narrativetime": "APW19980213.1380",
+      "tddman": "APW19980213.1380",
+      "matres": "APW19980213.1380"
+    }
+  },
+  {
+    "norm_doc_id": "apw19980219.0476",
+    "in_narrativetime": true,
+    "in_tddman": true,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 3,
+    "orig_ids": {
+      "narrativetime": "APW19980219.0476",
+      "tddman": "APW19980219.0476",
+      "matres": "APW19980219.0476"
+    }
+  },
+  {
+    "norm_doc_id": "apw19980227.0468",
+    "in_narrativetime": true,
+    "in_tddman": true,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 3,
+    "orig_ids": {
+      "narrativetime": "APW19980227.0468",
+      "tddman": "APW19980227.0468",
+      "matres": "APW19980227.0468"
+    }
+  },
+  {
+    "norm_doc_id": "apw19980227.0476",
+    "in_narrativetime": true,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 2,
+    "orig_ids": {
+      "narrativetime": "APW19980227.0476",
+      "matres": "APW19980227.0476"
+    }
+  },
+  {
+    "norm_doc_id": "apw19980227.0487",
+    "in_narrativetime": true,
+    "in_tddman": true,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 3,
+    "orig_ids": {
+      "narrativetime": "APW19980227.0487",
+      "tddman": "APW19980227.0487",
+      "matres": "APW19980227.0487"
+    }
+  },
+  {
+    "norm_doc_id": "apw19980227.0489",
+    "in_narrativetime": true,
+    "in_tddman": true,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 3,
+    "orig_ids": {
+      "narrativetime": "APW19980227.0489",
+      "tddman": "APW19980227.0489",
+      "matres": "APW19980227.0489"
+    }
+  },
+  {
+    "norm_doc_id": "apw19980227.0494",
+    "in_narrativetime": true,
+    "in_tddman": true,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 3,
+    "orig_ids": {
+      "narrativetime": "APW19980227.0494",
+      "tddman": "APW19980227.0494",
+      "matres": "APW19980227.0494"
+    }
+  },
+  {
+    "norm_doc_id": "apw19980301.0720",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW19980301.0720"
+    }
+  },
+  {
+    "norm_doc_id": "apw19980306.1001",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW19980306.1001"
+    }
+  },
+  {
+    "norm_doc_id": "apw19980308.0201",
+    "in_narrativetime": true,
+    "in_tddman": true,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 3,
+    "orig_ids": {
+      "narrativetime": "APW19980308.0201",
+      "tddman": "APW19980308.0201",
+      "matres": "APW19980308.0201"
+    }
+  },
+  {
+    "norm_doc_id": "apw19980322.0749",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW19980322.0749"
+    }
+  },
+  {
+    "norm_doc_id": "apw19980418.0210",
+    "in_narrativetime": true,
+    "in_tddman": true,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 3,
+    "orig_ids": {
+      "narrativetime": "APW19980418.0210",
+      "tddman": "APW19980418.0210",
+      "matres": "APW19980418.0210"
+    }
+  },
+  {
+    "norm_doc_id": "apw19980501.0480",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW19980501.0480"
+    }
+  },
+  {
+    "norm_doc_id": "apw19980626.0364",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW19980626.0364"
+    }
+  },
+  {
+    "norm_doc_id": "apw19980807.0261",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW19980807.0261"
+    }
+  },
+  {
+    "norm_doc_id": "apw19980808.0022",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW19980808.0022"
+    }
+  },
+  {
+    "norm_doc_id": "apw19980809.0700",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW19980809.0700"
+    }
+  },
+  {
+    "norm_doc_id": "apw19980810.0907",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW19980810.0907"
+    }
+  },
+  {
+    "norm_doc_id": "apw19980811.0474",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW19980811.0474"
+    }
+  },
+  {
+    "norm_doc_id": "apw19980813.1117",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW19980813.1117"
+    }
+  },
+  {
+    "norm_doc_id": "apw19980818.0515",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW19980818.0515"
+    }
+  },
+  {
+    "norm_doc_id": "apw19980820.1428",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW19980820.1428"
+    }
+  },
+  {
+    "norm_doc_id": "apw19980826.0389",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW19980826.0389"
+    }
+  },
+  {
+    "norm_doc_id": "apw19980911.0475",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW19980911.0475"
+    }
+  },
+  {
+    "norm_doc_id": "apw19980930.0425",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW19980930.0425"
+    }
+  },
+  {
+    "norm_doc_id": "apw19981205.0374",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW19981205.0374"
+    }
+  },
+  {
+    "norm_doc_id": "apw19990122.0193",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW19990122.0193"
+    }
+  },
+  {
+    "norm_doc_id": "apw19990206.0090",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW19990206.0090"
+    }
+  },
+  {
+    "norm_doc_id": "apw19990216.0198",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW19990216.0198"
+    }
+  },
+  {
+    "norm_doc_id": "apw19990312.0251",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW19990312.0251"
+    }
+  },
+  {
+    "norm_doc_id": "apw19990410.0123",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW19990410.0123"
+    }
+  },
+  {
+    "norm_doc_id": "apw19990506.0155",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW19990506.0155"
+    }
+  },
+  {
+    "norm_doc_id": "apw19990507.0207",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW19990507.0207"
+    }
+  },
+  {
+    "norm_doc_id": "apw19990607.0041",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW19990607.0041"
+    }
+  },
+  {
+    "norm_doc_id": "apw19991008.0151",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW19991008.0151"
+    }
+  },
+  {
+    "norm_doc_id": "apw19991008.0265",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW19991008.0265"
+    }
+  },
+  {
+    "norm_doc_id": "apw19991024.0075",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW19991024.0075"
+    }
+  },
+  {
+    "norm_doc_id": "apw199980817.1193",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW199980817.1193"
+    }
+  },
+  {
+    "norm_doc_id": "apw20000106.0064",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW20000106.0064"
+    }
+  },
+  {
+    "norm_doc_id": "apw20000107.0088",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW20000107.0088"
+    }
+  },
+  {
+    "norm_doc_id": "apw20000107.0318",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW20000107.0318"
+    }
+  },
+  {
+    "norm_doc_id": "apw20000115.0031",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW20000115.0031"
+    }
+  },
+  {
+    "norm_doc_id": "apw20000115.0209",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW20000115.0209"
+    }
+  },
+  {
+    "norm_doc_id": "apw20000124.0182",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW20000124.0182"
+    }
+  },
+  {
+    "norm_doc_id": "apw20000128.0316",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW20000128.0316"
+    }
+  },
+  {
+    "norm_doc_id": "apw20000210.0328",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW20000210.0328"
+    }
+  },
+  {
+    "norm_doc_id": "apw20000216.0193",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW20000216.0193"
+    }
+  },
+  {
+    "norm_doc_id": "apw20000216.0272",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW20000216.0272"
+    }
+  },
+  {
+    "norm_doc_id": "apw20000328.0257",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW20000328.0257"
+    }
+  },
+  {
+    "norm_doc_id": "apw20000401.0150",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW20000401.0150"
+    }
+  },
+  {
+    "norm_doc_id": "apw20000403.0057",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW20000403.0057"
+    }
+  },
+  {
+    "norm_doc_id": "apw20000405.0276",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW20000405.0276"
+    }
+  },
+  {
+    "norm_doc_id": "apw20000417.0031",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "APW20000417.0031"
+    }
+  },
+  {
+    "norm_doc_id": "bbc_20130322_1150",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "bbc_20130322_1150"
+    }
+  },
+  {
+    "norm_doc_id": "bbc_20130322_1353",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "bbc_20130322_1353"
+    }
+  },
+  {
+    "norm_doc_id": "bbc_20130322_1600",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "bbc_20130322_1600"
+    }
+  },
+  {
+    "norm_doc_id": "bbc_20130322_332",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "bbc_20130322_332"
+    }
+  },
+  {
+    "norm_doc_id": "bbc_20130322_721",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "bbc_20130322_721"
+    }
+  },
+  {
+    "norm_doc_id": "cnn19980126.1600.1104",
+    "in_narrativetime": true,
+    "in_tddman": true,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 3,
+    "orig_ids": {
+      "narrativetime": "CNN19980126.1600.1104",
+      "tddman": "CNN19980126.1600.1104",
+      "matres": "CNN19980126.1600.1104"
+    }
+  },
+  {
+    "norm_doc_id": "cnn19980213.2130.0155",
+    "in_narrativetime": true,
+    "in_tddman": true,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 3,
+    "orig_ids": {
+      "narrativetime": "CNN19980213.2130.0155",
+      "tddman": "CNN19980213.2130.0155",
+      "matres": "CNN19980213.2130.0155"
+    }
+  },
+  {
+    "norm_doc_id": "cnn19980222.1130.0084",
+    "in_narrativetime": true,
+    "in_tddman": true,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 3,
+    "orig_ids": {
+      "narrativetime": "CNN19980222.1130.0084",
+      "tddman": "CNN19980222.1130.0084",
+      "matres": "CNN19980222.1130.0084"
+    }
+  },
+  {
+    "norm_doc_id": "cnn19980223.1130.0960",
+    "in_narrativetime": true,
+    "in_tddman": true,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 3,
+    "orig_ids": {
+      "narrativetime": "CNN19980223.1130.0960",
+      "tddman": "CNN19980223.1130.0960",
+      "matres": "CNN19980223.1130.0960"
+    }
+  },
+  {
+    "norm_doc_id": "cnn19980227.2130.0067",
+    "in_narrativetime": true,
+    "in_tddman": true,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 3,
+    "orig_ids": {
+      "narrativetime": "CNN19980227.2130.0067",
+      "tddman": "CNN19980227.2130.0067",
+      "matres": "CNN19980227.2130.0067"
+    }
+  },
+  {
+    "norm_doc_id": "cnn_20130321_821",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "CNN_20130321_821"
+    }
+  },
+  {
+    "norm_doc_id": "cnn_20130322_1003",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "CNN_20130322_1003"
+    }
+  },
+  {
+    "norm_doc_id": "cnn_20130322_1243",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "CNN_20130322_1243"
+    }
+  },
+  {
+    "norm_doc_id": "cnn_20130322_248",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "CNN_20130322_248"
+    }
+  },
+  {
+    "norm_doc_id": "cnn_20130322_314",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "CNN_20130322_314"
+    }
+  },
+  {
+    "norm_doc_id": "ea980120.1830.0071",
+    "in_narrativetime": true,
+    "in_tddman": true,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 3,
+    "orig_ids": {
+      "narrativetime": "ea980120.1830.0071",
+      "tddman": "ea980120.1830.0071",
+      "matres": "ea980120.1830.0071"
+    }
+  },
+  {
+    "norm_doc_id": "ea980120.1830.0456",
+    "in_narrativetime": true,
+    "in_tddman": true,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 3,
+    "orig_ids": {
+      "narrativetime": "ea980120.1830.0456",
+      "tddman": "ea980120.1830.0456",
+      "matres": "ea980120.1830.0456"
+    }
+  },
+  {
+    "norm_doc_id": "ed980111.1130.0089",
+    "in_narrativetime": true,
+    "in_tddman": true,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 3,
+    "orig_ids": {
+      "narrativetime": "ed980111.1130.0089",
+      "tddman": "ed980111.1130.0089",
+      "matres": "ed980111.1130.0089"
+    }
+  },
+  {
+    "norm_doc_id": "nyt19980206.0460",
+    "in_narrativetime": true,
+    "in_tddman": true,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 3,
+    "orig_ids": {
+      "narrativetime": "NYT19980206.0460",
+      "tddman": "NYT19980206.0460",
+      "matres": "NYT19980206.0460"
+    }
+  },
+  {
+    "norm_doc_id": "nyt19980206.0466",
+    "in_narrativetime": true,
+    "in_tddman": true,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 3,
+    "orig_ids": {
+      "narrativetime": "NYT19980206.0466",
+      "tddman": "NYT19980206.0466",
+      "matres": "NYT19980206.0466"
+    }
+  },
+  {
+    "norm_doc_id": "nyt19980212.0019",
+    "in_narrativetime": true,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 2,
+    "orig_ids": {
+      "narrativetime": "NYT19980212.0019",
+      "matres": "NYT19980212.0019"
+    }
+  },
+  {
+    "norm_doc_id": "nyt19980402.0453",
+    "in_narrativetime": true,
+    "in_tddman": true,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 3,
+    "orig_ids": {
+      "narrativetime": "NYT19980402.0453",
+      "tddman": "NYT19980402.0453",
+      "matres": "NYT19980402.0453"
+    }
+  },
+  {
+    "norm_doc_id": "nyt19980424.0421",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "NYT19980424.0421"
+    }
+  },
+  {
+    "norm_doc_id": "nyt19980907.0112",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "NYT19980907.0112"
+    }
+  },
+  {
+    "norm_doc_id": "nyt19981025.0188",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "NYT19981025.0188"
+    }
+  },
+  {
+    "norm_doc_id": "nyt19981025.0216",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "NYT19981025.0216"
+    }
+  },
+  {
+    "norm_doc_id": "nyt19981026.0446",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "NYT19981026.0446"
+    }
+  },
+  {
+    "norm_doc_id": "nyt19981120.0362",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "NYT19981120.0362"
+    }
+  },
+  {
+    "norm_doc_id": "nyt19981121.0173",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "NYT19981121.0173"
+    }
+  },
+  {
+    "norm_doc_id": "nyt19990312.0271",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "NYT19990312.0271"
+    }
+  },
+  {
+    "norm_doc_id": "nyt19990419.0515",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "NYT19990419.0515"
+    }
+  },
+  {
+    "norm_doc_id": "nyt19990505.0443",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "NYT19990505.0443"
+    }
+  },
+  {
+    "norm_doc_id": "nyt20000105.0325",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "NYT20000105.0325"
+    }
+  },
+  {
+    "norm_doc_id": "nyt20000106.0007",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "NYT20000106.0007"
+    }
+  },
+  {
+    "norm_doc_id": "nyt20000113.0267",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "NYT20000113.0267"
+    }
+  },
+  {
+    "norm_doc_id": "nyt20000224.0173",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "NYT20000224.0173"
+    }
+  },
+  {
+    "norm_doc_id": "nyt20000329.0359",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "NYT20000329.0359"
+    }
+  },
+  {
+    "norm_doc_id": "nyt20000330.0406",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "NYT20000330.0406"
+    }
+  },
+  {
+    "norm_doc_id": "nyt20000403.0463",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "NYT20000403.0463"
+    }
+  },
+  {
+    "norm_doc_id": "nyt20000406.0002",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "NYT20000406.0002"
+    }
+  },
+  {
+    "norm_doc_id": "nyt20000414.0296",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "NYT20000414.0296"
+    }
+  },
+  {
+    "norm_doc_id": "nyt20000424.0319",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "NYT20000424.0319"
+    }
+  },
+  {
+    "norm_doc_id": "nyt20000601.0442",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "NYT20000601.0442"
+    }
+  },
+  {
+    "norm_doc_id": "nyt_20130321_china_pollution",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "nyt_20130321_china_pollution"
+    }
+  },
+  {
+    "norm_doc_id": "nyt_20130321_cyprus",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "nyt_20130321_cyprus"
+    }
+  },
+  {
+    "norm_doc_id": "nyt_20130321_sarcozy",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "nyt_20130321_sarcozy"
+    }
+  },
+  {
+    "norm_doc_id": "nyt_20130321_women_senate",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "nyt_20130321_women_senate"
+    }
+  },
+  {
+    "norm_doc_id": "nyt_20130322_strange_computer",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "nyt_20130322_strange_computer"
+    }
+  },
+  {
+    "norm_doc_id": "pri19980115.2000.0186",
+    "in_narrativetime": true,
+    "in_tddman": true,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 3,
+    "orig_ids": {
+      "narrativetime": "PRI19980115.2000.0186",
+      "tddman": "PRI19980115.2000.0186",
+      "matres": "PRI19980115.2000.0186"
+    }
+  },
+  {
+    "norm_doc_id": "pri19980121.2000.2591",
+    "in_narrativetime": true,
+    "in_tddman": true,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 3,
+    "orig_ids": {
+      "narrativetime": "PRI19980121.2000.2591",
+      "tddman": "PRI19980121.2000.2591",
+      "matres": "PRI19980121.2000.2591"
+    }
+  },
+  {
+    "norm_doc_id": "pri19980205.2000.1890",
+    "in_narrativetime": true,
+    "in_tddman": true,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 3,
+    "orig_ids": {
+      "narrativetime": "PRI19980205.2000.1890",
+      "tddman": "PRI19980205.2000.1890",
+      "matres": "PRI19980205.2000.1890"
+    }
+  },
+  {
+    "norm_doc_id": "pri19980205.2000.1998",
+    "in_narrativetime": true,
+    "in_tddman": true,
+    "in_matres": false,
+    "in_timebank_dense": false,
+    "n_corpora": 2,
+    "orig_ids": {
+      "narrativetime": "PRI19980205.2000.1998",
+      "tddman": "PRI19980205.2000.1998"
+    }
+  },
+  {
+    "norm_doc_id": "pri19980213.2000.0313",
+    "in_narrativetime": true,
+    "in_tddman": true,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 3,
+    "orig_ids": {
+      "narrativetime": "PRI19980213.2000.0313",
+      "tddman": "PRI19980213.2000.0313",
+      "matres": "PRI19980213.2000.0313"
+    }
+  },
+  {
+    "norm_doc_id": "pri19980216.2000.0170",
+    "in_narrativetime": true,
+    "in_tddman": true,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 3,
+    "orig_ids": {
+      "narrativetime": "PRI19980216.2000.0170",
+      "tddman": "PRI19980216.2000.0170",
+      "matres": "PRI19980216.2000.0170"
+    }
+  },
+  {
+    "norm_doc_id": "pri19980303.2000.2550",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "PRI19980303.2000.2550"
+    }
+  },
+  {
+    "norm_doc_id": "pri19980306.2000.1675",
+    "in_narrativetime": true,
+    "in_tddman": true,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 3,
+    "orig_ids": {
+      "narrativetime": "PRI19980306.2000.1675",
+      "tddman": "PRI19980306.2000.1675",
+      "matres": "PRI19980306.2000.1675"
+    }
+  },
+  {
+    "norm_doc_id": "sjmn91-06338157",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "SJMN91-06338157"
+    }
+  },
+  {
+    "norm_doc_id": "voa19980303.1600.0917",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "VOA19980303.1600.0917"
+    }
+  },
+  {
+    "norm_doc_id": "voa19980303.1600.2745",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "VOA19980303.1600.2745"
+    }
+  },
+  {
+    "norm_doc_id": "voa19980305.1800.2603",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "VOA19980305.1800.2603"
+    }
+  },
+  {
+    "norm_doc_id": "voa19980331.1700.1533",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "VOA19980331.1700.1533"
+    }
+  },
+  {
+    "norm_doc_id": "voa19980501.1800.0355",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "VOA19980501.1800.0355"
+    }
+  },
+  {
+    "norm_doc_id": "wsj900813-0157",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "WSJ900813-0157"
+    }
+  },
+  {
+    "norm_doc_id": "wsj910225-0066",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "WSJ910225-0066"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0006",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0006"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0026",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0026"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0027",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0027"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0032",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0032"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0068",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0068"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0073",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0073"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0106",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0106"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0122",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0122"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0124",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0124"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0127",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0127"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0132",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0132"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0135",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0135"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0136",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0136"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0144",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0144"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0150",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0150"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0151",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0151"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0152",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0152"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0157",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0157"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0158",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0158"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0159",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0159"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0160",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0160"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0161",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0161"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0165",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0165"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0167",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0167"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0168",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0168"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0169",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0169"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0171",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0171"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0172",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0172"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0173",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0173"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0175",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0175"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0176",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0176"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0184",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0184"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0187",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0187"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0189",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0189"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0263",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0263"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0266",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0266"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0292",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0292"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0313",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0313"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0316",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0316"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0321",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0321"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0324",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0324"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0325",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0325"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0329",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0329"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0332",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0332"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0340",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0340"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0344",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0344"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0346",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0346"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0348",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0348"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0356",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0356"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0376",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0376"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0471",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0471"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0505",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0505"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0520",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0520"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0527",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0527"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0533",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0533"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0534",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0534"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0541",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0541"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0542",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0542"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0551",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0551"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0555",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0555"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0557",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0557"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0558",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0558"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0568",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0568"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0570",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0570"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0575",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0575"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0583",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0583"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0584",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0584"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0585",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0585"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0586",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0586"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0610",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0610"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0612",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0612"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0637",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0637"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0650",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0650"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0660",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0660"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0661",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0661"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0662",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0662"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0667",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0667"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0670",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0670"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0674",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0674"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0675",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0675"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0679",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0679"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0685",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0685"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0695",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0695"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0706",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0706"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0709",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0709"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0713",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0713"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0736",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0736"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0745",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0745"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0751",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0751"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0752",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0752"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0760",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0760"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0762",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0762"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0768",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0768"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0778",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0778"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0781",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0781"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0786",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0786"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0791",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0791"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0798",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0798"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0805",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0805"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0806",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0806"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0810",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0810"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0811",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0811"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0815",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0815"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0816",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0816"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0904",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0904"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0906",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0906"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0907",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0907"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0918",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0918"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0923",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0923"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0924",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0924"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0927",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0927"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0928",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0928"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0938",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0938"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0950",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0950"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0973",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0973"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0981",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0981"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_0991",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_0991"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_1003",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_1003"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_1006",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_1006"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_1008",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_1008"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_1011",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_1011"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_1013",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_1013"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_1014",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_1014"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_1025",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_1025"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_1031",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_1031"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_1033",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_1033"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_1035",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_1035"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_1038",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_1038"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_1039",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_1039"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_1040",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_1040"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_1042",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_1042"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_1073",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "wsj_1073"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_20130318_731",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "WSJ_20130318_731"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_20130321_1145",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "WSJ_20130321_1145"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_20130322_159",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "WSJ_20130322_159"
+    }
+  },
+  {
+    "norm_doc_id": "wsj_20130322_804",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "WSJ_20130322_804"
+    }
+  },
+  {
+    "norm_doc_id": "xie19980808.0031",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "XIE19980808.0031"
+    }
+  },
+  {
+    "norm_doc_id": "xie19980808.0049",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "XIE19980808.0049"
+    }
+  },
+  {
+    "norm_doc_id": "xie19980808.0060",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "XIE19980808.0060"
+    }
+  },
+  {
+    "norm_doc_id": "xie19980808.0188",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "XIE19980808.0188"
+    }
+  },
+  {
+    "norm_doc_id": "xie19980809.0010",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "XIE19980809.0010"
+    }
+  },
+  {
+    "norm_doc_id": "xie19980812.0062",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "XIE19980812.0062"
+    }
+  },
+  {
+    "norm_doc_id": "xie19980814.0294",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "XIE19980814.0294"
+    }
+  },
+  {
+    "norm_doc_id": "xie19980821.0077",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "XIE19980821.0077"
+    }
+  },
+  {
+    "norm_doc_id": "xie19981203.0008",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "XIE19981203.0008"
+    }
+  },
+  {
+    "norm_doc_id": "xie19990210.0079",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "XIE19990210.0079"
+    }
+  },
+  {
+    "norm_doc_id": "xie19990227.0171",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "XIE19990227.0171"
+    }
+  },
+  {
+    "norm_doc_id": "xie19990313.0031",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "XIE19990313.0031"
+    }
+  },
+  {
+    "norm_doc_id": "xie19990313.0173",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "XIE19990313.0173"
+    }
+  },
+  {
+    "norm_doc_id": "xie19990313.0229",
+    "in_narrativetime": false,
+    "in_tddman": false,
+    "in_matres": true,
+    "in_timebank_dense": false,
+    "n_corpora": 1,
+    "orig_ids": {
+      "matres": "XIE19990313.0229"
+    }
+  }
+]

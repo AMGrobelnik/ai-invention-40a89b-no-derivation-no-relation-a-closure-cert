@@ -1,0 +1,1954 @@
+{
+  "metadata": {
+    "method_name": "Closure-certified text->logic deduction -- OPERATIONAL ~3000-char end-to-end case study (temporal POINT + kinship concat)",
+    "operational_framing": "OPERATIONAL CASE STUDY on a handful of ~3000-character documents (retires reviewer MINOR #4: the first end-to-end run on real professional-length text). Numbers are reported PER-DOCUMENT as operating ...",
+    "config": {
+      "seed": 20260617,
+      "reader_model": "google/gemini-3.1-flash-lite",
+      "fallbacks": [
+        "deepseek/deepseek-v3.2"
+      ],
+      "temperature": 0.0,
+      "sc_temperature": 0.7,
+      "sc_k": 5,
+      "v_max": 3,
+      "n_queries_per_doc_cap": 30,
+      "char_target": 3000,
+      "char_band": [
+        2500,
+        3500
+      ],
+      "budget_hard": 9.0,
+      "mini": false,
+      "reader_served_first_call": "google/gemini-3.1-flash-lite"
+    },
+    "closure_tests_passed": true,
+    "closure_test_detail": {
+      "n_errors": 0,
+      "errors": [],
+      "allen_compose_cells": 169
+    },
+    "swipl_version": "SWI-Prolog version 9.0.4 for x86_64-linux",
+    "swipl_probe_executed_ok": true,
+    "kinship_gold_atomic_go_no_go": {
+      "n": 17,
+      "singleton_rate": 1.0,
+      "accuracy_on_singletons": 1.0,
+      "n_modeb_conflict": 0,
+      "n_no_path": 0
+    },
+    "case_study_summary": {
+      "descriptive_only": "ranges/means across a HANDFUL of documents; not a powered test",
+      "temporal": {
+        "n_documents": 5,
+        "char_len_range": [
+          2197,
+          4293
+        ],
+        "atomic_disjunctive_recall": {
+          "min": 0.7689,
+          "max": 0.9248,
+          "mean": 0.8693
+        },
+        "atomic_most_likely_precision": {
+          "min": 0.3571,
+          "max": 0.5619,
+          "mean": 0.482
+        },
+        "total_queries": 150,
+        "total_emit": 22,
+        "total_abstain": 126,
+        "total_collapse_modeB": 2,
+        "hallucination_reduction_vs_fulldoc_raw": {
+          "min": 0.2667,
+          "max": 0.6,
+          "mean": 0.4467
+        },
+        "coverage_modeA": {
+          "min": 0.0,
+          "max": 0.3333,
+          "mean": 0.1467
+        },
+        "coverage_raw_fulldoc": {
+          "min": 1.0,
+          "max": 1.0,
+          "mean": 1.0
+        },
+        "modeA_confident_wrong_rate_over_pool": {
+          "min": 0.0,
+          "max": 0.1667,
+          "mean": 0.06
+        },
+        "note": "Mode-A abstains where real-text span-local reads under-determine the start-point order (faithfulness-by-abstention); the whole-document raw LLM always commits (coverage 1.0) and is frequently wrong, s..."
+      },
+      "kinship": {
+        "n_documents": 3,
+        "char_len_range": [
+          3246,
+          3602
+        ],
+        "atomic_recall": {
+          "min": 0.3902,
+          "max": 0.5556,
+          "mean": 0.4917
+        },
+        "atomic_precision": {
+          "min": 0.381,
+          "max": 0.5952,
+          "mean": 0.5091
+        },
+        "within_story_total_emit": 8,
+        "within_story_total_correct": 6,
+        "within_story_selective_accuracy": 0.75,
+        "absent_pairs_total": 56,
+        "absent_pairs_abstained": 56,
+        "absent_confident_wrong_total": 0,
+        "absent_abstention_rate": 1.0,
+        "note": "the kinship calculus is memorized, so the pipeline works FULLY: closure resolves the within-story chains it can EXTRACT (the ceiling is extraction-limited, not closure-limited), and ABSTAINS on every ..."
+      }
+    },
+    "temporal_document_selection": {
+      "selection_mode": "bracket_3000_fallback",
+      "n_nt_docs_total": 36,
+      "n_nt_in_band_2500_3500": 0,
+      "mean_char_len_selected": 3050.6,
+      "selected": [
+        {
+          "docid": "CNN19980213.2130.0155",
+          "char_len": 2197,
+          "gap_to_3000": -803
+        },
+        {
+          "docid": "ABC19980108.1830.0711",
+          "char_len": 2311,
+          "gap_to_3000": -689
+        },
+        {
+          "docid": "CNN19980227.2130.0067",
+          "char_len": 2427,
+          "gap_to_3000": -573
+        }
+      ],
+      "honest_note": "NarrativeTime has NO single article in [2500,3500] chars (its docs cluster either <2500 or >4200). We BRACKET the ~3000-char target with the longest articles below 3000 and the shortest above; the sel..."
+    },
+    "documents": {
+      "temporal": [
+        {
+          "docid": "CNN19980213.2130.0155",
+          "char_len": 2197,
+          "reached_3000_band": false,
+          "n_queries": 30,
+          "skipped": null
+        },
+        {
+          "docid": "ABC19980108.1830.0711",
+          "char_len": 2311,
+          "reached_3000_band": false,
+          "n_queries": 30,
+          "skipped": null
+        },
+        {
+          "docid": "CNN19980227.2130.0067",
+          "char_len": 2427,
+          "reached_3000_band": false,
+          "n_queries": 30,
+          "skipped": null
+        }
+      ],
+      "kinship": [
+        {
+          "doc_id": "clutrr_concat_1",
+          "char_len": 3602,
+          "n_substories": 5,
+          "reached_3000_target": true
+        },
+        {
+          "doc_id": "clutrr_concat_2",
+          "char_len": 3540,
+          "n_substories": 6,
+          "reached_3000_target": true
+        },
+        {
+          "doc_id": "clutrr_concat_3",
+          "char_len": 3246,
+          "n_substories": 6,
+          "reached_3000_target": true
+        }
+      ]
+    },
+    "per_document_temporal": [
+      {
+        "docid": "CNN19980213.2130.0155",
+        "corpus": "narrativetime",
+        "char_len": 2197,
+        "reached_3000_target": false,
+        "algebra": "POINT (PC-complete convex start-point)",
+        "offset_alignment_fraction": 1.0,
+        "n_queries": 30,
+        "n_read_edges": 274,
+        "n_parse_fail": 0,
+        "atomic_PRF": {
+          "tag": "REAL-LLM-READ",
+          "disjunctive_set_recall": 0.8454,
+          "recall_ci95": [
+            0.8454106280193237,
+            0.8454106280193237
+          ],
+          "most_likely_precision": 0.4783,
+          "f1": 0.6109,
+          "n_scorable_edges": 207,
+          "n_committed_reads": 207,
+          "breadth_mean": 2.2947,
+          "note": "recall = P(gold start-point relation subseteq emitted disjunctive set); precision = P(single most-likely read == gold | a single relation committed). Held-fixed MEASURED control: atomic extraction is ..."
+        },
+        "outcomes": {
+          "emit": 7,
+          "abstain": 23,
+          "collapse_modeB": 0
+        },
+        "query_classes": {
+          "deduction_resolved": 7,
+          "extraction_limited_abstain": 23,
+          "closure_collapse": 0
+        },
+        "confident_wrong": {
+          "modeA": {
+            "n_queries": 30,
+            "coverage": 0.2333,
+            "abstention": 0.7667,
+            "n_answered": 7,
+            "confident_wrong_count": 3,
+            "confident_wrong_rate_over_pool": 0.1,
+            "confident_wrong_rate_among_answered": 0.4286
+          },
+          "raw_local": {
+            "n_queries": 30,
+            "coverage": 1.0,
+            "abstention": 0.0,
+            "n_answered": 30,
+            "confident_wrong_count": 19,
+            "confident_wrong_rate_over_pool": 0.6333,
+            "confident_wrong_rate_among_answered": 0.6333
+          },
+          "raw_fulldoc": {
+            "n_queries": 30,
+            "coverage": 1.0,
+            "abstention": 0.0,
+            "n_answered": 30,
+            "confident_wrong_count": 21,
+            "confident_wrong_rate_over_pool": 0.7,
+            "confident_wrong_rate_among_answered": 0.7
+          },
+          "naive": {
+            "n_queries": 30,
+            "coverage": 0.1667,
+            "abstention": 0.8333,
+            "n_answered": 5,
+            "confident_wrong_count": 2,
+            "confident_wrong_rate_over_pool": 0.0667,
+            "confident_wrong_rate_among_answered": 0.4
+          }
+        },
+        "hallucination_reduction_vs_fulldoc_raw": {
+          "comparison": "Mode-A (closure-certified) vs whole-document raw LLM",
+          "confident_wrong_rate_modeA_over_pool": 0.1,
+          "confident_wrong_rate_raw_over_pool": 0.7,
+          "hallucination_reduction_over_pool": 0.6,
+          "coverage_modeA": 0.2333,
+          "coverage_raw": 1.0,
+          "n_queries": 30,
+          "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point esti..."
+        },
+        "hallucination_reduction_vs_local_raw": {
+          "comparison": "Mode-A (closure-certified) vs span-local raw LLM",
+          "confident_wrong_rate_modeA_over_pool": 0.1,
+          "confident_wrong_rate_raw_over_pool": 0.6333,
+          "hallucination_reduction_over_pool": 0.5333,
+          "coverage_modeA": 0.2333,
+          "coverage_raw": 1.0,
+          "n_queries": 30,
+          "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point esti..."
+        },
+        "prolog_execution": {
+          "n_discharged": 12,
+          "n_executed_in_swipl": 12,
+          "n_engine_match": 2,
+          "n_gold_match": 1,
+          "swipl_version": "SWI-Prolog version 9.0.4 for x86_64-linux",
+          "samples": [
+            {
+              "query": [
+                "CNN19980213.2130.0155::ei585",
+                "CNN19980213.2130.0155::ei619"
+              ],
+              "gold": "after",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_CNN19980213.2130.0155_CNN19980213.2130.0155::ei585_CNN19980213.2130.0155::ei619.pl",
+              "discharge_method": "swipl: PATHS: none",
+              "derived_coarse": null,
+              "agrees_with_engine_modeA": null,
+              "executed_in_swipl": true
+            },
+            {
+              "query": [
+                "CNN19980213.2130.0155::ei575",
+                "CNN19980213.2130.0155::ei618"
+              ],
+              "gold": "after",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_CNN19980213.2130.0155_CNN19980213.2130.0155::ei575_CNN19980213.2130.0155::ei618.pl",
+              "discharge_method": "swipl: PATHS: none",
+              "derived_coarse": null,
+              "agrees_with_engine_modeA": null,
+              "executed_in_swipl": true
+            },
+            {
+              "query": [
+                "CNN19980213.2130.0155::ei606",
+                "CNN19980213.2130.0155::ei624"
+              ],
+              "gold": "after",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_CNN19980213.2130.0155_CNN19980213.2130.0155::ei606_CNN19980213.2130.0155::ei624.pl",
+              "discharge_method": "swipl: PATHS: none",
+              "derived_coarse": null,
+              "agrees_with_engine_modeA": null,
+              "executed_in_swipl": true
+            }
+          ]
+        },
+        "trace_graph_narrowing": {
+          "query": [
+            "CNN19980213.2130.0155::ei605",
+            "CNN19980213.2130.0155::ei618"
+          ],
+          "gold_coarse": "before",
+          "stratum": "ge3_cyclic",
+          "n_vias": 3,
+          "induced_path_edges": [
+            {
+              "from": "CNN19980213.2130.0155::ei605",
+              "to": "CNN19980213.2130.0155::ei637",
+              "local_read_point": "<",
+              "local_read_coarse": "before",
+              "most_likely": "before",
+              "conf": 0.9
+            },
+            {
+              "from": "CNN19980213.2130.0155::ei605",
+              "to": "CNN19980213.2130.0155::ei622",
+              "local_read_point": "<",
+              "local_read_coarse": "before",
+              "most_likely": "before",
+              "conf": 0.9
+            },
+            {
+              "from": "CNN19980213.2130.0155::ei605",
+              "to": "CNN19980213.2130.0155::ei606",
+              "local_read_point": "<",
+              "local_read_coarse": "before",
+              "most_likely": "before",
+              "conf": 0.9
+            }
+          ],
+          "naive_single_pass_pred": "before",
+          "modeA_closure_pred": "before",
+          "modeA_outcome": "emit",
+          "n_pc2_fired": 1,
+          "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_CNN19980213.2130.0155_CNN19980213.2130.0155::ei605_CNN19980213.2130.0155::ei618.pl",
+          "swipl_stdout_tail": "swipl: PATHS: [lt]",
+          "program_excerpt": "% Closure-certified temporal deduction -- auto-generated trace program.\n% Convex point start-point algebra over event start points {lt,eq,gt}.\n% The query relation is the INTERSECTION of all length-2 ..."
+        },
+        "trace_graph_collapse": null,
+        "trace_graph_abstain": {
+          "query": [
+            "CNN19980213.2130.0155::ei585",
+            "CNN19980213.2130.0155::ei619"
+          ],
+          "gold_coarse": "after",
+          "stratum": "ge3_cyclic",
+          "n_vias": 3,
+          "induced_path_edges": [
+            {
+              "from": "CNN19980213.2130.0155::ei585",
+              "to": "CNN19980213.2130.0155::ei592",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "before",
+              "conf": 0.4
+            },
+            {
+              "from": "CNN19980213.2130.0155::ei585",
+              "to": "CNN19980213.2130.0155::ei599",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "before",
+              "conf": 0.4
+            },
+            {
+              "from": "CNN19980213.2130.0155::ei585",
+              "to": "CNN19980213.2130.0155::ei609",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "simultaneous",
+              "conf": 0.4
+            }
+          ],
+          "naive_single_pass_pred": "ABSTAIN",
+          "modeA_closure_pred": "ABSTAIN",
+          "modeA_outcome": "abstain",
+          "n_pc2_fired": 0,
+          "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_CNN19980213.2130.0155_CNN19980213.2130.0155::ei585_CNN19980213.2130.0155::ei619.pl",
+          "swipl_stdout_tail": "swipl: PATHS: none",
+          "note": "real-text span-local reads UNDER-DETERMINE the start-point order (broad disjunctive sets) -> path-consistency cannot narrow to a singleton -> Mode-A ABSTAINS. Faithfulness-by-abstention: 0 confident-w..."
+        }
+      },
+      {
+        "docid": "ABC19980108.1830.0711",
+        "corpus": "narrativetime",
+        "char_len": 2311,
+        "reached_3000_target": false,
+        "algebra": "POINT (PC-complete convex start-point)",
+        "offset_alignment_fraction": 1.0,
+        "n_queries": 30,
+        "n_read_edges": 279,
+        "n_parse_fail": 0,
+        "atomic_PRF": {
+          "tag": "REAL-LLM-READ",
+          "disjunctive_set_recall": 0.9042,
+          "recall_ci95": [
+            0.9041666666666667,
+            0.9041666666666667
+          ],
+          "most_likely_precision": 0.4958,
+          "f1": 0.6404,
+          "n_scorable_edges": 240,
+          "n_committed_reads": 240,
+          "breadth_mean": 2.3417,
+          "note": "recall = P(gold start-point relation subseteq emitted disjunctive set); precision = P(single most-likely read == gold | a single relation committed). Held-fixed MEASURED control: atomic extraction is ..."
+        },
+        "outcomes": {
+          "emit": 5,
+          "abstain": 24,
+          "collapse_modeB": 1
+        },
+        "query_classes": {
+          "deduction_resolved": 5,
+          "extraction_limited_abstain": 24,
+          "closure_collapse": 1
+        },
+        "confident_wrong": {
+          "modeA": {
+            "n_queries": 30,
+            "coverage": 0.1667,
+            "abstention": 0.8333,
+            "n_answered": 5,
+            "confident_wrong_count": 1,
+            "confident_wrong_rate_over_pool": 0.0333,
+            "confident_wrong_rate_among_answered": 0.2
+          },
+          "raw_local": {
+            "n_queries": 30,
+            "coverage": 1.0,
+            "abstention": 0.0,
+            "n_answered": 30,
+            "confident_wrong_count": 10,
+            "confident_wrong_rate_over_pool": 0.3333,
+            "confident_wrong_rate_among_answered": 0.3333
+          },
+          "raw_fulldoc": {
+            "n_queries": 30,
+            "coverage": 1.0,
+            "abstention": 0.0,
+            "n_answered": 30,
+            "confident_wrong_count": 9,
+            "confident_wrong_rate_over_pool": 0.3,
+            "confident_wrong_rate_among_answered": 0.3
+          },
+          "naive": {
+            "n_queries": 30,
+            "coverage": 0.1667,
+            "abstention": 0.8333,
+            "n_answered": 5,
+            "confident_wrong_count": 1,
+            "confident_wrong_rate_over_pool": 0.0333,
+            "confident_wrong_rate_among_answered": 0.2
+          }
+        },
+        "hallucination_reduction_vs_fulldoc_raw": {
+          "comparison": "Mode-A (closure-certified) vs whole-document raw LLM",
+          "confident_wrong_rate_modeA_over_pool": 0.0333,
+          "confident_wrong_rate_raw_over_pool": 0.3,
+          "hallucination_reduction_over_pool": 0.2667,
+          "coverage_modeA": 0.1667,
+          "coverage_raw": 1.0,
+          "n_queries": 30,
+          "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point esti..."
+        },
+        "hallucination_reduction_vs_local_raw": {
+          "comparison": "Mode-A (closure-certified) vs span-local raw LLM",
+          "confident_wrong_rate_modeA_over_pool": 0.0333,
+          "confident_wrong_rate_raw_over_pool": 0.3333,
+          "hallucination_reduction_over_pool": 0.3,
+          "coverage_modeA": 0.1667,
+          "coverage_raw": 1.0,
+          "n_queries": 30,
+          "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point esti..."
+        },
+        "prolog_execution": {
+          "n_discharged": 12,
+          "n_executed_in_swipl": 12,
+          "n_engine_match": 1,
+          "n_gold_match": 1,
+          "swipl_version": "SWI-Prolog version 9.0.4 for x86_64-linux",
+          "samples": [
+            {
+              "query": [
+                "ABC19980108.1830.0711::ei375",
+                "ABC19980108.1830.0711::ei433"
+              ],
+              "gold": "simultaneous",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_ABC19980108.1830.0711_ABC19980108.1830.0711::ei375_ABC19980108.1830.0711::ei433.pl",
+              "discharge_method": "swipl: PATHS: none",
+              "derived_coarse": null,
+              "agrees_with_engine_modeA": null,
+              "executed_in_swipl": true
+            },
+            {
+              "query": [
+                "ABC19980108.1830.0711::ei380",
+                "ABC19980108.1830.0711::ei383"
+              ],
+              "gold": "simultaneous",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_ABC19980108.1830.0711_ABC19980108.1830.0711::ei380_ABC19980108.1830.0711::ei383.pl",
+              "discharge_method": "swipl: PATHS: none",
+              "derived_coarse": null,
+              "agrees_with_engine_modeA": null,
+              "executed_in_swipl": true
+            },
+            {
+              "query": [
+                "ABC19980108.1830.0711::ei414",
+                "ABC19980108.1830.0711::ei427"
+              ],
+              "gold": "before",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_ABC19980108.1830.0711_ABC19980108.1830.0711::ei414_ABC19980108.1830.0711::ei427.pl",
+              "discharge_method": "swipl: PATHS: none",
+              "derived_coarse": null,
+              "agrees_with_engine_modeA": null,
+              "executed_in_swipl": true
+            }
+          ]
+        },
+        "trace_graph_narrowing": {
+          "query": [
+            "ABC19980108.1830.0711::ei389",
+            "ABC19980108.1830.0711::ei426"
+          ],
+          "gold_coarse": "before",
+          "stratum": "ge3_cyclic",
+          "n_vias": 3,
+          "induced_path_edges": [
+            {
+              "from": "ABC19980108.1830.0711::ei389",
+              "to": "ABC19980108.1830.0711::ei424",
+              "local_read_point": "<",
+              "local_read_coarse": "before",
+              "most_likely": "before",
+              "conf": 0.9
+            },
+            {
+              "from": "ABC19980108.1830.0711::ei389",
+              "to": "ABC19980108.1830.0711::ei402",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "before",
+              "conf": 0.4
+            },
+            {
+              "from": "ABC19980108.1830.0711::ei389",
+              "to": "ABC19980108.1830.0711::ei412",
+              "local_read_point": "<",
+              "local_read_coarse": "before",
+              "most_likely": "before",
+              "conf": 0.9
+            }
+          ],
+          "naive_single_pass_pred": "before",
+          "modeA_closure_pred": "before",
+          "modeA_outcome": "emit",
+          "n_pc2_fired": 1,
+          "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_ABC19980108.1830.0711_ABC19980108.1830.0711::ei389_ABC19980108.1830.0711::ei426.pl",
+          "swipl_stdout_tail": "swipl: PATHS: none",
+          "program_excerpt": "% Closure-certified temporal deduction -- auto-generated trace program.\n% Convex point start-point algebra over event start points {lt,eq,gt}.\n% The query relation is the INTERSECTION of all length-2 ..."
+        },
+        "trace_graph_collapse": null,
+        "trace_graph_abstain": {
+          "query": [
+            "ABC19980108.1830.0711::ei375",
+            "ABC19980108.1830.0711::ei433"
+          ],
+          "gold_coarse": "simultaneous",
+          "stratum": "ge3_cyclic",
+          "n_vias": 3,
+          "induced_path_edges": [
+            {
+              "from": "ABC19980108.1830.0711::ei375",
+              "to": "ABC19980108.1830.0711::ei393",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "after",
+              "conf": 0.4
+            },
+            {
+              "from": "ABC19980108.1830.0711::ei375",
+              "to": "ABC19980108.1830.0711::ei398",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "before",
+              "conf": 0.4
+            },
+            {
+              "from": "ABC19980108.1830.0711::ei375",
+              "to": "ABC19980108.1830.0711::ei428",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "before",
+              "conf": 0.4
+            }
+          ],
+          "naive_single_pass_pred": "ABSTAIN",
+          "modeA_closure_pred": "ABSTAIN",
+          "modeA_outcome": "abstain",
+          "n_pc2_fired": 0,
+          "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_ABC19980108.1830.0711_ABC19980108.1830.0711::ei375_ABC19980108.1830.0711::ei433.pl",
+          "swipl_stdout_tail": "swipl: PATHS: none",
+          "note": "real-text span-local reads UNDER-DETERMINE the start-point order (broad disjunctive sets) -> path-consistency cannot narrow to a singleton -> Mode-A ABSTAINS. Faithfulness-by-abstention: 0 confident-w..."
+        }
+      },
+      {
+        "docid": "CNN19980227.2130.0067",
+        "corpus": "narrativetime",
+        "char_len": 2427,
+        "reached_3000_target": false,
+        "algebra": "POINT (PC-complete convex start-point)",
+        "offset_alignment_fraction": 1.0,
+        "n_queries": 30,
+        "n_read_edges": 274,
+        "n_parse_fail": 0,
+        "atomic_PRF": {
+          "tag": "REAL-LLM-READ",
+          "disjunctive_set_recall": 0.9248,
+          "recall_ci95": [
+            0.9247787610619469,
+            0.9247787610619469
+          ],
+          "most_likely_precision": 0.5619,
+          "f1": 0.6991,
+          "n_scorable_edges": 226,
+          "n_committed_reads": 226,
+          "breadth_mean": 2.4425,
+          "note": "recall = P(gold start-point relation subseteq emitted disjunctive set); precision = P(single most-likely read == gold | a single relation committed). Held-fixed MEASURED control: atomic extraction is ..."
+        },
+        "outcomes": {
+          "emit": 0,
+          "abstain": 30,
+          "collapse_modeB": 0
+        },
+        "query_classes": {
+          "deduction_resolved": 0,
+          "extraction_limited_abstain": 30,
+          "closure_collapse": 0
+        },
+        "confident_wrong": {
+          "modeA": {
+            "n_queries": 30,
+            "coverage": 0.0,
+            "abstention": 1.0,
+            "n_answered": 0,
+            "confident_wrong_count": 0,
+            "confident_wrong_rate_over_pool": 0.0,
+            "confident_wrong_rate_among_answered": null
+          },
+          "raw_local": {
+            "n_queries": 30,
+            "coverage": 1.0,
+            "abstention": 0.0,
+            "n_answered": 30,
+            "confident_wrong_count": 12,
+            "confident_wrong_rate_over_pool": 0.4,
+            "confident_wrong_rate_among_answered": 0.4
+          },
+          "raw_fulldoc": {
+            "n_queries": 30,
+            "coverage": 1.0,
+            "abstention": 0.0,
+            "n_answered": 30,
+            "confident_wrong_count": 10,
+            "confident_wrong_rate_over_pool": 0.3333,
+            "confident_wrong_rate_among_answered": 0.3333
+          },
+          "naive": {
+            "n_queries": 30,
+            "coverage": 0.0,
+            "abstention": 1.0,
+            "n_answered": 0,
+            "confident_wrong_count": 0,
+            "confident_wrong_rate_over_pool": 0.0,
+            "confident_wrong_rate_among_answered": null
+          }
+        },
+        "hallucination_reduction_vs_fulldoc_raw": {
+          "comparison": "Mode-A (closure-certified) vs whole-document raw LLM",
+          "confident_wrong_rate_modeA_over_pool": 0.0,
+          "confident_wrong_rate_raw_over_pool": 0.3333,
+          "hallucination_reduction_over_pool": 0.3333,
+          "coverage_modeA": 0.0,
+          "coverage_raw": 1.0,
+          "n_queries": 30,
+          "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point esti..."
+        },
+        "hallucination_reduction_vs_local_raw": {
+          "comparison": "Mode-A (closure-certified) vs span-local raw LLM",
+          "confident_wrong_rate_modeA_over_pool": 0.0,
+          "confident_wrong_rate_raw_over_pool": 0.4,
+          "hallucination_reduction_over_pool": 0.4,
+          "coverage_modeA": 0.0,
+          "coverage_raw": 1.0,
+          "n_queries": 30,
+          "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point esti..."
+        },
+        "prolog_execution": {
+          "n_discharged": 12,
+          "n_executed_in_swipl": 12,
+          "n_engine_match": 0,
+          "n_gold_match": 0,
+          "swipl_version": "SWI-Prolog version 9.0.4 for x86_64-linux",
+          "samples": [
+            {
+              "query": [
+                "CNN19980227.2130.0067::ei2008",
+                "CNN19980227.2130.0067::ei2016"
+              ],
+              "gold": "before",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_CNN19980227.2130.0067_CNN19980227.2130.0067::ei2008_CNN19980227.2130.0067::ei2016.pl",
+              "discharge_method": "swipl: PATHS: none",
+              "derived_coarse": null,
+              "agrees_with_engine_modeA": null,
+              "executed_in_swipl": true
+            },
+            {
+              "query": [
+                "CNN19980227.2130.0067::ei2015",
+                "CNN19980227.2130.0067::ei2045"
+              ],
+              "gold": "is_included",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_CNN19980227.2130.0067_CNN19980227.2130.0067::ei2015_CNN19980227.2130.0067::ei2045.pl",
+              "discharge_method": "swipl: PATHS: none",
+              "derived_coarse": null,
+              "agrees_with_engine_modeA": null,
+              "executed_in_swipl": true
+            },
+            {
+              "query": [
+                "CNN19980227.2130.0067::ei1998",
+                "CNN19980227.2130.0067::ei2048"
+              ],
+              "gold": "is_included",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_CNN19980227.2130.0067_CNN19980227.2130.0067::ei1998_CNN19980227.2130.0067::ei2048.pl",
+              "discharge_method": "swipl: PATHS: none",
+              "derived_coarse": null,
+              "agrees_with_engine_modeA": null,
+              "executed_in_swipl": true
+            }
+          ]
+        },
+        "trace_graph_narrowing": null,
+        "trace_graph_collapse": null,
+        "trace_graph_abstain": {
+          "query": [
+            "CNN19980227.2130.0067::ei2008",
+            "CNN19980227.2130.0067::ei2016"
+          ],
+          "gold_coarse": "before",
+          "stratum": "ge3_cyclic",
+          "n_vias": 3,
+          "induced_path_edges": [
+            {
+              "from": "CNN19980227.2130.0067::ei2008",
+              "to": "CNN19980227.2130.0067::ei2011",
+              "local_read_point": "<",
+              "local_read_coarse": "before",
+              "most_likely": "before",
+              "conf": 0.95
+            },
+            {
+              "from": "CNN19980227.2130.0067::ei2008",
+              "to": "CNN19980227.2130.0067::ei2042",
+              "local_read_point": "<",
+              "local_read_coarse": "before",
+              "most_likely": "before",
+              "conf": 0.9
+            },
+            {
+              "from": "CNN19980227.2130.0067::ei2008",
+              "to": "CNN19980227.2130.0067::ei2048",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "before",
+              "conf": 0.6
+            }
+          ],
+          "naive_single_pass_pred": "ABSTAIN",
+          "modeA_closure_pred": "ABSTAIN",
+          "modeA_outcome": "abstain",
+          "n_pc2_fired": 1,
+          "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_CNN19980227.2130.0067_CNN19980227.2130.0067::ei2008_CNN19980227.2130.0067::ei2016.pl",
+          "swipl_stdout_tail": "swipl: PATHS: none",
+          "note": "real-text span-local reads UNDER-DETERMINE the start-point order (broad disjunctive sets) -> path-consistency cannot narrow to a singleton -> Mode-A ABSTAINS. Faithfulness-by-abstention: 0 confident-w..."
+        }
+      }
+    ],
+    "per_document_kinship": [
+      {
+        "doc_id": "clutrr_concat_1",
+        "corpus": "clutrr_concat",
+        "char_len": 3602,
+        "reached_3000_target": true,
+        "n_substories": 5,
+        "substory_ids": [
+          "2eb40305-deb6-41c9-89e2-2d71c12e1fc6",
+          "1be9dc89-019c-4b3a-b5aa-98e6251ebf27",
+          "0e1e6137-a750-4894-93a3-fb99f5c03255"
+        ],
+        "algebra": "finite kinship composition table (forward-union least fixpoint)",
+        "atomic_PRF": {
+          "tag": "REAL-LLM-READ",
+          "precision": 0.381,
+          "recall": 0.3902,
+          "f1": 0.3855,
+          "tp": 16,
+          "n_pred": 42,
+          "n_gold": 41,
+          "note": "typed directed atomic-edge match vs union of all sub-stories' gold atomic facts."
+        },
+        "n_within_queries": 5,
+        "n_absent_queries": 20,
+        "within_story_resolution": {
+          "n_emit": 3,
+          "n_correct_emit": 2,
+          "selective_accuracy": 0.6667
+        },
+        "absent_relation_faithfulness": {
+          "n_absent": 20,
+          "n_abstained": 20,
+          "abstention_rate": 1.0,
+          "n_confident_wrong": 0,
+          "note": "Mode-A abstains on every absent pair BY CONSTRUCTION (empty derivation set)."
+        },
+        "hallucination": {
+          "within_story": {
+            "confident_wrong": {
+              "modeA": {
+                "n_queries": 5,
+                "coverage": 0.6,
+                "abstention": 0.4,
+                "n_answered": 3,
+                "confident_wrong_count": 1,
+                "confident_wrong_rate_over_pool": 0.2,
+                "confident_wrong_rate_among_answered": 0.3333
+              },
+              "raw_local": {
+                "n_queries": 5,
+                "coverage": 0.8,
+                "abstention": 0.2,
+                "n_answered": 4,
+                "confident_wrong_count": 4,
+                "confident_wrong_rate_over_pool": 0.8,
+                "confident_wrong_rate_among_answered": 1.0
+              },
+              "raw_fulldoc": {
+                "n_queries": 5,
+                "coverage": 0.4,
+                "abstention": 0.6,
+                "n_answered": 2,
+                "confident_wrong_count": 2,
+                "confident_wrong_rate_over_pool": 0.4,
+                "confident_wrong_rate_among_answered": 1.0
+              }
+            },
+            "hallucination_reduction_vs_fulldoc_raw": {
+              "comparison": "Mode-A (closure-certified) vs whole-document raw LLM",
+              "confident_wrong_rate_modeA_over_pool": 0.2,
+              "confident_wrong_rate_raw_over_pool": 0.4,
+              "hallucination_reduction_over_pool": 0.2,
+              "coverage_modeA": 0.6,
+              "coverage_raw": 0.4,
+              "n_queries": 5,
+              "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point esti..."
+            },
+            "hallucination_reduction_vs_local_raw": {
+              "comparison": "Mode-A (closure-certified) vs span-local raw LLM",
+              "confident_wrong_rate_modeA_over_pool": 0.2,
+              "confident_wrong_rate_raw_over_pool": 0.8,
+              "hallucination_reduction_over_pool": 0.6,
+              "coverage_modeA": 0.6,
+              "coverage_raw": 0.8,
+              "n_queries": 5,
+              "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point esti..."
+            }
+          },
+          "cross_story_absent": {
+            "confident_wrong": {
+              "modeA": {
+                "n_queries": 20,
+                "coverage": 0.0,
+                "abstention": 1.0,
+                "n_answered": 0,
+                "confident_wrong_count": 0,
+                "confident_wrong_rate_over_pool": 0.0,
+                "confident_wrong_rate_among_answered": null
+              },
+              "raw_local": {
+                "n_queries": 20,
+                "coverage": 0.3,
+                "abstention": 0.7,
+                "n_answered": 6,
+                "confident_wrong_count": 6,
+                "confident_wrong_rate_over_pool": 0.3,
+                "confident_wrong_rate_among_answered": 1.0
+              },
+              "raw_fulldoc": {
+                "n_queries": 20,
+                "coverage": 0.05,
+                "abstention": 0.95,
+                "n_answered": 1,
+                "confident_wrong_count": 1,
+                "confident_wrong_rate_over_pool": 0.05,
+                "confident_wrong_rate_among_answered": 1.0
+              }
+            },
+            "hallucination_reduction_vs_fulldoc_raw": {
+              "comparison": "Mode-A (closure-certified) vs whole-document raw LLM",
+              "confident_wrong_rate_modeA_over_pool": 0.0,
+              "confident_wrong_rate_raw_over_pool": 0.05,
+              "hallucination_reduction_over_pool": 0.05,
+              "coverage_modeA": 0.0,
+              "coverage_raw": 0.05,
+              "n_queries": 20,
+              "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point esti..."
+            },
+            "hallucination_reduction_vs_local_raw": {
+              "comparison": "Mode-A (closure-certified) vs span-local raw LLM",
+              "confident_wrong_rate_modeA_over_pool": 0.0,
+              "confident_wrong_rate_raw_over_pool": 0.3,
+              "hallucination_reduction_over_pool": 0.3,
+              "coverage_modeA": 0.0,
+              "coverage_raw": 0.3,
+              "n_queries": 20,
+              "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point esti..."
+            }
+          },
+          "all": {
+            "confident_wrong": {
+              "modeA": {
+                "n_queries": 25,
+                "coverage": 0.12,
+                "abstention": 0.88,
+                "n_answered": 3,
+                "confident_wrong_count": 1,
+                "confident_wrong_rate_over_pool": 0.04,
+                "confident_wrong_rate_among_answered": 0.3333
+              },
+              "raw_local": {
+                "n_queries": 25,
+                "coverage": 0.4,
+                "abstention": 0.6,
+                "n_answered": 10,
+                "confident_wrong_count": 10,
+                "confident_wrong_rate_over_pool": 0.4,
+                "confident_wrong_rate_among_answered": 1.0
+              },
+              "raw_fulldoc": {
+                "n_queries": 25,
+                "coverage": 0.12,
+                "abstention": 0.88,
+                "n_answered": 3,
+                "confident_wrong_count": 3,
+                "confident_wrong_rate_over_pool": 0.12,
+                "confident_wrong_rate_among_answered": 1.0
+              }
+            },
+            "hallucination_reduction_vs_fulldoc_raw": {
+              "comparison": "Mode-A (closure-certified) vs whole-document raw LLM",
+              "confident_wrong_rate_modeA_over_pool": 0.04,
+              "confident_wrong_rate_raw_over_pool": 0.12,
+              "hallucination_reduction_over_pool": 0.08,
+              "coverage_modeA": 0.12,
+              "coverage_raw": 0.12,
+              "n_queries": 25,
+              "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point esti..."
+            },
+            "hallucination_reduction_vs_local_raw": {
+              "comparison": "Mode-A (closure-certified) vs span-local raw LLM",
+              "confident_wrong_rate_modeA_over_pool": 0.04,
+              "confident_wrong_rate_raw_over_pool": 0.4,
+              "hallucination_reduction_over_pool": 0.36,
+              "coverage_modeA": 0.12,
+              "coverage_raw": 0.4,
+              "n_queries": 25,
+              "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point esti..."
+            }
+          }
+        },
+        "prolog_execution": {
+          "n_discharged": 11,
+          "n_executed_in_swipl": 11,
+          "n_engine_match": 11,
+          "n_gold_match": 8,
+          "swipl_version": "SWI-Prolog version 9.0.4 for x86_64-linux",
+          "samples": [
+            {
+              "query": [
+                "Constance",
+                "Teresita"
+              ],
+              "gold": "niece",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_1_Constance_Teresita.pl",
+              "executed_in_swipl": true,
+              "prolog_results": [
+                "inv-un"
+              ],
+              "matches_engine": true
+            },
+            {
+              "query": [
+                "Thelma",
+                "Ronald"
+              ],
+              "gold": "uncle",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_1_Thelma_Ronald.pl",
+              "executed_in_swipl": true,
+              "prolog_results": [
+                "inv-un"
+              ],
+              "matches_engine": true
+            },
+            {
+              "query": [
+                "Melody",
+                "John"
+              ],
+              "gold": "nephew",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_1_Melody_John.pl",
+              "executed_in_swipl": true,
+              "prolog_results": [
+                "un"
+              ],
+              "matches_engine": true
+            }
+          ]
+        },
+        "trace_graph_within_derivation": {
+          "query": [
+            "Thelma",
+            "Ronald"
+          ],
+          "gold": "uncle",
+          "hop": 9,
+          "derivation_steps": [
+            {
+              "a": "Donna",
+              "b": "Timothy",
+              "c": "Thelma",
+              "t1": "child",
+              "t2": "sibling",
+              "t3": "child"
+            },
+            {
+              "a": "Marie",
+              "b": "Leah",
+              "c": "Wallace",
+              "t1": "sibling",
+              "t2": "sibling",
+              "t3": "sibling"
+            },
+            {
+              "a": "Donna",
+              "b": "Wallace",
+              "c": "Marie",
+              "t1": "child",
+              "t2": "sibling",
+              "t3": "child"
+            }
+          ],
+          "prolog_results": [
+            "inv-un"
+          ],
+          "matches_engine": true,
+          "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_1_Thelma_Ronald.pl",
+          "swipl_stdout_tail": "RESULT:inv-un\n",
+          "program_excerpt": "% Closure-certified kinship deduction -- forward-union least-fixpoint trace program.\n% der(A,T,B): T derivable for the directed pair A->B; closed under the finite\n% composition table comp/3 + total co...",
+          "kind": "kinship_multihop_derivation"
+        },
+        "trace_graph_absent_abstain": {
+          "query": [
+            "Leah",
+            "Constance"
+          ],
+          "gold": "no-relation",
+          "n_derivations": 0,
+          "modeA_outcome": "no_path_abstain",
+          "prolog_results": [],
+          "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_1_absent_Leah_Constance.pl",
+          "matches_engine": true,
+          "swipl_stdout_tail": "",
+          "explanation": "entities live in DIFFERENT connected components (disjoint sub-stories) -> no connecting kinship path -> forward-closure derivation set is EMPTY in BOTH the engine and the discharged SWI-Prolog program...",
+          "kind": "absent_relation_abstain"
+        }
+      },
+      {
+        "doc_id": "clutrr_concat_2",
+        "corpus": "clutrr_concat",
+        "char_len": 3540,
+        "reached_3000_target": true,
+        "n_substories": 6,
+        "substory_ids": [
+          "47c4117b-fe4e-4355-88e2-77f1501589d7",
+          "098c0d45-4161-438e-9070-eff6fff1d846",
+          "758a521e-cbcf-4fd5-9c27-03a8b406c66c"
+        ],
+        "algebra": "finite kinship composition table (forward-union least fixpoint)",
+        "atomic_PRF": {
+          "tag": "REAL-LLM-READ",
+          "precision": 0.551,
+          "recall": 0.5294,
+          "f1": 0.54,
+          "tp": 27,
+          "n_pred": 49,
+          "n_gold": 51,
+          "note": "typed directed atomic-edge match vs union of all sub-stories' gold atomic facts."
+        },
+        "n_within_queries": 6,
+        "n_absent_queries": 18,
+        "within_story_resolution": {
+          "n_emit": 3,
+          "n_correct_emit": 2,
+          "selective_accuracy": 0.6667
+        },
+        "absent_relation_faithfulness": {
+          "n_absent": 18,
+          "n_abstained": 18,
+          "abstention_rate": 1.0,
+          "n_confident_wrong": 0,
+          "note": "Mode-A abstains on every absent pair BY CONSTRUCTION (empty derivation set)."
+        },
+        "hallucination": {
+          "within_story": {
+            "confident_wrong": {
+              "modeA": {
+                "n_queries": 6,
+                "coverage": 0.5,
+                "abstention": 0.5,
+                "n_answered": 3,
+                "confident_wrong_count": 1,
+                "confident_wrong_rate_over_pool": 0.1667,
+                "confident_wrong_rate_among_answered": 0.3333
+              },
+              "raw_local": {
+                "n_queries": 6,
+                "coverage": 0.6667,
+                "abstention": 0.3333,
+                "n_answered": 4,
+                "confident_wrong_count": 2,
+                "confident_wrong_rate_over_pool": 0.3333,
+                "confident_wrong_rate_among_answered": 0.5
+              },
+              "raw_fulldoc": {
+                "n_queries": 6,
+                "coverage": 0.5,
+                "abstention": 0.5,
+                "n_answered": 3,
+                "confident_wrong_count": 1,
+                "confident_wrong_rate_over_pool": 0.1667,
+                "confident_wrong_rate_among_answered": 0.3333
+              }
+            },
+            "hallucination_reduction_vs_fulldoc_raw": {
+              "comparison": "Mode-A (closure-certified) vs whole-document raw LLM",
+              "confident_wrong_rate_modeA_over_pool": 0.1667,
+              "confident_wrong_rate_raw_over_pool": 0.1667,
+              "hallucination_reduction_over_pool": 0.0,
+              "coverage_modeA": 0.5,
+              "coverage_raw": 0.5,
+              "n_queries": 6,
+              "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point esti..."
+            },
+            "hallucination_reduction_vs_local_raw": {
+              "comparison": "Mode-A (closure-certified) vs span-local raw LLM",
+              "confident_wrong_rate_modeA_over_pool": 0.1667,
+              "confident_wrong_rate_raw_over_pool": 0.3333,
+              "hallucination_reduction_over_pool": 0.1666,
+              "coverage_modeA": 0.5,
+              "coverage_raw": 0.6667,
+              "n_queries": 6,
+              "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point esti..."
+            }
+          },
+          "cross_story_absent": {
+            "confident_wrong": {
+              "modeA": {
+                "n_queries": 18,
+                "coverage": 0.0,
+                "abstention": 1.0,
+                "n_answered": 0,
+                "confident_wrong_count": 0,
+                "confident_wrong_rate_over_pool": 0.0,
+                "confident_wrong_rate_among_answered": null
+              },
+              "raw_local": {
+                "n_queries": 18,
+                "coverage": 0.2222,
+                "abstention": 0.7778,
+                "n_answered": 4,
+                "confident_wrong_count": 4,
+                "confident_wrong_rate_over_pool": 0.2222,
+                "confident_wrong_rate_among_answered": 1.0
+              },
+              "raw_fulldoc": {
+                "n_queries": 18,
+                "coverage": 0.1111,
+                "abstention": 0.8889,
+                "n_answered": 2,
+                "confident_wrong_count": 2,
+                "confident_wrong_rate_over_pool": 0.1111,
+                "confident_wrong_rate_among_answered": 1.0
+              }
+            },
+            "hallucination_reduction_vs_fulldoc_raw": {
+              "comparison": "Mode-A (closure-certified) vs whole-document raw LLM",
+              "confident_wrong_rate_modeA_over_pool": 0.0,
+              "confident_wrong_rate_raw_over_pool": 0.1111,
+              "hallucination_reduction_over_pool": 0.1111,
+              "coverage_modeA": 0.0,
+              "coverage_raw": 0.1111,
+              "n_queries": 18,
+              "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point esti..."
+            },
+            "hallucination_reduction_vs_local_raw": {
+              "comparison": "Mode-A (closure-certified) vs span-local raw LLM",
+              "confident_wrong_rate_modeA_over_pool": 0.0,
+              "confident_wrong_rate_raw_over_pool": 0.2222,
+              "hallucination_reduction_over_pool": 0.2222,
+              "coverage_modeA": 0.0,
+              "coverage_raw": 0.2222,
+              "n_queries": 18,
+              "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point esti..."
+            }
+          },
+          "all": {
+            "confident_wrong": {
+              "modeA": {
+                "n_queries": 24,
+                "coverage": 0.125,
+                "abstention": 0.875,
+                "n_answered": 3,
+                "confident_wrong_count": 1,
+                "confident_wrong_rate_over_pool": 0.0417,
+                "confident_wrong_rate_among_answered": 0.3333
+              },
+              "raw_local": {
+                "n_queries": 24,
+                "coverage": 0.3333,
+                "abstention": 0.6667,
+                "n_answered": 8,
+                "confident_wrong_count": 6,
+                "confident_wrong_rate_over_pool": 0.25,
+                "confident_wrong_rate_among_answered": 0.75
+              },
+              "raw_fulldoc": {
+                "n_queries": 24,
+                "coverage": 0.2083,
+                "abstention": 0.7917,
+                "n_answered": 5,
+                "confident_wrong_count": 3,
+                "confident_wrong_rate_over_pool": 0.125,
+                "confident_wrong_rate_among_answered": 0.6
+              }
+            },
+            "hallucination_reduction_vs_fulldoc_raw": {
+              "comparison": "Mode-A (closure-certified) vs whole-document raw LLM",
+              "confident_wrong_rate_modeA_over_pool": 0.0417,
+              "confident_wrong_rate_raw_over_pool": 0.125,
+              "hallucination_reduction_over_pool": 0.0833,
+              "coverage_modeA": 0.125,
+              "coverage_raw": 0.2083,
+              "n_queries": 24,
+              "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point esti..."
+            },
+            "hallucination_reduction_vs_local_raw": {
+              "comparison": "Mode-A (closure-certified) vs span-local raw LLM",
+              "confident_wrong_rate_modeA_over_pool": 0.0417,
+              "confident_wrong_rate_raw_over_pool": 0.25,
+              "hallucination_reduction_over_pool": 0.2083,
+              "coverage_modeA": 0.125,
+              "coverage_raw": 0.3333,
+              "n_queries": 24,
+              "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point esti..."
+            }
+          }
+        },
+        "prolog_execution": {
+          "n_discharged": 12,
+          "n_executed_in_swipl": 12,
+          "n_engine_match": 12,
+          "n_gold_match": 8,
+          "swipl_version": "SWI-Prolog version 9.0.4 for x86_64-linux",
+          "samples": [
+            {
+              "query": [
+                "Roger",
+                "Alice"
+              ],
+              "gold": "mother",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_2_Roger_Alice.pl",
+              "executed_in_swipl": true,
+              "prolog_results": [
+                "inv-child"
+              ],
+              "matches_engine": true
+            },
+            {
+              "query": [
+                "Bonita",
+                "Betty"
+              ],
+              "gold": "niece",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_2_Bonita_Betty.pl",
+              "executed_in_swipl": true,
+              "prolog_results": [],
+              "matches_engine": true
+            },
+            {
+              "query": [
+                "Mabel",
+                "Cesar"
+              ],
+              "gold": "uncle",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_2_Mabel_Cesar.pl",
+              "executed_in_swipl": true,
+              "prolog_results": [],
+              "matches_engine": true
+            }
+          ]
+        },
+        "trace_graph_within_derivation": {
+          "query": [
+            "Roger",
+            "Alice"
+          ],
+          "gold": "mother",
+          "hop": 8,
+          "derivation_steps": [
+            {
+              "a": "Alice",
+              "b": "Kim",
+              "c": "Roger",
+              "t1": "child",
+              "t2": "sibling",
+              "t3": "child"
+            }
+          ],
+          "prolog_results": [
+            "inv-child"
+          ],
+          "matches_engine": true,
+          "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_2_Roger_Alice.pl",
+          "swipl_stdout_tail": "RESULT:inv-child\n",
+          "program_excerpt": "% Closure-certified kinship deduction -- forward-union least-fixpoint trace program.\n% der(A,T,B): T derivable for the directed pair A->B; closed under the finite\n% composition table comp/3 + total co...",
+          "kind": "kinship_multihop_derivation"
+        },
+        "trace_graph_absent_abstain": {
+          "query": [
+            "John",
+            "Steve"
+          ],
+          "gold": "no-relation",
+          "n_derivations": 0,
+          "modeA_outcome": "no_path_abstain",
+          "prolog_results": [],
+          "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_2_absent_John_Steve.pl",
+          "matches_engine": true,
+          "swipl_stdout_tail": "",
+          "explanation": "entities live in DIFFERENT connected components (disjoint sub-stories) -> no connecting kinship path -> forward-closure derivation set is EMPTY in BOTH the engine and the discharged SWI-Prolog program...",
+          "kind": "absent_relation_abstain"
+        }
+      },
+      {
+        "doc_id": "clutrr_concat_3",
+        "corpus": "clutrr_concat",
+        "char_len": 3246,
+        "reached_3000_target": true,
+        "n_substories": 6,
+        "substory_ids": [
+          "1eec35e2-2410-4deb-a4a1-537cc2327025",
+          "c5b1a55d-1158-4e0a-9f15-06126461ed9f",
+          "e12aa34c-4f2a-4a39-8908-b3b496f3b9be"
+        ],
+        "algebra": "finite kinship composition table (forward-union least fixpoint)",
+        "atomic_PRF": {
+          "tag": "REAL-LLM-READ",
+          "precision": 0.5952,
+          "recall": 0.5556,
+          "f1": 0.5747,
+          "tp": 25,
+          "n_pred": 42,
+          "n_gold": 45,
+          "note": "typed directed atomic-edge match vs union of all sub-stories' gold atomic facts."
+        },
+        "n_within_queries": 6,
+        "n_absent_queries": 18,
+        "within_story_resolution": {
+          "n_emit": 2,
+          "n_correct_emit": 2,
+          "selective_accuracy": 1.0
+        },
+        "absent_relation_faithfulness": {
+          "n_absent": 18,
+          "n_abstained": 18,
+          "abstention_rate": 1.0,
+          "n_confident_wrong": 0,
+          "note": "Mode-A abstains on every absent pair BY CONSTRUCTION (empty derivation set)."
+        },
+        "hallucination": {
+          "within_story": {
+            "confident_wrong": {
+              "modeA": {
+                "n_queries": 6,
+                "coverage": 0.3333,
+                "abstention": 0.6667,
+                "n_answered": 2,
+                "confident_wrong_count": 0,
+                "confident_wrong_rate_over_pool": 0.0,
+                "confident_wrong_rate_among_answered": 0.0
+              },
+              "raw_local": {
+                "n_queries": 6,
+                "coverage": 0.6667,
+                "abstention": 0.3333,
+                "n_answered": 4,
+                "confident_wrong_count": 2,
+                "confident_wrong_rate_over_pool": 0.3333,
+                "confident_wrong_rate_among_answered": 0.5
+              },
+              "raw_fulldoc": {
+                "n_queries": 6,
+                "coverage": 0.5,
+                "abstention": 0.5,
+                "n_answered": 3,
+                "confident_wrong_count": 2,
+                "confident_wrong_rate_over_pool": 0.3333,
+                "confident_wrong_rate_among_answered": 0.6667
+              }
+            },
+            "hallucination_reduction_vs_fulldoc_raw": {
+              "comparison": "Mode-A (closure-certified) vs whole-document raw LLM",
+              "confident_wrong_rate_modeA_over_pool": 0.0,
+              "confident_wrong_rate_raw_over_pool": 0.3333,
+              "hallucination_reduction_over_pool": 0.3333,
+              "coverage_modeA": 0.3333,
+              "coverage_raw": 0.5,
+              "n_queries": 6,
+              "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point esti..."
+            },
+            "hallucination_reduction_vs_local_raw": {
+              "comparison": "Mode-A (closure-certified) vs span-local raw LLM",
+              "confident_wrong_rate_modeA_over_pool": 0.0,
+              "confident_wrong_rate_raw_over_pool": 0.3333,
+              "hallucination_reduction_over_pool": 0.3333,
+              "coverage_modeA": 0.3333,
+              "coverage_raw": 0.6667,
+              "n_queries": 6,
+              "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point esti..."
+            }
+          },
+          "cross_story_absent": {
+            "confident_wrong": {
+              "modeA": {
+                "n_queries": 18,
+                "coverage": 0.0,
+                "abstention": 1.0,
+                "n_answered": 0,
+                "confident_wrong_count": 0,
+                "confident_wrong_rate_over_pool": 0.0,
+                "confident_wrong_rate_among_answered": null
+              },
+              "raw_local": {
+                "n_queries": 18,
+                "coverage": 0.2778,
+                "abstention": 0.7222,
+                "n_answered": 5,
+                "confident_wrong_count": 5,
+                "confident_wrong_rate_over_pool": 0.2778,
+                "confident_wrong_rate_among_answered": 1.0
+              },
+              "raw_fulldoc": {
+                "n_queries": 18,
+                "coverage": 0.0556,
+                "abstention": 0.9444,
+                "n_answered": 1,
+                "confident_wrong_count": 1,
+                "confident_wrong_rate_over_pool": 0.0556,
+                "confident_wrong_rate_among_answered": 1.0
+              }
+            },
+            "hallucination_reduction_vs_fulldoc_raw": {
+              "comparison": "Mode-A (closure-certified) vs whole-document raw LLM",
+              "confident_wrong_rate_modeA_over_pool": 0.0,
+              "confident_wrong_rate_raw_over_pool": 0.0556,
+              "hallucination_reduction_over_pool": 0.0556,
+              "coverage_modeA": 0.0,
+              "coverage_raw": 0.0556,
+              "n_queries": 18,
+              "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point esti..."
+            },
+            "hallucination_reduction_vs_local_raw": {
+              "comparison": "Mode-A (closure-certified) vs span-local raw LLM",
+              "confident_wrong_rate_modeA_over_pool": 0.0,
+              "confident_wrong_rate_raw_over_pool": 0.2778,
+              "hallucination_reduction_over_pool": 0.2778,
+              "coverage_modeA": 0.0,
+              "coverage_raw": 0.2778,
+              "n_queries": 18,
+              "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point esti..."
+            }
+          },
+          "all": {
+            "confident_wrong": {
+              "modeA": {
+                "n_queries": 24,
+                "coverage": 0.0833,
+                "abstention": 0.9167,
+                "n_answered": 2,
+                "confident_wrong_count": 0,
+                "confident_wrong_rate_over_pool": 0.0,
+                "confident_wrong_rate_among_answered": 0.0
+              },
+              "raw_local": {
+                "n_queries": 24,
+                "coverage": 0.375,
+                "abstention": 0.625,
+                "n_answered": 9,
+                "confident_wrong_count": 7,
+                "confident_wrong_rate_over_pool": 0.2917,
+                "confident_wrong_rate_among_answered": 0.7778
+              },
+              "raw_fulldoc": {
+                "n_queries": 24,
+                "coverage": 0.1667,
+                "abstention": 0.8333,
+                "n_answered": 4,
+                "confident_wrong_count": 3,
+                "confident_wrong_rate_over_pool": 0.125,
+                "confident_wrong_rate_among_answered": 0.75
+              }
+            },
+            "hallucination_reduction_vs_fulldoc_raw": {
+              "comparison": "Mode-A (closure-certified) vs whole-document raw LLM",
+              "confident_wrong_rate_modeA_over_pool": 0.0,
+              "confident_wrong_rate_raw_over_pool": 0.125,
+              "hallucination_reduction_over_pool": 0.125,
+              "coverage_modeA": 0.0833,
+              "coverage_raw": 0.1667,
+              "n_queries": 24,
+              "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point esti..."
+            },
+            "hallucination_reduction_vs_local_raw": {
+              "comparison": "Mode-A (closure-certified) vs span-local raw LLM",
+              "confident_wrong_rate_modeA_over_pool": 0.0,
+              "confident_wrong_rate_raw_over_pool": 0.2917,
+              "hallucination_reduction_over_pool": 0.2917,
+              "coverage_modeA": 0.0833,
+              "coverage_raw": 0.375,
+              "n_queries": 24,
+              "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point esti..."
+            }
+          }
+        },
+        "prolog_execution": {
+          "n_discharged": 12,
+          "n_executed_in_swipl": 12,
+          "n_engine_match": 12,
+          "n_gold_match": 8,
+          "swipl_version": "SWI-Prolog version 9.0.4 for x86_64-linux",
+          "samples": [
+            {
+              "query": [
+                "Ellen",
+                "Stanley"
+              ],
+              "gold": "nephew",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_3_Ellen_Stanley.pl",
+              "executed_in_swipl": true,
+              "prolog_results": [
+                "un"
+              ],
+              "matches_engine": true
+            },
+            {
+              "query": [
+                "Cecelia",
+                "Maria"
+              ],
+              "gold": "aunt",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_3_Cecelia_Maria.pl",
+              "executed_in_swipl": true,
+              "prolog_results": [],
+              "matches_engine": true
+            },
+            {
+              "query": [
+                "Stephen",
+                "Susan"
+              ],
+              "gold": "niece",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_3_Stephen_Susan.pl",
+              "executed_in_swipl": true,
+              "prolog_results": [],
+              "matches_engine": true
+            }
+          ]
+        },
+        "trace_graph_within_derivation": {
+          "query": [
+            "Ellen",
+            "Stanley"
+          ],
+          "gold": "nephew",
+          "hop": 10,
+          "derivation_steps": [
+            {
+              "a": "Stanley",
+              "b": "Don",
+              "c": "Steve",
+              "t1": "sibling",
+              "t2": "inv-child",
+              "t3": "inv-child"
+            },
+            {
+              "a": "Nadia",
+              "b": "Sharon",
+              "c": "Kathleen",
+              "t1": "sibling",
+              "t2": "sibling",
+              "t3": "sibling"
+            },
+            {
+              "a": "Ellen",
+              "b": "Nadia",
+              "c": "Kathleen",
+              "t1": "child",
+              "t2": "sibling",
+              "t3": "child"
+            }
+          ],
+          "prolog_results": [
+            "un"
+          ],
+          "matches_engine": true,
+          "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_3_Ellen_Stanley.pl",
+          "swipl_stdout_tail": "RESULT:un\n",
+          "program_excerpt": "% Closure-certified kinship deduction -- forward-union least-fixpoint trace program.\n% der(A,T,B): T derivable for the directed pair A->B; closed under the finite\n% composition table comp/3 + total co...",
+          "kind": "kinship_multihop_derivation"
+        },
+        "trace_graph_absent_abstain": {
+          "query": [
+            "Donna",
+            "Milton"
+          ],
+          "gold": "no-relation",
+          "n_derivations": 0,
+          "modeA_outcome": "no_path_abstain",
+          "prolog_results": [],
+          "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_3_absent_Donna_Milton.pl",
+          "matches_engine": true,
+          "swipl_stdout_tail": "",
+          "explanation": "entities live in DIFFERENT connected components (disjoint sub-stories) -> no connecting kinship path -> forward-closure derivation set is EMPTY in BOTH the engine and the discharged SWI-Prolog program...",
+          "kind": "absent_relation_abstain"
+        }
+      }
+    ],
+    "prolog_execution_aggregate": {
+      "temporal": {
+        "n_discharged": 60,
+        "n_executed_in_swipl": 60,
+        "n_engine_match": 7,
+        "n_gold_match": 4
+      },
+      "kinship": {
+        "n_discharged": 35,
+        "n_executed_in_swipl": 35,
+        "n_engine_match": 35,
+        "n_gold_match": 24
+      },
+      "swipl_version": "SWI-Prolog version 9.0.4 for x86_64-linux",
+      "note": "engine_match = Prolog readback agrees with the closure engine; gold_match = Prolog readback contains the gold relation."
+    },
+    "trace_graphs": [
+      {
+        "arm": "temporal_modeA_narrowing",
+        "docid": "CNN19980213.2130.0155",
+        "query": [
+          "CNN19980213.2130.0155::ei605",
+          "CNN19980213.2130.0155::ei618"
+        ],
+        "gold_coarse": "before",
+        "stratum": "ge3_cyclic",
+        "n_vias": 3,
+        "induced_path_edges": [
+          {
+            "from": "CNN19980213.2130.0155::ei605",
+            "to": "CNN19980213.2130.0155::ei637",
+            "local_read_point": "<",
+            "local_read_coarse": "before",
+            "most_likely": "before",
+            "conf": 0.9
+          },
+          {
+            "from": "CNN19980213.2130.0155::ei605",
+            "to": "CNN19980213.2130.0155::ei622",
+            "local_read_point": "<",
+            "local_read_coarse": "before",
+            "most_likely": "before",
+            "conf": 0.9
+          },
+          {
+            "from": "CNN19980213.2130.0155::ei605",
+            "to": "CNN19980213.2130.0155::ei606",
+            "local_read_point": "<",
+            "local_read_coarse": "before",
+            "most_likely": "before",
+            "conf": 0.9
+          }
+        ],
+        "naive_single_pass_pred": "before",
+        "modeA_closure_pred": "before",
+        "modeA_outcome": "emit",
+        "n_pc2_fired": 1,
+        "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_CNN19980213.2130.0155_CNN19980213.2130.0155::ei605_CNN19980213.2130.0155::ei618.pl",
+        "swipl_stdout_tail": "swipl: PATHS: [lt]",
+        "program_excerpt": "% Closure-certified temporal deduction -- auto-generated trace program.\n% Convex point start-point algebra over event start points {lt,eq,gt}.\n% The query relation is the INTERSECTION of all length-2 ..."
+      },
+      {
+        "arm": "kinship_multihop_derivation",
+        "docid": "clutrr_concat_1",
+        "query": [
+          "Thelma",
+          "Ronald"
+        ],
+        "gold": "uncle",
+        "hop": 9,
+        "derivation_steps": [
+          {
+            "a": "Donna",
+            "b": "Timothy",
+            "c": "Thelma",
+            "t1": "child",
+            "t2": "sibling",
+            "t3": "child"
+          },
+          {
+            "a": "Marie",
+            "b": "Leah",
+            "c": "Wallace",
+            "t1": "sibling",
+            "t2": "sibling",
+            "t3": "sibling"
+          },
+          {
+            "a": "Donna",
+            "b": "Wallace",
+            "c": "Marie",
+            "t1": "child",
+            "t2": "sibling",
+            "t3": "child"
+          }
+        ],
+        "prolog_results": [
+          "inv-un"
+        ],
+        "matches_engine": true,
+        "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_1_Thelma_Ronald.pl",
+        "swipl_stdout_tail": "RESULT:inv-un\n",
+        "program_excerpt": "% Closure-certified kinship deduction -- forward-union least-fixpoint trace program.\n% der(A,T,B): T derivable for the directed pair A->B; closed under the finite\n% composition table comp/3 + total co...",
+        "kind": "kinship_multihop_derivation"
+      },
+      {
+        "arm": "kinship_absent_abstain",
+        "docid": "clutrr_concat_1",
+        "query": [
+          "Leah",
+          "Constance"
+        ],
+        "gold": "no-relation",
+        "n_derivations": 0,
+        "modeA_outcome": "no_path_abstain",
+        "prolog_results": [],
+        "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_1_absent_Leah_Constance.pl",
+        "matches_engine": true,
+        "swipl_stdout_tail": "",
+        "explanation": "entities live in DIFFERENT connected components (disjoint sub-stories) -> no connecting kinship path -> forward-closure derivation set is EMPTY in BOTH the engine and the discharged SWI-Prolog program...",
+        "kind": "absent_relation_abstain"
+      }
+    ],
+    "honesty_commitments": [
+      "SUB-MODULE SCOPE ONLY: the contribution is the closure CERTIFICATE + abstain-on-collapse output contract; atomic extraction is MEASURED not improved; OpenCyc grounding and LLM fuzzy-unification are OU...",
+      "Temporal NarrativeTime gold is interval-Allen; we project to the convex START-POINT POINT algebra (PC-complete) -- this is tighter than Allen (avoids the near-universe trap) but cannot express include...",
+      "CLUTRR stories are short; the ~3000-char kinship document is CONCATENATED from disjoint-entity sub-stories (labelled), giving genuine cross-story ABSENT pairs."
+    ],
+    "cost": {
+      "cumulative_usd": 0.0,
+      "n_llm_calls": 0,
+      "n_cache_hits": 2142,
+      "n_parse_fail": 0,
+      "n_errors": 0,
+      "model": "google/gemini-3.1-flash-lite",
+      "fallbacks": [
+        "deepseek/deepseek-v3.2"
+      ],
+      "temperature": 0.0,
+      "budget_hard": 6.5,
+      "budget_soft": 2.0,
+      "sc_client_usd": 0.0,
+      "total_usd": 0.0,
+      "under_10_cap": true
+    },
+    "runtime_sec": 42.5
+  },
+  "datasets": [
+    {
+      "dataset": "narrativetime_3kchar",
+      "examples": [
+        {
+          "input": "The US military buildup in the Persian gulf continues apace, more planes headed from the united states and senior officials say Iraq's president Saddam Hussein can expect punishing air strikes to cont...",
+          "output": "after",
+          "metadata_induced_path_edges": "[{\"from\": \"CNN19980213.2130.0155::ei585\", \"to\": \"CNN19980213.2130.0155::ei592\", \"local_read_point\": \"UNIVERSE\", \"local_read_coarse\": null, \"most_likely\": \"before\", \"conf\": 0.4}, {\"from\": \"CNN19980213....",
+          "metadata_docid": "CNN19980213.2130.0155",
+          "metadata_corpus": "narrativetime",
+          "metadata_doc_char_len": 2197,
+          "metadata_query": "CNN19980213.2130.0155::ei585->CNN19980213.2130.0155::ei619",
+          "metadata_algebra": "POINT",
+          "metadata_outcome": "abstain",
+          "metadata_query_class": "extraction_limited_abstain",
+          "metadata_stratum": "ge3_cyclic",
+          "metadata_n_pc2_fired": 0,
+          "metadata_prolog_executed_in_swipl": true,
+          "metadata_prolog_agrees_engine": null,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_raw_local": "before",
+          "predict_raw_fulldoc": "before",
+          "predict_sc": "before",
+          "predict_pot": "simultaneous"
+        },
+        {
+          "input": "CNN 19980213 .2130.0155\n    NEWS STORY\n    President Clinton says he is committed to a possible [[E1]]strike[[/E1]] against Iraq, despite objections from other countries. One contrary view of the issu...",
+          "output": "after",
+          "metadata_induced_path_edges": "[{\"from\": \"CNN19980213.2130.0155::ei575\", \"to\": \"CNN19980213.2130.0155::ei622\", \"local_read_point\": \"<\", \"local_read_coarse\": \"before\", \"most_likely\": \"before\", \"conf\": 0.9}, {\"from\": \"CNN19980213.213...",
+          "metadata_docid": "CNN19980213.2130.0155",
+          "metadata_corpus": "narrativetime",
+          "metadata_doc_char_len": 2197,
+          "metadata_query": "CNN19980213.2130.0155::ei575->CNN19980213.2130.0155::ei618",
+          "metadata_algebra": "POINT",
+          "metadata_outcome": "abstain",
+          "metadata_query_class": "extraction_limited_abstain",
+          "metadata_stratum": "ge3_cyclic",
+          "metadata_n_pc2_fired": 1,
+          "metadata_prolog_executed_in_swipl": true,
+          "metadata_prolog_agrees_engine": null,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_raw_local": "after",
+          "predict_raw_fulldoc": "before",
+          "predict_sc": "after",
+          "predict_pot": "ABSTAIN"
+        },
+        {
+          "input": "President Clinton, meantime, glossed over stern warnings from Moscow on Thursday that US air [[E1]]strikes[[/E1]] against Iraq could do serious harm to relations with the Kremlin. The Russian foreign ...",
+          "output": "after",
+          "metadata_induced_path_edges": "[{\"from\": \"CNN19980213.2130.0155::ei606\", \"to\": \"CNN19980213.2130.0155::ei613\", \"local_read_point\": \"UNIVERSE\", \"local_read_coarse\": null, \"most_likely\": \"before\", \"conf\": 0.5}, {\"from\": \"CNN19980213....",
+          "metadata_docid": "CNN19980213.2130.0155",
+          "metadata_corpus": "narrativetime",
+          "metadata_doc_char_len": 2197,
+          "metadata_query": "CNN19980213.2130.0155::ei606->CNN19980213.2130.0155::ei624",
+          "metadata_algebra": "POINT",
+          "metadata_outcome": "abstain",
+          "metadata_query_class": "extraction_limited_abstain",
+          "metadata_stratum": "ge3_cyclic",
+          "metadata_n_pc2_fired": 0,
+          "metadata_prolog_executed_in_swipl": true,
+          "metadata_prolog_agrees_engine": null,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_raw_local": "before",
+          "predict_raw_fulldoc": "before",
+          "predict_sc": "before",
+          "predict_pot": "ABSTAIN"
+        }
+      ]
+    },
+    {
+      "dataset": "clutrr_3kchar_concat",
+      "examples": [
+        {
+          "input": "Sharon and her aunt, Margaret, went to the bookstore. Sharon bought some fantasy books, while Margaret picked up some mysteries. James went fishing with his daughter Kathleen. Kathleen's sister, Sharo...",
+          "output": "niece",
+          "metadata_docid": "clutrr_concat_1",
+          "metadata_corpus": "clutrr_concat",
+          "metadata_doc_char_len": 3602,
+          "metadata_query": "Constance->Teresita",
+          "metadata_hop": 10,
+          "metadata_kind": "within_story_multihop",
+          "metadata_outcome": "emit",
+          "metadata_query_class": "deduction_resolved",
+          "metadata_n_derivations": 1,
+          "predict_modeA": "aunt",
+          "predict_naive": "ABSTAIN",
+          "predict_raw_local": "no-relation",
+          "predict_raw_fulldoc": "no-relation"
+        },
+        {
+          "input": "Marie went to the store with her sister Leah Willie asked her daughter, Thelma, if she would like to go to a movie with her on Saturday night. Timothy and his sister, Thelma love it when their grandmo...",
+          "output": "uncle",
+          "metadata_docid": "clutrr_concat_1",
+          "metadata_corpus": "clutrr_concat",
+          "metadata_doc_char_len": 3602,
+          "metadata_query": "Thelma->Ronald",
+          "metadata_hop": 9,
+          "metadata_kind": "within_story_multihop",
+          "metadata_outcome": "emit",
+          "metadata_query_class": "deduction_resolved",
+          "metadata_n_derivations": 1,
+          "predict_modeA": "uncle",
+          "predict_naive": "ABSTAIN",
+          "predict_raw_local": "brother",
+          "predict_raw_fulldoc": "brother"
+        },
+        {
+          "input": "Dallas is out playing tennis with his daughter Shana because it is nice and sunny outside. Cecelia wanted to buy her mother Melody flowers for Mothers Day, so she called her sister Shana to go shoppin...",
+          "output": "nephew",
+          "metadata_docid": "clutrr_concat_1",
+          "metadata_corpus": "clutrr_concat",
+          "metadata_doc_char_len": 3602,
+          "metadata_query": "Melody->John",
+          "metadata_hop": 8,
+          "metadata_kind": "within_story_multihop",
+          "metadata_outcome": "emit",
+          "metadata_query_class": "deduction_resolved",
+          "metadata_n_derivations": 1,
+          "predict_modeA": "nephew",
+          "predict_naive": "ABSTAIN",
+          "predict_raw_local": "grandson",
+          "predict_raw_fulldoc": "no-relation"
+        }
+      ]
+    }
+  ]
+}

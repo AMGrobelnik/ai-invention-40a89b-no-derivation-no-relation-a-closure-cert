@@ -1,0 +1,14 @@
+[project]
+name = "closure-cert-iter5-experiment-1"
+version = "0.1.0"
+description = "Closure-Certified Text-to-Logic iter-5 decisive SPATIAL RCC-8 cross-path-intersection test: does the full-PC INTERSECTION of disjunctive LLM RCC-8 reads narrow real-venue (SpaRTUN/SpaRP-PS1) deduction queries beyond best-single-path composition? CONFIRM vs SCOPE-BOUNDARY fork with a zero-LLM a-priori gate, synthetic RCC-8 positive control, bracketing-CI matched-coverage comparison, and Prolog trace-graphs."
+requires-python = ">=3.12"
+dependencies = [
+    "numpy==2.4.6",
+    "scipy==1.17.1",
+    "networkx==3.6.1",
+    "httpx==0.28.1",
+    "loguru==0.7.3",
+    "matplotlib==3.11.0",
+    "jsonschema==4.26.0",
+]

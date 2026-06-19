@@ -1,0 +1,17 @@
+[project]
+name = "clutrr-kinship-closure-certificate"
+version = "1.0.0"
+description = "CLUTRR end-to-end neuro-symbolic kinship closure-certificate pipeline: LLM atomic-extraction + finite-composition-table PC-2 closure (Mode-A disjunction-preserving / Mode-B abstain-on-collapse) recovering held-out kinship queries. Delivers atomic P/R, multi-hop accuracy-vs-chain-length, SWI-Prolog trace-graph discharge, and absent-relation hallucination risk-coverage vs PoT/self-consistency/raw/naive baselines at matched coverage."
+requires-python = ">=3.12"
+dependencies = [
+    "numpy==2.4.6",
+    "scipy==1.17.1",
+    "matplotlib==3.11.0",
+    "httpx==0.28.1",
+    "loguru==0.7.3",
+    "jsonschema==4.26.0",
+    "pyswip==0.3.3",
+]
+
+[tool.setuptools]
+py-modules = ["method", "engine", "llm", "stats", "dataio", "kinship", "readers", "baselines", "prolog", "tests"]

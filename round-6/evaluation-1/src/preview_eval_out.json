@@ -1,0 +1,662 @@
+{
+  "metrics_agg": {
+    "llm_spend_usd": 0.0,
+    "seed": 20260617.0,
+    "bootstrap_B": 10000.0,
+    "n_reproduction_mismatches_vs_iter5": 0.0,
+    "n_reproduction_mismatches_vs_iter4": 0.0,
+    "n_carried_literal_mismatches": 0.0,
+    "spatial_certificate_coverage": 0.5350877192982456,
+    "spatial_certificate_confident_wrong": 0.0,
+    "spatial_commit_argmax_confident_wrong": 0.36403508771929827,
+    "spatial_conf_baseline_confident_wrong": 0.41469489414694893,
+    "spatial_conf_baseline_acc_among_answered": 0.5853051058530511,
+    "spatial_conf_baseline_ci_lo": 0.3759788592709535,
+    "spatial_conf_baseline_ci_hi": 0.45657894736842103,
+    "spatial_conf_baseline_p_cw_le_0": 0.0,
+    "spatial_conf_baseline_implied_tau": 0.7,
+    "spatial_conf_baseline_achieved_coverage": 0.5353333333333333,
+    "spatial_certificate_beats_conf_threshold": 1.0,
+    "spatial_ECE_top1": 0.2862666666666667,
+    "spatial_modeB_n_unsound_query_pool": 5.0,
+    "spatial_modeB_n_caught": 5.0,
+    "spatial_modeB_silent_wrong_missed": 0.0,
+    "spatial_modeB_n_unsound_edgeread": 100.0,
+    "spatial_modeB_n_unsound_in_committed_region": 88.0,
+    "kinship_certificate_coverage": 0.3139190523198421,
+    "kinship_certificate_confident_wrong": 0.0,
+    "kinship_commit_argmax_confident_wrong": 0.21618953603158933,
+    "kinship_conf_baseline_confident_wrong": 0.346072186836518,
+    "kinship_conf_baseline_acc_among_answered": 0.653927813163482,
+    "kinship_conf_baseline_ci_lo": 0.293136630482942,
+    "kinship_conf_baseline_ci_hi": 0.4128060243537705,
+    "kinship_conf_baseline_p_cw_le_0": 0.0,
+    "kinship_conf_baseline_implied_tau": 0.4,
+    "kinship_conf_baseline_achieved_coverage": 0.314,
+    "kinship_certificate_beats_conf_threshold": 1.0,
+    "kinship_ECE_top1": 0.05079999999999998,
+    "kinship_modeB_n_unsound_edgeread": 0.0,
+    "kinship_modeB_untested": 1.0,
+    "clutrr_modeA_selacc": 0.8857,
+    "clutrr_h2_absent_reduction": 0.4444,
+    "clutrr_atomic_recall": 0.5324,
+    "synth_allen_selacc_gain": 0.2592,
+    "synth_allen_coverage_gain": 0.024,
+    "allen_decomposition_inherited": 0.67349,
+    "allen_decomposition_novel": 0.0025,
+    "temporal_vs_pot_corrected_gap": 0.026549,
+    "temporal_confident_wrong_frac": 0.424779
+  },
+  "metadata": {
+    "eval_name": "Zero-spend re-analysis: fuzzy fair-baseline + framing spine (retire MAJOR #2/#3, MINOR #4/#5)",
+    "description": "Pure numpy+scipy $0-LLM re-analysis. Builds a confidence-thresholded top-1 fair abstainer at matched coverage for the fuzzy spatial/kinship certificate, with a doc-clustered bootstrap Delta-CI and Mod...",
+    "llm_spend_usd": 0.0,
+    "no_openrouter_client_instantiated": true,
+    "seed": 20260617,
+    "bootstrap_B": 10000,
+    "alpha": 0.05,
+    "reproduce_verify": {
+      "mismatches_vs_iter5": 0,
+      "mismatches_vs_iter4": 0,
+      "n_checks_iter5": 29,
+      "n_checks_iter4": 13,
+      "checked_iter5": [
+        "synth_allen_intersection_coverage",
+        "synth_allen_best_single_coverage",
+        "synth_allen_coverage_gain(+0.0240)"
+      ],
+      "checked_iter4": [
+        "temporal_modeA_vs_pot_gap(0.0265)",
+        "temporal_modeA_vs_pot_new_ci_lo(-0.0883)",
+        "temporal_modeA_vs_pot_new_ci_hi(0.1397)"
+      ],
+      "mismatch_detail_iter5": [],
+      "mismatch_detail_iter4": [],
+      "target_mismatches": 0,
+      "evidence_tag": "REPRODUCE-VERIFY"
+    },
+    "carried_literal_verify": {
+      "clutrr": {
+        "atomic_PRF1": [
+          0.5361,
+          0.5324,
+          0.5343
+        ],
+        "modeA_selacc": 0.8857,
+        "modeA_matched_cov": 0.6862745098039216,
+        "oracle_selacc": 1.0,
+        "oracle_cov": 0.9509803921568627,
+        "h2_reduction": 0.4444,
+        "h2_ci95": [
+          0.3167,
+          0.5833
+        ],
+        "swipl_executed": 40,
+        "swipl_matches_python": 40,
+        "modeA_surface_matches_gold": 39
+      },
+      "spatial": {
+        "n_deduction_required": 228,
+        "n_ge2_short_paths": 0,
+        "synth_rcc8_intersection_selacc": 0.8904109589041096,
+        "synth_rcc8_best_single_selacc": 0.7971014492753623,
+        "crosspath_verdict": "SCOPE-BOUNDARY"
+      },
+      "mismatches": 0,
+      "evidence_tag": "CARRIED-LITERAL-VERIFY"
+    },
+    "task1_fuzzy_fair_baseline": {
+      "spatial": {
+        "certificate": {
+          "coverage": 0.5350877192982456,
+          "confident_wrong": 0.0,
+          "n_committed": 122,
+          "acc_among_answered": 1.0,
+          "evidence_tag": "REAL-LLM-FUZZY-READ"
+        },
+        "commit_argmax": {
+          "coverage": 1.0,
+          "confident_wrong": 0.36403508771929827,
+          "n_confident_wrong": 83,
+          "acc_among_answered": 0.6359649122807017,
+          "note": "ALWAYS-ANSWER contrast; NOT a fair abstainer.",
+          "evidence_tag": "REAL-LLM-FUZZY-READ"
+        },
+        "conf_threshold_baseline": {
+          "unit_of_analysis": "edge_read (1500 calibration reads); query records carry no per-query confidence",
+          "construction": "top-k selection (k=round(cov*N)) on discrete top1_conf with fixed-seed tie-break",
+          "matched_coverage": 0.5350877192982456,
+          "achieved_coverage": 0.5353333333333333,
+          "k_committed": 803,
+          "implied_tau": 0.7,
+          "confident_wrong": 0.41469489414694893,
+          "acc_among_answered": 0.5853051058530511,
+          "ci95": [
+            0.3759788592709535,
+            0.45657894736842103
+          ],
+          "p_one_sided_cw_le_0": 0.0,
+          "n_docs": 529,
+          "certificate_beats": true,
+          "hard_tau_overshoot": {
+            "note": "a hard conf>=tau cut commits ALL ties -> overshoots matched coverage",
+            "overshoot_coverage": 0.7746666666666666,
+            "overshoot_confident_wrong": 0.53184165232358
+          },
+          "frontier": [
+            {
+              "coverage_target": 0.1,
+              "achieved_coverage": 0.1,
+              "confident_wrong": 0.36666666666666664,
+              "acc_among_answered": 0.6333333333333333,
+              "k": 150
+            },
+            {
+              "coverage_target": 0.2,
+              "achieved_coverage": 0.2,
+              "confident_wrong": 0.37666666666666665,
+              "acc_among_answered": 0.6233333333333333,
+              "k": 300
+            },
+            {
+              "coverage_target": 0.3,
+              "achieved_coverage": 0.3,
+              "confident_wrong": 0.39555555555555555,
+              "acc_among_answered": 0.6044444444444445,
+              "k": 450
+            }
+          ],
+          "evidence_tag": "REAL-LLM-FUZZY-READ"
+        },
+        "modeB": {
+          "n_unsound_query_pool": 5,
+          "n_caught": 5,
+          "n_silent_wrong_missed": 0,
+          "certificate_caught_fraction": 1.0,
+          "n_unsound_edgeread": 100,
+          "unsound_edgeread_conf_dist": {
+            "0.7": 13,
+            "0.8": 87
+          },
+          "unsound_reads_all_high_conf": true,
+          "n_unsound_edgeread_in_committed_region": 88,
+          "n_unsound_edgeread_top1_wrong": 100,
+          "interpretation": "unsound reads are emitted at ORDINARY/HIGH confidence, so a confidence threshold structurally cannot single them out; the certificate catches them via the set-soundness (Mode-B collapse/abstain) contr...",
+          "modeB_untested": false,
+          "evidence_tag": "REAL-LLM-FUZZY-READ + THEOREM:zero-FP-conditional"
+        },
+        "ECE_top1": 0.2862666666666667,
+        "calibration_quality": "POOR"
+      },
+      "kinship": {
+        "certificate": {
+          "coverage": 0.3139190523198421,
+          "confident_wrong": 0.0,
+          "n_committed": 318,
+          "acc_among_answered": 1.0,
+          "evidence_tag": "REAL-LLM-FUZZY-READ"
+        },
+        "commit_argmax": {
+          "coverage": 1.0,
+          "confident_wrong": 0.21618953603158933,
+          "n_confident_wrong": 219,
+          "acc_among_answered": 0.7838104639684107,
+          "note": "ALWAYS-ANSWER contrast; NOT a fair abstainer.",
+          "evidence_tag": "REAL-LLM-FUZZY-READ"
+        },
+        "conf_threshold_baseline": {
+          "unit_of_analysis": "edge_read (1500 calibration reads); query records carry no per-query confidence",
+          "construction": "top-k selection (k=round(cov*N)) on discrete top1_conf with fixed-seed tie-break",
+          "matched_coverage": 0.3139190523198421,
+          "achieved_coverage": 0.314,
+          "k_committed": 471,
+          "implied_tau": 0.4,
+          "confident_wrong": 0.346072186836518,
+          "acc_among_answered": 0.653927813163482,
+          "ci95": [
+            0.293136630482942,
+            0.4128060243537705
+          ],
+          "p_one_sided_cw_le_0": 0.0,
+          "n_docs": 888,
+          "certificate_beats": true,
+          "hard_tau_overshoot": {
+            "note": "a hard conf>=tau cut commits ALL ties -> overshoots matched coverage",
+            "overshoot_coverage": 0.7133333333333334,
+            "overshoot_confident_wrong": 0.4953271028037383
+          },
+          "frontier": [
+            {
+              "coverage_target": 0.1,
+              "achieved_coverage": 0.1,
+              "confident_wrong": 0.0,
+              "acc_among_answered": 1.0,
+              "k": 150
+            },
+            {
+              "coverage_target": 0.2,
+              "achieved_coverage": 0.2,
+              "confident_wrong": 0.18666666666666668,
+              "acc_among_answered": 0.8133333333333334,
+              "k": 300
+            },
+            {
+              "coverage_target": 0.3,
+              "achieved_coverage": 0.3,
+              "confident_wrong": 0.33555555555555555,
+              "acc_among_answered": 0.6644444444444444,
+              "k": 450
+            }
+          ],
+          "evidence_tag": "REAL-LLM-FUZZY-READ"
+        },
+        "modeB": {
+          "n_unsound_query_pool": 0,
+          "n_caught": 0,
+          "n_silent_wrong_missed": 0,
+          "certificate_caught_fraction": null,
+          "n_unsound_edgeread": 0,
+          "unsound_edgeread_conf_dist": {},
+          "unsound_reads_all_high_conf": null,
+          "n_unsound_edgeread_in_committed_region": 0,
+          "n_unsound_edgeread_top1_wrong": 0,
+          "interpretation": "no unsound reads exist -> Mode-B catch UNTESTED for this setting",
+          "modeB_untested": true,
+          "evidence_tag": "REAL-LLM-FUZZY-READ + THEOREM:zero-FP-conditional"
+        },
+        "ECE_top1": 0.05079999999999998,
+        "calibration_quality": "GOOD"
+      },
+      "table3": [
+        {
+          "setting": "spatial_fuzzy_rcc8",
+          "method": "commit-argmax (always-answer)",
+          "coverage": 1.0,
+          "acc_among_answered": 0.6359649122807017,
+          "confident_wrong": 0.364,
+          "delta_vs_certificate_ci": "n/a (always-answers)",
+          "evidence_tag": "REAL-LLM-FUZZY-READ"
+        },
+        {
+          "setting": "spatial_fuzzy_rcc8",
+          "method": "abstain-always",
+          "coverage": 0.0,
+          "acc_among_answered": null,
+          "confident_wrong": 0.0,
+          "delta_vs_certificate_ci": "n/a (coverage 0)",
+          "evidence_tag": "REAL-LLM-FUZZY-READ"
+        },
+        {
+          "setting": "spatial_fuzzy_rcc8",
+          "method": "CERTIFICATE (abstain-on-collapse)",
+          "coverage": 0.5351,
+          "acc_among_answered": 1.0,
+          "confident_wrong": 0.0,
+          "delta_vs_certificate_ci": "0.000 (reference)",
+          "evidence_tag": "REAL-LLM-FUZZY-READ + THEOREM:zero-FP-conditional"
+        }
+      ],
+      "table3_footnote": {
+        "row": "Mode-B sound-violation catches",
+        "spatial": "5/5 unsound queries caught, 0 silent-wrong missed; unsound edge-reads all at conf ['0.7', '0.8']",
+        "kinship": "0/0 (no unsound reads exist -> Mode-B catch UNTESTED)",
+        "evidence_tag": "REAL-LLM-FUZZY-READ + THEOREM:zero-FP-conditional"
+      },
+      "honest_framing_string": "auditable, faithful abstention that ADDITIONALLY catches sound-violating reads a confidence threshold cannot see — quantified at 5/5 unsound spatial reads caught (0 silent-wrong missed), 0 testable on...",
+      "certificate_beats_conf_threshold_both_settings": true,
+      "interpretation_by_calibration": "PRE-STATED expectation: spatial top-1 calibration is POOR (ECE 0.286) so the certificate should BEAT the matched-coverage confidence baseline; kinship top-1 calibration is GOOD (ECE 0.051) so the base...",
+      "unit_of_analysis_caveat": "LOAD-BEARING: the certificate's 0.000 confident-wrong is measured on closure QUERIES, while the confidence baseline's confident-wrong is measured on single edge READS (query records carry no per-query..."
+    },
+    "task2_tempered_two_condition": {
+      "section_target": "sec:decisive (ONE subordinate subsection, NOT a co-headline)",
+      "drops": [
+        "'two NECESSARY conditions'",
+        "'sharp, general characterization'",
+        "'two-condition LAW'"
+      ],
+      "framing": "explanatory account of two negatives, NOT a predictive law",
+      "paragraph": "Across the two real venues we could a-priori gate before any LLM spend, the cross-path coding mechanism — multi-path intersection as an error-correcting code over LLM reads — fails to realize, but for...",
+      "supporting_numbers": {
+        "temporal_underdet_gemini": {
+          "value": 0.87,
+          "evidence_tag": "REAL-LLM-READ"
+        },
+        "temporal_underdet_deepseek": {
+          "value": 0.99,
+          "evidence_tag": "REAL-LLM-READ"
+        },
+        "temporal_mean_breadth_of_13": {
+          "value": 11.5,
+          "evidence_tag": "REAL-LLM-READ"
+        },
+        "temporal_resolved_multipath": {
+          "value": "0/125",
+          "evidence_tag": "REAL-LLM-READ + GOLD-ONLY-GATE"
+        },
+        "spatial_n_single_path": {
+          "value": 228,
+          "evidence_tag": "GOLD-ONLY-GATE"
+        },
+        "spatial_tight_multipath_structural_flag": {
+          "value": 0.274,
+          "evidence_tag": "DATASET-CARD/STRUCTURAL"
+        },
+        "spatial_mean_breadth_of_8": {
+          "value": 2.1,
+          "evidence_tag": "REAL-LLM-READ"
+        },
+        "spatial_underdet": {
+          "value": 0.036,
+          "evidence_tag": "REAL-LLM-READ"
+        },
+        "synth_allen_intersection_selacc": {
+          "value": 0.976,
+          "evidence_tag": "SYNTHETIC-CONTROL"
+        },
+        "synth_allen_best_single_selacc": {
+          "value": 0.717,
+          "evidence_tag": "SYNTHETIC-CONTROL"
+        },
+        "synth_allen_selacc_gain": {
+          "value": 0.259,
+          "ci95": [
+            0.177,
+            0.349
+          ],
+          "evidence_tag": "SYNTHETIC-CONTROL"
+        },
+        "synth_rcc8_intersection_selacc": {
+          "value": 0.89,
+          "evidence_tag": "SYNTHETIC-CONTROL"
+        },
+        "synth_rcc8_best_single_selacc": {
+          "value": 0.797,
+          "evidence_tag": "SYNTHETIC-CONTROL"
+        },
+        "small_bite_coverage_gain": {
+          "value": 0.024,
+          "ci_includes_0": true,
+          "evidence_tag": "SYNTHETIC-CHANNEL"
+        }
+      },
+      "evidence_tag": "REAL-LLM-READ + GOLD-ONLY-GATE + SYNTHETIC-CONTROL"
+    },
+    "task3_one_thesis_table": {
+      "columns": [
+        "claim",
+        "evidence_tag",
+        "where_it_holds"
+      ],
+      "spine_row": {
+        "claim": "Training-free, gold-free, per-edge ABSTAIN-ON-COLLAPSE certificate over LLM-extracted relational facts whose DISTINCTIVE value is reducing CONFIDENT-WRONG hallucination on no-derivation / absent-relat...",
+        "evidence_tag": "REAL-LLM-READ + THEOREM(zero-FP conditional on read soundness)",
+        "where_it_holds": "templated CLUTRR end-to-end (<=871 chars); fuzzy spatial/kinship RCC-8 & paraphrase; weakly protective on natural temporal text",
+        "status": "CONFIRMED-AT-POWER (certificate). Fair-confidence-baseline edge: the certificate beats a matched-coverage confidence-thresholded top-1 abstainer at the EDGE-READ level in BOTH fuzzy settings (CI exclu...",
+        "key_numbers": {
+          "clutrr_modeA_selacc": 0.8857,
+          "clutrr_h2_absent_reduction": 0.4444,
+          "clutrr_h2_ci95": [
+            0.3167,
+            0.5833
+          ],
+          "clutrr_goldread_oracle": "1.000@cov0.951",
+          "clutrr_swipl": "40/40 executed, 39/40 surface-match gold",
+          "clutrr_atomic_PRF1": [
+            0.536,
+            0.532,
+            0.534
+          ],
+          "fuzzy_cert_confident_wrong": "0.000 @cov 0.5351 spatial / 0.3139 kinship",
+          "fuzzy_conf_baseline_cw_spatial": 0.4147,
+          "fuzzy_conf_baseline_cw_spatial_ci": [
+            0.376,
+            0.4566
+          ],
+          "fuzzy_certificate_beats_spatial": true,
+          "fuzzy_conf_baseline_cw_kinship": 0.3461,
+          "fuzzy_conf_baseline_cw_kinship_ci": [
+            0.2931,
+            0.4128
+          ],
+          "fuzzy_certificate_beats_kinship": true,
+          "modeB_catches": "5/5 spatial, 0/0 kinship"
+        }
+      },
+      "supporting_row": {
+        "claim": "Cross-path coding is SYNTHETIC-CHANNEL-ONLY — two conditions each independently violated on both a-priori-gated real venues (temporal near-universe reads; spatial containment-tree gold), synthetic con...",
+        "evidence_tag": "REAL-LLM-READ + GOLD-ONLY-GATE + SYNTHETIC-CONTROL",
+        "where_it_holds": "synthetic Allen + RCC-8 channels only; refuted on real temporal + real spatial",
+        "status": "RESOLVED NEGATIVE (no longer PENDING; art_i53dBKgGY3Ig overturns dataset-card GENERAL-band optimism, $0 gold-structural)",
+        "key_numbers": {
+          "spatial_single_path": "228 single-path / 27.4% structural",
+          "synth_allen_selacc_gain": 0.259,
+          "synth_allen_selacc_ci95": [
+            0.177,
+            0.349
+          ],
+          "synth_rcc8": "0.890 vs 0.797",
+          "small_bite_coverage_gain": "+0.024 (CI includes 0)"
+        }
+      },
+      "appendix_rows": [
+        {
+          "id": "A1",
+          "claim": "Algebra-richness scaling: point(3) +0.043 -> RCC-8(8) +0.448 -> Allen(13) +0.676; INHERITED table-vs-LLM-composition (Allen decomposes +0.673 inherited / +0.0025 novel).",
+          "evidence_tag": "REAL-LLM-READ-ON-SYNTHETIC",
+          "status": "APPENDIX"
+        },
+        {
+          "id": "A2",
+          "claim": "Redundancy inverted-U: peak_K [2,4,7,10,16]; silent-wrong [0.0064,0.1456]; Page p~5e-4; realized cross-path coverage bite +0.024.",
+          "evidence_tag": "SYNTHETIC-CHANNEL",
+          "status": "APPENDIX"
+        },
+        {
+          "id": "A3",
+          "claim": "Zero-FP soundness THEOREM verified on 100,296 networks; recall & rho are INPUTS (characterizes, not predicts).",
+          "evidence_tag": "THEOREM",
+          "status": "APPENDIX"
+        }
+      ],
+      "footnote_rows": [
+        {
+          "id": "F1-ceiling-temporal",
+          "claim": "Corrected natural-temporal marginal: vs-PoT 0.0265 CI[-0.0883,0.1397] includes 0; confident-wrong-among-answered 0.4248=48/113; modeA cov 0.1883.",
+          "evidence_tag": "REAL-LLM-READ"
+        },
+        {
+          "id": "F2-scope-deduction",
+          "claim": "Deduction-sub-module ceiling: atomic recall 0.5324 => ~0.19 coverage; OpenCyc / atomic re-extraction / general fuzzy OUT OF SCOPE; hand-supplied tables; no doc reaches ~3000 chars.",
+          "evidence_tag": "SCOPE"
+        }
+      ],
+      "pending_slots": [
+        {
+          "id": "P-A",
+          "slot": "STEP A — add confidence-thresholded raw-abstain baseline (verbalized-confidence + self-consistency vote-margin) to the CLUTRR absent/mixed pool AND the spatial RCC-8 deduction pool at matched coverage...",
+          "status": "PENDING (NOT computed here)"
+        },
+        {
+          "id": "P-B",
+          "slot": "STEP B — certificate vs confidence abstainer on >=1 genuinely-natural corpus' no-derivation stratum, e.g. the iter-6 Re-DocRED ~3000-char corpus (iter-7).",
+          "status": "PENDING (NOT computed here)"
+        }
+      ],
+      "one_line_thesis": "A structural, label-free certificate that catches confident relational hallucinations that confidence cannot see."
+    },
+    "task4_venue_scope": {
+      "venue_justification": {
+        "from": "ACL Knowledge Extraction track",
+        "to": "NeSy / temporal-and-qualitative-reasoning (EMNLP / neuro-symbolic) track",
+        "rationale": "The substantive contribution is closure-certified DEDUCTION / CONSISTENCY, not extraction. Atomic extraction is MEASURED not improved (F1 ~0.534), so a knowledge-extraction track is a poor fit; EMNLP ...",
+        "evidence_tag": "SCOPE"
+      },
+      "scope_boundaries": [
+        {
+          "item": "deduction sub-module only",
+          "evidence_tag": "SCOPE"
+        },
+        {
+          "item": "atomic extraction measured-not-improved (~0.53 recall, F1 0.534)",
+          "evidence_tag": "SCOPE"
+        },
+        {
+          "item": "OpenCyc / upper-ontology grounding OUT OF SCOPE",
+          "evidence_tag": "SCOPE"
+        }
+      ],
+      "doc_labels": {
+        "operational_3000char_study_artifact": "art_WQoePKrpsTPo",
+        "temporal_arm": "5 NarrativeTime articles BRACKET-selected around 3000 chars (NONE in [2500,3500]; mean 3050, range 2197-4293)",
+        "kinship_arm": "3 docs CONCATENATED from disjoint-entity CLUTRR sub-stories (cross-story pairs absent-by-construction => trivially abstained)",
+        "pending_note": "the iter-6 Re-DocRED corpus will supply genuinely-natural ~3000-char documents (PENDING)",
+        "evidence_tag": "SCOPE"
+      }
+    },
+    "headline_structure_guidance": [
+      "Lead with the SINGLE certificate thesis: a structural, label-free certificate that catches confident relational hallucinations that a confidence threshold cannot see.",
+      "Cross-path coding = ONE subordinate subsection (sec:decisive), framed as an explanatory account of two independently-violated conditions — NOT a co-headline, NOT a predictive law.",
+      "Demote mechanism analysis (algebra-richness scaling, redundancy inverted-U, zero-FP theorem) to appendix rows."
+    ],
+    "evidence_tag_legend": {
+      "REAL-LLM-FUZZY-READ": "measured on genuinely-fuzzy LLM reads (iter-5 experiment_2)",
+      "REAL-LLM-READ": "measured on real LLM reads (CLUTRR / temporal)",
+      "GOLD-ONLY-GATE": "$0 a-priori gate over verified gold structure (no LLM)",
+      "SYNTHETIC-CONTROL": "synthetic positive control confirming the mechanism",
+      "SYNTHETIC-CHANNEL": "synthetic-channel-only result",
+      "THEOREM": "proved-by-construction / characterizes-not-predicts",
+      "THEOREM:zero-FP-conditional": "sound read => no confident-wrong (conditional invariant)",
+      "SCOPE": "scope boundary / front-matter caveat",
+      "REPRODUCE-VERIFY": "continuity check vs prior re-analyses",
+      "CARRIED-LITERAL-VERIFY": "carried number re-checked against source experiment file"
+    }
+  },
+  "datasets": [
+    {
+      "dataset": "fuzzy_spatial_conf_baseline",
+      "examples": [
+        {
+          "input": "Region 0 is around region 1.",
+          "output": "{\"decision\": \"COMMIT\", \"top1\": \"NTPPi\", \"conf\": 0.8, \"gold\": \"NTPPi\", \"top1_correct\": true, \"sound\": true}",
+          "predict_conf_committed": "COMMIT",
+          "metadata_top1_conf": 0.8,
+          "metadata_top1_correct": true,
+          "metadata_sound": true,
+          "metadata_doc_id": "SpaRP-PS1_test_1024",
+          "metadata_rank": 0,
+          "metadata_term": "around",
+          "eval_committed": 1.0,
+          "eval_confident_wrong": 0.0
+        },
+        {
+          "input": "Region 2x1 is around region 2x2.",
+          "output": "{\"decision\": \"COMMIT\", \"top1\": \"NTPPi\", \"conf\": 0.8, \"gold\": \"EC\", \"top1_correct\": false, \"sound\": false}",
+          "predict_conf_committed": "COMMIT",
+          "metadata_top1_conf": 0.8,
+          "metadata_top1_correct": false,
+          "metadata_sound": false,
+          "metadata_doc_id": "SpaRP-PS1_test_1014",
+          "metadata_rank": 1,
+          "metadata_term": "around",
+          "eval_committed": 1.0,
+          "eval_confident_wrong": 1.0
+        },
+        {
+          "input": "Region 0x1 is around region 0x2.",
+          "output": "{\"decision\": \"COMMIT\", \"top1\": \"NTPPi\", \"conf\": 0.8, \"gold\": \"EC\", \"top1_correct\": false, \"sound\": false}",
+          "predict_conf_committed": "COMMIT",
+          "metadata_top1_conf": 0.8,
+          "metadata_top1_correct": false,
+          "metadata_sound": false,
+          "metadata_doc_id": "SpaRP-PS1_test_1176",
+          "metadata_rank": 2,
+          "metadata_term": "around",
+          "eval_committed": 1.0,
+          "eval_confident_wrong": 1.0
+        }
+      ]
+    },
+    {
+      "dataset": "fuzzy_kinship_conf_baseline",
+      "examples": [
+        {
+          "input": "Wallace is Helen's sibling-figure.",
+          "output": "{\"decision\": \"COMMIT\", \"top1\": \"sibling\", \"conf\": 0.8, \"gold\": \"sibling\", \"top1_correct\": true, \"sound\": true}",
+          "predict_conf_committed": "COMMIT",
+          "metadata_top1_conf": 0.8,
+          "metadata_top1_correct": true,
+          "metadata_sound": true,
+          "metadata_doc_id": "02dfac19-cf4b-4302-befd-835e83ab8456",
+          "metadata_rank": 0,
+          "metadata_term": "sibling-figure",
+          "eval_committed": 1.0,
+          "eval_confident_wrong": 0.0
+        },
+        {
+          "input": "Allan is Elsie's sibling-figure.",
+          "output": "{\"decision\": \"COMMIT\", \"top1\": \"sibling\", \"conf\": 0.8, \"gold\": \"sibling\", \"top1_correct\": true, \"sound\": true}",
+          "predict_conf_committed": "COMMIT",
+          "metadata_top1_conf": 0.8,
+          "metadata_top1_correct": true,
+          "metadata_sound": true,
+          "metadata_doc_id": "02864406-cf55-4879-9515-8843f8ac7e35",
+          "metadata_rank": 1,
+          "metadata_term": "sibling-figure",
+          "eval_committed": 1.0,
+          "eval_confident_wrong": 0.0
+        },
+        {
+          "input": "Francisco is Wesley's sibling-figure.",
+          "output": "{\"decision\": \"COMMIT\", \"top1\": \"sibling\", \"conf\": 0.8, \"gold\": \"sibling\", \"top1_correct\": true, \"sound\": true}",
+          "predict_conf_committed": "COMMIT",
+          "metadata_top1_conf": 0.8,
+          "metadata_top1_correct": true,
+          "metadata_sound": true,
+          "metadata_doc_id": "017079ba-7ac1-4f40-9f59-218d1340da50",
+          "metadata_rank": 2,
+          "metadata_term": "sibling-figure",
+          "eval_committed": 1.0,
+          "eval_confident_wrong": 0.0
+        }
+      ]
+    },
+    {
+      "dataset": "fuzzy_spatial_unsound_reads",
+      "examples": [
+        {
+          "input": "Region 0x2 is around region 0x1.",
+          "output": "{\"gold\": \"EC\", \"top1\": \"NTPPi\", \"conf\": 0.8, \"sound\": false, \"top1_correct\": false, \"in_conf_committed_region\": true}",
+          "predict_conf_committed": "COMMIT",
+          "metadata_top1_conf": 0.8,
+          "metadata_top1_correct": false,
+          "metadata_sound": false,
+          "metadata_doc_id": "SpaRP-PS1_test_1005",
+          "metadata_term": "around",
+          "eval_in_committed_region": 1.0
+        },
+        {
+          "input": "Region 1x0 is around region 1x1.",
+          "output": "{\"gold\": \"EC\", \"top1\": \"NTPPi\", \"conf\": 0.8, \"sound\": false, \"top1_correct\": false, \"in_conf_committed_region\": true}",
+          "predict_conf_committed": "COMMIT",
+          "metadata_top1_conf": 0.8,
+          "metadata_top1_correct": false,
+          "metadata_sound": false,
+          "metadata_doc_id": "SpaRP-PS1_test_1006",
+          "metadata_term": "around",
+          "eval_in_committed_region": 1.0
+        },
+        {
+          "input": "Region 1x0 is around region 1x1.",
+          "output": "{\"gold\": \"EC\", \"top1\": \"NTPPi\", \"conf\": 0.8, \"sound\": false, \"top1_correct\": false, \"in_conf_committed_region\": true}",
+          "predict_conf_committed": "COMMIT",
+          "metadata_top1_conf": 0.8,
+          "metadata_top1_correct": false,
+          "metadata_sound": false,
+          "metadata_doc_id": "SpaRP-PS1_test_1008",
+          "metadata_term": "around",
+          "eval_in_committed_region": 1.0
+        }
+      ]
+    }
+  ]
+}

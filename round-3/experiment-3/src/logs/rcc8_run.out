@@ -1,0 +1,7 @@
+2026-06-17 18:40:11.917 | INFO     | __main__:main:1370 - Loaded 1680 networks: rcc8=1680
+2026-06-17 18:40:13.367 | INFO     | __main__:main:1393 - Stage0: model_used=google/gemini-3.1-flash-lite cache_roundtrip=True cost=$0.00000
+2026-06-17 18:40:13.373 | INFO     | __main__:main:1418 - Phase A: 16 UNIQUE read prompts (entity-normalized)
+2026-06-17 18:40:13.598 | INFO     | __main__:run_all_batches:1320 -   [reads] batch of 16 done; cost=$0.0000 calls=0 cache_hits=18
+2026-06-17 18:40:14.207 | INFO     | __main__:main:1429 - Phase A2: 80 single-label read prompts (ILP M=5)
+2026-06-17 18:40:15.323 | INFO     | __main__:run_all_batches:1320 -   [single-label] batch of 80 done; cost=$0.0000 calls=0 cache_hits=98
+2026-06-17 18:40:15.932 | INFO     | __main__:main:1435 - Phase B: 21600 full-document baseline prompts; projected ~$6.48

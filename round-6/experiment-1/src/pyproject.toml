@@ -1,0 +1,17 @@
+[project]
+name = "closure-certificate-vs-confidence-battery"
+version = "1.0.0"
+description = "STEP A (iter-6): closure certificate vs a STRONG 4-signal confidence-thresholded neural abstainer (verbalized / self-consistency vote-margin@k=10 / Kadavath P(True) / semantic-entropy) on the CLUTRR no-derivation / absent-relation stratum; spatial RCC-8 ordinary single-path stratum reused read-only as the honest scope boundary. Re-uses the exact cached iter-3 CLUTRR pools (180 absent + 102 present) and iter-5 spatial RCC-8 (228); proves the certificate's confident-wrong is strictly below every confidence signal at matched coverage (story-clustered paired bootstrap B=10000, Holm), with a crux survival table quantifying why confidence cannot see absent-relation hallucinations."
+requires-python = ">=3.12"
+dependencies = [
+    "numpy==2.4.6",
+    "scipy==1.17.1",
+    "matplotlib==3.11.0",
+    "httpx==0.28.1",
+    "loguru==0.7.3",
+    "jsonschema==4.26.0",
+    "pyswip==0.3.3",
+]
+
+[tool.setuptools]
+py-modules = ["method", "engine", "llm", "stats", "dataio", "kinship", "readers", "baselines", "prolog", "tests"]

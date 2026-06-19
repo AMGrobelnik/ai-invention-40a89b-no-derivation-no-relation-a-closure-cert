@@ -1,0 +1,10 @@
+[project]
+name = "synthetic-qcn-backbone"
+version = "1.0.0"
+description = "Synthetic Qualitative Constraint Network (QCN) backbone: controlled consistent networks over Allen/convex-Point/RCC-8 with NL realizations."
+requires-python = ">=3.12"
+dependencies = [
+    "numpy==2.4.6",
+    "networkx==3.6.1",
+    "loguru==0.7.3",
+]

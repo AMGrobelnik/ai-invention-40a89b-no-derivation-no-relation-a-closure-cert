@@ -1,0 +1,59 @@
+{
+  "relation_types": {
+    "located_in": {
+      "symmetric": false,
+      "inverse": "contains"
+    },
+    "contains": {
+      "symmetric": false,
+      "inverse": "located_in"
+    }
+  },
+  "symmetric_types": [],
+  "inverse_pairs": {
+    "located_in": "contains"
+  },
+  "composition_rules": {
+    "located_in": {
+      "located_in": "located_in"
+    },
+    "contains": {
+      "contains": "contains"
+    }
+  },
+  "surface_forms": {
+    "located_in": {
+      "male": "located in",
+      "female": "located in"
+    },
+    "contains": {
+      "male": "contains",
+      "female": "contains"
+    }
+  },
+  "surface_reverse": {
+    "located in": [
+      "located_in",
+      "male"
+    ],
+    "contains": [
+      "contains",
+      "male"
+    ]
+  },
+  "label_map": {
+    "0": "located_in",
+    "1": "contains"
+  },
+  "label_map_reverse": {
+    "located_in": 0,
+    "contains": 1
+  },
+  "semantics": "Edge (a, type, b) reads 'a is located_in b' (a is a transitive descendant / sub-region of b). 'contains' is the converse: (a, contains, b) reads 'a transitively contains b'. Composition: A located_in B, B located_in C => A located_in C; A contains B, B contains C => A contains C. NO other composition is defined.",
+  "note": "DEGENERATE single-relation TRANSITIVE composition table. located_in is a strict partial order (antisymmetric, transitive) over place / administrative entities; 'contains' is its converse. The ONLY defined compositions are located_in o located_in = located_in and contains o contains = contains. located_in o contains and contains o located_in are UNDEFINED (they add nothing => SOUND: sibling/cousin places derive EMPTY). This is NOT a relation algebra (no general intersection/converse closure, no disjunctive relations, no point/interval algebra). It is the geographic/administrative-containment structural twin of the CLUTRR kinship composition table, parameterizing the SAME forward least-fixpoint UNION engine (kinship.py) unchanged. Emitted verbatim once in metadata.composition_table.",
+  "source": {
+    "relation_primitive": "Wikidata administrative-containment properties as annotated in DocRED/Re-DocRED (P131 'located in the administrative territorial entity', P17 'country', P150 'contains administrative territorial entity', P1376 'capital of', P36 'capital'), collapsed to the single primitive located_in (+ its converse contains).",
+    "engine": "Reuses kinship.py (CLUTRR finite-composition forward least-fixpoint UNION closure) VERBATIM; the engine is parameterized entirely by this table.",
+    "scope": "administrative / geographic containment only; antisymmetric transitive partial order."
+  }
+}

@@ -1,0 +1,245 @@
+# Iter-2 Local-Reader / Prolog-Discharge / CLUTRR Implementation-Decision Dossier
+
+## Summary
+
+Executor-ready, web-verified resolution of the six NEW implementation decisions the iter-2 closure-certified text-to-logic experiments need (beyond the iter-1 dossier art_aQ2Rf8rwqteI). (1) LOCAL-READER PROTOCOL: minimal-span unit = the single sentence containing each event mention (default; +/-1 sentence as a sensitivity arm), grounded in TimeBank-Dense's own annotation window (same-sentence + immediately-following-sentence + DCT; 5 relations BEFORE/AFTER/INCLUDES/IS_INCLUDED/SIMULTANEOUS + VAGUE=underdetermined); 'no shared span' = mentions never co-occur within the window => DEDUCTION-REQUIRED, computable WITHOUT the LLM (T0-safe); disjunctive Pairwise read prompt adapted from Wei et al. arXiv:2407.19568 (Bulk/Iterative/Event-Ranking/Pairwise) + METRE arXiv:2408.07353 multi-label, enumerate base relations + explicit UNIVERSAL option, 'name every relation the text does NOT rule out'. (2) DISCHARGE: SWI-Prolog via pyswip v0.3.3 (class-method Prolog.assertz/query, Python>=3.9, needs apt swi-prolog>=8.4.2, ctypes shared-lib + SWI_HOME_DIR/LIBSWIPL_PATH) PRIMARY, robust subprocess fallback `swipl -s f.pl -g goal -t halt` (exit 0/1/2), clingo 5.8.0 ASP as secondary; QCN encoded as edge(E1,E2,RelSet) + algebra-seeded compose/3,converse/2; readback |R|==1 emit / |R|>1 ABSTAIN / |R|==0 unsound-flag; CONFIDENT-WRONG = nonabstained-single-relation-mismatch-rate on the deduction-required/absent subset, matched-coverage, paired-bootstrap CI, pre-registered MDE, aligned to Logic-LM/LINC executable-rate practice. (3) CLUTRR: HF CLUTRR/v1 (14 configs, target 0-20 mapping, fields incl proof_state/f_comb/story_edges/edge_types) BUT datasets>=4.0 dropped scripts => load via huggingface_hub snapshot_download of the per-task CSVs (git-LFS) or pin datasets<4.0 + trust_remote_code; kinship composition table = rules_store.yaml primitive compositions + relations_store.yaml surface<->primitive<->gender map (no-relation is a native primitive); absent-relation pairs CONSTRUCTED from rob_train_disc disconnected components / cross-family pairs; atomic-gold = story_edges+edge_types. (4) STRONGER READER: weak anchor = iter-1 google/gemini-3.1-flash-lite ($0.25/$1.50); recommend deepseek/deepseek-v3.2 ($0.2288/$0.3432, cross-family, CHEAPER, gate test ~$1.3) as budget-optimal stronger reader, google/gemini-3-flash-preview ($0.50/$3.00 thinking) as the clear capability-jump option on a stratified subsample; total two-reader run < $10 with disk cache + prompt caching + hard cost-guard. (5) SEVEN local-regime baselines each re-specified to read ONLY local spans with a matched single-relation abstention signal (raw verbalized-confidence, CoT, self-consistency vote-margin, LINC formalization-agreement, PoT path-agreement [confirmed per-path INDEPENDENT, no cross-path intersection], ILP-commit Eirew M=5, naive single-pass intersection), all thresholded to the SAME coverage object. (6) Four recent temporal/logical-consistency citations pinned (arXiv:2510.15513, 2502.11425, 2412.16100, 2409.14065) + a crisp novelty statement (disjunction-preserving abstain-on-collapse OUTPUT CONTRACT + gold-free closure CERTIFICATE + redundancy-as-coding-rate, NOT the algebra). Includes a consolidated decision table, exact IDs/URLs, and a 12-item gotchas list.
+
+## Research Findings
+
+# Iter-2 Implementation-Decision Dossier — Local-Reader, Prolog/ASP Discharge, CLUTRR, Stronger Reader, Local-Regime Baselines, Novelty
+
+**Scope & relation to the dependency.** This dossier resolves the six NEW implementation decisions the iter-2 experiments require and that the iter-1 dossier (`art_aQ2Rf8rwqteI`) did *not* cover. It BUILDS ON, and does not repeat, the iter-1 facts: corpus access/parse for NarrativeTime (`github.com/text-machine-lab/nt`, MIT, `nt_format` JSONL with a per-event numeric `time` coordinate + bracket interval model + same-branch `get_event_relation`), TDDMan (4-col TSV, codes a/b/i/ii/s, text joined from TimeBank-Dense, long-distance gold NOT auto-inferable), MATRES (start-point convex point algebra, 2-sentence window => N*≈0 gate control); the GQR Allen/convex-point/RCC-8 composition+converse tables (Allen uses `<`/`>` tokens; convex-point `!=` -> universal widening); the Mackworth PC-2 iterated a-closure pseudocode + the naive single-pass-intersection contrast (naive==full at length-2, diverges at hop≥3 / cyclomatic≥1); the Renz-Nebel A(n,d,l) generator; the high-level baseline list; the OpenRouter cost-guard + disk-cache strategy; and the 3-part realism statistic [1]. Every external claim below is tagged with a source.
+
+---
+
+## WORKSTREAM 1 — LOCAL-READER SPAN-EXTRACTION PROTOCOL (defines the iter-2 regime)
+
+**DECISION 1 (minimal-span unit).** Use the **single sentence that contains the event mention** as the default local span; add a **±1-sentence window** as a pre-registered sensitivity arm. This is not arbitrary: it mirrors the annotation geometry of the gold itself. TimeBank-Dense (Chambers/Cassidy et al. 2014, "An Annotation Framework for Dense Event Ordering") was built by forcing annotators to label "all pairs of events and time expressions in the same sentence, all pairs ... in the immediately following sentence, and all pairs of events and the document creation time" [29]. Thus the corpus's *direct* (non-deduced) gold is exactly the within-sentence + adjacent-sentence pairs; anything farther apart is, by construction, not directly annotated and is the deduction-required regime. The relation inventory is **BEFORE, AFTER, INCLUDES, IS_INCLUDED, SIMULTANEOUS, VAGUE**, where VAGUE = "ambiguous ... or ... pairs for which no clear temporal relation exists" [29] — i.e. VAGUE is the corpus-native **universal/underdetermined** option, and maps onto the TDDMan codes {b,a,i,ii,s} from iter-1 [1].
+
+**DECISION 2 ('no shared span' = deduction-required trigger, LLM-free).** Define: e1 and e2 **share a span** iff their mentions co-occur within the chosen window (same sentence, or within ±k sentences). **No shared span => DEDUCTION-REQUIRED.** This predicate is purely structural — it reads only mention sentence-indices, never the LLM — so it is computable at the **T0 zero-spend gate** [1]. This is the same locality cut Wei et al. arXiv:2407.19568 operationalize when they "retain the first two sentences of a document instead of only one sentence so that LLMs have access to event relations involving event pairs both within the same sentence and across different sentences" [2]; and it is consistent with Kougia et al. arXiv:2406.11486's finding (carried from iter-1) that LLM reads stay "local and sparse" so most long-distance relations are not directly read [1].
+
+**DECISION 3 (recovering sentence boundaries + per-event offsets).** For TimeML/.tml sources, EVENT mentions are inline XML tags with `eid` of the form `e<int>`, realized by `MAKEINSTANCE` tags carrying `eiid`/`eventID`/tense/aspect/polarity [28]. Procedure: (a) strip/parse the .tml (or use NarrativeTime `nt_format` JSONL char positions per iter-1 [1]); (b) sentence-segment the raw text (TimeBank ships `<s>` sentence tags; otherwise a deterministic splitter); (c) map each `eid`/`eiid` mention to its containing sentence index by character offset. The pair `(e1,e2)` then maps to `span(e1)`, `span(e2)`, and for an intermediate event `e3` along a path the (often disjoint) `span(e3)`. **GOTCHA:** NarrativeTime gold is *timeline-placed / holistic* — every event gets a global numeric `time` coordinate [1]. The local-reader probe must read **only the span text**, never the timeline coordinate or any cross-sentence context; enforce by passing the reader the isolated span string and nothing else (the timeline is used only to derive gold, never as model input).
+
+**DECISION 4 (disjunctive local-read PROMPT).** Adopt the **Pairwise** prompt pattern: Wei et al. define four patterns — Bulk Prediction, Iterative Prediction, Event Ranking, and Pairwise — and for Pairwise "query LLMs with all the event mentions ... pairs" [2]. Combine it with **METRE-style multi-label elicitation**: Hu, Huang & Feng (arXiv:2408.07353) "infer the possibility of each temporal relation independently" and explicitly treat VAGUE as "the cases when there is more than one possible relation between two events" [3] — i.e. the reader should emit a SET, not a single label. The template MUST: (i) present ONLY the span(s); (ii) enumerate the algebra's base relations (point: `<,=,>`, widening `!=`->universal per iter-1 [1]; Allen 13; TDDMan {before, after, simultaneous, includes, is_included}); (iii) instruct **"name every relation the text does NOT rule out"** (high-recall sound disjunction); (iv) offer an explicit **UNIVERSAL / "cannot tell from this text"** option (= VAGUE [29]); (v) be greedy/breadth-controlled at the pre-registered frontier operating point. The SAME local spans are fed to every baseline (fairness). Worked filled example (NarrativeTime sentence "After the merger closed, the board met."): span(e=merger) yields a disjunction the reader cannot collapse to one relation vs. a downstream event in a different sentence => those become deduction-required edges initialized to UNIVERSAL ⊤ for closure [1].
+
+**Sources:** [1][2][3][28][29].
+
+---
+
+## WORKSTREAM 2 — PROLOG/ASP DISCHARGE + CONFIDENT-WRONG (HALLUCINATION) METRIC
+
+**DECISION 5 (discharge engine = SWI-Prolog/pyswip PRIMARY, subprocess fallback, clingo secondary).**
+- **pyswip**: latest **v0.3.3** (released 23 Jun 2025) [14]; requires **Python ≥ 3.9** and **SWI-Prolog ≥ 8.4.2** installed on the host [13]; install `pip install -U pyswip` after `apt-get install swi-prolog`; it loads SWI-Prolog as a **shared library via ctypes**, so the SWI-Prolog architecture must match the Python architecture, and you can set **`SWI_HOME_DIR`** / **`LIBSWIPL_PATH`** if auto-discovery fails [13][14]. API is **class-method style** in current versions: `from pyswip import Prolog; Prolog.assertz("father(michael,john)"); list(Prolog.query("father(X,Y)"))` [13].
+- **Subprocess fallback** (robust if the ctypes binding cannot find `libswipl`): write the program + closure goal to a `.pl` file and run **`swipl -s file.pl -g "solve(...)" -t halt`** non-interactively; exit codes are **0 on success, 1 on goal failure, 2 on uncaught exception** [30]. This needs no Python binding and is the recommended hardening path.
+- **clingo (ASP) secondary**: PyPI **clingo 5.8.0** (3 Apr 2025), `pip install clingo`; CFFI bindings expose `Control` (ground/solve), `Model`, and `Symbol`; `#show` directives surface the answer atoms [15][16]. This matches Path-of-Thoughts, which uses the **CLINGO/ASP** solver with rules like `grandson(a,b) ∧ sister(b,c) => granddaughter(a,c)` [4].
+
+**DECISION 6 (QCN encoding + readback).** Encode the closed QCN as Prolog facts `edge(E1,E2,RelSet)` with `RelSet` a Prolog list of base relations; provide `compose/3` and `converse/2` facts **seeded from the exact algebra table, NEVER the LLM** [1]; a `query/3` predicate returns the relation set on the held-out edge after iterated PC closure [1]. **Readback rule:** `|RelSet| == 1` -> emit that single relation; `|RelSet| > 1` -> **ABSTAIN** (disjunction preserved); `|RelSet| == 0` -> **Mode-B unsound-detection flag** (the read set is jointly inconsistent). This output contract is the methodological inversion of the F1-maximizing commit objective.
+
+**DECISION 7 (trace-graph schema for human-auditable replay).** The closure naturally produces bookkeeping: for each fired triangle, record `(i, k, j, R_ik, R_kj, compose(R_ik,R_kj), R_ij_before, R_ij_after)`. Emit a JSON record per query: `{nodes, input_edges (LLM-read disjunctions), fired_compositions[], repairs[] (Mode-B), discharged_relation | ABSTAIN | UNSOUND, optional_proof}`. This is the human-auditable trace-graph the headline requires.
+
+**DECISION 8 (CONFIDENT-WRONG / hallucination metric, precise).** On the **deduction-required and absent-relation subset**: `confident_wrong_rate = (# pairs where the method emits a NON-abstained single relation that MISMATCHES gold) / (# evaluable pairs)`, computed for the **closure pipeline vs. a raw LLM forced to a single relation**, at **MATCHED coverage** (equal answer-rate), reported with a **paired-bootstrap CI** and a **pre-registered minimum effect** [1]. For absent-relation pairs (CLUTRR no-kinship / temporal "no relation"), gold = "none" and ANY committed relation is a hallucination by definition. This aligns with prior symbolic-discharge practice: Logic-LM (Pan et al. arXiv:2305.12295) runs Prover9 returning **True/False/Unknown** and reports an almost-linear correlation between translation *executable rate* and accuracy, plus a self-refinement loop driven by solver error messages [23]; LINC (Olausson et al. arXiv:2310.15164, `github.com/benlipkin/linc`, EMNLP 2023) runs Prover9 returning **{True, False, Uncertain}** or raising an exception on malformed FOL [24]. Our metric reuses their "executable / discharged vs. error" distinction but scores **confident-and-wrong** (a committed mismatch), not just unexecutability.
+
+**Sources:** [1][4][13][14][15][16][23][24][30].
+
+---
+
+## WORKSTREAM 3 — CLUTRR (clean end-to-end venue)
+
+**DECISION 9 (access + load method — KNOWN GOTCHA).** HuggingFace `CLUTRR/v1` (`https://huggingface.co/datasets/CLUTRR/v1`) has **14 configurations** including `gen_train23_test2to10`, `gen_train234_test2to10`, `rob_train_clean_23_test_all_23`, `rob_train_sup_23_test_all_23`, `rob_train_irr_23_test_all_23`, `rob_train_disc_23_test_all_23` [9]. The repo file tree contains a **loading script `v1.py`** plus per-task **CSV files stored via git-LFS** (e.g. `task_1.3.csv`) [10]. **CRITICAL:** `datasets >= 4.0` dropped `trust_remote_code`, and `datasets >= 4.5` removed dataset-script support entirely ("Dataset scripts are no longer supported") [27] — so `load_dataset('CLUTRR/v1', config)` will FAIL on a modern `datasets`. **RECOMMENDED:** download the CSVs directly, bypassing the script — `from huggingface_hub import snapshot_download; snapshot_download(repo_id='CLUTRR/v1', repo_type='dataset')` then read the per-task CSVs with pandas; OR pin `datasets<4.0` and pass `trust_remote_code=True`; OR use the mirror `github.com/kliang5/CLUTRR_huggingface_dataset` (script-free per-config CSV folders) [32][10].
+
+**DECISION 10 (fields + target mapping + hop metadata).** Fields: `id`, `story`, `query` (tuple of 2 names), `target` (int 0–20), `target_text` (relation string), `clean_story`, `proof_state` (logical proof path), `f_comb` (kinship chain string), `task_name` (`task_<noise>.<clause_length>`), `story_edges` (list of tuples), `edge_types` (list of relation strings), `query_edge` (int tuple), `genders`, `task_split` [9]. **Numeric target -> relation:** `aunt 0, son-in-law 1, grandfather 2, brother 3, sister 4, father 5, mother 6, grandmother 7, uncle 8, daughter-in-law 9, grandson 10, granddaughter 11, father-in-law 12, mother-in-law 13, nephew 14, son 15, daughter 16, niece 17, husband 18, wife 19, sister-in-law 20` [9]. **Hop count = the `clause_length` field in `task_name`** (e.g. `task_1.2` = 2-hop ... `task_1.10` = 10-hop) [1-derived/9]. Split sizes: `gen_train23_test2to10` = 9,074 / 2,020 / 1,146 (train/val/test); `gen_train234_test2to10` = 12,064 / 3,019 / 1,048 [9].
+
+**DECISION 11 (exact kinship composition table).** Source = `github.com/facebookresearch/clutrr` -> `clutrr/store/rules_store.yaml` (sections `symmetric`, `equivalence`, `inverse-equivalence`, `compositional`, `relation_types`) [11], resolved to surface labels via `clutrr/store/relations_store.yaml` [12]. The composition is over **relation PRIMITIVES** (`child, inv-child, SO, sibling, grand, inv-grand, un, inv-un, in-law, inv-in-law, sibling-in-law, no-relation`), e.g. `child+child->grand`, `child+SO->in-law`, `child+sibling->child`, `inv-child+child->sibling`, `inv-child+inv-child->inv-grand`, `sibling+sibling->sibling`, `sibling+child->un`, `grand+sibling->grand`, `SO+grand->grand` [11]; the surface label is recovered by composing primitives then applying gender via `relations_store.yaml`, which maps each surface relation to (primitive, gender): `son=(child,m)`, `daughter=(child,f)`, `father=(inv-child,m)`, `mother=(inv-child,f)`, `grandfather=(inv-grand,m)`, `grandmother=(inv-grand,f)`, `uncle=(inv-un,m)`, `aunt=(inv-un,f)`, `nephew=(un,m)`, `niece=(un,f)`, `son-in-law=(in-law,m)`, `father-in-law=(inv-in-law,m)`, ... and `no-relation=(no-relation, both)` [12]. **SCOPE CAVEAT:** this is a **finite kinship composition table, NOT a full relation algebra** — there is no general converse-closure guarantee beyond the listed `inverse-equivalence`/`symmetric` entries; treat it as the project's exact-table oracle for the table-vs-LLM-elicited ablation, not as a QSTR algebra [11]. (A simpler, data-driven alternative: derive the gold composition directly from `f_comb`/`proof_state` per row.)
+
+**DECISION 12 (absent-relation / no-kinship construction for the hallucination demo).** `no-relation` IS a native CLUTRR primitive ("e_1 has no-relation with e_2") [12], but the standard `gen_*`/`rob_*` *targets* are all valid kinships, so absent pairs must be **CONSTRUCTED**: (a) use the **`rob_train_disc_*` "disconnected facts"** split — entities in a disconnected family subgraph that share no path with the query entities (CLUTRR's robust-reasoning category includes irrelevant, supporting, and **disconnected** facts, §3.5 of the paper) [31] — and pair a disconnected entity with a query entity to get a guaranteed no-kinship pair; or (b) pair entities from two different stories; or (c) any entity pair with **no path in `story_edges`**. Gold for these = `no-relation`; any committed kinship label is a hallucination.
+
+**DECISION 13 (atomic-extraction P/R gold).** Define gold atomic facts = the **directly-stated edges** = `story_edges` (entity-index pairs) annotated with `edge_types` (the surface relation per edge), restricted to relations literally stated in `clean_story` [9]. Atomic-extraction **Precision/Recall** = how well the reader recovers these stated triples (entity, relation, entity) BEFORE composition. Map: each `(i,j)` in `story_edges` with its `edge_types[k]` label -> a gold atomic triple `(name_i, edge_types[k], name_j)` using `genders`/`query` name resolution. PoT (arXiv:2412.17963) and StepGame both use CLUTRR for the end-to-end comparison [4].
+
+**Sources:** [1][4][9][10][11][12][27][31][32].
+
+---
+
+## WORKSTREAM 4 — SUBSTANTIALLY STRONGER OPENROUTER READER (budget-safe)
+
+**DECISION 14 (model choice).** OpenRouter live prices ($/M input | $/M output, June 2026):
+
+| Model | slug | input | output | role |
+|---|---|---|---|---|
+| Gemini 3.1 Flash Lite | `google/gemini-3.1-flash-lite` | **$0.25** | **$1.50** | **WEAK anchor (iter-1 reader)** [19] |
+| Gemini 2.5 Flash Lite | `google/gemini-2.5-flash-lite` | $0.10 | $0.40 | cheaper option, still LIVE [22] |
+| DeepSeek V3.2 | `deepseek/deepseek-v3.2` | **$0.2288** | **$0.3432** | **★ recommended STRONGER reader (cross-family, cheaper)** [21] |
+| Gemini 3 Flash Preview | `google/gemini-3-flash-preview` | $0.50 | $3.00 | clear capability-jump (thinking model) [18] |
+| Gemini 2.5 Flash | `google/gemini-2.5-flash` | $0.30 | $2.50 | ~parity with 3.1-flash-lite, NOT recommended as "stronger" [17] |
+| Gemini 3.5 Flash | `google/gemini-3.5-flash` | $1.50 | $9.00 | strongest Flash, pricey [20] |
+
+All of the above support **prompt caching** ("60–80% cheaper for repeated context") [17][18][21]. **Recommendation:** the weak anchor is the established iter-1 `google/gemini-3.1-flash-lite` [19]. For the "substantially stronger" reader that tests whether the 0.58–0.86 recall ceiling is a weak-model artifact, recommend **`deepseek/deepseek-v3.2`** as the primary stronger-reader: it is from a *different family* (DeepSeek, genuinely different error correlation ρ for the reader-agnosticity arm), a frontier MoE plausibly stronger on relational/temporal reasoning, AND its **output is ~4.4× cheaper** than flash-lite ($0.3432 vs $1.50), making the gate test almost free. As the **clear capability-jump** option (e.g., to make the "stronger reader" obviously a different tier), use **`google/gemini-3-flash-preview`** (Gemini-3 *thinking* model, $0.50/$3.00) on a stratified subsample. NOTE: `google/gemini-2.5-flash` is roughly capability-parity with `gemini-3.1-flash-lite` (the newer 3.1-lite "approaches 2.5-flash performance"), so it is NOT a valid "substantially stronger" reader — do not use it for the ceiling test [17][19].
+
+**DECISION 15 (arithmetic budget — two readers < $10).** Anchor: iter-1 *measured* **$0.58 for 4,191 calls** on gemini-3.1-flash-lite = **$1.38e-4/call** [1]. Per local-span read ≈ 400 input tok (1–2-sentence span + base-relation enumeration + instructions) + ~120 output tok (disjunctive set).
+- **Primary reader (gemini-3.1-flash-lite) full suite** — distinct cache-deduped atomic reads (NarrativeTime+TDDMan ≈ 3–5k, CLUTRR test ≈ 6k) ≈ ~10k, plus baselines (PoT, self-consistency k=5, CoT, LINC, ILP M=5) ≈ 30–40k total calls. At ~$2.8e-4/call uncached (400×0.25 + 120×1.5)/1e6, with **prompt caching dropping input ~60–80%** -> ~$2.1e-4/call -> 40k × $2.1e-4 ≈ **$8.4** (and far less on re-runs, which hit the disk cache at $0) [1][19].
+- **Stronger reader (gate test ONLY, deduction-required subset, single pass, NO self-consistency)** ≈ 10k atomic reads. On **deepseek-v3.2**: (400×0.2288 + 120×0.3432)/1e6 ≈ $1.3e-4/call -> ≈ **$1.3** [21]. On gemini-3-flash-preview (thinking budget minimal): (400×0.5 + 120×3.0)/1e6 ≈ $5.6e-4/call -> ≈ **$4.6** on 10k, or run on a 3k stratified subsample ≈ **$1.7** [18].
+- **T0 (a-priori gold-graph envelope go/no-go) is ZERO-LLM-spend** and runs first [1].
+- **Total** (primary ~$8.4 + deepseek stronger ~$1.3) ≈ **$9.7 worst-case, comfortably < $10 with the disk cache + a hard cumulative cost-guard that aborts before $10** [1]. To guarantee headroom: cap self-consistency/LINC k, restrict the stronger reader to deepseek-v3.2 (cheapest), and reserve gemini-3-flash-preview for a subsample only.
+
+**Sources:** [1][17][18][19][20][21][22].
+
+---
+
+## WORKSTREAM 5 — LOCAL-REGIME BASELINE CONFIGS (matched single-relation coverage)
+
+**DECISION 16 (the seven baselines, each re-specialized to read ONLY local spans, each with a matched abstention signal thresholded to the SAME coverage object).** The shared **coverage object** = "method commits to a *single* relation on a query pair"; each method's confidence signal is thresholded so all report at **matched coverage** (equal answer-rate); compare **selective accuracy** with paired-bootstrap CIs — this prevents "closure" from being confounded with "closure happens to abstain better" [1].
+
+| # | Baseline | Local-regime input | Abstention/confidence signal | Threshold mechanism | Source |
+|---|---|---|---|---|---|
+| B1 | Local raw LLM | local spans only; forced single relation | **verbalized confidence 0–100** ("probability your guess is correct") | sweep threshold p* (NEVER trust raw value — see gotcha) | [25][26] |
+| B2 | CoT (local) | local spans + chain-of-thought | verbalized confidence after reasoning | sweep p* | [25][26] |
+| B3 | Self-consistency | local spans, k single-relation samples | **vote margin** over k samples | threshold the margin | [1] |
+| B4 | LINC-style multi-formalization | local spans -> k FOL/relation formalizations -> Prover9 | **agreement across formalizations** | threshold agreement count | [24] |
+| B5 | Path-of-Thoughts (PoT) | extracted graph over local reads; identifies all paths | **path-agreement** (answer iff identified paths agree) | threshold #agreeing paths | [4] |
+| B6 | ILP-commit (Eirew M=5) | M=5 whole-graph generations -> ILP uniqueness/symmetry/transitivity -> single label | ILP-committed label score (no disjunction) | threshold the score | [1] |
+| B7 | Naive single-pass intersection | local reads; intersect compositions arriving at the query node in ONE pass, no fixpoint, no converse seeding | committed relation if singleton else abstain | structural (coincides with full closure at length-2; diverges at hop≥3) | [1] |
+
+**KEY CONTRASTIVE FACT (PoT, verified).** PoT reasons over each path **INDEPENDENTLY and does NOT intersect relations across paths**: "PoT reasons over each path independently to alleviate cascading errors ... and infers all possible answers"; "the reasoning module infers the answer given for each reasoning path independently"; "a method is allowed to output multiple possible relations" [4]. PoT therefore takes the **UNION** of per-path answers; the closure module's iterated PC takes the **INTERSECTION** of compositions arriving from different paths and re-propagates to a fixpoint — precisely the gap B5 isolates [4]. Its symbolic backend is CLINGO/ASP [4]; it benchmarks on StepGame, SPARTUN, CLUTRR (+ a 4th) with GPT-4o / Llama3-70B / o1-mini / Claude-3.7 / GPT-5, up to **+21.3%** over baselines [4]. **No public repo found -> reimplement** (OpenReview thread; TMLR 2026) [4].
+
+**DECISION 17 (run-or-remove honesty).** Baselines with no public artifact (PoT, METRE) must be **reimplemented or REMOVED**, never promised; LINC (`github.com/benlipkin/linc`) [24] and ILP-commit (`github.com/AlonEirew/GlobalZeroShotTRE`, from iter-1 [1]) have public code. Flag any baseline that cannot be run web-honestly so the experiment removes it.
+
+**Sources:** [1][4][24][25][26].
+
+---
+
+## WORKSTREAM 6 — NOVELTY CITATIONS + STATEMENT
+
+**DECISION 18 (mini-bibliography, all arXiv IDs verified June 2026).**
+- **[6] arXiv:2510.15513** — *Temporal Referential Consistency: Do LLMs Favor Sequences Over Absolute Time References?* Ashutosh Bajpai, Tanmoy Chakraborty. **EMNLP 2025 (Main, long).** Introduces the **TEMP-ReCon** benchmark (EN/FR/RO) and **UnTRaP**, a reasoning-path-alignment model to enhance temporal referential consistency. *Differs:* measures/repairs sequence-vs-absolute time-reference consistency under an accuracy objective; no relation-algebra disjunction, no cross-path composition, no gold-free certificate, no abstention.
+- **[5] arXiv:2502.11425** — *Counterfactual-Consistency Prompting for Relative Temporal Understanding in LLMs.* Jongho Kim, Seung-won Hwang. **ACL 2025 (Main, short).** Generates counterfactual questions + collective constraints to fix before/after confusion. *Differs:* a prompting-time consistency fix that still commits to a single relation; preserves no disjunction and issues no certificate.
+- **[7] arXiv:2412.16100** — *Logical Consistency of Large Language Models in Fact-checking.* Bishwamittra Ghosh, Sarah Hasan, Naheed Anjum Arafat, Arijit Khan. **ICLR 2025.** Measures consistency under negation/conjunction/disjunction over KG queries; improves via SFT. *Differs:* propositional-logic consistency over a commit/accuracy objective; not a QCN, no path-consistency closure, no abstain-on-collapse.
+- **[8] arXiv:2409.14065** — *Temporally Consistent Factuality Probing for LLMs.* Ashutosh Bajpai, Aaryan Goyal, Atif Anwer, Tanmoy Chakraborty. **EMNLP 2024.** Introduces **TEMP-COFAC** (paraphrase) + **CoTSeLF** (instruction tuning + consistency RL). *Differs:* paraphrase-level factual consistency, not relation-algebra deduction; no certificate, no disjunction.
+
+**DECISION 19 (one-sentence NOVELTY statement).** *"What is new is NOT the algebra or path-consistency (Allen/point/RCC-8, SputLink, CAEVO, Ning 2017, Kougia 2024 [1], Eirew 2025 [1] are established) and NOT temporal/logical consistency measurement (Bajpai [6][8], Kim & Hwang [5], Ghosh [7] commit and score accuracy), but (1) the **disjunction-preserving, abstain-on-collapse OUTPUT CONTRACT** that inverts the F1-maximizing single-label objective (emit a relation only when iterated path-consistency over the LLM-read disjunctions collapses the held-out edge to a singleton, else abstain), (2) the **gold-free closure CERTIFICATE** that flags jointly-inconsistent reads without any reference graph, and (3) the **redundancy-as-coding-rate inverted-U** (a currently simulated-channel property where recall and ρ are inputs, not measured outcomes)."*
+
+**Sources:** [1][5][6][7][8].
+
+---
+
+## CONSOLIDATED DECISION TABLE
+
+| # | Decision | Value | Source | Confidence |
+|---|---|---|---|---|
+| 1 | Local-span unit | single sentence containing the mention (default); ±1-sentence sensitivity arm | [29][2] | High |
+| 2 | 'No shared span' rule | mentions never co-occur within window => deduction-required; LLM-free, T0-safe | [29][2][1] | High |
+| 3 | Sentence/offset recovery | TimeML `eid`/`MAKEINSTANCE eiid` inline tags + sentence-split + char offsets; NarrativeTime nt_format JSONL | [28][1] | High |
+| 4 | Disjunctive read prompt | Pairwise pattern + METRE multi-label; enumerate base rels + UNIVERSAL option; "name every relation NOT ruled out" | [2][3][29] | High |
+| 5 | Discharge engine | SWI-Prolog/pyswip v0.3.3 PRIMARY (class-method API, Python≥3.9, swi-prolog≥8.4.2 via apt, ctypes+SWI_HOME_DIR/LIBSWIPL_PATH); subprocess `swipl -s f.pl -g goal -t halt` (exit 0/1/2) fallback; clingo 5.8.0 ASP secondary | [13][14][30][15][16] | High |
+| 6 | QCN encoding + readback | `edge(E1,E2,RelSet)` + algebra-seeded `compose/3`,`converse/2`; |R|==1 emit / >1 ABSTAIN / ==0 unsound-flag | [1] | High |
+| 7 | Trace-graph schema | JSON: nodes + input disjunctions + fired_compositions + repairs + discharged/ABSTAIN/UNSOUND + optional proof | [1][23][24] | High |
+| 8 | Confident-wrong metric | nonabstained-single-relation mismatch rate on deduction-required/absent subset; matched coverage; paired-bootstrap CI; pre-reg MDE | [1][23][24] | High |
+| 9 | CLUTRR access | HF `CLUTRR/v1`; AVOID `load_dataset` (datasets≥4.0 dropped scripts); snapshot_download per-task CSVs (git-LFS) OR datasets<4.0+trust_remote_code OR kliang5 mirror | [9][10][27][32] | High |
+| 10 | CLUTRR fields/target/hop | 14 configs; target 0–20 map; hop = task_name clause_length; gen_train234 = 12064/3019/1048 | [9] | High |
+| 11 | Kinship composition table | rules_store.yaml primitive compositions + relations_store.yaml surface↔primitive↔gender; FINITE table not full algebra | [11][12] | High |
+| 12 | Absent-relation recipe | construct from rob_train_disc disconnected components / no-path-in-story_edges / cross-story pairs; gold=no-relation | [31][12][9] | Med-High |
+| 13 | Atomic-extraction gold | gold triples from story_edges + edge_types (+genders/query name resolution) | [9] | High |
+| 14 | Weak anchor | google/gemini-3.1-flash-lite $0.25/$1.50 (iter-1 reader) | [19] | High |
+| 15 | Stronger reader | deepseek/deepseek-v3.2 $0.2288/$0.3432 (★ cross-family, cheaper); gemini-3-flash-preview $0.50/$3.00 for clear jump on subsample; NOT gemini-2.5-flash (parity) | [21][18][17] | High |
+| 16 | Two-reader budget | ~$8.4 primary + ~$1.3 deepseek ≈ $9.7 < $10 with disk+prompt caching + hard cost-guard; T0=$0 | [1][19][21] | Med-High |
+| 17 | 7 local-regime baselines | B1 raw/B2 CoT (verbalized conf), B3 self-consistency (vote margin), B4 LINC (formalization agreement), B5 PoT (path-agreement, UNION not intersection), B6 ILP-commit M=5, B7 naive single-pass; all matched to single-relation coverage object | [1][4][24][25][26] | High |
+| 18 | Run-or-remove | reimplement/remove no-repo baselines (PoT, METRE); LINC + ILP-commit have public code | [4][24][1] | High |
+| 19 | Novelty citations | arXiv:2510.15513, 2502.11425, 2412.16100, 2409.14065 | [6][5][7][8] | High |
+| 20 | Novelty statement | disjunction-preserving abstain-on-collapse contract + gold-free certificate + coding-rate inverted-U (NOT the algebra) | [5][6][7][8][1] | High |
+
+## EXACT IDS / URLS
+
+- **arXiv:** 2407.19568 (discourse RE prompts) [2]; 2408.07353 (METRE) [3]; 2412.17963 (Path-of-Thoughts) [4]; 2502.11425 (Counterfactual-Consistency) [5]; 2510.15513 (Temporal Referential Consistency) [6]; 2412.16100 (Logical Consistency fact-checking) [7]; 2409.14065 (Temporally Consistent Factuality Probing) [8]; 2305.12295 (Logic-LM) [23]; 2310.15164 (LINC) [24]; 2601.07767 (verbal-confidence faithfulness) [26]; 1908.06177 (CLUTRR original) [31]; 2406.11486 (Kougia, from iter-1) [1].
+- **HF dataset:** `CLUTRR/v1` (`https://huggingface.co/datasets/CLUTRR/v1`) [9][10]; mirror `github.com/kliang5/CLUTRR_huggingface_dataset` [32].
+- **GitHub:** `github.com/facebookresearch/clutrr` (`clutrr/store/rules_store.yaml` [11], `relations_store.yaml` [12]); `github.com/yuce/pyswip` (v0.3.3) [14]; `github.com/benlipkin/linc` [24]; `github.com/AlonEirew/GlobalZeroShotTRE` (from iter-1) [1]; `github.com/text-machine-lab/nt` (from iter-1) [1].
+- **PyPI/docs:** `pyswip` (pyswip.readthedocs.io) [13]; `clingo` 5.8.0 (pypi.org/project/clingo, potassco.org/clingo/python-api/5.8) [15][16]; SWI-Prolog cmdline (`swi-prolog.org/pldoc/man?section=cmdline`) [30].
+- **OpenRouter slugs + prices ($/M in|out):** `google/gemini-3.1-flash-lite` 0.25|1.50 [19]; `google/gemini-2.5-flash-lite` 0.10|0.40 [22]; `deepseek/deepseek-v3.2` 0.2288|0.3432 [21]; `google/gemini-3-flash-preview` 0.50|3.00 [18]; `google/gemini-2.5-flash` 0.30|2.50 [17]; `google/gemini-3.5-flash` 1.50|9.00 [20].
+
+## GOTCHAS LIST (12)
+
+1. **pyswip needs system SWI-Prolog** (`apt-get install swi-prolog`, ≥8.4.2) AND a Python-matching architecture; if the ctypes `libswipl` load fails, set `SWI_HOME_DIR`/`LIBSWIPL_PATH` or use the `swipl -s f.pl -g goal -t halt` subprocess fallback (exit 0/1/2) [13][14][30].
+2. **CLUTRR/v1 loading is BROKEN on `datasets>=4.0`** (`trust_remote_code` removed) and `>=4.5` (scripts removed): use `huggingface_hub.snapshot_download` + pandas on the per-task CSVs, OR pin `datasets<4.0`+`trust_remote_code=True`, OR the kliang5 mirror — verify BEFORE relying on `load_dataset` [27][10][32].
+3. **Verbalized confidence is systematically over-confident** (clusters 80–100% regardless of accuracy; RLHF amplifies it) — the abstention policy must SWEEP thresholds and compare at matched coverage, never trust raw numbers [25][26].
+4. **NarrativeTime local reader must NEVER see the timeline** — its gold is a holistic per-event numeric `time` coordinate; feed the reader only the isolated span text [1].
+5. **CLUTRR kinship is a FINITE composition table, not a full relation algebra** — no general converse-closure guarantee; use it as the exact-table oracle, not as a QSTR algebra [11].
+6. **Absent-relation pairs are NOT shipped as standard targets** — they must be CONSTRUCTED (rob_disc disconnected components / no-path-in-story_edges / cross-story); `no-relation` exists only as a primitive [12][31].
+7. **OpenRouter model IDs/prices drift** — confirm live at run time; `gemini-2.5-flash-lite` is still LIVE at $0.10/$0.40 despite the iter-1 plan note that it was "GONE" [22], and `gemini-3.1-flash-lite` is the established weak anchor at $0.25/$1.50 [19].
+8. **`gemini-2.5-flash` is NOT "substantially stronger" than `gemini-3.1-flash-lite`** (newer 3.1-lite approaches 2.5-flash performance) — use `deepseek/deepseek-v3.2` or `gemini-3-flash-preview` for the recall-ceiling test [17][19][21][18].
+9. **Prompt-caching support varies / must be enabled** — Gemini and DeepSeek advertise 60–80% repeated-context savings, but you must structure the prompt so the document/span prefix is the cached portion; pair with the deterministic disk cache (re-runs $0) [17][18][21][1].
+10. **Matched-coverage thresholds MUST use the SAME coverage object for every baseline** (single-relation commit) or "closure" gets confounded with "better-calibrated abstain" [1].
+11. **PoT must be confirmed to take the UNION of per-path answers, NOT intersect across paths** — verified here ("reasons over each path independently", "output multiple possible relations") [4]; this independence is exactly what iterated PC's cross-path intersection adds.
+12. **No-repo baselines (PoT, METRE) must be reimplemented or REMOVED**, never promised; budget the cost-guard to abort before $10 and run the stronger reader on a subset only [4][1].
+
+
+## Sources
+
+[1] [Iter-1 Implementation/Resource Dossier (dependency art_aQ2Rf8rwqteI)](file://.../iter_1/gen_art/gen_art_research_1/research_out.json) — Carried-forward verified facts: NarrativeTime/TDDMan/MATRES formats, GQR Allen/point/RCC-8 composition+converse tables and the convex-point widening rule, Mackworth PC-2 closure + naive single-pass contrast, Renz-Nebel generator, baseline list (incl. Eirew ILP-commit repo, Kougia arXiv:2406.11486 >=50-97% multi-relation + ILP-no-F1), OpenRouter cost-guard + disk-cache, realism statistic, T0 zero-spend gate, iter-1 measured $0.58/4191 calls.
+
+[2] [Are LLMs Good Annotators for Discourse-level Event Relation Extraction? (Wei, Gautam, Huang 2024)](https://arxiv.org/abs/2407.19568) — Defines four prompt patterns (Bulk/Iterative/Event-Ranking/Pairwise); Pairwise = query all event-mention pairs; retains first TWO sentences to cover same- and cross-sentence pairs (grounds the local-span window + no-shared-span cut); LLMs underperform, fabricate mentions, miss transitivity and long-distance relations.
+
+[3] [Only One Relation Possible? Modeling Ambiguity in Event Temporal Relation Extraction / METRE (Hu, Huang, Feng 2024)](https://arxiv.org/abs/2408.07353) — Multi-label modeling that infers each relation's possibility independently and treats VAGUE as >1 possible relation -> template for the disjunctive sound local read; no public repo found.
+
+[4] [Path-of-Thoughts: Extracting and Following Paths for Robust Relational Reasoning (Zhang et al., TMLR 2026)](https://arxiv.org/abs/2412.17963) — VERIFIED per-path INDEPENDENCE: 'reasons over each path independently', 'infers all possible answers', 'allowed to output multiple possible relations' (UNION, not cross-path intersection); CLINGO/ASP backend; CLUTRR+StepGame+SPARTUN; up to +21.3%; no public repo (reimplement).
+
+[5] [Counterfactual-Consistency Prompting for Relative Temporal Understanding (Kim & Hwang, ACL 2025 short)](https://arxiv.org/abs/2502.11425) — Counterfactual questions + collective constraints to fix before/after confusion; prompting-time consistency fix that still commits a single label (novelty contrast).
+
+[6] [Temporal Referential Consistency: Do LLMs Favor Sequences Over Absolute Time References? (Bajpai & Chakraborty, EMNLP 2025)](https://arxiv.org/abs/2510.15513) — TEMP-ReCon benchmark (EN/FR/RO) + UnTRaP reasoning-path-alignment model; measures sequence-vs-absolute time-reference consistency (novelty contrast: accuracy objective, no algebra/certificate/abstention).
+
+[7] [Logical Consistency of Large Language Models in Fact-checking (Ghosh et al., ICLR 2025)](https://arxiv.org/abs/2412.16100) — Negation/conjunction/disjunction consistency over KG queries + SFT improvement; propositional-logic consistency under a commit objective (novelty contrast).
+
+[8] [Temporally Consistent Factuality Probing for LLMs (Bajpai et al., EMNLP 2024)](https://arxiv.org/abs/2409.14065) — TEMP-COFAC paraphrase dataset + CoTSeLF (instruction tuning + consistency RL); paraphrase-level factual consistency (novelty contrast).
+
+[9] [CLUTRR/v1 dataset README (HuggingFace)](https://huggingface.co/datasets/CLUTRR/v1/blob/main/README.md) — 14 configs; fields id/story/query/target/target_text/clean_story/proof_state/f_comb/task_name/story_edges/edge_types/query_edge/genders/task_split; numeric target 0-20 -> relation mapping; hop=task_name clause_length; split sizes (gen_train234 = 12064/3019/1048; gen_train23 = 9074/2020/1146).
+
+[10] [CLUTRR/v1 repository file tree (HuggingFace)](https://huggingface.co/datasets/CLUTRR/v1/tree/main) — Repo contains README.md + loading script v1.py + per-task CSV files via git-LFS (e.g. task_1.3.csv) -> CSVs can be snapshot-downloaded directly, bypassing the broken loading script.
+
+[11] [CLUTRR rules_store.yaml (kinship composition rules)](https://raw.githubusercontent.com/facebookresearch/clutrr/master/clutrr/store/rules_store.yaml) — Primitive-level composition table (child+child->grand, child+SO->in-law, inv-child+child->sibling, sibling+child->un, grand+sibling->grand, etc.) with sections symmetric/equivalence/inverse-equivalence/compositional/relation_types; FINITE table, not a full algebra.
+
+[12] [CLUTRR relations_store.yaml (surface<->primitive<->gender map)](https://raw.githubusercontent.com/facebookresearch/clutrr/master/clutrr/store/relations_store.yaml) — Maps each surface kinship term to (primitive, gender): son=(child,m), father=(inv-child,m), grandmother=(inv-grand,f), aunt=(inv-un,f), niece=(un,f), son-in-law=(in-law,m), etc.; no-relation=(no-relation, both) is a native primitive -> enables absent-relation gold.
+
+[13] [PySwip Get Started documentation](https://pyswip.readthedocs.io/en/stable/get_started.html) — Requires Python>=3.9 and SWI-Prolog>=8.4.2 installed separately; architecture must match; class-method API Prolog.assertz()/Prolog.query(); pip install -U pyswip; manual SWI_HOME_DIR/LIBSWIPL_PATH if auto-discovery fails.
+
+[14] [yuce/pyswip GitHub repository](https://github.com/yuce/pyswip) — Latest release v0.3.3 (23 Jun 2025); uses SWI-Prolog as a shared library via ctypes; pip install -U pyswip.
+
+[15] [clingo on PyPI](https://pypi.org/project/clingo/) — clingo 5.8.0 (3 Apr 2025); pip install clingo; CFFI bindings; Control (ground/solve), Model, Symbol classes for ASP.
+
+[16] [clingo 5.8 Python API documentation (Potassco)](https://potassco.org/clingo/python-api/5.8/clingo/) — Control grounds/solves; Model gives model access; #show surfaces answer atoms; the ASP alternative discharge engine.
+
+[17] [OpenRouter — Gemini 2.5 Flash pricing](https://openrouter.ai/google/gemini-2.5-flash) — $0.30/M input, $2.50/M output; prompt caching (60-80% cheaper repeated context); 1M context; roughly capability-parity with 3.1-flash-lite (not a valid 'stronger' reader).
+
+[18] [OpenRouter — Gemini 3 Flash Preview pricing](https://openrouter.ai/google/gemini-3-flash-preview) — $0.50/M input, $3.00/M output; Gemini-3 thinking model (minimal/low/medium/high), structured output, automatic context caching; 1M context; clear capability-jump stronger-reader option.
+
+[19] [OpenRouter — Gemini 3.1 Flash Lite pricing](https://openrouter.ai/google/gemini-3.1-flash-lite) — $0.25/M input, $1.50/M output; 1M context; iter-1 reader = the WEAK anchor for the recall-ceiling test.
+
+[20] [OpenRouter — Gemini 3.5 Flash pricing](https://openrouter.ai/google/gemini-3.5-flash) — $1.50/M input, $9.00/M output; strongest Flash tier; prompt caching; pricey -> subsample only.
+
+[21] [OpenRouter — DeepSeek V3.2 pricing](https://openrouter.ai/deepseek/deepseek-v3.2) — $0.2288/M input, $0.3432/M output; 131K context; prompt caching; cross-family (DeepSeek) frontier MoE -> recommended budget-optimal STRONGER reader (output ~4.4x cheaper than flash-lite).
+
+[22] [OpenRouter — Gemini 2.5 Flash Lite pricing](https://openrouter.ai/google/gemini-2.5-flash-lite) — $0.10/M input, $0.40/M output; still LIVE (contradicts iter-1 'GONE' note); cheapest option.
+
+[23] [Logic-LM: Empowering LLMs with Symbolic Solvers (Pan, Albalak, Wang, Wang 2023)](https://arxiv.org/abs/2305.12295) — LLM->symbolic formulation->external solver (Prover9 for FOL returns True/False/Unknown); near-linear correlation between executable rate and accuracy; self-refinement from solver error messages -> aligns the confident-wrong metric to prior discharge practice.
+
+[24] [LINC: Neurosymbolic FOL prover approach (Olausson et al., EMNLP 2023; arXiv:2310.15164)](https://github.com/benlipkin/linc) — LLM->FOL->Prover9; returns {True, False, Uncertain} or raises an exception on malformed FOL; majority vote across multiple formalizations -> baseline B4 abstention = formalization agreement; public repo (runner.py).
+
+[25] [Know Your Limits: A Survey of Abstention in Large Language Models (TACL, MIT Press)](https://direct.mit.edu/tacl/article/doi/10.1162/tacl_a_00754/131566/Know-Your-Limits-A-Survey-of-Abstention-in-Large) — Framework for abstention (query/model/human-values) as hallucination mitigation; basis for thresholded matched-coverage abstention; documents verbalized-confidence over-confidence.
+
+[26] [Are LLM Decisions Faithful to Verbal Confidence? (Wang & Zhou)](https://arxiv.org/abs/2601.07767) — Documents systematic verbalized-confidence over-confidence (clusters 80-100% regardless of accuracy; RLHF amplifies) -> abstention must sweep thresholds, never trust raw numbers.
+
+[27] [HuggingFace: 'Dataset scripts are no longer supported' (datasets>=4.0/4.5)](https://discuss.huggingface.co/t/dataset-scripts-are-no-longer-supported/163891) — datasets>=4.0 removed trust_remote_code and >=4.5 removed dataset-script support -> load_dataset('CLUTRR/v1', cfg) fails; must use CSV snapshot_download or pin datasets<4.0.
+
+[28] [TimeML Specification 1.2.1](https://timeml.github.io/site/publications/timeMLdocs/timeml_1.2.1.html) — EVENT eid=e<int> + class; MAKEINSTANCE auxiliary tag with eiid/eventID/tense/aspect/polarity/modality -> recover per-event mentions for sentence-offset mapping.
+
+[29] [An Annotation Framework for Dense Event Ordering / TimeBank-Dense (Chambers/Cassidy et al. 2014)](https://www.researchgate.net/publication/270878550_An_Annotation_Framework_for_Dense_Event_Ordering) — Gold annotated for all pairs in the SAME sentence + the IMMEDIATELY FOLLOWING sentence + DCT; relations BEFORE/AFTER/INCLUDES/IS_INCLUDED/SIMULTANEOUS/VAGUE; VAGUE = no clear relation (the universal/underdetermined option) -> grounds the local-span window and the no-shared-span deduction trigger.
+
+[30] [SWI-Prolog command-line options manual](https://www.swi-prolog.org/pldoc/man?section=cmdline) — Non-interactive batch: swipl -s file.pl -g 'goal' -t halt; exit code 0 on success, 1 on failure, 2 on exception -> robust subprocess discharge fallback.
+
+[31] [CLUTRR: A Diagnostic Benchmark for Inductive Reasoning from Text (Sinha et al., EMNLP 2019)](https://arxiv.org/abs/1908.06177) — Original CLUTRR; robust-reasoning (§3.5) defines irrelevant, supporting, and DISCONNECTED facts -> disconnected-component entities give guaranteed no-kinship pairs for the absent-relation hallucination demo.
+
+[32] [kliang5/CLUTRR_huggingface_dataset (mirror)](https://github.com/kliang5/CLUTRR_huggingface_dataset) — Script-free per-config CSV mirror of CLUTRR -> alternative direct-CSV access path that avoids the HF loading-script breakage.
+
+## Follow-up Questions
+
+- Exact count of deduction-required (no-shared-span) held-out edges on NarrativeTime and TDDMan at the chosen ±k window — defer to the T0 zero-spend gate, which must emit these counts before any LLM spend so the Workstream-4 budget arithmetic can be finalized against real volume rather than the ~10k conservative bound.
+- At run time, is google/gemini-3-flash-preview still 'preview' (IDs/prices drift) and does deepseek/deepseek-v3.2 actually clear the 0.85/0.90 recall gate on a 200-pair pilot? If neither stronger reader crosses the gate, the read-soundness-bottleneck headline is confirmed; if one does, it must be reframed as a weak-model artifact — run the pilot before committing the full sweep.
+- Should CLUTRR's absent-relation demo use the rob_train_disc disconnected-component construction or an explicitly regenerated no-relation set from the facebookresearch/clutrr generator (which can emit no-relation targets directly)? The disc construction is web-honest with the released data, but a regenerated set would give cleaner control over the absent/present ratio — confirm the generator still runs on commodity CPU.
+
+---
+*Generated by AI Inventor Pipeline*

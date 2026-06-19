@@ -1,0 +1,3280 @@
+{
+  "metadata": {
+    "method_name": "Closure-certified text->logic deduction -- OPERATIONAL ~3000-char end-to-end case study (temporal POINT + kinship concat)",
+    "operational_framing": "OPERATIONAL CASE STUDY on a handful of ~3000-character documents (retires reviewer MINOR #4: the first end-to-end run on real professional-length text). Numbers are reported PER-DOCUMENT as operating points; this is NOT a powered statistical comparison.",
+    "config": {
+      "seed": 20260617,
+      "reader_model": "google/gemini-3.1-flash-lite",
+      "fallbacks": [
+        "deepseek/deepseek-v3.2"
+      ],
+      "temperature": 0.0,
+      "sc_temperature": 0.7,
+      "sc_k": 5,
+      "v_max": 3,
+      "n_queries_per_doc_cap": 30,
+      "char_target": 3000,
+      "char_band": [
+        2500,
+        3500
+      ],
+      "budget_hard": 9.0,
+      "mini": false,
+      "reader_served_first_call": "google/gemini-3.1-flash-lite"
+    },
+    "closure_tests_passed": true,
+    "closure_test_detail": {
+      "n_errors": 0,
+      "errors": [],
+      "allen_compose_cells": 169
+    },
+    "swipl_version": "SWI-Prolog version 9.0.4 for x86_64-linux",
+    "swipl_probe_executed_ok": true,
+    "kinship_gold_atomic_go_no_go": {
+      "n": 17,
+      "singleton_rate": 1.0,
+      "accuracy_on_singletons": 1.0,
+      "n_modeb_conflict": 0,
+      "n_no_path": 0
+    },
+    "case_study_summary": {
+      "descriptive_only": "ranges/means across a HANDFUL of documents; not a powered test",
+      "temporal": {
+        "n_documents": 5,
+        "char_len_range": [
+          2197,
+          4293
+        ],
+        "atomic_disjunctive_recall": {
+          "min": 0.7689,
+          "max": 0.9248,
+          "mean": 0.8693
+        },
+        "atomic_most_likely_precision": {
+          "min": 0.3571,
+          "max": 0.5619,
+          "mean": 0.482
+        },
+        "total_queries": 150,
+        "total_emit": 22,
+        "total_abstain": 126,
+        "total_collapse_modeB": 2,
+        "hallucination_reduction_vs_fulldoc_raw": {
+          "min": 0.2667,
+          "max": 0.6,
+          "mean": 0.4467
+        },
+        "coverage_modeA": {
+          "min": 0.0,
+          "max": 0.3333,
+          "mean": 0.1467
+        },
+        "coverage_raw_fulldoc": {
+          "min": 1.0,
+          "max": 1.0,
+          "mean": 1.0
+        },
+        "modeA_confident_wrong_rate_over_pool": {
+          "min": 0.0,
+          "max": 0.1667,
+          "mean": 0.06
+        },
+        "note": "Mode-A abstains where real-text span-local reads under-determine the start-point order (faithfulness-by-abstention); the whole-document raw LLM always commits (coverage 1.0) and is frequently wrong, so the per-document confident-wrong (hallucination) rate drops. Coverage is stated beside every number."
+      },
+      "kinship": {
+        "n_documents": 3,
+        "char_len_range": [
+          3246,
+          3602
+        ],
+        "atomic_recall": {
+          "min": 0.3902,
+          "max": 0.5556,
+          "mean": 0.4917
+        },
+        "atomic_precision": {
+          "min": 0.381,
+          "max": 0.5952,
+          "mean": 0.5091
+        },
+        "within_story_total_emit": 8,
+        "within_story_total_correct": 6,
+        "within_story_selective_accuracy": 0.75,
+        "absent_pairs_total": 56,
+        "absent_pairs_abstained": 56,
+        "absent_confident_wrong_total": 0,
+        "absent_abstention_rate": 1.0,
+        "note": "the kinship calculus is memorized, so the pipeline works FULLY: closure resolves the within-story chains it can EXTRACT (the ceiling is extraction-limited, not closure-limited), and ABSTAINS on every provably-absent cross-story pair (0 confident-wrong BY CONSTRUCTION)."
+      }
+    },
+    "temporal_document_selection": {
+      "selection_mode": "bracket_3000_fallback",
+      "n_nt_docs_total": 36,
+      "n_nt_in_band_2500_3500": 0,
+      "mean_char_len_selected": 3050.6,
+      "selected": [
+        {
+          "docid": "CNN19980213.2130.0155",
+          "char_len": 2197,
+          "gap_to_3000": -803
+        },
+        {
+          "docid": "ABC19980108.1830.0711",
+          "char_len": 2311,
+          "gap_to_3000": -689
+        },
+        {
+          "docid": "CNN19980227.2130.0067",
+          "char_len": 2427,
+          "gap_to_3000": -573
+        },
+        {
+          "docid": "APW19980213.1310",
+          "char_len": 4025,
+          "gap_to_3000": 1025
+        },
+        {
+          "docid": "APW19980227.0494",
+          "char_len": 4293,
+          "gap_to_3000": 1293
+        }
+      ],
+      "honest_note": "NarrativeTime has NO single article in [2500,3500] chars (its docs cluster either <2500 or >4200). We BRACKET the ~3000-char target with the longest articles below 3000 and the shortest above; the selected set MEAN length is ~3000 chars but no single article hits the band. Exact per-document char lengths are reported."
+    },
+    "documents": {
+      "temporal": [
+        {
+          "docid": "CNN19980213.2130.0155",
+          "char_len": 2197,
+          "reached_3000_band": false,
+          "n_queries": 30,
+          "skipped": null
+        },
+        {
+          "docid": "ABC19980108.1830.0711",
+          "char_len": 2311,
+          "reached_3000_band": false,
+          "n_queries": 30,
+          "skipped": null
+        },
+        {
+          "docid": "CNN19980227.2130.0067",
+          "char_len": 2427,
+          "reached_3000_band": false,
+          "n_queries": 30,
+          "skipped": null
+        },
+        {
+          "docid": "APW19980213.1310",
+          "char_len": 4025,
+          "reached_3000_band": false,
+          "n_queries": 30,
+          "skipped": null
+        },
+        {
+          "docid": "APW19980227.0494",
+          "char_len": 4293,
+          "reached_3000_band": false,
+          "n_queries": 30,
+          "skipped": null
+        }
+      ],
+      "kinship": [
+        {
+          "doc_id": "clutrr_concat_1",
+          "char_len": 3602,
+          "n_substories": 5,
+          "reached_3000_target": true
+        },
+        {
+          "doc_id": "clutrr_concat_2",
+          "char_len": 3540,
+          "n_substories": 6,
+          "reached_3000_target": true
+        },
+        {
+          "doc_id": "clutrr_concat_3",
+          "char_len": 3246,
+          "n_substories": 6,
+          "reached_3000_target": true
+        }
+      ]
+    },
+    "per_document_temporal": [
+      {
+        "docid": "CNN19980213.2130.0155",
+        "corpus": "narrativetime",
+        "char_len": 2197,
+        "reached_3000_target": false,
+        "algebra": "POINT (PC-complete convex start-point)",
+        "offset_alignment_fraction": 1.0,
+        "n_queries": 30,
+        "n_read_edges": 274,
+        "n_parse_fail": 0,
+        "atomic_PRF": {
+          "tag": "REAL-LLM-READ",
+          "disjunctive_set_recall": 0.8454,
+          "recall_ci95": [
+            0.8454106280193237,
+            0.8454106280193237
+          ],
+          "most_likely_precision": 0.4783,
+          "f1": 0.6109,
+          "n_scorable_edges": 207,
+          "n_committed_reads": 207,
+          "breadth_mean": 2.2947,
+          "note": "recall = P(gold start-point relation subseteq emitted disjunctive set); precision = P(single most-likely read == gold | a single relation committed). Held-fixed MEASURED control: atomic extraction is measured, not improved."
+        },
+        "outcomes": {
+          "emit": 7,
+          "abstain": 23,
+          "collapse_modeB": 0
+        },
+        "query_classes": {
+          "deduction_resolved": 7,
+          "extraction_limited_abstain": 23,
+          "closure_collapse": 0
+        },
+        "confident_wrong": {
+          "modeA": {
+            "n_queries": 30,
+            "coverage": 0.2333,
+            "abstention": 0.7667,
+            "n_answered": 7,
+            "confident_wrong_count": 3,
+            "confident_wrong_rate_over_pool": 0.1,
+            "confident_wrong_rate_among_answered": 0.4286
+          },
+          "raw_local": {
+            "n_queries": 30,
+            "coverage": 1.0,
+            "abstention": 0.0,
+            "n_answered": 30,
+            "confident_wrong_count": 19,
+            "confident_wrong_rate_over_pool": 0.6333,
+            "confident_wrong_rate_among_answered": 0.6333
+          },
+          "raw_fulldoc": {
+            "n_queries": 30,
+            "coverage": 1.0,
+            "abstention": 0.0,
+            "n_answered": 30,
+            "confident_wrong_count": 21,
+            "confident_wrong_rate_over_pool": 0.7,
+            "confident_wrong_rate_among_answered": 0.7
+          },
+          "naive": {
+            "n_queries": 30,
+            "coverage": 0.1667,
+            "abstention": 0.8333,
+            "n_answered": 5,
+            "confident_wrong_count": 2,
+            "confident_wrong_rate_over_pool": 0.0667,
+            "confident_wrong_rate_among_answered": 0.4
+          }
+        },
+        "hallucination_reduction_vs_fulldoc_raw": {
+          "comparison": "Mode-A (closure-certified) vs whole-document raw LLM",
+          "confident_wrong_rate_modeA_over_pool": 0.1,
+          "confident_wrong_rate_raw_over_pool": 0.7,
+          "hallucination_reduction_over_pool": 0.6,
+          "coverage_modeA": 0.2333,
+          "coverage_raw": 1.0,
+          "n_queries": 30,
+          "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point estimate, NOT a powered test."
+        },
+        "hallucination_reduction_vs_local_raw": {
+          "comparison": "Mode-A (closure-certified) vs span-local raw LLM",
+          "confident_wrong_rate_modeA_over_pool": 0.1,
+          "confident_wrong_rate_raw_over_pool": 0.6333,
+          "hallucination_reduction_over_pool": 0.5333,
+          "coverage_modeA": 0.2333,
+          "coverage_raw": 1.0,
+          "n_queries": 30,
+          "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point estimate, NOT a powered test."
+        },
+        "prolog_execution": {
+          "n_discharged": 12,
+          "n_executed_in_swipl": 12,
+          "n_engine_match": 2,
+          "n_gold_match": 1,
+          "swipl_version": "SWI-Prolog version 9.0.4 for x86_64-linux",
+          "samples": [
+            {
+              "query": [
+                "CNN19980213.2130.0155::ei585",
+                "CNN19980213.2130.0155::ei619"
+              ],
+              "gold": "after",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_CNN19980213.2130.0155_CNN19980213.2130.0155::ei585_CNN19980213.2130.0155::ei619.pl",
+              "discharge_method": "swipl: PATHS: none",
+              "derived_coarse": null,
+              "agrees_with_engine_modeA": null,
+              "executed_in_swipl": true
+            },
+            {
+              "query": [
+                "CNN19980213.2130.0155::ei575",
+                "CNN19980213.2130.0155::ei618"
+              ],
+              "gold": "after",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_CNN19980213.2130.0155_CNN19980213.2130.0155::ei575_CNN19980213.2130.0155::ei618.pl",
+              "discharge_method": "swipl: PATHS: none",
+              "derived_coarse": null,
+              "agrees_with_engine_modeA": null,
+              "executed_in_swipl": true
+            },
+            {
+              "query": [
+                "CNN19980213.2130.0155::ei606",
+                "CNN19980213.2130.0155::ei624"
+              ],
+              "gold": "after",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_CNN19980213.2130.0155_CNN19980213.2130.0155::ei606_CNN19980213.2130.0155::ei624.pl",
+              "discharge_method": "swipl: PATHS: none",
+              "derived_coarse": null,
+              "agrees_with_engine_modeA": null,
+              "executed_in_swipl": true
+            },
+            {
+              "query": [
+                "CNN19980213.2130.0155::ei592",
+                "CNN19980213.2130.0155::ei617"
+              ],
+              "gold": "after",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_CNN19980213.2130.0155_CNN19980213.2130.0155::ei592_CNN19980213.2130.0155::ei617.pl",
+              "discharge_method": "swipl: PATHS: none",
+              "derived_coarse": null,
+              "agrees_with_engine_modeA": null,
+              "executed_in_swipl": true
+            },
+            {
+              "query": [
+                "CNN19980213.2130.0155::ei580",
+                "CNN19980213.2130.0155::ei610"
+              ],
+              "gold": "before",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_CNN19980213.2130.0155_CNN19980213.2130.0155::ei580_CNN19980213.2130.0155::ei610.pl",
+              "discharge_method": "swipl: PATHS: none",
+              "derived_coarse": null,
+              "agrees_with_engine_modeA": null,
+              "executed_in_swipl": true
+            },
+            {
+              "query": [
+                "CNN19980213.2130.0155::ei605",
+                "CNN19980213.2130.0155::ei618"
+              ],
+              "gold": "before",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_CNN19980213.2130.0155_CNN19980213.2130.0155::ei605_CNN19980213.2130.0155::ei618.pl",
+              "discharge_method": "swipl: PATHS: [lt]",
+              "derived_coarse": "before",
+              "agrees_with_engine_modeA": true,
+              "executed_in_swipl": true
+            }
+          ]
+        },
+        "trace_graph_narrowing": {
+          "query": [
+            "CNN19980213.2130.0155::ei605",
+            "CNN19980213.2130.0155::ei618"
+          ],
+          "gold_coarse": "before",
+          "stratum": "ge3_cyclic",
+          "n_vias": 3,
+          "induced_path_edges": [
+            {
+              "from": "CNN19980213.2130.0155::ei605",
+              "to": "CNN19980213.2130.0155::ei637",
+              "local_read_point": "<",
+              "local_read_coarse": "before",
+              "most_likely": "before",
+              "conf": 0.9
+            },
+            {
+              "from": "CNN19980213.2130.0155::ei605",
+              "to": "CNN19980213.2130.0155::ei622",
+              "local_read_point": "<",
+              "local_read_coarse": "before",
+              "most_likely": "before",
+              "conf": 0.9
+            },
+            {
+              "from": "CNN19980213.2130.0155::ei605",
+              "to": "CNN19980213.2130.0155::ei606",
+              "local_read_point": "<",
+              "local_read_coarse": "before",
+              "most_likely": "before",
+              "conf": 0.9
+            },
+            {
+              "from": "CNN19980213.2130.0155::ei618",
+              "to": "CNN19980213.2130.0155::ei637",
+              "local_read_point": "<",
+              "local_read_coarse": "before",
+              "most_likely": "before",
+              "conf": 0.9
+            },
+            {
+              "from": "CNN19980213.2130.0155::ei618",
+              "to": "CNN19980213.2130.0155::ei622",
+              "local_read_point": "<",
+              "local_read_coarse": "before",
+              "most_likely": "before",
+              "conf": 0.9
+            },
+            {
+              "from": "CNN19980213.2130.0155::ei618",
+              "to": "CNN19980213.2130.0155::ei606",
+              "local_read_point": ">",
+              "local_read_coarse": "after",
+              "most_likely": "before",
+              "conf": 0.9
+            },
+            {
+              "from": "CNN19980213.2130.0155::ei637",
+              "to": "CNN19980213.2130.0155::ei622",
+              "local_read_point": ">",
+              "local_read_coarse": "after",
+              "most_likely": "before",
+              "conf": 0.9
+            },
+            {
+              "from": "CNN19980213.2130.0155::ei637",
+              "to": "CNN19980213.2130.0155::ei606",
+              "local_read_point": ">",
+              "local_read_coarse": "after",
+              "most_likely": "before",
+              "conf": 0.9
+            },
+            {
+              "from": "CNN19980213.2130.0155::ei622",
+              "to": "CNN19980213.2130.0155::ei606",
+              "local_read_point": ">",
+              "local_read_coarse": "after",
+              "most_likely": "before",
+              "conf": 0.9
+            }
+          ],
+          "naive_single_pass_pred": "before",
+          "modeA_closure_pred": "before",
+          "modeA_outcome": "emit",
+          "n_pc2_fired": 1,
+          "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_CNN19980213.2130.0155_CNN19980213.2130.0155::ei605_CNN19980213.2130.0155::ei618.pl",
+          "swipl_stdout_tail": "swipl: PATHS: [lt]",
+          "program_excerpt": "% Closure-certified temporal deduction -- auto-generated trace program.\n% Convex point start-point algebra over event start points {lt,eq,gt}.\n% The query relation is the INTERSECTION of all length-2 path compositions\n% (path-consistency narrowing); an empty intersection certifies inconsistency.\n:- discontiguous rel/3.\n\n% --- composition table (Vilain-Kautz convex point algebra) ---\ncomp(lt,lt,lt).\ncomp(lt,eq,lt).\ncomp(eq,lt,lt).\ncomp(eq,eq,eq).\ncomp(eq,gt,gt).\ncomp(gt,eq,gt).\ncomp(gt,gt,gt).\n\n% --- read facts (LOCAL LLM reads; both directions via converse) ---\nrel(e_CNN19980213_2130_0155__ei605,e_CNN19980213_2130_0155__ei637,lt).\nrel(e_CNN19980213_2130_0155__ei637,e_CNN19980213_2130_0155__ei605,gt).\nrel(e_CNN19980213_2130_0155__ei605,e_CNN19980213_2130_0155__ei622,lt).\nrel(e_CNN19980213_2130_0155__ei622,e_CNN19980213_2130_0155__ei605,gt).\nrel(e_CNN19980213_2130_0155__ei605,e_CNN19980213"
+        },
+        "trace_graph_collapse": null,
+        "trace_graph_abstain": {
+          "query": [
+            "CNN19980213.2130.0155::ei585",
+            "CNN19980213.2130.0155::ei619"
+          ],
+          "gold_coarse": "after",
+          "stratum": "ge3_cyclic",
+          "n_vias": 3,
+          "induced_path_edges": [
+            {
+              "from": "CNN19980213.2130.0155::ei585",
+              "to": "CNN19980213.2130.0155::ei592",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "before",
+              "conf": 0.4
+            },
+            {
+              "from": "CNN19980213.2130.0155::ei585",
+              "to": "CNN19980213.2130.0155::ei599",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "before",
+              "conf": 0.4
+            },
+            {
+              "from": "CNN19980213.2130.0155::ei585",
+              "to": "CNN19980213.2130.0155::ei609",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "simultaneous",
+              "conf": 0.4
+            },
+            {
+              "from": "CNN19980213.2130.0155::ei619",
+              "to": "CNN19980213.2130.0155::ei592",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "after",
+              "conf": 0.4
+            },
+            {
+              "from": "CNN19980213.2130.0155::ei619",
+              "to": "CNN19980213.2130.0155::ei599",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "after",
+              "conf": 0.4
+            },
+            {
+              "from": "CNN19980213.2130.0155::ei619",
+              "to": "CNN19980213.2130.0155::ei609",
+              "local_read_point": "=|>",
+              "local_read_coarse": "is_included",
+              "most_likely": "simultaneous",
+              "conf": 0.7
+            },
+            {
+              "from": "CNN19980213.2130.0155::ei592",
+              "to": "CNN19980213.2130.0155::ei599",
+              "local_read_point": "<",
+              "local_read_coarse": "before",
+              "most_likely": "before",
+              "conf": 0.9
+            },
+            {
+              "from": "CNN19980213.2130.0155::ei592",
+              "to": "CNN19980213.2130.0155::ei609",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "after",
+              "conf": 0.4
+            },
+            {
+              "from": "CNN19980213.2130.0155::ei599",
+              "to": "CNN19980213.2130.0155::ei609",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "before",
+              "conf": 0.4
+            }
+          ],
+          "naive_single_pass_pred": "ABSTAIN",
+          "modeA_closure_pred": "ABSTAIN",
+          "modeA_outcome": "abstain",
+          "n_pc2_fired": 0,
+          "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_CNN19980213.2130.0155_CNN19980213.2130.0155::ei585_CNN19980213.2130.0155::ei619.pl",
+          "swipl_stdout_tail": "swipl: PATHS: none",
+          "note": "real-text span-local reads UNDER-DETERMINE the start-point order (broad disjunctive sets) -> path-consistency cannot narrow to a singleton -> Mode-A ABSTAINS. Faithfulness-by-abstention: 0 confident-wrong, vs the raw LLM which commits and frequently errs."
+        }
+      },
+      {
+        "docid": "ABC19980108.1830.0711",
+        "corpus": "narrativetime",
+        "char_len": 2311,
+        "reached_3000_target": false,
+        "algebra": "POINT (PC-complete convex start-point)",
+        "offset_alignment_fraction": 1.0,
+        "n_queries": 30,
+        "n_read_edges": 279,
+        "n_parse_fail": 0,
+        "atomic_PRF": {
+          "tag": "REAL-LLM-READ",
+          "disjunctive_set_recall": 0.9042,
+          "recall_ci95": [
+            0.9041666666666667,
+            0.9041666666666667
+          ],
+          "most_likely_precision": 0.4958,
+          "f1": 0.6404,
+          "n_scorable_edges": 240,
+          "n_committed_reads": 240,
+          "breadth_mean": 2.3417,
+          "note": "recall = P(gold start-point relation subseteq emitted disjunctive set); precision = P(single most-likely read == gold | a single relation committed). Held-fixed MEASURED control: atomic extraction is measured, not improved."
+        },
+        "outcomes": {
+          "emit": 5,
+          "abstain": 24,
+          "collapse_modeB": 1
+        },
+        "query_classes": {
+          "deduction_resolved": 5,
+          "extraction_limited_abstain": 24,
+          "closure_collapse": 1
+        },
+        "confident_wrong": {
+          "modeA": {
+            "n_queries": 30,
+            "coverage": 0.1667,
+            "abstention": 0.8333,
+            "n_answered": 5,
+            "confident_wrong_count": 1,
+            "confident_wrong_rate_over_pool": 0.0333,
+            "confident_wrong_rate_among_answered": 0.2
+          },
+          "raw_local": {
+            "n_queries": 30,
+            "coverage": 1.0,
+            "abstention": 0.0,
+            "n_answered": 30,
+            "confident_wrong_count": 10,
+            "confident_wrong_rate_over_pool": 0.3333,
+            "confident_wrong_rate_among_answered": 0.3333
+          },
+          "raw_fulldoc": {
+            "n_queries": 30,
+            "coverage": 1.0,
+            "abstention": 0.0,
+            "n_answered": 30,
+            "confident_wrong_count": 9,
+            "confident_wrong_rate_over_pool": 0.3,
+            "confident_wrong_rate_among_answered": 0.3
+          },
+          "naive": {
+            "n_queries": 30,
+            "coverage": 0.1667,
+            "abstention": 0.8333,
+            "n_answered": 5,
+            "confident_wrong_count": 1,
+            "confident_wrong_rate_over_pool": 0.0333,
+            "confident_wrong_rate_among_answered": 0.2
+          }
+        },
+        "hallucination_reduction_vs_fulldoc_raw": {
+          "comparison": "Mode-A (closure-certified) vs whole-document raw LLM",
+          "confident_wrong_rate_modeA_over_pool": 0.0333,
+          "confident_wrong_rate_raw_over_pool": 0.3,
+          "hallucination_reduction_over_pool": 0.2667,
+          "coverage_modeA": 0.1667,
+          "coverage_raw": 1.0,
+          "n_queries": 30,
+          "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point estimate, NOT a powered test."
+        },
+        "hallucination_reduction_vs_local_raw": {
+          "comparison": "Mode-A (closure-certified) vs span-local raw LLM",
+          "confident_wrong_rate_modeA_over_pool": 0.0333,
+          "confident_wrong_rate_raw_over_pool": 0.3333,
+          "hallucination_reduction_over_pool": 0.3,
+          "coverage_modeA": 0.1667,
+          "coverage_raw": 1.0,
+          "n_queries": 30,
+          "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point estimate, NOT a powered test."
+        },
+        "prolog_execution": {
+          "n_discharged": 12,
+          "n_executed_in_swipl": 12,
+          "n_engine_match": 1,
+          "n_gold_match": 1,
+          "swipl_version": "SWI-Prolog version 9.0.4 for x86_64-linux",
+          "samples": [
+            {
+              "query": [
+                "ABC19980108.1830.0711::ei375",
+                "ABC19980108.1830.0711::ei433"
+              ],
+              "gold": "simultaneous",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_ABC19980108.1830.0711_ABC19980108.1830.0711::ei375_ABC19980108.1830.0711::ei433.pl",
+              "discharge_method": "swipl: PATHS: none",
+              "derived_coarse": null,
+              "agrees_with_engine_modeA": null,
+              "executed_in_swipl": true
+            },
+            {
+              "query": [
+                "ABC19980108.1830.0711::ei380",
+                "ABC19980108.1830.0711::ei383"
+              ],
+              "gold": "simultaneous",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_ABC19980108.1830.0711_ABC19980108.1830.0711::ei380_ABC19980108.1830.0711::ei383.pl",
+              "discharge_method": "swipl: PATHS: none",
+              "derived_coarse": null,
+              "agrees_with_engine_modeA": null,
+              "executed_in_swipl": true
+            },
+            {
+              "query": [
+                "ABC19980108.1830.0711::ei414",
+                "ABC19980108.1830.0711::ei427"
+              ],
+              "gold": "before",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_ABC19980108.1830.0711_ABC19980108.1830.0711::ei414_ABC19980108.1830.0711::ei427.pl",
+              "discharge_method": "swipl: PATHS: none",
+              "derived_coarse": null,
+              "agrees_with_engine_modeA": null,
+              "executed_in_swipl": true
+            },
+            {
+              "query": [
+                "ABC19980108.1830.0711::ei409",
+                "ABC19980108.1830.0711::ei426"
+              ],
+              "gold": "before",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_ABC19980108.1830.0711_ABC19980108.1830.0711::ei409_ABC19980108.1830.0711::ei426.pl",
+              "discharge_method": "swipl: PATHS: none",
+              "derived_coarse": null,
+              "agrees_with_engine_modeA": null,
+              "executed_in_swipl": true
+            },
+            {
+              "query": [
+                "ABC19980108.1830.0711::ei401",
+                "ABC19980108.1830.0711::ei420"
+              ],
+              "gold": "simultaneous",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_ABC19980108.1830.0711_ABC19980108.1830.0711::ei401_ABC19980108.1830.0711::ei420.pl",
+              "discharge_method": "swipl: PATHS: none",
+              "derived_coarse": null,
+              "agrees_with_engine_modeA": null,
+              "executed_in_swipl": true
+            },
+            {
+              "query": [
+                "ABC19980108.1830.0711::ei389",
+                "ABC19980108.1830.0711::ei426"
+              ],
+              "gold": "before",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_ABC19980108.1830.0711_ABC19980108.1830.0711::ei389_ABC19980108.1830.0711::ei426.pl",
+              "discharge_method": "swipl: PATHS: none",
+              "derived_coarse": null,
+              "agrees_with_engine_modeA": false,
+              "executed_in_swipl": true
+            }
+          ]
+        },
+        "trace_graph_narrowing": {
+          "query": [
+            "ABC19980108.1830.0711::ei389",
+            "ABC19980108.1830.0711::ei426"
+          ],
+          "gold_coarse": "before",
+          "stratum": "ge3_cyclic",
+          "n_vias": 3,
+          "induced_path_edges": [
+            {
+              "from": "ABC19980108.1830.0711::ei389",
+              "to": "ABC19980108.1830.0711::ei424",
+              "local_read_point": "<",
+              "local_read_coarse": "before",
+              "most_likely": "before",
+              "conf": 0.9
+            },
+            {
+              "from": "ABC19980108.1830.0711::ei389",
+              "to": "ABC19980108.1830.0711::ei402",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "before",
+              "conf": 0.4
+            },
+            {
+              "from": "ABC19980108.1830.0711::ei389",
+              "to": "ABC19980108.1830.0711::ei412",
+              "local_read_point": "<",
+              "local_read_coarse": "before",
+              "most_likely": "before",
+              "conf": 0.9
+            },
+            {
+              "from": "ABC19980108.1830.0711::ei426",
+              "to": "ABC19980108.1830.0711::ei424",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "before",
+              "conf": 0.4
+            },
+            {
+              "from": "ABC19980108.1830.0711::ei426",
+              "to": "ABC19980108.1830.0711::ei402",
+              "local_read_point": ">",
+              "local_read_coarse": "after",
+              "most_likely": "before",
+              "conf": 0.9
+            },
+            {
+              "from": "ABC19980108.1830.0711::ei426",
+              "to": "ABC19980108.1830.0711::ei412",
+              "local_read_point": "=|>",
+              "local_read_coarse": "is_included",
+              "most_likely": "before",
+              "conf": 0.7
+            },
+            {
+              "from": "ABC19980108.1830.0711::ei424",
+              "to": "ABC19980108.1830.0711::ei402",
+              "local_read_point": ">",
+              "local_read_coarse": "after",
+              "most_likely": "before",
+              "conf": 0.9
+            },
+            {
+              "from": "ABC19980108.1830.0711::ei424",
+              "to": "ABC19980108.1830.0711::ei412",
+              "local_read_point": ">",
+              "local_read_coarse": "after",
+              "most_likely": "before",
+              "conf": 0.9
+            },
+            {
+              "from": "ABC19980108.1830.0711::ei402",
+              "to": "ABC19980108.1830.0711::ei412",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "after",
+              "conf": 0.4
+            }
+          ],
+          "naive_single_pass_pred": "before",
+          "modeA_closure_pred": "before",
+          "modeA_outcome": "emit",
+          "n_pc2_fired": 1,
+          "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_ABC19980108.1830.0711_ABC19980108.1830.0711::ei389_ABC19980108.1830.0711::ei426.pl",
+          "swipl_stdout_tail": "swipl: PATHS: none",
+          "program_excerpt": "% Closure-certified temporal deduction -- auto-generated trace program.\n% Convex point start-point algebra over event start points {lt,eq,gt}.\n% The query relation is the INTERSECTION of all length-2 path compositions\n% (path-consistency narrowing); an empty intersection certifies inconsistency.\n:- discontiguous rel/3.\n\n% --- composition table (Vilain-Kautz convex point algebra) ---\ncomp(lt,lt,lt).\ncomp(lt,eq,lt).\ncomp(eq,lt,lt).\ncomp(eq,eq,eq).\ncomp(eq,gt,gt).\ncomp(gt,eq,gt).\ncomp(gt,gt,gt).\n\n% --- read facts (LOCAL LLM reads; both directions via converse) ---\nrel(e_ABC19980108_1830_0711__ei389,e_ABC19980108_1830_0711__ei424,lt).\nrel(e_ABC19980108_1830_0711__ei424,e_ABC19980108_1830_0711__ei389,gt).\nrel(e_ABC19980108_1830_0711__ei389,e_ABC19980108_1830_0711__ei412,lt).\nrel(e_ABC19980108_1830_0711__ei412,e_ABC19980108_1830_0711__ei389,gt).\nrel(e_ABC19980108_1830_0711__ei426,e_ABC19980108"
+        },
+        "trace_graph_collapse": null,
+        "trace_graph_abstain": {
+          "query": [
+            "ABC19980108.1830.0711::ei375",
+            "ABC19980108.1830.0711::ei433"
+          ],
+          "gold_coarse": "simultaneous",
+          "stratum": "ge3_cyclic",
+          "n_vias": 3,
+          "induced_path_edges": [
+            {
+              "from": "ABC19980108.1830.0711::ei375",
+              "to": "ABC19980108.1830.0711::ei393",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "after",
+              "conf": 0.4
+            },
+            {
+              "from": "ABC19980108.1830.0711::ei375",
+              "to": "ABC19980108.1830.0711::ei398",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "before",
+              "conf": 0.4
+            },
+            {
+              "from": "ABC19980108.1830.0711::ei375",
+              "to": "ABC19980108.1830.0711::ei428",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "before",
+              "conf": 0.4
+            },
+            {
+              "from": "ABC19980108.1830.0711::ei433",
+              "to": "ABC19980108.1830.0711::ei393",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "before",
+              "conf": 0.4
+            },
+            {
+              "from": "ABC19980108.1830.0711::ei433",
+              "to": "ABC19980108.1830.0711::ei398",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "simultaneous",
+              "conf": 0.4
+            },
+            {
+              "from": "ABC19980108.1830.0711::ei433",
+              "to": "ABC19980108.1830.0711::ei428",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "before",
+              "conf": 0.4
+            },
+            {
+              "from": "ABC19980108.1830.0711::ei393",
+              "to": "ABC19980108.1830.0711::ei398",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "before",
+              "conf": 0.4
+            },
+            {
+              "from": "ABC19980108.1830.0711::ei393",
+              "to": "ABC19980108.1830.0711::ei428",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "after",
+              "conf": 0.4
+            },
+            {
+              "from": "ABC19980108.1830.0711::ei398",
+              "to": "ABC19980108.1830.0711::ei428",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "before",
+              "conf": 0.4
+            }
+          ],
+          "naive_single_pass_pred": "ABSTAIN",
+          "modeA_closure_pred": "ABSTAIN",
+          "modeA_outcome": "abstain",
+          "n_pc2_fired": 0,
+          "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_ABC19980108.1830.0711_ABC19980108.1830.0711::ei375_ABC19980108.1830.0711::ei433.pl",
+          "swipl_stdout_tail": "swipl: PATHS: none",
+          "note": "real-text span-local reads UNDER-DETERMINE the start-point order (broad disjunctive sets) -> path-consistency cannot narrow to a singleton -> Mode-A ABSTAINS. Faithfulness-by-abstention: 0 confident-wrong, vs the raw LLM which commits and frequently errs."
+        }
+      },
+      {
+        "docid": "CNN19980227.2130.0067",
+        "corpus": "narrativetime",
+        "char_len": 2427,
+        "reached_3000_target": false,
+        "algebra": "POINT (PC-complete convex start-point)",
+        "offset_alignment_fraction": 1.0,
+        "n_queries": 30,
+        "n_read_edges": 274,
+        "n_parse_fail": 0,
+        "atomic_PRF": {
+          "tag": "REAL-LLM-READ",
+          "disjunctive_set_recall": 0.9248,
+          "recall_ci95": [
+            0.9247787610619469,
+            0.9247787610619469
+          ],
+          "most_likely_precision": 0.5619,
+          "f1": 0.6991,
+          "n_scorable_edges": 226,
+          "n_committed_reads": 226,
+          "breadth_mean": 2.4425,
+          "note": "recall = P(gold start-point relation subseteq emitted disjunctive set); precision = P(single most-likely read == gold | a single relation committed). Held-fixed MEASURED control: atomic extraction is measured, not improved."
+        },
+        "outcomes": {
+          "emit": 0,
+          "abstain": 30,
+          "collapse_modeB": 0
+        },
+        "query_classes": {
+          "deduction_resolved": 0,
+          "extraction_limited_abstain": 30,
+          "closure_collapse": 0
+        },
+        "confident_wrong": {
+          "modeA": {
+            "n_queries": 30,
+            "coverage": 0.0,
+            "abstention": 1.0,
+            "n_answered": 0,
+            "confident_wrong_count": 0,
+            "confident_wrong_rate_over_pool": 0.0,
+            "confident_wrong_rate_among_answered": null
+          },
+          "raw_local": {
+            "n_queries": 30,
+            "coverage": 1.0,
+            "abstention": 0.0,
+            "n_answered": 30,
+            "confident_wrong_count": 12,
+            "confident_wrong_rate_over_pool": 0.4,
+            "confident_wrong_rate_among_answered": 0.4
+          },
+          "raw_fulldoc": {
+            "n_queries": 30,
+            "coverage": 1.0,
+            "abstention": 0.0,
+            "n_answered": 30,
+            "confident_wrong_count": 10,
+            "confident_wrong_rate_over_pool": 0.3333,
+            "confident_wrong_rate_among_answered": 0.3333
+          },
+          "naive": {
+            "n_queries": 30,
+            "coverage": 0.0,
+            "abstention": 1.0,
+            "n_answered": 0,
+            "confident_wrong_count": 0,
+            "confident_wrong_rate_over_pool": 0.0,
+            "confident_wrong_rate_among_answered": null
+          }
+        },
+        "hallucination_reduction_vs_fulldoc_raw": {
+          "comparison": "Mode-A (closure-certified) vs whole-document raw LLM",
+          "confident_wrong_rate_modeA_over_pool": 0.0,
+          "confident_wrong_rate_raw_over_pool": 0.3333,
+          "hallucination_reduction_over_pool": 0.3333,
+          "coverage_modeA": 0.0,
+          "coverage_raw": 1.0,
+          "n_queries": 30,
+          "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point estimate, NOT a powered test."
+        },
+        "hallucination_reduction_vs_local_raw": {
+          "comparison": "Mode-A (closure-certified) vs span-local raw LLM",
+          "confident_wrong_rate_modeA_over_pool": 0.0,
+          "confident_wrong_rate_raw_over_pool": 0.4,
+          "hallucination_reduction_over_pool": 0.4,
+          "coverage_modeA": 0.0,
+          "coverage_raw": 1.0,
+          "n_queries": 30,
+          "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point estimate, NOT a powered test."
+        },
+        "prolog_execution": {
+          "n_discharged": 12,
+          "n_executed_in_swipl": 12,
+          "n_engine_match": 0,
+          "n_gold_match": 0,
+          "swipl_version": "SWI-Prolog version 9.0.4 for x86_64-linux",
+          "samples": [
+            {
+              "query": [
+                "CNN19980227.2130.0067::ei2008",
+                "CNN19980227.2130.0067::ei2016"
+              ],
+              "gold": "before",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_CNN19980227.2130.0067_CNN19980227.2130.0067::ei2008_CNN19980227.2130.0067::ei2016.pl",
+              "discharge_method": "swipl: PATHS: none",
+              "derived_coarse": null,
+              "agrees_with_engine_modeA": null,
+              "executed_in_swipl": true
+            },
+            {
+              "query": [
+                "CNN19980227.2130.0067::ei2015",
+                "CNN19980227.2130.0067::ei2045"
+              ],
+              "gold": "is_included",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_CNN19980227.2130.0067_CNN19980227.2130.0067::ei2015_CNN19980227.2130.0067::ei2045.pl",
+              "discharge_method": "swipl: PATHS: none",
+              "derived_coarse": null,
+              "agrees_with_engine_modeA": null,
+              "executed_in_swipl": true
+            },
+            {
+              "query": [
+                "CNN19980227.2130.0067::ei1998",
+                "CNN19980227.2130.0067::ei2048"
+              ],
+              "gold": "is_included",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_CNN19980227.2130.0067_CNN19980227.2130.0067::ei1998_CNN19980227.2130.0067::ei2048.pl",
+              "discharge_method": "swipl: PATHS: none",
+              "derived_coarse": null,
+              "agrees_with_engine_modeA": null,
+              "executed_in_swipl": true
+            },
+            {
+              "query": [
+                "CNN19980227.2130.0067::ei2023",
+                "CNN19980227.2130.0067::ei2036"
+              ],
+              "gold": "before",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_CNN19980227.2130.0067_CNN19980227.2130.0067::ei2023_CNN19980227.2130.0067::ei2036.pl",
+              "discharge_method": "swipl: PATHS: none",
+              "derived_coarse": null,
+              "agrees_with_engine_modeA": null,
+              "executed_in_swipl": true
+            },
+            {
+              "query": [
+                "CNN19980227.2130.0067::ei2000",
+                "CNN19980227.2130.0067::ei2018"
+              ],
+              "gold": "after",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_CNN19980227.2130.0067_CNN19980227.2130.0067::ei2000_CNN19980227.2130.0067::ei2018.pl",
+              "discharge_method": "swipl: PATHS: none",
+              "derived_coarse": null,
+              "agrees_with_engine_modeA": null,
+              "executed_in_swipl": true
+            },
+            {
+              "query": [
+                "CNN19980227.2130.0067::ei2014",
+                "CNN19980227.2130.0067::ei2050"
+              ],
+              "gold": "before",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_CNN19980227.2130.0067_CNN19980227.2130.0067::ei2014_CNN19980227.2130.0067::ei2050.pl",
+              "discharge_method": "swipl: PATHS: none",
+              "derived_coarse": null,
+              "agrees_with_engine_modeA": null,
+              "executed_in_swipl": true
+            }
+          ]
+        },
+        "trace_graph_narrowing": null,
+        "trace_graph_collapse": null,
+        "trace_graph_abstain": {
+          "query": [
+            "CNN19980227.2130.0067::ei2008",
+            "CNN19980227.2130.0067::ei2016"
+          ],
+          "gold_coarse": "before",
+          "stratum": "ge3_cyclic",
+          "n_vias": 3,
+          "induced_path_edges": [
+            {
+              "from": "CNN19980227.2130.0067::ei2008",
+              "to": "CNN19980227.2130.0067::ei2011",
+              "local_read_point": "<",
+              "local_read_coarse": "before",
+              "most_likely": "before",
+              "conf": 0.95
+            },
+            {
+              "from": "CNN19980227.2130.0067::ei2008",
+              "to": "CNN19980227.2130.0067::ei2042",
+              "local_read_point": "<",
+              "local_read_coarse": "before",
+              "most_likely": "before",
+              "conf": 0.9
+            },
+            {
+              "from": "CNN19980227.2130.0067::ei2008",
+              "to": "CNN19980227.2130.0067::ei2048",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "before",
+              "conf": 0.6
+            },
+            {
+              "from": "CNN19980227.2130.0067::ei2016",
+              "to": "CNN19980227.2130.0067::ei2011",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "after",
+              "conf": 0.4
+            },
+            {
+              "from": "CNN19980227.2130.0067::ei2016",
+              "to": "CNN19980227.2130.0067::ei2042",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "before",
+              "conf": 0.4
+            },
+            {
+              "from": "CNN19980227.2130.0067::ei2016",
+              "to": "CNN19980227.2130.0067::ei2048",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "after",
+              "conf": 0.4
+            },
+            {
+              "from": "CNN19980227.2130.0067::ei2011",
+              "to": "CNN19980227.2130.0067::ei2042",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "after",
+              "conf": 0.4
+            },
+            {
+              "from": "CNN19980227.2130.0067::ei2011",
+              "to": "CNN19980227.2130.0067::ei2048",
+              "local_read_point": "=",
+              "local_read_coarse": "simultaneous",
+              "most_likely": "simultaneous",
+              "conf": 0.9
+            },
+            {
+              "from": "CNN19980227.2130.0067::ei2042",
+              "to": "CNN19980227.2130.0067::ei2048",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "after",
+              "conf": 0.4
+            }
+          ],
+          "naive_single_pass_pred": "ABSTAIN",
+          "modeA_closure_pred": "ABSTAIN",
+          "modeA_outcome": "abstain",
+          "n_pc2_fired": 1,
+          "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_CNN19980227.2130.0067_CNN19980227.2130.0067::ei2008_CNN19980227.2130.0067::ei2016.pl",
+          "swipl_stdout_tail": "swipl: PATHS: none",
+          "note": "real-text span-local reads UNDER-DETERMINE the start-point order (broad disjunctive sets) -> path-consistency cannot narrow to a singleton -> Mode-A ABSTAINS. Faithfulness-by-abstention: 0 confident-wrong, vs the raw LLM which commits and frequently errs."
+        }
+      },
+      {
+        "docid": "APW19980213.1310",
+        "corpus": "narrativetime",
+        "char_len": 4025,
+        "reached_3000_target": false,
+        "algebra": "POINT (PC-complete convex start-point)",
+        "offset_alignment_fraction": 1.0,
+        "n_queries": 30,
+        "n_read_edges": 287,
+        "n_parse_fail": 0,
+        "atomic_PRF": {
+          "tag": "REAL-LLM-READ",
+          "disjunctive_set_recall": 0.7689,
+          "recall_ci95": [
+            0.7689075630252101,
+            0.7689075630252101
+          ],
+          "most_likely_precision": 0.3571,
+          "f1": 0.4877,
+          "n_scorable_edges": 238,
+          "n_committed_reads": 238,
+          "breadth_mean": 2.1429,
+          "note": "recall = P(gold start-point relation subseteq emitted disjunctive set); precision = P(single most-likely read == gold | a single relation committed). Held-fixed MEASURED control: atomic extraction is measured, not improved."
+        },
+        "outcomes": {
+          "emit": 10,
+          "abstain": 19,
+          "collapse_modeB": 1
+        },
+        "query_classes": {
+          "deduction_resolved": 10,
+          "extraction_limited_abstain": 19,
+          "closure_collapse": 1
+        },
+        "confident_wrong": {
+          "modeA": {
+            "n_queries": 30,
+            "coverage": 0.3333,
+            "abstention": 0.6667,
+            "n_answered": 10,
+            "confident_wrong_count": 5,
+            "confident_wrong_rate_over_pool": 0.1667,
+            "confident_wrong_rate_among_answered": 0.5
+          },
+          "raw_local": {
+            "n_queries": 30,
+            "coverage": 1.0,
+            "abstention": 0.0,
+            "n_answered": 30,
+            "confident_wrong_count": 18,
+            "confident_wrong_rate_over_pool": 0.6,
+            "confident_wrong_rate_among_answered": 0.6
+          },
+          "raw_fulldoc": {
+            "n_queries": 30,
+            "coverage": 1.0,
+            "abstention": 0.0,
+            "n_answered": 30,
+            "confident_wrong_count": 18,
+            "confident_wrong_rate_over_pool": 0.6,
+            "confident_wrong_rate_among_answered": 0.6
+          },
+          "naive": {
+            "n_queries": 30,
+            "coverage": 0.3333,
+            "abstention": 0.6667,
+            "n_answered": 10,
+            "confident_wrong_count": 5,
+            "confident_wrong_rate_over_pool": 0.1667,
+            "confident_wrong_rate_among_answered": 0.5
+          }
+        },
+        "hallucination_reduction_vs_fulldoc_raw": {
+          "comparison": "Mode-A (closure-certified) vs whole-document raw LLM",
+          "confident_wrong_rate_modeA_over_pool": 0.1667,
+          "confident_wrong_rate_raw_over_pool": 0.6,
+          "hallucination_reduction_over_pool": 0.4333,
+          "coverage_modeA": 0.3333,
+          "coverage_raw": 1.0,
+          "n_queries": 30,
+          "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point estimate, NOT a powered test."
+        },
+        "hallucination_reduction_vs_local_raw": {
+          "comparison": "Mode-A (closure-certified) vs span-local raw LLM",
+          "confident_wrong_rate_modeA_over_pool": 0.1667,
+          "confident_wrong_rate_raw_over_pool": 0.6,
+          "hallucination_reduction_over_pool": 0.4333,
+          "coverage_modeA": 0.3333,
+          "coverage_raw": 1.0,
+          "n_queries": 30,
+          "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point estimate, NOT a powered test."
+        },
+        "prolog_execution": {
+          "n_discharged": 12,
+          "n_executed_in_swipl": 12,
+          "n_engine_match": 4,
+          "n_gold_match": 2,
+          "swipl_version": "SWI-Prolog version 9.0.4 for x86_64-linux",
+          "samples": [
+            {
+              "query": [
+                "APW19980213.1310::ei2014",
+                "APW19980213.1310::ei2049"
+              ],
+              "gold": "after",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_APW19980213.1310_APW19980213.1310::ei2014_APW19980213.1310::ei2049.pl",
+              "discharge_method": "swipl: PATHS: none",
+              "derived_coarse": null,
+              "agrees_with_engine_modeA": null,
+              "executed_in_swipl": true
+            },
+            {
+              "query": [
+                "APW19980213.1310::ei2043",
+                "APW19980213.1310::ei2065"
+              ],
+              "gold": "simultaneous",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_APW19980213.1310_APW19980213.1310::ei2043_APW19980213.1310::ei2065.pl",
+              "discharge_method": "swipl: PATHS: none",
+              "derived_coarse": null,
+              "agrees_with_engine_modeA": null,
+              "executed_in_swipl": true
+            },
+            {
+              "query": [
+                "APW19980213.1310::ei2028",
+                "APW19980213.1310::ei2074"
+              ],
+              "gold": "after",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_APW19980213.1310_APW19980213.1310::ei2028_APW19980213.1310::ei2074.pl",
+              "discharge_method": "swipl: PATHS: none",
+              "derived_coarse": null,
+              "agrees_with_engine_modeA": null,
+              "executed_in_swipl": true
+            },
+            {
+              "query": [
+                "APW19980213.1310::ei2030",
+                "APW19980213.1310::ei2067"
+              ],
+              "gold": "after",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_APW19980213.1310_APW19980213.1310::ei2030_APW19980213.1310::ei2067.pl",
+              "discharge_method": "swipl: PATHS: none",
+              "derived_coarse": null,
+              "agrees_with_engine_modeA": null,
+              "executed_in_swipl": true
+            },
+            {
+              "query": [
+                "APW19980213.1310::ei2015",
+                "APW19980213.1310::ei2029"
+              ],
+              "gold": "includes",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_APW19980213.1310_APW19980213.1310::ei2015_APW19980213.1310::ei2029.pl",
+              "discharge_method": "swipl: PATHS: none",
+              "derived_coarse": null,
+              "agrees_with_engine_modeA": null,
+              "executed_in_swipl": true
+            },
+            {
+              "query": [
+                "APW19980213.1310::ei2057",
+                "APW19980213.1310::ei2076"
+              ],
+              "gold": "includes",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_APW19980213.1310_APW19980213.1310::ei2057_APW19980213.1310::ei2076.pl",
+              "discharge_method": "swipl: PATHS: [gt]",
+              "derived_coarse": "after",
+              "agrees_with_engine_modeA": true,
+              "executed_in_swipl": true
+            }
+          ]
+        },
+        "trace_graph_narrowing": {
+          "query": [
+            "APW19980213.1310::ei2023",
+            "APW19980213.1310::ei2063"
+          ],
+          "gold_coarse": "before",
+          "stratum": "ge3_cyclic",
+          "n_vias": 3,
+          "induced_path_edges": [
+            {
+              "from": "APW19980213.1310::ei2023",
+              "to": "APW19980213.1310::ei2039",
+              "local_read_point": "<",
+              "local_read_coarse": "before",
+              "most_likely": "before",
+              "conf": 0.9
+            },
+            {
+              "from": "APW19980213.1310::ei2023",
+              "to": "APW19980213.1310::ei2061",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "before",
+              "conf": 0.4
+            },
+            {
+              "from": "APW19980213.1310::ei2023",
+              "to": "APW19980213.1310::ei2026",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "after",
+              "conf": 0.5
+            },
+            {
+              "from": "APW19980213.1310::ei2063",
+              "to": "APW19980213.1310::ei2039",
+              "local_read_point": ">",
+              "local_read_coarse": "after",
+              "most_likely": "before",
+              "conf": 0.9
+            },
+            {
+              "from": "APW19980213.1310::ei2063",
+              "to": "APW19980213.1310::ei2061",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "simultaneous",
+              "conf": 0.4
+            },
+            {
+              "from": "APW19980213.1310::ei2063",
+              "to": "APW19980213.1310::ei2026",
+              "local_read_point": "=|>",
+              "local_read_coarse": "is_included",
+              "most_likely": "before",
+              "conf": 0.7
+            },
+            {
+              "from": "APW19980213.1310::ei2039",
+              "to": "APW19980213.1310::ei2061",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "before",
+              "conf": 0.4
+            },
+            {
+              "from": "APW19980213.1310::ei2039",
+              "to": "APW19980213.1310::ei2026",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "before",
+              "conf": 0.5
+            },
+            {
+              "from": "APW19980213.1310::ei2061",
+              "to": "APW19980213.1310::ei2026",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "before",
+              "conf": 0.4
+            }
+          ],
+          "naive_single_pass_pred": "before",
+          "modeA_closure_pred": "before",
+          "modeA_outcome": "emit",
+          "n_pc2_fired": 1,
+          "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_APW19980213.1310_APW19980213.1310::ei2023_APW19980213.1310::ei2063.pl",
+          "swipl_stdout_tail": "swipl: PATHS: [lt]",
+          "program_excerpt": "% Closure-certified temporal deduction -- auto-generated trace program.\n% Convex point start-point algebra over event start points {lt,eq,gt}.\n% The query relation is the INTERSECTION of all length-2 path compositions\n% (path-consistency narrowing); an empty intersection certifies inconsistency.\n:- discontiguous rel/3.\n\n% --- composition table (Vilain-Kautz convex point algebra) ---\ncomp(lt,lt,lt).\ncomp(lt,eq,lt).\ncomp(eq,lt,lt).\ncomp(eq,eq,eq).\ncomp(eq,gt,gt).\ncomp(gt,eq,gt).\ncomp(gt,gt,gt).\n\n% --- read facts (LOCAL LLM reads; both directions via converse) ---\nrel(e_APW19980213_1310__ei2023,e_APW19980213_1310__ei2039,lt).\nrel(e_APW19980213_1310__ei2039,e_APW19980213_1310__ei2023,gt).\nrel(e_APW19980213_1310__ei2063,e_APW19980213_1310__ei2039,gt).\nrel(e_APW19980213_1310__ei2039,e_APW19980213_1310__ei2063,lt).\n\n% --- query: intersect every e_APW19980213_1310__ei2023->M->e_APW19980213_1310_"
+        },
+        "trace_graph_collapse": null,
+        "trace_graph_abstain": {
+          "query": [
+            "APW19980213.1310::ei2014",
+            "APW19980213.1310::ei2049"
+          ],
+          "gold_coarse": "after",
+          "stratum": "ge3_cyclic",
+          "n_vias": 3,
+          "induced_path_edges": [
+            {
+              "from": "APW19980213.1310::ei2014",
+              "to": "APW19980213.1310::ei2024",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "before",
+              "conf": 0.6
+            },
+            {
+              "from": "APW19980213.1310::ei2014",
+              "to": "APW19980213.1310::ei2028",
+              "local_read_point": "<",
+              "local_read_coarse": "before",
+              "most_likely": "before",
+              "conf": 0.9
+            },
+            {
+              "from": "APW19980213.1310::ei2014",
+              "to": "APW19980213.1310::ei2070",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "simultaneous",
+              "conf": 0.4
+            },
+            {
+              "from": "APW19980213.1310::ei2049",
+              "to": "APW19980213.1310::ei2024",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "before",
+              "conf": 0.4
+            },
+            {
+              "from": "APW19980213.1310::ei2049",
+              "to": "APW19980213.1310::ei2028",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "after",
+              "conf": 0.4
+            },
+            {
+              "from": "APW19980213.1310::ei2049",
+              "to": "APW19980213.1310::ei2070",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "simultaneous",
+              "conf": 0.4
+            },
+            {
+              "from": "APW19980213.1310::ei2024",
+              "to": "APW19980213.1310::ei2028",
+              "local_read_point": "<",
+              "local_read_coarse": "before",
+              "most_likely": "before",
+              "conf": 0.9
+            },
+            {
+              "from": "APW19980213.1310::ei2024",
+              "to": "APW19980213.1310::ei2070",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "simultaneous",
+              "conf": 0.4
+            },
+            {
+              "from": "APW19980213.1310::ei2028",
+              "to": "APW19980213.1310::ei2070",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "before",
+              "conf": 0.4
+            }
+          ],
+          "naive_single_pass_pred": "ABSTAIN",
+          "modeA_closure_pred": "ABSTAIN",
+          "modeA_outcome": "abstain",
+          "n_pc2_fired": 0,
+          "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_APW19980213.1310_APW19980213.1310::ei2014_APW19980213.1310::ei2049.pl",
+          "swipl_stdout_tail": "swipl: PATHS: none",
+          "note": "real-text span-local reads UNDER-DETERMINE the start-point order (broad disjunctive sets) -> path-consistency cannot narrow to a singleton -> Mode-A ABSTAINS. Faithfulness-by-abstention: 0 confident-wrong, vs the raw LLM which commits and frequently errs."
+        }
+      },
+      {
+        "docid": "APW19980227.0494",
+        "corpus": "narrativetime",
+        "char_len": 4293,
+        "reached_3000_target": false,
+        "algebra": "POINT (PC-complete convex start-point)",
+        "offset_alignment_fraction": 1.0,
+        "n_queries": 30,
+        "n_read_edges": 277,
+        "n_parse_fail": 0,
+        "atomic_PRF": {
+          "tag": "REAL-LLM-READ",
+          "disjunctive_set_recall": 0.9034,
+          "recall_ci95": [
+            0.9033816425120773,
+            0.9033816425120773
+          ],
+          "most_likely_precision": 0.5169,
+          "f1": 0.6576,
+          "n_scorable_edges": 207,
+          "n_committed_reads": 207,
+          "breadth_mean": 2.3043,
+          "note": "recall = P(gold start-point relation subseteq emitted disjunctive set); precision = P(single most-likely read == gold | a single relation committed). Held-fixed MEASURED control: atomic extraction is measured, not improved."
+        },
+        "outcomes": {
+          "emit": 0,
+          "abstain": 30,
+          "collapse_modeB": 0
+        },
+        "query_classes": {
+          "deduction_resolved": 0,
+          "extraction_limited_abstain": 30,
+          "closure_collapse": 0
+        },
+        "confident_wrong": {
+          "modeA": {
+            "n_queries": 30,
+            "coverage": 0.0,
+            "abstention": 1.0,
+            "n_answered": 0,
+            "confident_wrong_count": 0,
+            "confident_wrong_rate_over_pool": 0.0,
+            "confident_wrong_rate_among_answered": null
+          },
+          "raw_local": {
+            "n_queries": 30,
+            "coverage": 1.0,
+            "abstention": 0.0,
+            "n_answered": 30,
+            "confident_wrong_count": 13,
+            "confident_wrong_rate_over_pool": 0.4333,
+            "confident_wrong_rate_among_answered": 0.4333
+          },
+          "raw_fulldoc": {
+            "n_queries": 30,
+            "coverage": 1.0,
+            "abstention": 0.0,
+            "n_answered": 30,
+            "confident_wrong_count": 18,
+            "confident_wrong_rate_over_pool": 0.6,
+            "confident_wrong_rate_among_answered": 0.6
+          },
+          "naive": {
+            "n_queries": 30,
+            "coverage": 0.0,
+            "abstention": 1.0,
+            "n_answered": 0,
+            "confident_wrong_count": 0,
+            "confident_wrong_rate_over_pool": 0.0,
+            "confident_wrong_rate_among_answered": null
+          }
+        },
+        "hallucination_reduction_vs_fulldoc_raw": {
+          "comparison": "Mode-A (closure-certified) vs whole-document raw LLM",
+          "confident_wrong_rate_modeA_over_pool": 0.0,
+          "confident_wrong_rate_raw_over_pool": 0.6,
+          "hallucination_reduction_over_pool": 0.6,
+          "coverage_modeA": 0.0,
+          "coverage_raw": 1.0,
+          "n_queries": 30,
+          "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point estimate, NOT a powered test."
+        },
+        "hallucination_reduction_vs_local_raw": {
+          "comparison": "Mode-A (closure-certified) vs span-local raw LLM",
+          "confident_wrong_rate_modeA_over_pool": 0.0,
+          "confident_wrong_rate_raw_over_pool": 0.4333,
+          "hallucination_reduction_over_pool": 0.4333,
+          "coverage_modeA": 0.0,
+          "coverage_raw": 1.0,
+          "n_queries": 30,
+          "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point estimate, NOT a powered test."
+        },
+        "prolog_execution": {
+          "n_discharged": 12,
+          "n_executed_in_swipl": 12,
+          "n_engine_match": 0,
+          "n_gold_match": 0,
+          "swipl_version": "SWI-Prolog version 9.0.4 for x86_64-linux",
+          "samples": [
+            {
+              "query": [
+                "APW19980227.0494::ei2320",
+                "APW19980227.0494::ei2344"
+              ],
+              "gold": "includes",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_APW19980227.0494_APW19980227.0494::ei2320_APW19980227.0494::ei2344.pl",
+              "discharge_method": "swipl: PATHS: none",
+              "derived_coarse": null,
+              "agrees_with_engine_modeA": null,
+              "executed_in_swipl": true
+            },
+            {
+              "query": [
+                "APW19980227.0494::ei2338",
+                "APW19980227.0494::ei2351"
+              ],
+              "gold": "after",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_APW19980227.0494_APW19980227.0494::ei2338_APW19980227.0494::ei2351.pl",
+              "discharge_method": "swipl: PATHS: none",
+              "derived_coarse": null,
+              "agrees_with_engine_modeA": null,
+              "executed_in_swipl": true
+            },
+            {
+              "query": [
+                "APW19980227.0494::ei2313",
+                "APW19980227.0494::ei2371"
+              ],
+              "gold": "before",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_APW19980227.0494_APW19980227.0494::ei2313_APW19980227.0494::ei2371.pl",
+              "discharge_method": "swipl: PATHS: none",
+              "derived_coarse": null,
+              "agrees_with_engine_modeA": null,
+              "executed_in_swipl": true
+            },
+            {
+              "query": [
+                "APW19980227.0494::ei2316",
+                "APW19980227.0494::ei2325"
+              ],
+              "gold": "after",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_APW19980227.0494_APW19980227.0494::ei2316_APW19980227.0494::ei2325.pl",
+              "discharge_method": "swipl: PATHS: none",
+              "derived_coarse": null,
+              "agrees_with_engine_modeA": null,
+              "executed_in_swipl": true
+            },
+            {
+              "query": [
+                "APW19980227.0494::ei2314",
+                "APW19980227.0494::ei2342"
+              ],
+              "gold": "before",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_APW19980227.0494_APW19980227.0494::ei2314_APW19980227.0494::ei2342.pl",
+              "discharge_method": "swipl: PATHS: none",
+              "derived_coarse": null,
+              "agrees_with_engine_modeA": null,
+              "executed_in_swipl": true
+            },
+            {
+              "query": [
+                "APW19980227.0494::ei2349",
+                "APW19980227.0494::ei2365"
+              ],
+              "gold": "after",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_APW19980227.0494_APW19980227.0494::ei2349_APW19980227.0494::ei2365.pl",
+              "discharge_method": "swipl: PATHS: none",
+              "derived_coarse": null,
+              "agrees_with_engine_modeA": null,
+              "executed_in_swipl": true
+            }
+          ]
+        },
+        "trace_graph_narrowing": null,
+        "trace_graph_collapse": null,
+        "trace_graph_abstain": {
+          "query": [
+            "APW19980227.0494::ei2320",
+            "APW19980227.0494::ei2344"
+          ],
+          "gold_coarse": "includes",
+          "stratum": "ge3_cyclic",
+          "n_vias": 3,
+          "induced_path_edges": [
+            {
+              "from": "APW19980227.0494::ei2320",
+              "to": "APW19980227.0494::ei2323",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "before",
+              "conf": 0.5
+            },
+            {
+              "from": "APW19980227.0494::ei2320",
+              "to": "APW19980227.0494::ei2321",
+              "local_read_point": "<",
+              "local_read_coarse": "before",
+              "most_likely": "before",
+              "conf": 0.9
+            },
+            {
+              "from": "APW19980227.0494::ei2320",
+              "to": "APW19980227.0494::ei2361",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "simultaneous",
+              "conf": 0.4
+            },
+            {
+              "from": "APW19980227.0494::ei2344",
+              "to": "APW19980227.0494::ei2323",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "before",
+              "conf": 0.4
+            },
+            {
+              "from": "APW19980227.0494::ei2344",
+              "to": "APW19980227.0494::ei2321",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "before",
+              "conf": 0.4
+            },
+            {
+              "from": "APW19980227.0494::ei2344",
+              "to": "APW19980227.0494::ei2361",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "simultaneous",
+              "conf": 0.4
+            },
+            {
+              "from": "APW19980227.0494::ei2323",
+              "to": "APW19980227.0494::ei2321",
+              "local_read_point": "=|>",
+              "local_read_coarse": "is_included",
+              "most_likely": "before",
+              "conf": 0.8
+            },
+            {
+              "from": "APW19980227.0494::ei2323",
+              "to": "APW19980227.0494::ei2361",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "simultaneous",
+              "conf": 0.4
+            },
+            {
+              "from": "APW19980227.0494::ei2321",
+              "to": "APW19980227.0494::ei2361",
+              "local_read_point": "UNIVERSE",
+              "local_read_coarse": null,
+              "most_likely": "after",
+              "conf": 0.4
+            }
+          ],
+          "naive_single_pass_pred": "ABSTAIN",
+          "modeA_closure_pred": "ABSTAIN",
+          "modeA_outcome": "abstain",
+          "n_pc2_fired": 1,
+          "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_APW19980227.0494_APW19980227.0494::ei2320_APW19980227.0494::ei2344.pl",
+          "swipl_stdout_tail": "swipl: PATHS: none",
+          "note": "real-text span-local reads UNDER-DETERMINE the start-point order (broad disjunctive sets) -> path-consistency cannot narrow to a singleton -> Mode-A ABSTAINS. Faithfulness-by-abstention: 0 confident-wrong, vs the raw LLM which commits and frequently errs."
+        }
+      }
+    ],
+    "per_document_kinship": [
+      {
+        "doc_id": "clutrr_concat_1",
+        "corpus": "clutrr_concat",
+        "char_len": 3602,
+        "reached_3000_target": true,
+        "n_substories": 5,
+        "substory_ids": [
+          "2eb40305-deb6-41c9-89e2-2d71c12e1fc6",
+          "1be9dc89-019c-4b3a-b5aa-98e6251ebf27",
+          "0e1e6137-a750-4894-93a3-fb99f5c03255",
+          "7b2a272c-8faf-4521-bf48-a42f1914e80a",
+          "63799ecd-eb0b-45c1-bd3a-e540b1048534"
+        ],
+        "algebra": "finite kinship composition table (forward-union least fixpoint)",
+        "atomic_PRF": {
+          "tag": "REAL-LLM-READ",
+          "precision": 0.381,
+          "recall": 0.3902,
+          "f1": 0.3855,
+          "tp": 16,
+          "n_pred": 42,
+          "n_gold": 41,
+          "note": "typed directed atomic-edge match vs union of all sub-stories' gold atomic facts."
+        },
+        "n_within_queries": 5,
+        "n_absent_queries": 20,
+        "within_story_resolution": {
+          "n_emit": 3,
+          "n_correct_emit": 2,
+          "selective_accuracy": 0.6667
+        },
+        "absent_relation_faithfulness": {
+          "n_absent": 20,
+          "n_abstained": 20,
+          "abstention_rate": 1.0,
+          "n_confident_wrong": 0,
+          "note": "Mode-A abstains on every absent pair BY CONSTRUCTION (empty derivation set)."
+        },
+        "hallucination": {
+          "within_story": {
+            "confident_wrong": {
+              "modeA": {
+                "n_queries": 5,
+                "coverage": 0.6,
+                "abstention": 0.4,
+                "n_answered": 3,
+                "confident_wrong_count": 1,
+                "confident_wrong_rate_over_pool": 0.2,
+                "confident_wrong_rate_among_answered": 0.3333
+              },
+              "raw_local": {
+                "n_queries": 5,
+                "coverage": 0.8,
+                "abstention": 0.2,
+                "n_answered": 4,
+                "confident_wrong_count": 4,
+                "confident_wrong_rate_over_pool": 0.8,
+                "confident_wrong_rate_among_answered": 1.0
+              },
+              "raw_fulldoc": {
+                "n_queries": 5,
+                "coverage": 0.4,
+                "abstention": 0.6,
+                "n_answered": 2,
+                "confident_wrong_count": 2,
+                "confident_wrong_rate_over_pool": 0.4,
+                "confident_wrong_rate_among_answered": 1.0
+              }
+            },
+            "hallucination_reduction_vs_fulldoc_raw": {
+              "comparison": "Mode-A (closure-certified) vs whole-document raw LLM",
+              "confident_wrong_rate_modeA_over_pool": 0.2,
+              "confident_wrong_rate_raw_over_pool": 0.4,
+              "hallucination_reduction_over_pool": 0.2,
+              "coverage_modeA": 0.6,
+              "coverage_raw": 0.4,
+              "n_queries": 5,
+              "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point estimate, NOT a powered test."
+            },
+            "hallucination_reduction_vs_local_raw": {
+              "comparison": "Mode-A (closure-certified) vs span-local raw LLM",
+              "confident_wrong_rate_modeA_over_pool": 0.2,
+              "confident_wrong_rate_raw_over_pool": 0.8,
+              "hallucination_reduction_over_pool": 0.6,
+              "coverage_modeA": 0.6,
+              "coverage_raw": 0.8,
+              "n_queries": 5,
+              "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point estimate, NOT a powered test."
+            }
+          },
+          "cross_story_absent": {
+            "confident_wrong": {
+              "modeA": {
+                "n_queries": 20,
+                "coverage": 0.0,
+                "abstention": 1.0,
+                "n_answered": 0,
+                "confident_wrong_count": 0,
+                "confident_wrong_rate_over_pool": 0.0,
+                "confident_wrong_rate_among_answered": null
+              },
+              "raw_local": {
+                "n_queries": 20,
+                "coverage": 0.3,
+                "abstention": 0.7,
+                "n_answered": 6,
+                "confident_wrong_count": 6,
+                "confident_wrong_rate_over_pool": 0.3,
+                "confident_wrong_rate_among_answered": 1.0
+              },
+              "raw_fulldoc": {
+                "n_queries": 20,
+                "coverage": 0.05,
+                "abstention": 0.95,
+                "n_answered": 1,
+                "confident_wrong_count": 1,
+                "confident_wrong_rate_over_pool": 0.05,
+                "confident_wrong_rate_among_answered": 1.0
+              }
+            },
+            "hallucination_reduction_vs_fulldoc_raw": {
+              "comparison": "Mode-A (closure-certified) vs whole-document raw LLM",
+              "confident_wrong_rate_modeA_over_pool": 0.0,
+              "confident_wrong_rate_raw_over_pool": 0.05,
+              "hallucination_reduction_over_pool": 0.05,
+              "coverage_modeA": 0.0,
+              "coverage_raw": 0.05,
+              "n_queries": 20,
+              "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point estimate, NOT a powered test."
+            },
+            "hallucination_reduction_vs_local_raw": {
+              "comparison": "Mode-A (closure-certified) vs span-local raw LLM",
+              "confident_wrong_rate_modeA_over_pool": 0.0,
+              "confident_wrong_rate_raw_over_pool": 0.3,
+              "hallucination_reduction_over_pool": 0.3,
+              "coverage_modeA": 0.0,
+              "coverage_raw": 0.3,
+              "n_queries": 20,
+              "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point estimate, NOT a powered test."
+            }
+          },
+          "all": {
+            "confident_wrong": {
+              "modeA": {
+                "n_queries": 25,
+                "coverage": 0.12,
+                "abstention": 0.88,
+                "n_answered": 3,
+                "confident_wrong_count": 1,
+                "confident_wrong_rate_over_pool": 0.04,
+                "confident_wrong_rate_among_answered": 0.3333
+              },
+              "raw_local": {
+                "n_queries": 25,
+                "coverage": 0.4,
+                "abstention": 0.6,
+                "n_answered": 10,
+                "confident_wrong_count": 10,
+                "confident_wrong_rate_over_pool": 0.4,
+                "confident_wrong_rate_among_answered": 1.0
+              },
+              "raw_fulldoc": {
+                "n_queries": 25,
+                "coverage": 0.12,
+                "abstention": 0.88,
+                "n_answered": 3,
+                "confident_wrong_count": 3,
+                "confident_wrong_rate_over_pool": 0.12,
+                "confident_wrong_rate_among_answered": 1.0
+              }
+            },
+            "hallucination_reduction_vs_fulldoc_raw": {
+              "comparison": "Mode-A (closure-certified) vs whole-document raw LLM",
+              "confident_wrong_rate_modeA_over_pool": 0.04,
+              "confident_wrong_rate_raw_over_pool": 0.12,
+              "hallucination_reduction_over_pool": 0.08,
+              "coverage_modeA": 0.12,
+              "coverage_raw": 0.12,
+              "n_queries": 25,
+              "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point estimate, NOT a powered test."
+            },
+            "hallucination_reduction_vs_local_raw": {
+              "comparison": "Mode-A (closure-certified) vs span-local raw LLM",
+              "confident_wrong_rate_modeA_over_pool": 0.04,
+              "confident_wrong_rate_raw_over_pool": 0.4,
+              "hallucination_reduction_over_pool": 0.36,
+              "coverage_modeA": 0.12,
+              "coverage_raw": 0.4,
+              "n_queries": 25,
+              "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point estimate, NOT a powered test."
+            }
+          }
+        },
+        "prolog_execution": {
+          "n_discharged": 11,
+          "n_executed_in_swipl": 11,
+          "n_engine_match": 11,
+          "n_gold_match": 8,
+          "swipl_version": "SWI-Prolog version 9.0.4 for x86_64-linux",
+          "samples": [
+            {
+              "query": [
+                "Constance",
+                "Teresita"
+              ],
+              "gold": "niece",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_1_Constance_Teresita.pl",
+              "executed_in_swipl": true,
+              "prolog_results": [
+                "inv-un"
+              ],
+              "matches_engine": true
+            },
+            {
+              "query": [
+                "Thelma",
+                "Ronald"
+              ],
+              "gold": "uncle",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_1_Thelma_Ronald.pl",
+              "executed_in_swipl": true,
+              "prolog_results": [
+                "inv-un"
+              ],
+              "matches_engine": true
+            },
+            {
+              "query": [
+                "Melody",
+                "John"
+              ],
+              "gold": "nephew",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_1_Melody_John.pl",
+              "executed_in_swipl": true,
+              "prolog_results": [
+                "un"
+              ],
+              "matches_engine": true
+            },
+            {
+              "query": [
+                "Marguerite",
+                "Maria"
+              ],
+              "gold": "niece",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_1_Marguerite_Maria.pl",
+              "executed_in_swipl": true,
+              "prolog_results": [],
+              "matches_engine": true
+            },
+            {
+              "query": [
+                "Madonna",
+                "Alfred"
+              ],
+              "gold": "grandson",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_1_Madonna_Alfred.pl",
+              "executed_in_swipl": true,
+              "prolog_results": [],
+              "matches_engine": true
+            }
+          ]
+        },
+        "trace_graph_within_derivation": {
+          "query": [
+            "Thelma",
+            "Ronald"
+          ],
+          "gold": "uncle",
+          "hop": 9,
+          "derivation_steps": [
+            {
+              "a": "Donna",
+              "b": "Timothy",
+              "c": "Thelma",
+              "t1": "child",
+              "t2": "sibling",
+              "t3": "child"
+            },
+            {
+              "a": "Marie",
+              "b": "Leah",
+              "c": "Wallace",
+              "t1": "sibling",
+              "t2": "sibling",
+              "t3": "sibling"
+            },
+            {
+              "a": "Donna",
+              "b": "Wallace",
+              "c": "Marie",
+              "t1": "child",
+              "t2": "sibling",
+              "t3": "child"
+            },
+            {
+              "a": "Donna",
+              "b": "Marie",
+              "c": "Bonita",
+              "t1": "child",
+              "t2": "inv-un",
+              "t3": "sibling"
+            },
+            {
+              "a": "Donna",
+              "b": "Bonita",
+              "c": "Ronald",
+              "t1": "sibling",
+              "t2": "sibling",
+              "t3": "sibling"
+            },
+            {
+              "a": "Thelma",
+              "b": "Donna",
+              "c": "Ronald",
+              "t1": "inv-child",
+              "t2": "sibling",
+              "t3": "inv-un"
+            }
+          ],
+          "prolog_results": [
+            "inv-un"
+          ],
+          "matches_engine": true,
+          "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_1_Thelma_Ronald.pl",
+          "swipl_stdout_tail": "RESULT:inv-un\n",
+          "program_excerpt": "% Closure-certified kinship deduction -- forward-union least-fixpoint trace program.\n% der(A,T,B): T derivable for the directed pair A->B; closed under the finite\n% composition table comp/3 + total converse conv/2 (both-direction seeding).\n:- dynamic der/3.\n% ---- composition rules comp(T1,T2,T3) ----\ncomp('child','child','grand').\ncomp('child','SO','in-law').\ncomp('child','sibling','child').\ncomp('child','inv-un','sibling').\ncomp('child','inv-grand','inv-child').\ncomp('inv-child','child','sibling').\ncomp('inv-child','inv-child','inv-grand').\ncomp('inv-child','sibling','inv-un').\ncomp('SO','inv-child','inv-in-law').\ncomp('SO','grand','grand').\ncomp('SO','child','child').\ncomp('sibling','sibling','sibling').\ncomp('sibling','inv-grand','inv-grand').\ncomp('sibling','child','un').\ncomp('sibling','inv-child','inv-child').\ncomp('grand','sibling','grand').\n% ---- total converse conv(T,Tc) ----\nconv('child','inv-child').\nconv('inv-child','child').\nconv('SO','SO').\nconv('sibling','sibling').\nconv('grand','inv-grand').\nconv('inv-grand','grand').\nconv('in-law','inv-in-law').\nconv('inv-in-law','",
+          "kind": "kinship_multihop_derivation"
+        },
+        "trace_graph_absent_abstain": {
+          "query": [
+            "Leah",
+            "Constance"
+          ],
+          "gold": "no-relation",
+          "n_derivations": 0,
+          "modeA_outcome": "no_path_abstain",
+          "prolog_results": [],
+          "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_1_absent_Leah_Constance.pl",
+          "matches_engine": true,
+          "swipl_stdout_tail": "",
+          "explanation": "entities live in DIFFERENT connected components (disjoint sub-stories) -> no connecting kinship path -> forward-closure derivation set is EMPTY in BOTH the engine and the discharged SWI-Prolog program -> Mode-A ABSTAINS (it NEVER invents a relation).",
+          "kind": "absent_relation_abstain"
+        }
+      },
+      {
+        "doc_id": "clutrr_concat_2",
+        "corpus": "clutrr_concat",
+        "char_len": 3540,
+        "reached_3000_target": true,
+        "n_substories": 6,
+        "substory_ids": [
+          "47c4117b-fe4e-4355-88e2-77f1501589d7",
+          "098c0d45-4161-438e-9070-eff6fff1d846",
+          "758a521e-cbcf-4fd5-9c27-03a8b406c66c",
+          "11985f06-2819-4372-92ef-0d1b974bc928",
+          "9c4021fc-5d4a-4e66-8d50-8ecd48104c10",
+          "9160a88e-ac62-4cb2-8c89-21d366448366"
+        ],
+        "algebra": "finite kinship composition table (forward-union least fixpoint)",
+        "atomic_PRF": {
+          "tag": "REAL-LLM-READ",
+          "precision": 0.551,
+          "recall": 0.5294,
+          "f1": 0.54,
+          "tp": 27,
+          "n_pred": 49,
+          "n_gold": 51,
+          "note": "typed directed atomic-edge match vs union of all sub-stories' gold atomic facts."
+        },
+        "n_within_queries": 6,
+        "n_absent_queries": 18,
+        "within_story_resolution": {
+          "n_emit": 3,
+          "n_correct_emit": 2,
+          "selective_accuracy": 0.6667
+        },
+        "absent_relation_faithfulness": {
+          "n_absent": 18,
+          "n_abstained": 18,
+          "abstention_rate": 1.0,
+          "n_confident_wrong": 0,
+          "note": "Mode-A abstains on every absent pair BY CONSTRUCTION (empty derivation set)."
+        },
+        "hallucination": {
+          "within_story": {
+            "confident_wrong": {
+              "modeA": {
+                "n_queries": 6,
+                "coverage": 0.5,
+                "abstention": 0.5,
+                "n_answered": 3,
+                "confident_wrong_count": 1,
+                "confident_wrong_rate_over_pool": 0.1667,
+                "confident_wrong_rate_among_answered": 0.3333
+              },
+              "raw_local": {
+                "n_queries": 6,
+                "coverage": 0.6667,
+                "abstention": 0.3333,
+                "n_answered": 4,
+                "confident_wrong_count": 2,
+                "confident_wrong_rate_over_pool": 0.3333,
+                "confident_wrong_rate_among_answered": 0.5
+              },
+              "raw_fulldoc": {
+                "n_queries": 6,
+                "coverage": 0.5,
+                "abstention": 0.5,
+                "n_answered": 3,
+                "confident_wrong_count": 1,
+                "confident_wrong_rate_over_pool": 0.1667,
+                "confident_wrong_rate_among_answered": 0.3333
+              }
+            },
+            "hallucination_reduction_vs_fulldoc_raw": {
+              "comparison": "Mode-A (closure-certified) vs whole-document raw LLM",
+              "confident_wrong_rate_modeA_over_pool": 0.1667,
+              "confident_wrong_rate_raw_over_pool": 0.1667,
+              "hallucination_reduction_over_pool": 0.0,
+              "coverage_modeA": 0.5,
+              "coverage_raw": 0.5,
+              "n_queries": 6,
+              "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point estimate, NOT a powered test."
+            },
+            "hallucination_reduction_vs_local_raw": {
+              "comparison": "Mode-A (closure-certified) vs span-local raw LLM",
+              "confident_wrong_rate_modeA_over_pool": 0.1667,
+              "confident_wrong_rate_raw_over_pool": 0.3333,
+              "hallucination_reduction_over_pool": 0.1666,
+              "coverage_modeA": 0.5,
+              "coverage_raw": 0.6667,
+              "n_queries": 6,
+              "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point estimate, NOT a powered test."
+            }
+          },
+          "cross_story_absent": {
+            "confident_wrong": {
+              "modeA": {
+                "n_queries": 18,
+                "coverage": 0.0,
+                "abstention": 1.0,
+                "n_answered": 0,
+                "confident_wrong_count": 0,
+                "confident_wrong_rate_over_pool": 0.0,
+                "confident_wrong_rate_among_answered": null
+              },
+              "raw_local": {
+                "n_queries": 18,
+                "coverage": 0.2222,
+                "abstention": 0.7778,
+                "n_answered": 4,
+                "confident_wrong_count": 4,
+                "confident_wrong_rate_over_pool": 0.2222,
+                "confident_wrong_rate_among_answered": 1.0
+              },
+              "raw_fulldoc": {
+                "n_queries": 18,
+                "coverage": 0.1111,
+                "abstention": 0.8889,
+                "n_answered": 2,
+                "confident_wrong_count": 2,
+                "confident_wrong_rate_over_pool": 0.1111,
+                "confident_wrong_rate_among_answered": 1.0
+              }
+            },
+            "hallucination_reduction_vs_fulldoc_raw": {
+              "comparison": "Mode-A (closure-certified) vs whole-document raw LLM",
+              "confident_wrong_rate_modeA_over_pool": 0.0,
+              "confident_wrong_rate_raw_over_pool": 0.1111,
+              "hallucination_reduction_over_pool": 0.1111,
+              "coverage_modeA": 0.0,
+              "coverage_raw": 0.1111,
+              "n_queries": 18,
+              "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point estimate, NOT a powered test."
+            },
+            "hallucination_reduction_vs_local_raw": {
+              "comparison": "Mode-A (closure-certified) vs span-local raw LLM",
+              "confident_wrong_rate_modeA_over_pool": 0.0,
+              "confident_wrong_rate_raw_over_pool": 0.2222,
+              "hallucination_reduction_over_pool": 0.2222,
+              "coverage_modeA": 0.0,
+              "coverage_raw": 0.2222,
+              "n_queries": 18,
+              "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point estimate, NOT a powered test."
+            }
+          },
+          "all": {
+            "confident_wrong": {
+              "modeA": {
+                "n_queries": 24,
+                "coverage": 0.125,
+                "abstention": 0.875,
+                "n_answered": 3,
+                "confident_wrong_count": 1,
+                "confident_wrong_rate_over_pool": 0.0417,
+                "confident_wrong_rate_among_answered": 0.3333
+              },
+              "raw_local": {
+                "n_queries": 24,
+                "coverage": 0.3333,
+                "abstention": 0.6667,
+                "n_answered": 8,
+                "confident_wrong_count": 6,
+                "confident_wrong_rate_over_pool": 0.25,
+                "confident_wrong_rate_among_answered": 0.75
+              },
+              "raw_fulldoc": {
+                "n_queries": 24,
+                "coverage": 0.2083,
+                "abstention": 0.7917,
+                "n_answered": 5,
+                "confident_wrong_count": 3,
+                "confident_wrong_rate_over_pool": 0.125,
+                "confident_wrong_rate_among_answered": 0.6
+              }
+            },
+            "hallucination_reduction_vs_fulldoc_raw": {
+              "comparison": "Mode-A (closure-certified) vs whole-document raw LLM",
+              "confident_wrong_rate_modeA_over_pool": 0.0417,
+              "confident_wrong_rate_raw_over_pool": 0.125,
+              "hallucination_reduction_over_pool": 0.0833,
+              "coverage_modeA": 0.125,
+              "coverage_raw": 0.2083,
+              "n_queries": 24,
+              "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point estimate, NOT a powered test."
+            },
+            "hallucination_reduction_vs_local_raw": {
+              "comparison": "Mode-A (closure-certified) vs span-local raw LLM",
+              "confident_wrong_rate_modeA_over_pool": 0.0417,
+              "confident_wrong_rate_raw_over_pool": 0.25,
+              "hallucination_reduction_over_pool": 0.2083,
+              "coverage_modeA": 0.125,
+              "coverage_raw": 0.3333,
+              "n_queries": 24,
+              "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point estimate, NOT a powered test."
+            }
+          }
+        },
+        "prolog_execution": {
+          "n_discharged": 12,
+          "n_executed_in_swipl": 12,
+          "n_engine_match": 12,
+          "n_gold_match": 8,
+          "swipl_version": "SWI-Prolog version 9.0.4 for x86_64-linux",
+          "samples": [
+            {
+              "query": [
+                "Roger",
+                "Alice"
+              ],
+              "gold": "mother",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_2_Roger_Alice.pl",
+              "executed_in_swipl": true,
+              "prolog_results": [
+                "inv-child"
+              ],
+              "matches_engine": true
+            },
+            {
+              "query": [
+                "Bonita",
+                "Betty"
+              ],
+              "gold": "niece",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_2_Bonita_Betty.pl",
+              "executed_in_swipl": true,
+              "prolog_results": [],
+              "matches_engine": true
+            },
+            {
+              "query": [
+                "Mabel",
+                "Cesar"
+              ],
+              "gold": "uncle",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_2_Mabel_Cesar.pl",
+              "executed_in_swipl": true,
+              "prolog_results": [],
+              "matches_engine": true
+            },
+            {
+              "query": [
+                "Alfred",
+                "Carlos"
+              ],
+              "gold": "uncle",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_2_Alfred_Carlos.pl",
+              "executed_in_swipl": true,
+              "prolog_results": [],
+              "matches_engine": true
+            },
+            {
+              "query": [
+                "Donna",
+                "Santa"
+              ],
+              "gold": "niece",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_2_Donna_Santa.pl",
+              "executed_in_swipl": true,
+              "prolog_results": [
+                "inv-un"
+              ],
+              "matches_engine": true
+            },
+            {
+              "query": [
+                "Maria",
+                "Donald"
+              ],
+              "gold": "brother",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_2_Maria_Donald.pl",
+              "executed_in_swipl": true,
+              "prolog_results": [
+                "sibling"
+              ],
+              "matches_engine": true
+            }
+          ]
+        },
+        "trace_graph_within_derivation": {
+          "query": [
+            "Roger",
+            "Alice"
+          ],
+          "gold": "mother",
+          "hop": 8,
+          "derivation_steps": [
+            {
+              "a": "Alice",
+              "b": "Kim",
+              "c": "Roger",
+              "t1": "child",
+              "t2": "sibling",
+              "t3": "child"
+            }
+          ],
+          "prolog_results": [
+            "inv-child"
+          ],
+          "matches_engine": true,
+          "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_2_Roger_Alice.pl",
+          "swipl_stdout_tail": "RESULT:inv-child\n",
+          "program_excerpt": "% Closure-certified kinship deduction -- forward-union least-fixpoint trace program.\n% der(A,T,B): T derivable for the directed pair A->B; closed under the finite\n% composition table comp/3 + total converse conv/2 (both-direction seeding).\n:- dynamic der/3.\n% ---- composition rules comp(T1,T2,T3) ----\ncomp('child','child','grand').\ncomp('child','SO','in-law').\ncomp('child','sibling','child').\ncomp('child','inv-un','sibling').\ncomp('child','inv-grand','inv-child').\ncomp('inv-child','child','sibling').\ncomp('inv-child','inv-child','inv-grand').\ncomp('inv-child','sibling','inv-un').\ncomp('SO','inv-child','inv-in-law').\ncomp('SO','grand','grand').\ncomp('SO','child','child').\ncomp('sibling','sibling','sibling').\ncomp('sibling','inv-grand','inv-grand').\ncomp('sibling','child','un').\ncomp('sibling','inv-child','inv-child').\ncomp('grand','sibling','grand').\n% ---- total converse conv(T,Tc) ----\nconv('child','inv-child').\nconv('inv-child','child').\nconv('SO','SO').\nconv('sibling','sibling').\nconv('grand','inv-grand').\nconv('inv-grand','grand').\nconv('in-law','inv-in-law').\nconv('inv-in-law','",
+          "kind": "kinship_multihop_derivation"
+        },
+        "trace_graph_absent_abstain": {
+          "query": [
+            "John",
+            "Steve"
+          ],
+          "gold": "no-relation",
+          "n_derivations": 0,
+          "modeA_outcome": "no_path_abstain",
+          "prolog_results": [],
+          "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_2_absent_John_Steve.pl",
+          "matches_engine": true,
+          "swipl_stdout_tail": "",
+          "explanation": "entities live in DIFFERENT connected components (disjoint sub-stories) -> no connecting kinship path -> forward-closure derivation set is EMPTY in BOTH the engine and the discharged SWI-Prolog program -> Mode-A ABSTAINS (it NEVER invents a relation).",
+          "kind": "absent_relation_abstain"
+        }
+      },
+      {
+        "doc_id": "clutrr_concat_3",
+        "corpus": "clutrr_concat",
+        "char_len": 3246,
+        "reached_3000_target": true,
+        "n_substories": 6,
+        "substory_ids": [
+          "1eec35e2-2410-4deb-a4a1-537cc2327025",
+          "c5b1a55d-1158-4e0a-9f15-06126461ed9f",
+          "e12aa34c-4f2a-4a39-8908-b3b496f3b9be",
+          "b5f2655d-e901-4e39-9bc6-8e50db2f21c1",
+          "0cf15fe6-0854-4666-aae5-ebe95bcb942e",
+          "5eef192a-9f2f-449b-b533-e3c103a5e59b"
+        ],
+        "algebra": "finite kinship composition table (forward-union least fixpoint)",
+        "atomic_PRF": {
+          "tag": "REAL-LLM-READ",
+          "precision": 0.5952,
+          "recall": 0.5556,
+          "f1": 0.5747,
+          "tp": 25,
+          "n_pred": 42,
+          "n_gold": 45,
+          "note": "typed directed atomic-edge match vs union of all sub-stories' gold atomic facts."
+        },
+        "n_within_queries": 6,
+        "n_absent_queries": 18,
+        "within_story_resolution": {
+          "n_emit": 2,
+          "n_correct_emit": 2,
+          "selective_accuracy": 1.0
+        },
+        "absent_relation_faithfulness": {
+          "n_absent": 18,
+          "n_abstained": 18,
+          "abstention_rate": 1.0,
+          "n_confident_wrong": 0,
+          "note": "Mode-A abstains on every absent pair BY CONSTRUCTION (empty derivation set)."
+        },
+        "hallucination": {
+          "within_story": {
+            "confident_wrong": {
+              "modeA": {
+                "n_queries": 6,
+                "coverage": 0.3333,
+                "abstention": 0.6667,
+                "n_answered": 2,
+                "confident_wrong_count": 0,
+                "confident_wrong_rate_over_pool": 0.0,
+                "confident_wrong_rate_among_answered": 0.0
+              },
+              "raw_local": {
+                "n_queries": 6,
+                "coverage": 0.6667,
+                "abstention": 0.3333,
+                "n_answered": 4,
+                "confident_wrong_count": 2,
+                "confident_wrong_rate_over_pool": 0.3333,
+                "confident_wrong_rate_among_answered": 0.5
+              },
+              "raw_fulldoc": {
+                "n_queries": 6,
+                "coverage": 0.5,
+                "abstention": 0.5,
+                "n_answered": 3,
+                "confident_wrong_count": 2,
+                "confident_wrong_rate_over_pool": 0.3333,
+                "confident_wrong_rate_among_answered": 0.6667
+              }
+            },
+            "hallucination_reduction_vs_fulldoc_raw": {
+              "comparison": "Mode-A (closure-certified) vs whole-document raw LLM",
+              "confident_wrong_rate_modeA_over_pool": 0.0,
+              "confident_wrong_rate_raw_over_pool": 0.3333,
+              "hallucination_reduction_over_pool": 0.3333,
+              "coverage_modeA": 0.3333,
+              "coverage_raw": 0.5,
+              "n_queries": 6,
+              "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point estimate, NOT a powered test."
+            },
+            "hallucination_reduction_vs_local_raw": {
+              "comparison": "Mode-A (closure-certified) vs span-local raw LLM",
+              "confident_wrong_rate_modeA_over_pool": 0.0,
+              "confident_wrong_rate_raw_over_pool": 0.3333,
+              "hallucination_reduction_over_pool": 0.3333,
+              "coverage_modeA": 0.3333,
+              "coverage_raw": 0.6667,
+              "n_queries": 6,
+              "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point estimate, NOT a powered test."
+            }
+          },
+          "cross_story_absent": {
+            "confident_wrong": {
+              "modeA": {
+                "n_queries": 18,
+                "coverage": 0.0,
+                "abstention": 1.0,
+                "n_answered": 0,
+                "confident_wrong_count": 0,
+                "confident_wrong_rate_over_pool": 0.0,
+                "confident_wrong_rate_among_answered": null
+              },
+              "raw_local": {
+                "n_queries": 18,
+                "coverage": 0.2778,
+                "abstention": 0.7222,
+                "n_answered": 5,
+                "confident_wrong_count": 5,
+                "confident_wrong_rate_over_pool": 0.2778,
+                "confident_wrong_rate_among_answered": 1.0
+              },
+              "raw_fulldoc": {
+                "n_queries": 18,
+                "coverage": 0.0556,
+                "abstention": 0.9444,
+                "n_answered": 1,
+                "confident_wrong_count": 1,
+                "confident_wrong_rate_over_pool": 0.0556,
+                "confident_wrong_rate_among_answered": 1.0
+              }
+            },
+            "hallucination_reduction_vs_fulldoc_raw": {
+              "comparison": "Mode-A (closure-certified) vs whole-document raw LLM",
+              "confident_wrong_rate_modeA_over_pool": 0.0,
+              "confident_wrong_rate_raw_over_pool": 0.0556,
+              "hallucination_reduction_over_pool": 0.0556,
+              "coverage_modeA": 0.0,
+              "coverage_raw": 0.0556,
+              "n_queries": 18,
+              "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point estimate, NOT a powered test."
+            },
+            "hallucination_reduction_vs_local_raw": {
+              "comparison": "Mode-A (closure-certified) vs span-local raw LLM",
+              "confident_wrong_rate_modeA_over_pool": 0.0,
+              "confident_wrong_rate_raw_over_pool": 0.2778,
+              "hallucination_reduction_over_pool": 0.2778,
+              "coverage_modeA": 0.0,
+              "coverage_raw": 0.2778,
+              "n_queries": 18,
+              "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point estimate, NOT a powered test."
+            }
+          },
+          "all": {
+            "confident_wrong": {
+              "modeA": {
+                "n_queries": 24,
+                "coverage": 0.0833,
+                "abstention": 0.9167,
+                "n_answered": 2,
+                "confident_wrong_count": 0,
+                "confident_wrong_rate_over_pool": 0.0,
+                "confident_wrong_rate_among_answered": 0.0
+              },
+              "raw_local": {
+                "n_queries": 24,
+                "coverage": 0.375,
+                "abstention": 0.625,
+                "n_answered": 9,
+                "confident_wrong_count": 7,
+                "confident_wrong_rate_over_pool": 0.2917,
+                "confident_wrong_rate_among_answered": 0.7778
+              },
+              "raw_fulldoc": {
+                "n_queries": 24,
+                "coverage": 0.1667,
+                "abstention": 0.8333,
+                "n_answered": 4,
+                "confident_wrong_count": 3,
+                "confident_wrong_rate_over_pool": 0.125,
+                "confident_wrong_rate_among_answered": 0.75
+              }
+            },
+            "hallucination_reduction_vs_fulldoc_raw": {
+              "comparison": "Mode-A (closure-certified) vs whole-document raw LLM",
+              "confident_wrong_rate_modeA_over_pool": 0.0,
+              "confident_wrong_rate_raw_over_pool": 0.125,
+              "hallucination_reduction_over_pool": 0.125,
+              "coverage_modeA": 0.0833,
+              "coverage_raw": 0.1667,
+              "n_queries": 24,
+              "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point estimate, NOT a powered test."
+            },
+            "hallucination_reduction_vs_local_raw": {
+              "comparison": "Mode-A (closure-certified) vs span-local raw LLM",
+              "confident_wrong_rate_modeA_over_pool": 0.0,
+              "confident_wrong_rate_raw_over_pool": 0.2917,
+              "hallucination_reduction_over_pool": 0.2917,
+              "coverage_modeA": 0.0833,
+              "coverage_raw": 0.375,
+              "n_queries": 24,
+              "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point estimate, NOT a powered test."
+            }
+          }
+        },
+        "prolog_execution": {
+          "n_discharged": 12,
+          "n_executed_in_swipl": 12,
+          "n_engine_match": 12,
+          "n_gold_match": 8,
+          "swipl_version": "SWI-Prolog version 9.0.4 for x86_64-linux",
+          "samples": [
+            {
+              "query": [
+                "Ellen",
+                "Stanley"
+              ],
+              "gold": "nephew",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_3_Ellen_Stanley.pl",
+              "executed_in_swipl": true,
+              "prolog_results": [
+                "un"
+              ],
+              "matches_engine": true
+            },
+            {
+              "query": [
+                "Cecelia",
+                "Maria"
+              ],
+              "gold": "aunt",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_3_Cecelia_Maria.pl",
+              "executed_in_swipl": true,
+              "prolog_results": [],
+              "matches_engine": true
+            },
+            {
+              "query": [
+                "Stephen",
+                "Susan"
+              ],
+              "gold": "niece",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_3_Stephen_Susan.pl",
+              "executed_in_swipl": true,
+              "prolog_results": [],
+              "matches_engine": true
+            },
+            {
+              "query": [
+                "Wallace",
+                "Willie"
+              ],
+              "gold": "aunt",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_3_Wallace_Willie.pl",
+              "executed_in_swipl": true,
+              "prolog_results": [
+                "inv-un"
+              ],
+              "matches_engine": true
+            },
+            {
+              "query": [
+                "Antonia",
+                "Nancy"
+              ],
+              "gold": "granddaughter",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_3_Antonia_Nancy.pl",
+              "executed_in_swipl": true,
+              "prolog_results": [],
+              "matches_engine": true
+            },
+            {
+              "query": [
+                "Joseph",
+                "Robert"
+              ],
+              "gold": "brother",
+              "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_3_Joseph_Robert.pl",
+              "executed_in_swipl": true,
+              "prolog_results": [],
+              "matches_engine": true
+            }
+          ]
+        },
+        "trace_graph_within_derivation": {
+          "query": [
+            "Ellen",
+            "Stanley"
+          ],
+          "gold": "nephew",
+          "hop": 10,
+          "derivation_steps": [
+            {
+              "a": "Stanley",
+              "b": "Don",
+              "c": "Steve",
+              "t1": "sibling",
+              "t2": "inv-child",
+              "t3": "inv-child"
+            },
+            {
+              "a": "Nadia",
+              "b": "Sharon",
+              "c": "Kathleen",
+              "t1": "sibling",
+              "t2": "sibling",
+              "t3": "sibling"
+            },
+            {
+              "a": "Ellen",
+              "b": "Nadia",
+              "c": "Kathleen",
+              "t1": "child",
+              "t2": "sibling",
+              "t3": "child"
+            },
+            {
+              "a": "James",
+              "b": "Margaret",
+              "c": "Steve",
+              "t1": "sibling",
+              "t2": "sibling",
+              "t3": "sibling"
+            },
+            {
+              "a": "James",
+              "b": "Sharon",
+              "c": "Kathleen",
+              "t1": "child",
+              "t2": "sibling",
+              "t3": "child"
+            },
+            {
+              "a": "Steve",
+              "b": "James",
+              "c": "Kathleen",
+              "t1": "sibling",
+              "t2": "child",
+              "t3": "un"
+            },
+            {
+              "a": "Ellen",
+              "b": "Kathleen",
+              "c": "Steve",
+              "t1": "child",
+              "t2": "inv-un",
+              "t3": "sibling"
+            },
+            {
+              "a": "Stanley",
+              "b": "Steve",
+              "c": "Ellen",
+              "t1": "inv-child",
+              "t2": "sibling",
+              "t3": "inv-un"
+            }
+          ],
+          "prolog_results": [
+            "un"
+          ],
+          "matches_engine": true,
+          "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_3_Ellen_Stanley.pl",
+          "swipl_stdout_tail": "RESULT:un\n",
+          "program_excerpt": "% Closure-certified kinship deduction -- forward-union least-fixpoint trace program.\n% der(A,T,B): T derivable for the directed pair A->B; closed under the finite\n% composition table comp/3 + total converse conv/2 (both-direction seeding).\n:- dynamic der/3.\n% ---- composition rules comp(T1,T2,T3) ----\ncomp('child','child','grand').\ncomp('child','SO','in-law').\ncomp('child','sibling','child').\ncomp('child','inv-un','sibling').\ncomp('child','inv-grand','inv-child').\ncomp('inv-child','child','sibling').\ncomp('inv-child','inv-child','inv-grand').\ncomp('inv-child','sibling','inv-un').\ncomp('SO','inv-child','inv-in-law').\ncomp('SO','grand','grand').\ncomp('SO','child','child').\ncomp('sibling','sibling','sibling').\ncomp('sibling','inv-grand','inv-grand').\ncomp('sibling','child','un').\ncomp('sibling','inv-child','inv-child').\ncomp('grand','sibling','grand').\n% ---- total converse conv(T,Tc) ----\nconv('child','inv-child').\nconv('inv-child','child').\nconv('SO','SO').\nconv('sibling','sibling').\nconv('grand','inv-grand').\nconv('inv-grand','grand').\nconv('in-law','inv-in-law').\nconv('inv-in-law','",
+          "kind": "kinship_multihop_derivation"
+        },
+        "trace_graph_absent_abstain": {
+          "query": [
+            "Donna",
+            "Milton"
+          ],
+          "gold": "no-relation",
+          "n_derivations": 0,
+          "modeA_outcome": "no_path_abstain",
+          "prolog_results": [],
+          "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_3_absent_Donna_Milton.pl",
+          "matches_engine": true,
+          "swipl_stdout_tail": "",
+          "explanation": "entities live in DIFFERENT connected components (disjoint sub-stories) -> no connecting kinship path -> forward-closure derivation set is EMPTY in BOTH the engine and the discharged SWI-Prolog program -> Mode-A ABSTAINS (it NEVER invents a relation).",
+          "kind": "absent_relation_abstain"
+        }
+      }
+    ],
+    "prolog_execution_aggregate": {
+      "temporal": {
+        "n_discharged": 60,
+        "n_executed_in_swipl": 60,
+        "n_engine_match": 7,
+        "n_gold_match": 4
+      },
+      "kinship": {
+        "n_discharged": 35,
+        "n_executed_in_swipl": 35,
+        "n_engine_match": 35,
+        "n_gold_match": 24
+      },
+      "swipl_version": "SWI-Prolog version 9.0.4 for x86_64-linux",
+      "note": "engine_match = Prolog readback agrees with the closure engine; gold_match = Prolog readback contains the gold relation."
+    },
+    "trace_graphs": [
+      {
+        "arm": "temporal_modeA_narrowing",
+        "docid": "CNN19980213.2130.0155",
+        "query": [
+          "CNN19980213.2130.0155::ei605",
+          "CNN19980213.2130.0155::ei618"
+        ],
+        "gold_coarse": "before",
+        "stratum": "ge3_cyclic",
+        "n_vias": 3,
+        "induced_path_edges": [
+          {
+            "from": "CNN19980213.2130.0155::ei605",
+            "to": "CNN19980213.2130.0155::ei637",
+            "local_read_point": "<",
+            "local_read_coarse": "before",
+            "most_likely": "before",
+            "conf": 0.9
+          },
+          {
+            "from": "CNN19980213.2130.0155::ei605",
+            "to": "CNN19980213.2130.0155::ei622",
+            "local_read_point": "<",
+            "local_read_coarse": "before",
+            "most_likely": "before",
+            "conf": 0.9
+          },
+          {
+            "from": "CNN19980213.2130.0155::ei605",
+            "to": "CNN19980213.2130.0155::ei606",
+            "local_read_point": "<",
+            "local_read_coarse": "before",
+            "most_likely": "before",
+            "conf": 0.9
+          },
+          {
+            "from": "CNN19980213.2130.0155::ei618",
+            "to": "CNN19980213.2130.0155::ei637",
+            "local_read_point": "<",
+            "local_read_coarse": "before",
+            "most_likely": "before",
+            "conf": 0.9
+          },
+          {
+            "from": "CNN19980213.2130.0155::ei618",
+            "to": "CNN19980213.2130.0155::ei622",
+            "local_read_point": "<",
+            "local_read_coarse": "before",
+            "most_likely": "before",
+            "conf": 0.9
+          },
+          {
+            "from": "CNN19980213.2130.0155::ei618",
+            "to": "CNN19980213.2130.0155::ei606",
+            "local_read_point": ">",
+            "local_read_coarse": "after",
+            "most_likely": "before",
+            "conf": 0.9
+          },
+          {
+            "from": "CNN19980213.2130.0155::ei637",
+            "to": "CNN19980213.2130.0155::ei622",
+            "local_read_point": ">",
+            "local_read_coarse": "after",
+            "most_likely": "before",
+            "conf": 0.9
+          },
+          {
+            "from": "CNN19980213.2130.0155::ei637",
+            "to": "CNN19980213.2130.0155::ei606",
+            "local_read_point": ">",
+            "local_read_coarse": "after",
+            "most_likely": "before",
+            "conf": 0.9
+          },
+          {
+            "from": "CNN19980213.2130.0155::ei622",
+            "to": "CNN19980213.2130.0155::ei606",
+            "local_read_point": ">",
+            "local_read_coarse": "after",
+            "most_likely": "before",
+            "conf": 0.9
+          }
+        ],
+        "naive_single_pass_pred": "before",
+        "modeA_closure_pred": "before",
+        "modeA_outcome": "emit",
+        "n_pc2_fired": 1,
+        "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_CNN19980213.2130.0155_CNN19980213.2130.0155::ei605_CNN19980213.2130.0155::ei618.pl",
+        "swipl_stdout_tail": "swipl: PATHS: [lt]",
+        "program_excerpt": "% Closure-certified temporal deduction -- auto-generated trace program.\n% Convex point start-point algebra over event start points {lt,eq,gt}.\n% The query relation is the INTERSECTION of all length-2 path compositions\n% (path-consistency narrowing); an empty intersection certifies inconsistency.\n:- discontiguous rel/3.\n\n% --- composition table (Vilain-Kautz convex point algebra) ---\ncomp(lt,lt,lt).\ncomp(lt,eq,lt).\ncomp(eq,lt,lt).\ncomp(eq,eq,eq).\ncomp(eq,gt,gt).\ncomp(gt,eq,gt).\ncomp(gt,gt,gt).\n\n% --- read facts (LOCAL LLM reads; both directions via converse) ---\nrel(e_CNN19980213_2130_0155__ei605,e_CNN19980213_2130_0155__ei637,lt).\nrel(e_CNN19980213_2130_0155__ei637,e_CNN19980213_2130_0155__ei605,gt).\nrel(e_CNN19980213_2130_0155__ei605,e_CNN19980213_2130_0155__ei622,lt).\nrel(e_CNN19980213_2130_0155__ei622,e_CNN19980213_2130_0155__ei605,gt).\nrel(e_CNN19980213_2130_0155__ei605,e_CNN19980213"
+      },
+      {
+        "arm": "kinship_multihop_derivation",
+        "docid": "clutrr_concat_1",
+        "query": [
+          "Thelma",
+          "Ronald"
+        ],
+        "gold": "uncle",
+        "hop": 9,
+        "derivation_steps": [
+          {
+            "a": "Donna",
+            "b": "Timothy",
+            "c": "Thelma",
+            "t1": "child",
+            "t2": "sibling",
+            "t3": "child"
+          },
+          {
+            "a": "Marie",
+            "b": "Leah",
+            "c": "Wallace",
+            "t1": "sibling",
+            "t2": "sibling",
+            "t3": "sibling"
+          },
+          {
+            "a": "Donna",
+            "b": "Wallace",
+            "c": "Marie",
+            "t1": "child",
+            "t2": "sibling",
+            "t3": "child"
+          },
+          {
+            "a": "Donna",
+            "b": "Marie",
+            "c": "Bonita",
+            "t1": "child",
+            "t2": "inv-un",
+            "t3": "sibling"
+          },
+          {
+            "a": "Donna",
+            "b": "Bonita",
+            "c": "Ronald",
+            "t1": "sibling",
+            "t2": "sibling",
+            "t3": "sibling"
+          },
+          {
+            "a": "Thelma",
+            "b": "Donna",
+            "c": "Ronald",
+            "t1": "inv-child",
+            "t2": "sibling",
+            "t3": "inv-un"
+          }
+        ],
+        "prolog_results": [
+          "inv-un"
+        ],
+        "matches_engine": true,
+        "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_1_Thelma_Ronald.pl",
+        "swipl_stdout_tail": "RESULT:inv-un\n",
+        "program_excerpt": "% Closure-certified kinship deduction -- forward-union least-fixpoint trace program.\n% der(A,T,B): T derivable for the directed pair A->B; closed under the finite\n% composition table comp/3 + total converse conv/2 (both-direction seeding).\n:- dynamic der/3.\n% ---- composition rules comp(T1,T2,T3) ----\ncomp('child','child','grand').\ncomp('child','SO','in-law').\ncomp('child','sibling','child').\ncomp('child','inv-un','sibling').\ncomp('child','inv-grand','inv-child').\ncomp('inv-child','child','sibling').\ncomp('inv-child','inv-child','inv-grand').\ncomp('inv-child','sibling','inv-un').\ncomp('SO','inv-child','inv-in-law').\ncomp('SO','grand','grand').\ncomp('SO','child','child').\ncomp('sibling','sibling','sibling').\ncomp('sibling','inv-grand','inv-grand').\ncomp('sibling','child','un').\ncomp('sibling','inv-child','inv-child').\ncomp('grand','sibling','grand').\n% ---- total converse conv(T,Tc) ----\nconv('child','inv-child').\nconv('inv-child','child').\nconv('SO','SO').\nconv('sibling','sibling').\nconv('grand','inv-grand').\nconv('inv-grand','grand').\nconv('in-law','inv-in-law').\nconv('inv-in-law','",
+        "kind": "kinship_multihop_derivation"
+      },
+      {
+        "arm": "kinship_absent_abstain",
+        "docid": "clutrr_concat_1",
+        "query": [
+          "Leah",
+          "Constance"
+        ],
+        "gold": "no-relation",
+        "n_derivations": 0,
+        "modeA_outcome": "no_path_abstain",
+        "prolog_results": [],
+        "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/kin_clutrr_concat_1_absent_Leah_Constance.pl",
+        "matches_engine": true,
+        "swipl_stdout_tail": "",
+        "explanation": "entities live in DIFFERENT connected components (disjoint sub-stories) -> no connecting kinship path -> forward-closure derivation set is EMPTY in BOTH the engine and the discharged SWI-Prolog program -> Mode-A ABSTAINS (it NEVER invents a relation).",
+        "kind": "absent_relation_abstain"
+      },
+      {
+        "arm": "temporal_faithful_abstain",
+        "docid": "CNN19980213.2130.0155",
+        "query": [
+          "CNN19980213.2130.0155::ei585",
+          "CNN19980213.2130.0155::ei619"
+        ],
+        "gold_coarse": "after",
+        "stratum": "ge3_cyclic",
+        "n_vias": 3,
+        "induced_path_edges": [
+          {
+            "from": "CNN19980213.2130.0155::ei585",
+            "to": "CNN19980213.2130.0155::ei592",
+            "local_read_point": "UNIVERSE",
+            "local_read_coarse": null,
+            "most_likely": "before",
+            "conf": 0.4
+          },
+          {
+            "from": "CNN19980213.2130.0155::ei585",
+            "to": "CNN19980213.2130.0155::ei599",
+            "local_read_point": "UNIVERSE",
+            "local_read_coarse": null,
+            "most_likely": "before",
+            "conf": 0.4
+          },
+          {
+            "from": "CNN19980213.2130.0155::ei585",
+            "to": "CNN19980213.2130.0155::ei609",
+            "local_read_point": "UNIVERSE",
+            "local_read_coarse": null,
+            "most_likely": "simultaneous",
+            "conf": 0.4
+          },
+          {
+            "from": "CNN19980213.2130.0155::ei619",
+            "to": "CNN19980213.2130.0155::ei592",
+            "local_read_point": "UNIVERSE",
+            "local_read_coarse": null,
+            "most_likely": "after",
+            "conf": 0.4
+          },
+          {
+            "from": "CNN19980213.2130.0155::ei619",
+            "to": "CNN19980213.2130.0155::ei599",
+            "local_read_point": "UNIVERSE",
+            "local_read_coarse": null,
+            "most_likely": "after",
+            "conf": 0.4
+          },
+          {
+            "from": "CNN19980213.2130.0155::ei619",
+            "to": "CNN19980213.2130.0155::ei609",
+            "local_read_point": "=|>",
+            "local_read_coarse": "is_included",
+            "most_likely": "simultaneous",
+            "conf": 0.7
+          },
+          {
+            "from": "CNN19980213.2130.0155::ei592",
+            "to": "CNN19980213.2130.0155::ei599",
+            "local_read_point": "<",
+            "local_read_coarse": "before",
+            "most_likely": "before",
+            "conf": 0.9
+          },
+          {
+            "from": "CNN19980213.2130.0155::ei592",
+            "to": "CNN19980213.2130.0155::ei609",
+            "local_read_point": "UNIVERSE",
+            "local_read_coarse": null,
+            "most_likely": "after",
+            "conf": 0.4
+          },
+          {
+            "from": "CNN19980213.2130.0155::ei599",
+            "to": "CNN19980213.2130.0155::ei609",
+            "local_read_point": "UNIVERSE",
+            "local_read_coarse": null,
+            "most_likely": "before",
+            "conf": 0.4
+          }
+        ],
+        "naive_single_pass_pred": "ABSTAIN",
+        "modeA_closure_pred": "ABSTAIN",
+        "modeA_outcome": "abstain",
+        "n_pc2_fired": 0,
+        "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_3/pl/nt_CNN19980213.2130.0155_CNN19980213.2130.0155::ei585_CNN19980213.2130.0155::ei619.pl",
+        "swipl_stdout_tail": "swipl: PATHS: none",
+        "note": "real-text span-local reads UNDER-DETERMINE the start-point order (broad disjunctive sets) -> path-consistency cannot narrow to a singleton -> Mode-A ABSTAINS. Faithfulness-by-abstention: 0 confident-wrong, vs the raw LLM which commits and frequently errs."
+      }
+    ],
+    "honesty_commitments": [
+      "SUB-MODULE SCOPE ONLY: the contribution is the closure CERTIFICATE + abstain-on-collapse output contract; atomic extraction is MEASURED not improved; OpenCyc grounding and LLM fuzzy-unification are OUT OF SCOPE here.",
+      "Temporal NarrativeTime gold is interval-Allen; we project to the convex START-POINT POINT algebra (PC-complete) -- this is tighter than Allen (avoids the near-universe trap) but cannot express includes/is_included as singletons, so some queries are structurally extraction-limited. Reported, not hidden.",
+      "CLUTRR stories are short; the ~3000-char kinship document is CONCATENATED from disjoint-entity sub-stories (labelled), giving genuine cross-story ABSENT pairs.",
+      "NarrativeTime has NO single article in [2500,3500] chars; the temporal docs are the articles CLOSEST to 3000 (exact lengths reported).",
+      "SWI-Prolog execution is reported TRUTHFULLY per query (executed / engine-match / gold-match counts; python-checked fallback is labelled and never implies execution).",
+      "Certificate value on dense real prose is FAITHFULNESS-BY-ABSTENTION: where local reads under-determine, the pipeline abstains rather than hallucinate (0 confident-wrong on provably-absent pairs by construction)."
+    ],
+    "cost": {
+      "cumulative_usd": 0.0,
+      "n_llm_calls": 0,
+      "n_cache_hits": 2142,
+      "n_parse_fail": 0,
+      "n_errors": 0,
+      "model": "google/gemini-3.1-flash-lite",
+      "fallbacks": [
+        "deepseek/deepseek-v3.2"
+      ],
+      "temperature": 0.0,
+      "budget_hard": 6.5,
+      "budget_soft": 2.0,
+      "sc_client_usd": 0.0,
+      "total_usd": 0.0,
+      "under_10_cap": true
+    },
+    "runtime_sec": 42.5
+  },
+  "datasets": [
+    {
+      "dataset": "narrativetime_3kchar",
+      "examples": [
+        {
+          "input": "The US military buildup in the Persian gulf continues apace, more planes headed from the united states and senior officials say Iraq's president Saddam Hussein can expect punishing air strikes to continue well into the future if he does n't stop [[E1]]building[[/E1]] biological and chemical weapons. Nevertheless, the president [[E2]]said[[/E2]] Washington would use force if diplomacy fails to force Saddam Hussein to back down.",
+          "output": "after",
+          "metadata_induced_path_edges": "[{\"from\": \"CNN19980213.2130.0155::ei585\", \"to\": \"CNN19980213.2130.0155::ei592\", \"local_read_point\": \"UNIVERSE\", \"local_read_coarse\": null, \"most_likely\": \"before\", \"conf\": 0.4}, {\"from\": \"CNN19980213.2130.0155::ei585\", \"to\": \"CNN19980213.2130.0155::ei599\", \"local_read_point\": \"UNIVERSE\", \"local_read_coarse\": null, \"most_likely\": \"before\", \"conf\": 0.4}, {\"from\": \"CNN19980213.2130.0155::ei585\", \"to\": \"CNN19980213.2130.0155::ei609\", \"local_read_point\": \"UNIVERSE\", \"local_read_coarse\": null, \"most_likely\": \"simultaneous\", \"conf\": 0.4}, {\"from\": \"CNN19980213.2130.0155::ei619\", \"to\": \"CNN19980213.2130.0155::ei592\", \"local_read_point\": \"UNIVERSE\", \"local_read_coarse\": null, \"most_likely\": \"after\", \"conf\": 0.4}, {\"from\": \"CNN19980213.2130.0155::ei619\", \"to\": \"CNN19980213.2130.0155::ei599\", \"local_read_point\": \"UNIVERSE\", \"local_read_coarse\": null, \"most_likely\": \"after\", \"conf\": 0.4}, {\"from\": \"CNN19980213.2130.0155::ei619\", \"to\": \"CNN19980213.2130.0155::ei609\", \"local_read_point\": \"=|>\", \"local_read_coarse\": \"is_included\", \"most_likely\": \"simultaneous\", \"conf\": 0.7}, {\"from\": \"CNN19980213.2130.0155::ei592\", \"to\": \"CNN19980213.2130.0155::ei599\", \"local_read_point\": \"<\", \"local_read_coarse\": \"before\", \"most_likely\": \"before\", \"conf\": 0.9}, {\"from\": \"CNN19980213.2130.0155::ei592\", \"to\": \"CNN19980213.2130.0155::ei609\", \"local_read_point\": \"UNIVERSE\", \"local_read_coarse\": null, \"most_likely\": \"after\", \"conf\": 0.4}, {\"from\": \"CNN19980213.2130.0155::ei599\", \"to\": \"CNN19980213.2130.0155::ei",
+          "metadata_docid": "CNN19980213.2130.0155",
+          "metadata_corpus": "narrativetime",
+          "metadata_doc_char_len": 2197,
+          "metadata_query": "CNN19980213.2130.0155::ei585->CNN19980213.2130.0155::ei619",
+          "metadata_algebra": "POINT",
+          "metadata_outcome": "abstain",
+          "metadata_query_class": "extraction_limited_abstain",
+          "metadata_stratum": "ge3_cyclic",
+          "metadata_n_pc2_fired": 0,
+          "metadata_prolog_executed_in_swipl": true,
+          "metadata_prolog_agrees_engine": null,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_raw_local": "before",
+          "predict_raw_fulldoc": "before",
+          "predict_sc": "before",
+          "predict_pot": "simultaneous"
+        },
+        {
+          "input": "CNN 19980213 .2130.0155\n    NEWS STORY\n    President Clinton says he is committed to a possible [[E1]]strike[[/E1]] against Iraq, despite objections from other countries. One contrary view of the issue presented itself to the president as he [[E2]]arrived[[/E2]] in Philadelphia later in the day .",
+          "output": "after",
+          "metadata_induced_path_edges": "[{\"from\": \"CNN19980213.2130.0155::ei575\", \"to\": \"CNN19980213.2130.0155::ei622\", \"local_read_point\": \"<\", \"local_read_coarse\": \"before\", \"most_likely\": \"before\", \"conf\": 0.9}, {\"from\": \"CNN19980213.2130.0155::ei575\", \"to\": \"CNN19980213.2130.0155::ei626\", \"local_read_point\": \">\", \"local_read_coarse\": \"after\", \"most_likely\": \"after\", \"conf\": 0.85}, {\"from\": \"CNN19980213.2130.0155::ei575\", \"to\": \"CNN19980213.2130.0155::ei634\", \"local_read_point\": \"<\", \"local_read_coarse\": \"before\", \"most_likely\": \"before\", \"conf\": 0.9}, {\"from\": \"CNN19980213.2130.0155::ei618\", \"to\": \"CNN19980213.2130.0155::ei622\", \"local_read_point\": \"<\", \"local_read_coarse\": \"before\", \"most_likely\": \"before\", \"conf\": 0.9}, {\"from\": \"CNN19980213.2130.0155::ei618\", \"to\": \"CNN19980213.2130.0155::ei626\", \"local_read_point\": \"UNIVERSE\", \"local_read_coarse\": null, \"most_likely\": \"after\", \"conf\": 0.4}, {\"from\": \"CNN19980213.2130.0155::ei618\", \"to\": \"CNN19980213.2130.0155::ei634\", \"local_read_point\": \"<\", \"local_read_coarse\": \"before\", \"most_likely\": \"before\", \"conf\": 0.95}, {\"from\": \"CNN19980213.2130.0155::ei622\", \"to\": \"CNN19980213.2130.0155::ei626\", \"local_read_point\": \"UNIVERSE\", \"local_read_coarse\": null, \"most_likely\": \"after\", \"conf\": 0.4}, {\"from\": \"CNN19980213.2130.0155::ei622\", \"to\": \"CNN19980213.2130.0155::ei634\", \"local_read_point\": \"UNIVERSE\", \"local_read_coarse\": null, \"most_likely\": \"before\", \"conf\": 0.4}, {\"from\": \"CNN19980213.2130.0155::ei626\", \"to\": \"CNN19980213.2130.0155::ei634\", \"local_read_point\": \"",
+          "metadata_docid": "CNN19980213.2130.0155",
+          "metadata_corpus": "narrativetime",
+          "metadata_doc_char_len": 2197,
+          "metadata_query": "CNN19980213.2130.0155::ei575->CNN19980213.2130.0155::ei618",
+          "metadata_algebra": "POINT",
+          "metadata_outcome": "abstain",
+          "metadata_query_class": "extraction_limited_abstain",
+          "metadata_stratum": "ge3_cyclic",
+          "metadata_n_pc2_fired": 1,
+          "metadata_prolog_executed_in_swipl": true,
+          "metadata_prolog_agrees_engine": null,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_raw_local": "after",
+          "predict_raw_fulldoc": "before",
+          "predict_sc": "after",
+          "predict_pot": "ABSTAIN"
+        },
+        {
+          "input": "President Clinton, meantime, glossed over stern warnings from Moscow on Thursday that US air [[E1]]strikes[[/E1]] against Iraq could do serious harm to relations with the Kremlin. The Russian foreign minister, meanwhile , [[E2]]sought[[/E2]] to soften the harsh words of his military counterpart, saying on Friday that Russia now feels the US must hold off at least until UN secretary general Kofi Annan visits Baghdad in a last-ditch effort at diplomacy.",
+          "output": "after",
+          "metadata_induced_path_edges": "[{\"from\": \"CNN19980213.2130.0155::ei606\", \"to\": \"CNN19980213.2130.0155::ei613\", \"local_read_point\": \"UNIVERSE\", \"local_read_coarse\": null, \"most_likely\": \"before\", \"conf\": 0.5}, {\"from\": \"CNN19980213.2130.0155::ei606\", \"to\": \"CNN19980213.2130.0155::ei596\", \"local_read_point\": \">\", \"local_read_coarse\": \"after\", \"most_likely\": \"before\", \"conf\": 0.9}, {\"from\": \"CNN19980213.2130.0155::ei606\", \"to\": \"CNN19980213.2130.0155::ei593\", \"local_read_point\": \"UNIVERSE\", \"local_read_coarse\": null, \"most_likely\": \"before\", \"conf\": 0.4}, {\"from\": \"CNN19980213.2130.0155::ei624\", \"to\": \"CNN19980213.2130.0155::ei613\", \"local_read_point\": \"UNIVERSE\", \"local_read_coarse\": null, \"most_likely\": \"after\", \"conf\": 0.4}, {\"from\": \"CNN19980213.2130.0155::ei624\", \"to\": \"CNN19980213.2130.0155::ei596\", \"local_read_point\": \"UNIVERSE\", \"local_read_coarse\": null, \"most_likely\": \"before\", \"conf\": 0.5}, {\"from\": \"CNN19980213.2130.0155::ei624\", \"to\": \"CNN19980213.2130.0155::ei593\", \"local_read_point\": \"UNIVERSE\", \"local_read_coarse\": null, \"most_likely\": \"before\", \"conf\": 0.4}, {\"from\": \"CNN19980213.2130.0155::ei613\", \"to\": \"CNN19980213.2130.0155::ei596\", \"local_read_point\": \"UNIVERSE\", \"local_read_coarse\": null, \"most_likely\": \"before\", \"conf\": 0.4}, {\"from\": \"CNN19980213.2130.0155::ei613\", \"to\": \"CNN19980213.2130.0155::ei593\", \"local_read_point\": \"UNIVERSE\", \"local_read_coarse\": null, \"most_likely\": \"after\", \"conf\": 0.4}, {\"from\": \"CNN19980213.2130.0155::ei596\", \"to\": \"CNN19980213.2130.0155::ei593\", \"local_rea",
+          "metadata_docid": "CNN19980213.2130.0155",
+          "metadata_corpus": "narrativetime",
+          "metadata_doc_char_len": 2197,
+          "metadata_query": "CNN19980213.2130.0155::ei606->CNN19980213.2130.0155::ei624",
+          "metadata_algebra": "POINT",
+          "metadata_outcome": "abstain",
+          "metadata_query_class": "extraction_limited_abstain",
+          "metadata_stratum": "ge3_cyclic",
+          "metadata_n_pc2_fired": 0,
+          "metadata_prolog_executed_in_swipl": true,
+          "metadata_prolog_agrees_engine": null,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_raw_local": "before",
+          "predict_raw_fulldoc": "before",
+          "predict_sc": "before",
+          "predict_pot": "ABSTAIN"
+        }
+      ]
+    },
+    {
+      "dataset": "clutrr_3kchar_concat",
+      "examples": [
+        {
+          "input": "Sharon and her aunt, Margaret, went to the bookstore. Sharon bought some fantasy books, while Margaret picked up some mysteries. James went fishing with his daughter Kathleen. Kathleen's sister, Sharon, was n't invited because she hates fishing. Teresita, who is the sister of Monica, is a lovely girl. Eula went to dinner with her daughter Margaret. They then went to the park afterwards. James took his nephew Don out to get some ice cream to celebrate his baseball victory. Constance went to the mall, because she wanted to look for a present for her daughter, Beatrice. Don and his sister, Beatrice love it when their grandmother visits because she spoils them. She is coming this week to watch them while their parents are out of town. Eula and her father, William, went to the marina. William's daughter, Monica, had purchased a boat, and they were eager to see it.",
+          "output": "niece",
+          "metadata_docid": "clutrr_concat_1",
+          "metadata_corpus": "clutrr_concat",
+          "metadata_doc_char_len": 3602,
+          "metadata_query": "Constance->Teresita",
+          "metadata_hop": 10,
+          "metadata_kind": "within_story_multihop",
+          "metadata_outcome": "emit",
+          "metadata_query_class": "deduction_resolved",
+          "metadata_n_derivations": 1,
+          "predict_modeA": "aunt",
+          "predict_naive": "ABSTAIN",
+          "predict_raw_local": "no-relation",
+          "predict_raw_fulldoc": "no-relation"
+        },
+        {
+          "input": "Marie went to the store with her sister Leah Willie asked her daughter, Thelma, if she would like to go to a movie with her on Saturday night. Timothy and his sister, Thelma love it when their grandmother visits because she spoils them. She is coming this week to watch them while their parents are out of town. Ronald and his sister, Bonita love it when their grandmother visits because she spoils them. She is coming this week to watch them while their parents are out of town. Leah planned a trip to the zoo for her brother, Wallace. They had a great time. Marie and her aunt, Bonita, went to the bookstore. Marie bought some fantasy books, while Bonita picked up some mysteries. Willie had a daughter named Thelma. Donna attended the graduation of her sister's son Timothy. Donna was mad at her son, Wallace. She found he'd been stealing from her purse.",
+          "output": "uncle",
+          "metadata_docid": "clutrr_concat_1",
+          "metadata_corpus": "clutrr_concat",
+          "metadata_doc_char_len": 3602,
+          "metadata_query": "Thelma->Ronald",
+          "metadata_hop": 9,
+          "metadata_kind": "within_story_multihop",
+          "metadata_outcome": "emit",
+          "metadata_query_class": "deduction_resolved",
+          "metadata_n_derivations": 1,
+          "predict_modeA": "uncle",
+          "predict_naive": "ABSTAIN",
+          "predict_raw_local": "brother",
+          "predict_raw_fulldoc": "brother"
+        },
+        {
+          "input": "Dallas is out playing tennis with his daughter Shana because it is nice and sunny outside. Cecelia wanted to buy her mother Melody flowers for Mothers Day, so she called her sister Shana to go shopping with her. Cecelia decided to give her uncle, Donald, a call on his birthday. John and his sister, Bridget love it when their grandmother visits because she spoils them. She is coming this week to watch them while their parents are out of town. Cecelia took her sister, Katherine, out to dinner for her birthday. Dallas took his daughter, Katherine, to a baseball game. Donald went to see his daughter Bridget for parents day at college.",
+          "output": "nephew",
+          "metadata_docid": "clutrr_concat_1",
+          "metadata_corpus": "clutrr_concat",
+          "metadata_doc_char_len": 3602,
+          "metadata_query": "Melody->John",
+          "metadata_hop": 8,
+          "metadata_kind": "within_story_multihop",
+          "metadata_outcome": "emit",
+          "metadata_query_class": "deduction_resolved",
+          "metadata_n_derivations": 1,
+          "predict_modeA": "nephew",
+          "predict_naive": "ABSTAIN",
+          "predict_raw_local": "grandson",
+          "predict_raw_fulldoc": "no-relation"
+        }
+      ]
+    }
+  ]
+}

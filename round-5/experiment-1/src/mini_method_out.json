@@ -1,0 +1,938 @@
+{
+  "metadata": {
+    "method_name": "Closure-Certified Spatial RCC-8 Deduction over LLM reads vs neural baselines (decisive cross-path-intersection FORK + real-venue hallucination-reduction)",
+    "description": "Two pre-registered questions on SpaRTUN/SpaRP-PS1. Q1: does cross-path full-PC INTERSECTION of disjunctive LLM RCC-8/CDC reads narrow deduction queries beyond best-single-path composition? Resolved by a ZERO-LLM a-priori gate over VERIFIED gold composition -> structural SCOPE-BOUNDARY (the gold graphs lack same-algebra multipath bite; mechanism synthetic-only, proven real by the RCC-8 positive control). Q2: does closure-certified deduction (read local stated RCC-8 constituents -> exact GQR-table compose -> abstain on collapse) reduce HALLUCINATION vs raw LLM generation / chain-of-thought on the 228 single-path RCC-8 deduction queries the venue hosts, at matched coverage, with Prolog trace-graphs.",
+    "headline_findings": {
+      "Q1_crosspath_intersection_verdict": "SCOPE-BOUNDARY",
+      "Q1_reason": "On the strongest real spatial venue (SpaRP-PS1, 27.4% structurally-flagged tight multipath), VERIFIED gold composition has ZERO same-algebra multi-path bite: the RCC-8 subgraph is a containment TREE (all 228 deduction queries have exactly 1 path), and cardinal short paths compose to SINGLETONS ({1: 54, 2: 2, 3: 1} best-single lengths over 57 >=2-path queries). The corpus's 27.4% flag is purely STRUCTURAL (undirected, no composition); the redundancy is CROSS-ALGEBRA (topology vs direction), not intersectable in one calculus. The mechanism is therefore synthetic-only here.",
+      "Q1_synthetic_control_proves_mechanism_real": true,
+      "Q1_synthetic_r95_selacc_gain": 0.09330950962874729,
+      "Q1_synthetic_r95_coverage_gain": 0.00799999999999998,
+      "Q2_closure_vs_neural_verdict": "ABSTENTION-DRIVEN-HALLUCINATION-REDUCTION",
+      "Q2_n_scored": 228,
+      "Q2_raw_llm_hallucination_rate": 0.19298245614035087,
+      "Q2_cot_hallucination_rate": 0.12280701754385964,
+      "Q2_closure_method_hallucination_rate": 0.021929824561403508,
+      "Q2_hallucination_reduction_vs_raw": 0.17105263157894735,
+      "Q2_hallucination_reduction_ci95": [
+        0.11842105263157895,
+        0.22807017543859648
+      ],
+      "Q2_method_resolution_rate": 0.12719298245614036,
+      "Q2_method_coverage": 0.14912280701754385,
+      "Q2_raw_coverage": 1.0,
+      "Q2_raw_resolution_rate": 0.8070175438596491,
+      "Q2_ABSTENTION_CONFOUND": "the hallucination reduction is ABSTENTION-DRIVEN: the method answers only 14.9% of queries (abstains on logical collapse / non-singleton composition); raw answers 100%.",
+      "Q2_matched_coverage_method_acc": 0.8529411764705882,
+      "Q2_matched_coverage_raw_acc": 0.9411764705882353,
+      "Q2_method_more_accurate_at_matched_coverage": false,
+      "Q2_method_vs_raw_selacc_gap": -0.08823529411764708,
+      "Q2_method_vs_raw_selacc_ci95": [
+        -0.2222222222222222,
+        0.038461538461538436
+      ],
+      "Q2_neural_abstention_baseline_raw_abstain": {
+        "hallucination": 0.03508771929824561,
+        "coverage": 0.2850877192982456,
+        "resolution": 0.25
+      },
+      "Q2_method_dominates_neural_abstention_baseline": false,
+      "Q2_binding_constraint": "LLM CONSTITUENT-READ RECALL (not the symbolic engine): constituent reads recall=0.55; the gold-read ORACLE resolves 0.89 at 0 hallucination -> the closure is SOUND and not the bottleneck. Disjunctive (sound) reads compose to broad/collapsed sets -> abstention; the coverage-vs-soundness tradeoff caps the method.",
+      "constituent_read_recall_primary": 0.548936170212766,
+      "constituent_read_breadth_primary_of8": 2.108510638297872,
+      "constituent_read_underdet_rate_primary": 0.036170212765957444,
+      "query_deduction_read_recall_primary": 0.8991228070175439,
+      "gold_read_oracle_resolution_rate": 0.8903508771929824,
+      "gold_read_oracle_coverage": 0.8903508771929824,
+      "desc_recovered_frac": 1.0,
+      "spatial_vs_temporal_read_breadth_note": "spatial RCC-8 reads breadth=2.11/8 (underdet=0.04) vs temporal-Allen breadth 11.5/13 (underdet 0.87) -- spatial templated reads are FAR more informative; the spatial negative is STRUCTURAL, not a read-informativeness failure (the distinct second binding constraint of the temporal venue).",
+      "powered": true,
+      "total_cost_usd": 0.0,
+      "tags": "REAL-LLM-READ / GOLD-ONLY-GATE / SYNTHETIC-RCC8-CONTROL / THEOREM"
+    },
+    "verdict_crosspath_intersection": "SCOPE-BOUNDARY",
+    "verdict_closure_certified_deduction": "ABSTENTION-DRIVEN-HALLUCINATION-REDUCTION",
+    "verdict_rationale": "Q1 (cross-path intersection FORK) = SCOPE-BOUNDARY: the error-correcting-code mechanism does NOT realize on the real spatial venue, but for a SHARPER reason than the iter-4 temporal negative. There, the binding constraint was READ-informativeness (Allen reads near-universe, breadth 11.5/13). HERE the binding constraint is GOLD-STRUCTURAL: even with PERFECT reads (recall 0.55, breadth 2.11/8 -- spatial reads ARE informative), the gold graphs of SpaRTUN contain NO same-algebra multi-path redundancy with bite (RCC-8 = containment tree; cardinal short paths already resolve to singletons). The mechanism is genuinely synthetic-only (the RCC-8 positive control at r=0.95 shows intersection sel-acc 0.890 > best-single 0.797). Q2 (transferable contribution) = ABSTENTION-DRIVEN-HALLUCINATION-REDUCTION: on the 228 single-path RCC-8 deduction queries SpaRP-PS1 DOES host, closure-certified deduction (read local stated constituents -> exact-table compose -> abstain on collapse/non-singleton) cuts the confident-wrong rate from 0.193 (raw LLM) / 0.123 (chain-of-thought) to 0.022 (reduction +0.171, 95% CI [0.118,0.228], Holm-significant), with auditable Prolog traces. CRUCIAL HONESTY: this reduction is ABSTENTION-DRIVEN, not an accuracy gain -- the method answers only 14.9% of queries (vs raw 100%), and at MATCHED coverage the raw LLM is NOT less accurate (method sel-acc 0.853 vs raw 0.941; gap CI [-0.2222222222222222, 0.038461538461538436]). A neural baseline given the SAME abstention signal (raw-abstain) reaches hallucination 0.035 at coverage 0.29 -> the symbolic method does NOT dominate it. The gold-read ORACLE resolves 0.890 at 0 hallucination -> the symbolic closure is SOUND and NOT the bottleneck; the binding constraint is constituent-read recall (0.55) under the coverage-vs-soundness tradeoff. NET: the certified abstain-on-collapse mechanism genuinely converts confident-wrong LLM outputs into auditable abstentions, but on this venue it does not beat a confidence-thresholded neural baseline -- the value is interpretability/auditability of the abstention, not raw accuracy.",
+    "config": {
+      "seed": 20260617,
+      "reader_primary": "google/gemini-3.1-flash-lite",
+      "cross_family": "deepseek/deepseek-v3.2",
+      "primary_fallbacks": [
+        "google/gemini-2.5-flash-lite",
+        "deepseek/deepseek-v3.2"
+      ],
+      "temperature": 0.0,
+      "rcc8_recall_gate": 0.85,
+      "boot_B": 2000,
+      "alpha": 0.05,
+      "confirm_min_n": 70,
+      "closure_cap": 228,
+      "cross_family_cap": 120,
+      "budget_global_cap": 9.0,
+      "closure_algebra": "RCC-8 (8 base) + CDC (9 base, product of two point algebras)",
+      "mini": false
+    },
+    "stage0_self_tests": {
+      "engine_self_test_passed": true,
+      "closure_tests_passed": true,
+      "closure_test_detail": {
+        "n_errors": 0,
+        "errors": [],
+        "rcc8_compose_cells": 64,
+        "cdc_compose_cells": 81
+      }
+    },
+    "TAG_THEOREM": "RCC-8/CDC PC-2 closure is SOUND (RCC-8 incomplete -> coverage/collapse are sound LOWER BOUNDS; CDC convex -> complete). The intersection/composition of SOUND read sets is ALWAYS sound, so every narrowing/abstain-on-collapse certificate is valid.",
+    "a_priori_gate": {
+      "arms": {
+        "SpaRP-PS1|rcc8": {
+          "corpus": "SpaRP-PS1",
+          "algebra": "rcc8",
+          "n_scenes": 2316,
+          "n_query_gold": 908,
+          "n_deduction_required": 228,
+          "n_ge2_short_paths": 0,
+          "best_single_len_hist": {},
+          "inter_len_hist": {},
+          "n_best_single_nonsingleton": 0,
+          "n_inter_strict_subset_best": 0,
+          "n_gold_subset_inter": 0,
+          "n_multipath_with_bite": 0,
+          "n_headline_gold_singleton": 0,
+          "n_ge3_cyclic": 0,
+          "bite_hist": {},
+          "headline_bite_hist": {},
+          "maxdisjoint_hist": {
+            "1": 228
+          },
+          "decision": "NO-GO"
+        },
+        "SpaRP-PS1|cardinal_direction": {
+          "corpus": "SpaRP-PS1",
+          "algebra": "cardinal_direction",
+          "n_scenes": 2316,
+          "n_query_gold": 719,
+          "n_deduction_required": 245,
+          "n_ge2_short_paths": 57,
+          "best_single_len_hist": {
+            "1": 54,
+            "2": 2,
+            "3": 1
+          },
+          "inter_len_hist": {
+            "0": 18,
+            "1": 38,
+            "3": 1
+          },
+          "n_best_single_nonsingleton": 3,
+          "n_inter_strict_subset_best": 18,
+          "n_gold_subset_inter": 37,
+          "n_multipath_with_bite": 0,
+          "n_headline_gold_singleton": 0,
+          "n_ge3_cyclic": 0,
+          "bite_hist": {},
+          "headline_bite_hist": {},
+          "maxdisjoint_hist": {
+            "1": 188,
+            "2": 55,
+            "3": 2
+          },
+          "decision": "NO-GO"
+        },
+        "SpartQA-Human|rcc8": {
+          "corpus": "SpartQA-Human",
+          "algebra": "rcc8",
+          "n_scenes": 1600,
+          "n_query_gold": 0,
+          "n_deduction_required": 0,
+          "n_ge2_short_paths": 0,
+          "best_single_len_hist": {},
+          "inter_len_hist": {},
+          "n_best_single_nonsingleton": 0,
+          "n_inter_strict_subset_best": 0,
+          "n_gold_subset_inter": 0,
+          "n_multipath_with_bite": 0,
+          "n_headline_gold_singleton": 0,
+          "n_ge3_cyclic": 0,
+          "bite_hist": {},
+          "headline_bite_hist": {},
+          "maxdisjoint_hist": {},
+          "decision": "NO-GO"
+        },
+        "SpartQA-Human|cardinal_direction": {
+          "corpus": "SpartQA-Human",
+          "algebra": "cardinal_direction",
+          "n_scenes": 1600,
+          "n_query_gold": 0,
+          "n_deduction_required": 0,
+          "n_ge2_short_paths": 0,
+          "best_single_len_hist": {},
+          "inter_len_hist": {},
+          "n_best_single_nonsingleton": 0,
+          "n_inter_strict_subset_best": 0,
+          "n_gold_subset_inter": 0,
+          "n_multipath_with_bite": 0,
+          "n_headline_gold_singleton": 0,
+          "n_ge3_cyclic": 0,
+          "bite_hist": {},
+          "headline_bite_hist": {},
+          "maxdisjoint_hist": {},
+          "decision": "NO-GO"
+        }
+      },
+      "rcc8_headline_N": 0,
+      "cardinal_headline_N": 0,
+      "rcc8_decision": "NO-GO",
+      "cardinal_decision": "NO-GO",
+      "overall_decision": "NO-GO",
+      "headline_go_threshold": 100,
+      "low_power_threshold": 40,
+      "short_path_max": 4,
+      "tag": "GOLD-ONLY-GATE"
+    },
+    "a_priori_gate_loosened_short_max6": {
+      "SpaRP-PS1|rcc8": {
+        "n_multipath_with_bite": 0,
+        "n_headline_gold_singleton": 0,
+        "n_ge2_short_paths": 0
+      },
+      "SpaRP-PS1|cardinal_direction": {
+        "n_multipath_with_bite": 0,
+        "n_headline_gold_singleton": 0,
+        "n_ge2_short_paths": 57
+      },
+      "SpartQA-Human|rcc8": {
+        "n_multipath_with_bite": 0,
+        "n_headline_gold_singleton": 0,
+        "n_ge2_short_paths": 0
+      },
+      "SpartQA-Human|cardinal_direction": {
+        "n_multipath_with_bite": 0,
+        "n_headline_gold_singleton": 0,
+        "n_ge2_short_paths": 0
+      }
+    },
+    "description_recovery": {
+      "desc_recovered_frac": 1.0,
+      "n_nodes": 698,
+      "n_usable": 698,
+      "source": "raw SpaRP symbolic_entity_map",
+      "note": "id->natural phrase (e.g. '1x2'->'medium yellow apple of box two'); usable iff a content token appears in the story.",
+      "tag": "REAL"
+    },
+    "per_edge_read_recall_and_informativeness": {
+      "primary": {
+        "reader": "google/gemini-3.1-flash-lite",
+        "constituent_recall": {
+          "kind": "constituent",
+          "recall": 0.548936170212766,
+          "n_scorable_edges": 470,
+          "n_parse_fail": 0,
+          "recall_ci95": [
+            0.510774705860589,
+            0.5876068376068376
+          ],
+          "rho_within_doc_soundness": -0.2664324812540537,
+          "breadth_mean": 2.108510638297872,
+          "gate": 0.85,
+          "gate_verdict": "CI_excludes_below_gate",
+          "binomial_p_recall_lt_gate_ANTICONSERVATIVE": 1.9872528731722575e-54,
+          "tag": "REAL-LLM-READ"
+        },
+        "query_deduction_recall": {
+          "kind": "query",
+          "recall": 0.8991228070175439,
+          "n_scorable_edges": 228,
+          "n_parse_fail": 0,
+          "recall_ci95": [
+            0.8596491228070176,
+            0.9385964912280702
+          ],
+          "rho_within_doc_soundness": null,
+          "breadth_mean": 2.2280701754385963,
+          "gate": 0.85,
+          "gate_verdict": "CI_excludes_above_gate",
+          "binomial_p_recall_lt_gate_ANTICONSERVATIVE": 0.9883204473837036,
+          "tag": "REAL-LLM-READ"
+        },
+        "informativeness": {
+          "n": 470,
+          "underdetermined_rate": 0.036170212765957444,
+          "breadth_mean": 2.108510638297872,
+          "near_universe_rate": 0.036170212765957444,
+          "algebra_size": 8,
+          "parse_fail": 0,
+          "tag": "REAL-LLM-READ"
+        }
+      },
+      "crossfamily": {
+        "reader": "deepseek/deepseek-v3.2",
+        "constituent_recall": {
+          "kind": "constituent",
+          "recall": 0.5846774193548387,
+          "n_scorable_edges": 248,
+          "n_parse_fail": 0,
+          "recall_ci95": [
+            0.528,
+            0.64
+          ],
+          "rho_within_doc_soundness": -0.13822538516864114,
+          "breadth_mean": 4.07258064516129,
+          "gate": 0.85,
+          "gate_verdict": "CI_excludes_below_gate",
+          "binomial_p_recall_lt_gate_ANTICONSERVATIVE": 6.903282356515225e-24,
+          "tag": "REAL-LLM-READ"
+        },
+        "query_deduction_recall": {
+          "kind": "query",
+          "recall": 0.9166666666666666,
+          "n_scorable_edges": 120,
+          "n_parse_fail": 0,
+          "recall_ci95": [
+            0.8666666666666667,
+            0.9666666666666667
+          ],
+          "rho_within_doc_soundness": null,
+          "breadth_mean": 4.883333333333334,
+          "gate": 0.85,
+          "gate_verdict": "CI_excludes_above_gate",
+          "binomial_p_recall_lt_gate_ANTICONSERVATIVE": 0.9898432031425902,
+          "tag": "REAL-LLM-READ"
+        },
+        "informativeness": {
+          "n": 248,
+          "underdetermined_rate": 0.5685483870967742,
+          "breadth_mean": 5.455645161290323,
+          "near_universe_rate": 0.5685483870967742,
+          "algebra_size": 8,
+          "parse_fail": 0,
+          "tag": "REAL-LLM-READ"
+        }
+      }
+    },
+    "real_venue_closure_leaderboard": {
+      "H_method_vs_raw_selacc": {
+        "gap_point": -0.08823529411764708,
+        "gap_bootstrap_median": -0.08108108108108103,
+        "gap_ci95": [
+          -0.2222222222222222,
+          0.038461538461538436
+        ],
+        "brackets": true,
+        "boot_p_gap_le_0": 0.9335,
+        "matched_coverage": 0.14912280701754385,
+        "method_acc": 0.8529411764705882,
+        "base_acc": 0.9411764705882353,
+        "base_max_coverage": 1.0,
+        "base_unreachable": false,
+        "n_boot": 2000,
+        "ci_note": "percentile CI brackets the bootstrap MEDIAN; `brackets` flags whether it also contains the full-sample point gap (R1 fix)."
+      },
+      "H_method_vs_cot_selacc": {
+        "gap_point": -0.02941176470588236,
+        "gap_bootstrap_median": -0.03448275862068961,
+        "gap_ci95": [
+          -0.18754222972972973,
+          0.09375
+        ],
+        "brackets": true,
+        "boot_p_gap_le_0": 0.7895,
+        "matched_coverage": 0.14912280701754385,
+        "method_acc": 0.8529411764705882,
+        "base_acc": 0.8823529411764706,
+        "base_max_coverage": 1.0,
+        "base_unreachable": false,
+        "n_boot": 2000,
+        "ci_note": "percentile CI brackets the bootstrap MEDIAN; `brackets` flags whether it also contains the full-sample point gap (R1 fix)."
+      },
+      "method_vs_raw_abstain_selacc": {
+        "gap_point": -0.08823529411764708,
+        "gap_bootstrap_median": -0.08108108108108103,
+        "gap_ci95": [
+          -0.2222222222222222,
+          0.039999999999999925
+        ],
+        "brackets": true,
+        "boot_p_gap_le_0": 0.9319999999999999,
+        "matched_coverage": 0.14912280701754385,
+        "method_acc": 0.8529411764705882,
+        "base_acc": 0.9411764705882353,
+        "base_max_coverage": 0.2850877192982456,
+        "base_unreachable": false,
+        "n_boot": 2000,
+        "ci_note": "percentile CI brackets the bootstrap MEDIAN; `brackets` flags whether it also contains the full-sample point gap (R1 fix)."
+      },
+      "oracle_vs_method_selacc": {
+        "gap_point": NaN,
+        "gap_ci95": [
+          NaN,
+          NaN
+        ],
+        "gap_bootstrap_median": NaN,
+        "brackets": null,
+        "matched_coverage": 0.8903508771929824,
+        "method_acc": 1.0,
+        "base_acc": NaN,
+        "base_max_coverage": 0.14912280701754385,
+        "base_unreachable": true,
+        "boot_p_gap_le_0": 0.0,
+        "n_boot": 0
+      }
+    },
+    "hallucination_rates": {
+      "method": {
+        "rate": 0.021929824561403508,
+        "ci95": [
+          0.0043859649122807015,
+          0.043859649122807015
+        ],
+        "n": 228
+      },
+      "raw": {
+        "rate": 0.19298245614035087,
+        "ci95": [
+          0.14473684210526316,
+          0.24561403508771928
+        ],
+        "n": 228
+      },
+      "raw_abstain": {
+        "rate": 0.03508771929824561,
+        "ci95": [
+          0.013157894736842105,
+          0.06140350877192982
+        ],
+        "n": 228
+      },
+      "cot": {
+        "rate": 0.12280701754385964,
+        "ci95": [
+          0.08333333333333333,
+          0.16677631578947308
+        ],
+        "n": 228
+      },
+      "oracle": {
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n": 228
+      }
+    },
+    "hallucination_reduction": {
+      "H_method_vs_raw_hallucination": {
+        "reduction_point": 0.17105263157894735,
+        "reduction_ci95": [
+          0.11842105263157895,
+          0.22807017543859648
+        ],
+        "boot_p_reduction_le_0": 0.0
+      },
+      "H_method_vs_cot_hallucination": {
+        "reduction_point": 0.10087719298245613,
+        "reduction_ci95": [
+          0.05701754385964912,
+          0.14912280701754388
+        ],
+        "boot_p_reduction_le_0": 0.0
+      }
+    },
+    "resolution_rates": {
+      "method": {
+        "rate": 0.12719298245614036,
+        "ci95": [
+          0.08771929824561403,
+          0.17105263157894737
+        ],
+        "n": 228,
+        "coverage": 0.14912280701754385
+      },
+      "raw": {
+        "rate": 0.8070175438596491,
+        "ci95": [
+          0.7543859649122807,
+          0.8552631578947368
+        ],
+        "n": 228,
+        "coverage": 1.0
+      },
+      "raw_abstain": {
+        "rate": 0.25,
+        "ci95": [
+          0.19736842105263158,
+          0.30701754385964913
+        ],
+        "n": 228,
+        "coverage": 0.2850877192982456
+      },
+      "cot": {
+        "rate": 0.8771929824561403,
+        "ci95": [
+          0.8332236842105264,
+          0.9166666666666666
+        ],
+        "n": 228,
+        "coverage": 1.0
+      },
+      "oracle": {
+        "rate": 0.8903508771929824,
+        "ci95": [
+          0.8508771929824561,
+          0.9298245614035088
+        ],
+        "n": 228,
+        "coverage": 0.8903508771929824
+      }
+    },
+    "holm_bonferroni": {
+      "H_method_vs_raw_hallucination": {
+        "p": 0.0,
+        "holm_threshold": 0.016666666666666666,
+        "adjusted_significant": true
+      },
+      "H_method_vs_cot_hallucination": {
+        "p": 0.0,
+        "holm_threshold": 0.025,
+        "adjusted_significant": true
+      },
+      "H_method_vs_raw_selacc": {
+        "p": 0.9335,
+        "holm_threshold": 0.05,
+        "adjusted_significant": false
+      }
+    },
+    "stratified_by_hop": {
+      "len2": {
+        "n": 214,
+        "method_resolution": {
+          "rate": 0.13551401869158877,
+          "ci95": [
+            0.09345794392523364,
+            0.1822429906542056
+          ],
+          "n": 214,
+          "coverage": 0.1588785046728972
+        },
+        "raw_hallucination": {
+          "rate": 0.1822429906542056,
+          "ci95": [
+            0.1308411214953271,
+            0.2383177570093458
+          ],
+          "n": 214
+        },
+        "method_hallucination": {
+          "rate": 0.02336448598130841,
+          "ci95": [
+            0.004672897196261682,
+            0.04672897196261682
+          ],
+          "n": 214
+        }
+      },
+      "ge3": {
+        "n": 14,
+        "method_resolution": {
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n": 14,
+          "coverage": 0.0
+        },
+        "raw_hallucination": {
+          "rate": 0.35714285714285715,
+          "ci95": [
+            0.14285714285714285,
+            0.6428571428571429
+          ],
+          "n": 14
+        },
+        "method_hallucination": {
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n": 14
+        }
+      }
+    },
+    "gold_read_oracle": {
+      "resolution_rate": {
+        "rate": 0.8903508771929824,
+        "ci95": [
+          0.8508771929824561,
+          0.9298245614035088
+        ],
+        "n": 228,
+        "coverage": 0.8903508771929824
+      },
+      "coverage": 0.8903508771929824,
+      "note": "feed gold atomic constituents -> closure: proves the symbolic engine is not the bottleneck (any real-arm loss is a READ failure).",
+      "tag": "GOLD-ORACLE"
+    },
+    "synthetic_rcc8_positive_control": {
+      "cells": {
+        "recall_95": {
+          "n_net": 500,
+          "n_events": 6,
+          "recall": 0.95,
+          "per_method": {
+            "intersection": {
+              "coverage": 0.146,
+              "selective_acc": 0.8904109589041096
+            },
+            "best_single": {
+              "coverage": 0.138,
+              "selective_acc": 0.7971014492753623
+            },
+            "naive": {
+              "coverage": 0.164,
+              "selective_acc": 0.8170731707317073
+            }
+          },
+          "mean_bite": 1.226,
+          "intersection_resolves_more_than_best_single": true,
+          "coverage_gain_intersection_vs_best": 0.00799999999999998,
+          "selective_acc_gain_intersection_vs_best": 0.09330950962874729,
+          "singleton_resolved_rate": 0.146,
+          "tag": "SYNTHETIC-RCC8-CONTROL"
+        },
+        "recall_85": {
+          "n_net": 500,
+          "n_events": 6,
+          "recall": 0.85,
+          "per_method": {
+            "intersection": {
+              "coverage": 0.1,
+              "selective_acc": 0.72
+            },
+            "best_single": {
+              "coverage": 0.216,
+              "selective_acc": 0.7129629629629629
+            },
+            "naive": {
+              "coverage": 0.238,
+              "selective_acc": 0.7310924369747899
+            }
+          },
+          "mean_bite": 2.246,
+          "intersection_resolves_more_than_best_single": false,
+          "coverage_gain_intersection_vs_best": -0.11599999999999999,
+          "selective_acc_gain_intersection_vs_best": 0.007037037037037064,
+          "singleton_resolved_rate": 0.1,
+          "tag": "SYNTHETIC-RCC8-CONTROL"
+        },
+        "recall_70": {
+          "n_net": 500,
+          "n_events": 6,
+          "recall": 0.7,
+          "per_method": {
+            "intersection": {
+              "coverage": 0.038,
+              "selective_acc": 0.5263157894736842
+            },
+            "best_single": {
+              "coverage": 0.244,
+              "selective_acc": 0.5573770491803278
+            },
+            "naive": {
+              "coverage": 0.24,
+              "selective_acc": 0.5166666666666667
+            }
+          },
+          "mean_bite": 2.816,
+          "intersection_resolves_more_than_best_single": false,
+          "coverage_gain_intersection_vs_best": -0.206,
+          "selective_acc_gain_intersection_vs_best": -0.03106125970664364,
+          "singleton_resolved_rate": 0.038,
+          "tag": "SYNTHETIC-RCC8-CONTROL"
+        }
+      },
+      "control_pass_at_r95": true,
+      "note": "consistent-by-construction RCC-8 QCNs (1-D interval model), noisy reads; positive control that the comparison code detects a true cross-path effect when same-algebra redundancy + sound reads exist.",
+      "tag": "SYNTHETIC-RCC8-CONTROL"
+    },
+    "cross_family_sensitivity": {
+      "model": "deepseek/deepseek-v3.2",
+      "n": 120,
+      "constituent_recall": {
+        "kind": "constituent",
+        "recall": 0.5846774193548387,
+        "n_scorable_edges": 248,
+        "n_parse_fail": 0,
+        "recall_ci95": [
+          0.528,
+          0.64
+        ],
+        "rho_within_doc_soundness": -0.13822538516864114,
+        "breadth_mean": 4.07258064516129,
+        "gate": 0.85,
+        "gate_verdict": "CI_excludes_below_gate",
+        "binomial_p_recall_lt_gate_ANTICONSERVATIVE": 6.903282356515225e-24,
+        "tag": "REAL-LLM-READ"
+      },
+      "query_deduction_recall": {
+        "kind": "query",
+        "recall": 0.9166666666666666,
+        "n_scorable_edges": 120,
+        "n_parse_fail": 0,
+        "recall_ci95": [
+          0.8666666666666667,
+          0.9666666666666667
+        ],
+        "rho_within_doc_soundness": null,
+        "breadth_mean": 4.883333333333334,
+        "gate": 0.85,
+        "gate_verdict": "CI_excludes_above_gate",
+        "binomial_p_recall_lt_gate_ANTICONSERVATIVE": 0.9898432031425902,
+        "tag": "REAL-LLM-READ"
+      },
+      "informativeness": {
+        "n": 248,
+        "underdetermined_rate": 0.5685483870967742,
+        "breadth_mean": 5.455645161290323,
+        "near_universe_rate": 0.5685483870967742,
+        "algebra_size": 8,
+        "parse_fail": 0,
+        "tag": "REAL-LLM-READ"
+      },
+      "method_resolution": {
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n": 120,
+        "coverage": 0.0
+      },
+      "raw_hallucination": {
+        "rate": 0.44166666666666665,
+        "ci95": [
+          0.35,
+          0.5333333333333333
+        ],
+        "n": 120
+      },
+      "method_hallucination": {
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n": 120
+      },
+      "mean_jaccard_vs_primary": 0.5045554915514593,
+      "tag": "REAL-LLM-READ"
+    },
+    "prolog_audit": {
+      "discharge_method": "python-checked (swipl-unavailable)",
+      "swipl_available": false,
+      "traces": [
+        {
+          "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_1/results/worked_synthetic_intersection.pl",
+          "label": "synthetic cross-path intersection: best-single ['DC', 'NTPPi', 'TPPi'] (non-singleton) narrowed by intersecting two paths (p1=['DC', 'EC', 'NTPP', 'PO', 'TPP'], p2=['DC', 'NTPPi', 'TPPi']) to ['DC']",
+          "kind": "synthetic",
+          "discharge_method": "python-checked (swipl-unavailable)",
+          "swipl_stdout": null,
+          "swipl_verdict": null,
+          "python_derived": "DC",
+          "python_query_rel": [
+            "DC"
+          ],
+          "python_per_path_compositions": [
+            [
+              "DC",
+              "EC",
+              "NTPP",
+              "PO",
+              "TPP"
+            ],
+            [
+              "DC",
+              "NTPPi",
+              "TPPi"
+            ]
+          ],
+          "python_singleton": true,
+          "python_collapse": false,
+          "gold": [
+            "DC"
+          ],
+          "program": "% Closure-certified spatial deduction (RCC-8) -- synthetic cross-path intersection: best-single ['DC', 'NTPPi', 'TPPi'] (non-singleton) narrowed by intersecting two paths (p1=['DC', 'EC', 'NTPP', 'PO', 'TPP'], p2=['DC', 'NTPPi', 'TPPi']) to ['DC'].\n% Per path: compose the stated LOCAL RCC-8 reads (exact GQR table). Then INTERSECT\n% the per-path constraints (cross-path closure). Singleton => ANSWER; empty =>\n% Mode-B collapse (inconsistent reads flagged, NOT hallucinated); else ABSTAIN.\n:- discontiguous pathcomp/2.\n\n% path0: read(S->W1)=[dc] ; read(W1->T)=[ec]\npathcomp(p0, [dc,ec,ntpp,po,tpp]).\n% path1: read(S->W2)=[dc,tppi] ; read(W2->T)=[tppi]\npathcomp(p1, [dc,ntppi,tppi]).\n\ninter(R) :- findall(S, pathcomp(_, S), Ss), Ss = [H|T], foldl(isect, T, H, R).\nisect(A, B, C) :- findall(X, (member(X, A), member(X, B)), C).\n% engine intersection of all path constraints = [dc]\nmain :- ( inter(R) ->\n    ( R = [Single] -> format('QUERY-REL: ~w~nVERDICT: ANSWER(~w)~n', [R, Single])\n    ; R = [] -> format('QUERY-REL: []~nVERDICT: COLLAPSE(Mode-B inconsistent)~n', [])\n    ; format('QUERY-REL: ~w~nVERDICT: ABSTAIN(non-singleton)~n', [R]) )\n  ; write('VERDICT: ABSTAIN(no-path)'), nl ), halt.\n\n:- initialization(main).\n",
+          "tag": "SYNTHETIC",
+          "best_single_path_set": [
+            "DC",
+            "NTPPi",
+            "TPPi"
+          ],
+          "note": "two edge-disjoint paths' sound compositions INTERSECT to the correct singleton while the best single path stays ambiguous -- the error-correcting-code mechanism (works on synthetic, absent in real gold)."
+        },
+        {
+          "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_1/results/worked_real_closure_0.pl",
+          "label": "real SpaRP-PS1 closure-certified deduction (SpaRP-PS1_test_1036: 1x0->2)",
+          "kind": "real",
+          "discharge_method": "python-checked (swipl-unavailable)",
+          "swipl_stdout": null,
+          "swipl_verdict": null,
+          "python_derived": "NTPP",
+          "python_query_rel": [
+            "NTPP"
+          ],
+          "python_per_path_compositions": [
+            [
+              "NTPP"
+            ]
+          ],
+          "python_singleton": true,
+          "python_collapse": false,
+          "gold": [
+            "NTPP"
+          ],
+          "program": "% Closure-certified spatial deduction (RCC-8) -- real SpaRP-PS1 closure-certified deduction (SpaRP-PS1_test_1036: 1x0->2).\n% Per path: compose the stated LOCAL RCC-8 reads (exact GQR table). Then INTERSECT\n% the per-path constraints (cross-path closure). Singleton => ANSWER; empty =>\n% Mode-B collapse (inconsistent reads flagged, NOT hallucinated); else ABSTAIN.\n:- discontiguous pathcomp/2.\n\n% path0: read(1x0->1)=[tpp] ; read(1->2)=[ntpp]\npathcomp(p0, [ntpp]).\n\ninter(R) :- findall(S, pathcomp(_, S), Ss), Ss = [H|T], foldl(isect, T, H, R).\nisect(A, B, C) :- findall(X, (member(X, A), member(X, B)), C).\n% engine intersection of all path constraints = [ntpp]\nmain :- ( inter(R) ->\n    ( R = [Single] -> format('QUERY-REL: ~w~nVERDICT: ANSWER(~w)~n', [R, Single])\n    ; R = [] -> format('QUERY-REL: []~nVERDICT: COLLAPSE(Mode-B inconsistent)~n', [])\n    ; format('QUERY-REL: ~w~nVERDICT: ABSTAIN(non-singleton)~n', [R]) )\n  ; write('VERDICT: ABSTAIN(no-path)'), nl ), halt.\n\n:- initialization(main).\n",
+          "tag": "REAL-LLM-READ",
+          "python_matches_engine": true
+        },
+        {
+          "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_1/results/worked_real_closure_1.pl",
+          "label": "real SpaRP-PS1 closure-certified deduction (SpaRP-PS1_test_1158: 1->0x1)",
+          "kind": "real",
+          "discharge_method": "python-checked (swipl-unavailable)",
+          "swipl_stdout": null,
+          "swipl_verdict": null,
+          "python_derived": "NTPPi",
+          "python_query_rel": [
+            "NTPPi"
+          ],
+          "python_per_path_compositions": [
+            [
+              "NTPPi"
+            ]
+          ],
+          "python_singleton": true,
+          "python_collapse": false,
+          "gold": [
+            "NTPPi"
+          ],
+          "program": "% Closure-certified spatial deduction (RCC-8) -- real SpaRP-PS1 closure-certified deduction (SpaRP-PS1_test_1158: 1->0x1).\n% Per path: compose the stated LOCAL RCC-8 reads (exact GQR table). Then INTERSECT\n% the per-path constraints (cross-path closure). Singleton => ANSWER; empty =>\n% Mode-B collapse (inconsistent reads flagged, NOT hallucinated); else ABSTAIN.\n:- discontiguous pathcomp/2.\n\n% path0: read(1->0)=[tppi] ; read(0->0x1)=[ntppi]\npathcomp(p0, [ntppi]).\n\ninter(R) :- findall(S, pathcomp(_, S), Ss), Ss = [H|T], foldl(isect, T, H, R).\nisect(A, B, C) :- findall(X, (member(X, A), member(X, B)), C).\n% engine intersection of all path constraints = [ntppi]\nmain :- ( inter(R) ->\n    ( R = [Single] -> format('QUERY-REL: ~w~nVERDICT: ANSWER(~w)~n', [R, Single])\n    ; R = [] -> format('QUERY-REL: []~nVERDICT: COLLAPSE(Mode-B inconsistent)~n', [])\n    ; format('QUERY-REL: ~w~nVERDICT: ABSTAIN(non-singleton)~n', [R]) )\n  ; write('VERDICT: ABSTAIN(no-path)'), nl ), halt.\n\n:- initialization(main).\n",
+          "tag": "REAL-LLM-READ",
+          "python_matches_engine": true
+        },
+        {
+          "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_1/results/worked_collapse.pl",
+          "label": "Mode-B collapse: two paths give disjoint constraints (NTPP vs DC) -> inconsistent reads flagged",
+          "kind": "collapse_injected",
+          "discharge_method": "python-checked (swipl-unavailable)",
+          "swipl_stdout": null,
+          "swipl_verdict": null,
+          "python_derived": "EMPTY",
+          "python_query_rel": [],
+          "python_per_path_compositions": [
+            [
+              "NTPP"
+            ],
+            [
+              "DC"
+            ]
+          ],
+          "python_singleton": false,
+          "python_collapse": true,
+          "gold": [],
+          "program": "% Closure-certified spatial deduction (RCC-8) -- Mode-B collapse: two paths give disjoint constraints (NTPP vs DC) -> inconsistent reads flagged.\n% Per path: compose the stated LOCAL RCC-8 reads (exact GQR table). Then INTERSECT\n% the per-path constraints (cross-path closure). Singleton => ANSWER; empty =>\n% Mode-B collapse (inconsistent reads flagged, NOT hallucinated); else ABSTAIN.\n:- discontiguous pathcomp/2.\n\n% path0: read(A->B)=[ntpp] ; read(B->C)=[ntpp]\npathcomp(p0, [ntpp]).\n% path1: read(A->D)=[dc] ; read(D->C)=[ntppi]\npathcomp(p1, [dc]).\n\ninter(R) :- findall(S, pathcomp(_, S), Ss), Ss = [H|T], foldl(isect, T, H, R).\nisect(A, B, C) :- findall(X, (member(X, A), member(X, B)), C).\n% engine intersection of all path constraints = []\nmain :- ( inter(R) ->\n    ( R = [Single] -> format('QUERY-REL: ~w~nVERDICT: ANSWER(~w)~n', [R, Single])\n    ; R = [] -> format('QUERY-REL: []~nVERDICT: COLLAPSE(Mode-B inconsistent)~n', [])\n    ; format('QUERY-REL: ~w~nVERDICT: ABSTAIN(non-singleton)~n', [R]) )\n  ; write('VERDICT: ABSTAIN(no-path)'), nl ), halt.\n\n:- initialization(main).\n",
+          "tag": "SYNTHETIC",
+          "engine_pc2_consistent": false,
+          "python_matches_engine": true
+        }
+      ],
+      "python_matches_engine": true,
+      "tag": "REAL-LLM-READ / SYNTHETIC"
+    },
+    "cost": {
+      "this_run_incremental_usd": 0.0,
+      "primary_usd": 0.0,
+      "cross_family_usd": 0.0,
+      "n_calls": 0,
+      "n_cache_hits": 1414,
+      "parse_fail_primary": 0,
+      "budget_global_cap": 9.0,
+      "note": "OpenRouter spend not served from the sha256 disk cache; reruns are $0.",
+      "tag": "REAL-LLM-READ"
+    },
+    "honesty_caveats": [
+      "SpaRP-PS1 is TEMPLATED (not natural), docs 130-1170 chars (NOT the 3000-char target); the closure-certified-deduction result is a REALISTIC-text, single-relation-query result.",
+      "RCC-8 PC is sound-but-INCOMPLETE: coverage/collapse are SOUND LOWER BOUNDS; intersection/composition of sound read sets is always sound, so narrowing/abstain certificates are valid.",
+      "Q1 cross-path-intersection mechanism is SYNTHETIC-ONLY: the real gold graphs lack same-algebra multipath-with-bite (RCC-8 tree; cardinal short-path singletons). This is a $0 GOLD-STRUCTURAL finding, independent of LLM reads.",
+      "The corpus's 27.4% genuine_multipath_with_bite_tight flag is PURELY STRUCTURAL (undirected, mixed-algebra, NO composition); verified single-algebra composition bite is 0 -- vindicating the dataset card's own 'verify, don't trust noise labels' caveat at a deeper level.",
+      "Q2 hallucination reduction is measured as confident-wrong rate vs raw/CoT that always answer; METHOD's abstain-on-collapse + abstain-on-nonsingleton is the auditable mechanism."
+    ],
+    "tags": "REAL-LLM-READ / GOLD-ONLY-GATE / SYNTHETIC-RCC8-CONTROL / THEOREM",
+    "figures": [
+      "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_1/results/figures/closure_vs_neural_rc.jpg",
+      "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_1/results/figures/gold_bite_cascade.jpg",
+      "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_1/results/figures/read_informativeness.jpg",
+      "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_5/gen_art/gen_art_experiment_1/results/figures/synthetic_control.jpg"
+    ]
+  },
+  "datasets": [
+    {
+      "dataset": "SpaRP-PS1_rcc8_closure_certified_deduction",
+      "examples": [
+        {
+          "input": "[SpaRP-PS1] RCC-8 spatial deduction: relation of 0x0 -> 1 via a 2-hop stated containment path (deduction-required; read local constituents + compose).",
+          "output": "NTPP",
+          "metadata_docid": "SpaRP-PS1_test_1",
+          "metadata_gold_algebra": "rcc8",
+          "metadata_hop": 2,
+          "metadata_stratum": "len2",
+          "metadata_n_constituent_reads": 2,
+          "metadata_method_set": "EQ|NTPP|NTPPi|PO|TPP|TPPi",
+          "metadata_method_collapse": "False",
+          "metadata_oracle_correct": "1",
+          "predict_closure_method": "ABSTAIN",
+          "predict_raw_llm": "NTPP",
+          "predict_raw_llm_abstain": "ABSTAIN",
+          "predict_chain_of_thought": "NTPP",
+          "predict_gold_read_oracle": "NTPP"
+        },
+        {
+          "input": "[SpaRP-PS1] RCC-8 spatial deduction: relation of 2x0 -> 0 via a 2-hop stated containment path (deduction-required; read local constituents + compose).",
+          "output": "NTPP",
+          "metadata_docid": "SpaRP-PS1_test_10",
+          "metadata_gold_algebra": "rcc8",
+          "metadata_hop": 2,
+          "metadata_stratum": "len2",
+          "metadata_n_constituent_reads": 2,
+          "metadata_method_set": "DC|EC|EQ|NTPP|NTPPi|PO|TPP|TPPi",
+          "metadata_method_collapse": "False",
+          "metadata_oracle_correct": "1",
+          "predict_closure_method": "ABSTAIN",
+          "predict_raw_llm": "DC",
+          "predict_raw_llm_abstain": "DC",
+          "predict_chain_of_thought": "DC",
+          "predict_gold_read_oracle": "NTPP"
+        },
+        {
+          "input": "[SpaRP-PS1] RCC-8 spatial deduction: relation of 2 -> 1x1 via a 2-hop stated containment path (deduction-required; read local constituents + compose).",
+          "output": "NTPPi",
+          "metadata_docid": "SpaRP-PS1_test_1022",
+          "metadata_gold_algebra": "rcc8",
+          "metadata_hop": 2,
+          "metadata_stratum": "len2",
+          "metadata_n_constituent_reads": 2,
+          "metadata_method_set": "DC|EC|EQ|NTPP|NTPPi|PO|TPP|TPPi",
+          "metadata_method_collapse": "False",
+          "metadata_oracle_correct": "1",
+          "predict_closure_method": "ABSTAIN",
+          "predict_raw_llm": "DC",
+          "predict_raw_llm_abstain": "ABSTAIN",
+          "predict_chain_of_thought": "NTPPi",
+          "predict_gold_read_oracle": "NTPPi"
+        }
+      ]
+    }
+  ]
+}

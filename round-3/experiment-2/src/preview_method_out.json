@@ -1,0 +1,1040 @@
+{
+  "metadata": {
+    "method_name": "Closure-Certified Composition over Span-LOCAL LLM reads (Mode-A) -- LOCAL-reader real-text head-to-head + end-to-end Prolog",
+    "description": "Tests whether iterated path-consistency CLOSURE over span-LOCAL LLM reads of constituent path edges recovers deduction-required temporal relations the local reads alone cannot, beating Path-of-Thought...",
+    "headline_findings": {
+      "verdict": "CONFIRM",
+      "H1_confirm_vs_PoT_and_SC": true,
+      "H2_confirm_hallucination_reduction": true,
+      "H1_modeA_vs_PoT_gap": 0.026548672566371723,
+      "H1_modeA_vs_SC_gap": 0.03539823008849563,
+      "H1_modeA_vs_raw_gap": -0.12389380530973448,
+      "H1_modeA_vs_naive_gap": 0.026548672566371723,
+      "H2_confident_wrong_reduction": 0.1852212389380531,
+      "H2_confident_wrong_modeA": 0.4247787610619469,
+      "H2_confident_wrong_raw": 0.61,
+      "primary_recall_narrativetime": 0.8563611491108071,
+      "strong_recall_narrativetime": 0.9316770186335404,
+      "strong_crosses_recall_gate": true,
+      "n_deduction_queries_scored": 600,
+      "modeA_singleton_to_correct_rate": 0.10833333333333334,
+      "modeA_resolution_coverage": 0.18833333333333332,
+      "applicability_verdict": "GO-GENERAL",
+      "underpowered_lt70": false,
+      "tags": "every number tagged REAL-LLM-READ / SYNTHETIC-CHANNEL / GOLD-ONLY-GATE / THEOREM"
+    },
+    "config": {
+      "seed": 20260617,
+      "reader_primary": "google/gemini-3.1-flash-lite",
+      "reader_strong": "deepseek/deepseek-v4-pro",
+      "reader_primary_used": "google/gemini-3.1-flash-lite",
+      "primary_fallbacks": [
+        "deepseek/deepseek-v3.2",
+        "deepseek/deepseek-v4-flash"
+      ],
+      "strong_fallbacks": [
+        "google/gemini-3.5-flash",
+        "deepseek/deepseek-v3.2"
+      ],
+      "temperature": 0.0,
+      "sc_temperature": 0.7,
+      "sc_k": 5,
+      "n_target": 300,
+      "v_max": 3,
+      "recall_gate": {
+        "POINT": 0.9,
+        "ALLEN": 0.85
+      },
+      "h2_min_effect": 0.05,
+      "boot_B": 2000,
+      "alpha": 0.05,
+      "confirm_family_holm": [
+        "H1_vs_PoT",
+        "H1_vs_SC",
+        "H2_halluc"
+      ],
+      "budget_global_cap": 9.0,
+      "strong_query_cap": 40,
+      "strong_min_scorable": 160,
+      "strong_max": 320,
+      "confirm_min_n": 70,
+      "closure_algebra": "convex point start-point (PC-complete)",
+      "mini": false,
+      "limit_docs": null
+    },
+    "closure_tests_passed": true,
+    "closure_test_detail": {
+      "n_errors": 0,
+      "errors": [],
+      "allen_compose_cells": 169
+    },
+    "TAG_THEOREM": "closure engine (pc2_full) + point-algebra PC-completeness are THEOREM-grade; all closure outputs are sound certificates.",
+    "dataset_adapter": {
+      "offset_alignment_fraction": {
+        "narrativetime": 1.0,
+        "tddman": 1.0,
+        "matres": 1.0
+      },
+      "n_docs": {
+        "narrativetime": 36,
+        "tddman": 34,
+        "matres": 275
+      },
+      "n_read_edges": {
+        "narrativetime": 2680,
+        "tddman": 1429,
+        "matres": 0
+      },
+      "n_deduction_queries": {
+        "narrativetime": 300,
+        "tddman": 300,
+        "matres": 0
+      },
+      "n_len2": {
+        "narrativetime": 0,
+        "tddman": 150,
+        "matres": 0
+      },
+      "n_ge3_cyclic": {
+        "narrativetime": 300,
+        "tddman": 150,
+        "matres": 0
+      },
+      "tag": "GOLD-ONLY-GATE / REAL-LLM-READ"
+    },
+    "gate_validation_matres": {
+      "matres_deduction_multipath_queries": 0,
+      "expected": "~0 (MATRES is intra/adjacent only -> near-empty deduction envelope)",
+      "passed": true,
+      "tag": "GOLD-ONLY-GATE"
+    },
+    "per_edge_recall": {
+      "narrativetime": {
+        "primary": {
+          "recall": 0.8563611491108071,
+          "n_scorable_edges": 2193,
+          "n_parse_fail_excluded": 0,
+          "parse_fail_rate": 0.0,
+          "recall_ci95": [
+            0.8322174416557266,
+            0.8797559231113098
+          ],
+          "rho_within_doc_soundness": 0.027939779278652255,
+          "breadth_mean": 2.126766985864113,
+          "tag": "REAL-LLM-READ"
+        },
+        "strong": {
+          "recall": 0.9316770186335404,
+          "n_scorable_edges": 161,
+          "n_parse_fail_excluded": 2,
+          "parse_fail_rate": 0.012269938650306749,
+          "recall_ci95": [
+            0.8881578947368421,
+            0.9668928633670268
+          ],
+          "rho_within_doc_soundness": 0.0028278057324565417,
+          "breadth_mean": 2.186335403726708,
+          "tag": "REAL-LLM-READ"
+        }
+      },
+      "tddman": {
+        "primary": {
+          "recall": 0.827851644506648,
+          "n_scorable_edges": 1429,
+          "n_parse_fail_excluded": 0,
+          "parse_fail_rate": 0.0,
+          "recall_ci95": [
+            0.7777057963158535,
+            0.8690688058331327
+          ],
+          "rho_within_doc_soundness": 0.09647409258098087,
+          "breadth_mean": 2.348495451364591,
+          "tag": "REAL-LLM-READ"
+        },
+        "strong": {
+          "recall": 0.81875,
+          "n_scorable_edges": 160,
+          "n_parse_fail_excluded": 2,
+          "parse_fail_rate": 0.012345679012345678,
+          "recall_ci95": [
+            0.7267303433001107,
+            0.8969976838448175
+          ],
+          "rho_within_doc_soundness": 0.16721362011864438,
+          "breadth_mean": 2.33125,
+          "tag": "REAL-LLM-READ"
+        }
+      }
+    },
+    "stronger_reader_gate_test": {
+      "recall_gate_point": 0.9,
+      "primary_recall_narrativetime": 0.8563611491108071,
+      "strong_recall_narrativetime": 0.9316770186335404,
+      "primary_crosses_gate": false,
+      "strong_crosses_gate": true,
+      "per_corpus_reader_gate_tests": {
+        "narrativetime": {
+          "primary": {
+            "recall": 0.8563611491108071,
+            "ci95": [
+              0.8322174416557266,
+              0.8797559231113098
+            ],
+            "n_scorable": 2193,
+            "n_sound": 1878,
+            "gate": 0.9,
+            "verdict": "CI_excludes_below_gate",
+            "crosses_gate": false,
+            "sits_at_gate": false,
+            "binomial_p_recall_lt_gate_ANTICONSERVATIVE": 7.007443394968409e-11,
+            "primary_evidence": "clustered-bootstrap CI position vs gate",
+            "secondary_evidence": "binomial p (ignores doc-clustering -> anticonservative)"
+          },
+          "strong": {
+            "recall": 0.9316770186335404,
+            "ci95": [
+              0.8881578947368421,
+              0.9668928633670268
+            ],
+            "n_scorable": 161,
+            "n_sound": 150,
+            "gate": 0.9,
+            "verdict": "CI_contains_gate",
+            "crosses_gate": true,
+            "sits_at_gate": false,
+            "binomial_p_recall_lt_gate_ANTICONSERVATIVE": 0.936078527751756,
+            "primary_evidence": "clustered-bootstrap CI position vs gate",
+            "secondary_evidence": "binomial p (ignores doc-clustering -> anticonservative)"
+          }
+        },
+        "tddman": {
+          "primary": {
+            "recall": 0.827851644506648,
+            "ci95": [
+              0.7777057963158535,
+              0.8690688058331327
+            ],
+            "n_scorable": 1429,
+            "n_sound": 1183,
+            "gate": 0.9,
+            "verdict": "CI_excludes_below_gate",
+            "crosses_gate": false,
+            "sits_at_gate": false,
+            "binomial_p_recall_lt_gate_ANTICONSERVATIVE": 4.704655777038718e-17,
+            "primary_evidence": "clustered-bootstrap CI position vs gate",
+            "secondary_evidence": "binomial p (ignores doc-clustering -> anticonservative)"
+          },
+          "strong": {
+            "recall": 0.81875,
+            "ci95": [
+              0.7267303433001107,
+              0.8969976838448175
+            ],
+            "n_scorable": 160,
+            "n_sound": 131,
+            "gate": 0.9,
+            "verdict": "CI_excludes_below_gate",
+            "crosses_gate": false,
+            "sits_at_gate": false,
+            "binomial_p_recall_lt_gate_ANTICONSERVATIVE": 0.0012029441677293574,
+            "primary_evidence": "clustered-bootstrap CI position vs gate",
+            "secondary_evidence": "binomial p (ignores doc-clustering -> anticonservative)"
+          }
+        }
+      },
+      "interpretation": "If the STRONGER reader still does not cross the gate, the binding constraint is real-text LOCAL read soundness (the bottleneck), not the closure step. If it crosses, the bottleneck was a weak-model ar...",
+      "tag": "REAL-LLM-READ"
+    },
+    "read_soundness_reconciliation": {
+      "rows": {
+        "narrativetime_primary": {
+          "recall": 0.8563611491108071,
+          "ci95": [
+            0.8322174416557266,
+            0.8797559231113098
+          ],
+          "n_scorable": 2193,
+          "n_sound": 1878,
+          "gate": 0.9,
+          "verdict": "CI_excludes_below_gate",
+          "crosses_gate": false,
+          "sits_at_gate": false,
+          "binomial_p_recall_lt_gate_ANTICONSERVATIVE": 7.007443394968409e-11,
+          "primary_evidence": "clustered-bootstrap CI position vs gate",
+          "secondary_evidence": "binomial p (ignores doc-clustering -> anticonservative)"
+        },
+        "narrativetime_strong": {
+          "recall": 0.9316770186335404,
+          "ci95": [
+            0.8881578947368421,
+            0.9668928633670268
+          ],
+          "n_scorable": 161,
+          "n_sound": 150,
+          "gate": 0.9,
+          "verdict": "CI_contains_gate",
+          "crosses_gate": true,
+          "sits_at_gate": false,
+          "binomial_p_recall_lt_gate_ANTICONSERVATIVE": 0.936078527751756,
+          "primary_evidence": "clustered-bootstrap CI position vs gate",
+          "secondary_evidence": "binomial p (ignores doc-clustering -> anticonservative)"
+        },
+        "tddman_primary": {
+          "recall": 0.827851644506648,
+          "ci95": [
+            0.7777057963158535,
+            0.8690688058331327
+          ],
+          "n_scorable": 1429,
+          "n_sound": 1183,
+          "gate": 0.9,
+          "verdict": "CI_excludes_below_gate",
+          "crosses_gate": false,
+          "sits_at_gate": false,
+          "binomial_p_recall_lt_gate_ANTICONSERVATIVE": 4.704655777038718e-17,
+          "primary_evidence": "clustered-bootstrap CI position vs gate",
+          "secondary_evidence": "binomial p (ignores doc-clustering -> anticonservative)"
+        },
+        "tddman_strong": {
+          "recall": 0.81875,
+          "ci95": [
+            0.7267303433001107,
+            0.8969976838448175
+          ],
+          "n_scorable": 160,
+          "n_sound": 131,
+          "gate": 0.9,
+          "verdict": "CI_excludes_below_gate",
+          "crosses_gate": false,
+          "sits_at_gate": false,
+          "binomial_p_recall_lt_gate_ANTICONSERVATIVE": 0.0012029441677293574,
+          "primary_evidence": "clustered-bootstrap CI position vs gate",
+          "secondary_evidence": "binomial p (ignores doc-clustering -> anticonservative)"
+        }
+      },
+      "gate": 0.9,
+      "any_reader_corpus_CI_excludes_above_gate": false,
+      "any_reader_corpus_CI_excludes_below_gate": true,
+      "framing": "Read-soundness gate-crossing is CORPUS/GENRE-specific, NOT a universal ceiling: NarrativeTime is dense referential news prose (more local-read ambiguity), while TDDMan is discourse-level manually-anno...",
+      "tag": "REAL-LLM-READ"
+    },
+    "stronger_reader_sample_closure": {
+      "narrativetime": {
+        "n_sample_queries": 20,
+        "modeA_coverage": 0.25,
+        "modeA_selective_acc": 0.8,
+        "note": "Mode-A closure over the STRONGER reader's local reads (powered per-corpus sample).",
+        "tag": "REAL-LLM-READ"
+      },
+      "tddman": {
+        "n_sample_queries": 27,
+        "modeA_coverage": 0.1111111111111111,
+        "modeA_selective_acc": 0.0,
+        "note": "Mode-A closure over the STRONGER reader's local reads (powered per-corpus sample).",
+        "tag": "REAL-LLM-READ"
+      }
+    },
+    "strong_reader_serving_models": {
+      "narrativetime": {
+        "deepseek/deepseek-v4-pro": 200
+      },
+      "tddman": {
+        "deepseek/deepseek-v4-pro": 162
+      }
+    },
+    "primary_reader_serving_models": {
+      "google/gemini-3.1-flash-lite": 3897,
+      "deepseek/deepseek-v3.2": 212
+    },
+    "H1_matched_coverage": {
+      "modeA_vs_pot": {
+        "gap": 0.026548672566371723,
+        "ci95": [
+          0.045444307944307906,
+          0.31482732732732727
+        ],
+        "boot_p_gap_le_0": 0.007000000000000006,
+        "matched_coverage": 0.18833333333333332,
+        "method_acc": 0.5752212389380531,
+        "base_acc": 0.5486725663716814,
+        "base_max_coverage": 0.735,
+        "base_unreachable": false,
+        "n_boot": 2000
+      },
+      "modeA_vs_sc": {
+        "gap": 0.03539823008849563,
+        "ci95": [
+          0.016096176821983263,
+          0.29633569739952703
+        ],
+        "boot_p_gap_le_0": 0.01849999999999996,
+        "matched_coverage": 0.18833333333333332,
+        "method_acc": 0.5752212389380531,
+        "base_acc": 0.5398230088495575,
+        "base_max_coverage": 1.0,
+        "base_unreachable": false,
+        "n_boot": 2000
+      },
+      "modeA_vs_naive": {
+        "gap": 0.026548672566371723,
+        "ci95": [
+          -0.006774475524475561,
+          0.08338585434173676
+        ],
+        "boot_p_gap_le_0": 0.07875457875457881,
+        "matched_coverage": 0.18833333333333332,
+        "method_acc": 0.5752212389380531,
+        "base_acc": 0.5486725663716814,
+        "base_max_coverage": 0.195,
+        "base_unreachable": false,
+        "n_boot": 1638
+      },
+      "modeA_vs_raw": {
+        "gap": -0.12389380530973448,
+        "ci95": [
+          -0.21299603174603168,
+          0.03253376335416246
+        ],
+        "boot_p_gap_le_0": 0.9299999999999999,
+        "matched_coverage": 0.18833333333333332,
+        "method_acc": 0.5752212389380531,
+        "base_acc": 0.6991150442477876,
+        "base_max_coverage": 1.0,
+        "base_unreachable": false,
+        "n_boot": 2000
+      },
+      "auc_risk_coverage": {
+        "modeA": 0.5351851851851852,
+        "naive": 0.5055555555555555,
+        "raw": 0.5611160448236788,
+        "pot": 0.46618566618566637,
+        "sc": 0.4684496586582297
+      },
+      "tag": "REAL-LLM-READ",
+      "note": "gap = Mode-A selective acc at its natural coverage MINUS baseline acc at the SAME coverage; doc-clustered paired bootstrap; Holm-Bonferroni across the confirmatory family."
+    },
+    "H1_stratified": {
+      "len2": {
+        "n": 150,
+        "modeA_vs_naive": {
+          "gap": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "boot_p_gap_le_0": 1.0,
+          "matched_coverage": 0.11333333333333333,
+          "method_acc": 0.29411764705882354,
+          "base_acc": 0.29411764705882354,
+          "base_max_coverage": 0.11333333333333333,
+          "base_unreachable": false,
+          "n_boot": 2000
+        },
+        "modeA_vs_raw": {
+          "gap": -0.23529411764705882,
+          "ci95": [
+            -0.6,
+            0.0
+          ],
+          "boot_p_gap_le_0": 0.994,
+          "matched_coverage": 0.11333333333333333,
+          "method_acc": 0.29411764705882354,
+          "base_acc": 0.5294117647058824,
+          "base_max_coverage": 1.0,
+          "base_unreachable": false,
+          "n_boot": 2000
+        },
+        "modeA_natural_coverage": 0.11333333333333333
+      },
+      "ge3_cyclic": {
+        "n": 450,
+        "modeA_vs_naive": {
+          "gap": 0.04166666666666663,
+          "ci95": [
+            0.0,
+            0.10530959752321989
+          ],
+          "boot_p_gap_le_0": 0.061050061050061055,
+          "matched_coverage": 0.21333333333333335,
+          "method_acc": 0.625,
+          "base_acc": 0.5833333333333334,
+          "base_max_coverage": 0.2222222222222222,
+          "base_unreachable": false,
+          "n_boot": 1638
+        },
+        "modeA_vs_raw": {
+          "gap": -0.10416666666666663,
+          "ci95": [
+            -0.21978571428571428,
+            0.03540613147914034
+          ],
+          "boot_p_gap_le_0": 0.9295,
+          "matched_coverage": 0.21333333333333335,
+          "method_acc": 0.625,
+          "base_acc": 0.7291666666666666,
+          "base_max_coverage": 1.0,
+          "base_unreachable": false,
+          "n_boot": 2000
+        },
+        "modeA_natural_coverage": 0.21333333333333335
+      },
+      "tag": "REAL-LLM-READ",
+      "label": "EXPLORATORY (iteration-on-real H3): len2 (Mode-A==naive by theorem) vs ge3_cyclic; over GOLD full==naive but over NOISY reads a gap can appear. NarrativeTime gold is a globally consistent dense timeli..."
+    },
+    "applicability": {
+      "n_deduction_queries": 600,
+      "modeA_singleton_resolution_coverage": 0.18833333333333332,
+      "modeA_selective_accuracy": 0.5752212389380531,
+      "modeA_singleton_to_correct_rate": 0.10833333333333334,
+      "applic_general_threshold": 0.1,
+      "applic_module_threshold": 0.05,
+      "applicability_verdict": "GO-GENERAL",
+      "tag": "REAL-LLM-READ"
+    },
+    "H2_hallucination": {
+      "confident_wrong_modeA": 0.4247787610619469,
+      "confident_wrong_raw": 0.61,
+      "reduction": 0.1852212389380531,
+      "reduction_ci95": [
+        0.08644977554347305,
+        0.2815887010183199
+      ],
+      "boot_p_reduction_le_0": 0.0,
+      "n_modeA_answered": 113,
+      "n_raw_answered": 600,
+      "n_pool_deduction_queries": 600,
+      "modeA_coverage": 0.18833333333333332,
+      "raw_coverage": 1.0,
+      "modeA_abstention_rate": 0.8116666666666666,
+      "raw_abstention_rate": 0.0,
+      "modeA_confident_wrong_count": 48,
+      "silent_wrong_narrowing_count": 48,
+      "pre_registered_min_effect": 0.05,
+      "risk_coverage_points": {
+        "modeA": [
+          [
+            0.0016666666666666668,
+            1.0
+          ],
+          [
+            0.0033333333333333335,
+            0.5
+          ],
+          [
+            0.005,
+            0.6666666666666666
+          ]
+        ],
+        "raw": [
+          [
+            0.0016666666666666668,
+            1.0
+          ],
+          [
+            0.0033333333333333335,
+            1.0
+          ],
+          [
+            0.005,
+            1.0
+          ]
+        ]
+      },
+      "coverage_note": "confident-wrong is reported AT the stated coverage; Mode-A lowers it partly by ABSTAINING more (coverage above), so the FAIR cross-method comparison is selective accuracy at MATCHED coverage (H1), not...",
+      "tag": "REAL-LLM-READ"
+    },
+    "holm_bonferroni": {
+      "H2_halluc": {
+        "p": 0.0,
+        "holm_threshold": 0.016666666666666666,
+        "adjusted_significant": true
+      },
+      "H1_vs_PoT": {
+        "p": 0.007000000000000006,
+        "holm_threshold": 0.025,
+        "adjusted_significant": true
+      },
+      "H1_vs_SC": {
+        "p": 0.01849999999999996,
+        "holm_threshold": 0.05,
+        "adjusted_significant": true
+      }
+    },
+    "worked_examples_prolog": [
+      {
+        "kind": "modeA_narrows_correct",
+        "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_3/gen_art/gen_art_experiment_2/results/worked_modeA.pl",
+        "discharge_method": "swipl: PATHS: [lt] VERDICT: ANSWER(lt)",
+        "swipl_stdout": "PATHS: [lt]\nVERDICT: ANSWER(lt)",
+        "swipl_verdict": "ANSWER",
+        "swipl_derived_coarse": "before",
+        "swipl_matches_python_checker": true,
+        "derived_point": "lt",
+        "derived_coarse": "before",
+        "engine_modeA_relation": "before",
+        "agrees_with_engine": true,
+        "gold_point": "lt",
+        "gold_coarse": "before",
+        "query": [
+          "e_NYT19980206_0466__ei523",
+          "e_NYT19980206_0466__ei534"
+        ],
+        "n_read_facts": 8,
+        "n_length2_paths": 1,
+        "program": "% Closure-certified temporal deduction -- auto-generated trace program.\n% Convex point start-point algebra over event start points {lt,eq,gt}.\n% The query relation is the INTERSECTION of all length-2 ...",
+        "modeA_pred": "before",
+        "n_fired": 1,
+        "two_hop_prolog_faithful": true
+      },
+      {
+        "kind": "closure_collapse_modeB",
+        "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_3/gen_art/gen_art_experiment_2/results/worked_collapse.pl",
+        "discharge_method": "swipl: INCONSISTENT-TRIANGLE: e_ea980120_1830_0071__ei211-e_ea980120_1830_0071__ei208-e_ea980120_1830_0071__ei199  comp(gt,gt)=gt but rel(e_ea980120_1830_0071__ei211,e_ea980120_1830_0071__ei199)=lt VE...",
+        "swipl_stdout": "INCONSISTENT-TRIANGLE: e_ea980120_1830_0071__ei211-e_ea980120_1830_0071__ei208-e_ea980120_1830_0071__ei199  comp(gt,gt)=gt but rel(e_ea980120_1830_0071__ei211,e_ea980120_1830_0071__ei199)=lt\nVERDICT: ...",
+        "swipl_verdict": "INCONSISTENT",
+        "python_inconsistent_triangle": true,
+        "inconsistent_triangle_witness": [
+          "e_ea980120_1830_0071__ei211",
+          "e_ea980120_1830_0071__ei208",
+          "e_ea980120_1830_0071__ei199"
+        ],
+        "swipl_matches_python_checker": true,
+        "engine_modeA_relation": null,
+        "agrees_with_engine": null,
+        "gold_coarse": "before",
+        "n_read_facts": 10,
+        "two_hop_prolog_faithful": true,
+        "program": "% Closure-certified temporal deduction -- Mode-B INCONSISTENCY certificate.\n% Convex point start-point algebra {lt,eq,gt}. The query edge is held at the\n% universe; a Mode-B collapse is a contradictio...",
+        "note": "closure detected inconsistency among LOCAL reads -> Mode-B ABSTAIN; the program emits the witnessing inconsistent triangle."
+      }
+    ],
+    "synthetic_backstop": {
+      "tag": "SYNTHETIC-CHANNEL",
+      "cells": {
+        "R_redundancy_K4": {
+          "family": "R",
+          "params": {
+            "K": 4
+          },
+          "recall": 0.96,
+          "rho": 0.3,
+          "modeA_natural_coverage": 0.9683333333333334,
+          "modeA_selective_acc": 1.0,
+          "vs_baselines": {
+            "raw": {
+              "gap": 0.21858864027538727,
+              "ci95": [
+                0.18416523235800342,
+                0.2568504959848843
+              ],
+              "boot_p_gap_le_0": 0.0,
+              "matched_coverage": 0.9683333333333334,
+              "method_acc": 1.0,
+              "base_acc": 0.7814113597246127,
+              "base_max_coverage": 1.0,
+              "base_unreachable": false,
+              "n_boot": 2000
+            },
+            "sc": {
+              "gap": 0.04302925989672979,
+              "ci95": [
+                0.027630290404714798,
+                0.0598316210045662
+              ],
+              "boot_p_gap_le_0": 0.0,
+              "matched_coverage": 0.9683333333333334,
+              "method_acc": 1.0,
+              "base_acc": 0.9569707401032702,
+              "base_max_coverage": 1.0,
+              "base_unreachable": false,
+              "n_boot": 2000
+            },
+            "pot": {
+              "gap": 0.02065404475043031,
+              "ci95": [
+                0.010344827586206917,
+                0.032928942807625705
+              ],
+              "boot_p_gap_le_0": 0.0,
+              "matched_coverage": 0.9683333333333334,
+              "method_acc": 1.0,
+              "base_acc": 0.9793459552495697,
+              "base_max_coverage": 1.0,
+              "base_unreachable": false,
+              "n_boot": 2000
+            },
+            "naive": {
+              "gap": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "boot_p_gap_le_0": 1.0,
+              "matched_coverage": 0.9683333333333334,
+              "method_acc": 1.0,
+              "base_acc": 1.0,
+              "base_max_coverage": 0.9683333333333334,
+              "base_unreachable": false,
+              "n_boot": 2000
+            }
+          },
+          "n_networks": 600
+        },
+        "R_redundancy_K8": {
+          "family": "R",
+          "params": {
+            "K": 8
+          },
+          "recall": 0.96,
+          "rho": 0.3,
+          "modeA_natural_coverage": 0.9633333333333334,
+          "modeA_selective_acc": 1.0,
+          "vs_baselines": {
+            "raw": {
+              "gap": 0.25951557093425603,
+              "ci95": [
+                0.22508160025684013,
+                0.2980973881844994
+              ],
+              "boot_p_gap_le_0": 0.0,
+              "matched_coverage": 0.9633333333333334,
+              "method_acc": 1.0,
+              "base_acc": 0.740484429065744,
+              "base_max_coverage": 1.0,
+              "base_unreachable": false,
+              "n_boot": 2000
+            },
+            "sc": {
+              "gap": 0.06401384083044981,
+              "ci95": [
+                0.04498075670377876,
+                0.08492569624975922
+              ],
+              "boot_p_gap_le_0": 0.0,
+              "matched_coverage": 0.9633333333333334,
+              "method_acc": 1.0,
+              "base_acc": 0.9359861591695502,
+              "base_max_coverage": 1.0,
+              "base_unreachable": false,
+              "n_boot": 2000
+            },
+            "pot": {
+              "gap": 0.0017301038062284002,
+              "ci95": [
+                0.0,
+                0.006873147967421945
+              ],
+              "boot_p_gap_le_0": 0.34950000000000003,
+              "matched_coverage": 0.9633333333333334,
+              "method_acc": 1.0,
+              "base_acc": 0.9982698961937716,
+              "base_max_coverage": 0.9916666666666667,
+              "base_unreachable": false,
+              "n_boot": 2000
+            },
+            "naive": {
+              "gap": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "boot_p_gap_le_0": 1.0,
+              "matched_coverage": 0.9633333333333334,
+              "method_acc": 1.0,
+              "base_acc": 1.0,
+              "base_max_coverage": 0.9633333333333334,
+              "base_unreachable": false,
+              "n_boot": 2000
+            }
+          },
+          "n_networks": 600
+        },
+        "H_hop_L4_C2": {
+          "family": "H",
+          "params": {
+            "L": 4,
+            "C": 2
+          },
+          "recall": 0.96,
+          "rho": 0.3,
+          "modeA_natural_coverage": 0.71,
+          "modeA_selective_acc": 1.0,
+          "vs_baselines": {
+            "raw": {
+              "gap": 0.21126760563380287,
+              "ci95": [
+                0.17439091074791907,
+                0.2536231884057971
+              ],
+              "boot_p_gap_le_0": 0.0,
+              "matched_coverage": 0.71,
+              "method_acc": 1.0,
+              "base_acc": 0.7887323943661971,
+              "base_max_coverage": 1.0,
+              "base_unreachable": false,
+              "n_boot": 2000
+            },
+            "sc": {
+              "gap": 0.025821596244131495,
+              "ci95": [
+                0.009257662835249083,
+                0.04038245108019456
+              ],
+              "boot_p_gap_le_0": 0.0,
+              "matched_coverage": 0.71,
+              "method_acc": 1.0,
+              "base_acc": 0.9741784037558685,
+              "base_max_coverage": 1.0,
+              "base_unreachable": false,
+              "n_boot": 2000
+            },
+            "pot": {
+              "gap": NaN,
+              "ci95": [
+                NaN,
+                NaN
+              ],
+              "matched_coverage": 0.71,
+              "method_acc": 1.0,
+              "base_acc": NaN,
+              "base_max_coverage": 0.0,
+              "base_unreachable": true,
+              "boot_p_gap_le_0": 0.0
+            },
+            "naive": {
+              "gap": NaN,
+              "ci95": [
+                NaN,
+                NaN
+              ],
+              "matched_coverage": 0.71,
+              "method_acc": 1.0,
+              "base_acc": NaN,
+              "base_max_coverage": 0.0,
+              "base_unreachable": true,
+              "boot_p_gap_le_0": 0.0
+            }
+          },
+          "n_networks": 600
+        },
+        "H_hop_L6_C3": {
+          "family": "H",
+          "params": {
+            "L": 6,
+            "C": 3
+          },
+          "recall": 0.96,
+          "rho": 0.3,
+          "modeA_natural_coverage": 0.6933333333333334,
+          "modeA_selective_acc": 1.0,
+          "vs_baselines": {
+            "raw": {
+              "gap": 0.21153846153846156,
+              "ci95": [
+                0.17432902075578527,
+                0.25251504342431746
+              ],
+              "boot_p_gap_le_0": 0.0,
+              "matched_coverage": 0.6933333333333334,
+              "method_acc": 1.0,
+              "base_acc": 0.7884615384615384,
+              "base_max_coverage": 1.0,
+              "base_unreachable": false,
+              "n_boot": 2000
+            },
+            "sc": {
+              "gap": 0.016826923076923128,
+              "ci95": [
+                0.0023866348448687846,
+                0.02810635073701613
+              ],
+              "boot_p_gap_le_0": 0.01849999999999996,
+              "matched_coverage": 0.6933333333333334,
+              "method_acc": 1.0,
+              "base_acc": 0.9831730769230769,
+              "base_max_coverage": 1.0,
+              "base_unreachable": false,
+              "n_boot": 2000
+            },
+            "pot": {
+              "gap": NaN,
+              "ci95": [
+                NaN,
+                NaN
+              ],
+              "matched_coverage": 0.6933333333333334,
+              "method_acc": 1.0,
+              "base_acc": NaN,
+              "base_max_coverage": 0.0,
+              "base_unreachable": true,
+              "boot_p_gap_le_0": 0.0
+            },
+            "naive": {
+              "gap": NaN,
+              "ci95": [
+                NaN,
+                NaN
+              ],
+              "matched_coverage": 0.6933333333333334,
+              "method_acc": 1.0,
+              "base_acc": NaN,
+              "base_max_coverage": 0.0,
+              "base_unreachable": true,
+              "boot_p_gap_le_0": 0.0
+            }
+          },
+          "n_networks": 600
+        }
+      },
+      "note": "recall 0.96, 600 networks/cell, NO LLM, $0. Carries the matched-coverage mechanism claim if real text is thin."
+    },
+    "cost": {
+      "cumulative_usd": 0.0,
+      "primary_usd": 0.0,
+      "sc_usd": 0.0,
+      "strong_usd": 0.0,
+      "n_calls_primary": 0,
+      "n_calls_sc": 0,
+      "n_calls_strong": 0,
+      "cache_hits": 9124,
+      "parse_fail": {
+        "primary": 0,
+        "strong": 5
+      },
+      "budget_global_cap": 9.0
+    },
+    "elapsed_sec": 156.8,
+    "interpretation": "VERDICT=CONFIRM. LOCAL-reader closure value + end-to-end hallucination reduction ESTABLISHED on real text: Mode-A beats PoT AND self-consistency at matched coverage (H1) and cuts the confident-wrong r...",
+    "figures": [
+      "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_3/gen_art/gen_art_experiment_2/results/figures/real_risk_coverage.jpg",
+      "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_3/gen_art/gen_art_experiment_2/results/figures/synthetic_matched_coverage.jpg",
+      "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_3/gen_art/gen_art_experiment_2/results/figures/h2_risk_coverage.jpg"
+    ]
+  },
+  "datasets": [
+    {
+      "dataset": "narrativetime",
+      "examples": [
+        {
+          "input": "Just the fact that we 're doing the job that we 're doing [[E1]]makes[[/E1]] us role models . In space, some say female pilots were held up until now by the [[E2]]lack[[/E2]] of piloting opportunities...",
+          "output": "includes",
+          "metadata_docid": "ABC19980304.1830.1636",
+          "metadata_corpus": "narrativetime",
+          "metadata_algebra": "POINT",
+          "metadata_sentdiff": 5,
+          "metadata_stratum": "ge3_cyclic",
+          "metadata_n_vias": 3,
+          "metadata_n_path_edges": 9,
+          "metadata_deduction_required": true,
+          "metadata_closure_collapsed": false,
+          "metadata_n_fired": 1,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_raw": "simultaneous",
+          "predict_pot": "ABSTAIN",
+          "predict_sc": "simultaneous"
+        },
+        {
+          "input": "In Los Angeles that lesson was brought home today when tons of earth cascaded down a hillside, [[E1]]ripping[[/E1]] two houses from their foundations. In the northern California town of Rio Nido, offi...",
+          "output": "before",
+          "metadata_docid": "PRI19980213.2000.0313",
+          "metadata_corpus": "narrativetime",
+          "metadata_algebra": "POINT",
+          "metadata_sentdiff": 2,
+          "metadata_stratum": "ge3_cyclic",
+          "metadata_n_vias": 3,
+          "metadata_n_path_edges": 9,
+          "metadata_deduction_required": true,
+          "metadata_closure_collapsed": false,
+          "metadata_n_fired": 0,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_raw": "before",
+          "predict_pot": "simultaneous",
+          "predict_sc": "before"
+        },
+        {
+          "input": "This [[E1]]move[[/E1]] comes barely a month after Qantas suspended a number of services between Australia, Indonesia, Thailand and Malaysia in the wake of the Asian economic crisis . In a joint [[E2]]...",
+          "output": "after",
+          "metadata_docid": "APW19980213.1320",
+          "metadata_corpus": "narrativetime",
+          "metadata_algebra": "POINT",
+          "metadata_sentdiff": 3,
+          "metadata_stratum": "ge3_cyclic",
+          "metadata_n_vias": 3,
+          "metadata_n_path_edges": 9,
+          "metadata_deduction_required": true,
+          "metadata_closure_collapsed": false,
+          "metadata_n_fired": 0,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_raw": "after",
+          "predict_pot": "ABSTAIN",
+          "predict_sc": "before"
+        }
+      ]
+    },
+    {
+      "dataset": "tddman",
+      "examples": [
+        {
+          "input": "\nISTANBUL, Turkey (AP)_ Some 1,500 ethnic Albanians marched Sunday in downtown Istanbul, burning Serbian flags to protest the [[E1]]killings[[/E1]] of ethnic Albanians by Serb police in southern Serb ...",
+          "output": "includes",
+          "metadata_docid": "APW19980308.0201",
+          "metadata_corpus": "tddman",
+          "metadata_algebra": "POINT",
+          "metadata_sentdiff": 5,
+          "metadata_stratum": "len2",
+          "metadata_n_vias": 3,
+          "metadata_n_path_edges": 6,
+          "metadata_deduction_required": true,
+          "metadata_closure_collapsed": false,
+          "metadata_n_fired": 0,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_raw": "before",
+          "predict_pot": "before",
+          "predict_sc": "before"
+        },
+        {
+          "input": "In a joint statement with Tourism Minister Andrew Thomson, it said two new flights would leave Bombay on Monday and Tuesday nights from March 30, with the third [[E1]]departing[[/E1]] each Thursday fr...",
+          "output": "includes",
+          "metadata_docid": "APW19980213.1320",
+          "metadata_corpus": "tddman",
+          "metadata_algebra": "POINT",
+          "metadata_sentdiff": 2,
+          "metadata_stratum": "len2",
+          "metadata_n_vias": 3,
+          "metadata_n_path_edges": 6,
+          "metadata_deduction_required": true,
+          "metadata_closure_collapsed": false,
+          "metadata_n_fired": 0,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_raw": "before",
+          "predict_pot": "ABSTAIN",
+          "predict_sc": "after"
+        },
+        {
+          "input": "There were more accounts of people [[E1]]fleeing[[/E1]] from the villages near where the offensive was taking place. The ethnic Albanians here in Kosovo are considerably worried about the future and [...",
+          "output": "includes",
+          "metadata_docid": "PRI19980306.2000.1675",
+          "metadata_corpus": "tddman",
+          "metadata_algebra": "POINT",
+          "metadata_sentdiff": 3,
+          "metadata_stratum": "len2",
+          "metadata_n_vias": 1,
+          "metadata_n_path_edges": 2,
+          "metadata_deduction_required": true,
+          "metadata_closure_collapsed": false,
+          "metadata_n_fired": 0,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_raw": "simultaneous",
+          "predict_pot": "simultaneous",
+          "predict_sc": "simultaneous"
+        }
+      ]
+    }
+  ]
+}

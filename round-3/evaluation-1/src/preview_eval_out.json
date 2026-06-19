@@ -1,0 +1,1546 @@
+{
+  "metadata": {
+    "eval_name": "decompose_gap__risk_coverage__multiplicity_reanalysis",
+    "description": "Pure re-analysis of three iter-2 method_out.json files: decompose the +0.676 system gap, re-present hallucination as risk-coverage, apply the H1-H4 multiplicity policy. ZERO LLM spend.",
+    "evidence_tags": [
+      "REAL-LLM-READ",
+      "SYNTHETIC-CHANNEL",
+      "GOLD-ONLY-GATE"
+    ],
+    "llm_spend_usd": 0.0,
+    "sources": {
+      "showdown": {
+        "path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_2/gen_art/gen_art_experiment_1/full_method_out.json",
+        "variant_loaded": "full_method_out.json",
+        "id": "art_N0e4pH_C_Cxw"
+      },
+      "channel": {
+        "path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_2/gen_art/gen_art_experiment_2/full_method_out.json",
+        "variant_loaded": "full_method_out.json",
+        "id": "art_FtN4LBzazO_l"
+      },
+      "realtext": {
+        "path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_2/gen_art/gen_art_experiment_3/full_method_out.json",
+        "variant_loaded": "full_method_out.json",
+        "id": "art_fil2iJ6xSrYx"
+      }
+    },
+    "decomposition": {
+      "point": {
+        "algebra": "point",
+        "selective_accuracy_axis": {
+          "bite_bearing": {
+            "matched_coverage": 0.6,
+            "n_modeA": 900,
+            "selacc_modeA": 1.0,
+            "selacc_pot_matched": 0.9574074074074074,
+            "selacc_naive": 1.0,
+            "selacc_sc_matched": 0.8537037037037037,
+            "system_gap": 0.042592592592592626,
+            "system_gap_reused_ci95": [
+              0.026266416510318913,
+              0.060377693622440415
+            ],
+            "system_gap_reused_ci95_bonferroni_m2": [
+              0.024207443261713042,
+              0.06295126700124136
+            ],
+            "inherited_component": 0.042592592592592626,
+            "inherited_component_ci95_PROXY_modeA_vs_pot": [
+              0.026266416510318913,
+              0.060377693622440415
+            ],
+            "inherited_component_ci95_bonferroni_m2_PROXY": [
+              0.024207443261713042,
+              0.06295126700124136
+            ],
+            "novel_selacc_component": 0.0,
+            "additivity_residual": 0.0,
+            "additivity_ok": true
+          },
+          "all_comparison": {
+            "matched_coverage": 0.4873015873015873,
+            "n_modeA": 1260,
+            "selacc_modeA": 1.0,
+            "selacc_pot_matched": 0.9446254071661238,
+            "selacc_naive": 1.0,
+            "selacc_sc_matched": 0.8550488599348535,
+            "system_gap": 0.055374592833876246,
+            "system_gap_reused_ci95": [
+              0.037766056324937215,
+              0.07388337311462086
+            ],
+            "system_gap_reused_ci95_bonferroni_m2": [
+              0.035654859357131655,
+              0.0765639352036741
+            ],
+            "inherited_component": 0.055374592833876246,
+            "inherited_component_ci95_PROXY_modeA_vs_pot": [
+              0.037766056324937215,
+              0.07388337311462086
+            ],
+            "inherited_component_ci95_bonferroni_m2_PROXY": [
+              0.035654859357131655,
+              0.0765639352036741
+            ],
+            "novel_selacc_component": 0.0,
+            "additivity_residual": 0.0,
+            "additivity_ok": true
+          }
+        },
+        "novel_selacc_component_bootstrap": {
+          "subset": "covered_by_both_modeA_and_naive (full population)",
+          "n": 470,
+          "point": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "ci95_bonferroni_m2": [
+            0.0,
+            0.0
+          ],
+          "p_one_sided_le_0": 1.0,
+          "note": "ABSTAIN counts as not-correct; ~0 expected (iteration adds ~0 selective accuracy)."
+        },
+        "naive_natural_coverage_selacc_crosscheck": {
+          "selective_accuracy": 1.0,
+          "n_answered": 470
+        },
+        "pot_natural_coverage_selacc_crosscheck": {
+          "selective_accuracy": 0.918075422626788,
+          "n_answered": 769,
+          "note": "PoT natural-coverage selacc (no confidence ranking) vs the leaderboard's MATCHED-coverage SelAcc(pot); transparent cross-check only."
+        },
+        "coverage_axis": {
+          "metric_note": "full=Mode-A resolve-to-CORRECT-singleton rate; naive=single-pass resolve-to-correct; gap=full-naive (iteration coverage gain). ABSTAIN counts as not-correct.",
+          "novel_coverage_gap_by_hop": [
+            {
+              "cell": "hop_L2_P2",
+              "n": 90,
+              "full_resolve_correct": 0.6777777777777778,
+              "naive_resolve_correct": 0.6777777777777778,
+              "gap": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "ci95_bonferroni_m2": [
+                0.0,
+                0.0
+              ],
+              "ci95_bonferroni_m3": [
+                0.0,
+                0.0
+              ],
+              "p_one_sided_le_0": 1.0,
+              "full_cov": 0.6777777777777778,
+              "naive_cov": 0.6777777777777778,
+              "cov_gap": 0.0
+            },
+            {
+              "cell": "hop_L3_P2",
+              "n": 90,
+              "full_resolve_correct": 0.34444444444444444,
+              "naive_resolve_correct": 0.0,
+              "gap": 0.34444444444444444,
+              "ci95": [
+                0.24444444444444444,
+                0.4444444444444444
+              ],
+              "ci95_bonferroni_m2": [
+                0.23333333333333334,
+                0.45555555555555555
+              ],
+              "ci95_bonferroni_m3": [
+                0.23333333333333334,
+                0.4666666666666667
+              ],
+              "p_one_sided_le_0": 0.0,
+              "full_cov": 0.34444444444444444,
+              "naive_cov": 0.0,
+              "cov_gap": 0.34444444444444444
+            },
+            {
+              "cell": "hop_L4_P2",
+              "n": 90,
+              "full_resolve_correct": 0.03333333333333333,
+              "naive_resolve_correct": 0.0,
+              "gap": 0.03333333333333333,
+              "ci95": [
+                0.0,
+                0.07777777777777778
+              ],
+              "ci95_bonferroni_m2": [
+                0.0,
+                0.07777777777777778
+              ],
+              "ci95_bonferroni_m3": [
+                0.0,
+                0.08888888888888889
+              ],
+              "p_one_sided_le_0": 0.0496,
+              "full_cov": 0.03333333333333333,
+              "naive_cov": 0.0,
+              "cov_gap": 0.03333333333333333
+            }
+          ],
+          "novel_coverage_gap_by_cyclomatic": [
+            {
+              "cell": "cyc_mu0",
+              "n": 90,
+              "full_resolve_correct": 0.2,
+              "naive_resolve_correct": 0.0,
+              "gap": 0.2,
+              "ci95": [
+                0.12222222222222222,
+                0.28888888888888886
+              ],
+              "ci95_bonferroni_m2": [
+                0.1111111111111111,
+                0.3
+              ],
+              "ci95_bonferroni_m3": [
+                0.1111111111111111,
+                0.3
+              ],
+              "p_one_sided_le_0": 0.0,
+              "full_cov": 0.2,
+              "naive_cov": 0.0,
+              "cov_gap": 0.2
+            },
+            {
+              "cell": "cyc_mu1",
+              "n": 90,
+              "full_resolve_correct": 0.2777777777777778,
+              "naive_resolve_correct": 0.0,
+              "gap": 0.2777777777777778,
+              "ci95": [
+                0.18888888888888888,
+                0.37777777777777777
+              ],
+              "ci95_bonferroni_m2": [
+                0.17777777777777778,
+                0.3888888888888889
+              ],
+              "ci95_bonferroni_m3": [
+                0.16666666666666666,
+                0.3888888888888889
+              ],
+              "p_one_sided_le_0": 0.0,
+              "full_cov": 0.2777777777777778,
+              "naive_cov": 0.0,
+              "cov_gap": 0.2777777777777778
+            },
+            {
+              "cell": "cyc_mu2",
+              "n": 90,
+              "full_resolve_correct": 0.36666666666666664,
+              "naive_resolve_correct": 0.0,
+              "gap": 0.36666666666666664,
+              "ci95": [
+                0.26666666666666666,
+                0.4666666666666667
+              ],
+              "ci95_bonferroni_m2": [
+                0.25555555555555554,
+                0.4888888888888889
+              ],
+              "ci95_bonferroni_m3": [
+                0.24444444444444444,
+                0.4888888888888889
+              ],
+              "p_one_sided_le_0": 0.0,
+              "full_cov": 0.36666666666666664,
+              "naive_cov": 0.0,
+              "cov_gap": 0.36666666666666664
+            }
+          ],
+          "trend_hop_recomputed": {
+            "jonckheere": {
+              "J": 23310.0,
+              "E_J": 24300.0,
+              "Var_J": 1219050.0,
+              "z": -0.8966530605331445,
+              "p_one_sided_increasing": 0.8150479624378714
+            },
+            "spearman_on_cell_gaps": {
+              "spearman_rho": 0.19999999999999998,
+              "spearman_p": 0.8,
+              "n_bins": 4
+            }
+          },
+          "trend_cyclomatic_recomputed": {
+            "jonckheere": {
+              "J": 26550.0,
+              "E_J": 24300.0,
+              "Var_J": 1219050.0,
+              "z": 2.037847864848056,
+              "p_one_sided_increasing": 0.020782574918655816
+            },
+            "spearman_on_cell_gaps": {
+              "spearman_rho": 0.7999999999999999,
+              "spearman_p": 0.2000000000000001,
+              "n_bins": 4
+            }
+          },
+          "trend_hop_reused_from_F1": {
+            "spearman_rho": 0.19999999999999998,
+            "spearman_ci95": [
+              -0.39999999999999997,
+              0.39999999999999997
+            ],
+            "jonckheere_z": -0.8966530605331445,
+            "jonckheere_p": 0.8150479624378714
+          },
+          "trend_cyclomatic_reused_from_F1": {
+            "spearman_rho": 0.7999999999999999,
+            "spearman_ci95": [
+              0.19999999999999998,
+              1.0
+            ],
+            "jonckheere_z": 2.037847864848056,
+            "jonckheere_p": 0.02078257491865587
+          },
+          "length2_tie_real": {
+            "n": 630,
+            "full_resolve_correct": 0.746031746031746,
+            "naive_resolve_correct": 0.746031746031746,
+            "gap": 0.0
+          },
+          "length2_tie_gold": {
+            "n": 630,
+            "full_resolve_correct": 0.746031746031746,
+            "naive_resolve_correct": 0.746031746031746,
+            "gap": 0.0
+          },
+          "pooled_gold_coverage_gain": {
+            "bite_bearing": {
+              "gold_full_resolve_correct": 0.6,
+              "gold_naive_resolve_correct": 0.46555555555555556,
+              "pooled_coverage_gain": 0.13444444444444442
+            },
+            "all_comparison": {
+              "gold_full_resolve_correct": 0.4873015873015873,
+              "gold_naive_resolve_correct": 0.373015873015873,
+              "pooled_coverage_gain": 0.11428571428571427
+            }
+          }
+        },
+        "holm_adjusted_decomposition_family": {
+          "members": [
+            "inherited_component(bite-pool selacc)",
+            "novel_coverage_gap@hop_L3_P2",
+            "novel_coverage_gap@max_cyclomatic_bin"
+          ],
+          "m_for_widening": 2,
+          "note": "CIs widened with the m=2 Bonferroni convention used in F1 ci95_bonferroni_m2 (percentiles 1.25/98.75); m=3 (family size) also reported for the bootstrap members.",
+          "inherited_component": {
+            "value": 0.042592592592592626,
+            "ci95_PROXY": [
+              0.026266416510318913,
+              0.060377693622440415
+            ],
+            "ci95_bonferroni_m2_PROXY": [
+              0.024207443261713042,
+              0.06295126700124136
+            ],
+            "ci_note": "reused modeA-vs-pot bootstrap CI as proxy (novel_selacc~0 => inherited~system_gap)."
+          },
+          "novel_coverage_gap_L3": {
+            "cell": "hop_L3_P2",
+            "n": 90,
+            "full_resolve_correct": 0.34444444444444444,
+            "naive_resolve_correct": 0.0,
+            "gap": 0.34444444444444444,
+            "ci95": [
+              0.24444444444444444,
+              0.4444444444444444
+            ],
+            "ci95_bonferroni_m2": [
+              0.23333333333333334,
+              0.45555555555555555
+            ],
+            "ci95_bonferroni_m3": [
+              0.23333333333333334,
+              0.4666666666666667
+            ],
+            "p_one_sided_le_0": 0.0,
+            "full_cov": 0.34444444444444444,
+            "naive_cov": 0.0,
+            "cov_gap": 0.34444444444444444
+          },
+          "novel_coverage_gap_max_cyclomatic": {
+            "cell": "cyc_mu3",
+            "n": 90,
+            "full_resolve_correct": 0.35555555555555557,
+            "naive_resolve_correct": 0.0,
+            "gap": 0.35555555555555557,
+            "ci95": [
+              0.25555555555555554,
+              0.45555555555555555
+            ],
+            "ci95_bonferroni_m2": [
+              0.24444444444444444,
+              0.4666666666666667
+            ],
+            "ci95_bonferroni_m3": [
+              0.24444444444444444,
+              0.4777777777777778
+            ],
+            "p_one_sided_le_0": 0.0,
+            "full_cov": 0.35555555555555557,
+            "naive_cov": 0.0,
+            "cov_gap": 0.35555555555555557
+          }
+        },
+        "crosssource_F2_recall_slices": {
+          "primary_recall_slice": 1.0,
+          "primary_slice_stats": {
+            "recall_slice": "1.000",
+            "maxL_positive": {
+              "L": 6,
+              "gap": 0.885,
+              "ci": [
+                0.86,
+                0.91
+              ],
+              "excludes_zero": true
+            },
+            "length2_tie": {
+              "gap": 0.0,
+              "ci": [
+                -0.021666666666666723,
+                0.021666666666666723
+              ],
+              "includes_zero": true
+            },
+            "page_p": 0.003645179045767819,
+            "page_p_used_floor": false,
+            "jonckheere_p": 2.6738836599458304e-118,
+            "spearman_rho": 0.0,
+            "cyclo_trend_spearman_rho": 1.0
+          },
+          "per_slice": [
+            {
+              "recall_slice": "0.572",
+              "maxL_positive": {
+                "L": 6,
+                "gap": 0.22,
+                "ci": [
+                  0.185,
+                  0.25333333333333335
+                ],
+                "excludes_zero": true
+              },
+              "length2_tie": {
+                "gap": 0.0,
+                "ci": [
+                  -0.05504166666666671,
+                  0.05666666666666664
+                ],
+                "includes_zero": true
+              },
+              "page_p": 0.1681480933383082,
+              "page_p_used_floor": false,
+              "jonckheere_p": 0.0008102283971431807,
+              "spearman_rho": 0.0,
+              "cyclo_trend_spearman_rho": 0.7999999999999999
+            },
+            {
+              "recall_slice": "0.625",
+              "maxL_positive": {
+                "L": 6,
+                "gap": 0.30833333333333335,
+                "ci": [
+                  0.27329166666666665,
+                  0.34833333333333333
+                ],
+                "excludes_zero": true
+              },
+              "length2_tie": {
+                "gap": 0.0,
+                "ci": [
+                  -0.05500000000000005,
+                  0.05500000000000005
+                ],
+                "includes_zero": true
+              },
+              "page_p": 0.10524885002766865,
+              "page_p_used_floor": false,
+              "jonckheere_p": 1.04012098540844e-09,
+              "spearman_rho": 0.0,
+              "cyclo_trend_spearman_rho": 1.0
+            },
+            {
+              "recall_slice": "0.783",
+              "maxL_positive": {
+                "L": 6,
+                "gap": 0.4816666666666667,
+                "ci": [
+                  0.44,
+                  0.5216666666666666
+                ],
+                "excludes_zero": true
+              },
+              "length2_tie": {
+                "gap": 0.0,
+                "ci": [
+                  -0.048375,
+                  0.04833333333333334
+                ],
+                "includes_zero": true
+              },
+              "page_p": 0.03681913506015133,
+              "page_p_used_floor": false,
+              "jonckheere_p": 6.41305128943313e-26,
+              "spearman_rho": 0.0,
+              "cyclo_trend_spearman_rho": 1.0
+            }
+          ],
+          "recall_dependence_maxL": [
+            {
+              "recall": 0.572,
+              "maxL_gap": 0.22,
+              "length2_gap": 0.0
+            },
+            {
+              "recall": 0.625,
+              "maxL_gap": 0.30833333333333335,
+              "length2_gap": 0.0
+            },
+            {
+              "recall": 0.783,
+              "maxL_gap": 0.4816666666666667,
+              "length2_gap": 0.0
+            }
+          ],
+          "page_p_range": [
+            0.003645179045767819,
+            0.1681480933383082
+          ],
+          "jonckheere_p_range": [
+            2.6738836599458304e-118,
+            0.0008102283971431807
+          ],
+          "page_p_note": "Per-slice Page's-L p computed correctly (20 blocks x |HOP| conditions); order ~1e-4..1e-8 depending on slice and N. The paper's earlier '1e-13' was a mis-statement; values clamped to a 1e-12 floor are...",
+          "interpretation": "The novel coverage gap GROWS with hop length (maxL gap 0.22 at recall 0.572 -> 0.885 at recall 1.0) and with cyclomatic number per FIXED recall slice. The paper's earlier Page p '1e-13' was a mis-stat..."
+        }
+      },
+      "allen": {
+        "algebra": "allen",
+        "selective_accuracy_axis": {
+          "bite_bearing": {
+            "matched_coverage": 0.4766666666666667,
+            "n_modeA": 900,
+            "selacc_modeA": 0.9836829836829837,
+            "selacc_pot_matched": 0.3076923076923077,
+            "selacc_naive": 0.9811827956989247,
+            "selacc_sc_matched": 0.34265734265734266,
+            "system_gap": 0.675990675990676,
+            "system_gap_reused_ci95": [
+              0.6306649142589573,
+              0.7216007281283991
+            ],
+            "system_gap_reused_ci95_bonferroni_m2": [
+              0.6236368056961156,
+              0.7284477391856425
+            ],
+            "inherited_component": 0.673490488006617,
+            "inherited_component_ci95_PROXY_modeA_vs_pot": [
+              0.6306649142589573,
+              0.7216007281283991
+            ],
+            "inherited_component_ci95_bonferroni_m2_PROXY": [
+              0.6236368056961156,
+              0.7284477391856425
+            ],
+            "novel_selacc_component": 0.0025001879840589325,
+            "additivity_residual": 0.0,
+            "additivity_ok": true
+          },
+          "all_comparison": {
+            "matched_coverage": 0.3817460317460317,
+            "n_modeA": 1260,
+            "selacc_modeA": 0.9792099792099792,
+            "selacc_pot_matched": 0.30353430353430355,
+            "selacc_naive": 0.975609756097561,
+            "selacc_sc_matched": 0.3264033264033264,
+            "system_gap": 0.6756756756756757,
+            "system_gap_reused_ci95": [
+              0.6311664629972096,
+              0.7162529755490987
+            ],
+            "system_gap_reused_ci95_bonferroni_m2": [
+              0.6258837518262128,
+              0.7230958448273392
+            ],
+            "inherited_component": 0.6720754525632574,
+            "inherited_component_ci95_PROXY_modeA_vs_pot": [
+              0.6311664629972096,
+              0.7162529755490987
+            ],
+            "inherited_component_ci95_bonferroni_m2_PROXY": [
+              0.6258837518262128,
+              0.7230958448273392
+            ],
+            "novel_selacc_component": 0.003600223112418255,
+            "additivity_residual": 0.0,
+            "additivity_ok": true
+          }
+        },
+        "novel_selacc_component_bootstrap": {
+          "subset": "covered_by_both_modeA_and_naive (full population)",
+          "n": 410,
+          "point": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "ci95_bonferroni_m2": [
+            0.0,
+            0.0
+          ],
+          "p_one_sided_le_0": 1.0,
+          "note": "ABSTAIN counts as not-correct; ~0 expected (iteration adds ~0 selective accuracy)."
+        },
+        "naive_natural_coverage_selacc_crosscheck": {
+          "selective_accuracy": 0.975609756097561,
+          "n_answered": 410
+        },
+        "pot_natural_coverage_selacc_crosscheck": {
+          "selective_accuracy": 0.24003392705682783,
+          "n_answered": 1179,
+          "note": "PoT natural-coverage selacc (no confidence ranking) vs the leaderboard's MATCHED-coverage SelAcc(pot); transparent cross-check only."
+        },
+        "coverage_axis": {
+          "metric_note": "full=Mode-A resolve-to-CORRECT-singleton rate; naive=single-pass resolve-to-correct; gap=full-naive (iteration coverage gain). ABSTAIN counts as not-correct.",
+          "novel_coverage_gap_by_hop": [
+            {
+              "cell": "hop_L2_P2",
+              "n": 90,
+              "full_resolve_correct": 0.5222222222222223,
+              "naive_resolve_correct": 0.5222222222222223,
+              "gap": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "ci95_bonferroni_m2": [
+                0.0,
+                0.0
+              ],
+              "ci95_bonferroni_m3": [
+                0.0,
+                0.0
+              ],
+              "p_one_sided_le_0": 1.0,
+              "full_cov": 0.5555555555555556,
+              "naive_cov": 0.5555555555555556,
+              "cov_gap": 0.0
+            },
+            {
+              "cell": "hop_L3_P2",
+              "n": 90,
+              "full_resolve_correct": 0.14444444444444443,
+              "naive_resolve_correct": 0.0,
+              "gap": 0.14444444444444443,
+              "ci95": [
+                0.07777777777777778,
+                0.2222222222222222
+              ],
+              "ci95_bonferroni_m2": [
+                0.06666666666666667,
+                0.23333333333333334
+              ],
+              "ci95_bonferroni_m3": [
+                0.06666666666666667,
+                0.23333333333333334
+              ],
+              "p_one_sided_le_0": 0.0,
+              "full_cov": 0.14444444444444443,
+              "naive_cov": 0.0,
+              "cov_gap": 0.14444444444444443
+            },
+            {
+              "cell": "hop_L4_P2",
+              "n": 90,
+              "full_resolve_correct": 0.044444444444444446,
+              "naive_resolve_correct": 0.0,
+              "gap": 0.044444444444444446,
+              "ci95": [
+                0.011111111111111112,
+                0.08888888888888889
+              ],
+              "ci95_bonferroni_m2": [
+                0.0,
+                0.1
+              ],
+              "ci95_bonferroni_m3": [
+                0.0,
+                0.1
+              ],
+              "p_one_sided_le_0": 0.0161,
+              "full_cov": 0.044444444444444446,
+              "naive_cov": 0.0,
+              "cov_gap": 0.044444444444444446
+            }
+          ],
+          "novel_coverage_gap_by_cyclomatic": [
+            {
+              "cell": "cyc_mu0",
+              "n": 90,
+              "full_resolve_correct": 0.1111111111111111,
+              "naive_resolve_correct": 0.0,
+              "gap": 0.1111111111111111,
+              "ci95": [
+                0.05555555555555555,
+                0.17777777777777778
+              ],
+              "ci95_bonferroni_m2": [
+                0.044444444444444446,
+                0.18888888888888888
+              ],
+              "ci95_bonferroni_m3": [
+                0.044444444444444446,
+                0.2
+              ],
+              "p_one_sided_le_0": 0.0,
+              "full_cov": 0.1111111111111111,
+              "naive_cov": 0.0,
+              "cov_gap": 0.1111111111111111
+            },
+            {
+              "cell": "cyc_mu1",
+              "n": 90,
+              "full_resolve_correct": 0.17777777777777778,
+              "naive_resolve_correct": 0.0,
+              "gap": 0.17777777777777778,
+              "ci95": [
+                0.1,
+                0.25555555555555554
+              ],
+              "ci95_bonferroni_m2": [
+                0.08888888888888889,
+                0.2668055555555636
+              ],
+              "ci95_bonferroni_m3": [
+                0.08888888888888889,
+                0.2777777777777778
+              ],
+              "p_one_sided_le_0": 0.0,
+              "full_cov": 0.17777777777777778,
+              "naive_cov": 0.0,
+              "cov_gap": 0.17777777777777778
+            },
+            {
+              "cell": "cyc_mu2",
+              "n": 90,
+              "full_resolve_correct": 0.1111111111111111,
+              "naive_resolve_correct": 0.0,
+              "gap": 0.1111111111111111,
+              "ci95": [
+                0.05555555555555555,
+                0.17777777777777778
+              ],
+              "ci95_bonferroni_m2": [
+                0.044444444444444446,
+                0.18888888888888888
+              ],
+              "ci95_bonferroni_m3": [
+                0.044444444444444446,
+                0.2
+              ],
+              "p_one_sided_le_0": 0.0,
+              "full_cov": 0.1111111111111111,
+              "naive_cov": 0.0,
+              "cov_gap": 0.1111111111111111
+            }
+          ],
+          "trend_hop_recomputed": {
+            "jonckheere": {
+              "J": 23895.0,
+              "E_J": 24300.0,
+              "Var_J": 1219050.0,
+              "z": -0.36681261567265006,
+              "p_one_sided_increasing": 0.6431206016615889
+            },
+            "spearman_on_cell_gaps": {
+              "spearman_rho": -0.10540925533894598,
+              "spearman_p": 0.894590744661054,
+              "n_bins": 4
+            }
+          },
+          "trend_cyclomatic_recomputed": {
+            "jonckheere": {
+              "J": 25110.0,
+              "E_J": 24300.0,
+              "Var_J": 1219050.0,
+              "z": 0.7336252313453001,
+              "p_one_sided_increasing": 0.23158858944015992
+            },
+            "spearman_on_cell_gaps": {
+              "spearman_rho": 0.632455532033676,
+              "spearman_p": 0.367544467966324,
+              "n_bins": 4
+            }
+          },
+          "trend_hop_reused_from_F1": {
+            "spearman_rho": -0.10540925533894598,
+            "spearman_ci95": [
+              -0.39999999999999997,
+              0.19999999999999998
+            ],
+            "jonckheere_z": -0.36681261567265006,
+            "jonckheere_p": 0.6431206016615889
+          },
+          "trend_cyclomatic_reused_from_F1": {
+            "spearman_rho": 0.632455532033676,
+            "spearman_ci95": [
+              -0.6000000000000001,
+              1.0
+            ],
+            "jonckheere_z": 0.7336252313453001,
+            "jonckheere_p": 0.23158858944015992
+          },
+          "length2_tie_real": {
+            "n": 630,
+            "full_resolve_correct": 0.6349206349206349,
+            "naive_resolve_correct": 0.6349206349206349,
+            "gap": 0.0
+          },
+          "length2_tie_gold": {
+            "n": 630,
+            "full_resolve_correct": 0.6714285714285714,
+            "naive_resolve_correct": 0.6714285714285714,
+            "gap": 0.0
+          },
+          "pooled_gold_coverage_gain": {
+            "bite_bearing": {
+              "gold_full_resolve_correct": 0.49444444444444446,
+              "gold_naive_resolve_correct": 0.42777777777777776,
+              "pooled_coverage_gain": 0.06666666666666671
+            },
+            "all_comparison": {
+              "gold_full_resolve_correct": 0.396031746031746,
+              "gold_naive_resolve_correct": 0.3357142857142857,
+              "pooled_coverage_gain": 0.060317460317460325
+            }
+          }
+        },
+        "holm_adjusted_decomposition_family": {
+          "members": [
+            "inherited_component(bite-pool selacc)",
+            "novel_coverage_gap@hop_L3_P2",
+            "novel_coverage_gap@max_cyclomatic_bin"
+          ],
+          "m_for_widening": 2,
+          "note": "CIs widened with the m=2 Bonferroni convention used in F1 ci95_bonferroni_m2 (percentiles 1.25/98.75); m=3 (family size) also reported for the bootstrap members.",
+          "inherited_component": {
+            "value": 0.673490488006617,
+            "ci95_PROXY": [
+              0.6306649142589573,
+              0.7216007281283991
+            ],
+            "ci95_bonferroni_m2_PROXY": [
+              0.6236368056961156,
+              0.7284477391856425
+            ],
+            "ci_note": "reused modeA-vs-pot bootstrap CI as proxy (novel_selacc~0 => inherited~system_gap)."
+          },
+          "novel_coverage_gap_L3": {
+            "cell": "hop_L3_P2",
+            "n": 90,
+            "full_resolve_correct": 0.14444444444444443,
+            "naive_resolve_correct": 0.0,
+            "gap": 0.14444444444444443,
+            "ci95": [
+              0.07777777777777778,
+              0.2222222222222222
+            ],
+            "ci95_bonferroni_m2": [
+              0.06666666666666667,
+              0.23333333333333334
+            ],
+            "ci95_bonferroni_m3": [
+              0.06666666666666667,
+              0.23333333333333334
+            ],
+            "p_one_sided_le_0": 0.0,
+            "full_cov": 0.14444444444444443,
+            "naive_cov": 0.0,
+            "cov_gap": 0.14444444444444443
+          },
+          "novel_coverage_gap_max_cyclomatic": {
+            "cell": "cyc_mu3",
+            "n": 90,
+            "full_resolve_correct": 0.2,
+            "naive_resolve_correct": 0.0,
+            "gap": 0.2,
+            "ci95": [
+              0.12222222222222222,
+              0.28888888888888886
+            ],
+            "ci95_bonferroni_m2": [
+              0.1111111111111111,
+              0.3
+            ],
+            "ci95_bonferroni_m3": [
+              0.1,
+              0.3111111111111111
+            ],
+            "p_one_sided_le_0": 0.0,
+            "full_cov": 0.2,
+            "naive_cov": 0.0,
+            "cov_gap": 0.2
+          }
+        },
+        "crosssource_F2_recall_slices": {
+          "primary_recall_slice": 1.0,
+          "primary_slice_stats": {
+            "recall_slice": "1.000",
+            "maxL_positive": {
+              "L": 6,
+              "gap": 0.885,
+              "ci": [
+                0.86,
+                0.91
+              ],
+              "excludes_zero": true
+            },
+            "length2_tie": {
+              "gap": 0.0,
+              "ci": [
+                -0.021666666666666723,
+                0.021666666666666723
+              ],
+              "includes_zero": true
+            },
+            "page_p": 0.003645179045767819,
+            "page_p_used_floor": false,
+            "jonckheere_p": 2.6738836599458304e-118,
+            "spearman_rho": 0.0,
+            "cyclo_trend_spearman_rho": 1.0
+          },
+          "per_slice": [
+            {
+              "recall_slice": "0.572",
+              "maxL_positive": {
+                "L": 6,
+                "gap": 0.22,
+                "ci": [
+                  0.185,
+                  0.25333333333333335
+                ],
+                "excludes_zero": true
+              },
+              "length2_tie": {
+                "gap": 0.0,
+                "ci": [
+                  -0.05504166666666671,
+                  0.05666666666666664
+                ],
+                "includes_zero": true
+              },
+              "page_p": 0.1681480933383082,
+              "page_p_used_floor": false,
+              "jonckheere_p": 0.0008102283971431807,
+              "spearman_rho": 0.0,
+              "cyclo_trend_spearman_rho": 0.7999999999999999
+            },
+            {
+              "recall_slice": "0.625",
+              "maxL_positive": {
+                "L": 6,
+                "gap": 0.30833333333333335,
+                "ci": [
+                  0.27329166666666665,
+                  0.34833333333333333
+                ],
+                "excludes_zero": true
+              },
+              "length2_tie": {
+                "gap": 0.0,
+                "ci": [
+                  -0.05500000000000005,
+                  0.05500000000000005
+                ],
+                "includes_zero": true
+              },
+              "page_p": 0.10524885002766865,
+              "page_p_used_floor": false,
+              "jonckheere_p": 1.04012098540844e-09,
+              "spearman_rho": 0.0,
+              "cyclo_trend_spearman_rho": 1.0
+            },
+            {
+              "recall_slice": "0.783",
+              "maxL_positive": {
+                "L": 6,
+                "gap": 0.4816666666666667,
+                "ci": [
+                  0.44,
+                  0.5216666666666666
+                ],
+                "excludes_zero": true
+              },
+              "length2_tie": {
+                "gap": 0.0,
+                "ci": [
+                  -0.048375,
+                  0.04833333333333334
+                ],
+                "includes_zero": true
+              },
+              "page_p": 0.03681913506015133,
+              "page_p_used_floor": false,
+              "jonckheere_p": 6.41305128943313e-26,
+              "spearman_rho": 0.0,
+              "cyclo_trend_spearman_rho": 1.0
+            }
+          ],
+          "recall_dependence_maxL": [
+            {
+              "recall": 0.572,
+              "maxL_gap": 0.22,
+              "length2_gap": 0.0
+            },
+            {
+              "recall": 0.625,
+              "maxL_gap": 0.30833333333333335,
+              "length2_gap": 0.0
+            },
+            {
+              "recall": 0.783,
+              "maxL_gap": 0.4816666666666667,
+              "length2_gap": 0.0
+            }
+          ],
+          "page_p_range": [
+            0.003645179045767819,
+            0.1681480933383082
+          ],
+          "jonckheere_p_range": [
+            2.6738836599458304e-118,
+            0.0008102283971431807
+          ],
+          "page_p_note": "Per-slice Page's-L p computed correctly (20 blocks x |HOP| conditions); order ~1e-4..1e-8 depending on slice and N. The paper's earlier '1e-13' was a mis-statement; values clamped to a 1e-12 floor are...",
+          "interpretation": "The novel coverage gap GROWS with hop length (maxL gap 0.22 at recall 0.572 -> 0.885 at recall 1.0) and with cyclomatic number per FIXED recall slice. The paper's earlier Page p '1e-13' was a mis-stat..."
+        }
+      }
+    },
+    "risk_coverage": {
+      "modeA_operating_point": {
+        "coverage": 0.1,
+        "n_modeA_answered": 2,
+        "n_total": 20,
+        "selective_accuracy": 1.0,
+        "confident_wrong": 0.0,
+        "abstention_rate": 0.9
+      },
+      "raw_operating_point": {
+        "coverage": 1.0,
+        "confident_wrong": 0.65,
+        "accuracy": 0.35
+      },
+      "raw_at_matched_coverage": {
+        "coverage": 0.1,
+        "accuracy_at_matched_coverage": 0.5,
+        "confident_wrong_at_matched_coverage_approx": 0.5
+      },
+      "abstention_rate": 0.9,
+      "n_modeA_answered": 2,
+      "n_total": 20,
+      "auc_risk_coverage": {
+        "modeA": 1.0,
+        "naive": 1.0,
+        "raw": 0.5490850143917604,
+        "pot": 0.6465595912024483,
+        "sc": 0.5199488243728101
+      },
+      "auc_note": "n=20, underpowered.",
+      "per_method_points_partial_crosscheck": {
+        "note": "Computed over the 10 worked-example rows present in F3.datasets (the full 20 deduction queries are aggregated in metadata, not all emitted as rows); DESCRIPTIVE cross-check only.",
+        "points": {
+          "modeA": {
+            "n_rows_available": 10,
+            "coverage_on_available_rows": 0.0,
+            "selective_accuracy_on_available_rows": null,
+            "auc_risk_coverage_reused_n20": 1.0
+          },
+          "naive": {
+            "n_rows_available": 10,
+            "coverage_on_available_rows": 0.0,
+            "selective_accuracy_on_available_rows": null,
+            "auc_risk_coverage_reused_n20": 1.0
+          },
+          "raw": {
+            "n_rows_available": 10,
+            "coverage_on_available_rows": 1.0,
+            "selective_accuracy_on_available_rows": 0.2,
+            "auc_risk_coverage_reused_n20": 0.5490850143917604
+          },
+          "pot": {
+            "n_rows_available": 10,
+            "coverage_on_available_rows": 0.7,
+            "selective_accuracy_on_available_rows": 0.42857142857142855,
+            "auc_risk_coverage_reused_n20": 0.6465595912024483
+          },
+          "sc": {
+            "n_rows_available": 10,
+            "coverage_on_available_rows": 1.0,
+            "selective_accuracy_on_available_rows": 0.3,
+            "auc_risk_coverage_reused_n20": 0.5199488243728101
+          }
+        }
+      },
+      "matched_coverage_gaps_with_boot_p": {
+        "modeA_vs_pot": {
+          "gap": 0.5,
+          "ci95": [
+            0.0,
+            1.0
+          ],
+          "boot_p_gap_le_0": 0.2544861337683524,
+          "matched_coverage": 0.1,
+          "method_acc": 1.0,
+          "base_acc": 0.5
+        },
+        "modeA_vs_sc": {
+          "gap": 0.5,
+          "ci95": [
+            0.0,
+            1.0
+          ],
+          "boot_p_gap_le_0": 0.1750951604132681,
+          "matched_coverage": 0.1,
+          "method_acc": 1.0,
+          "base_acc": 0.5
+        },
+        "modeA_vs_raw": {
+          "gap": 0.5,
+          "ci95": [
+            0.0,
+            1.0
+          ],
+          "boot_p_gap_le_0": 0.3942359978249048,
+          "matched_coverage": 0.1,
+          "method_acc": 1.0,
+          "base_acc": 0.5
+        },
+        "modeA_vs_naive": {
+          "gap": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "boot_p_gap_le_0": 1.0,
+          "matched_coverage": 0.1,
+          "method_acc": 1.0,
+          "base_acc": 1.0
+        }
+      },
+      "reduction_vs_raw": {
+        "reduction": 0.65,
+        "reduction_ci95": [
+          0.47368421052631576,
+          0.8
+        ],
+        "boot_p_reduction_le_0": 0.0,
+        "abstention_caveat": "0.65->0.0 confident-wrong reduction achieved while Mode-A answered only 2/20 queries (~90% abstention); p=0.0 is abstention-driven and must be reported WITH coverage."
+      },
+      "mandatory_statements": [
+        "(i) The 0.65->0.0 confident-wrong reduction is achieved at ~90% abstention (Mode-A answered only 2/20 queries), so a near-zero confident-wrong rate IN ISOLATION is trivial.",
+        "(ii) The FAIR metric is selective accuracy at MATCHED coverage.",
+        "(iii) At matched coverage 0.10 the Mode-A advantage over raw/PoT/SC is NOT statistically significant at n=20 (boot p: vs raw 0.394, vs PoT 0.254, vs SC 0.175); the gap CIs are [0,1] (underpowered)."
+      ],
+      "read_soundness_caveat": {
+        "narrativetime_primary_recall": 0.7432432432432432,
+        "narrativetime_primary_n": 74,
+        "narrativetime_strong_recall": 0.8974358974358975,
+        "narrativetime_strong_n": 39,
+        "narrativetime_strong_ci95": [
+          0.6666666666666666,
+          1.0
+        ],
+        "tddman_primary_recall": 0.9024390243902439,
+        "tddman_primary_n": 41,
+        "recall_gate_point": 0.9,
+        "caveat": "Real-text read-soundness remains UNRESOLVED at this n: NT primary recall 0.743 (n=74) is below the 0.90 gate; the stronger reader reaches 0.897 (n=39) with CI [0.667,1.0] that merely CONTAINS 0.90; TD..."
+      }
+    },
+    "multiplicity": {
+      "confirmatory_family": [
+        "H1",
+        "H2",
+        "H3"
+      ],
+      "confirmatory_table": [
+        {
+          "hypothesis": "H1",
+          "name": "real-text Mode-A selective-accuracy gap vs PoT AND SC at matched coverage",
+          "evidence_class": "REAL-LLM-READ (gateway)",
+          "primary_metric": "max(boot_p vs PoT, boot_p vs SC)",
+          "raw_p": 0.2544861337683524,
+          "components": {
+            "boot_p_vs_pot": 0.2544861337683524,
+            "boot_p_vs_sc": 0.1750951604132681
+          },
+          "holm_threshold": 0.05,
+          "holm_adjusted_p": 0.2544861337683524,
+          "adjusted_CI": [
+            0.0,
+            1.0
+          ],
+          "reject": false,
+          "is_gateway": true,
+          "gate_status": "FAILS (p=0.254); real-text comparative advantage UNESTABLISHED at n=20"
+        },
+        {
+          "hypothesis": "H2",
+          "name": "end-to-end hallucination (confident-wrong) reduction vs raw",
+          "evidence_class": "REAL-LLM-READ (gateway)",
+          "primary_metric": "boot_p(reduction<=0)",
+          "raw_p": 0.0,
+          "holm_threshold": 0.016666666666666666,
+          "holm_adjusted_p": 0.0,
+          "adjusted_CI": [
+            0.47368421052631576,
+            0.8
+          ],
+          "reject": true,
+          "is_gateway": true,
+          "gate_status": "CLEARS at Holm threshold 0.0167; MUST be reported WITH the ~90% abstention caveat (coverage-conditional; NOT significant at matched coverage)"
+        },
+        {
+          "hypothesis": "H3",
+          "name": "full-minus-naive iteration coverage gap grows with hop/cyclomatic",
+          "evidence_class": "SYNTHETIC-CHANNEL (primary); real-text stratum EXPLORATORY",
+          "primary_metric": "channel per-recall-slice Page trend (primary slice)",
+          "raw_p": 0.003645179045767819,
+          "page_p_range": [
+            0.003645179045767819,
+            0.1681480933383082
+          ],
+          "jonckheere_p_range": [
+            2.6738836599458304e-118,
+            0.0008102283971431807
+          ],
+          "corroboration_F1_cyclomatic_jonckheere_point": 0.02078257491865587,
+          "holm_threshold": 0.025,
+          "holm_adjusted_p": 0.007290358091535638,
+          "adjusted_CI": "per-slice maxL CI [0.185,0.253] (recall 0.572) .. growing with recall",
+          "reject": true,
+          "is_gateway": false,
+          "gate_status": "PASS on synthetic channel (gated behind gateway H2 which clears)"
+        }
+      ],
+      "holm_chain": {
+        "H2_realtext": {
+          "rank": 1,
+          "raw_p": 0.0,
+          "holm_threshold": 0.016666666666666666,
+          "holm_adjusted_p": 0.0,
+          "reject_at_0.05": true
+        },
+        "H3_channel": {
+          "rank": 2,
+          "raw_p": 0.003645179045767819,
+          "holm_threshold": 0.025,
+          "holm_adjusted_p": 0.007290358091535638,
+          "reject_at_0.05": true
+        },
+        "H1_realtext": {
+          "rank": 3,
+          "raw_p": 0.2544861337683524,
+          "holm_threshold": 0.05,
+          "holm_adjusted_p": 0.2544861337683524,
+          "reject_at_0.05": false
+        }
+      },
+      "holm_chain_note": "Holm step-down across the p-bearing confirmatory members {H1,H2,H3}; H4 is structural and not forced into the chain. Sorted ascending: H2(~0) < H3(channel) < H1(0.254).",
+      "gatekeeping_logic": "Hierarchical gatekeeping: H1 and H2 are gateways; H3/H4 are confirmatory-valid only if >=1 gateway clears. Gateway H2 CLEARS (Holm-adjusted), so H3/H4 are confirmatory-valid. Gateway H1 (the real-text...",
+      "exploratory_list": [
+        "all per-stratum splits (F1.per_stratum, F1 H3 per-cell rows)",
+        "H1_stratified len2 / ge3_cyclic (F3)",
+        "reader-agnosticity / stronger_reader_gate_test (F3)"
+      ],
+      "conclusion_by_hypothesis": {
+        "H1": "OPEN NEGATIVE - real-text comparative advantage unestablished (n=20, p=0.254).",
+        "H2": "CONFIRMED but COVERAGE-CONDITIONAL - confident-wrong reduction significant (Holm), but achieved at ~90% abstention; not significant at matched coverage.",
+        "H3": "CONFIRMED on SYNTHETIC channel - iteration coverage gap grows with hop & cyclomatic; real-text stratum exploratory/under-powered.",
+        "H4": "CONFIRMED on SYNTHETIC channel - redundancy inverted-U, peak shifts outward (structural criterion)."
+      },
+      "reused_holm_bonferroni_F3": {
+        "H2_halluc": {
+          "p": 0.0,
+          "holm_threshold": 0.016666666666666666,
+          "adjusted_significant": true
+        },
+        "H1_vs_SC": {
+          "p": 0.1750951604132681,
+          "holm_threshold": 0.025,
+          "adjusted_significant": false
+        },
+        "H1_vs_PoT": {
+          "p": 0.2544861337683524,
+          "holm_threshold": 0.05,
+          "adjusted_significant": false
+        }
+      }
+    },
+    "summary_for_paper": {
+      "headline_rewrite_guidance": "Do NOT present the +0.676 Allen Mode-A-vs-PoT gap as a single iteration win. It DECOMPOSES additively into an INHERITED exact-table-vs-LLM-composition component (~+0.673, the standard neuro-symbolic p...",
+      "co_headline_iteration": {
+        "selacc_axis_is_inherited": "On the matched-coverage selective-accuracy axis the +0.676 (Allen) / +0.043 (point) is almost entirely INHERITED; iteration adds ~0 selective accuracy in the length-2-dominated bite pool (novel_selacc...",
+        "coverage_axis_is_novel": "The genuine iteration novelty is a COVERAGE gain at maintained selective accuracy on long-hop/cyclic queries: full-minus-naive resolve-to-correct gap +0.344 (point) / +0.144 (Allen) at L=3, growing wi...",
+        "key_numbers": {
+          "system_gap_allen_bite": 0.675990675990676,
+          "inherited_allen_bite": 0.673490488006617,
+          "novel_selacc_allen_bite": 0.0025001879840589325,
+          "system_gap_point_bite": 0.042592592592592626,
+          "inherited_point_bite": 0.042592592592592626,
+          "novel_selacc_point_bite": 0.0,
+          "novel_coverage_gap_L3_point": 0.34444444444444444,
+          "novel_coverage_gap_L3_allen": 0.14444444444444443,
+          "pooled_gold_coverage_gain_point": 0.11428571428571427,
+          "pooled_gold_coverage_gain_allen": 0.060317460317460325
+        }
+      },
+      "inherited_premise_statement": "The headline advantage over neural per-path reasoning is dominated by the INHERITED neuro-symbolic premise (exact composition table vs LLM composition); it scales with relation-algebra richness (point...",
+      "realtext_open_negative_statement": "On real text (NarrativeTime+TDDMan, n=20 deduction queries) the Mode-A comparative advantage over PoT/SC at matched coverage is NOT established (boot p 0.254 / 0.175; gateway H1 FAILS). Real-text tran...",
+      "hallucination_riskcoverage_statement": "Mode-A drives confident-wrong from 0.65 (raw) to 0.0, but at ~90% abstention (answered 2/20). Reported as a risk-coverage operating point: a near-zero confident-wrong rate in isolation is trivial; at ...",
+      "multiplicity_one_liner": "Confirmatory family {H1,H2,H3,H4} under Holm-Bonferroni with H1/H2 gateways: H2 (hallucination) CLEARS coverage-conditionally, H3/H4 CONFIRMED on synthetic, H1 (real-text transfer) FAILS; all stratum/...",
+      "corrected_page_p_note": "Per-slice Page's-L p computed correctly (20 blocks x |HOP| conditions); order ~1e-4..1e-8 depending on slice and N. The paper's earlier '1e-13' was a mis-statement; values clamped to a 1e-12 floor are...",
+      "corrected_page_p_value": "~5e-4 order (Jonckheere trend on the lower-recall slice; per-slice Page p ~1e-3..1e-1, Jonckheere p down to ~1e-118 at high recall). The paper's earlier '1e-13' was a mis-statement.",
+      "tag_legend": {
+        "REAL-LLM-READ": "computed with a real OpenRouter LLM read (synthetic NL or real text)",
+        "SYNTHETIC-CHANNEL": "computed on the calibrated synthetic reader channel (no LLM)",
+        "GOLD-ONLY-GATE": "gold-graph go/no-go envelope (no reader)",
+        "THEOREM": "deterministic soundness invariant of path consistency (not empirical)",
+        "EXPLORATORY": "nominal CIs, not in the gatekept confirmatory family"
+      }
+    },
+    "provenance": {
+      "fields_reused_verbatim": [
+        "F1.analysis_by_algebra.{point,allen}.H1_*_pool.leaderboard selective_accuracy/coverage",
+        "F1 comparisons.pot ci95 / ci95_bonferroni_m2 (used as inherited-component CI proxy)",
+        "F1.H3_iteration_real.trend_hop/trend_cyclomatic, length2_tie; H3_iteration_gold.length2_tie"
+      ],
+      "fields_recomputed": [
+        "novel_coverage_gap_by_hop/cyclomatic per cell from F1.datasets predict_modeA/predict_naive vs gold (paired bootstrap B=10000)",
+        "novel_selacc_component bootstrap on covered-by-both subset",
+        "Jonckheere-Terpstra + Spearman trend on per-cell gaps (cross-check vs F1)"
+      ],
+      "bootstrap_B": 10000,
+      "seed": 20260617,
+      "recomputed_from_per_network": true,
+      "notes_on_pot_matched_coverage_reuse": "PoT's matched-coverage selective accuracy requires its confidence ranking, which is NOT in the per-network columns; the leaderboard SelAcc(pot)/ci95/ci95_bonferroni_m2 and comparisons.pot bootstrap CI...",
+      "additivity_check": {
+        "point_bite_residual": 0.0,
+        "allen_bite_residual": 0.0,
+        "all_pass_within_0.02": true
+      },
+      "discrepancies": []
+    },
+    "retired_critiques": [
+      "MAJOR: 'central claim conflates two effects' -> retired by Task 1 additive decomposition (selacc axis = inherited; coverage axis = novel).",
+      "MINOR: 'hallucination driven by abstention' -> retired by Task 2 risk-coverage framing (every number paired with ~90% abstention; matched-coverage gap not significant at n=20)."
+    ]
+  },
+  "metrics_agg": {
+    "llm_spend_usd": 0.0,
+    "bootstrap_B": 10000.0,
+    "seed": 20260617.0,
+    "n_discrepancies": 0.0,
+    "system_gap_allen_bite": 0.675990675990676,
+    "inherited_component_allen_bite": 0.673490488006617,
+    "novel_selacc_component_allen_bite": 0.0025001879840589325,
+    "additivity_residual_allen_bite": 0.0,
+    "system_gap_point_bite": 0.042592592592592626,
+    "inherited_component_point_bite": 0.042592592592592626,
+    "novel_selacc_component_point_bite": 0.0,
+    "additivity_residual_point_bite": 0.0,
+    "system_gap_allen_allpool": 0.6756756756756757,
+    "inherited_component_allen_allpool": 0.6720754525632574,
+    "system_gap_point_allpool": 0.055374592833876246,
+    "novel_coverage_gap_L3_point": 0.34444444444444444,
+    "novel_coverage_gap_L4_point": 0.03333333333333333,
+    "novel_coverage_gap_L3_allen": 0.14444444444444443,
+    "novel_coverage_gap_L4_allen": 0.044444444444444446,
+    "pooled_gold_coverage_gain_point_allpool": 0.11428571428571427,
+    "pooled_gold_coverage_gain_allen_allpool": 0.060317460317460325,
+    "cyclomatic_trend_jonckheere_p_point": 0.02078257491865587,
+    "realtext_abstention_rate": 0.9,
+    "realtext_n_modeA_answered": 2.0,
+    "realtext_n_total": 20.0,
+    "realtext_confident_wrong_modeA": 0.0,
+    "realtext_confident_wrong_raw": 0.65,
+    "realtext_h2_reduction": 0.65,
+    "realtext_h1_boot_p_vs_pot": 0.2544861337683524,
+    "realtext_h1_boot_p_vs_sc": 0.1750951604132681,
+    "realtext_h1_boot_p_vs_raw": 0.3942359978249048,
+    "realtext_auc_modeA": 1.0,
+    "realtext_auc_raw": 0.5490850143917604,
+    "realtext_auc_pot": 0.6465595912024483,
+    "realtext_auc_sc": 0.5199488243728101,
+    "realtext_nt_primary_recall": 0.7432432432432432,
+    "realtext_nt_strong_recall": 0.8974358974358975,
+    "channel_maxL_gap_recall1": 0.885,
+    "channel_maxL_gap_recall057": 0.22,
+    "channel_page_p_primary_slice": 0.003645179045767819,
+    "holm_H2_reject": 1.0,
+    "holm_H1_reject": 0.0,
+    "holm_H3_reject": 1.0,
+    "holm_H1_raw_p": 0.2544861337683524,
+    "holm_H2_raw_p": 0.0
+  },
+  "datasets": [
+    {
+      "dataset": "decomposition_point",
+      "examples": [
+        {
+          "input": "point | bite_bearing | selective-accuracy-axis decomposition",
+          "output": "system_gap=0.0426 = inherited 0.0426 + novel_selacc 0.0000",
+          "metadata_axis": "selective_accuracy",
+          "metadata_pool": "bite_bearing",
+          "metadata_algebra": "point",
+          "eval_system_gap": 0.042592592592592626,
+          "eval_inherited_component": 0.042592592592592626,
+          "eval_novel_selacc_component": 0.0,
+          "eval_additivity_residual": 0.0,
+          "eval_selacc_modeA": 1.0,
+          "eval_selacc_pot_matched": 0.9574074074074074,
+          "eval_selacc_naive": 1.0
+        },
+        {
+          "input": "point | all_comparison | selective-accuracy-axis decomposition",
+          "output": "system_gap=0.0554 = inherited 0.0554 + novel_selacc 0.0000",
+          "metadata_axis": "selective_accuracy",
+          "metadata_pool": "all_comparison",
+          "metadata_algebra": "point",
+          "eval_system_gap": 0.055374592833876246,
+          "eval_inherited_component": 0.055374592833876246,
+          "eval_novel_selacc_component": 0.0,
+          "eval_additivity_residual": 0.0,
+          "eval_selacc_modeA": 1.0,
+          "eval_selacc_pot_matched": 0.9446254071661238,
+          "eval_selacc_naive": 1.0
+        },
+        {
+          "input": "point | coverage-axis | hop bin hop_L2_P2",
+          "output": "full-naive resolve-correct gap = 0.0000",
+          "metadata_axis": "coverage",
+          "metadata_cell": "hop_L2_P2",
+          "metadata_algebra": "point",
+          "metadata_n": 90,
+          "metadata_ci95": [
+            0.0,
+            0.0
+          ],
+          "metadata_ci95_bonferroni_m2": [
+            0.0,
+            0.0
+          ],
+          "eval_gap": 0.0,
+          "eval_full_resolve_correct": 0.6777777777777778,
+          "eval_naive_resolve_correct": 0.6777777777777778,
+          "eval_cov_gap": 0.0
+        }
+      ]
+    },
+    {
+      "dataset": "decomposition_allen",
+      "examples": [
+        {
+          "input": "allen | bite_bearing | selective-accuracy-axis decomposition",
+          "output": "system_gap=0.6760 = inherited 0.6735 + novel_selacc 0.0025",
+          "metadata_axis": "selective_accuracy",
+          "metadata_pool": "bite_bearing",
+          "metadata_algebra": "allen",
+          "eval_system_gap": 0.675990675990676,
+          "eval_inherited_component": 0.673490488006617,
+          "eval_novel_selacc_component": 0.0025001879840589325,
+          "eval_additivity_residual": 0.0,
+          "eval_selacc_modeA": 0.9836829836829837,
+          "eval_selacc_pot_matched": 0.3076923076923077,
+          "eval_selacc_naive": 0.9811827956989247
+        },
+        {
+          "input": "allen | all_comparison | selective-accuracy-axis decomposition",
+          "output": "system_gap=0.6757 = inherited 0.6721 + novel_selacc 0.0036",
+          "metadata_axis": "selective_accuracy",
+          "metadata_pool": "all_comparison",
+          "metadata_algebra": "allen",
+          "eval_system_gap": 0.6756756756756757,
+          "eval_inherited_component": 0.6720754525632574,
+          "eval_novel_selacc_component": 0.003600223112418255,
+          "eval_additivity_residual": 0.0,
+          "eval_selacc_modeA": 0.9792099792099792,
+          "eval_selacc_pot_matched": 0.30353430353430355,
+          "eval_selacc_naive": 0.975609756097561
+        },
+        {
+          "input": "allen | coverage-axis | hop bin hop_L2_P2",
+          "output": "full-naive resolve-correct gap = 0.0000",
+          "metadata_axis": "coverage",
+          "metadata_cell": "hop_L2_P2",
+          "metadata_algebra": "allen",
+          "metadata_n": 90,
+          "metadata_ci95": [
+            0.0,
+            0.0
+          ],
+          "metadata_ci95_bonferroni_m2": [
+            0.0,
+            0.0
+          ],
+          "eval_gap": 0.0,
+          "eval_full_resolve_correct": 0.5222222222222223,
+          "eval_naive_resolve_correct": 0.5222222222222223,
+          "eval_cov_gap": 0.0
+        }
+      ]
+    },
+    {
+      "dataset": "risk_coverage_realtext",
+      "examples": [
+        {
+          "input": "realtext | Mode-A operating point",
+          "output": "coverage=0.100 selacc=1.000 confident_wrong=0.000 abstention=0.900",
+          "metadata_method": "modeA",
+          "metadata_n_answered": 2,
+          "metadata_n_total": 20,
+          "eval_coverage": 0.1,
+          "eval_selective_accuracy": 1.0,
+          "eval_confident_wrong": 0.0,
+          "eval_abstention_rate": 0.9,
+          "eval_auc_risk_coverage": 1.0
+        },
+        {
+          "input": "realtext | raw-LLM operating point",
+          "output": "coverage=1.000 accuracy=0.350 confident_wrong=0.650",
+          "metadata_method": "raw",
+          "eval_coverage": 1.0,
+          "eval_accuracy": 0.35,
+          "eval_confident_wrong": 0.65,
+          "eval_auc_risk_coverage": 0.5490850143917604
+        },
+        {
+          "input": "realtext | matched-coverage gap Mode-A vs pot",
+          "output": "gap=0.500 boot_p=0.254 (n=20, underpowered)",
+          "metadata_baseline": "pot",
+          "metadata_ci95": [
+            0.0,
+            1.0
+          ],
+          "metadata_matched_coverage": 0.1,
+          "eval_gap": 0.5,
+          "eval_boot_p_gap_le_0": 0.2544861337683524,
+          "eval_method_acc": 1.0,
+          "eval_base_acc": 0.5
+        }
+      ]
+    }
+  ]
+}

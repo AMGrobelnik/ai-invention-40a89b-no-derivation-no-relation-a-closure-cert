@@ -1,0 +1,30 @@
+2026-06-17 16:15:52.124 | INFO     | __main__:main:855 - Stage-0 closure + point-algebra self-verify PASSED.
+2026-06-17 16:15:52.132 | INFO     | __main__:main:858 - Running synthetic matched-coverage backstop ($0) ...
+2026-06-17 16:16:05.475 | INFO     | __main__:main:862 -   synth R_redundancy_K4    cov=0.97 acc=1.000 | gaps raw=+0.219 pot=+0.021 sc=+0.043 naive=+0.000
+2026-06-17 16:16:05.479 | INFO     | __main__:main:862 -   synth R_redundancy_K8    cov=0.96 acc=1.000 | gaps raw=+0.260 pot=+0.002 sc=+0.064 naive=+0.000
+2026-06-17 16:16:05.481 | INFO     | __main__:main:862 -   synth H_hop_L4_C2        cov=0.71 acc=1.000 | gaps raw=+0.211 pot=+nan sc=+0.026 naive=+nan
+2026-06-17 16:16:05.484 | INFO     | __main__:main:862 -   synth H_hop_L6_C3        cov=0.69 acc=1.000 | gaps raw=+0.212 pot=+nan sc=+0.017 naive=+nan
+2026-06-17 16:16:05.486 | INFO     | __main__:main:867 - Loading dataset /ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_1/gen_art/gen_art_dataset_1/full_data_out.json ...
+2026-06-17 16:16:10.768 | INFO     | __main__:main:882 -   narrativetime  docs=  3 read_edges=  93 queries=  10 (len2=0 ge3=10) offset_ok=1.000
+2026-06-17 16:16:10.782 | INFO     | __main__:main:882 -   tddman         docs=  3 read_edges=  41 queries=  10 (len2=8 ge3=2) offset_ok=1.000
+2026-06-17 16:16:10.795 | INFO     | __main__:main:882 -   matres         docs=  3 read_edges=   0 queries=   0 (len2=0 ge3=0) offset_ok=1.000
+2026-06-17 16:16:12.623 | INFO     | __main__:main:922 - probe model=deepseek/deepseek-v3.2 cached_next? running again ...
+2026-06-17 16:16:12.652 | INFO     | __main__:main:926 - cache round-trip cached=True (hits=2)
+2026-06-17 16:16:12.654 | INFO     | __main__:main:934 - [primary] narrativetime: 93 local edge reads ...
+2026-06-17 16:16:14.240 | INFO     | __main__:main:940 -   done. cost=$0.0000 cache_hits=95 pfail=0
+2026-06-17 16:16:14.244 | INFO     | __main__:main:934 - [primary] tddman: 41 local edge reads ...
+2026-06-17 16:16:14.831 | INFO     | __main__:main:940 -   done. cost=$0.0000 cache_hits=136 pfail=0
+2026-06-17 16:16:14.836 | INFO     | __main__:main:934 - [primary] matres: 0 local edge reads ...
+2026-06-17 16:16:14.887 | INFO     | __main__:main:940 -   done. cost=$0.0000 cache_hits=136 pfail=0
+2026-06-17 16:16:14.890 | INFO     | __main__:main:952 - [strong:google/gemini-3.5-flash] narrativetime: 50 local edge reads (first 5 queries) ...
+2026-06-17 16:16:15.499 | INFO     | __main__:main:964 -   done. strong cost=$0.0000 pfail=0 models={'google/gemini-3.5-flash': 50}
+2026-06-17 16:16:15.501 | INFO     | __main__:main:988 - [primary] PoT path-composition calls: 49 ...
+2026-06-17 16:16:15.952 | INFO     | __main__:main:1014 - [primary@T=0.7] self-consistency samples: 60 ...
+ALL CLOSURE TESTS PASSED (Allen 13^2=169 cells generated & cross-checked).
+Traceback (most recent call last):
+  File "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_2/gen_art/gen_art_experiment_3/method.py", line 1333, in <module>
+    main()
+  File "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_2/gen_art/gen_art_experiment_3/method.py", line 1253, in main
+    "parse_fail": n_pfail, "budget_hard": BUDGET_HARD},
+                                          ^^^^^^^^^^^
+NameError: name 'BUDGET_HARD' is not defined. Did you mean: 'BUDGET_SOFT'?

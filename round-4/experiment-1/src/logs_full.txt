@@ -1,0 +1,71 @@
+21:26:58|INFO   |Stage-0 closure tests PASSED (Allen 13^2 cells cross-checked).
+21:26:58|INFO   |Running synthetic Allen positive control ($0) ...
+21:26:58|INFO   |  synth recall_95: inter_cov=0.250 best_cov=0.226 inter>best=True mean_bite=2.25
+21:26:58|INFO   |  synth recall_85: inter_cov=0.086 best_cov=0.320 inter>best=False mean_bite=2.70
+21:26:58|INFO   |  synth recall_70: inter_cov=0.026 best_cov=0.418 inter>best=False mean_bite=2.53
+21:26:58|INFO   |STEP 1: a-priori multi-path gate (zero LLM) ...
+21:26:59|INFO   |  GATE decision=GO combined_headline_eligible_N=125 (TDDMan=125, NT=0); MATRES_validation=0
+21:26:59|INFO   |  selected headline (TDDMan gold-singleton) queries=125; NarrativeTime descriptive-sample queries=40
+21:26:59|INFO   |[primary-window] tddman/window: 1252 Allen edge reads ...
+21:29:33|INFO   |  done cost=$0.3127 cache=90 pfail=1
+21:29:33|INFO   |[primary-window] PoT path-composition calls: 990 ...
+21:30:17|INFO   |[primary-local] tddman/local: 1254 Allen edge reads ...
+21:32:28|INFO   |  done cost=$0.6093 cache=907 pfail=1
+21:32:29|INFO   |[crossfam-window] tddman/window: 1252 Allen edge reads ...
+21:39:16|INFO   |  done cost=$0.2332 cache=90 pfail=1
+21:39:16|INFO   |  cross-family recall=0.987 underdet_rate=0.988 jaccard_vs_primary=0.871
+21:39:16|INFO   |[primary-window] narrativetime/window: 354 Allen edge reads ...
+21:39:57|INFO   |  done cost=$0.7089 cache=907 pfail=0
+21:39:59|INFO   |VERDICT=SCOPE-BOUNDARY H_main_gap=0.0000 res_gain=0.0000 n_head=125 cost=$0.9421 t=780s
+ALL CLOSURE TESTS PASSED (Allen 13^2=169 cells generated & cross-checked).
+
+=== HEADLINE ===
+  verdict: SCOPE-BOUNDARY
+  gate_decision: GO
+  combined_headline_eligible_N: 125
+  n_headline_queries_scored: 125
+  H_main_intersection_vs_best_single_gap: 0.0
+  H_main_gap_ci95: [0.0, 0.0]
+  H_main_gap_bootstrap_median: 0.0
+  H_main_ci_brackets_point: True
+  H_main_base_unreachable: False
+  H_main_holm_adjusted_significant: False
+  intersection_resolution_rate: 0.0
+  best_single_resolution_rate: 0.0
+  resolution_rate_gain_intersection_vs_best: 0.0
+  intersection_vs_naive_gap: 0.0
+  intersection_vs_pot_gap: 0.0
+  intersection_vs_raw_gap: 0.0
+  intersection_confident_wrong_rate: 1.0
+  realized_bite_mean: 0.0
+  tddman_per_edge_recall: 0.9016786570743405
+  tddman_recall_gate_verdict: CI_excludes_above_gate
+  window_primary_read_underdetermined_rate: 0.7937649880095923
+  window_primary_read_breadth_mean: 11.468425259792166
+  local_primary_read_underdetermined_rate: 0.8659217877094972
+  crossfamily_read_underdetermined_rate: 0.988009592326139
+  crossfamily_read_breadth_mean: 12.87849720223821
+  synth_recall95_intersection_beats_best_single: True
+  binding_constraint: real-text Allen-read informativeness (constituent edges read as near-universe/underdetermined by BOTH a weak and a strong cross-family reader) -> no composition bite -> mechanism cannot realize on real text
+  underpowered_lt70: False
+  tags: every number tagged REAL-LLM-READ / GOLD-ONLY-GATE / SYNTHETIC-ALLEN-CONTROL / THEOREM
+
+=== leaderboard (matched-coverage gaps) ===
+  H_main_intersection_vs_best_single        : gap=0.0000 ci95=[0.0000,0.0000] brackets=True matched_cov=0.0240 m_acc=0.0000 b_acc=0.0000 p=1.0000
+  H_iter_intersection_vs_naive              : gap=0.0000 ci95=[0.0000,0.0000] brackets=True matched_cov=0.0240 m_acc=0.0000 b_acc=0.0000 p=1.0000
+  naive_vs_best_single                      : gap=0.0000 ci95=[0.0000,0.0000] brackets=True matched_cov=0.0240 m_acc=0.0000 b_acc=0.0000 p=1.0000
+  H_intersection_vs_pot                     : gap=0.0000 ci95=[-0.3333,0.0000] brackets=True matched_cov=0.0240 m_acc=0.0000 b_acc=0.0000 p=1.0000
+  intersection_vs_raw                       : gap=0.0000 ci95=[-0.3333,0.0000] brackets=True matched_cov=0.0240 m_acc=0.0000 b_acc=0.0000 p=1.0000
+
+=== singleton-resolution-to-correct rates ===
+  intersection  : rate=0.0000 ci95=[0.0000,0.0000] n=125
+  best_single   : rate=0.0000 ci95=[0.0000,0.0000] n=125
+  naive         : rate=0.0000 ci95=[0.0000,0.0000] n=125
+  pot           : rate=0.0400 ci95=[0.0000,0.0991] n=125
+  raw           : rate=0.0320 ci95=[0.0000,0.0741] n=125
+
+  Holm: {"H_main_intersection_vs_best_single": {"p": 1.0, "holm_threshold": 0.016666666666666666, "adjusted_significant": false}, "H_iter_intersection_vs_naive": {"p": 1.0, "holm_threshold": 0.025, "adjusted_significant": false}, "H_intersection_vs_pot": {"p": 1.0, "holm_threshold": 0.05, "adjusted_significant": false}}
+  TDDMan per-edge Allen recall=0.9017 gate_verdict=CI_excludes_above_gate
+
+TOTAL COST=$0.9421 VERDICT=SCOPE-BOUNDARY n_head=125 powered=True
+EXIT=0 elapsed=797s

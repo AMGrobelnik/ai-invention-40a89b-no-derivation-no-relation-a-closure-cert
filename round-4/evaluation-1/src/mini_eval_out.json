@@ -1,0 +1,801 @@
+{
+  "metrics_agg": {
+    "temporal_modeA_vs_pot_gap": 0.026549,
+    "temporal_modeA_vs_pot_new_ci_lo": -0.088276,
+    "temporal_modeA_vs_pot_new_ci_hi": 0.139723,
+    "temporal_modeA_vs_pot_ci_brackets": 1.0,
+    "temporal_modeA_vs_pot_new_boot_p": 0.3322,
+    "temporal_modeA_vs_sc_new_boot_p": 0.2593,
+    "temporal_modeA_vs_pot_corrected_significant": 0.0,
+    "temporal_modeA_vs_sc_corrected_significant": 0.0,
+    "clutrr_naive_natural_coverage": 0.215686,
+    "clutrr_naive_natural_selacc": 0.727273,
+    "clutrr_naive_matched_selacc_forced": 0.2286,
+    "clutrr_modeA_vs_pot_gap": 0.428571,
+    "clutrr_modeA_selacc": 0.885714,
+    "temporal_confident_wrong_frac": 0.424779,
+    "temporal_confident_wrong_n": 48.0,
+    "temporal_synthetic_backstop_vs_raw_mean": 0.225228,
+    "allen_inherited_carried": 0.67349,
+    "allen_novel_selacc_carried": 0.0025,
+    "clutrr_h2_confident_wrong_reduction": 0.4444,
+    "clutrr_oracle_modeA_selacc": 1.0,
+    "clutrr_atomic_recall": 0.5324,
+    "temporal_modeA_coverage": 0.188333,
+    "llm_spend_usd": 0.0,
+    "n_reproduction_mismatches": 0.0,
+    "B_bootstrap": 10000.0
+  },
+  "metadata": {
+    "eval_name": "zero_spend_reanalysis__R1_bracketing__R2_clutrr_coverage__42pct_confwrong__contribution_split",
+    "description": "Pure re-analysis ($0 LLM, numpy+scipy only) of the two iter-3 source experiments: temporal point-algebra natural text and CLUTRR templated-kinship end-to-end. Retires reviewer reporting MINORs (R1 bracketing CI; R2 CLUTRR naive force-extension), surfaces the 42.5% confident-wrong block tied to silent-wrong-narrowing, recomputes the inherited-vs-novel decomposition on both venues, and emits the TRANSFERABLE-AT-POWER vs SYNTHETIC-CHANNEL-ONLY contribution split.",
+    "evidence_tags": [
+      "REAL-LLM-READ",
+      "REAL-LLM-READ-ON-SYNTHETIC",
+      "SYNTHETIC-CHANNEL",
+      "GOLD-ONLY-GATE",
+      "THEOREM",
+      "EXPLORATORY"
+    ],
+    "llm_spend_usd": 0.0,
+    "seed": 20260617,
+    "n_boot": 10000,
+    "clustering": "doc/story-clustered paired bootstrap",
+    "temporal_cache_complete_zero_spend": true,
+    "temporal_records_provenance": "per_query_records_temporal.json built by a $0 cached re-run of the temporal method.py (symlinked cache/, dummy API key, --skip-strong): total_cache_misses=0, primary_cost=0.0, 600 records; reproduced aggregates match published exactly.",
+    "sources": {
+      "temporal": {
+        "path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_3/gen_art/gen_art_experiment_2/full_method_out.json",
+        "id": "art_OETjJkketEVS"
+      },
+      "clutrr": {
+        "path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_3/gen_art/gen_art_experiment_1/full_method_out.json",
+        "id": "art_0a7i481ZRwS1"
+      },
+      "prior_decomposition": {
+        "path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_3/gen_art/gen_art_evaluation_1/eval_out.json",
+        "id": "art_D0cHQUJ8kY75"
+      },
+      "iter2_allen": {
+        "path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_2/gen_art/gen_art_experiment_1/full_method_out.json",
+        "id": "art_N0e4pH_C_Cxw"
+      },
+      "channel_carried": {
+        "id": "art_FtN4LBzazO_l"
+      }
+    },
+    "r1_bracketing": {
+      "tag": "REAL-LLM-READ",
+      "n_boot": 10000,
+      "seed": 20260617,
+      "method_primary": "fixed-operating-point doc-clustered paired bootstrap",
+      "cache_complete": true,
+      "fixed_m_cov": 0.188333,
+      "k_matched": 113,
+      "modeA_selective_accuracy": 0.575221,
+      "baselines": {
+        "pot": {
+          "point_gap": 0.026549,
+          "base_acc_at_matched_coverage": 0.548673,
+          "base_natural_coverage": 0.735,
+          "published_gap": 0.026549,
+          "published_old_ci95_B2000": [
+            0.045444,
+            0.314827
+          ],
+          "published_old_boot_p": 0.007,
+          "reproduced_old_ci95_B10000": [
+            0.086472,
+            0.276663
+          ],
+          "reproduced_old_boot_p": 0.0002,
+          "new_ci95": [
+            -0.088276,
+            0.139723
+          ],
+          "new_boot_p_gap_le_0": 0.3322,
+          "new_ci95_interp_variant": [
+            0.022453,
+            0.336686
+          ],
+          "new_boot_p_interp_variant": 0.0114,
+          "ci_brackets_point_estimate": true,
+          "old_ci_brackets_point_estimate": false,
+          "corrected_one_sided_significant": false,
+          "n_boot": 10000
+        },
+        "sc": {
+          "point_gap": 0.035398,
+          "base_acc_at_matched_coverage": 0.539823,
+          "base_natural_coverage": 1.0,
+          "published_gap": 0.035398,
+          "published_old_ci95_B2000": [
+            0.016096,
+            0.296336
+          ],
+          "published_old_boot_p": 0.0185,
+          "reproduced_old_ci95_B10000": [
+            0.102445,
+            0.294132
+          ],
+          "reproduced_old_boot_p": 0.0,
+          "new_ci95": [
+            -0.061388,
+            0.134703
+          ],
+          "new_boot_p_gap_le_0": 0.2593,
+          "new_ci95_interp_variant": [
+            0.013802,
+            0.298534
+          ],
+          "new_boot_p_interp_variant": 0.0153,
+          "ci_brackets_point_estimate": true,
+          "old_ci_brackets_point_estimate": true,
+          "corrected_one_sided_significant": false,
+          "n_boot": 10000
+        },
+        "naive": {
+          "point_gap": 0.026549,
+          "base_acc_at_matched_coverage": 0.548673,
+          "base_natural_coverage": 0.195,
+          "published_gap": 0.026549,
+          "published_old_ci95_B2000": [
+            -0.006774,
+            0.083386
+          ],
+          "published_old_boot_p": 0.078755,
+          "reproduced_old_ci95_B10000": [
+            -0.005949,
+            0.063302
+          ],
+          "reproduced_old_boot_p": 0.0627,
+          "new_ci95": [
+            -0.009615,
+            0.063453
+          ],
+          "new_boot_p_gap_le_0": 0.0878,
+          "new_ci95_interp_variant": [
+            -0.095393,
+            0.336259
+          ],
+          "new_boot_p_interp_variant": 0.1559,
+          "ci_brackets_point_estimate": true,
+          "old_ci_brackets_point_estimate": true,
+          "corrected_one_sided_significant": false,
+          "n_boot": 10000
+        },
+        "raw": {
+          "point_gap": -0.123894,
+          "base_acc_at_matched_coverage": 0.699115,
+          "base_natural_coverage": 1.0,
+          "published_gap": -0.123894,
+          "published_old_ci95_B2000": [
+            -0.212996,
+            0.032534
+          ],
+          "published_old_boot_p": 0.93,
+          "reproduced_old_ci95_B10000": [
+            0.086829,
+            0.280125
+          ],
+          "reproduced_old_boot_p": 0.0003,
+          "new_ci95": [
+            -0.228151,
+            -0.031663
+          ],
+          "new_boot_p_gap_le_0": 0.9962,
+          "new_ci95_interp_variant": [
+            -0.20371,
+            0.027093
+          ],
+          "new_boot_p_interp_variant": 0.9352,
+          "ci_brackets_point_estimate": true,
+          "old_ci_brackets_point_estimate": true,
+          "corrected_one_sided_significant": false,
+          "n_boot": 10000
+        }
+      },
+      "holm_H1_corrected": {
+        "H1_vs_SC": {
+          "p": 0.2593,
+          "p_adj": 0.5186,
+          "reject": false
+        },
+        "H1_vs_PoT": {
+          "p": 0.3322,
+          "p_adj": 0.5186,
+          "reject": false
+        }
+      },
+      "corrected_significance_finding": "IMPORTANT (honest re-analysis result): once the operating point is held FIXED, the corrected doc-clustered CIs are centered on the true point gaps and BRACKET them, but they are WIDE and INCLUDE 0 for both H1 gateways -- vs PoT new_ci=[-0.088276, 0.139723] (boot_p=0.3322), vs SC new_ci=[-0.061388, 0.134703] (boot_p=0.2593). The published Holm-significance (boot_p 0.007 / 0.0185, CI ENTIRELY above 0 yet EXCLUDING the point estimate) was an ARTIFACT of the same estimator/resample mismatch: the buggy bootstrap recentered on the volatile low-coverage baseline curve (~0.18), simultaneously inflating the gap magnitude AND its apparent significance. The plan's 'equivalent' fixed-m_cov INTERPOLATION variant (which RE-SELECTS the baseline matched set within each resample) gives vs-PoT [0.022453, 0.336686] (boot_p 0.0114) -- borderline, lower bound just above 0, but it retains RESIDUAL interpolation volatility (its upper bound ~0.34 echoes the buggy ~0.31), so the literal fixed-SET estimator (which pins the specific top-k matched queries per the plan's 'do NOT re-derive the threshold' instruction) is the PRIMARY. CONCLUSION: significance is ESTIMATOR-DEPENDENT and FRAGILE -- on natural temporal text the Mode-A selective-accuracy advantage over PoT/SC is MARGINAL and NOT robustly significant under a correctly-centered bootstrap (~36 doc clusters, SE~0.06); it is NOT the robust CONFIRM the published boot_p implied. The transferable temporal contribution is the gold-free abstain-on-collapse CERTIFICATE, NOT selective-accuracy dominance. vs-naive (boot_p 0.088) and vs-raw (gap -0.124) are consistent before and after the fix.",
+      "why_old_ci_failed": "method.py:531-563 matched_coverage_gap re-derived the TARGET coverage mc from each resample (line ~548 'mp,mc,ma=_curve(mrec)') and interpolated the baseline at that VARYING mc (line ~550 'ba=_acc_at_coverage(bp,mc)'). The resampled gap is therefore a DIFFERENT estimator than the headline gap; on the volatile low-coverage PoT curve the distribution recenters (~0.18) so the published vs-PoT CI [0.0454,0.3148] does NOT contain the observed point gap +0.0265. Holding the operating point FIXED across resamples (Mode-A's fixed answered set vs PoT's fixed top-k-by-conf matched set) yields a CI that BRACKETS +0.0265."
+    },
+    "r2_clutrr": {
+      "tag": "REAL-LLM-READ",
+      "venue": "templated-CLUTRR",
+      "n_present_queries": 102,
+      "naive_natural_coverage": 0.215686,
+      "naive_natural_selacc": 0.727273,
+      "naive_natural_n_answered": 22,
+      "naive_natural_n_correct": 16,
+      "naive_matched_coverage": 0.686275,
+      "naive_matched_selacc_forced": 0.2286,
+      "force_extension_flag": true,
+      "force_extension_caption": "naive matched-coverage selective accuracy (0.229 @ cov 0.686) is FORCE-EXTENDED beyond naive's natural coverage 0.216 (22/102 answered, predominantly hop-2) with representative-surface answers; the natural-coverage figure (selacc ~0.73 @ cov 0.216) is reported alongside. The '0.229 -> 0.886' contrast must NOT be read as the iteration result.",
+      "iteration_coverage_gap_by_hop": {
+        "2": 0.0,
+        "3": 0.5862,
+        "4": 0.25,
+        "5": 0.75,
+        "6": 0.75,
+        "7": 0.625,
+        "8": 0.25,
+        "9": 0.875,
+        "10": 0.375
+      },
+      "iteration_coverage_gap_by_hop_recomputed": {
+        "2": 0.0,
+        "3": 0.586207,
+        "4": 0.25,
+        "5": 0.75,
+        "6": 0.75,
+        "7": 0.625,
+        "8": 0.25,
+        "9": 0.875,
+        "10": 0.375
+      },
+      "iteration_statement": "full iterated closure resolves a strictly larger COVERAGE fraction than naive single-pass for hop>=3 (0.0@hop-2 -> 0.586@hop-3 -> up to 0.875@hop-9); naive single-pass resolves only hop-2. Route the CLUTRR H3 (iteration) claim through the coverage axis, NOT the forced selective-accuracy gap.",
+      "legitimate_leaderboard_matched_cov": 0.686275,
+      "legitimate_leaderboard": {
+        "modeA_selacc": 0.8857,
+        "pot_selacc": 0.4571,
+        "sc_selacc": 0.5571,
+        "raw_selacc": 0.5429,
+        "naive_selacc_FORCE_EXTENDED": 0.2286,
+        "off_selacc": 0.0
+      }
+    },
+    "clutrr_matched_coverage_gaps": {
+      "tag": "REAL-LLM-READ",
+      "venue": "templated-CLUTRR",
+      "matched_coverage": 0.686275,
+      "modeA_selacc": 0.885714,
+      "gaps": {
+        "pot": {
+          "point_gap": 0.428571,
+          "base_acc_matched": 0.457143,
+          "new_ci95": [
+            0.298589,
+            0.563015
+          ],
+          "new_boot_p_gap_le_0": 0.0,
+          "published_gap": 0.428571,
+          "published_ci95_B2000": [
+            0.298112,
+            0.557405
+          ],
+          "published_p_one_sided": 0.0005
+        },
+        "sc": {
+          "point_gap": 0.328571,
+          "base_acc_matched": 0.557143,
+          "new_ci95": [
+            0.202937,
+            0.453127
+          ],
+          "new_boot_p_gap_le_0": 0.0,
+          "published_gap": 0.328571,
+          "published_ci95_B2000": [
+            0.205243,
+            0.458119
+          ],
+          "published_p_one_sided": 0.0005
+        },
+        "raw": {
+          "point_gap": 0.342857,
+          "base_acc_matched": 0.542857,
+          "new_ci95": [
+            0.222279,
+            0.464956
+          ],
+          "new_boot_p_gap_le_0": 0.0,
+          "published_gap": 0.342857,
+          "published_ci95_B2000": [
+            0.220957,
+            0.463841
+          ],
+          "published_p_one_sided": 0.0005
+        }
+      },
+      "holm": {
+        "H1_vs_pot": {
+          "p": 0.0,
+          "p_adj": 0.0,
+          "reject": true
+        },
+        "H1_vs_sc": {
+          "p": 0.0,
+          "p_adj": 0.0,
+          "reject": true
+        }
+      },
+      "published_holm_p_adj": 0.001499
+    },
+    "temporal_confident_wrong_block": {
+      "tag": "REAL-LLM-READ",
+      "frac_confident_wrong_among_answered": 0.424779,
+      "n_confident_wrong": 48,
+      "denom_answered": 113,
+      "modeA_coverage": 0.188333,
+      "modeA_abstention_rate": 0.811667,
+      "confident_wrong_raw": 0.61,
+      "reduction_vs_raw_published": 0.185221,
+      "reduction_published_ci95": [
+        0.08645,
+        0.281589
+      ],
+      "reduction_recomputed_B10000": {
+        "reduction": 0.182705,
+        "ci95": [
+          0.086829,
+          0.280125
+        ],
+        "boot_p": 0.0003
+      },
+      "confident_wrong_recomputed": 0.424779,
+      "silent_wrong_narrowing_count": 48,
+      "all_confident_wrongs_are_silent_wrong_narrowing": true,
+      "raw_minus_modeA_acc_at_matched_coverage": -0.123894,
+      "reporting_block": "On natural temporal text, among the ~19% of queries Mode-A commits to, it is CONFIDENT-WRONG 42.5% (48/113). REPORT THIS BESIDE EVERY TEMPORAL CLAIM. Mechanism: silent-wrong-narrowing -- when gold is OMITTED from a contributing local read, closure narrows to a confident WRONG singleton with NO empty collapse, so Mode-B cannot flag it; ALL 48 Mode-A confident-wrongs are of this type. Bounded per-edge by (1-recall) and per-network by (1-J(E)). Hence 'faithfulness-by-abstention' is WEAKLY protective on dense temporal prose (~0.85 recall): raw actually out-accuracies Mode-A at matched coverage by 0.124. The temporal value of Mode-A is the gold-free certificate + abstention-as-an-OPTION, NOT selective-accuracy dominance, and even that is bounded by read recall.",
+      "read_soundness_rows": {
+        "narrativetime_primary": {
+          "recall": 0.856361,
+          "ci95": [
+            0.832217,
+            0.879756
+          ],
+          "verdict": "CI_excludes_below_gate",
+          "crosses_gate": false
+        },
+        "narrativetime_strong": {
+          "recall": 0.931677,
+          "ci95": [
+            0.888158,
+            0.966893
+          ],
+          "verdict": "CI_contains_gate",
+          "crosses_gate": true
+        },
+        "tddman_primary": {
+          "recall": 0.827852,
+          "ci95": [
+            0.777706,
+            0.869069
+          ],
+          "verdict": "CI_excludes_below_gate",
+          "crosses_gate": false
+        },
+        "tddman_strong": {
+          "recall": 0.81875,
+          "ci95": [
+            0.72673,
+            0.896998
+          ],
+          "verdict": "CI_excludes_below_gate",
+          "crosses_gate": false
+        }
+      },
+      "rho_within_doc_soundness_range": [
+        0.002828,
+        0.167214
+      ],
+      "synthetic_backstop_vs_raw_mean_gap": 0.225228,
+      "synthetic_backstop_cells_vs_raw": {
+        "R_redundancy_K4": 0.218589,
+        "R_redundancy_K8": 0.259516,
+        "H_hop_L4_C2": 0.211268,
+        "H_hop_L6_C3": 0.211538
+      },
+      "synthetic_backstop_recall": 0.96,
+      "read_soundness_localization": "At synthetic recall 0.96 Mode-A beats raw by ~+0.225 at matched coverage (mechanism works when reads are sound); on real text recall is ~0.83-0.86 (NT primary CI excludes-below-gate; NT strong CI straddles; TDDMan both below) -> the binding real-text constraint is the NEURAL READ (read soundness), NOT the symbolic closure step."
+    },
+    "decomposition": {
+      "clutrr": {
+        "tag": "REAL-LLM-READ",
+        "venue": "templated-CLUTRR",
+        "definition": "system_gap(ModeA-PoT) = INHERITED(naive-PoT) + NOVEL_selacc(ModeA-naive), all at matched coverage 0.686",
+        "system_gap_modeA_minus_pot": 0.4286,
+        "inherited_naive_minus_pot_FORCED": -0.2285,
+        "novel_modeA_minus_naive_FORCED": 0.6571,
+        "additivity_residual": 0.0,
+        "WARNING_force_extension": "naive@matched (0.229) is FORCE-EXTENDED, so this additive split mis-attributes: the negative 'inherited' (-0.229) and inflated 'novel' (+0.657) are ARTIFACTS of force-extending naive's coverage with representative-surface (wrong) answers. naive single-pass CANNOT iterate, so it is a poor proxy for the inherited exact-table composition advantage on CLUTRR.",
+        "honest_framing": "On CLUTRR the Mode-A advantage is realized through ITERATED exact-table composition over multi-hop chains (naive single-pass resolves only hop-2). The actionable inherited part is the STANDARD neuro-symbolic premise 'use exact composition tables instead of LLM composition' -- NOT this work's discovery; the novel cross-path-INTERSECTION mechanism is NOT what drives CLUTRR (kinship is a single-chain forward UNION fixpoint, no involutive converse).",
+        "naive_natural_hop2_selacc": 0.75,
+        "pot_hop2_selacc": 0.7059
+      },
+      "temporal_point": {
+        "tag": "REAL-LLM-READ",
+        "venue": "natural-temporal",
+        "algebra": "point",
+        "novel_selacc_covered_by_both": {
+          "n": 107,
+          "modeA_acc": 0.570093,
+          "naive_acc": 0.560748,
+          "novel_selacc": 0.009346,
+          "ci95": [
+            0.0,
+            0.032609
+          ],
+          "boot_p_le_0": 0.3617,
+          "n_pred_disagreements": 1,
+          "note": "iteration adds ~0 selective accuracy on queries BOTH methods resolve (full closure narrows to the same singleton single-pass already found)."
+        },
+        "inherited_naive_minus_pot_at_matched_cov": 0.0,
+        "iteration_on_coverage_axis": {
+          "len2_modeA_vs_naive_gap": 0.0,
+          "len2_note": "len2 Mode-A==naive EXACTLY 0.0 by theorem (single via, no iteration possible)",
+          "ge3_cyclic_modeA_vs_naive_gap": 0.041667,
+          "ge3_cyclic_ci95": [
+            0.0,
+            0.10531
+          ],
+          "ge3_cyclic_boot_p": 0.06105,
+          "label": "EXPLORATORY (NOT significant at power); iteration value, where any, lives on COVERAGE not selective-accuracy"
+        },
+        "summary": "On the SELECTIVE-ACCURACY axis the temporal iteration/novel term is ~0 (covered-by-both novel_selacc ~0); INHERITED (naive-PoT) is also ~0 at matched coverage. The matched-coverage system gap +0.0265 is MARGINAL and reflects Mode-A's higher accuracy on its low-coverage answered set, not iteration. Iteration's value (where any) is on the COVERAGE axis (ge3_cyclic +0.042, p=0.061, NS)."
+      },
+      "allen_carried_forward": {
+        "tag": "REAL-LLM-READ-ON-SYNTHETIC",
+        "venue": "synthetic-NL",
+        "source": "iter-2 Allen experiment art_N0e4pH_C_Cxw (carried via art_D0cHQUJ8kY75); NOT a dependency of this eval",
+        "note": "templated NL at recall ~1.0; carried forward as a CITED prior result.",
+        "carried_forward": {
+          "system_gap": 0.675991,
+          "inherited": 0.67349,
+          "novel_selacc": 0.0025
+        },
+        "recomputed_novel_selacc_covered_by_both": {
+          "n": 410,
+          "modeA_acc": 0.97561,
+          "naive_acc": 0.97561,
+          "novel_selacc": 0.0,
+          "note": "independent cross-check from iter-2 allen columns; ~0 confirms iteration adds ~0 selective accuracy."
+        },
+        "recomputed_inherited_naive_minus_pot_on_both": 0.629268,
+        "readable": true
+      },
+      "actionable_framing": "The INHERITED part (exact composition table vs LLM per-path composition) is the STANDARD neuro-symbolic premise, not this work's discovery. The NOVEL-on-selective-accuracy term (cross-path iterated intersection) is ~0 on both available algebras."
+    },
+    "contribution_split": {
+      "tag": "MIXED (per-row tagged)",
+      "columns": [
+        "claim",
+        "evidence_tag",
+        "venue",
+        "where_it_holds",
+        "number"
+      ],
+      "TRANSFERABLE_AT_POWER": [
+        {
+          "claim": "CLUTRR Mode-A selective accuracy vs PoT / SC / raw at matched coverage 0.686 -- inherited exact-table multi-hop composition + structural abstention on a TEMPLATED benchmark",
+          "evidence_tag": "REAL-LLM-READ",
+          "venue": "templated-CLUTRR",
+          "where_it_holds": "TRANSFERABLE-AT-POWER",
+          "number": {
+            "modeA_selacc": 0.8857,
+            "vs_pot_gap": 0.428571,
+            "vs_pot_ci95": [
+              0.298589,
+              0.563015
+            ],
+            "vs_sc_gap": 0.328571,
+            "vs_sc_ci95": [
+              0.202937,
+              0.453127
+            ],
+            "vs_raw_gap": 0.342857,
+            "vs_raw_ci95": [
+              0.222279,
+              0.464956
+            ],
+            "holm_p_adj": 0.001499
+          }
+        },
+        {
+          "claim": "CLUTRR H2 absent-relation confident-wrong (hallucination) reduction vs raw, risk-coverage on mixed n=282 pool (Mode-A answers 26.6% @ confident-wrong 4.6%)",
+          "evidence_tag": "REAL-LLM-READ",
+          "venue": "templated-CLUTRR",
+          "where_it_holds": "TRANSFERABLE-AT-POWER",
+          "number": {
+            "reduction": 0.4444,
+            "ci95": [
+              0.3167,
+              0.5833
+            ],
+            "p_one_sided": 0.0005,
+            "meets_0.20_bar": true,
+            "mixed_pool_modeA_coverage": 0.266,
+            "mixed_pool_modeA_confident_wrong": 0.0461
+          }
+        },
+        {
+          "claim": "CLUTRR gold-read ORACLE: Mode-A 1.00 selective accuracy @ coverage 0.951 vs 0.433 raw/PoT -- closure is NOT the bottleneck; the ~0.53 atomic neural READ is",
+          "evidence_tag": "REAL-LLM-READ",
+          "venue": "templated-CLUTRR",
+          "where_it_holds": "TRANSFERABLE-AT-POWER",
+          "number": {
+            "oracle_modeA_selacc": 1.0,
+            "oracle_coverage": 0.95098,
+            "oracle_raw_selacc": 0.433,
+            "atomic_recall": 0.5324,
+            "atomic_precision": 0.5361,
+            "atomic_f1": 0.5343
+          }
+        },
+        {
+          "claim": "CLUTRR multi-hop accuracy ~0.80-1.00 through hop-10 while raw->0.0 / PoT->0.2; SWI-Prolog discharge executed",
+          "evidence_tag": "REAL-LLM-READ",
+          "venue": "templated-CLUTRR",
+          "where_it_holds": "TRANSFERABLE-AT-POWER",
+          "number": {
+            "hop10_modeA_selacc": 1.0,
+            "hop10_raw_selacc": 0.0,
+            "hop10_pot_selacc": 0.2,
+            "prolog_executed": 40,
+            "prolog_match_engine": 40,
+            "prolog_match_gold": 39,
+            "prolog_total": 40
+          }
+        },
+        {
+          "claim": "Gold-free, training-free, per-edge ABSTAIN-ON-COLLAPSE certificate (Mode-B conflict detection) -- the genuinely portable novelty; convex-point arm zero-FP is THEOREM / read-soundness-conditional",
+          "evidence_tag": "THEOREM",
+          "venue": "natural-temporal + templated-CLUTRR",
+          "where_it_holds": "TRANSFERABLE-AT-POWER",
+          "number": {
+            "clutrr_prolog_collapse_certified": true,
+            "temporal_worked_collapse_certified": true,
+            "zero_FP": "conditional on read soundness (THEOREM-grade engine; empirical recall ~0.53-0.86)"
+          }
+        }
+      ],
+      "MARGINAL_NATURAL_TEXT": [
+        {
+          "claim": "TEMPORAL Mode-A vs PoT / SC selective-accuracy at matched coverage on NATURAL text -- the point gaps reproduce (+0.0265 / +0.0354) and the CORRECTED bracketing CIs (R1) center on them, but the CIs INCLUDE 0 and the gaps are NOT significant under a correctly-centered bootstrap; the published Holm-significance was a bootstrap artifact",
+          "evidence_tag": "REAL-LLM-READ",
+          "venue": "natural-temporal",
+          "where_it_holds": "MARGINAL-NATURAL-TEXT (not significant after correction)",
+          "number": {
+            "vs_pot_gap": 0.026549,
+            "vs_pot_corrected_ci95": [
+              -0.088276,
+              0.139723
+            ],
+            "vs_pot_corrected_boot_p": 0.3322,
+            "vs_sc_gap": 0.035398,
+            "vs_sc_corrected_ci95": [
+              -0.061388,
+              0.134703
+            ],
+            "vs_sc_corrected_boot_p": 0.2593,
+            "published_boot_p_ARTIFACT": [
+              0.007,
+              0.0185
+            ],
+            "CAVEAT": "report the 42.5% (48/113) confident-wrong-among-answered beside this; raw out-accuracies Mode-A by 0.124"
+          }
+        }
+      ],
+      "SYNTHETIC_CHANNEL_ONLY": [
+        {
+          "claim": "Cross-path INTERSECTION error-correcting-code mechanism + inverted-U redundancy optimum (recall & rho are CONTROLLED INPUTS) -- NEITHER real venue tested it",
+          "evidence_tag": "SYNTHETIC-CHANNEL",
+          "venue": "synthetic-channel",
+          "where_it_holds": "SYNTHETIC-CHANNEL-ONLY",
+          "number": {
+            "carried_from": "art_FtN4LBzazO_l",
+            "clutrr_is_single_chain_UNION_fixpoint": true,
+            "clutrr_pc2_converse_intersection_UNSOUND_collapse_rate": "~13% of gold-clean chains",
+            "temporal_iteration_full_vs_naive_p": 0.078755,
+            "temporal_ge3_cyclic_iteration_p": 0.06105,
+            "status": "ABSENT at power on both real venues (NS)"
+          }
+        },
+        {
+          "claim": "Synthetic backstop: Mode-A beats raw by ~+0.225 at matched coverage at recall 0.96 (mechanism works when local reads are sound)",
+          "evidence_tag": "SYNTHETIC-CHANNEL",
+          "venue": "synthetic-channel",
+          "where_it_holds": "SYNTHETIC-CHANNEL-ONLY",
+          "number": {
+            "mean_vs_raw_gap": 0.225228,
+            "recall": 0.96,
+            "cells": {
+              "R_redundancy_K4": 0.218589,
+              "R_redundancy_K8": 0.259516,
+              "H_hop_L4_C2": 0.211268,
+              "H_hop_L6_C3": 0.211538
+            }
+          }
+        }
+      ],
+      "synthetic_only_recast_note": "The prior reviewer's 'central comparative contribution is synthetic-only' concern is RECAST, NOT retired. The signature cross-path-intersection coding mechanism remains synthetic-channel-only (CLUTRR is a single-chain UNION fixpoint; temporal iteration is NS at power). The iter-4 DECISIVE experiment -- cross-path INTERSECTION vs best-single-path composition on a REAL multi-path-redundant stratum with adjusted-CI separation -- is what would move the SYNTHETIC-CHANNEL-ONLY rows."
+    },
+    "scope_framing": {
+      "clutrr_retag": "RE-TAG CLUTRR as a 'templated kinship benchmark (semi-synthetic)': max 871 chars (NONE reach the ~3000-char target), gold surface forms for entity grounding, hand-supplied composition table. The abstract must NOT say 'two non-synthetic venues' -- only the temporal corpora are natural text, and there the comparative contribution is MARGINAL (+0.0265; the CORRECTED bracketing CI INCLUDES 0 / boot_p~0.33, NOT robustly significant -- the published Holm-significance was a bootstrap artifact, see R1). Lead the natural-text story with the CERTIFICATE, not selective-accuracy dominance.",
+      "deduction_sub_module_scope": "Foreground the DEDUCTION-SUB-MODULE scope: OpenCyc grounding, atomic re-extraction, and LLM fuzzy-unification are OUT OF SCOPE. Real-text utility is EXTRACTION-LIMITED: ~0.53 atomic recall -> ~19% Mode-A coverage on natural temporal text.",
+      "recall_to_coverage_ceiling": {
+        "atomic_recall": 0.5324,
+        "modeA_real_text_coverage": 0.188333
+      },
+      "multiplicity_policy": "Re-affirm H1-H4 Holm / hierarchical gatekeeping: H1 (matched-coverage advantage) and H2 (hallucination reduction) are GATEWAYS; H3 (iteration) / H4 tested only if a gateway clears; everything else EXPLORATORY with nominal CIs (len2/ge3_cyclic strata, coverage-axis iteration).",
+      "retitle_suggestion": "Recommend re-titling the paper to center 'closure-certified deduction sub-module' (not an end-to-end text-to-FOL system): the substantive, transferable contribution is the gold-free abstain-on-collapse certificate over a deduction sub-module, evaluated at power on a templated benchmark and marginally on natural temporal text."
+    },
+    "sanity_check_reproductions": {
+      "n_mismatches": 0,
+      "mismatches": [],
+      "note": "every reproduced point estimate compared vs source file; mismatches (if any) listed here, not silently overwritten."
+    }
+  },
+  "datasets": [
+    {
+      "dataset": "clutrr_templated_kinship",
+      "examples": [
+        {
+          "input": "Belva went with her grandmother, Ashley, to the grocery store to help her while she shopped. Nicolas and his sister, Belva love it when their grandmother visits because she spoils them. She is coming this week to watch them while their parents are out of town.",
+          "output": "grandson",
+          "metadata_doc_id": "0741bf9a-a8f6-4ff1-aac1-1a4f0828aed9",
+          "metadata_hop": 2,
+          "metadata_is_absent": false,
+          "metadata_venue": "templated-CLUTRR",
+          "predict_modeA": "grandson",
+          "eval_modeA_correct": 1.0,
+          "eval_modeA_answered": 1.0,
+          "predict_naive": "grandson",
+          "eval_naive_correct": 1.0,
+          "eval_naive_answered": 1.0,
+          "predict_raw": "grandson",
+          "eval_raw_correct": 1.0,
+          "eval_raw_answered": 1.0,
+          "predict_sc": "grandson",
+          "eval_sc_correct": 1.0,
+          "eval_sc_answered": 1.0,
+          "predict_pot": "grandson",
+          "eval_pot_correct": 1.0,
+          "eval_pot_answered": 1.0
+        },
+        {
+          "input": "Emily and her granddaughter Ashley went to the mall Michael likes to visit his sister. Her name is Emily.",
+          "output": "grandson",
+          "metadata_doc_id": "0f226f4d-dc2d-4051-a875-9e555ecf0f22",
+          "metadata_hop": 2,
+          "metadata_is_absent": false,
+          "metadata_venue": "templated-CLUTRR",
+          "predict_modeA": "ABSTAIN",
+          "eval_modeA_correct": 0.0,
+          "eval_modeA_answered": 0.0,
+          "predict_naive": "ABSTAIN",
+          "eval_naive_correct": 0.0,
+          "eval_naive_answered": 0.0,
+          "predict_raw": "uncle",
+          "eval_raw_correct": 0.0,
+          "eval_raw_answered": 1.0,
+          "predict_sc": "uncle",
+          "eval_sc_correct": 0.0,
+          "eval_sc_answered": 1.0,
+          "predict_pot": "uncle",
+          "eval_pot_correct": 0.0,
+          "eval_pot_answered": 1.0
+        },
+        {
+          "input": "Heidi went to her brother Kevin's birthday party Ashley and her granddaughter Heidi prepared dinner as a family",
+          "output": "grandson",
+          "metadata_doc_id": "162070fb-1a46-44f2-91e5-50f8cc99daf3",
+          "metadata_hop": 2,
+          "metadata_is_absent": false,
+          "metadata_venue": "templated-CLUTRR",
+          "predict_modeA": "grandson",
+          "eval_modeA_correct": 1.0,
+          "eval_modeA_answered": 1.0,
+          "predict_naive": "grandson",
+          "eval_naive_correct": 1.0,
+          "eval_naive_answered": 1.0,
+          "predict_raw": "grandson",
+          "eval_raw_correct": 1.0,
+          "eval_raw_answered": 1.0,
+          "predict_sc": "grandson",
+          "eval_sc_correct": 1.0,
+          "eval_sc_answered": 1.0,
+          "predict_pot": "grandson",
+          "eval_pot_correct": 1.0,
+          "eval_pot_answered": 1.0
+        }
+      ]
+    },
+    {
+      "dataset": "temporal_point_algebra_natural_text",
+      "examples": [
+        {
+          "input": "temporal point-algebra deduction query stratum=ge3_cyclic",
+          "output": "includes",
+          "metadata_docid": "ABC19980304.1830.1636",
+          "metadata_stratum": "ge3_cyclic",
+          "metadata_venue": "natural-temporal",
+          "predict_modeA": "ABSTAIN",
+          "eval_modeA_answered": 0.0,
+          "eval_modeA_correct": 0.0,
+          "eval_modeA_conf": 0.8,
+          "predict_naive": "ABSTAIN",
+          "eval_naive_answered": 0.0,
+          "eval_naive_correct": 0.0,
+          "eval_naive_conf": 0.8,
+          "predict_raw": "simultaneous",
+          "eval_raw_answered": 1.0,
+          "eval_raw_correct": 0.0,
+          "eval_raw_conf": 0.2,
+          "predict_pot": "ABSTAIN",
+          "eval_pot_answered": 0.0,
+          "eval_pot_correct": 0.0,
+          "eval_pot_conf": 0.45,
+          "predict_sc": "simultaneous",
+          "eval_sc_answered": 1.0,
+          "eval_sc_correct": 0.0,
+          "eval_sc_conf": 0.8
+        },
+        {
+          "input": "temporal point-algebra deduction query stratum=ge3_cyclic",
+          "output": "before",
+          "metadata_docid": "PRI19980213.2000.0313",
+          "metadata_stratum": "ge3_cyclic",
+          "metadata_venue": "natural-temporal",
+          "predict_modeA": "ABSTAIN",
+          "eval_modeA_answered": 0.0,
+          "eval_modeA_correct": 0.0,
+          "eval_modeA_conf": 0.7,
+          "predict_naive": "ABSTAIN",
+          "eval_naive_answered": 0.0,
+          "eval_naive_correct": 0.0,
+          "eval_naive_conf": 0.7,
+          "predict_raw": "before",
+          "eval_raw_answered": 1.0,
+          "eval_raw_correct": 1.0,
+          "eval_raw_conf": 0.9,
+          "predict_pot": "simultaneous",
+          "eval_pot_answered": 1.0,
+          "eval_pot_correct": 0.0,
+          "eval_pot_conf": 1.0,
+          "predict_sc": "before",
+          "eval_sc_answered": 1.0,
+          "eval_sc_correct": 1.0,
+          "eval_sc_conf": 1.0
+        },
+        {
+          "input": "temporal point-algebra deduction query stratum=ge3_cyclic",
+          "output": "after",
+          "metadata_docid": "APW19980213.1320",
+          "metadata_stratum": "ge3_cyclic",
+          "metadata_venue": "natural-temporal",
+          "predict_modeA": "ABSTAIN",
+          "eval_modeA_answered": 0.0,
+          "eval_modeA_correct": 0.0,
+          "eval_modeA_conf": 0.9,
+          "predict_naive": "ABSTAIN",
+          "eval_naive_answered": 0.0,
+          "eval_naive_correct": 0.0,
+          "eval_naive_conf": 0.9,
+          "predict_raw": "after",
+          "eval_raw_answered": 1.0,
+          "eval_raw_correct": 1.0,
+          "eval_raw_conf": 0.9,
+          "predict_pot": "ABSTAIN",
+          "eval_pot_answered": 0.0,
+          "eval_pot_correct": 0.0,
+          "eval_pot_conf": 0.333333,
+          "predict_sc": "before",
+          "eval_sc_answered": 1.0,
+          "eval_sc_correct": 0.0,
+          "eval_sc_conf": 1.0
+        }
+      ]
+    }
+  ]
+}

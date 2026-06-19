@@ -1,0 +1,12 @@
+[project]
+name = "closure-cert-iter5-evaluation-1"
+version = "0.1.0"
+description = "Zero-spend iter-5 re-analysis: synthetic-Allen small-bite caveat + inverted-U realized coverage + one-thesis contribution table (tags-in-columns) for GEN_PAPER_TEXT."
+requires-python = ">=3.12"
+dependencies = [
+    "numpy==2.4.6",
+    "scipy==1.17.1",
+    "networkx==3.6.1",
+    "loguru==0.7.3",
+    "jsonschema==4.26.0",
+]

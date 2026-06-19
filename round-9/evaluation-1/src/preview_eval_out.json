@@ -1,0 +1,436 @@
+{
+  "metadata": {
+    "evaluation_name": "Zero-spend re-analysis: caught-fraction headline + sec:boundary scaffold",
+    "description": "Pure $0 re-analysis of three frozen iter-7/iter-8 experiment outputs. Reproduction gate + caught-fraction rigor fix + 16-cell capability table + 7 paper-facing blocks.",
+    "budget": {
+      "cumulative_usd": 0.0,
+      "n_llm_calls": 0
+    },
+    "seeds": {
+      "reproduction_seed": 20260618,
+      "eval_seed": 20260617
+    },
+    "reproduction_gate": {
+      "all_ok": true,
+      "n_checks": 68,
+      "n_passed": 68,
+      "tolerance_rates": 0.005,
+      "tolerance_fractions": 0.0001,
+      "checks": [
+        {
+          "name": "locatedin.count_present",
+          "recomputed": 515.0,
+          "carried": 515.0,
+          "tol": 0,
+          "ok": true
+        },
+        {
+          "name": "locatedin.count_sibling_absent",
+          "recomputed": 450.0,
+          "carried": 450.0,
+          "tol": 0,
+          "ok": true
+        },
+        {
+          "name": "locatedin.count_diffcomponent_absent",
+          "recomputed": 250.0,
+          "carried": 250.0,
+          "tol": 0,
+          "ok": true
+        }
+      ],
+      "soft_cross_checks": [
+        {
+          "name": "locatedin.mixed.reduction_ci_lo",
+          "recomputed": -0.0502,
+          "carried": -0.0502,
+          "tol": 0.01,
+          "ok": true,
+          "note": "MC doc-clustered"
+        },
+        {
+          "name": "locatedin.mixed.reduction_ci_hi",
+          "recomputed": -0.0204,
+          "carried": -0.0204,
+          "tol": 0.01,
+          "ok": true,
+          "note": "MC doc-clustered"
+        },
+        {
+          "name": "verifier.clutrr_present.signal_verbalized_selacc",
+          "recomputed": 0.542857,
+          "carried": 0.5429,
+          "tol": 0.005,
+          "ok": true,
+          "note": "tie-break-sensitive (source order)"
+        }
+      ],
+      "note": "every paper-facing literal recomputed from the per-query rows and hard-asserted against the carried metadata (mirrors exp_2's 32/32 gate); soft checks are doc-clustered bootstrap CIs reproduced to Mon..."
+    },
+    "rigor_fix": {
+      "pure_absent_identity": {
+        "pool_n": 450,
+        "per_method_named_eq_cw_eq_coverage": {
+          "modeA_certificate": 0.0733,
+          "ct_verbalized": 0.3,
+          "ct_sc_margin": 0.3,
+          "ct_ptrue": 0.3,
+          "ct_negent": 0.3,
+          "queryside_verifier": 0.2178,
+          "queryside_selfverify": 0.1622
+        },
+        "statement": "On a PURE-ABSENT pool there are no present pairs to cover, so each method's 'coverage' degenerates to its named-rate, which equals its confident-wrong rate (any named answer on an absent pair is wrong...",
+        "identity_check": {
+          "reduction": 0.2267,
+          "equals_0.30_minus_0.0733": 0.2267,
+          "matches_carried_0.2267": true
+        },
+        "evidence_tag": "RE-ANALYSIS-DERIVED"
+      },
+      "caught_fraction_leaderboard": {
+        "denominator": "the 135 raw-LLM confident absent-sibling fabrications (identical for every method)",
+        "fairness": "matched-coverage-FAIR: identical denominator, every method judged on the SAME fabrications -> 'of the high-confidence absent fabrications the raw reader emits, what fraction does each method turn into...",
+        "leaderboard": {
+          "certificate": {
+            "fraction_caught": 0.7852,
+            "evidence_tag": "RE-ANALYSIS-DERIVED"
+          },
+          "ct_verbalized": {
+            "fraction_caught": 0.4,
+            "cert_minus_method_caught_gap": {
+              "gap": 0.3852,
+              "ci95": [
+                0.2441,
+                0.5203
+              ],
+              "p_one_sided": 0.0001,
+              "ci_excludes_0": true,
+              "n_boot": 10000
+            },
+            "evidence_tag": "RE-ANALYSIS-DERIVED"
+          },
+          "ct_sc_margin": {
+            "fraction_caught": 0.0667,
+            "cert_minus_method_caught_gap": {
+              "gap": 0.7185,
+              "ci95": [
+                0.632,
+                0.8
+              ],
+              "p_one_sided": 0.0001,
+              "ci_excludes_0": true,
+              "n_boot": 10000
+            },
+            "evidence_tag": "RE-ANALYSIS-DERIVED"
+          },
+          "ct_ptrue": {
+            "fraction_caught": 0.3037,
+            "cert_minus_method_caught_gap": {
+              "gap": 0.4815,
+              "ci95": [
+                0.365,
+                0.5962
+              ],
+              "p_one_sided": 0.0001,
+              "ci_excludes_0": true,
+              "n_boot": 10000
+            },
+            "evidence_tag": "RE-ANALYSIS-DERIVED"
+          },
+          "ct_negent": {
+            "fraction_caught": 0.0667,
+            "cert_minus_method_caught_gap": {
+              "gap": 0.7185,
+              "ci95": [
+                0.632,
+                0.8
+              ],
+              "p_one_sided": 0.0001,
+              "ci_excludes_0": true,
+              "n_boot": 10000
+            },
+            "evidence_tag": "RE-ANALYSIS-DERIVED"
+          },
+          "queryside_verifier": {
+            "fraction_caught": 0.2741,
+            "cert_minus_method_caught_gap": {
+              "gap": 0.5111,
+              "ci95": [
+                0.3986,
+                0.6198
+              ],
+              "p_one_sided": 0.0001,
+              "ci_excludes_0": true,
+              "n_boot": 10000
+            },
+            "evidence_tag": "RE-ANALYSIS-DERIVED"
+          },
+          "queryside_selfverify": {
+            "fraction_caught": 0.4593,
+            "cert_minus_method_caught_gap": {
+              "gap": 0.3259,
+              "ci95": [
+                0.2071,
+                0.442
+              ],
+              "p_one_sided": 0.0001,
+              "ci_excludes_0": true,
+              "n_boot": 10000
+            },
+            "evidence_tag": "RE-ANALYSIS-DERIVED"
+          }
+        },
+        "new_bootstrap": {
+          "seed": 20260617,
+          "B": 10000,
+          "cluster": "metadata_doc_id",
+          "gaps_with_ci_excluding_0": [
+            "ct_verbalized",
+            "ct_sc_margin",
+            "ct_ptrue"
+          ]
+        },
+        "evidence_tag": "RE-ANALYSIS-DERIVED"
+      },
+      "load_bearing_natural_confident_wrong": {
+        "certificate": 0.0733,
+        "raw_and_all_dispersion_signals": 0.3,
+        "queryside_verifier": 0.2178,
+        "queryside_selfverify": 0.1622,
+        "note": "the certificate beats the established false-premise detector (verifier) by ~3x on the sibling pool",
+        "evidence_tag": "REAL-LLM-READ/NATURAL-PROSE (reproduced-from-rows)"
+      },
+      "honest_mixed_pool": {
+        "certificate_matched_coverage_reduction": -0.0342,
+        "ci95": [
+          -0.0502,
+          -0.0204
+        ],
+        "carried_ci95": [
+          -0.0502,
+          -0.0204
+        ],
+        "why_negative": "the certificate over-abstains on present at extraction recall 0.148; present coverage collapses to 0.05, so the matched-coverage reduction is degenerate",
+        "reconcile_with_artifact_caveats": {
+          "pure_absent_degeneracy": "on the pure-absent pool confident-wrong==coverage so the dispersion signals coincide; the decisive signal-discriminating object is the MIXED-sibling view3 + crux survival + the query-side gate.",
+          "matched_coverage_degeneracy_under_extraction_limit": "the MIXED-pool matched-coverage confident-wrong REDUCTION is DEGENERATE here: because LLM extraction recall is low (~0.15) the certificate's present coverage collapses to ~0.05, so every baseline is t..."
+        },
+        "evidence_tag": "RE-ANALYSIS-DERIVED"
+      }
+    },
+    "capability_gap_table": {
+      "rows": [
+        {
+          "corpus": "Re-DocRED",
+          "reader": "gemini",
+          "tag": "REPRODUCED-FROM-ROWS",
+          "survival": {
+            "verbalized": 0.5083,
+            "sc_margin": 0.85,
+            "ptrue": 0.4833,
+            "negent": 0.85
+          },
+          "caught": {
+            "verbalized": 0.4917,
+            "sc_margin": 0.15,
+            "ptrue": 0.5167,
+            "negent": 0.15
+          }
+        },
+        {
+          "corpus": "Re-DocRED",
+          "reader": "deepseek",
+          "tag": "CARRIED-NOT-REPRODUCED",
+          "survival": {
+            "verbalized": 0.4118,
+            "sc_margin": 0.2941,
+            "ptrue": 0.3235,
+            "negent": 0.2941
+          },
+          "caught": {
+            "verbalized": 0.5882,
+            "sc_margin": 0.7059,
+            "ptrue": 0.6765,
+            "negent": 0.7059
+          },
+          "note": "no deepseek per-row predictions in the kinship file (cross-family is aggregate-only)"
+        },
+        {
+          "corpus": "CLUTRR",
+          "reader": "gemini",
+          "tag": "CARRIED-LITERAL",
+          "survival": {
+            "verbalized": 0.4353,
+            "sc_margin": 0.7176,
+            "ptrue": 0.2471,
+            "negent": 0.7176
+          },
+          "caught": {
+            "verbalized": 0.5647,
+            "sc_margin": 0.2824,
+            "ptrue": 0.7529,
+            "negent": 0.2824
+          },
+          "note": "cross-checked against exp_2 (verifier) reproduction_gate which re-derived them"
+        }
+      ],
+      "FACT_A_robust_corpus_and_reader_transferable": {
+        "CLUTRR_gemini": 0.472,
+        "CLUTRR_deepseek": 0.483,
+        "ReDocRED_gemini": 0.326,
+        "ReDocRED_deepseek": 0.318,
+        "locatedin_sibling_gemini": 0.3,
+        "locatedin_sibling_mistral": 0.4378,
+        "statement": "the raw confident-fabrication RATE transfers across readers AND corpora (the ROBUST fact)",
+        "evidence_tag": "REAL-LLM-READ"
+      },
+      "FACT_B_reader_and_signal_dependent": {
+        "statement": "which signals catch the fabrications is READER- and SIGNAL-dependent: verbalized confidence is the most robustly BLIND signal; dispersion signals catch the MAJORITY for the stronger deepseek reader bu...",
+        "evidence_tag": "RE-ANALYSIS-DERIVED"
+      }
+    },
+    "paper_blocks": {
+      "located_in_results_table": "### located-in results (CORRECTED: caught-fraction as the matched-coverage headline)\n\nOn 450 natural Wikipedia same-component-sibling absent located-in pairs, the raw reader confidently fabricates a c...",
+      "sec_boundary_block": "### sec:boundary (regenerated CLEAN from intended numbers only)\n\nThe certificate's NET utility is extraction-limited on natural prose. On Re-DocRED kinship the mixed-pool confident-wrong reductions of...",
+      "sec_boundary_proofread_checklist": [
+        "FLAG duplicated sentences (identical or near-identical consecutive sentences).",
+        "FLAG truncated '...' fragments or sentences ending mid-clause.",
+        "FLAG any number reported WITHOUT a coverage/abstention qualifier (every selective-accuracy / confident-wrong number must state its coverage or operating point)."
+      ],
+      "sibling_decisiveness_paragraph": "### sibling-regime decisiveness (restated via fabrication prevalence)\n\nThe same-component-sibling regime is the decisive one because the raw reader fabricates a containment on 30% of sibling-absent pa...",
+      "fuzzy_feasibility_note": "### fuzzy-unification feasibility note (supporting, not a contribution)\n\nFuzzy unification is demoted to a feasibility note: an LLM probabilistic-unification arm emits calibrated sub-1.0 disjunctions ...",
+      "verifier_scope_block": "### verifier-scope block (methodology)\n\nWe scope the necessity claim precisely to **a same-model prompt-based query-side verifier**: a recognized prompt-based instantiation of the false-premise / unan...",
+      "contribution_table": "### contribution table (one thesis)\n\n| contribution | status |\n|---|---|\n| ROBUST DIAGNOSTIC: FACT A (confident absent-fabrication rate, corpus+reader transferable) + the signal-agnostic mixed-pool ca...",
+      "abstract_first_results_sentence_FORK": {
+        "FORK_A_demonstrated_fix": "On natural prose the closure certificate reduces confident-relation hallucinations at matched coverage by a margin whose doc-clustered CI excludes 0 on a non-structural-by-construction regime, while a...",
+        "FORK_B_honest_boundary": "The certificate's NET utility is demonstrated only on clean/templated graphs; the natural-prose contribution is the catching-objective win (caught-fraction cert 0.785 vs verifier 0.274) plus a quantif...",
+        "selection_rule": "Use FORK-A IFF the parallel iter-9 extraction experiment flips the mixed-pool confident-wrong reduction CI to EXCLUDE 0 on a natural (non-structural-by-construction) regime; otherwise use FORK-B. GEN_...",
+        "evidence_tag": "PENDING-PARALLEL-EXPERIMENT"
+      }
+    },
+    "count_reconciliation": {
+      "kinship_redocred_primary_slice": {
+        "present_multihop": 360,
+        "present_composed_only_non_circular": 222,
+        "absent": 368,
+        "engine_round_trip_present_combined": 476,
+        "engine_round_trip_absent_combined": 577,
+        "docred_present": 116,
+        "docred_absent": 209,
+        "docred_absent_false_negative_frac": 0.646,
+        "explanation": "the 476/476 present and 577/577 absent engine round-trip is the COMBINED re-docred (360/368) + docred (116/209, whose absent gold is downgraded ~64.6% false-negatives); removes the apparent 360!=476 /..."
+      },
+      "locatedin": {
+        "present": 515,
+        "same_component_sibling_absent": 450,
+        "different_component_absent": 250,
+        "never_annotated": 115,
+        "held_out": 400,
+        "n_docs": 283,
+        "note": "present 515 = held_out 400 + never_annotated 115"
+      },
+      "evidence_tag": "REPRODUCED-FROM-ROWS"
+    },
+    "verdict_mirrors": {
+      "locatedin": {
+        "overall": "EXTRACTION-LIMITED-BOUNDARY",
+        "certificate_beats_all_6_baselines_holm": false,
+        "verifier_suffices": false
+      },
+      "verifier": {
+        "overall": "CERTIFICATE_NECESSARY_BOTH_VENUES",
+        "reproduction_gate_32_32": true
+      },
+      "kinship": {
+        "overall": "EXTRACTION-LIMITED-BOUNDARY"
+      }
+    },
+    "evidence_tag_vocabulary": [
+      "CARRIED-LITERAL",
+      "REPRODUCED-FROM-ROWS",
+      "RE-ANALYSIS-DERIVED"
+    ]
+  },
+  "metrics_agg": {
+    "reproduction_gate_n_hard_checks": 68.0,
+    "reproduction_gate_n_passed": 68.0,
+    "reproduction_gate_all_ok": 1.0,
+    "locatedin_FACT_A_sibling": 0.3,
+    "locatedin_FACT_A_diffcomponent": 0.06,
+    "locatedin_caught_fraction_certificate": 0.7852,
+    "locatedin_caught_fraction_verbalized": 0.4,
+    "locatedin_caught_fraction_queryside_verifier": 0.2741,
+    "locatedin_natural_confident_wrong_certificate": 0.0733,
+    "locatedin_natural_confident_wrong_verifier": 0.2178,
+    "locatedin_mixed_reduction_point": -0.0342,
+    "verifier_caught_clutrr_certificate": 0.9412,
+    "verifier_caught_clutrr_verifier": 0.5882,
+    "verifier_caught_redocred_certificate": 0.85,
+    "verifier_caught_redocred_verifier": 0.1,
+    "verifier_cert_minus_verifier_gap_clutrr": 0.3529,
+    "verifier_cert_minus_verifier_gap_redocred": 0.75,
+    "kinship_FACT_A": 0.3261,
+    "kinship_certificate_absent_confident_wrong": 0.0707,
+    "kinship_caught_fraction_ptrue": 0.5167,
+    "n_caught_gaps_excluding_0": 6.0,
+    "budget_cumulative_usd": 0.0,
+    "n_llm_calls": 0.0
+  },
+  "datasets": [
+    {
+      "dataset": "paper_blocks",
+      "examples": [
+        {
+          "input": "located_in_results_table :: corrected caught-fraction table",
+          "output": "### located-in results (CORRECTED: caught-fraction as the matched-coverage headline)\n\nOn 450 natural Wikipedia same-component-sibling absent located-in pairs, the raw reader confidently fabricates a c...",
+          "eval_char_len": 1349.0
+        },
+        {
+          "input": "sec_boundary_block :: regenerated clean boundary section",
+          "output": "### sec:boundary (regenerated CLEAN from intended numbers only)\n\nThe certificate's NET utility is extraction-limited on natural prose. On Re-DocRED kinship the mixed-pool confident-wrong reductions of...",
+          "eval_char_len": 907.0
+        },
+        {
+          "input": "sec_boundary_proofread_checklist :: draft-wide proofread flags",
+          "output": "[\"FLAG duplicated sentences (identical or near-identical consecutive sentences).\", \"FLAG truncated '...' fragments or sentences ending mid-clause.\", \"FLAG any number reported WITHOUT a coverage/absten...",
+          "eval_char_len": 1273.0
+        }
+      ]
+    },
+    {
+      "dataset": "rigor_fix",
+      "examples": [
+        {
+          "input": "rigor.pure_absent_identity :: named==cw==coverage on pure-absent pool",
+          "output": "{\"pool_n\": 450, \"per_method_named_eq_cw_eq_coverage\": {\"modeA_certificate\": 0.0733, \"ct_verbalized\": 0.3, \"ct_sc_margin\": 0.3, \"ct_ptrue\": 0.3, \"ct_negent\": 0.3, \"queryside_verifier\": 0.2178, \"querysi...",
+          "eval_char_len": 887.0
+        },
+        {
+          "input": "rigor.caught_fraction_leaderboard :: matched-coverage-fair headline",
+          "output": "{\"certificate\": {\"fraction_caught\": 0.7852, \"evidence_tag\": \"RE-ANALYSIS-DERIVED\"}, \"ct_verbalized\": {\"fraction_caught\": 0.4, \"cert_minus_method_caught_gap\": {\"gap\": 0.3852, \"ci95\": [0.2441, 0.5203], ...",
+          "eval_char_len": 1410.0
+        },
+        {
+          "input": "rigor.load_bearing_natural_confident_wrong :: cert 0.073 vs 0.30",
+          "output": "{\"certificate\": 0.0733, \"raw_and_all_dispersion_signals\": 0.3, \"queryside_verifier\": 0.2178, \"queryside_selfverify\": 0.1622, \"note\": \"the certificate beats the established false-premise detector (veri...",
+          "eval_char_len": 304.0
+        }
+      ]
+    },
+    {
+      "dataset": "tables",
+      "examples": [
+        {
+          "input": "capability_gap_table :: 16-cell per-signal x reader x corpus survival+caught",
+          "output": "{\"rows\": [{\"corpus\": \"Re-DocRED\", \"reader\": \"gemini\", \"tag\": \"REPRODUCED-FROM-ROWS\", \"survival\": {\"verbalized\": 0.5083, \"sc_margin\": 0.85, \"ptrue\": 0.4833, \"negent\": 0.85}, \"caught\": {\"verbalized\": 0....",
+          "eval_char_len": 1977.0
+        },
+        {
+          "input": "count_reconciliation :: per-dataset counts",
+          "output": "{\"kinship_redocred_primary_slice\": {\"present_multihop\": 360, \"present_composed_only_non_circular\": 222, \"absent\": 368, \"engine_round_trip_present_combined\": 476, \"engine_round_trip_absent_combined\": 5...",
+          "eval_char_len": 795.0
+        }
+      ]
+    }
+  ]
+}

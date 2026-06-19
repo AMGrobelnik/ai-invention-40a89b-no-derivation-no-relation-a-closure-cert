@@ -1,0 +1,1218 @@
+{
+  "name": "Synthetic QCN Backbone",
+  "description": "Controlled, globally-consistent qualitative constraint networks over three relation algebras (convex Point, Allen Interval, RCC-8) built by model-based realization (integer points / integer-grid intervals / collinear integer discs), with controlled query topology (redundancy P, hop L, cyclomatic mu, node count, random Renz-Nebel A(n,d)) and template NL realizations. The canonical ground truth is the gold ATOMIC graph; every network is realizable hence globally consistent, and the gold relation on each edge is exact.",
+  "algebras": {
+    "point": {
+      "role": "primary",
+      "base_relations": [
+        "<",
+        "=",
+        ">"
+      ],
+      "convex_only": true,
+      "note": "non-convex '!=' ({<,>}) forbidden in disjunctive labels"
+    },
+    "allen": {
+      "role": "primary",
+      "base_relations": [
+        "b",
+        "bi",
+        "m",
+        "mi",
+        "o",
+        "oi",
+        "d",
+        "di",
+        "s",
+        "si",
+        "f",
+        "fi",
+        "eq"
+      ]
+    },
+    "rcc8": {
+      "role": "secondary",
+      "base_relations": [
+        "DC",
+        "EC",
+        "PO",
+        "EQ",
+        "TPP",
+        "NTPP",
+        "TPPi",
+        "NTPPi"
+      ],
+      "embedding": "collinear integer discs (exact integer tangency)"
+    }
+  },
+  "composition_tables": {
+    "source": "alreich/qualreas (authoritative TransTable + Converse)",
+    "files": [
+      "Linear_Point_Algebra.json",
+      "Linear_Interval_Algebra.json",
+      "RCC8_Algebra.json"
+    ],
+    "verification": "Cross-checked in tests/test_qcn.py by 3 independent derivations: point composition vs direct sign reasoning; Allen composition vs exhaustive endpoint-CSP enumeration (full table match); RCC-8 reader soundness vs disc-triple enumeration; plus identity + converse-distributivity axioms. All 436 checks pass."
+  },
+  "generation": {
+    "tag": "full",
+    "networks_per_cell_primary": 500,
+    "networks_per_cell_secondary": 300,
+    "path_cap": 64,
+    "len_cutoff": 8,
+    "total_networks": 35100,
+    "correctness_gate": "PASSED: for every enumerated s-t path, the composition of gold atomic relations contains the gold query relation (asserted on all networks).",
+    "deduction_required": "query pair (s,t) shares no edge and never co-occurs in a single verbalized sentence",
+    "reproducible": "per (algebra, cell, index) md5 seeds; resumable"
+  },
+  "splits": {
+    "scheme": "deterministic md5(seed)%100 within every cell",
+    "pilot": "<10",
+    "dev": "10-29",
+    "test": ">=30",
+    "fold_counts": {
+      "point": {
+        "test": 9445,
+        "dev": 2718,
+        "pilot": 1337
+      },
+      "allen": {
+        "test": 9516,
+        "pilot": 1343,
+        "dev": 2641
+      },
+      "rcc8": {
+        "pilot": 790,
+        "test": 5673,
+        "dev": 1637
+      }
+    }
+  },
+  "relation_histograms": {
+    "point": {
+      "=": 12479,
+      "<": 88770,
+      ">": 88404
+    },
+    "allen": {
+      "b": 21346,
+      "fi": 9208,
+      "s": 9237,
+      "mi": 9424,
+      "eq": 3592,
+      "bi": 22005,
+      "si": 9219,
+      "f": 9268,
+      "m": 9346,
+      "oi": 21844,
+      "di": 21801,
+      "d": 21824,
+      "o": 21883
+    },
+    "rcc8": {
+      "EQ": 1764,
+      "EC": 8640,
+      "PO": 40069,
+      "TPPi": 5264,
+      "DC": 33420,
+      "TPP": 5362,
+      "NTPPi": 9725,
+      "NTPP": 9793
+    }
+  },
+  "cell_summary": {
+    "allen/cyc_mu0": {
+      "count": 500,
+      "has_bite_frac": 0.826,
+      "singleton_resolved_frac": 0.104,
+      "mu_distribution": {
+        "0": 500
+      },
+      "mean_num_simple_paths": 1.0,
+      "mean_num_nodes": 4.0
+    },
+    "allen/cyc_mu1": {
+      "count": 500,
+      "has_bite_frac": 0.886,
+      "singleton_resolved_frac": 0.18,
+      "mu_distribution": {
+        "1": 500
+      },
+      "mean_num_simple_paths": 2.0,
+      "mean_num_nodes": 6.0
+    },
+    "allen/cyc_mu2": {
+      "count": 500,
+      "has_bite_frac": 0.906,
+      "singleton_resolved_frac": 0.152,
+      "mu_distribution": {
+        "2": 500
+      },
+      "mean_num_simple_paths": 4.0,
+      "mean_num_nodes": 6.0
+    },
+    "allen/cyc_mu3": {
+      "count": 500,
+      "has_bite_frac": 0.922,
+      "singleton_resolved_frac": 0.202,
+      "mu_distribution": {
+        "3": 500
+      },
+      "mean_num_simple_paths": 7.36,
+      "mean_num_nodes": 6.0
+    },
+    "allen/hop_L2_P2": {
+      "count": 500,
+      "has_bite_frac": 0.982,
+      "singleton_resolved_frac": 0.586,
+      "mu_distribution": {
+        "1": 500
+      },
+      "mean_num_simple_paths": 2.0,
+      "mean_num_nodes": 4.0
+    },
+    "allen/hop_L3_P2": {
+      "count": 500,
+      "has_bite_frac": 0.878,
+      "singleton_resolved_frac": 0.176,
+      "mu_distribution": {
+        "1": 500
+      },
+      "mean_num_simple_paths": 2.0,
+      "mean_num_nodes": 6.0
+    },
+    "allen/hop_L4_P2": {
+      "count": 500,
+      "has_bite_frac": 0.588,
+      "singleton_resolved_frac": 0.04,
+      "mu_distribution": {
+        "1": 500
+      },
+      "mean_num_simple_paths": 2.0,
+      "mean_num_nodes": 8.0
+    },
+    "allen/hop_L5_P2": {
+      "count": 500,
+      "has_bite_frac": 0.292,
+      "singleton_resolved_frac": 0.01,
+      "mu_distribution": {
+        "1": 500
+      },
+      "mean_num_simple_paths": 2.0,
+      "mean_num_nodes": 10.0
+    },
+    "allen/nodes_large": {
+      "count": 500,
+      "has_bite_frac": 0.836,
+      "singleton_resolved_frac": 0.092,
+      "mu_distribution": {
+        "2": 500
+      },
+      "mean_num_simple_paths": 3.0,
+      "mean_num_nodes": 28.0
+    },
+    "allen/nodes_medium": {
+      "count": 500,
+      "has_bite_frac": 0.888,
+      "singleton_resolved_frac": 0.132,
+      "mu_distribution": {
+        "2": 500
+      },
+      "mean_num_simple_paths": 3.0,
+      "mean_num_nodes": 16.0
+    },
+    "allen/nodes_small": {
+      "count": 500,
+      "has_bite_frac": 0.912,
+      "singleton_resolved_frac": 0.18,
+      "mu_distribution": {
+        "2": 500
+      },
+      "mean_num_simple_paths": 3.0,
+      "mean_num_nodes": 8.0
+    },
+    "allen/rand_n12_d3": {
+      "count": 500,
+      "has_bite_frac": 0.45,
+      "singleton_resolved_frac": 0.04,
+      "mu_distribution": {
+        "0": 3,
+        "1": 6,
+        "2": 21,
+        "3": 35,
+        "4": 34,
+        "5": 39,
+        "6": 61,
+        "7": 55,
+        "8": 61,
+        "9": 46,
+        "10": 43,
+        "11": 34,
+        "12": 17,
+        "13": 24,
+        "14": 7,
+        "15": 5,
+        "16": 5,
+        "18": 3,
+        "19": 1
+      },
+      "mean_num_simple_paths": 36.836,
+      "mean_num_nodes": 11.582
+    },
+    "allen/rand_n12_d6": {
+      "count": 500,
+      "has_bite_frac": 0.376,
+      "singleton_resolved_frac": 0.018,
+      "mu_distribution": {
+        "13": 1,
+        "14": 1,
+        "15": 1,
+        "16": 4,
+        "17": 10,
+        "18": 10,
+        "19": 12,
+        "20": 20,
+        "21": 34,
+        "22": 40,
+        "23": 46,
+        "24": 48,
+        "25": 34,
+        "26": 52,
+        "27": 48,
+        "28": 41,
+        "29": 37,
+        "30": 25,
+        "31": 14,
+        "32": 8,
+        "33": 6,
+        "34": 5,
+        "35": 2,
+        "36": 1
+      },
+      "mean_num_simple_paths": 64.0,
+      "mean_num_nodes": 11.998
+    },
+    "allen/rand_n12_d9": {
+      "count": 500,
+      "has_bite_frac": 0.216,
+      "singleton_resolved_frac": 0.024,
+      "mu_distribution": {
+        "33": 1,
+        "34": 2,
+        "35": 3,
+        "36": 3,
+        "37": 7,
+        "38": 15,
+        "39": 29,
+        "40": 32,
+        "41": 48,
+        "42": 69,
+        "43": 79,
+        "44": 60,
+        "45": 46,
+        "46": 36,
+        "47": 37,
+        "48": 16,
+        "49": 12,
+        "50": 3,
+        "51": 2
+      },
+      "mean_num_simple_paths": 64.0,
+      "mean_num_nodes": 12.0
+    },
+    "allen/rand_n8_d3": {
+      "count": 500,
+      "has_bite_frac": 0.772,
+      "singleton_resolved_frac": 0.182,
+      "mu_distribution": {
+        "0": 11,
+        "1": 26,
+        "2": 31,
+        "3": 54,
+        "4": 87,
+        "5": 72,
+        "6": 72,
+        "7": 71,
+        "8": 34,
+        "9": 22,
+        "10": 14,
+        "11": 3,
+        "12": 3
+      },
+      "mean_num_simple_paths": 22.8,
+      "mean_num_nodes": 7.798
+    },
+    "allen/rand_n8_d6": {
+      "count": 500,
+      "has_bite_frac": 0.77,
+      "singleton_resolved_frac": 0.124,
+      "mu_distribution": {
+        "9": 2,
+        "11": 4,
+        "12": 2,
+        "13": 15,
+        "14": 28,
+        "15": 57,
+        "16": 73,
+        "17": 107,
+        "18": 105,
+        "19": 77,
+        "20": 30
+      },
+      "mean_num_simple_paths": 64.0,
+      "mean_num_nodes": 8.0
+    },
+    "allen/rand_n8_d9": {
+      "count": 500,
+      "has_bite_frac": 0.77,
+      "singleton_resolved_frac": 0.114,
+      "mu_distribution": {
+        "10": 1,
+        "11": 3,
+        "12": 4,
+        "13": 10,
+        "14": 30,
+        "15": 62,
+        "16": 84,
+        "17": 109,
+        "18": 103,
+        "19": 62,
+        "20": 32
+      },
+      "mean_num_simple_paths": 64.0,
+      "mean_num_nodes": 8.0
+    },
+    "allen/red_P1_L2": {
+      "count": 500,
+      "has_bite_frac": 0.99,
+      "singleton_resolved_frac": 0.4,
+      "mu_distribution": {
+        "0": 500
+      },
+      "mean_num_simple_paths": 1.0,
+      "mean_num_nodes": 3.0
+    },
+    "allen/red_P1_L3": {
+      "count": 500,
+      "has_bite_frac": 0.77,
+      "singleton_resolved_frac": 0.076,
+      "mu_distribution": {
+        "0": 500
+      },
+      "mean_num_simple_paths": 1.0,
+      "mean_num_nodes": 4.0
+    },
+    "allen/red_P2_L2": {
+      "count": 500,
+      "has_bite_frac": 0.992,
+      "singleton_resolved_frac": 0.588,
+      "mu_distribution": {
+        "1": 500
+      },
+      "mean_num_simple_paths": 2.0,
+      "mean_num_nodes": 4.0
+    },
+    "allen/red_P2_L3": {
+      "count": 500,
+      "has_bite_frac": 0.906,
+      "singleton_resolved_frac": 0.144,
+      "mu_distribution": {
+        "1": 500
+      },
+      "mean_num_simple_paths": 2.0,
+      "mean_num_nodes": 6.0
+    },
+    "allen/red_P3_L2": {
+      "count": 500,
+      "has_bite_frac": 0.996,
+      "singleton_resolved_frac": 0.728,
+      "mu_distribution": {
+        "2": 500
+      },
+      "mean_num_simple_paths": 3.0,
+      "mean_num_nodes": 5.0
+    },
+    "allen/red_P3_L3": {
+      "count": 500,
+      "has_bite_frac": 0.92,
+      "singleton_resolved_frac": 0.218,
+      "mu_distribution": {
+        "2": 500
+      },
+      "mean_num_simple_paths": 3.0,
+      "mean_num_nodes": 8.0
+    },
+    "allen/red_P4_L2": {
+      "count": 500,
+      "has_bite_frac": 0.994,
+      "singleton_resolved_frac": 0.75,
+      "mu_distribution": {
+        "3": 500
+      },
+      "mean_num_simple_paths": 4.0,
+      "mean_num_nodes": 6.0
+    },
+    "allen/red_P4_L3": {
+      "count": 500,
+      "has_bite_frac": 0.924,
+      "singleton_resolved_frac": 0.24,
+      "mu_distribution": {
+        "3": 500
+      },
+      "mean_num_simple_paths": 4.0,
+      "mean_num_nodes": 10.0
+    },
+    "allen/red_P6_L2": {
+      "count": 500,
+      "has_bite_frac": 0.998,
+      "singleton_resolved_frac": 0.84,
+      "mu_distribution": {
+        "5": 500
+      },
+      "mean_num_simple_paths": 6.0,
+      "mean_num_nodes": 8.0
+    },
+    "allen/red_P8_L2": {
+      "count": 500,
+      "has_bite_frac": 1.0,
+      "singleton_resolved_frac": 0.89,
+      "mu_distribution": {
+        "7": 500
+      },
+      "mean_num_simple_paths": 8.0,
+      "mean_num_nodes": 10.0
+    },
+    "point/cyc_mu0": {
+      "count": 500,
+      "has_bite_frac": 0.186,
+      "singleton_resolved_frac": 0.186,
+      "mu_distribution": {
+        "0": 500
+      },
+      "mean_num_simple_paths": 1.0,
+      "mean_num_nodes": 4.0
+    },
+    "point/cyc_mu1": {
+      "count": 500,
+      "has_bite_frac": 0.236,
+      "singleton_resolved_frac": 0.236,
+      "mu_distribution": {
+        "1": 500
+      },
+      "mean_num_simple_paths": 2.0,
+      "mean_num_nodes": 6.0
+    },
+    "point/cyc_mu2": {
+      "count": 500,
+      "has_bite_frac": 0.274,
+      "singleton_resolved_frac": 0.274,
+      "mu_distribution": {
+        "2": 500
+      },
+      "mean_num_simple_paths": 4.0,
+      "mean_num_nodes": 6.0
+    },
+    "point/cyc_mu3": {
+      "count": 500,
+      "has_bite_frac": 0.262,
+      "singleton_resolved_frac": 0.262,
+      "mu_distribution": {
+        "3": 500
+      },
+      "mean_num_simple_paths": 7.316,
+      "mean_num_nodes": 6.0
+    },
+    "point/hop_L2_P2": {
+      "count": 500,
+      "has_bite_frac": 0.652,
+      "singleton_resolved_frac": 0.652,
+      "mu_distribution": {
+        "1": 500
+      },
+      "mean_num_simple_paths": 2.0,
+      "mean_num_nodes": 4.0
+    },
+    "point/hop_L3_P2": {
+      "count": 500,
+      "has_bite_frac": 0.254,
+      "singleton_resolved_frac": 0.254,
+      "mu_distribution": {
+        "1": 500
+      },
+      "mean_num_simple_paths": 2.0,
+      "mean_num_nodes": 6.0
+    },
+    "point/hop_L4_P2": {
+      "count": 500,
+      "has_bite_frac": 0.046,
+      "singleton_resolved_frac": 0.046,
+      "mu_distribution": {
+        "1": 500
+      },
+      "mean_num_simple_paths": 2.0,
+      "mean_num_nodes": 8.0
+    },
+    "point/hop_L5_P2": {
+      "count": 500,
+      "has_bite_frac": 0.014,
+      "singleton_resolved_frac": 0.014,
+      "mu_distribution": {
+        "1": 500
+      },
+      "mean_num_simple_paths": 2.0,
+      "mean_num_nodes": 10.0
+    },
+    "point/nodes_large": {
+      "count": 500,
+      "has_bite_frac": 0.22,
+      "singleton_resolved_frac": 0.22,
+      "mu_distribution": {
+        "2": 500
+      },
+      "mean_num_simple_paths": 3.0,
+      "mean_num_nodes": 28.0
+    },
+    "point/nodes_medium": {
+      "count": 500,
+      "has_bite_frac": 0.238,
+      "singleton_resolved_frac": 0.238,
+      "mu_distribution": {
+        "2": 500
+      },
+      "mean_num_simple_paths": 3.0,
+      "mean_num_nodes": 16.0
+    },
+    "point/nodes_small": {
+      "count": 500,
+      "has_bite_frac": 0.308,
+      "singleton_resolved_frac": 0.308,
+      "mu_distribution": {
+        "2": 500
+      },
+      "mean_num_simple_paths": 3.0,
+      "mean_num_nodes": 8.0
+    },
+    "point/rand_n12_d3": {
+      "count": 500,
+      "has_bite_frac": 0.066,
+      "singleton_resolved_frac": 0.066,
+      "mu_distribution": {
+        "0": 4,
+        "1": 2,
+        "2": 19,
+        "3": 34,
+        "4": 44,
+        "5": 46,
+        "6": 48,
+        "7": 62,
+        "8": 66,
+        "9": 40,
+        "10": 41,
+        "11": 37,
+        "12": 20,
+        "13": 12,
+        "14": 9,
+        "15": 10,
+        "16": 2,
+        "17": 1,
+        "18": 3
+      },
+      "mean_num_simple_paths": 36.96,
+      "mean_num_nodes": 11.582
+    },
+    "point/rand_n12_d6": {
+      "count": 500,
+      "has_bite_frac": 0.032,
+      "singleton_resolved_frac": 0.032,
+      "mu_distribution": {
+        "11": 1,
+        "13": 1,
+        "14": 1,
+        "15": 2,
+        "16": 5,
+        "17": 7,
+        "18": 10,
+        "19": 16,
+        "20": 27,
+        "21": 40,
+        "22": 43,
+        "23": 39,
+        "24": 47,
+        "25": 47,
+        "26": 38,
+        "27": 54,
+        "28": 33,
+        "29": 23,
+        "30": 23,
+        "31": 21,
+        "32": 10,
+        "33": 6,
+        "34": 5,
+        "37": 1
+      },
+      "mean_num_simple_paths": 64.0,
+      "mean_num_nodes": 11.996
+    },
+    "point/rand_n12_d9": {
+      "count": 500,
+      "has_bite_frac": 0.028,
+      "singleton_resolved_frac": 0.028,
+      "mu_distribution": {
+        "33": 1,
+        "34": 2,
+        "35": 3,
+        "36": 4,
+        "37": 9,
+        "38": 23,
+        "39": 24,
+        "40": 43,
+        "41": 56,
+        "42": 65,
+        "43": 56,
+        "44": 74,
+        "45": 61,
+        "46": 39,
+        "47": 19,
+        "48": 15,
+        "49": 3,
+        "50": 2,
+        "51": 1
+      },
+      "mean_num_simple_paths": 64.0,
+      "mean_num_nodes": 12.0
+    },
+    "point/rand_n8_d3": {
+      "count": 500,
+      "has_bite_frac": 0.208,
+      "singleton_resolved_frac": 0.208,
+      "mu_distribution": {
+        "0": 13,
+        "1": 26,
+        "2": 43,
+        "3": 65,
+        "4": 64,
+        "5": 79,
+        "6": 70,
+        "7": 55,
+        "8": 52,
+        "9": 17,
+        "10": 13,
+        "11": 2,
+        "12": 1
+      },
+      "mean_num_simple_paths": 22.538,
+      "mean_num_nodes": 7.82
+    },
+    "point/rand_n8_d6": {
+      "count": 500,
+      "has_bite_frac": 0.218,
+      "singleton_resolved_frac": 0.218,
+      "mu_distribution": {
+        "10": 2,
+        "11": 1,
+        "12": 6,
+        "13": 10,
+        "14": 32,
+        "15": 49,
+        "16": 74,
+        "17": 109,
+        "18": 109,
+        "19": 66,
+        "20": 42
+      },
+      "mean_num_simple_paths": 64.0,
+      "mean_num_nodes": 8.0
+    },
+    "point/rand_n8_d9": {
+      "count": 500,
+      "has_bite_frac": 0.206,
+      "singleton_resolved_frac": 0.206,
+      "mu_distribution": {
+        "10": 1,
+        "11": 1,
+        "12": 4,
+        "13": 11,
+        "14": 31,
+        "15": 55,
+        "16": 92,
+        "17": 106,
+        "18": 92,
+        "19": 75,
+        "20": 32
+      },
+      "mean_num_simple_paths": 64.0,
+      "mean_num_nodes": 8.0
+    },
+    "point/red_P1_L2": {
+      "count": 500,
+      "has_bite_frac": 0.52,
+      "singleton_resolved_frac": 0.52,
+      "mu_distribution": {
+        "0": 500
+      },
+      "mean_num_simple_paths": 1.0,
+      "mean_num_nodes": 3.0
+    },
+    "point/red_P1_L3": {
+      "count": 500,
+      "has_bite_frac": 0.186,
+      "singleton_resolved_frac": 0.186,
+      "mu_distribution": {
+        "0": 500
+      },
+      "mean_num_simple_paths": 1.0,
+      "mean_num_nodes": 4.0
+    },
+    "point/red_P2_L2": {
+      "count": 500,
+      "has_bite_frac": 0.674,
+      "singleton_resolved_frac": 0.674,
+      "mu_distribution": {
+        "1": 500
+      },
+      "mean_num_simple_paths": 2.0,
+      "mean_num_nodes": 4.0
+    },
+    "point/red_P2_L3": {
+      "count": 500,
+      "has_bite_frac": 0.254,
+      "singleton_resolved_frac": 0.254,
+      "mu_distribution": {
+        "1": 500
+      },
+      "mean_num_simple_paths": 2.0,
+      "mean_num_nodes": 6.0
+    },
+    "point/red_P3_L2": {
+      "count": 500,
+      "has_bite_frac": 0.762,
+      "singleton_resolved_frac": 0.762,
+      "mu_distribution": {
+        "2": 500
+      },
+      "mean_num_simple_paths": 3.0,
+      "mean_num_nodes": 5.0
+    },
+    "point/red_P3_L3": {
+      "count": 500,
+      "has_bite_frac": 0.306,
+      "singleton_resolved_frac": 0.306,
+      "mu_distribution": {
+        "2": 500
+      },
+      "mean_num_simple_paths": 3.0,
+      "mean_num_nodes": 8.0
+    },
+    "point/red_P4_L2": {
+      "count": 500,
+      "has_bite_frac": 0.8,
+      "singleton_resolved_frac": 0.8,
+      "mu_distribution": {
+        "3": 500
+      },
+      "mean_num_simple_paths": 4.0,
+      "mean_num_nodes": 6.0
+    },
+    "point/red_P4_L3": {
+      "count": 500,
+      "has_bite_frac": 0.316,
+      "singleton_resolved_frac": 0.316,
+      "mu_distribution": {
+        "3": 500
+      },
+      "mean_num_simple_paths": 4.0,
+      "mean_num_nodes": 10.0
+    },
+    "point/red_P6_L2": {
+      "count": 500,
+      "has_bite_frac": 0.826,
+      "singleton_resolved_frac": 0.826,
+      "mu_distribution": {
+        "5": 500
+      },
+      "mean_num_simple_paths": 6.0,
+      "mean_num_nodes": 8.0
+    },
+    "point/red_P8_L2": {
+      "count": 500,
+      "has_bite_frac": 0.894,
+      "singleton_resolved_frac": 0.894,
+      "mu_distribution": {
+        "7": 500
+      },
+      "mean_num_simple_paths": 8.0,
+      "mean_num_nodes": 10.0
+    },
+    "rcc8/cyc_mu0": {
+      "count": 300,
+      "has_bite_frac": 0.25,
+      "singleton_resolved_frac": 0.01,
+      "mu_distribution": {
+        "0": 300
+      },
+      "mean_num_simple_paths": 1.0,
+      "mean_num_nodes": 4.0
+    },
+    "rcc8/cyc_mu1": {
+      "count": 300,
+      "has_bite_frac": 0.43,
+      "singleton_resolved_frac": 0.0233,
+      "mu_distribution": {
+        "1": 300
+      },
+      "mean_num_simple_paths": 2.0,
+      "mean_num_nodes": 6.0
+    },
+    "rcc8/cyc_mu2": {
+      "count": 300,
+      "has_bite_frac": 0.3767,
+      "singleton_resolved_frac": 0.03,
+      "mu_distribution": {
+        "2": 300
+      },
+      "mean_num_simple_paths": 4.0,
+      "mean_num_nodes": 6.0
+    },
+    "rcc8/cyc_mu3": {
+      "count": 300,
+      "has_bite_frac": 0.4167,
+      "singleton_resolved_frac": 0.0167,
+      "mu_distribution": {
+        "3": 300
+      },
+      "mean_num_simple_paths": 7.34,
+      "mean_num_nodes": 6.0
+    },
+    "rcc8/hop_L2_P2": {
+      "count": 300,
+      "has_bite_frac": 0.9533,
+      "singleton_resolved_frac": 0.24,
+      "mu_distribution": {
+        "1": 300
+      },
+      "mean_num_simple_paths": 2.0,
+      "mean_num_nodes": 4.0
+    },
+    "rcc8/hop_L3_P2": {
+      "count": 300,
+      "has_bite_frac": 0.38,
+      "singleton_resolved_frac": 0.0167,
+      "mu_distribution": {
+        "1": 300
+      },
+      "mean_num_simple_paths": 2.0,
+      "mean_num_nodes": 6.0
+    },
+    "rcc8/hop_L4_P2": {
+      "count": 300,
+      "has_bite_frac": 0.0567,
+      "singleton_resolved_frac": 0.0,
+      "mu_distribution": {
+        "1": 300
+      },
+      "mean_num_simple_paths": 2.0,
+      "mean_num_nodes": 8.0
+    },
+    "rcc8/hop_L5_P2": {
+      "count": 300,
+      "has_bite_frac": 0.0033,
+      "singleton_resolved_frac": 0.0,
+      "mu_distribution": {
+        "1": 300
+      },
+      "mean_num_simple_paths": 2.0,
+      "mean_num_nodes": 10.0
+    },
+    "rcc8/nodes_large": {
+      "count": 300,
+      "has_bite_frac": 0.3,
+      "singleton_resolved_frac": 0.0333,
+      "mu_distribution": {
+        "2": 300
+      },
+      "mean_num_simple_paths": 3.0,
+      "mean_num_nodes": 28.0
+    },
+    "rcc8/nodes_medium": {
+      "count": 300,
+      "has_bite_frac": 0.3633,
+      "singleton_resolved_frac": 0.0067,
+      "mu_distribution": {
+        "2": 300
+      },
+      "mean_num_simple_paths": 3.0,
+      "mean_num_nodes": 16.0
+    },
+    "rcc8/nodes_small": {
+      "count": 300,
+      "has_bite_frac": 0.4267,
+      "singleton_resolved_frac": 0.03,
+      "mu_distribution": {
+        "2": 300
+      },
+      "mean_num_simple_paths": 3.0,
+      "mean_num_nodes": 8.0
+    },
+    "rcc8/rand_n12_d3": {
+      "count": 300,
+      "has_bite_frac": 0.08,
+      "singleton_resolved_frac": 0.0,
+      "mu_distribution": {
+        "1": 4,
+        "2": 12,
+        "3": 20,
+        "4": 22,
+        "5": 32,
+        "6": 44,
+        "7": 30,
+        "8": 37,
+        "9": 27,
+        "10": 28,
+        "11": 12,
+        "12": 12,
+        "13": 9,
+        "14": 5,
+        "15": 4,
+        "17": 2
+      },
+      "mean_num_simple_paths": 35.4,
+      "mean_num_nodes": 11.55
+    },
+    "rcc8/rand_n12_d6": {
+      "count": 300,
+      "has_bite_frac": 0.0733,
+      "singleton_resolved_frac": 0.0067,
+      "mu_distribution": {
+        "12": 1,
+        "14": 3,
+        "15": 1,
+        "16": 3,
+        "17": 5,
+        "18": 5,
+        "19": 12,
+        "20": 19,
+        "21": 10,
+        "22": 26,
+        "23": 27,
+        "24": 18,
+        "25": 29,
+        "26": 29,
+        "27": 22,
+        "28": 28,
+        "29": 19,
+        "30": 8,
+        "31": 15,
+        "32": 7,
+        "33": 5,
+        "34": 3,
+        "35": 4,
+        "36": 1
+      },
+      "mean_num_simple_paths": 64.0,
+      "mean_num_nodes": 11.993
+    },
+    "rcc8/rand_n12_d9": {
+      "count": 300,
+      "has_bite_frac": 0.07,
+      "singleton_resolved_frac": 0.0067,
+      "mu_distribution": {
+        "34": 1,
+        "35": 3,
+        "36": 3,
+        "37": 1,
+        "38": 6,
+        "39": 16,
+        "40": 25,
+        "41": 32,
+        "42": 28,
+        "43": 43,
+        "44": 42,
+        "45": 28,
+        "46": 27,
+        "47": 22,
+        "48": 10,
+        "49": 7,
+        "50": 2,
+        "51": 2,
+        "52": 2
+      },
+      "mean_num_simple_paths": 64.0,
+      "mean_num_nodes": 12.0
+    },
+    "rcc8/rand_n8_d3": {
+      "count": 300,
+      "has_bite_frac": 0.33,
+      "singleton_resolved_frac": 0.06,
+      "mu_distribution": {
+        "0": 7,
+        "1": 8,
+        "2": 31,
+        "3": 43,
+        "4": 38,
+        "5": 34,
+        "6": 43,
+        "7": 32,
+        "8": 34,
+        "9": 16,
+        "10": 7,
+        "11": 2,
+        "12": 3,
+        "13": 2
+      },
+      "mean_num_simple_paths": 23.607,
+      "mean_num_nodes": 7.797
+    },
+    "rcc8/rand_n8_d6": {
+      "count": 300,
+      "has_bite_frac": 0.31,
+      "singleton_resolved_frac": 0.0267,
+      "mu_distribution": {
+        "12": 2,
+        "13": 7,
+        "14": 15,
+        "15": 32,
+        "16": 49,
+        "17": 54,
+        "18": 74,
+        "19": 44,
+        "20": 23
+      },
+      "mean_num_simple_paths": 64.0,
+      "mean_num_nodes": 8.0
+    },
+    "rcc8/rand_n8_d9": {
+      "count": 300,
+      "has_bite_frac": 0.4067,
+      "singleton_resolved_frac": 0.0467,
+      "mu_distribution": {
+        "10": 1,
+        "11": 1,
+        "12": 2,
+        "13": 9,
+        "14": 18,
+        "15": 37,
+        "16": 53,
+        "17": 70,
+        "18": 55,
+        "19": 37,
+        "20": 17
+      },
+      "mean_num_simple_paths": 64.0,
+      "mean_num_nodes": 8.0
+    },
+    "rcc8/red_P1_L2": {
+      "count": 300,
+      "has_bite_frac": 0.81,
+      "singleton_resolved_frac": 0.23,
+      "mu_distribution": {
+        "0": 300
+      },
+      "mean_num_simple_paths": 1.0,
+      "mean_num_nodes": 3.0
+    },
+    "rcc8/red_P1_L3": {
+      "count": 300,
+      "has_bite_frac": 0.26,
+      "singleton_resolved_frac": 0.0133,
+      "mu_distribution": {
+        "0": 300
+      },
+      "mean_num_simple_paths": 1.0,
+      "mean_num_nodes": 4.0
+    },
+    "rcc8/red_P2_L2": {
+      "count": 300,
+      "has_bite_frac": 0.92,
+      "singleton_resolved_frac": 0.2767,
+      "mu_distribution": {
+        "1": 300
+      },
+      "mean_num_simple_paths": 2.0,
+      "mean_num_nodes": 4.0
+    },
+    "rcc8/red_P2_L3": {
+      "count": 300,
+      "has_bite_frac": 0.4267,
+      "singleton_resolved_frac": 0.0267,
+      "mu_distribution": {
+        "1": 300
+      },
+      "mean_num_simple_paths": 2.0,
+      "mean_num_nodes": 6.0
+    },
+    "rcc8/red_P3_L2": {
+      "count": 300,
+      "has_bite_frac": 0.95,
+      "singleton_resolved_frac": 0.3667,
+      "mu_distribution": {
+        "2": 300
+      },
+      "mean_num_simple_paths": 3.0,
+      "mean_num_nodes": 5.0
+    },
+    "rcc8/red_P3_L3": {
+      "count": 300,
+      "has_bite_frac": 0.4133,
+      "singleton_resolved_frac": 0.02,
+      "mu_distribution": {
+        "2": 300
+      },
+      "mean_num_simple_paths": 3.0,
+      "mean_num_nodes": 8.0
+    },
+    "rcc8/red_P4_L2": {
+      "count": 300,
+      "has_bite_frac": 0.9867,
+      "singleton_resolved_frac": 0.3767,
+      "mu_distribution": {
+        "3": 300
+      },
+      "mean_num_simple_paths": 4.0,
+      "mean_num_nodes": 6.0
+    },
+    "rcc8/red_P4_L3": {
+      "count": 300,
+      "has_bite_frac": 0.4433,
+      "singleton_resolved_frac": 0.04,
+      "mu_distribution": {
+        "3": 300
+      },
+      "mean_num_simple_paths": 4.0,
+      "mean_num_nodes": 10.0
+    },
+    "rcc8/red_P6_L2": {
+      "count": 300,
+      "has_bite_frac": 1.0,
+      "singleton_resolved_frac": 0.51,
+      "mu_distribution": {
+        "5": 300
+      },
+      "mean_num_simple_paths": 6.0,
+      "mean_num_nodes": 8.0
+    },
+    "rcc8/red_P8_L2": {
+      "count": 300,
+      "has_bite_frac": 1.0,
+      "singleton_resolved_frac": 0.5633,
+      "mu_distribution": {
+        "7": 300
+      },
+      "mean_num_simple_paths": 8.0,
+      "mean_num_nodes": 10.0
+    }
+  },
+  "realism_preregistration": {
+    "validated": false,
+    "note": "Pre-registered realism-matching thresholds, fixed now to inoculate against post-hoc tuning. To be checked NEXT iteration against the real frontier-pilot (NarrativeTime/TDDMan/MATRES) error distributions.",
+    "tv_distance_max": 0.15,
+    "rho_match_tol": 0.1,
+    "topology_histogram_emd_max": 0.1
+  },
+  "row_field_guide": {
+    "input": "NL realization (one sentence per non-query edge + Query line)",
+    "output": "JSON string: {edges:[{source,target,relation}], query_edge:{...,is_query}}",
+    "metadata_paths": "enumerated s-t paths, per-path gold composition, naive intersection, has_bite, singleton_resolved",
+    "metadata_structure": "num_nodes/edges, cyclomatic_number, cycle_basis_size, num_simple_paths_s_t, paths_truncated, contributing_edge_count",
+    "metadata_reference_disjunctive_labels": "SOUND superset per edge (convenience; convex-only for point)"
+  }
+}

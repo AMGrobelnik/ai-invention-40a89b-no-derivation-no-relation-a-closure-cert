@@ -1,0 +1,1034 @@
+{
+  "metrics_agg": {
+    "synth_allen_coverage_gain": 0.023999999999999994,
+    "synth_allen_coverage_gain_ci_lo": -0.021999999999999992,
+    "synth_allen_coverage_gain_ci_hi": 0.07,
+    "synth_allen_coverage_gain_boot_p_le_0": 0.1703,
+    "synth_allen_selacc_gain": 0.2591858407079646,
+    "synth_allen_selacc_gain_ci_lo": 0.1765265525502053,
+    "synth_allen_selacc_gain_ci_hi": 0.34940673725242305,
+    "synth_allen_selacc_gain_boot_p_le_0": 0.0,
+    "synth_allen_selacc_gain_aligned": 0.0,
+    "synth_allen_intersection_coverage": 0.25,
+    "synth_allen_intersection_selacc": 0.976,
+    "synth_allen_best_single_coverage": 0.226,
+    "synth_allen_best_single_selacc": 0.7168141592920354,
+    "synth_allen_naive_coverage": 0.316,
+    "synth_allen_naive_selacc": 0.8417721518987342,
+    "synth_allen_mean_bite": 2.252,
+    "synth_allen_singleton_resolved_rate": 0.25,
+    "synth_allen_reproduction_failed": 0.0,
+    "synth_allen_analytic_ci_fallback": 0.0,
+    "invertedu_max_coverage_gain_vs_k1": 0.6116666666666667,
+    "invertedu_silent_wrong_max": 0.14564814814814814,
+    "invertedu_silent_wrong_min": 0.006412037037037037,
+    "clutrr_modeA_selacc": 0.885714,
+    "clutrr_modeA_vs_pot_gap": 0.428571,
+    "clutrr_h2_reduction": 0.4444,
+    "clutrr_oracle_modeA_selacc": 1.0,
+    "clutrr_atomic_recall": 0.5324,
+    "temporal_vs_pot_corrected_boot_p": 0.3322,
+    "temporal_vs_pot_corrected_ci_lo": -0.088276,
+    "temporal_vs_pot_corrected_ci_hi": 0.139723,
+    "temporal_confident_wrong_frac": 0.424779,
+    "temporal_modeA_coverage": 0.188333,
+    "allen_inherited_carried": 0.67349,
+    "allen_novel_selacc_carried": 0.0025,
+    "llm_spend_usd": 0.0,
+    "n_reproduction_mismatches": 0.0,
+    "B_bootstrap": 10000.0,
+    "seed": 20260617.0
+  },
+  "metadata": {
+    "eval_name": "iter5_zero_spend_reanalysis_small_bite_and_one_thesis_table",
+    "description": "Zero-spend ($0, numpy+scipy only, deterministic seed=20260617, B=10000 paired bootstrap) iter-5 re-analysis extending the validated iter-4 re-analysis. (1) MINOR #5: synthetic-Allen small cross-path C...",
+    "evidence_tags": [
+      "THEOREM",
+      "SYNTHETIC-CHANNEL",
+      "SYNTHETIC-ALLEN-CONTROL"
+    ],
+    "seed": 20260617,
+    "B_bootstrap": 10000,
+    "alpha": 0.05,
+    "llm_spend_usd": 0.0,
+    "no_openrouter_client_instantiated": true,
+    "sources": {
+      "iter4_eval": {
+        "id": "art_D0cHQUJ8kY75_iter4eval",
+        "path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_4/gen_art/gen_art_evaluation_1/eval_out.json"
+      },
+      "synth_allen_control": {
+        "id": "art_0AIWMhwc1pJM",
+        "path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_4/gen_art/gen_art_experiment_1/full_method_out.json",
+        "workspace": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_4/gen_art/gen_art_experiment_1"
+      },
+      "inverted_u_channel": {
+        "id": "art_FtN4LBzazO_l",
+        "path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_2/gen_art/gen_art_experiment_2/full_method_out.json"
+      },
+      "clutrr_certificate": {
+        "id": "art_0a7i481ZRwS1",
+        "path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_3/gen_art/gen_art_experiment_1/full_method_out.json"
+      },
+      "temporal_corrected": {
+        "id": "art_OETjJkketEVS",
+        "path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_3/gen_art/gen_art_experiment_2/full_method_out.json"
+      }
+    },
+    "reproduction_checks": {
+      "n_mismatches": 0,
+      "mismatches": [],
+      "note": "every reproduced point estimate compared vs the iter-4 validated eval_out.json; mismatches (if any) listed here, never silently overwritten."
+    },
+    "synthetic_allen_small_bite": {
+      "recall": 0.95,
+      "n_net": 500,
+      "seed_cell": 20260712,
+      "B": 10000,
+      "reproduction_failed": false,
+      "analytic_ci_fallback": false,
+      "per_method": {
+        "intersection": {
+          "coverage": 0.25,
+          "coverage_ci": [
+            0.212,
+            0.288
+          ],
+          "selective_acc": 0.976,
+          "selacc_ci": [
+            0.9453125,
+            1.0
+          ],
+          "n_answered": 125,
+          "n_correct": 122
+        },
+        "best_single": {
+          "coverage": 0.226,
+          "coverage_ci": [
+            0.19,
+            0.2620499999999993
+          ],
+          "selective_acc": 0.7168141592920354,
+          "selacc_ci": [
+            0.6293103448275862,
+            0.7967479674796748
+          ],
+          "n_answered": 113,
+          "n_correct": 81
+        },
+        "naive": {
+          "coverage": 0.316,
+          "coverage_ci": [
+            0.276,
+            0.358
+          ],
+          "selective_acc": 0.8417721518987342,
+          "selacc_ci": [
+            0.782312925170068,
+            0.8978102189781022
+          ],
+          "n_answered": 158,
+          "n_correct": 133
+        }
+      },
+      "coverage_gain_intersection_vs_best": {
+        "point": 0.023999999999999994,
+        "ci95": [
+          -0.021999999999999992,
+          0.07
+        ],
+        "boot_p_le_0": 0.1703
+      },
+      "selacc_gain_intersection_vs_best": {
+        "point": 0.2591858407079646,
+        "ci95": [
+          0.1765265525502053,
+          0.34940673725242305
+        ],
+        "boot_p_le_0": 0.0,
+        "note": "difference of the two per-resample SELECTIVE accuracies (different denominators by construction: intersection answers more queries)."
+      },
+      "selacc_gain_aligned_both_resolve": {
+        "n_both_resolve": 50,
+        "intersection_acc": 1.0,
+        "best_single_acc": 1.0,
+        "acc_gain": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "note": "among queries BOTH methods resolve, intersection narrows to the SAME singleton best-single found (inter is a SUBSET of best), so the aligned selective-accuracy gain is ~0. The precision advantage come..."
+      },
+      "mean_bite": 2.252,
+      "singleton_resolved_rate": 0.25,
+      "reproduction_detail": {
+        "intersection": {
+          "d_coverage": 0.0,
+          "d_selective_acc": 0.0
+        },
+        "best_single": {
+          "d_coverage": 0.0,
+          "d_selective_acc": 0.0
+        },
+        "naive": {
+          "d_coverage": 0.0,
+          "d_selective_acc": 0.0
+        }
+      },
+      "precision_decomposition": {
+        "n_both_resolve": 50,
+        "n_intersection_only": 75,
+        "n_best_single_only": 63,
+        "both_resolve_intersection_correct": 50,
+        "both_resolve_best_single_correct": 50,
+        "intersection_only_correct": 72,
+        "intersection_only_acc": 0.96,
+        "best_single_only_correct_kept": 31,
+        "best_single_only_WRONG_avoided_by_collapse": 32,
+        "note": "Intersection's precision (0.976) beats best-single (0.717) through TWO channels, NOT by re-scoring shared queries: (1) on the queries BOTH resolve, intersection narrows to the SAME singleton best-sing..."
+      },
+      "tag": "SYNTHETIC-ALLEN-CONTROL",
+      "interpretation": "Intersection sets are a SUBSET of best-single sets (tighter), so intersection mechanically resolves a SUPERSET of queries WHEN it does not collapse -- but the REALIZED coverage gain is only +2.4% abso..."
+    },
+    "inverted_u_realized_coverage": {
+      "tag": "SYNTHETIC-CHANNEL",
+      "n_per_bin": 600,
+      "rho": 0.0,
+      "gate": "off",
+      "by_recall": [
+        {
+          "recall": 0.5,
+          "Ks": [
+            1,
+            2,
+            3
+          ],
+          "peak_K": 2,
+          "coverage_by_K": [
+            0.44,
+            0.575,
+            0.5449999999999999
+          ],
+          "coverage_ci_by_K": [
+            [
+              0.40078790423541655,
+              0.4799754998862277
+            ],
+            [
+              0.5350910535977134,
+              0.6139546912502314
+            ],
+            [
+              0.5049943986472697,
+              0.5844330482614973
+            ]
+          ],
+          "coverage_gain_vs_K1_by_K": [
+            0.0,
+            0.13499999999999995,
+            0.10499999999999993
+          ],
+          "coverage_gain_vs_K1_ci_by_K": [
+            [
+              -0.055996687807446724,
+              0.055996687807446724
+            ],
+            [
+              0.07851314671452854,
+              0.1902725648459678
+            ],
+            [
+              0.048444816941792465,
+              0.16061073412071128
+            ]
+          ],
+          "benefit_by_K": [
+            0.21166666666666667,
+            0.295,
+            0.26
+          ],
+          "cost_silent_wrong_by_K": [
+            0.22833333333333333,
+            0.28,
+            0.285
+          ],
+          "at_peak": {
+            "peak_K": 2,
+            "realized_coverage": 0.575,
+            "realized_coverage_ci": [
+              0.5350910535977134,
+              0.6139546912502314
+            ],
+            "coverage_gain_vs_K1": 0.13499999999999995,
+            "coverage_gain_vs_K1_ci": [
+              0.07851314671452854,
+              0.1902725648459678
+            ],
+            "benefit": 0.295,
+            "cost_silent_wrong": 0.28,
+            "resolution_at_peak": 0.295,
+            "resolution_at_K1": 0.21166666666666667
+          }
+        },
+        {
+          "recall": 0.625,
+          "Ks": [
+            1,
+            2,
+            3
+          ],
+          "peak_K": 4,
+          "coverage_by_K": [
+            0.385,
+            0.5566666666666666,
+            0.5416666666666666
+          ],
+          "coverage_ci_by_K": [
+            [
+              0.34691372615333516,
+              0.42454946507981617
+            ],
+            [
+              0.5166813411625392,
+              0.5959309993892413
+            ],
+            [
+              0.5016592896655223,
+              0.5811439019166693
+            ]
+          ],
+          "coverage_gain_vs_K1_by_K": [
+            0.0,
+            0.17166666666666663,
+            0.15666666666666662
+          ],
+          "coverage_gain_vs_K1_ci_by_K": [
+            [
+              -0.05490650638697335,
+              0.05490650638697335
+            ],
+            [
+              0.11542623242429415,
+              0.22636814817925638
+            ],
+            [
+              0.10041055230910288,
+              0.2115211683826352
+            ]
+          ],
+          "benefit_by_K": [
+            0.245,
+            0.405,
+            0.3933333333333333
+          ],
+          "cost_silent_wrong_by_K": [
+            0.14,
+            0.15166666666666667,
+            0.14833333333333334
+          ],
+          "at_peak": {
+            "peak_K": 4,
+            "realized_coverage": 0.555,
+            "realized_coverage_ci": [
+              0.5150104352377507,
+              0.5942897776507423
+            ],
+            "coverage_gain_vs_K1": 0.17000000000000004,
+            "coverage_gain_vs_K1_ci": [
+              0.11375655168845239,
+              0.22471974856820814
+            ],
+            "benefit": 0.4066666666666667,
+            "cost_silent_wrong": 0.14833333333333334,
+            "resolution_at_peak": 0.4066666666666667,
+            "resolution_at_K1": 0.245
+          }
+        },
+        {
+          "recall": 0.78,
+          "Ks": [
+            1,
+            2,
+            3
+          ],
+          "peak_K": 7,
+          "coverage_by_K": [
+            0.33666666666666667,
+            0.5650000000000001,
+            0.6716666666666666
+          ],
+          "coverage_ci_by_K": [
+            [
+              0.2999991284980691,
+              0.3754123604997399
+            ],
+            [
+              0.5250426143378268,
+              0.6041303645303919
+            ],
+            [
+              0.6331026902153442,
+              0.7080464591032852
+            ]
+          ],
+          "coverage_gain_vs_K1_by_K": [
+            0.0,
+            0.2283333333333334,
+            0.33499999999999996
+          ],
+          "coverage_gain_vs_K1_ci_by_K": [
+            [
+              -0.05334545103335251,
+              0.05334545103335251
+            ],
+            [
+              0.17267525701406145,
+              0.28195882898257574
+            ],
+            [
+              0.2803336568778887,
+              0.38665266356226957
+            ]
+          ],
+          "benefit_by_K": [
+            0.3,
+            0.49333333333333335,
+            0.615
+          ],
+          "cost_silent_wrong_by_K": [
+            0.03666666666666667,
+            0.07166666666666667,
+            0.056666666666666664
+          ],
+          "at_peak": {
+            "peak_K": 7,
+            "realized_coverage": 0.7016666666666667,
+            "realized_coverage_ci": [
+              0.6638687356059774,
+              0.73689871165183
+            ],
+            "coverage_gain_vs_K1": 0.365,
+            "coverage_gain_vs_K1_ci": [
+              0.31087133492247504,
+              0.41585081463636675
+            ],
+            "benefit": 0.68,
+            "cost_silent_wrong": 0.021666666666666667,
+            "resolution_at_peak": 0.68,
+            "resolution_at_K1": 0.3
+          }
+        }
+      ],
+      "peak_K_by_recall": [
+        2,
+        4,
+        7
+      ],
+      "max_coverage_gain_vs_K1": 0.6116666666666667,
+      "coverage_gain_vs_K1_at_peak_by_recall": [
+        {
+          "recall": 0.5,
+          "peak_K": 2,
+          "coverage_gain_vs_K1_at_peak": 0.13499999999999995,
+          "cost_silent_wrong_at_peak": 0.28
+        },
+        {
+          "recall": 0.625,
+          "peak_K": 4,
+          "coverage_gain_vs_K1_at_peak": 0.17000000000000004,
+          "cost_silent_wrong_at_peak": 0.14833333333333334
+        },
+        {
+          "recall": 0.78,
+          "peak_K": 7,
+          "coverage_gain_vs_K1_at_peak": 0.365,
+          "cost_silent_wrong_at_peak": 0.021666666666666667
+        }
+      ],
+      "silent_wrong_vs_recall_pooled": [
+        {
+          "recall": 0.5,
+          "silent_wrong_rate_pooled": 0.14564814814814814,
+          "silent_wrong_rate_ref_rho0_gateoff": 0.1322222222222222
+        },
+        {
+          "recall": 0.625,
+          "silent_wrong_rate_pooled": 0.09462962962962963,
+          "silent_wrong_rate_ref_rho0_gateoff": 0.07944444444444444
+        },
+        {
+          "recall": 0.78,
+          "silent_wrong_rate_pooled": 0.043611111111111114,
+          "silent_wrong_rate_ref_rho0_gateoff": 0.03
+        }
+      ],
+      "silent_wrong_min": 0.006412037037037037,
+      "silent_wrong_max": 0.14564814814814814,
+      "silent_wrong_rises": "0.006 -> 0.146 across recall (pooled; monotone-decreasing in recall)",
+      "page_p_corrected": "~5e-4 (NOT the paper's earlier mis-stated 1e-13)",
+      "recall_dependence_note": "Realized-coverage gain over K=1 is RECALL-DEPENDENT, not uniformly modest: at the peak it rises from +0.135 (recall 0.50, where cost_silent_wrong 0.280 ~= benefit) to +0.612 (recall 0.95, cost ~0.000)...",
+      "k1_vs_best_single_caveat": "K=1 in the H4 channel is a SINGLE (arbitrary) contributing path, so coverage_gain_vs_K1 conflates redundancy with best-path SELECTION and OVERSTATES the cross-path bite. The conservative apples-to-app...",
+      "interpretation": "The inverted-U on RESOLUTION (benefit) conflates two effects -- higher recall AND added redundancy. Decomposing onto the COVERAGE axis (realized coverage = benefit + cost_silent_wrong = 1 - abstain - ..."
+    },
+    "one_thesis_contribution_table": {
+      "columns": [
+        "claim",
+        "evidence_tag",
+        "where_it_holds"
+      ],
+      "spine": [
+        {
+          "claim": "Training-free, gold-free, per-edge ABSTAIN-ON-COLLAPSE certificate over LLM-extracted relational facts: keep the LLM a high-recall disjunctive reader, compose ONLY through exact relation-algebra table...",
+          "evidence_tag": "REAL-LLM-READ + THEOREM(zero-FP conditional on read soundness)",
+          "where_it_holds": "templated-CLUTRR (<=871 chars) end-to-end; weakly protective on natural temporal text",
+          "status": "CONFIRMED-AT-POWER",
+          "key_numbers": {
+            "modeA_selacc": 0.8857,
+            "vs_pot_gap": 0.428571,
+            "vs_pot_ci95": [
+              0.298589,
+              0.563015
+            ],
+            "vs_sc_gap": 0.328571,
+            "vs_raw_gap": 0.342857,
+            "holm_p_adj": 0.001499,
+            "h2_absent_reduction": 0.4444,
+            "h2_ci95": [
+              0.3167,
+              0.5833
+            ],
+            "h2_p_one_sided": 0.0005,
+            "goldread_oracle_selacc": 1.0,
+            "oracle_coverage": 0.951,
+            "oracle_raw_selacc": 0.433,
+            "swipl_engine_match": "40/40",
+            "swipl_gold_match": "39/40",
+            "atomic_PRF1": [
+              0.536,
+              0.532,
+              0.534
+            ]
+          }
+        },
+        {
+          "claim": "A quantitative law for WHEN cross-path qualitative-algebra coding can be read off text: richer algebra gives an exact table more headroom but lets an LLM read constituent relations LESS informatively ...",
+          "evidence_tag": "REAL-LLM-READ + GOLD-ONLY-GATE + SYNTHETIC-ALLEN-CONTROL",
+          "where_it_holds": "natural temporal text (TDDMan gold-singleton multi-path N=125)",
+          "status": "CONFIRMED-AS-CHARACTERIZATION",
+          "key_numbers": {
+            "gold_singleton_multipath_N": 125,
+            "intersection_resolved": "0/125",
+            "best_single_resolved": "0/125",
+            "naive_resolved": "0/125",
+            "holm": "n.s.",
+            "per_edge_allen_recall": 0.9,
+            "recall_gate": 0.85,
+            "event_local_underdet_rate": 0.87,
+            "window_underdet_rate": 0.79,
+            "breadth": "11.5/13",
+            "deepseek_underdet_rate": 0.99,
+            "deepseek_breadth": "12.9/13",
+            "tight_raw_allen_correct": 0.032,
+            "intersection_commit_confident_wrong": 1.0,
+            "synth_control_recall95_intersection_cov": 0.25,
+            "synth_control_best_single_cov": 0.226,
+            "synth_control_coverage_gain": 0.023999999999999994,
+            "synth_control_coverage_gain_ci95": [
+              -0.021999999999999992,
+              0.07
+            ],
+            "synth_control_selacc_gain": 0.2591858407079646,
+            "synth_control_selacc_gain_ci95": [
+              0.1765265525502053,
+              0.34940673725242305
+            ]
+          }
+        }
+      ],
+      "pending_rcc8_slot": {
+        "claim": "DECISIVE iter-5 open experiment: cross-path INTERSECTION on the gated spatial RCC-8 venue (SpaRTUN) -- does it narrow beyond best-single-path at power where constituent relations (containment/connecti...",
+        "evidence_tag": "SYNTHETIC-CHANNEL -> REAL(ISTIC)-LLM-READ (PENDING)",
+        "where_it_holds": "spatial RCC-8 SpaRTUN (gated 27.4% tight-bite, GENERAL band; tables engine-validated)",
+        "status": "PENDING - NOT YET RUN (slot to be filled by iter-5 experiment)",
+        "key_numbers": {
+          "spartun_tight_bite_fraction": 0.274,
+          "rcc8_table_validated": true,
+          "projection_cardinal_is_product_of_two_point_algebras": true
+        }
+      },
+      "supporting": [
+        {
+          "claim": "The scaling-law engine behind SPINE-2 first half: with real LLM reads on synthetic NL the advantage over PoT grows monotonically with base-relation count -- point(3) +0.043 -> RCC-8(8) +0.448 -> Allen...",
+          "evidence_tag": "REAL-LLM-READ-ON-SYNTHETIC",
+          "where_it_holds": "synthetic/templated NL",
+          "status": "SUPPORTING (inherited premise; RCC-8/Allen are SOUND LOWER BOUNDS, PC incomplete)",
+          "key_numbers": {
+            "point3": 0.043,
+            "rcc8_8": 0.448,
+            "allen13": 0.676,
+            "allen_inherited": 0.673,
+            "allen_novel_selacc": 0.0025,
+            "provenance": "point(+0.043) and RCC-8(+0.448) carried as CITED literals from hypothesis CLAIM 5a (art_QToTkRe6Umb8, algebra-richness scaling -- NOT a dependency of this eval); NOT recomputed here. Allen +0.676 = in..."
+          }
+        },
+        {
+          "claim": "On a realism-matched channel iterated closure error-corrects per recall slice (H3 Page p~5e-4, length-2 tie growing with hop/cyclomatic) and net Mode-A resolution is a recall-dependent inverted-U (pea...",
+          "evidence_tag": "SYNTHETIC-CHANNEL + THEOREM(zero-FP on all-sound networks)",
+          "where_it_holds": "synthetic-channel only",
+          "status": "SUPPORTING (recall & rho are CONTROLLED INPUTS; does NOT predict a real-text operating point)",
+          "key_numbers": {
+            "peak_K_by_recall": [
+              2,
+              4,
+              7
+            ],
+            "silent_wrong_range": [
+              0.006412037037037037,
+              0.14564814814814814
+            ],
+            "page_p_corrected": 0.0005,
+            "realized_coverage_bite_vs_best_single": 0.023999999999999994,
+            "max_realized_coverage_gain_vs_K1": 0.6116666666666667,
+            "zero_FP_theorem_networks": 100296
+          }
+        }
+      ],
+      "footnotes": [
+        {
+          "claim": "On NATURAL temporal text the matched-coverage Mode-A advantage is MARGINAL and NOT robustly significant: corrected fixed-operating-point CIs bracket the point gaps but INCLUDE ZERO; neither H1 gateway...",
+          "evidence_tag": "REAL-LLM-READ",
+          "where_it_holds": "natural temporal (NarrativeTime+TDDMan)",
+          "status": "MARGINAL / CERTIFICATE-ONLY VALUE",
+          "key_numbers": {
+            "vs_pot_gap": 0.026549,
+            "vs_pot_corrected_ci95": [
+              -0.088276,
+              0.139723
+            ],
+            "vs_pot_boot_p": 0.3322,
+            "vs_sc_gap": 0.035398,
+            "vs_sc_corrected_ci95": [
+              -0.061388,
+              0.134703
+            ],
+            "holm_p_adj": 0.5186,
+            "confident_wrong_among_answered": "48/113=0.425",
+            "modeA_coverage": 0.1883,
+            "raw_out_accuracy_gap": -0.124
+          }
+        },
+        {
+          "claim": "Contribution is the DEDUCTION SUB-MODULE only: atomic extraction MEASURED not improved (~0.53 recall => ~19% Mode-A coverage on natural text); OpenCyc grounding, atomic re-extraction, general LLM fuzz...",
+          "evidence_tag": "SCOPE",
+          "where_it_holds": "all venues",
+          "status": "CEILING (state in abstract/intro)",
+          "key_numbers": {
+            "atomic_recall": 0.5324,
+            "modeA_real_text_coverage": 0.1883,
+            "clutrr_max_chars": 871,
+            "spatial_char_range": [
+              130,
+              1338
+            ]
+          }
+        }
+      ],
+      "tagging_policy": "Every row carries an evidence_tag COLUMN drawn from {THEOREM, SYNTHETIC-CHANNEL, SYNTHETIC-ALLEN-CONTROL, GOLD-ONLY-GATE, REAL-LLM-READ, REAL-LLM-READ-ON-SYNTHETIC, SCOPE, EXPLORATORY}; provenance is ..."
+    },
+    "headline_structure_guidance": {
+      "i_lead_with_two_row_spine": "LEAD abstract/intro/title with the two-row SPINE (the certificate + the read-informativeness impossibility); DEMOTE the 5-claim 'honest split' to ONE mechanism-analysis section.",
+      "ii_tags_in_columns": "Put evidence tags in TABLE COLUMNS (claim | evidence_tag | where_it_holds | status | key_numbers), NOT inline prose hedging.",
+      "iii_rcc8_is_the_single_open_experiment": "The spatial RCC-8 SpaRTUN fork is the SINGLE decisive open experiment -- reserve the SPINE-PENDING row as a slot.",
+      "iv_retitle": "Re-title around 'closure-certified DEDUCTION SUB-MODULE' (NOT an end-to-end text-to-FOL system).",
+      "v_hallucination_with_coverage": "Report every hallucination number WITH its coverage/abstention (e.g. H2 reduction 0.444 @ Mode-A coverage 26.6%; temporal confident-wrong 42.5% @ coverage 18.8%).",
+      "vi_clutrr_not_natural_text": "Do NOT call CLUTRR natural text -- it is a TEMPLATED kinship benchmark (<=871 chars, gold surface forms, hand-supplied table)."
+    },
+    "corrected_temporal": {
+      "tag": "REAL-LLM-READ",
+      "carried_from": "art_D0cHQUJ8kY75_iter4eval",
+      "r1_bracketing_summary": {
+        "neither_gateway_clears_holm": true,
+        "vs_pot": {
+          "gap": 0.026549,
+          "corrected_ci95": [
+            -0.088276,
+            0.139723
+          ],
+          "boot_p": 0.3322,
+          "ci_brackets_point": true,
+          "significant": false
+        },
+        "vs_sc": {
+          "gap": 0.035398,
+          "corrected_ci95": [
+            -0.061388,
+            0.134703
+          ],
+          "boot_p": 0.2593,
+          "significant": false
+        },
+        "published_confirm_was_bootstrap_artifact": true
+      },
+      "confident_wrong_block": {
+        "tag": "REAL-LLM-READ",
+        "frac_confident_wrong_among_answered": 0.424779,
+        "n_confident_wrong": 48,
+        "denom_answered": 113,
+        "modeA_coverage": 0.188333,
+        "modeA_abstention_rate": 0.811667,
+        "confident_wrong_raw": 0.61,
+        "reduction_vs_raw_published": 0.185221,
+        "reduction_published_ci95": [
+          0.08645,
+          0.281589
+        ],
+        "reduction_recomputed_B10000": {
+          "reduction": 0.182705,
+          "ci95": [
+            0.086829,
+            0.280125
+          ],
+          "boot_p": 0.0003
+        },
+        "confident_wrong_recomputed": 0.424779,
+        "silent_wrong_narrowing_count": 48,
+        "all_confident_wrongs_are_silent_wrong_narrowing": true,
+        "raw_minus_modeA_acc_at_matched_coverage": -0.123894,
+        "reporting_block": "On natural temporal text, among the ~19% of queries Mode-A commits to, it is CONFIDENT-WRONG 42.5% (48/113). REPORT THIS BESIDE EVERY TEMPORAL CLAIM. Mechanism: silent-wrong-narrowing -- when gold is ...",
+        "read_soundness_rows": {
+          "narrativetime_primary": {
+            "recall": 0.856361,
+            "ci95": [
+              0.832217,
+              0.879756
+            ],
+            "verdict": "CI_excludes_below_gate",
+            "crosses_gate": false
+          },
+          "narrativetime_strong": {
+            "recall": 0.931677,
+            "ci95": [
+              0.888158,
+              0.966893
+            ],
+            "verdict": "CI_contains_gate",
+            "crosses_gate": true
+          },
+          "tddman_primary": {
+            "recall": 0.827852,
+            "ci95": [
+              0.777706,
+              0.869069
+            ],
+            "verdict": "CI_excludes_below_gate",
+            "crosses_gate": false
+          },
+          "tddman_strong": {
+            "recall": 0.81875,
+            "ci95": [
+              0.72673,
+              0.896998
+            ],
+            "verdict": "CI_excludes_below_gate",
+            "crosses_gate": false
+          }
+        },
+        "rho_within_doc_soundness_range": [
+          0.002828,
+          0.167214
+        ],
+        "synthetic_backstop_vs_raw_mean_gap": 0.225228,
+        "synthetic_backstop_cells_vs_raw": {
+          "R_redundancy_K4": 0.218589,
+          "R_redundancy_K8": 0.259516,
+          "H_hop_L4_C2": 0.211268,
+          "H_hop_L6_C3": 0.211538
+        },
+        "synthetic_backstop_recall": 0.96,
+        "read_soundness_localization": "At synthetic recall 0.96 Mode-A beats raw by ~+0.225 at matched coverage (mechanism works when reads are sound); on real text recall is ~0.83-0.86 (NT primary CI excludes-below-gate; NT strong CI stra..."
+      },
+      "modeA_coverage": 0.188333,
+      "modeA_abstention_rate": 0.811667,
+      "raw_out_accuracy_gap_at_matched_cov": -0.123894
+    },
+    "deduction_submodule_ceiling": {
+      "tag": "SCOPE",
+      "carried_from": "art_D0cHQUJ8kY75_iter4eval",
+      "atomic_recall": 0.5324,
+      "modeA_real_text_coverage": 0.188333,
+      "out_of_scope": [
+        "OpenCyc grounding",
+        "atomic re-extraction",
+        "general LLM fuzzy-unification"
+      ],
+      "composition_table": "HAND-SUPPLIED in every venue",
+      "max_chars": {
+        "clutrr": 871,
+        "spatial": [
+          130,
+          1338
+        ],
+        "target": 3000,
+        "note": "NO venue reaches the umbrella ~3000-char target"
+      },
+      "extraction_limited_statement": "Real-text utility is EXTRACTION-LIMITED: ~0.53 atomic recall -> ~19% Mode-A coverage on natural temporal text."
+    }
+  },
+  "datasets": [
+    {
+      "dataset": "synthetic_allen_control_worked",
+      "examples": [
+        {
+          "input": "Synthetic Allen-13 QCN positive control (consistent-by-construction, n_events=6, reader recall=0.95); network #9. Cross-path query relation between events 0 and 1; gold atomic Allen relation = 'D'. Co...",
+          "output": "D",
+          "metadata_network_index": 9,
+          "metadata_recall": 0.95,
+          "metadata_bite": 4,
+          "metadata_singleton_resolved": 1,
+          "metadata_intersection_set": [
+            "D"
+          ],
+          "metadata_best_single_set": [
+            "D",
+            "F",
+            "O"
+          ],
+          "metadata_naive_set": [
+            "D",
+            "O",
+            "OI"
+          ],
+          "predict_intersection": "D",
+          "predict_best_single": "ABSTAIN(disjunction:D|F|O|OI|S)",
+          "predict_naive": "ABSTAIN(disjunction:D|O|OI|S)",
+          "eval_intersection_answered": 1.0,
+          "eval_intersection_correct": 1.0,
+          "eval_best_single_answered": 0.0,
+          "eval_best_single_correct": 0.0,
+          "eval_naive_answered": 0.0,
+          "eval_naive_correct": 0.0
+        },
+        {
+          "input": "Synthetic Allen-13 QCN positive control (consistent-by-construction, n_events=6, reader recall=0.95); network #13. Cross-path query relation between events 0 and 1; gold atomic Allen relation = 'B'. C...",
+          "output": "B",
+          "metadata_network_index": 13,
+          "metadata_recall": 0.95,
+          "metadata_bite": 4,
+          "metadata_singleton_resolved": 1,
+          "metadata_intersection_set": [
+            "B"
+          ],
+          "metadata_best_single_set": [
+            "B",
+            "D",
+            "M"
+          ],
+          "metadata_naive_set": [
+            "B",
+            "D",
+            "M"
+          ],
+          "predict_intersection": "B",
+          "predict_best_single": "ABSTAIN(disjunction:B|D|M|O|S)",
+          "predict_naive": "ABSTAIN(disjunction:B|D|M|O|S)",
+          "eval_intersection_answered": 1.0,
+          "eval_intersection_correct": 1.0,
+          "eval_best_single_answered": 0.0,
+          "eval_best_single_correct": 0.0,
+          "eval_naive_answered": 0.0,
+          "eval_naive_correct": 0.0
+        },
+        {
+          "input": "Synthetic Allen-13 QCN positive control (consistent-by-construction, n_events=6, reader recall=0.95); network #20. Cross-path query relation between events 0 and 1; gold atomic Allen relation = 'D'. C...",
+          "output": "D",
+          "metadata_network_index": 20,
+          "metadata_recall": 0.95,
+          "metadata_bite": 4,
+          "metadata_singleton_resolved": 1,
+          "metadata_intersection_set": [
+            "D"
+          ],
+          "metadata_best_single_set": [
+            "BI",
+            "D",
+            "F"
+          ],
+          "metadata_naive_set": [
+            "D",
+            "F",
+            "OI"
+          ],
+          "predict_intersection": "D",
+          "predict_best_single": "ABSTAIN(disjunction:BI|D|F|MI|OI)",
+          "predict_naive": "ABSTAIN(disjunction:D|F|OI)",
+          "eval_intersection_answered": 1.0,
+          "eval_intersection_correct": 1.0,
+          "eval_best_single_answered": 0.0,
+          "eval_best_single_correct": 0.0,
+          "eval_naive_answered": 0.0,
+          "eval_naive_correct": 0.0
+        }
+      ]
+    },
+    {
+      "dataset": "clutrr_templated_kinship",
+      "examples": [
+        {
+          "input": "Belva went with her grandmother, Ashley, to the grocery store to help her while she shopped. Nicolas and his sister, Belva love it when their grandmother visits because she spoils them. She is coming ...",
+          "output": "grandson",
+          "metadata_doc_id": "0741bf9a-a8f6-4ff1-aac1-1a4f0828aed9",
+          "metadata_hop": 2,
+          "metadata_is_absent": false,
+          "metadata_venue": "templated-CLUTRR",
+          "predict_modeA": "grandson",
+          "eval_modeA_correct": 1.0,
+          "eval_modeA_answered": 1.0,
+          "predict_naive": "grandson",
+          "eval_naive_correct": 1.0,
+          "eval_naive_answered": 1.0,
+          "predict_raw": "grandson",
+          "eval_raw_correct": 1.0,
+          "eval_raw_answered": 1.0,
+          "predict_sc": "grandson",
+          "eval_sc_correct": 1.0,
+          "eval_sc_answered": 1.0,
+          "predict_pot": "grandson",
+          "eval_pot_correct": 1.0,
+          "eval_pot_answered": 1.0
+        },
+        {
+          "input": "Emily and her granddaughter Ashley went to the mall Michael likes to visit his sister. Her name is Emily.",
+          "output": "grandson",
+          "metadata_doc_id": "0f226f4d-dc2d-4051-a875-9e555ecf0f22",
+          "metadata_hop": 2,
+          "metadata_is_absent": false,
+          "metadata_venue": "templated-CLUTRR",
+          "predict_modeA": "ABSTAIN",
+          "eval_modeA_correct": 0.0,
+          "eval_modeA_answered": 0.0,
+          "predict_naive": "ABSTAIN",
+          "eval_naive_correct": 0.0,
+          "eval_naive_answered": 0.0,
+          "predict_raw": "uncle",
+          "eval_raw_correct": 0.0,
+          "eval_raw_answered": 1.0,
+          "predict_sc": "uncle",
+          "eval_sc_correct": 0.0,
+          "eval_sc_answered": 1.0,
+          "predict_pot": "uncle",
+          "eval_pot_correct": 0.0,
+          "eval_pot_answered": 1.0
+        },
+        {
+          "input": "Heidi went to her brother Kevin's birthday party Ashley and her granddaughter Heidi prepared dinner as a family",
+          "output": "grandson",
+          "metadata_doc_id": "162070fb-1a46-44f2-91e5-50f8cc99daf3",
+          "metadata_hop": 2,
+          "metadata_is_absent": false,
+          "metadata_venue": "templated-CLUTRR",
+          "predict_modeA": "grandson",
+          "eval_modeA_correct": 1.0,
+          "eval_modeA_answered": 1.0,
+          "predict_naive": "grandson",
+          "eval_naive_correct": 1.0,
+          "eval_naive_answered": 1.0,
+          "predict_raw": "grandson",
+          "eval_raw_correct": 1.0,
+          "eval_raw_answered": 1.0,
+          "predict_sc": "grandson",
+          "eval_sc_correct": 1.0,
+          "eval_sc_answered": 1.0,
+          "predict_pot": "grandson",
+          "eval_pot_correct": 1.0,
+          "eval_pot_answered": 1.0
+        }
+      ]
+    },
+    {
+      "dataset": "temporal_point_algebra_natural_text",
+      "examples": [
+        {
+          "input": "temporal point-algebra deduction query stratum=ge3_cyclic",
+          "output": "includes",
+          "metadata_docid": "ABC19980304.1830.1636",
+          "metadata_stratum": "ge3_cyclic",
+          "metadata_venue": "natural-temporal",
+          "predict_modeA": "ABSTAIN",
+          "eval_modeA_answered": 0.0,
+          "eval_modeA_correct": 0.0,
+          "eval_modeA_conf": 0.8,
+          "predict_naive": "ABSTAIN",
+          "eval_naive_answered": 0.0,
+          "eval_naive_correct": 0.0,
+          "eval_naive_conf": 0.8,
+          "predict_raw": "simultaneous",
+          "eval_raw_answered": 1.0,
+          "eval_raw_correct": 0.0,
+          "eval_raw_conf": 0.2,
+          "predict_pot": "ABSTAIN",
+          "eval_pot_answered": 0.0,
+          "eval_pot_correct": 0.0,
+          "eval_pot_conf": 0.45,
+          "predict_sc": "simultaneous",
+          "eval_sc_answered": 1.0,
+          "eval_sc_correct": 0.0,
+          "eval_sc_conf": 0.8
+        },
+        {
+          "input": "temporal point-algebra deduction query stratum=ge3_cyclic",
+          "output": "before",
+          "metadata_docid": "PRI19980213.2000.0313",
+          "metadata_stratum": "ge3_cyclic",
+          "metadata_venue": "natural-temporal",
+          "predict_modeA": "ABSTAIN",
+          "eval_modeA_answered": 0.0,
+          "eval_modeA_correct": 0.0,
+          "eval_modeA_conf": 0.7,
+          "predict_naive": "ABSTAIN",
+          "eval_naive_answered": 0.0,
+          "eval_naive_correct": 0.0,
+          "eval_naive_conf": 0.7,
+          "predict_raw": "before",
+          "eval_raw_answered": 1.0,
+          "eval_raw_correct": 1.0,
+          "eval_raw_conf": 0.9,
+          "predict_pot": "simultaneous",
+          "eval_pot_answered": 1.0,
+          "eval_pot_correct": 0.0,
+          "eval_pot_conf": 1.0,
+          "predict_sc": "before",
+          "eval_sc_answered": 1.0,
+          "eval_sc_correct": 1.0,
+          "eval_sc_conf": 1.0
+        },
+        {
+          "input": "temporal point-algebra deduction query stratum=ge3_cyclic",
+          "output": "after",
+          "metadata_docid": "APW19980213.1320",
+          "metadata_stratum": "ge3_cyclic",
+          "metadata_venue": "natural-temporal",
+          "predict_modeA": "ABSTAIN",
+          "eval_modeA_answered": 0.0,
+          "eval_modeA_correct": 0.0,
+          "eval_modeA_conf": 0.9,
+          "predict_naive": "ABSTAIN",
+          "eval_naive_answered": 0.0,
+          "eval_naive_correct": 0.0,
+          "eval_naive_conf": 0.9,
+          "predict_raw": "after",
+          "eval_raw_answered": 1.0,
+          "eval_raw_correct": 1.0,
+          "eval_raw_conf": 0.9,
+          "predict_pot": "ABSTAIN",
+          "eval_pot_answered": 0.0,
+          "eval_pot_correct": 0.0,
+          "eval_pot_conf": 0.333333,
+          "predict_sc": "before",
+          "eval_sc_answered": 1.0,
+          "eval_sc_correct": 0.0,
+          "eval_sc_conf": 1.0
+        }
+      ]
+    }
+  ]
+}

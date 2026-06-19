@@ -1,0 +1,15 @@
+[project]
+name = "closure-certificate-natural-locatedin"
+version = "1.0.0"
+description = "iter-8 decisive test: closure certificate vs 4-signal confidence battery vs query-side false-premise verifier on the NATURAL Re-DocRED located-in (administrative containment) absent-relation corpus. Drop-in adaptation of the iter-7 STEP-B template: reuses kinship/baselines/stats/llm/prolog verbatim; new code = located-in loader (held_out direct-edge ablation + absent-regime split) + located-in readers + query-side verifier/self-verify baselines + same-component-sibling mixed-pool capability gap + pre-registered FORK verdict (DEMONSTRATED-FIX | EXTRACTION-LIMITED-BOUNDARY | DIAGNOSTIC-WEAKER-THAN-CLAIMED | VERIFIER-SUFFICES)."
+requires-python = ">=3.12"
+dependencies = [
+    "numpy==2.4.6",
+    "scipy==1.17.1",
+    "httpx==0.28.1",
+    "loguru==0.7.3",
+    "jsonschema==4.26.0",
+]
+
+[tool.setuptools]
+py-modules = ["method", "dataio_locatedin", "readers_locatedin", "queryside", "llm", "stats", "kinship", "baselines", "prolog", "tests"]

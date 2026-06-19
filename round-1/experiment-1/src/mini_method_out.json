@@ -1,0 +1,816 @@
+{
+  "metadata": {
+    "method_name": "T0 a-priori envelope gate + reusable QCN path-consistency engine",
+    "description": "Zero-LLM-spend gate: from gold temporal graphs alone, measure where an iterated path-consistency certificate (OUR METHOD) applies and recovers held-out relations, vs a single-pass intersection (BASELINE) and closure-off, across three real corpora; decide whether a real-text headline is viable before iter-2 LLM spend.",
+    "compute": "cpu_only",
+    "llm_spend_usd": 0.0,
+    "headline_findings": {
+      "one_line": "Zero-LLM gate over three real temporal corpora: an iterated path-consistency certificate applies to a non-trivial fraction of deduction-required held-out relations and recovers them; gate VERDICT = GO on NarrativeTime_point.",
+      "method": "FULL iterated PC-2 closure (OUR METHOD)",
+      "baselines": [
+        "NAIVE single-pass length-2 intersection (Path-of-Thoughts-style)",
+        "closure-OFF (no propagation -> universe)"
+      ],
+      "results_table": [
+        {
+          "arm": "MATRES_point",
+          "corpus": "MATRES",
+          "algebra": "POINT",
+          "recovery_arm": "EXACT",
+          "n_evaluable": 11453,
+          "applicability_fraction": 0.0,
+          "band": "niche",
+          "N_star": 0,
+          "N_star_fraction": 0.0,
+          "full_resolves": 0,
+          "naive_resolves": 0,
+          "iteration_advantage_full_only": 0,
+          "MDE_80_bootstrap_capped_N": null,
+          "MDE_80_true_N": null,
+          "power_at_0.10": 0.0
+        },
+        {
+          "arm": "TDDMan_allen",
+          "corpus": "TDDMan",
+          "algebra": "ALLEN13",
+          "recovery_arm": "LOWER_BOUND",
+          "n_evaluable": 6026,
+          "applicability_fraction": 0.0848,
+          "band": "module",
+          "N_star": 408,
+          "N_star_fraction": 0.06771,
+          "full_resolves": 408,
+          "naive_resolves": 396,
+          "iteration_advantage_full_only": 12,
+          "MDE_80_bootstrap_capped_N": 0.1,
+          "MDE_80_true_N": 0.1,
+          "power_at_0.10": 0.9475
+        },
+        {
+          "arm": "NarrativeTime_point",
+          "corpus": "NarrativeTime",
+          "algebra": "POINT",
+          "recovery_arm": "EXACT",
+          "n_evaluable": 28840,
+          "applicability_fraction": 0.88245,
+          "band": "general",
+          "N_star": 25450,
+          "N_star_fraction": 0.88245,
+          "full_resolves": 25450,
+          "naive_resolves": 25450,
+          "iteration_advantage_full_only": 0,
+          "MDE_80_bootstrap_capped_N": 0.1,
+          "MDE_80_true_N": 0.05,
+          "power_at_0.10": 0.96
+        },
+        {
+          "arm": "NarrativeTime_allen",
+          "corpus": "NarrativeTime",
+          "algebra": "ALLEN13",
+          "recovery_arm": "LOWER_BOUND",
+          "n_evaluable": 1021,
+          "applicability_fraction": 0.90402,
+          "band": "general",
+          "N_star": 912,
+          "N_star_fraction": 0.89324,
+          "full_resolves": 912,
+          "naive_resolves": 912,
+          "iteration_advantage_full_only": 0,
+          "MDE_80_bootstrap_capped_N": 0.1,
+          "MDE_80_true_N": 0.1,
+          "power_at_0.10": 0.96
+        }
+      ],
+      "gate_verdict": "GO",
+      "host_corpus": "NarrativeTime_point",
+      "key_numbers": {
+        "MATRES_control_N_star": 0,
+        "NarrativeTime_applicability": 0.88245,
+        "NarrativeTime_N_star": 25450,
+        "TDDMan_applicability_strict": 0.0848,
+        "TDDMan_applicability_broad": 0.10394,
+        "TDDMan_iteration_advantage_full_only": 12,
+        "NarrativeTime_iteration_advantage_full_only": 0
+      },
+      "interpretation": [
+        "MATRES is the N*~0 CONTROL: 100% of pairs are same/adjacent sentence (SENTDIFF in {0,1}) so 0 edges are deduction-required and the certificate never applies -- exactly as predicted; this makes the gate discriminative.",
+        "NarrativeTime (dense human timeline) is the APPLICABILITY headline: the certificate applies to ~88% of deduction-required evaluable edges and recovers them EXACTLY (convex point PC is complete). Because the gold timeline is dense (near-transitively-closed), single-pass already has direct evidence, so iterated PC TIES single-pass here (full_only=0).",
+        "TDDMan (sparse, manual, long-distance, non-circular) is where ITERATION matters: full PC recovers 12 (strict map) held-out relations that single-pass cannot resolve (>=3-edge/cyclic chains); applicability is in the module band (8.5% strict / 10.4% broad). ALLEN recovery is a sound LOWER BOUND (PC incomplete on the interval algebra).",
+        "Both real arms have adequate a-priori power (MDE_80 = 0.10) for the iter-2 LLM comparison."
+      ]
+    },
+    "pre_registered": {
+      "applicability_number": ">=10% general; 5-10% module; <5% niche",
+      "applicability_general_threshold": 0.1,
+      "applicability_module_threshold": 0.05,
+      "min_effect_size": 0.1,
+      "power_target": 0.8,
+      "evaluable_definition": "gold singleton edge AND both endpoints appear in >=1 OTHER gold edge (degree>=2)",
+      "deduction_required_proxy": "sentence distance > 1 (MATRES via qiangning SENTDIFF; TDDMan all-non-local by construction; NarrativeTime |sent(u)-sent(v)|>1)",
+      "multipath_definition": ">=2 distinct length-2 intermediates, OR >=1 intermediate AND a >=3-edge/cyclic path (bounded DFS, path length cap=4)",
+      "primary_recovery_arm": "convex POINT (EXACT, PC complete); ALLEN arm is a sound LOWER BOUND",
+      "method": "FULL iterated PC-2 closure",
+      "baseline": "NAIVE single-pass length-2 intersection"
+    },
+    "engine_validation": {
+      "allen_169_cells_match_published_and_algebra_law": true,
+      "allen_canonical_cells_checked": 17,
+      "allen_composition_converse_law_failures": 0,
+      "point_tests": true,
+      "consistency_detection": true,
+      "convex_point_completeness_vs_bruteforce": true,
+      "convex_point_completeness_detail": {
+        "nets_tested": 200,
+        "nets_consistent": 160,
+        "label_mismatches": 0,
+        "consistency_mismatches": 0,
+        "passed": true
+      },
+      "iteration_isolation_len2_eq_and_3hop_neq": true,
+      "iteration_isolation_detail": {
+        "len2_naive_eq_full": true,
+        "hop3_naive_neq_full": true,
+        "len2_label": "<",
+        "hop3_full_label": "<",
+        "hop3_naive_label": "universe",
+        "passed": true
+      },
+      "rcc8_loaded_cells": 64,
+      "all_gating_tests_passed": true
+    },
+    "corpus_manifest": {
+      "MATRES_point": {
+        "n_docs": 274,
+        "n_edges": 11933,
+        "algebra": "POINT"
+      },
+      "TDDMan_allen": {
+        "n_docs": 34,
+        "n_edges": 6150,
+        "algebra": "ALLEN13"
+      },
+      "TDDMan_allen_broad": {
+        "n_docs": 34,
+        "n_edges": 6150,
+        "algebra": "ALLEN13"
+      },
+      "NarrativeTime_point": {
+        "n_docs": 36,
+        "n_edges": 28840,
+        "algebra": "POINT"
+      },
+      "NarrativeTime_allen": {
+        "n_docs": 36,
+        "n_edges": 1030,
+        "algebra": "ALLEN13"
+      },
+      "MATRES_locality_match_rate": 0.8789128673491935,
+      "NarrativeTime_main_axis_segments": 1147,
+      "NarrativeTime_branch_skipped": 195
+    },
+    "per_corpus": {
+      "MATRES_point": {
+        "arm": "MATRES_point",
+        "algebra": "POINT",
+        "n_docs": 274,
+        "n_docs_used": 274,
+        "n_docs_capped": 0,
+        "n_gold_singleton_edges": 11933,
+        "n_evaluable": 11453,
+        "n_inconsistent_holdouts": 0,
+        "complete_graph_fast_path": {
+          "n_complete_docs": 7,
+          "n_complete_preclosed_consistent_unchanged": 7,
+          "genuine_pc_crosschecks": 0,
+          "fast_path_vs_genuine_pc_mismatches": 0,
+          "note": "complete gold graphs use the proven full-PC==single-pass identity; mismatches==0 confirms the fast path matches genuine iterated PC."
+        },
+        "funnel": {
+          "i_deduction_required": 0,
+          "i_ii_multipath": 0,
+          "i_ii_iii_bite": 0,
+          "N_star": 0
+        },
+        "applicability_fraction": 0.0,
+        "applicability_fraction_alt_denominator": 0.0,
+        "applicability_band": "niche",
+        "N_star_fraction": 0.0,
+        "iteration_envelope": {
+          "denominator_i_ii": 0,
+          "full_resolves": 0,
+          "naive_resolves": 0,
+          "full_only_ge3edge_or_cyclic": 0,
+          "full_only_fraction_of_eval": 0.0,
+          "full_only_fraction_of_i_ii": 0.0,
+          "full_resolves_fraction_of_i_ii": 0.0,
+          "naive_resolves_fraction_of_i_ii": 0.0
+        },
+        "bite_loss": {
+          "widening_destroyed": 0
+        },
+        "runtime_sec": 0.73,
+        "invariants": {
+          "funnel_monotone": true,
+          "full_only_le_full_resolves": true,
+          "naive_le_full": true
+        },
+        "corpus": "MATRES",
+        "power": {
+          "N": 0,
+          "base_acc": 0.5,
+          "rho_pair": 0.3,
+          "B": 600,
+          "sims": 400,
+          "N_used_in_sim": 0,
+          "power_by_effect": {
+            "0.05": 0.0,
+            "0.10": 0.0,
+            "0.15": 0.0,
+            "0.20": 0.0,
+            "0.25": 0.0
+          },
+          "power_by_effect_bootstrap_capped_N": {
+            "0.05": 0.0,
+            "0.10": 0.0,
+            "0.15": 0.0,
+            "0.20": 0.0,
+            "0.25": 0.0
+          },
+          "power_by_effect_normal_approx_true_N": {
+            "0.05": 0.0,
+            "0.10": 0.0,
+            "0.15": 0.0,
+            "0.20": 0.0,
+            "0.25": 0.0
+          },
+          "MDE_80": null,
+          "MDE_80_bootstrap_capped_N": null,
+          "MDE_80_normal_approx_true_N": null,
+          "power_at_0.10": 0.0,
+          "power_at_0.20": 0.0
+        }
+      },
+      "TDDMan_allen": {
+        "arm": "TDDMan_allen",
+        "algebra": "ALLEN13",
+        "n_docs": 34,
+        "n_docs_used": 34,
+        "n_docs_capped": 0,
+        "n_gold_singleton_edges": 6139,
+        "n_evaluable": 6026,
+        "n_inconsistent_holdouts": 4290,
+        "complete_graph_fast_path": {
+          "n_complete_docs": 0,
+          "n_complete_preclosed_consistent_unchanged": 0,
+          "genuine_pc_crosschecks": 0,
+          "fast_path_vs_genuine_pc_mismatches": 0,
+          "note": "complete gold graphs use the proven full-PC==single-pass identity; mismatches==0 confirms the fast path matches genuine iterated PC."
+        },
+        "funnel": {
+          "i_deduction_required": 6026,
+          "i_ii_multipath": 4889,
+          "i_ii_iii_bite": 511,
+          "N_star": 408
+        },
+        "applicability_fraction": 0.0848,
+        "applicability_fraction_alt_denominator": 0.08324,
+        "applicability_band": "module",
+        "N_star_fraction": 0.06771,
+        "iteration_envelope": {
+          "denominator_i_ii": 4889,
+          "full_resolves": 408,
+          "naive_resolves": 396,
+          "full_only_ge3edge_or_cyclic": 12,
+          "full_only_fraction_of_eval": 0.00199,
+          "full_only_fraction_of_i_ii": 0.00245,
+          "full_resolves_fraction_of_i_ii": 0.08345,
+          "naive_resolves_fraction_of_i_ii": 0.081
+        },
+        "bite_loss": {
+          "widening_destroyed": 0
+        },
+        "runtime_sec": 3.96,
+        "invariants": {
+          "funnel_monotone": true,
+          "full_only_le_full_resolves": true,
+          "naive_le_full": true
+        },
+        "corpus": "TDDMan",
+        "mapping_sensitivity_broad": {
+          "funnel": {
+            "i_deduction_required": 2588,
+            "i_ii_multipath": 2141,
+            "i_ii_iii_bite": 269,
+            "N_star": 215
+          },
+          "applicability_fraction": 0.10394,
+          "N_star_fraction": 0.08308,
+          "iteration_envelope_full_only": 2
+        },
+        "power": {
+          "N": 511,
+          "base_acc": 0.5,
+          "rho_pair": 0.3,
+          "B": 600,
+          "sims": 400,
+          "N_used_in_sim": 511,
+          "power_by_effect_bootstrap_capped_N": {
+            "0.05": 0.395,
+            "0.10": 0.9475,
+            "0.15": 1.0,
+            "0.20": 1.0,
+            "0.25": 1.0
+          },
+          "power_by_effect": {
+            "0.05": 0.395,
+            "0.10": 0.9475,
+            "0.15": 1.0,
+            "0.20": 1.0,
+            "0.25": 1.0
+          },
+          "MDE_80": 0.1,
+          "MDE_80_bootstrap_capped_N": 0.1,
+          "power_at_0.10": 0.9475,
+          "power_at_0.20": 1.0,
+          "power_by_effect_normal_approx_true_N": {
+            "0.05": 0.4293,
+            "0.10": 0.9495,
+            "0.15": 0.9998,
+            "0.20": 1.0,
+            "0.25": 1.0
+          },
+          "MDE_80_normal_approx_true_N": 0.1
+        }
+      },
+      "NarrativeTime_point": {
+        "arm": "NarrativeTime_point",
+        "algebra": "POINT",
+        "n_docs": 36,
+        "n_docs_used": 36,
+        "n_docs_capped": 0,
+        "n_gold_singleton_edges": 28840,
+        "n_evaluable": 28840,
+        "n_inconsistent_holdouts": 0,
+        "complete_graph_fast_path": {
+          "n_complete_docs": 36,
+          "n_complete_preclosed_consistent_unchanged": 36,
+          "genuine_pc_crosschecks": 900,
+          "fast_path_vs_genuine_pc_mismatches": 0,
+          "note": "complete gold graphs use the proven full-PC==single-pass identity; mismatches==0 confirms the fast path matches genuine iterated PC."
+        },
+        "funnel": {
+          "i_deduction_required": 25540,
+          "i_ii_multipath": 25540,
+          "i_ii_iii_bite": 25450,
+          "N_star": 25450
+        },
+        "applicability_fraction": 0.88245,
+        "applicability_fraction_alt_denominator": 0.88245,
+        "applicability_band": "general",
+        "N_star_fraction": 0.88245,
+        "iteration_envelope": {
+          "denominator_i_ii": 25540,
+          "full_resolves": 25450,
+          "naive_resolves": 25450,
+          "full_only_ge3edge_or_cyclic": 0,
+          "full_only_fraction_of_eval": 0.0,
+          "full_only_fraction_of_i_ii": 0.0,
+          "full_resolves_fraction_of_i_ii": 0.99648,
+          "naive_resolves_fraction_of_i_ii": 0.99648
+        },
+        "bite_loss": {
+          "widening_destroyed": 0
+        },
+        "runtime_sec": 31.63,
+        "invariants": {
+          "funnel_monotone": true,
+          "full_only_le_full_resolves": true,
+          "naive_le_full": true
+        },
+        "corpus": "NarrativeTime",
+        "power": {
+          "N": 25450,
+          "base_acc": 0.5,
+          "rho_pair": 0.3,
+          "B": 600,
+          "sims": 400,
+          "N_used_in_sim": 600,
+          "power_by_effect_bootstrap_capped_N": {
+            "0.05": 0.4825,
+            "0.10": 0.96,
+            "0.15": 1.0,
+            "0.20": 1.0,
+            "0.25": 1.0
+          },
+          "power_by_effect": {
+            "0.05": 0.4825,
+            "0.10": 0.96,
+            "0.15": 1.0,
+            "0.20": 1.0,
+            "0.25": 1.0
+          },
+          "MDE_80": 0.1,
+          "MDE_80_bootstrap_capped_N": 0.1,
+          "power_at_0.10": 0.96,
+          "power_at_0.20": 1.0,
+          "power_by_effect_normal_approx_true_N": {
+            "0.05": 1.0,
+            "0.10": 1.0,
+            "0.15": 1.0,
+            "0.20": 1.0,
+            "0.25": 1.0
+          },
+          "MDE_80_normal_approx_true_N": 0.05
+        },
+        "narrativetime_noncircularity": {
+          "locally_justifiable_frac": 0.11442,
+          "purely_timeline_implied_frac": 0.88558,
+          "n_edges": 28840,
+          "headline_subset": "purely_timeline_implied (sentence distance > 1)"
+        }
+      },
+      "NarrativeTime_allen": {
+        "arm": "NarrativeTime_allen",
+        "algebra": "ALLEN13",
+        "n_docs": 36,
+        "n_docs_used": 26,
+        "n_docs_capped": 0,
+        "n_gold_singleton_edges": 1030,
+        "n_evaluable": 1021,
+        "n_inconsistent_holdouts": 0,
+        "complete_graph_fast_path": {
+          "n_complete_docs": 26,
+          "n_complete_preclosed_consistent_unchanged": 26,
+          "genuine_pc_crosschecks": 195,
+          "fast_path_vs_genuine_pc_mismatches": 0,
+          "note": "complete gold graphs use the proven full-PC==single-pass identity; mismatches==0 confirms the fast path matches genuine iterated PC."
+        },
+        "funnel": {
+          "i_deduction_required": 931,
+          "i_ii_multipath": 927,
+          "i_ii_iii_bite": 923,
+          "N_star": 912
+        },
+        "applicability_fraction": 0.90402,
+        "applicability_fraction_alt_denominator": 0.89612,
+        "applicability_band": "general",
+        "N_star_fraction": 0.89324,
+        "iteration_envelope": {
+          "denominator_i_ii": 927,
+          "full_resolves": 912,
+          "naive_resolves": 912,
+          "full_only_ge3edge_or_cyclic": 0,
+          "full_only_fraction_of_eval": 0.0,
+          "full_only_fraction_of_i_ii": 0.0,
+          "full_resolves_fraction_of_i_ii": 0.98382,
+          "naive_resolves_fraction_of_i_ii": 0.98382
+        },
+        "bite_loss": {
+          "widening_destroyed": 0
+        },
+        "runtime_sec": 0.92,
+        "invariants": {
+          "funnel_monotone": true,
+          "full_only_le_full_resolves": true,
+          "naive_le_full": true
+        },
+        "corpus": "NarrativeTime",
+        "power": {
+          "N": 923,
+          "base_acc": 0.5,
+          "rho_pair": 0.3,
+          "B": 600,
+          "sims": 400,
+          "N_used_in_sim": 600,
+          "power_by_effect_bootstrap_capped_N": {
+            "0.05": 0.4825,
+            "0.10": 0.96,
+            "0.15": 1.0,
+            "0.20": 1.0,
+            "0.25": 1.0
+          },
+          "power_by_effect": {
+            "0.05": 0.4825,
+            "0.10": 0.96,
+            "0.15": 1.0,
+            "0.20": 1.0,
+            "0.25": 1.0
+          },
+          "MDE_80": 0.1,
+          "MDE_80_bootstrap_capped_N": 0.1,
+          "power_at_0.10": 0.96,
+          "power_at_0.20": 1.0,
+          "power_by_effect_normal_approx_true_N": {
+            "0.05": 0.6783,
+            "0.10": 0.9983,
+            "0.15": 1.0,
+            "0.20": 1.0,
+            "0.25": 1.0
+          },
+          "MDE_80_normal_approx_true_N": 0.1
+        }
+      }
+    },
+    "gate_validation": {
+      "matres_N_star": 0,
+      "matres_applic_fraction": 0.0,
+      "narrativetime_N_star": 25450,
+      "tddman_N_star": 408,
+      "gate_discriminative": true,
+      "interpretation": "MATRES (all same/adjacent-sentence) yields N*~0 as predicted; dense NarrativeTime and/or manual-long-distance TDDMan yield N*>>0."
+    },
+    "hosting_decision": {
+      "real_text_co_primary": "NarrativeTime_point",
+      "corroboration_arm": "TDDMan_allen (manual long-distance, non-circular)",
+      "control_arm": "MATRES_point (all same/adjacent sentence -> N*~0)",
+      "narrativetime_clears": true,
+      "tddman_clears": false,
+      "go_no_go": "GO",
+      "verdict_text": "GO: host the real-text headline on NarrativeTime_point (applicability 0.882 >= 0.10, MDE_80 0.1 <= 0.1). TDDMan is the non-circularity corroboration arm; MATRES is the N*~0 control. Iter-2 may spend LLM budget on the real-text comparison."
+    },
+    "example_sampling": {
+      "cap_per_arm": 220,
+      "note": "Funnel statistics are computed over ALL evaluable edges; the examples array is a capped, stratified sample (all iteration-dependent + N* rows first, then a deterministic sample) illustrating per-query method/baseline predictions.",
+      "stats": {
+        "MATRES_point": {
+          "n_candidates": 0,
+          "n_emitted": 0,
+          "n_full_only_in_pool": 0,
+          "n_nstar_in_pool": 0
+        },
+        "TDDMan_allen": {
+          "n_candidates": 511,
+          "n_emitted": 220,
+          "n_full_only_in_pool": 12,
+          "n_nstar_in_pool": 408
+        },
+        "NarrativeTime_point": {
+          "n_candidates": 25450,
+          "n_emitted": 220,
+          "n_full_only_in_pool": 0,
+          "n_nstar_in_pool": 25450
+        },
+        "NarrativeTime_allen": {
+          "n_candidates": 923,
+          "n_emitted": 220,
+          "n_full_only_in_pool": 0,
+          "n_nstar_in_pool": 912
+        }
+      }
+    },
+    "honesty_notes": {
+      "point_arm_exact_allen_arm_lower_bound": true,
+      "allen_pc_incomplete": "Allen path-consistency is sound but not complete; TDDMan/NarrativeTime ALLEN-arm recovery (resolves_full, N*) is a LOWER BOUND on true recoverability.",
+      "point_arm_complete": "Convex point PC is complete (verified vs brute-force) -> MATRES and the NarrativeTime point arm recovery numbers are EXACT.",
+      "narrativetime_dense_complete_graph": "NarrativeTime gold is a dense full-coverage timeline -> the held-out graph is near-transitively-closed, so single-pass (length-2) baseline already has direct evidence and the iterated-PC advantage (full_only) is expected to be ~0; the iteration advantage concentrates in SPARSE long-hop corpora (TDDMan).",
+      "narrativetime_annotator": "annotator a1; branch/hypothetical segments excluded to keep a linear timeline; main-axis negated-factuality events retained.",
+      "matres_locality_source": "qiangning EMNLP-19 sentence-aligned XML (SENTDIFF); 100% of non-VAGUE MATRES pairs are same/adjacent sentence (SENTDIFF in {0,1}).",
+      "widening_is_noop_on_singleton_inputs": "Gold inputs are atomic singletons (convex); non-convex input widening therefore changes nothing (widening_destroyed~0); the widening machinery is retained for later disjunctive inputs.",
+      "data_status": {
+        "MATRES": "CogComp + qiangning EMNLP-19 (cloned)",
+        "TDDMan": "TDDiscourse (cloned)",
+        "NarrativeTime": "text-machine-lab/narrative_time (cloned)"
+      },
+      "locality_proxy_is_structural": "Sentence segmentation for NarrativeTime is a whitespace/punctuation proxy; MATRES/TDDMan locality is exact/structural."
+    },
+    "runtime_sec_total": 59.58
+  },
+  "datasets": [
+    {
+      "dataset": "MATRES_point",
+      "examples": [
+        {
+          "input": "[MATRES_point] No evaluable deduction-required multi-path-with-bite query edges were found (see metadata.per_corpus for the funnel). This arm contributes a control N*~0 result.",
+          "output": "no_applicable_query",
+          "predict_our_method_full_pc": "n/a",
+          "predict_baseline_naive_singlepass": "n/a",
+          "predict_baseline_closure_off": "n/a",
+          "metadata_corpus": "MATRES",
+          "metadata_note": "empty_applicable_set"
+        }
+      ]
+    },
+    {
+      "dataset": "TDDMan_allen",
+      "examples": [
+        {
+          "input": "Temporal qualitative-reasoning query [corpus=TDDMan, doc=ABC19980304.1830.1636, algebra=ALLEN13].\nHeld-out query: relation(e254, e30) = ?\nKnown gold constraints (query edge removed):\n  e40 --D--> e254\n  e40 --D--> e30\n  e6 --B--> e30\n  e7 --D--> e30\n  e254 --DI--> e10\n  e254 --D--> e20\n  e254 --D--> e51\n  e254 --DI--> e22\n  e254 --DI--> e52\n  e254 --DI--> e23\n  e254 --DI--> e24\n  e254 --DI--> e25\n  e254 --DI--> e26\n  e254 --D--> e27\n  e254 --D--> e28\n  e68 --D--> e30\n  e44 --D--> e30\n  e10 --D--> e30\n  e20 --DI--> e30\n  e51 --DI--> e30\n  e22 --D--> e30\n  e52 --D--> e30\n  e23 --D--> e30\n  e24 --D--> e30\nTask: derive relation(e254,e30) by qualitative constraint propagation (path-consistency). Answer with the tightest relation set.",
+          "output": "ii",
+          "predict_our_method_full_pc": "D",
+          "predict_baseline_naive_singlepass": "D|DI|E|F|FI|O|OI|S|SI",
+          "predict_baseline_closure_off": "universe",
+          "metadata_corpus": "TDDMan",
+          "metadata_docid": "ABC19980304.1830.1636",
+          "metadata_query_u": "e254",
+          "metadata_query_v": "e30",
+          "metadata_gold_rels": [
+            "D"
+          ],
+          "metadata_deduction_required": true,
+          "metadata_multipath": true,
+          "metadata_n_intermediates_len2": 9,
+          "metadata_has_long_path": null,
+          "metadata_sentence_distance": null,
+          "metadata_resolves_full_pc": true,
+          "metadata_resolves_naive": false,
+          "metadata_iteration_dependent_full_only": true,
+          "metadata_in_N_star": true
+        },
+        {
+          "input": "Temporal qualitative-reasoning query [corpus=TDDMan, doc=PRI19980216.2000.0170, algebra=ALLEN13].\nHeld-out query: relation(e2, e20) = ?\nKnown gold constraints (query edge removed):\n  e2 --B--> e9\n  e2 --B--> e186\n  e2 --B--> e14\n  e2 --BI--> e18\n  e2 --E--> e19\n  e2 --BI--> e28\n  e2 --E--> e22\n  e2 --BI--> e23\n  e37 --E--> e20\n  e57 --D--> e20\n  e6 --D--> e20\n  e7 --D--> e20\n  e74 --D--> e20\n  e75 --D--> e20\n  e9 --D--> e20\n  e186 --D--> e20\nTask: derive relation(e2,e20) by qualitative constraint propagation (path-consistency). Answer with the tightest relation set.",
+          "output": "ii",
+          "predict_our_method_full_pc": "D",
+          "predict_baseline_naive_singlepass": "B|D|M|O|S",
+          "predict_baseline_closure_off": "universe",
+          "metadata_corpus": "TDDMan",
+          "metadata_docid": "PRI19980216.2000.0170",
+          "metadata_query_u": "e2",
+          "metadata_query_v": "e20",
+          "metadata_gold_rels": [
+            "D"
+          ],
+          "metadata_deduction_required": true,
+          "metadata_multipath": true,
+          "metadata_n_intermediates_len2": 2,
+          "metadata_has_long_path": null,
+          "metadata_sentence_distance": null,
+          "metadata_resolves_full_pc": true,
+          "metadata_resolves_naive": false,
+          "metadata_iteration_dependent_full_only": true,
+          "metadata_in_N_star": true
+        },
+        {
+          "input": "Temporal qualitative-reasoning query [corpus=TDDMan, doc=PRI19980216.2000.0170, algebra=ALLEN13].\nHeld-out query: relation(e37, e14) = ?\nKnown gold constraints (query edge removed):\n  e2 --B--> e14\n  e37 --DI--> e9\n  e37 --DI--> e186\n  e37 --DI--> e46\n  e37 --DI--> e13\n  e37 --DI--> e18\n  e37 --DI--> e19\n  e37 --E--> e20\n  e37 --DI--> e28\n  e37 --DI--> e22\n  e37 --DI--> e23\n  e7 --DI--> e14\n  e9 --D--> e14\n  e186 --D--> e14\nTask: derive relation(e37,e14) by qualitative constraint propagation (path-consistency). Answer with the tightest relation set.",
+          "output": "i",
+          "predict_our_method_full_pc": "DI",
+          "predict_baseline_naive_singlepass": "D|DI|E|F|FI|O|OI|S|SI",
+          "predict_baseline_closure_off": "universe",
+          "metadata_corpus": "TDDMan",
+          "metadata_docid": "PRI19980216.2000.0170",
+          "metadata_query_u": "e37",
+          "metadata_query_v": "e14",
+          "metadata_gold_rels": [
+            "DI"
+          ],
+          "metadata_deduction_required": true,
+          "metadata_multipath": true,
+          "metadata_n_intermediates_len2": 2,
+          "metadata_has_long_path": null,
+          "metadata_sentence_distance": null,
+          "metadata_resolves_full_pc": true,
+          "metadata_resolves_naive": false,
+          "metadata_iteration_dependent_full_only": true,
+          "metadata_in_N_star": true
+        }
+      ]
+    },
+    {
+      "dataset": "NarrativeTime_point",
+      "examples": [
+        {
+          "input": "Temporal qualitative-reasoning query [corpus=NarrativeTime, doc=ABC19980108.1830.0711, algebra=POINT].\nHeld-out query: relation(0, 3) = ?\nKnown gold constraints (query edge removed):\n  0 -->--> 1\n  0 -->--> 4\n  0 -->--> 5\n  0 -->--> 6\n  0 -->--> 7\n  0 -->--> 8\n  0 -->--> 9\n  0 -->--> 10\n  0 -->--> 11\n  0 -->--> 12\n  0 -->--> 13\n  0 -->--> 14\n  0 -->--> 15\n  0 -->--> 16\n  0 -->--> 18\n  0 -->--> 19\n  0 -->--> 21\n  0 --=--> 22\n  0 --=--> 23\n  0 --=--> 24\n  0 -->--> 25\n  0 --=--> 26\n  0 -->--> 27\n  0 --=--> 29\nTask: derive relation(0,3) by qualitative constraint propagation (path-consistency). Answer with the tightest relation set.",
+          "output": "=",
+          "predict_our_method_full_pc": "=",
+          "predict_baseline_naive_singlepass": "=",
+          "predict_baseline_closure_off": "universe",
+          "metadata_corpus": "NarrativeTime",
+          "metadata_docid": "ABC19980108.1830.0711",
+          "metadata_query_u": "0",
+          "metadata_query_v": "3",
+          "metadata_gold_rels": [
+            "="
+          ],
+          "metadata_deduction_required": true,
+          "metadata_multipath": true,
+          "metadata_n_intermediates_len2": 33,
+          "metadata_has_long_path": null,
+          "metadata_sentence_distance": 2,
+          "metadata_resolves_full_pc": true,
+          "metadata_resolves_naive": true,
+          "metadata_iteration_dependent_full_only": false,
+          "metadata_in_N_star": true
+        },
+        {
+          "input": "Temporal qualitative-reasoning query [corpus=NarrativeTime, doc=ABC19980108.1830.0711, algebra=POINT].\nHeld-out query: relation(0, 4) = ?\nKnown gold constraints (query edge removed):\n  0 -->--> 1\n  0 --=--> 3\n  0 -->--> 5\n  0 -->--> 6\n  0 -->--> 7\n  0 -->--> 8\n  0 -->--> 9\n  0 -->--> 10\n  0 -->--> 11\n  0 -->--> 12\n  0 -->--> 13\n  0 -->--> 14\n  0 -->--> 15\n  0 -->--> 16\n  0 -->--> 18\n  0 -->--> 19\n  0 -->--> 21\n  0 --=--> 22\n  0 --=--> 23\n  0 --=--> 24\n  0 -->--> 25\n  0 --=--> 26\n  0 -->--> 27\n  0 --=--> 29\nTask: derive relation(0,4) by qualitative constraint propagation (path-consistency). Answer with the tightest relation set.",
+          "output": ">",
+          "predict_our_method_full_pc": ">",
+          "predict_baseline_naive_singlepass": ">",
+          "predict_baseline_closure_off": "universe",
+          "metadata_corpus": "NarrativeTime",
+          "metadata_docid": "ABC19980108.1830.0711",
+          "metadata_query_u": "0",
+          "metadata_query_v": "4",
+          "metadata_gold_rels": [
+            ">"
+          ],
+          "metadata_deduction_required": true,
+          "metadata_multipath": true,
+          "metadata_n_intermediates_len2": 33,
+          "metadata_has_long_path": null,
+          "metadata_sentence_distance": 2,
+          "metadata_resolves_full_pc": true,
+          "metadata_resolves_naive": true,
+          "metadata_iteration_dependent_full_only": false,
+          "metadata_in_N_star": true
+        },
+        {
+          "input": "Temporal qualitative-reasoning query [corpus=NarrativeTime, doc=ABC19980108.1830.0711, algebra=POINT].\nHeld-out query: relation(0, 5) = ?\nKnown gold constraints (query edge removed):\n  0 -->--> 1\n  0 --=--> 3\n  0 -->--> 4\n  0 -->--> 6\n  0 -->--> 7\n  0 -->--> 8\n  0 -->--> 9\n  0 -->--> 10\n  0 -->--> 11\n  0 -->--> 12\n  0 -->--> 13\n  0 -->--> 14\n  0 -->--> 15\n  0 -->--> 16\n  0 -->--> 18\n  0 -->--> 19\n  0 -->--> 21\n  0 --=--> 22\n  0 --=--> 23\n  0 --=--> 24\n  0 -->--> 25\n  0 --=--> 26\n  0 -->--> 27\n  0 --=--> 29\nTask: derive relation(0,5) by qualitative constraint propagation (path-consistency). Answer with the tightest relation set.",
+          "output": ">",
+          "predict_our_method_full_pc": ">",
+          "predict_baseline_naive_singlepass": ">",
+          "predict_baseline_closure_off": "universe",
+          "metadata_corpus": "NarrativeTime",
+          "metadata_docid": "ABC19980108.1830.0711",
+          "metadata_query_u": "0",
+          "metadata_query_v": "5",
+          "metadata_gold_rels": [
+            ">"
+          ],
+          "metadata_deduction_required": true,
+          "metadata_multipath": true,
+          "metadata_n_intermediates_len2": 33,
+          "metadata_has_long_path": null,
+          "metadata_sentence_distance": 4,
+          "metadata_resolves_full_pc": true,
+          "metadata_resolves_naive": true,
+          "metadata_iteration_dependent_full_only": false,
+          "metadata_in_N_star": true
+        }
+      ]
+    },
+    {
+      "dataset": "NarrativeTime_allen",
+      "examples": [
+        {
+          "input": "Temporal qualitative-reasoning query [corpus=NarrativeTime, doc=ABC19980108.1830.0711, algebra=ALLEN13].\nHeld-out query: relation(1, 9) = ?\nKnown gold constraints (query edge removed):\n  1 --BI--> 10\n  1 --BI--> 12\n  1 --BI--> 27\n  1 --BI--> 33\n  9 --E--> 10\n  9 --E--> 12\n  9 --E--> 27\n  9 --E--> 33\nTask: derive relation(1,9) by qualitative constraint propagation (path-consistency). Answer with the tightest relation set.",
+          "output": "BI",
+          "predict_our_method_full_pc": "BI",
+          "predict_baseline_naive_singlepass": "BI",
+          "predict_baseline_closure_off": "universe",
+          "metadata_corpus": "NarrativeTime",
+          "metadata_docid": "ABC19980108.1830.0711",
+          "metadata_query_u": "1",
+          "metadata_query_v": "9",
+          "metadata_gold_rels": [
+            "BI"
+          ],
+          "metadata_deduction_required": true,
+          "metadata_multipath": true,
+          "metadata_n_intermediates_len2": 4,
+          "metadata_has_long_path": null,
+          "metadata_sentence_distance": 6,
+          "metadata_resolves_full_pc": true,
+          "metadata_resolves_naive": true,
+          "metadata_iteration_dependent_full_only": false,
+          "metadata_in_N_star": true
+        },
+        {
+          "input": "Temporal qualitative-reasoning query [corpus=NarrativeTime, doc=ABC19980108.1830.0711, algebra=ALLEN13].\nHeld-out query: relation(1, 10) = ?\nKnown gold constraints (query edge removed):\n  1 --BI--> 9\n  1 --BI--> 12\n  1 --BI--> 27\n  1 --BI--> 33\n  9 --E--> 10\n  10 --E--> 12\n  10 --E--> 27\n  10 --E--> 33\nTask: derive relation(1,10) by qualitative constraint propagation (path-consistency). Answer with the tightest relation set.",
+          "output": "BI",
+          "predict_our_method_full_pc": "BI",
+          "predict_baseline_naive_singlepass": "BI",
+          "predict_baseline_closure_off": "universe",
+          "metadata_corpus": "NarrativeTime",
+          "metadata_docid": "ABC19980108.1830.0711",
+          "metadata_query_u": "1",
+          "metadata_query_v": "10",
+          "metadata_gold_rels": [
+            "BI"
+          ],
+          "metadata_deduction_required": true,
+          "metadata_multipath": true,
+          "metadata_n_intermediates_len2": 4,
+          "metadata_has_long_path": null,
+          "metadata_sentence_distance": 7,
+          "metadata_resolves_full_pc": true,
+          "metadata_resolves_naive": true,
+          "metadata_iteration_dependent_full_only": false,
+          "metadata_in_N_star": true
+        },
+        {
+          "input": "Temporal qualitative-reasoning query [corpus=NarrativeTime, doc=ABC19980108.1830.0711, algebra=ALLEN13].\nHeld-out query: relation(1, 12) = ?\nKnown gold constraints (query edge removed):\n  1 --BI--> 9\n  1 --BI--> 10\n  1 --BI--> 27\n  1 --BI--> 33\n  9 --E--> 12\n  10 --E--> 12\n  12 --E--> 27\n  12 --E--> 33\nTask: derive relation(1,12) by qualitative constraint propagation (path-consistency). Answer with the tightest relation set.",
+          "output": "BI",
+          "predict_our_method_full_pc": "BI",
+          "predict_baseline_naive_singlepass": "BI",
+          "predict_baseline_closure_off": "universe",
+          "metadata_corpus": "NarrativeTime",
+          "metadata_docid": "ABC19980108.1830.0711",
+          "metadata_query_u": "1",
+          "metadata_query_v": "12",
+          "metadata_gold_rels": [
+            "BI"
+          ],
+          "metadata_deduction_required": true,
+          "metadata_multipath": true,
+          "metadata_n_intermediates_len2": 4,
+          "metadata_has_long_path": null,
+          "metadata_sentence_distance": 8,
+          "metadata_resolves_full_pc": true,
+          "metadata_resolves_naive": true,
+          "metadata_iteration_dependent_full_only": false,
+          "metadata_in_N_star": true
+        }
+      ]
+    }
+  ]
+}

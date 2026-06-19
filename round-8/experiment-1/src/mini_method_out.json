@@ -1,0 +1,3176 @@
+{
+  "metadata": {
+    "method_name": "Closure certificate vs a 4-signal confidence battery (verbalized / SC-margin / Kadavath P(True) / semantic-entropy) vs a NEW query-side false-premise verifier + self-verification, on the NATURAL Re-DocRED/DocRED LOCATED-IN (administrative-containment) absent-relation corpus -- the decisive iter-8 domain-generality test (a SECOND genuinely-natural absent-relation domain, same_component_sibling mixed pool).",
+    "step": "DROP-IN of the iter-7 STEP-B natural-kinship experiment to located-in: same engine (kinship.py forward least-fixpoint UNION closure parameterized by the DEGENERATE located_in/contains transitive table), same battery/stats/closure machinery; new = held_out direct-edge ablation + absent-regime split + query-side verifier/self-verify baselines + 4-way FORK verdict.",
+    "headline_summary": {
+      "slice_primary": "re-docred",
+      "decisive_pool": "same_component_sibling mixed (present + sibling-absent)",
+      "n_present_deduction": 515,
+      "n_sibling_absent": 450,
+      "n_diffcomponent_absent": 250,
+      "FACT_A_raw_llm_hallucination_rate_per_regime": {
+        "same_component_sibling": 0.3,
+        "different_component": 0.06
+      },
+      "FACT_B_crux_fraction_caught_per_baseline": {
+        "certificate": 0.7852,
+        "ct_verbalized": 0.4,
+        "ct_sc_margin": 0.0667,
+        "ct_ptrue": 0.3037,
+        "ct_negent": 0.0667,
+        "queryside_verifier": 0.2741,
+        "queryside_selfverify": 0.4593
+      },
+      "FACT_B_crux_fraction_surviving_dispersion": {
+        "ct_verbalized": 0.6,
+        "ct_sc_margin": 0.9333,
+        "ct_ptrue": 0.6963,
+        "ct_negent": 0.9333
+      },
+      "LOAD_BEARING_natural_confident_wrong_on_sibling_absent": {
+        "raw_commit": 0.3,
+        "certificate": 0.0733,
+        "ct_verbalized": 0.3,
+        "ct_sc_margin": 0.3,
+        "ct_ptrue": 0.3,
+        "ct_negent": 0.3,
+        "queryside_verifier": 0.2178,
+        "queryside_selfverify": 0.1622,
+        "note": "natural confident-wrong rate on the 450 sibling-absent pairs (ANY named answer is wrong). The certificate's structural abstention beats the raw commit AND every confidence signal AND the query-side verifier/self-verify -- this is the non-degenerate load-bearing comparison."
+      },
+      "mixed_sibling_matched_coverage_selective_accuracy": {
+        "certificate": 0.4407,
+        "ct_verbalized": 1.0,
+        "ct_sc_margin": 1.0,
+        "ct_ptrue": 1.0,
+        "ct_negent": 1.0,
+        "queryside_verifier": 1.0,
+        "queryside_selfverify": 1.0,
+        "commit_argmax": 1.0,
+        "matched_coverage": 0.061139896373056994
+      },
+      "mixed_sibling_confident_wrong_reduction_certificate_vs_each": {
+        "ct_verbalized": {
+          "reduction": -0.0342,
+          "ci95": [
+            -0.0502,
+            -0.0204
+          ],
+          "holm_p_adj": 1.0,
+          "reject": false
+        },
+        "ct_sc_margin": {
+          "reduction": -0.0342,
+          "ci95": [
+            -0.0502,
+            -0.0204
+          ],
+          "holm_p_adj": 1.0,
+          "reject": false
+        },
+        "ct_ptrue": {
+          "reduction": -0.0342,
+          "ci95": [
+            -0.0502,
+            -0.0204
+          ],
+          "holm_p_adj": 1.0,
+          "reject": false
+        },
+        "ct_negent": {
+          "reduction": -0.0342,
+          "ci95": [
+            -0.0502,
+            -0.0204
+          ],
+          "holm_p_adj": 1.0,
+          "reject": false
+        },
+        "queryside_verifier": {
+          "reduction": -0.0342,
+          "ci95": [
+            -0.0502,
+            -0.0204
+          ],
+          "holm_p_adj": 1.0,
+          "reject": false
+        },
+        "queryside_selfverify": {
+          "reduction": -0.0342,
+          "ci95": [
+            -0.0502,
+            -0.0204
+          ],
+          "holm_p_adj": 1.0,
+          "reject": false
+        }
+      },
+      "abstention_decomposition_sibling": {
+        "n_total": 965,
+        "n_present": 515,
+        "n_absent": 450,
+        "certificate_named_total": 59,
+        "correct_absent_abstentions": 417,
+        "correct_absent_abstention_rate": 0.9267,
+        "over_abstain_present": 489,
+        "over_abstain_present_rate": 0.9495,
+        "present_coverage_llm_read": 0.0505,
+        "present_selective_accuracy_primitive": 1.0,
+        "gold_read_ceiling": {
+          "present_coverage": 1.0,
+          "correct_absent_abstention_rate": 1.0,
+          "present_selective_accuracy_primitive": 1.0,
+          "note": "the gold-read certificate (closure over GOLD atomic edges, held_out direct edge ablated) deduces ~100% of present golds & abstains on ~100% of absent pairs by construction; the gap to the LLM-read certificate is exactly the natural-prose EXTRACTION ceiling."
+        },
+        "interpretation": "On natural prose the extracted graph is no longer trivially complete, so the certificate can OVER-ABSTAIN on PRESENT pairs (missing connecting edges look disconnected). correct_absent + over_abstain_present + named == total decisions; high over_abstain_present with low present_coverage => extraction-limited."
+      },
+      "natural_atomic_pr": {
+        "recall_converse_invariant": 0.1478,
+        "precision_converse_invariant": 0.6649,
+        "f1_converse_invariant": 0.2418,
+        "recall_strict": 0.1421
+      },
+      "fork_verdict": "EXTRACTION-LIMITED-BOUNDARY",
+      "one_line": "On 450 NATURAL Wikipedia SAME-COMPONENT-SIBLING absent located-in pairs the raw LLM hallucinates a containment on 30% at high confidence; the certificate abstains by GENUINE DEDUCTION (located_in o contains UNDEFINED), confident-wrong 7%. The fork verdict is EXTRACTION-LIMITED-BOUNDARY."
+    },
+    "reader_model": "google/gemini-3.1-flash-lite",
+    "model_fallbacks": [
+      "deepseek/deepseek-v3.2",
+      "google/gemini-3-flash-preview"
+    ],
+    "cross_family_reader": "mistralai/mistral-small-2603",
+    "seed": 20260618,
+    "temperature": 0.0,
+    "sc_k_battery": 10,
+    "bootstrap_B": 10000,
+    "signals": [
+      "verbalized",
+      "sc_margin",
+      "ptrue",
+      "negent"
+    ],
+    "queryside_baselines": [
+      "queryside_verifier",
+      "queryside_selfverify"
+    ],
+    "all_6_competitors": [
+      "ct_verbalized",
+      "ct_sc_margin",
+      "ct_ptrue",
+      "ct_negent",
+      "queryside_verifier",
+      "queryside_selfverify"
+    ],
+    "signal_definitions": {
+      "verbalized": "the raw answerer's self-reported confidence in [0,1].",
+      "sc_margin": "self-consistency vote-margin: top-relation fraction across k=10 temp=0.7 samples.",
+      "ptrue": "Kadavath P(True): the model's probability that raw's committed answer is correct (1 call, temp=0).",
+      "negent": "semantic-entropy negentropy 1 - H/log(k_eff) over the k SC samples clustered by relation.",
+      "queryside_verifier": "NEW: a dedicated false-premise check ('is there ANY containment between X and Y?') that GATES the committed answer (related=false => abstain).",
+      "queryside_selfverify": "NEW: a self-verification pass ('is this proposed answer correct?') that keeps raw's answer only if correct=true."
+    },
+    "research_cross_check": "research_out.json loaded (false-premise verifier wording + 4-signal specs cross-checked)",
+    "tag": "REAL-LLM-READ + NATURAL-PROSE + located-in domain (all reads are genuine OpenRouter completions; cached reads replay $0).",
+    "scoring": "PRIMITIVE-level (located_in vs contains vs no-relation): a method's surface is reduced to its gender-independent primitive before scoring. Absent pairs: ANY named answer is confident-wrong.",
+    "entity_grounding": "LLM-extracted place names are grounded to gold entity_ids via the mention-span alias table (exact + substring single-hit); ungroundable names become isolated NAME:: nodes (honest recall penalty, never a fabricated link).",
+    "held_out_ablation": "For every held_out present query the single directly-annotated (source,target) located_in edge is DROPPED from BOTH the gold graph and the LLM-extracted graph before querying, so a 'covered' present decision is a genuine >=2-hop DEDUCTION, not a read-back (sound: removing a redundant edge preserves the transitive closure). never_annotated pairs have no direct edge (no-op). Un-ablated coverage is recorded as a sensitivity (modeA_unablated).",
+    "absent_regimes": {
+      "same_component_sibling": "DECISIVE: both places are in the same component but neither is inside the other; the closure derives EMPTY because located_in o contains is UNDEFINED -- a GENUINE DEDUCTIVE abstention, NOT structural-by-construction.",
+      "different_component": "CONTRAST: unrelated places in disconnected components; closure abstains by definition (structural-by-construction); the clean kinship-analog."
+    },
+    "pre_registration": {
+      "FACT_A": "raw LLM names a containment on absent SIBLING pairs at high confidence.",
+      "FACT_B": ">=2 of 4 dispersion signals still COMMIT >=50% of those sibling hallucinations at the certificate's coverage.",
+      "mixed_sibling_showdown": "at the certificate's matched coverage on the SIBLING mixed pool the certificate's confident-wrong beats all 6 competitors (4 signals + 2 query-side), Holm, B=10000, doc-clustered paired bootstrap.",
+      "fork": "DEMONSTRATED-FIX (certificate beats all 6 post-Holm) | VERIFIER-SUFFICES (query-side verifier ties/beats the certificate on the sibling absent pool while FACT A high) | EXTRACTION-LIMITED-BOUNDARY (diagnostic FACT A+B survive but certificate over-abstains/ties on present due to extraction recall) | DIAGNOSTIC-WEAKER-THAN-CLAIMED.",
+      "doc_cluster": "metadata_doc_id (Wikipedia document)",
+      "B": 10000,
+      "multiplicity": "Holm-Bonferroni across the 6 competitors, one-sided."
+    },
+    "subsample_realized": {
+      "same_component_sibling": 450,
+      "held_out": 400,
+      "different_component": 250,
+      "never_annotated": 115,
+      "n_docs_selected": 283
+    },
+    "primary_reader_results_sibling_DECISIVE": {
+      "n_present": 515,
+      "n_absent": 450,
+      "view1_absent": {
+        "ct_verbalized": {
+          "n_absent": 450,
+          "matched_coverage": 0.3,
+          "ref": "modeA",
+          "compare": "ct_verbalized",
+          "confident_wrong_reduction": 0.2267,
+          "ci95": [
+            0.1755,
+            0.2803
+          ],
+          "p_one_sided": 0.0005,
+          "meets_0.20_bar": true,
+          "ci_excludes_0": true,
+          "natural_operating_points": {
+            "modeA": {
+              "natural_named_rate": 0.07333333333333333,
+              "natural_confident_wrong_rate": 0.07333333333333333
+            },
+            "ct_verbalized": {
+              "natural_named_rate": 0.3,
+              "natural_confident_wrong_rate": 0.3
+            }
+          },
+          "matched_operating_points": {
+            "modeA": {
+              "confident_wrong_rate_at_matched_cov": 0.0733
+            },
+            "ct_verbalized": {
+              "confident_wrong_rate_at_matched_cov": 0.3
+            }
+          }
+        },
+        "ct_sc_margin": {
+          "n_absent": 450,
+          "matched_coverage": 0.3,
+          "ref": "modeA",
+          "compare": "ct_sc_margin",
+          "confident_wrong_reduction": 0.2267,
+          "ci95": [
+            0.1755,
+            0.2803
+          ],
+          "p_one_sided": 0.0005,
+          "meets_0.20_bar": true,
+          "ci_excludes_0": true,
+          "natural_operating_points": {
+            "modeA": {
+              "natural_named_rate": 0.07333333333333333,
+              "natural_confident_wrong_rate": 0.07333333333333333
+            },
+            "ct_sc_margin": {
+              "natural_named_rate": 0.3,
+              "natural_confident_wrong_rate": 0.3
+            }
+          },
+          "matched_operating_points": {
+            "modeA": {
+              "confident_wrong_rate_at_matched_cov": 0.0733
+            },
+            "ct_sc_margin": {
+              "confident_wrong_rate_at_matched_cov": 0.3
+            }
+          }
+        },
+        "ct_ptrue": {
+          "n_absent": 450,
+          "matched_coverage": 0.3,
+          "ref": "modeA",
+          "compare": "ct_ptrue",
+          "confident_wrong_reduction": 0.2267,
+          "ci95": [
+            0.1755,
+            0.2803
+          ],
+          "p_one_sided": 0.0005,
+          "meets_0.20_bar": true,
+          "ci_excludes_0": true,
+          "natural_operating_points": {
+            "modeA": {
+              "natural_named_rate": 0.07333333333333333,
+              "natural_confident_wrong_rate": 0.07333333333333333
+            },
+            "ct_ptrue": {
+              "natural_named_rate": 0.3,
+              "natural_confident_wrong_rate": 0.3
+            }
+          },
+          "matched_operating_points": {
+            "modeA": {
+              "confident_wrong_rate_at_matched_cov": 0.0733
+            },
+            "ct_ptrue": {
+              "confident_wrong_rate_at_matched_cov": 0.3
+            }
+          }
+        },
+        "ct_negent": {
+          "n_absent": 450,
+          "matched_coverage": 0.3,
+          "ref": "modeA",
+          "compare": "ct_negent",
+          "confident_wrong_reduction": 0.2267,
+          "ci95": [
+            0.1755,
+            0.2803
+          ],
+          "p_one_sided": 0.0005,
+          "meets_0.20_bar": true,
+          "ci_excludes_0": true,
+          "natural_operating_points": {
+            "modeA": {
+              "natural_named_rate": 0.07333333333333333,
+              "natural_confident_wrong_rate": 0.07333333333333333
+            },
+            "ct_negent": {
+              "natural_named_rate": 0.3,
+              "natural_confident_wrong_rate": 0.3
+            }
+          },
+          "matched_operating_points": {
+            "modeA": {
+              "confident_wrong_rate_at_matched_cov": 0.0733
+            },
+            "ct_negent": {
+              "confident_wrong_rate_at_matched_cov": 0.3
+            }
+          }
+        },
+        "queryside_verifier": {
+          "n_absent": 450,
+          "matched_coverage": 0.2178,
+          "ref": "modeA",
+          "compare": "queryside_verifier",
+          "confident_wrong_reduction": 0.1444,
+          "ci95": [
+            0.0992,
+            0.1955
+          ],
+          "p_one_sided": 0.0005,
+          "meets_0.20_bar": false,
+          "ci_excludes_0": true,
+          "natural_operating_points": {
+            "modeA": {
+              "natural_named_rate": 0.07333333333333333,
+              "natural_confident_wrong_rate": 0.07333333333333333
+            },
+            "queryside_verifier": {
+              "natural_named_rate": 0.21777777777777776,
+              "natural_confident_wrong_rate": 0.21777777777777776
+            }
+          },
+          "matched_operating_points": {
+            "modeA": {
+              "confident_wrong_rate_at_matched_cov": 0.0733
+            },
+            "queryside_verifier": {
+              "confident_wrong_rate_at_matched_cov": 0.2178
+            }
+          }
+        },
+        "queryside_selfverify": {
+          "n_absent": 450,
+          "matched_coverage": 0.1622,
+          "ref": "modeA",
+          "compare": "queryside_selfverify",
+          "confident_wrong_reduction": 0.0889,
+          "ci95": [
+            0.0478,
+            0.1312
+          ],
+          "p_one_sided": 0.0005,
+          "meets_0.20_bar": false,
+          "ci_excludes_0": true,
+          "natural_operating_points": {
+            "modeA": {
+              "natural_named_rate": 0.07333333333333333,
+              "natural_confident_wrong_rate": 0.07333333333333333
+            },
+            "queryside_selfverify": {
+              "natural_named_rate": 0.1622222222222222,
+              "natural_confident_wrong_rate": 0.1622222222222222
+            }
+          },
+          "matched_operating_points": {
+            "modeA": {
+              "confident_wrong_rate_at_matched_cov": 0.0733
+            },
+            "queryside_selfverify": {
+              "confident_wrong_rate_at_matched_cov": 0.1622
+            }
+          }
+        },
+        "commit_argmax": {
+          "n_absent": 450,
+          "matched_coverage": 0.3,
+          "ref": "modeA",
+          "compare": "commit_argmax",
+          "confident_wrong_reduction": 0.2267,
+          "ci95": [
+            0.1755,
+            0.2803
+          ],
+          "p_one_sided": 0.0005,
+          "meets_0.20_bar": true,
+          "ci_excludes_0": true,
+          "natural_operating_points": {
+            "modeA": {
+              "natural_named_rate": 0.07333333333333333,
+              "natural_confident_wrong_rate": 0.07333333333333333
+            },
+            "commit_argmax": {
+              "natural_named_rate": 0.3,
+              "natural_confident_wrong_rate": 0.3
+            }
+          },
+          "matched_operating_points": {
+            "modeA": {
+              "confident_wrong_rate_at_matched_cov": 0.0733
+            },
+            "commit_argmax": {
+              "confident_wrong_rate_at_matched_cov": 0.3
+            }
+          }
+        },
+        "_note": "On the pure-absent pool confident-wrong == coverage for every method (any named answer on an absent pair is wrong); signal-level discrimination lives in the MIXED-pool view3 + crux survival + the query-side gate."
+      },
+      "view2_risk_coverage_absent": {
+        "certificate_coverage": 0.0733,
+        "certificate_confident_wrong": 0.0733,
+        "n_pool": 450,
+        "per_baseline": {
+          "ct_verbalized": {
+            "natural_coverage": 0.3,
+            "coverage_at_equal_safety": 0.0733,
+            "coverage_gap_certificate_minus_baseline": 0.0,
+            "confident_wrong_at_certificate_coverage": 0.0733,
+            "cw_gap_baseline_minus_certificate": 0.0
+          },
+          "ct_sc_margin": {
+            "natural_coverage": 0.3,
+            "coverage_at_equal_safety": 0.0733,
+            "coverage_gap_certificate_minus_baseline": 0.0,
+            "confident_wrong_at_certificate_coverage": 0.0733,
+            "cw_gap_baseline_minus_certificate": 0.0
+          },
+          "ct_ptrue": {
+            "natural_coverage": 0.3,
+            "coverage_at_equal_safety": 0.0733,
+            "coverage_gap_certificate_minus_baseline": 0.0,
+            "confident_wrong_at_certificate_coverage": 0.0733,
+            "cw_gap_baseline_minus_certificate": 0.0
+          },
+          "ct_negent": {
+            "natural_coverage": 0.3,
+            "coverage_at_equal_safety": 0.0733,
+            "coverage_gap_certificate_minus_baseline": 0.0,
+            "confident_wrong_at_certificate_coverage": 0.0733,
+            "cw_gap_baseline_minus_certificate": 0.0
+          },
+          "queryside_verifier": {
+            "natural_coverage": 0.2178,
+            "coverage_at_equal_safety": 0.0733,
+            "coverage_gap_certificate_minus_baseline": 0.0,
+            "confident_wrong_at_certificate_coverage": 0.0733,
+            "cw_gap_baseline_minus_certificate": 0.0
+          },
+          "queryside_selfverify": {
+            "natural_coverage": 0.1622,
+            "coverage_at_equal_safety": 0.0733,
+            "coverage_gap_certificate_minus_baseline": 0.0,
+            "confident_wrong_at_certificate_coverage": 0.0733,
+            "cw_gap_baseline_minus_certificate": 0.0
+          }
+        }
+      },
+      "view2_risk_coverage_mixed": {
+        "certificate_coverage": 0.0611,
+        "certificate_confident_wrong": 0.0342,
+        "n_pool": 965,
+        "per_baseline": {
+          "ct_verbalized": {
+            "natural_coverage": 0.6269,
+            "coverage_at_equal_safety": 0.4756,
+            "coverage_gap_certificate_minus_baseline": -0.4145,
+            "confident_wrong_at_certificate_coverage": 0.0,
+            "cw_gap_baseline_minus_certificate": -0.0342
+          },
+          "ct_sc_margin": {
+            "natural_coverage": 0.6269,
+            "coverage_at_equal_safety": 0.513,
+            "coverage_gap_certificate_minus_baseline": -0.4518,
+            "confident_wrong_at_certificate_coverage": 0.0,
+            "cw_gap_baseline_minus_certificate": -0.0342
+          },
+          "ct_ptrue": {
+            "natural_coverage": 0.6269,
+            "coverage_at_equal_safety": 0.5005,
+            "coverage_gap_certificate_minus_baseline": -0.4394,
+            "confident_wrong_at_certificate_coverage": 0.0,
+            "cw_gap_baseline_minus_certificate": -0.0342
+          },
+          "ct_negent": {
+            "natural_coverage": 0.6269,
+            "coverage_at_equal_safety": 0.513,
+            "coverage_gap_certificate_minus_baseline": -0.4518,
+            "confident_wrong_at_certificate_coverage": 0.0,
+            "cw_gap_baseline_minus_certificate": -0.0342
+          },
+          "queryside_verifier": {
+            "natural_coverage": 0.4145,
+            "coverage_at_equal_safety": 0.314,
+            "coverage_gap_certificate_minus_baseline": -0.2528,
+            "confident_wrong_at_certificate_coverage": 0.0,
+            "cw_gap_baseline_minus_certificate": -0.0342
+          },
+          "queryside_selfverify": {
+            "natural_coverage": 0.3793,
+            "coverage_at_equal_safety": 0.3368,
+            "coverage_gap_certificate_minus_baseline": -0.2756,
+            "confident_wrong_at_certificate_coverage": 0.0,
+            "cw_gap_baseline_minus_certificate": -0.0342
+          }
+        }
+      },
+      "view3_mixed_showdown": {
+        "c_star": 0.061139896373056994,
+        "ref": "modeA",
+        "leaderboard": {
+          "modeA": {
+            "coverage": 0.061139896373056994,
+            "selective_accuracy": 0.4407,
+            "n_covered": 59
+          },
+          "ct_verbalized": {
+            "coverage_matched": 0.061139896373056994,
+            "natural_coverage": 0.6269430051813472,
+            "selective_accuracy": 1.0,
+            "n_covered": 59
+          },
+          "ct_sc_margin": {
+            "coverage_matched": 0.061139896373056994,
+            "natural_coverage": 0.6269430051813472,
+            "selective_accuracy": 1.0,
+            "n_covered": 59
+          },
+          "ct_ptrue": {
+            "coverage_matched": 0.061139896373056994,
+            "natural_coverage": 0.6269430051813472,
+            "selective_accuracy": 1.0,
+            "n_covered": 59
+          },
+          "ct_negent": {
+            "coverage_matched": 0.061139896373056994,
+            "natural_coverage": 0.6269430051813472,
+            "selective_accuracy": 1.0,
+            "n_covered": 59
+          },
+          "queryside_verifier": {
+            "coverage_matched": 0.061139896373056994,
+            "natural_coverage": 0.41450777202072536,
+            "selective_accuracy": 1.0,
+            "n_covered": 59
+          },
+          "queryside_selfverify": {
+            "coverage_matched": 0.061139896373056994,
+            "natural_coverage": 0.37927461139896373,
+            "selective_accuracy": 1.0,
+            "n_covered": 59
+          },
+          "ct_sc_margin_maj": {
+            "coverage_matched": 0.061139896373056994,
+            "natural_coverage": 0.6248704663212435,
+            "selective_accuracy": 1.0,
+            "n_covered": 59
+          },
+          "commit_argmax": {
+            "coverage_matched": 0.061139896373056994,
+            "natural_coverage": 0.6269430051813472,
+            "selective_accuracy": 1.0,
+            "n_covered": 59
+          },
+          "pot": {
+            "coverage_matched": 0.061139896373056994,
+            "natural_coverage": 0.48911917098445595,
+            "selective_accuracy": 1.0,
+            "n_covered": 59
+          },
+          "sc": {
+            "coverage_matched": 0.061139896373056994,
+            "natural_coverage": 0.6248704663212435,
+            "selective_accuracy": 1.0,
+            "n_covered": 59
+          }
+        },
+        "gaps": {
+          "ct_verbalized": {
+            "gap": -0.5593220338983051,
+            "ci95": [
+              -0.7381211180124224,
+              -0.3928571428571429
+            ],
+            "p_one_sided": 1.0,
+            "selacc_a": 0.4406779661016949,
+            "selacc_b": 1.0,
+            "cov_a": 0.061139896373056994,
+            "cov_b": 0.061139896373056994,
+            "n_boot": 2000
+          },
+          "ct_sc_margin": {
+            "gap": -0.5593220338983051,
+            "ci95": [
+              -0.7381211180124224,
+              -0.3928571428571429
+            ],
+            "p_one_sided": 1.0,
+            "selacc_a": 0.4406779661016949,
+            "selacc_b": 1.0,
+            "cov_a": 0.061139896373056994,
+            "cov_b": 0.061139896373056994,
+            "n_boot": 2000
+          },
+          "ct_ptrue": {
+            "gap": -0.5593220338983051,
+            "ci95": [
+              -0.7381211180124224,
+              -0.3928571428571429
+            ],
+            "p_one_sided": 1.0,
+            "selacc_a": 0.4406779661016949,
+            "selacc_b": 1.0,
+            "cov_a": 0.061139896373056994,
+            "cov_b": 0.061139896373056994,
+            "n_boot": 2000
+          },
+          "ct_negent": {
+            "gap": -0.5593220338983051,
+            "ci95": [
+              -0.7381211180124224,
+              -0.3928571428571429
+            ],
+            "p_one_sided": 1.0,
+            "selacc_a": 0.4406779661016949,
+            "selacc_b": 1.0,
+            "cov_a": 0.061139896373056994,
+            "cov_b": 0.061139896373056994,
+            "n_boot": 2000
+          },
+          "queryside_verifier": {
+            "gap": -0.5593220338983051,
+            "ci95": [
+              -0.7381211180124224,
+              -0.3928571428571429
+            ],
+            "p_one_sided": 1.0,
+            "selacc_a": 0.4406779661016949,
+            "selacc_b": 1.0,
+            "cov_a": 0.061139896373056994,
+            "cov_b": 0.061139896373056994,
+            "n_boot": 2000
+          },
+          "queryside_selfverify": {
+            "gap": -0.5593220338983051,
+            "ci95": [
+              -0.7381211180124224,
+              -0.3928571428571429
+            ],
+            "p_one_sided": 1.0,
+            "selacc_a": 0.4406779661016949,
+            "selacc_b": 1.0,
+            "cov_a": 0.061139896373056994,
+            "cov_b": 0.061139896373056994,
+            "n_boot": 2000
+          },
+          "ct_sc_margin_maj": {
+            "gap": -0.5593220338983051,
+            "ci95": [
+              -0.7381211180124224,
+              -0.3928571428571429
+            ],
+            "p_one_sided": 1.0,
+            "selacc_a": 0.4406779661016949,
+            "selacc_b": 1.0,
+            "cov_a": 0.061139896373056994,
+            "cov_b": 0.061139896373056994,
+            "n_boot": 2000
+          },
+          "commit_argmax": {
+            "gap": -0.5593220338983051,
+            "ci95": [
+              -0.7381211180124224,
+              -0.3928571428571429
+            ],
+            "p_one_sided": 1.0,
+            "selacc_a": 0.4406779661016949,
+            "selacc_b": 1.0,
+            "cov_a": 0.061139896373056994,
+            "cov_b": 0.061139896373056994,
+            "n_boot": 2000
+          },
+          "pot": {
+            "gap": -0.5593220338983051,
+            "ci95": [
+              -0.7381211180124224,
+              -0.3928571428571429
+            ],
+            "p_one_sided": 1.0,
+            "selacc_a": 0.4406779661016949,
+            "selacc_b": 1.0,
+            "cov_a": 0.061139896373056994,
+            "cov_b": 0.061139896373056994,
+            "n_boot": 2000
+          },
+          "sc": {
+            "gap": -0.5593220338983051,
+            "ci95": [
+              -0.7381211180124224,
+              -0.3928571428571429
+            ],
+            "p_one_sided": 1.0,
+            "selacc_a": 0.4406779661016949,
+            "selacc_b": 1.0,
+            "cov_a": 0.061139896373056994,
+            "cov_b": 0.061139896373056994,
+            "n_boot": 2000
+          }
+        },
+        "n_queries": 965,
+        "label": "sibling mixed (present+absent)"
+      },
+      "view3_present_showdown": {
+        "c_star": 0.05048543689320388,
+        "ref": "modeA",
+        "leaderboard": {
+          "modeA": {
+            "coverage": 0.05048543689320388,
+            "selective_accuracy": 1.0,
+            "n_covered": 26
+          },
+          "ct_verbalized": {
+            "coverage_matched": 0.05048543689320388,
+            "natural_coverage": 0.912621359223301,
+            "selective_accuracy": 1.0,
+            "n_covered": 26
+          },
+          "ct_sc_margin": {
+            "coverage_matched": 0.05048543689320388,
+            "natural_coverage": 0.912621359223301,
+            "selective_accuracy": 1.0,
+            "n_covered": 26
+          },
+          "ct_ptrue": {
+            "coverage_matched": 0.05048543689320388,
+            "natural_coverage": 0.912621359223301,
+            "selective_accuracy": 1.0,
+            "n_covered": 26
+          },
+          "ct_negent": {
+            "coverage_matched": 0.05048543689320388,
+            "natural_coverage": 0.912621359223301,
+            "selective_accuracy": 1.0,
+            "n_covered": 26
+          },
+          "queryside_verifier": {
+            "coverage_matched": 0.05048543689320388,
+            "natural_coverage": 0.5864077669902913,
+            "selective_accuracy": 1.0,
+            "n_covered": 26
+          },
+          "queryside_selfverify": {
+            "coverage_matched": 0.05048543689320388,
+            "natural_coverage": 0.5689320388349515,
+            "selective_accuracy": 1.0,
+            "n_covered": 26
+          },
+          "ct_sc_margin_maj": {
+            "coverage_matched": 0.05048543689320388,
+            "natural_coverage": 0.916504854368932,
+            "selective_accuracy": 1.0,
+            "n_covered": 26
+          },
+          "commit_argmax": {
+            "coverage_matched": 0.05048543689320388,
+            "natural_coverage": 0.912621359223301,
+            "selective_accuracy": 1.0,
+            "n_covered": 26
+          },
+          "pot": {
+            "coverage_matched": 0.05048543689320388,
+            "natural_coverage": 0.916504854368932,
+            "selective_accuracy": 1.0,
+            "n_covered": 26
+          },
+          "sc": {
+            "coverage_matched": 0.05048543689320388,
+            "natural_coverage": 0.916504854368932,
+            "selective_accuracy": 1.0,
+            "n_covered": 26
+          }
+        },
+        "gaps": {
+          "ct_verbalized": {
+            "gap": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "p_one_sided": 1.0,
+            "selacc_a": 1.0,
+            "selacc_b": 1.0,
+            "cov_a": 0.05048543689320388,
+            "cov_b": 0.05048543689320388,
+            "n_boot": 2000
+          },
+          "ct_sc_margin": {
+            "gap": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "p_one_sided": 1.0,
+            "selacc_a": 1.0,
+            "selacc_b": 1.0,
+            "cov_a": 0.05048543689320388,
+            "cov_b": 0.05048543689320388,
+            "n_boot": 2000
+          },
+          "ct_ptrue": {
+            "gap": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "p_one_sided": 1.0,
+            "selacc_a": 1.0,
+            "selacc_b": 1.0,
+            "cov_a": 0.05048543689320388,
+            "cov_b": 0.05048543689320388,
+            "n_boot": 2000
+          },
+          "ct_negent": {
+            "gap": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "p_one_sided": 1.0,
+            "selacc_a": 1.0,
+            "selacc_b": 1.0,
+            "cov_a": 0.05048543689320388,
+            "cov_b": 0.05048543689320388,
+            "n_boot": 2000
+          },
+          "queryside_verifier": {
+            "gap": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "p_one_sided": 1.0,
+            "selacc_a": 1.0,
+            "selacc_b": 1.0,
+            "cov_a": 0.05048543689320388,
+            "cov_b": 0.05048543689320388,
+            "n_boot": 2000
+          },
+          "queryside_selfverify": {
+            "gap": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "p_one_sided": 1.0,
+            "selacc_a": 1.0,
+            "selacc_b": 1.0,
+            "cov_a": 0.05048543689320388,
+            "cov_b": 0.05048543689320388,
+            "n_boot": 2000
+          },
+          "ct_sc_margin_maj": {
+            "gap": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "p_one_sided": 1.0,
+            "selacc_a": 1.0,
+            "selacc_b": 1.0,
+            "cov_a": 0.05048543689320388,
+            "cov_b": 0.05048543689320388,
+            "n_boot": 2000
+          },
+          "commit_argmax": {
+            "gap": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "p_one_sided": 1.0,
+            "selacc_a": 1.0,
+            "selacc_b": 1.0,
+            "cov_a": 0.05048543689320388,
+            "cov_b": 0.05048543689320388,
+            "n_boot": 2000
+          },
+          "pot": {
+            "gap": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "p_one_sided": 1.0,
+            "selacc_a": 1.0,
+            "selacc_b": 1.0,
+            "cov_a": 0.05048543689320388,
+            "cov_b": 0.05048543689320388,
+            "n_boot": 2000
+          },
+          "sc": {
+            "gap": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "p_one_sided": 1.0,
+            "selacc_a": 1.0,
+            "selacc_b": 1.0,
+            "cov_a": 0.05048543689320388,
+            "cov_b": 0.05048543689320388,
+            "n_boot": 2000
+          }
+        },
+        "n_queries": 515,
+        "label": "sibling present (deduction)"
+      },
+      "mixed_6way_confident_wrong_reduction": {
+        "ct_verbalized": {
+          "n": 965,
+          "matched_coverage": 0.0611,
+          "ref_confident_wrong": 0.0342,
+          "compare_confident_wrong": 0.0,
+          "confident_wrong_reduction": -0.0342,
+          "ci95": [
+            -0.0502,
+            -0.0204
+          ],
+          "p_one_sided": 1.0,
+          "ci_excludes_0": false
+        },
+        "ct_sc_margin": {
+          "n": 965,
+          "matched_coverage": 0.0611,
+          "ref_confident_wrong": 0.0342,
+          "compare_confident_wrong": 0.0,
+          "confident_wrong_reduction": -0.0342,
+          "ci95": [
+            -0.0502,
+            -0.0204
+          ],
+          "p_one_sided": 1.0,
+          "ci_excludes_0": false
+        },
+        "ct_ptrue": {
+          "n": 965,
+          "matched_coverage": 0.0611,
+          "ref_confident_wrong": 0.0342,
+          "compare_confident_wrong": 0.0,
+          "confident_wrong_reduction": -0.0342,
+          "ci95": [
+            -0.0502,
+            -0.0204
+          ],
+          "p_one_sided": 1.0,
+          "ci_excludes_0": false
+        },
+        "ct_negent": {
+          "n": 965,
+          "matched_coverage": 0.0611,
+          "ref_confident_wrong": 0.0342,
+          "compare_confident_wrong": 0.0,
+          "confident_wrong_reduction": -0.0342,
+          "ci95": [
+            -0.0502,
+            -0.0204
+          ],
+          "p_one_sided": 1.0,
+          "ci_excludes_0": false
+        },
+        "queryside_verifier": {
+          "n": 965,
+          "matched_coverage": 0.0611,
+          "ref_confident_wrong": 0.0342,
+          "compare_confident_wrong": 0.0,
+          "confident_wrong_reduction": -0.0342,
+          "ci95": [
+            -0.0502,
+            -0.0204
+          ],
+          "p_one_sided": 1.0,
+          "ci_excludes_0": false
+        },
+        "queryside_selfverify": {
+          "n": 965,
+          "matched_coverage": 0.0611,
+          "ref_confident_wrong": 0.0342,
+          "compare_confident_wrong": 0.0,
+          "confident_wrong_reduction": -0.0342,
+          "ci95": [
+            -0.0502,
+            -0.0204
+          ],
+          "p_one_sided": 1.0,
+          "ci_excludes_0": false
+        }
+      },
+      "mixed_6way_holm": {
+        "mixed_modeA_vs_ct_verbalized": {
+          "p": 1.0,
+          "p_adj": 1.0,
+          "reject": false,
+          "reduction": -0.0342,
+          "ci95": [
+            -0.0502,
+            -0.0204
+          ]
+        },
+        "mixed_modeA_vs_ct_sc_margin": {
+          "p": 1.0,
+          "p_adj": 1.0,
+          "reject": false,
+          "reduction": -0.0342,
+          "ci95": [
+            -0.0502,
+            -0.0204
+          ]
+        },
+        "mixed_modeA_vs_ct_ptrue": {
+          "p": 1.0,
+          "p_adj": 1.0,
+          "reject": false,
+          "reduction": -0.0342,
+          "ci95": [
+            -0.0502,
+            -0.0204
+          ]
+        },
+        "mixed_modeA_vs_ct_negent": {
+          "p": 1.0,
+          "p_adj": 1.0,
+          "reject": false,
+          "reduction": -0.0342,
+          "ci95": [
+            -0.0502,
+            -0.0204
+          ]
+        },
+        "mixed_modeA_vs_queryside_verifier": {
+          "p": 1.0,
+          "p_adj": 1.0,
+          "reject": false,
+          "reduction": -0.0342,
+          "ci95": [
+            -0.0502,
+            -0.0204
+          ]
+        },
+        "mixed_modeA_vs_queryside_selfverify": {
+          "p": 1.0,
+          "p_adj": 1.0,
+          "reject": false,
+          "reduction": -0.0342,
+          "ci95": [
+            -0.0502,
+            -0.0204
+          ]
+        }
+      },
+      "crux_survival_table": {
+        "n_absent": 450,
+        "n_raw_confident_wrong": 135,
+        "raw_hallucination_rate_absent": 0.3,
+        "certificate_coverage_absent": 0.0733,
+        "certificate_coverage_mixed": 0.0611,
+        "certificate_confident_wrong_absent": 0.0733,
+        "per_signal": {
+          "ct_verbalized": {
+            "tau_global_at_certificate_mixed_coverage": 1.0,
+            "tau_absent_only": 1.0,
+            "signal_distribution_on_hallucinations": {
+              "mean": 0.9422,
+              "median": 1.0,
+              "p10": 0.9,
+              "p25": 0.9,
+              "p75": 1.0,
+              "p90": 1.0
+            },
+            "frac_hallucinations_signal_ge_0.5": 0.9778,
+            "frac_hallucinations_signal_ge_pool_median": 0.6,
+            "frac_surviving_certificate_matched_rule": 0.6,
+            "frac_surviving_absent_only_calibration": 0.6,
+            "interpretation": "frac_surviving = fraction of the LLM's high-confidence absent-relation hallucinations a single GLOBAL confidence threshold (tuned to the certificate's mixed coverage) would still COMMIT. The certificate abstains on ~all of them STRUCTURALLY (located_in o contains is UNDEFINED), regardless of confidence."
+          },
+          "ct_sc_margin": {
+            "tau_global_at_certificate_mixed_coverage": 1.0,
+            "tau_absent_only": 1.0,
+            "signal_distribution_on_hallucinations": {
+              "mean": 0.9852,
+              "median": 1.0,
+              "p10": 1.0,
+              "p25": 1.0,
+              "p75": 1.0,
+              "p90": 1.0
+            },
+            "frac_hallucinations_signal_ge_0.5": 1.0,
+            "frac_hallucinations_signal_ge_pool_median": 0.9333,
+            "frac_surviving_certificate_matched_rule": 0.9333,
+            "frac_surviving_absent_only_calibration": 0.9333,
+            "interpretation": "frac_surviving = fraction of the LLM's high-confidence absent-relation hallucinations a single GLOBAL confidence threshold (tuned to the certificate's mixed coverage) would still COMMIT. The certificate abstains on ~all of them STRUCTURALLY (located_in o contains is UNDEFINED), regardless of confidence."
+          },
+          "ct_ptrue": {
+            "tau_global_at_certificate_mixed_coverage": 1.0,
+            "tau_absent_only": 1.0,
+            "signal_distribution_on_hallucinations": {
+              "mean": 0.7296,
+              "median": 1.0,
+              "p10": 0.0,
+              "p25": 0.2,
+              "p75": 1.0,
+              "p90": 1.0
+            },
+            "frac_hallucinations_signal_ge_0.5": 0.7259,
+            "frac_hallucinations_signal_ge_pool_median": 1.0,
+            "frac_surviving_certificate_matched_rule": 0.6963,
+            "frac_surviving_absent_only_calibration": 0.6963,
+            "interpretation": "frac_surviving = fraction of the LLM's high-confidence absent-relation hallucinations a single GLOBAL confidence threshold (tuned to the certificate's mixed coverage) would still COMMIT. The certificate abstains on ~all of them STRUCTURALLY (located_in o contains is UNDEFINED), regardless of confidence."
+          },
+          "ct_negent": {
+            "tau_global_at_certificate_mixed_coverage": 1.0,
+            "tau_absent_only": 1.0,
+            "signal_distribution_on_hallucinations": {
+              "mean": 0.9856,
+              "median": 1.0,
+              "p10": 1.0,
+              "p25": 1.0,
+              "p75": 1.0,
+              "p90": 1.0
+            },
+            "frac_hallucinations_signal_ge_0.5": 1.0,
+            "frac_hallucinations_signal_ge_pool_median": 0.9333,
+            "frac_surviving_certificate_matched_rule": 0.9333,
+            "frac_surviving_absent_only_calibration": 0.9333,
+            "interpretation": "frac_surviving = fraction of the LLM's high-confidence absent-relation hallucinations a single GLOBAL confidence threshold (tuned to the certificate's mixed coverage) would still COMMIT. The certificate abstains on ~all of them STRUCTURALLY (located_in o contains is UNDEFINED), regardless of confidence."
+          }
+        },
+        "per_baseline_fraction_caught": {
+          "certificate": {
+            "fraction_caught": 0.7852,
+            "fraction_surviving": 0.2148
+          },
+          "ct_verbalized": {
+            "fraction_surviving": 0.6,
+            "fraction_caught": 0.4
+          },
+          "ct_sc_margin": {
+            "fraction_surviving": 0.9333,
+            "fraction_caught": 0.0667
+          },
+          "ct_ptrue": {
+            "fraction_surviving": 0.6963,
+            "fraction_caught": 0.3037
+          },
+          "ct_negent": {
+            "fraction_surviving": 0.9333,
+            "fraction_caught": 0.0667
+          },
+          "queryside_verifier": {
+            "fraction_surviving": 0.7259,
+            "fraction_caught": 0.2741,
+            "interpretation": "fraction of the raw LLM's absent-relation hallucinations that the query-side gate turns into an abstention (caught) vs still commits (survives)."
+          },
+          "queryside_selfverify": {
+            "fraction_surviving": 0.5407,
+            "fraction_caught": 0.4593,
+            "interpretation": "fraction of the raw LLM's absent-relation hallucinations that the query-side gate turns into an abstention (caught) vs still commits (survives)."
+          }
+        }
+      }
+    },
+    "primary_reader_results_diffcomponent_CONTRAST": {
+      "n_present": 515,
+      "n_absent": 250,
+      "view1_absent": {
+        "ct_verbalized": {
+          "n_absent": 250,
+          "matched_coverage": 0.06,
+          "ref": "modeA",
+          "compare": "ct_verbalized",
+          "confident_wrong_reduction": 0.06,
+          "ci95": [
+            0.016,
+            0.1111
+          ],
+          "p_one_sided": 0.0015,
+          "meets_0.20_bar": false,
+          "ci_excludes_0": true,
+          "natural_operating_points": {
+            "modeA": {
+              "natural_named_rate": 0.0,
+              "natural_confident_wrong_rate": 0.0
+            },
+            "ct_verbalized": {
+              "natural_named_rate": 0.06,
+              "natural_confident_wrong_rate": 0.06
+            }
+          },
+          "matched_operating_points": {
+            "modeA": {
+              "confident_wrong_rate_at_matched_cov": 0.0
+            },
+            "ct_verbalized": {
+              "confident_wrong_rate_at_matched_cov": 0.06
+            }
+          }
+        },
+        "ct_sc_margin": {
+          "n_absent": 250,
+          "matched_coverage": 0.06,
+          "ref": "modeA",
+          "compare": "ct_sc_margin",
+          "confident_wrong_reduction": 0.06,
+          "ci95": [
+            0.016,
+            0.1111
+          ],
+          "p_one_sided": 0.0015,
+          "meets_0.20_bar": false,
+          "ci_excludes_0": true,
+          "natural_operating_points": {
+            "modeA": {
+              "natural_named_rate": 0.0,
+              "natural_confident_wrong_rate": 0.0
+            },
+            "ct_sc_margin": {
+              "natural_named_rate": 0.06,
+              "natural_confident_wrong_rate": 0.06
+            }
+          },
+          "matched_operating_points": {
+            "modeA": {
+              "confident_wrong_rate_at_matched_cov": 0.0
+            },
+            "ct_sc_margin": {
+              "confident_wrong_rate_at_matched_cov": 0.06
+            }
+          }
+        },
+        "ct_ptrue": {
+          "n_absent": 250,
+          "matched_coverage": 0.06,
+          "ref": "modeA",
+          "compare": "ct_ptrue",
+          "confident_wrong_reduction": 0.06,
+          "ci95": [
+            0.016,
+            0.1111
+          ],
+          "p_one_sided": 0.0015,
+          "meets_0.20_bar": false,
+          "ci_excludes_0": true,
+          "natural_operating_points": {
+            "modeA": {
+              "natural_named_rate": 0.0,
+              "natural_confident_wrong_rate": 0.0
+            },
+            "ct_ptrue": {
+              "natural_named_rate": 0.06,
+              "natural_confident_wrong_rate": 0.06
+            }
+          },
+          "matched_operating_points": {
+            "modeA": {
+              "confident_wrong_rate_at_matched_cov": 0.0
+            },
+            "ct_ptrue": {
+              "confident_wrong_rate_at_matched_cov": 0.06
+            }
+          }
+        },
+        "ct_negent": {
+          "n_absent": 250,
+          "matched_coverage": 0.06,
+          "ref": "modeA",
+          "compare": "ct_negent",
+          "confident_wrong_reduction": 0.06,
+          "ci95": [
+            0.016,
+            0.1111
+          ],
+          "p_one_sided": 0.0015,
+          "meets_0.20_bar": false,
+          "ci_excludes_0": true,
+          "natural_operating_points": {
+            "modeA": {
+              "natural_named_rate": 0.0,
+              "natural_confident_wrong_rate": 0.0
+            },
+            "ct_negent": {
+              "natural_named_rate": 0.06,
+              "natural_confident_wrong_rate": 0.06
+            }
+          },
+          "matched_operating_points": {
+            "modeA": {
+              "confident_wrong_rate_at_matched_cov": 0.0
+            },
+            "ct_negent": {
+              "confident_wrong_rate_at_matched_cov": 0.06
+            }
+          }
+        },
+        "queryside_verifier": {
+          "n_absent": 250,
+          "matched_coverage": 0.012,
+          "ref": "modeA",
+          "compare": "queryside_verifier",
+          "confident_wrong_reduction": 0.012,
+          "ci95": [
+            0.0,
+            0.032
+          ],
+          "p_one_sided": 0.1435,
+          "meets_0.20_bar": false,
+          "ci_excludes_0": false,
+          "natural_operating_points": {
+            "modeA": {
+              "natural_named_rate": 0.0,
+              "natural_confident_wrong_rate": 0.0
+            },
+            "queryside_verifier": {
+              "natural_named_rate": 0.012,
+              "natural_confident_wrong_rate": 0.012
+            }
+          },
+          "matched_operating_points": {
+            "modeA": {
+              "confident_wrong_rate_at_matched_cov": 0.0
+            },
+            "queryside_verifier": {
+              "confident_wrong_rate_at_matched_cov": 0.012
+            }
+          }
+        },
+        "queryside_selfverify": {
+          "n_absent": 250,
+          "matched_coverage": 0.012,
+          "ref": "modeA",
+          "compare": "queryside_selfverify",
+          "confident_wrong_reduction": 0.012,
+          "ci95": [
+            0.0,
+            0.032
+          ],
+          "p_one_sided": 0.13,
+          "meets_0.20_bar": false,
+          "ci_excludes_0": false,
+          "natural_operating_points": {
+            "modeA": {
+              "natural_named_rate": 0.0,
+              "natural_confident_wrong_rate": 0.0
+            },
+            "queryside_selfverify": {
+              "natural_named_rate": 0.012,
+              "natural_confident_wrong_rate": 0.012
+            }
+          },
+          "matched_operating_points": {
+            "modeA": {
+              "confident_wrong_rate_at_matched_cov": 0.0
+            },
+            "queryside_selfverify": {
+              "confident_wrong_rate_at_matched_cov": 0.012
+            }
+          }
+        },
+        "commit_argmax": {
+          "n_absent": 250,
+          "matched_coverage": 0.06,
+          "ref": "modeA",
+          "compare": "commit_argmax",
+          "confident_wrong_reduction": 0.06,
+          "ci95": [
+            0.016,
+            0.1111
+          ],
+          "p_one_sided": 0.0015,
+          "meets_0.20_bar": false,
+          "ci_excludes_0": true,
+          "natural_operating_points": {
+            "modeA": {
+              "natural_named_rate": 0.0,
+              "natural_confident_wrong_rate": 0.0
+            },
+            "commit_argmax": {
+              "natural_named_rate": 0.06,
+              "natural_confident_wrong_rate": 0.06
+            }
+          },
+          "matched_operating_points": {
+            "modeA": {
+              "confident_wrong_rate_at_matched_cov": 0.0
+            },
+            "commit_argmax": {
+              "confident_wrong_rate_at_matched_cov": 0.06
+            }
+          }
+        },
+        "_note": "On the pure-absent pool confident-wrong == coverage for every method (any named answer on an absent pair is wrong); signal-level discrimination lives in the MIXED-pool view3 + crux survival + the query-side gate."
+      },
+      "view2_risk_coverage_absent": {
+        "certificate_coverage": 0.0,
+        "certificate_confident_wrong": 0.0,
+        "n_pool": 250,
+        "per_baseline": {
+          "ct_verbalized": {
+            "natural_coverage": 0.06,
+            "coverage_at_equal_safety": 0.0,
+            "coverage_gap_certificate_minus_baseline": 0.0,
+            "confident_wrong_at_certificate_coverage": 0.0,
+            "cw_gap_baseline_minus_certificate": 0.0
+          },
+          "ct_sc_margin": {
+            "natural_coverage": 0.06,
+            "coverage_at_equal_safety": 0.0,
+            "coverage_gap_certificate_minus_baseline": 0.0,
+            "confident_wrong_at_certificate_coverage": 0.0,
+            "cw_gap_baseline_minus_certificate": 0.0
+          },
+          "ct_ptrue": {
+            "natural_coverage": 0.06,
+            "coverage_at_equal_safety": 0.0,
+            "coverage_gap_certificate_minus_baseline": 0.0,
+            "confident_wrong_at_certificate_coverage": 0.0,
+            "cw_gap_baseline_minus_certificate": 0.0
+          },
+          "ct_negent": {
+            "natural_coverage": 0.06,
+            "coverage_at_equal_safety": 0.0,
+            "coverage_gap_certificate_minus_baseline": 0.0,
+            "confident_wrong_at_certificate_coverage": 0.0,
+            "cw_gap_baseline_minus_certificate": 0.0
+          },
+          "queryside_verifier": {
+            "natural_coverage": 0.012,
+            "coverage_at_equal_safety": 0.0,
+            "coverage_gap_certificate_minus_baseline": 0.0,
+            "confident_wrong_at_certificate_coverage": 0.0,
+            "cw_gap_baseline_minus_certificate": 0.0
+          },
+          "queryside_selfverify": {
+            "natural_coverage": 0.012,
+            "coverage_at_equal_safety": 0.0,
+            "coverage_gap_certificate_minus_baseline": 0.0,
+            "confident_wrong_at_certificate_coverage": 0.0,
+            "cw_gap_baseline_minus_certificate": 0.0
+          }
+        }
+      },
+      "view2_risk_coverage_mixed": {
+        "certificate_coverage": 0.034,
+        "certificate_confident_wrong": 0.0,
+        "n_pool": 765,
+        "per_baseline": {
+          "ct_verbalized": {
+            "natural_coverage": 0.634,
+            "coverage_at_equal_safety": 0.5569,
+            "coverage_gap_certificate_minus_baseline": -0.5229,
+            "confident_wrong_at_certificate_coverage": 0.0,
+            "cw_gap_baseline_minus_certificate": 0.0
+          },
+          "ct_sc_margin": {
+            "natural_coverage": 0.634,
+            "coverage_at_equal_safety": 0.6039,
+            "coverage_gap_certificate_minus_baseline": -0.5699,
+            "confident_wrong_at_certificate_coverage": 0.0,
+            "cw_gap_baseline_minus_certificate": 0.0
+          },
+          "ct_ptrue": {
+            "natural_coverage": 0.634,
+            "coverage_at_equal_safety": 0.5882,
+            "coverage_gap_certificate_minus_baseline": -0.5542,
+            "confident_wrong_at_certificate_coverage": 0.0,
+            "cw_gap_baseline_minus_certificate": 0.0
+          },
+          "ct_negent": {
+            "natural_coverage": 0.634,
+            "coverage_at_equal_safety": 0.6039,
+            "coverage_gap_certificate_minus_baseline": -0.5699,
+            "confident_wrong_at_certificate_coverage": 0.0,
+            "cw_gap_baseline_minus_certificate": 0.0
+          },
+          "queryside_verifier": {
+            "natural_coverage": 0.3987,
+            "coverage_at_equal_safety": 0.3529,
+            "coverage_gap_certificate_minus_baseline": -0.319,
+            "confident_wrong_at_certificate_coverage": 0.0,
+            "cw_gap_baseline_minus_certificate": 0.0
+          },
+          "queryside_selfverify": {
+            "natural_coverage": 0.3869,
+            "coverage_at_equal_safety": 0.3817,
+            "coverage_gap_certificate_minus_baseline": -0.3477,
+            "confident_wrong_at_certificate_coverage": 0.0,
+            "cw_gap_baseline_minus_certificate": 0.0
+          }
+        }
+      },
+      "view3_mixed_showdown": {
+        "c_star": 0.03398692810457516,
+        "ref": "modeA",
+        "leaderboard": {
+          "modeA": {
+            "coverage": 0.03398692810457516,
+            "selective_accuracy": 1.0,
+            "n_covered": 26
+          },
+          "ct_verbalized": {
+            "coverage_matched": 0.03398692810457516,
+            "natural_coverage": 0.6339869281045751,
+            "selective_accuracy": 1.0,
+            "n_covered": 26
+          },
+          "ct_sc_margin": {
+            "coverage_matched": 0.03398692810457516,
+            "natural_coverage": 0.6339869281045751,
+            "selective_accuracy": 1.0,
+            "n_covered": 26
+          },
+          "ct_ptrue": {
+            "coverage_matched": 0.03398692810457516,
+            "natural_coverage": 0.6339869281045751,
+            "selective_accuracy": 1.0,
+            "n_covered": 26
+          },
+          "ct_negent": {
+            "coverage_matched": 0.03398692810457516,
+            "natural_coverage": 0.6339869281045751,
+            "selective_accuracy": 1.0,
+            "n_covered": 26
+          },
+          "queryside_verifier": {
+            "coverage_matched": 0.03398692810457516,
+            "natural_coverage": 0.39869281045751637,
+            "selective_accuracy": 1.0,
+            "n_covered": 26
+          },
+          "queryside_selfverify": {
+            "coverage_matched": 0.03398692810457516,
+            "natural_coverage": 0.3869281045751634,
+            "selective_accuracy": 1.0,
+            "n_covered": 26
+          },
+          "ct_sc_margin_maj": {
+            "coverage_matched": 0.03398692810457516,
+            "natural_coverage": 0.6379084967320261,
+            "selective_accuracy": 1.0,
+            "n_covered": 26
+          },
+          "commit_argmax": {
+            "coverage_matched": 0.03398692810457516,
+            "natural_coverage": 0.6339869281045751,
+            "selective_accuracy": 1.0,
+            "n_covered": 26
+          },
+          "pot": {
+            "coverage_matched": 0.03398692810457516,
+            "natural_coverage": 0.6169934640522876,
+            "selective_accuracy": 1.0,
+            "n_covered": 26
+          },
+          "sc": {
+            "coverage_matched": 0.03398692810457516,
+            "natural_coverage": 0.6379084967320261,
+            "selective_accuracy": 1.0,
+            "n_covered": 26
+          }
+        },
+        "gaps": {
+          "ct_verbalized": {
+            "gap": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "p_one_sided": 1.0,
+            "selacc_a": 1.0,
+            "selacc_b": 1.0,
+            "cov_a": 0.03398692810457516,
+            "cov_b": 0.03398692810457516,
+            "n_boot": 2000
+          },
+          "ct_sc_margin": {
+            "gap": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "p_one_sided": 1.0,
+            "selacc_a": 1.0,
+            "selacc_b": 1.0,
+            "cov_a": 0.03398692810457516,
+            "cov_b": 0.03398692810457516,
+            "n_boot": 2000
+          },
+          "ct_ptrue": {
+            "gap": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "p_one_sided": 1.0,
+            "selacc_a": 1.0,
+            "selacc_b": 1.0,
+            "cov_a": 0.03398692810457516,
+            "cov_b": 0.03398692810457516,
+            "n_boot": 2000
+          },
+          "ct_negent": {
+            "gap": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "p_one_sided": 1.0,
+            "selacc_a": 1.0,
+            "selacc_b": 1.0,
+            "cov_a": 0.03398692810457516,
+            "cov_b": 0.03398692810457516,
+            "n_boot": 2000
+          },
+          "queryside_verifier": {
+            "gap": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "p_one_sided": 1.0,
+            "selacc_a": 1.0,
+            "selacc_b": 1.0,
+            "cov_a": 0.03398692810457516,
+            "cov_b": 0.03398692810457516,
+            "n_boot": 2000
+          },
+          "queryside_selfverify": {
+            "gap": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "p_one_sided": 1.0,
+            "selacc_a": 1.0,
+            "selacc_b": 1.0,
+            "cov_a": 0.03398692810457516,
+            "cov_b": 0.03398692810457516,
+            "n_boot": 2000
+          },
+          "ct_sc_margin_maj": {
+            "gap": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "p_one_sided": 1.0,
+            "selacc_a": 1.0,
+            "selacc_b": 1.0,
+            "cov_a": 0.03398692810457516,
+            "cov_b": 0.03398692810457516,
+            "n_boot": 2000
+          },
+          "commit_argmax": {
+            "gap": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "p_one_sided": 1.0,
+            "selacc_a": 1.0,
+            "selacc_b": 1.0,
+            "cov_a": 0.03398692810457516,
+            "cov_b": 0.03398692810457516,
+            "n_boot": 2000
+          },
+          "pot": {
+            "gap": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "p_one_sided": 1.0,
+            "selacc_a": 1.0,
+            "selacc_b": 1.0,
+            "cov_a": 0.03398692810457516,
+            "cov_b": 0.03398692810457516,
+            "n_boot": 2000
+          },
+          "sc": {
+            "gap": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "p_one_sided": 1.0,
+            "selacc_a": 1.0,
+            "selacc_b": 1.0,
+            "cov_a": 0.03398692810457516,
+            "cov_b": 0.03398692810457516,
+            "n_boot": 2000
+          }
+        },
+        "n_queries": 765,
+        "label": "diffcomp mixed (present+absent)"
+      },
+      "view3_present_showdown": {
+        "c_star": 0.05048543689320388,
+        "ref": "modeA",
+        "leaderboard": {
+          "modeA": {
+            "coverage": 0.05048543689320388,
+            "selective_accuracy": 1.0,
+            "n_covered": 26
+          },
+          "ct_verbalized": {
+            "coverage_matched": 0.05048543689320388,
+            "natural_coverage": 0.912621359223301,
+            "selective_accuracy": 1.0,
+            "n_covered": 26
+          },
+          "ct_sc_margin": {
+            "coverage_matched": 0.05048543689320388,
+            "natural_coverage": 0.912621359223301,
+            "selective_accuracy": 1.0,
+            "n_covered": 26
+          },
+          "ct_ptrue": {
+            "coverage_matched": 0.05048543689320388,
+            "natural_coverage": 0.912621359223301,
+            "selective_accuracy": 1.0,
+            "n_covered": 26
+          },
+          "ct_negent": {
+            "coverage_matched": 0.05048543689320388,
+            "natural_coverage": 0.912621359223301,
+            "selective_accuracy": 1.0,
+            "n_covered": 26
+          },
+          "queryside_verifier": {
+            "coverage_matched": 0.05048543689320388,
+            "natural_coverage": 0.5864077669902913,
+            "selective_accuracy": 1.0,
+            "n_covered": 26
+          },
+          "queryside_selfverify": {
+            "coverage_matched": 0.05048543689320388,
+            "natural_coverage": 0.5689320388349515,
+            "selective_accuracy": 1.0,
+            "n_covered": 26
+          },
+          "ct_sc_margin_maj": {
+            "coverage_matched": 0.05048543689320388,
+            "natural_coverage": 0.916504854368932,
+            "selective_accuracy": 1.0,
+            "n_covered": 26
+          },
+          "commit_argmax": {
+            "coverage_matched": 0.05048543689320388,
+            "natural_coverage": 0.912621359223301,
+            "selective_accuracy": 1.0,
+            "n_covered": 26
+          },
+          "pot": {
+            "coverage_matched": 0.05048543689320388,
+            "natural_coverage": 0.916504854368932,
+            "selective_accuracy": 1.0,
+            "n_covered": 26
+          },
+          "sc": {
+            "coverage_matched": 0.05048543689320388,
+            "natural_coverage": 0.916504854368932,
+            "selective_accuracy": 1.0,
+            "n_covered": 26
+          }
+        },
+        "gaps": {
+          "ct_verbalized": {
+            "gap": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "p_one_sided": 1.0,
+            "selacc_a": 1.0,
+            "selacc_b": 1.0,
+            "cov_a": 0.05048543689320388,
+            "cov_b": 0.05048543689320388,
+            "n_boot": 2000
+          },
+          "ct_sc_margin": {
+            "gap": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "p_one_sided": 1.0,
+            "selacc_a": 1.0,
+            "selacc_b": 1.0,
+            "cov_a": 0.05048543689320388,
+            "cov_b": 0.05048543689320388,
+            "n_boot": 2000
+          },
+          "ct_ptrue": {
+            "gap": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "p_one_sided": 1.0,
+            "selacc_a": 1.0,
+            "selacc_b": 1.0,
+            "cov_a": 0.05048543689320388,
+            "cov_b": 0.05048543689320388,
+            "n_boot": 2000
+          },
+          "ct_negent": {
+            "gap": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "p_one_sided": 1.0,
+            "selacc_a": 1.0,
+            "selacc_b": 1.0,
+            "cov_a": 0.05048543689320388,
+            "cov_b": 0.05048543689320388,
+            "n_boot": 2000
+          },
+          "queryside_verifier": {
+            "gap": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "p_one_sided": 1.0,
+            "selacc_a": 1.0,
+            "selacc_b": 1.0,
+            "cov_a": 0.05048543689320388,
+            "cov_b": 0.05048543689320388,
+            "n_boot": 2000
+          },
+          "queryside_selfverify": {
+            "gap": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "p_one_sided": 1.0,
+            "selacc_a": 1.0,
+            "selacc_b": 1.0,
+            "cov_a": 0.05048543689320388,
+            "cov_b": 0.05048543689320388,
+            "n_boot": 2000
+          },
+          "ct_sc_margin_maj": {
+            "gap": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "p_one_sided": 1.0,
+            "selacc_a": 1.0,
+            "selacc_b": 1.0,
+            "cov_a": 0.05048543689320388,
+            "cov_b": 0.05048543689320388,
+            "n_boot": 2000
+          },
+          "commit_argmax": {
+            "gap": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "p_one_sided": 1.0,
+            "selacc_a": 1.0,
+            "selacc_b": 1.0,
+            "cov_a": 0.05048543689320388,
+            "cov_b": 0.05048543689320388,
+            "n_boot": 2000
+          },
+          "pot": {
+            "gap": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "p_one_sided": 1.0,
+            "selacc_a": 1.0,
+            "selacc_b": 1.0,
+            "cov_a": 0.05048543689320388,
+            "cov_b": 0.05048543689320388,
+            "n_boot": 2000
+          },
+          "sc": {
+            "gap": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "p_one_sided": 1.0,
+            "selacc_a": 1.0,
+            "selacc_b": 1.0,
+            "cov_a": 0.05048543689320388,
+            "cov_b": 0.05048543689320388,
+            "n_boot": 2000
+          }
+        },
+        "n_queries": 515,
+        "label": "diffcomp present (deduction)"
+      },
+      "mixed_6way_confident_wrong_reduction": {
+        "ct_verbalized": {
+          "n": 765,
+          "matched_coverage": 0.034,
+          "ref_confident_wrong": 0.0,
+          "compare_confident_wrong": 0.0,
+          "confident_wrong_reduction": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "p_one_sided": 1.0,
+          "ci_excludes_0": false
+        },
+        "ct_sc_margin": {
+          "n": 765,
+          "matched_coverage": 0.034,
+          "ref_confident_wrong": 0.0,
+          "compare_confident_wrong": 0.0,
+          "confident_wrong_reduction": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "p_one_sided": 1.0,
+          "ci_excludes_0": false
+        },
+        "ct_ptrue": {
+          "n": 765,
+          "matched_coverage": 0.034,
+          "ref_confident_wrong": 0.0,
+          "compare_confident_wrong": 0.0,
+          "confident_wrong_reduction": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "p_one_sided": 1.0,
+          "ci_excludes_0": false
+        },
+        "ct_negent": {
+          "n": 765,
+          "matched_coverage": 0.034,
+          "ref_confident_wrong": 0.0,
+          "compare_confident_wrong": 0.0,
+          "confident_wrong_reduction": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "p_one_sided": 1.0,
+          "ci_excludes_0": false
+        },
+        "queryside_verifier": {
+          "n": 765,
+          "matched_coverage": 0.034,
+          "ref_confident_wrong": 0.0,
+          "compare_confident_wrong": 0.0,
+          "confident_wrong_reduction": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "p_one_sided": 1.0,
+          "ci_excludes_0": false
+        },
+        "queryside_selfverify": {
+          "n": 765,
+          "matched_coverage": 0.034,
+          "ref_confident_wrong": 0.0,
+          "compare_confident_wrong": 0.0,
+          "confident_wrong_reduction": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "p_one_sided": 1.0,
+          "ci_excludes_0": false
+        }
+      },
+      "mixed_6way_holm": {
+        "mixed_modeA_vs_ct_verbalized": {
+          "p": 1.0,
+          "p_adj": 1.0,
+          "reject": false,
+          "reduction": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "mixed_modeA_vs_ct_sc_margin": {
+          "p": 1.0,
+          "p_adj": 1.0,
+          "reject": false,
+          "reduction": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "mixed_modeA_vs_ct_ptrue": {
+          "p": 1.0,
+          "p_adj": 1.0,
+          "reject": false,
+          "reduction": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "mixed_modeA_vs_ct_negent": {
+          "p": 1.0,
+          "p_adj": 1.0,
+          "reject": false,
+          "reduction": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "mixed_modeA_vs_queryside_verifier": {
+          "p": 1.0,
+          "p_adj": 1.0,
+          "reject": false,
+          "reduction": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "mixed_modeA_vs_queryside_selfverify": {
+          "p": 1.0,
+          "p_adj": 1.0,
+          "reject": false,
+          "reduction": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "crux_survival_table": {
+        "n_absent": 250,
+        "n_raw_confident_wrong": 15,
+        "raw_hallucination_rate_absent": 0.06,
+        "certificate_coverage_absent": 0.0,
+        "certificate_coverage_mixed": 0.034,
+        "certificate_confident_wrong_absent": 0.0,
+        "per_signal": {
+          "ct_verbalized": {
+            "tau_global_at_certificate_mixed_coverage": 1.0,
+            "tau_absent_only": NaN,
+            "signal_distribution_on_hallucinations": {
+              "mean": 0.84,
+              "median": 0.95,
+              "p10": 0.36,
+              "p25": 0.95,
+              "p75": 1.0,
+              "p90": 1.0
+            },
+            "frac_hallucinations_signal_ge_0.5": 0.8667,
+            "frac_hallucinations_signal_ge_pool_median": 0.4,
+            "frac_surviving_certificate_matched_rule": 0.4,
+            "frac_surviving_absent_only_calibration": NaN,
+            "interpretation": "frac_surviving = fraction of the LLM's high-confidence absent-relation hallucinations a single GLOBAL confidence threshold (tuned to the certificate's mixed coverage) would still COMMIT. The certificate abstains on ~all of them STRUCTURALLY (located_in o contains is UNDEFINED), regardless of confidence."
+          },
+          "ct_sc_margin": {
+            "tau_global_at_certificate_mixed_coverage": 1.0,
+            "tau_absent_only": NaN,
+            "signal_distribution_on_hallucinations": {
+              "mean": 0.9267,
+              "median": 1.0,
+              "p10": 0.64,
+              "p25": 1.0,
+              "p75": 1.0,
+              "p90": 1.0
+            },
+            "frac_hallucinations_signal_ge_0.5": 1.0,
+            "frac_hallucinations_signal_ge_pool_median": 0.8,
+            "frac_surviving_certificate_matched_rule": 0.8,
+            "frac_surviving_absent_only_calibration": NaN,
+            "interpretation": "frac_surviving = fraction of the LLM's high-confidence absent-relation hallucinations a single GLOBAL confidence threshold (tuned to the certificate's mixed coverage) would still COMMIT. The certificate abstains on ~all of them STRUCTURALLY (located_in o contains is UNDEFINED), regardless of confidence."
+          },
+          "ct_ptrue": {
+            "tau_global_at_certificate_mixed_coverage": 1.0,
+            "tau_absent_only": NaN,
+            "signal_distribution_on_hallucinations": {
+              "mean": 0.7467,
+              "median": 1.0,
+              "p10": 0.0,
+              "p25": 0.6,
+              "p75": 1.0,
+              "p90": 1.0
+            },
+            "frac_hallucinations_signal_ge_0.5": 0.7333,
+            "frac_hallucinations_signal_ge_pool_median": 0.7333,
+            "frac_surviving_certificate_matched_rule": 0.7333,
+            "frac_surviving_absent_only_calibration": NaN,
+            "interpretation": "frac_surviving = fraction of the LLM's high-confidence absent-relation hallucinations a single GLOBAL confidence threshold (tuned to the certificate's mixed coverage) would still COMMIT. The certificate abstains on ~all of them STRUCTURALLY (located_in o contains is UNDEFINED), regardless of confidence."
+          },
+          "ct_negent": {
+            "tau_global_at_certificate_mixed_coverage": 1.0,
+            "tau_absent_only": NaN,
+            "signal_distribution_on_hallucinations": {
+              "mean": 0.9433,
+              "median": 1.0,
+              "p10": 0.7185,
+              "p25": 1.0,
+              "p75": 1.0,
+              "p90": 1.0
+            },
+            "frac_hallucinations_signal_ge_0.5": 1.0,
+            "frac_hallucinations_signal_ge_pool_median": 0.8,
+            "frac_surviving_certificate_matched_rule": 0.8,
+            "frac_surviving_absent_only_calibration": NaN,
+            "interpretation": "frac_surviving = fraction of the LLM's high-confidence absent-relation hallucinations a single GLOBAL confidence threshold (tuned to the certificate's mixed coverage) would still COMMIT. The certificate abstains on ~all of them STRUCTURALLY (located_in o contains is UNDEFINED), regardless of confidence."
+          }
+        },
+        "per_baseline_fraction_caught": {
+          "certificate": {
+            "fraction_caught": 1.0,
+            "fraction_surviving": 0.0
+          },
+          "ct_verbalized": {
+            "fraction_surviving": 0.4,
+            "fraction_caught": 0.6
+          },
+          "ct_sc_margin": {
+            "fraction_surviving": 0.8,
+            "fraction_caught": 0.2
+          },
+          "ct_ptrue": {
+            "fraction_surviving": 0.7333,
+            "fraction_caught": 0.2667
+          },
+          "ct_negent": {
+            "fraction_surviving": 0.8,
+            "fraction_caught": 0.2
+          },
+          "queryside_verifier": {
+            "fraction_surviving": 0.2,
+            "fraction_caught": 0.8,
+            "interpretation": "fraction of the raw LLM's absent-relation hallucinations that the query-side gate turns into an abstention (caught) vs still commits (survives)."
+          },
+          "queryside_selfverify": {
+            "fraction_surviving": 0.2,
+            "fraction_caught": 0.8,
+            "interpretation": "fraction of the raw LLM's absent-relation hallucinations that the query-side gate turns into an abstention (caught) vs still commits (survives)."
+          }
+        }
+      }
+    },
+    "diffcomponent_contrast": {
+      "FACT_A_diffcomp_rate": 0.06,
+      "certificate_confident_wrong_diffcomp": 0.0,
+      "queryside_verifier_confident_wrong_diffcomp": 0.012,
+      "mixed_diffcomp_holm": {
+        "mixed_modeA_vs_ct_verbalized": {
+          "p": 1.0,
+          "p_adj": 1.0,
+          "reject": false,
+          "reduction": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "mixed_modeA_vs_ct_sc_margin": {
+          "p": 1.0,
+          "p_adj": 1.0,
+          "reject": false,
+          "reduction": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "mixed_modeA_vs_ct_ptrue": {
+          "p": 1.0,
+          "p_adj": 1.0,
+          "reject": false,
+          "reduction": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "mixed_modeA_vs_ct_negent": {
+          "p": 1.0,
+          "p_adj": 1.0,
+          "reject": false,
+          "reduction": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "mixed_modeA_vs_queryside_verifier": {
+          "p": 1.0,
+          "p_adj": 1.0,
+          "reject": false,
+          "reduction": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "mixed_modeA_vs_queryside_selfverify": {
+          "p": 1.0,
+          "p_adj": 1.0,
+          "reject": false,
+          "reduction": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "note": "different_component is STRUCTURAL-BY-CONSTRUCTION (disconnected components => closure abstains by definition); the decisive non-structural test is the SIBLING pool."
+    },
+    "FACT_A_per_regime": {
+      "same_component_sibling": {
+        "n": 450,
+        "n_hallucinated": 135,
+        "rate": 0.3,
+        "hallucination_confidence_distribution": {
+          "mean": 0.9422,
+          "median": 1.0,
+          "frac_ge_0.7": 0.9778,
+          "frac_ge_0.9": 0.9481
+        }
+      },
+      "different_component": {
+        "n": 250,
+        "n_hallucinated": 15,
+        "rate": 0.06,
+        "hallucination_confidence_distribution": {
+          "mean": 0.84,
+          "median": 0.95,
+          "frac_ge_0.7": 0.8667,
+          "frac_ge_0.9": 0.8667
+        }
+      }
+    },
+    "abstention_decomposition_sibling": {
+      "n_total": 965,
+      "n_present": 515,
+      "n_absent": 450,
+      "certificate_named_total": 59,
+      "correct_absent_abstentions": 417,
+      "correct_absent_abstention_rate": 0.9267,
+      "over_abstain_present": 489,
+      "over_abstain_present_rate": 0.9495,
+      "present_coverage_llm_read": 0.0505,
+      "present_selective_accuracy_primitive": 1.0,
+      "gold_read_ceiling": {
+        "present_coverage": 1.0,
+        "correct_absent_abstention_rate": 1.0,
+        "present_selective_accuracy_primitive": 1.0,
+        "note": "the gold-read certificate (closure over GOLD atomic edges, held_out direct edge ablated) deduces ~100% of present golds & abstains on ~100% of absent pairs by construction; the gap to the LLM-read certificate is exactly the natural-prose EXTRACTION ceiling."
+      },
+      "interpretation": "On natural prose the extracted graph is no longer trivially complete, so the certificate can OVER-ABSTAIN on PRESENT pairs (missing connecting edges look disconnected). correct_absent + over_abstain_present + named == total decisions; high over_abstain_present with low present_coverage => extraction-limited."
+    },
+    "abstention_decomposition_diffcomp": {
+      "n_total": 765,
+      "n_present": 515,
+      "n_absent": 250,
+      "certificate_named_total": 26,
+      "correct_absent_abstentions": 250,
+      "correct_absent_abstention_rate": 1.0,
+      "over_abstain_present": 489,
+      "over_abstain_present_rate": 0.9495,
+      "present_coverage_llm_read": 0.0505,
+      "present_selective_accuracy_primitive": 1.0,
+      "gold_read_ceiling": {
+        "present_coverage": 1.0,
+        "correct_absent_abstention_rate": 1.0,
+        "present_selective_accuracy_primitive": 1.0,
+        "note": "the gold-read certificate (closure over GOLD atomic edges, held_out direct edge ablated) deduces ~100% of present golds & abstains on ~100% of absent pairs by construction; the gap to the LLM-read certificate is exactly the natural-prose EXTRACTION ceiling."
+      },
+      "interpretation": "On natural prose the extracted graph is no longer trivially complete, so the certificate can OVER-ABSTAIN on PRESENT pairs (missing connecting edges look disconnected). correct_absent + over_abstain_present + named == total decisions; high over_abstain_present with low present_coverage => extraction-limited."
+    },
+    "natural_prose_atomic_pr": {
+      "converse_invariant_primitive_PRIMARY": {
+        "precision": 0.6649,
+        "recall": 0.1478,
+        "f1": 0.2418,
+        "tp": 492,
+        "n_pred": 740,
+        "n_gold": 3329,
+        "n_stories": 283,
+        "precision_ci": [
+          0.6179779789419619,
+          0.7138608242608332
+        ],
+        "recall_ci": [
+          0.1339020770167985,
+          0.1612774779118695
+        ],
+        "f1_ci": [
+          0.22050003676950342,
+          0.26165509068697695
+        ],
+        "by_hop": {
+          "natural": {
+            "precision": 0.6649,
+            "recall": 0.1478,
+            "f1": 0.2418,
+            "tp": 492,
+            "n_pred": 740,
+            "n_gold": 3329
+          }
+        },
+        "by_noise_type": {
+          "re-docred": {
+            "precision": 0.6649,
+            "recall": 0.1478,
+            "f1": 0.2418,
+            "tp": 492,
+            "n_pred": 740,
+            "n_gold": 3329
+          }
+        }
+      },
+      "strict_direction_aware_secondary": {
+        "precision": 0.6282,
+        "recall": 0.1421,
+        "f1": 0.2317,
+        "tp": 473,
+        "n_pred": 753,
+        "n_gold": 3329,
+        "n_stories": 283,
+        "precision_ci": [
+          0.5781523121905278,
+          0.6792813897788105
+        ],
+        "recall_ci": [
+          0.1281770663602517,
+          0.15590213629191094
+        ],
+        "f1_ci": [
+          0.21145255537740112,
+          0.2520958243192658
+        ],
+        "by_hop": {
+          "natural": {
+            "precision": 0.6282,
+            "recall": 0.1421,
+            "f1": 0.2317,
+            "tp": 473,
+            "n_pred": 753,
+            "n_gold": 3329
+          }
+        },
+        "by_noise_type": {
+          "re-docred": {
+            "precision": 0.6282,
+            "recall": 0.1421,
+            "f1": 0.2317,
+            "tp": 473,
+            "n_pred": 753,
+            "n_gold": 3329
+          }
+        }
+      },
+      "vs_locally_justifiable_gold_FAIR_CEILING": {
+        "recall": 0.2429,
+        "recall_ci": [
+          0.21991948930943225,
+          0.2656631643962647
+        ],
+        "n_gold_justifiable": 1832,
+        "note": "recall measured against ONLY the locally-justifiable (span-extractable) gold edges -- the fair ceiling for a span-local reader; the rest are KB-implied edges no span-local extractor could recover (locally_justifiable_frac ~0.588 on re-docred)."
+      },
+      "n_docs": 283,
+      "note": "Recall is capped well below 1.0 by extraction (the dataset README flags ~0.588 locally-justifiable atomic located_in edges) -- extraction is MEASURED, not improved; this is the binding ceiling the certificate inherits on natural prose.",
+      "best_effort_extraction_arm": {
+        "precision": 0.6885,
+        "recall": 0.1859,
+        "f1": 0.2928,
+        "recall_ci": [
+          0.170901789899647,
+          0.2004486250885444
+        ],
+        "note": "few-shot + given-inventory extraction arm (PATH-2 hedge)."
+      }
+    },
+    "worked_no_derivation_abstention_sibling": {
+      "doc_id": "re-docred::A Sầu Valley",
+      "title": "A Sầu Valley",
+      "story": "The A Shau Valley (Vietnamese: thung lũng A Sầu) is a valley in Vietnam's Thừa Thiên-Huế Province, west of the coastal city of Huế, along the border of Laos. The valley runs north and south for 40 kilometers and is a 1.5- kilometer-wide flat bottomland covered with tall elephant grass, flanked by two densely forested mountain ridges whose summits vary in elevation from 900 to 1,800 meters. A Shau Valley was one of the key entry points into South Vietnam for men and material brought along the Ho Chi Minh trail by the North Vietnamese Army and was the scene of heavy fighting during the Vietnam War. The A Shau Valley is bisected lengthwise by Route 548. The Ho Chi Minh Highway now runs along the valley floor.",
+      "absent_regime": "same_component_sibling",
+      "question": "What is the geographic relationship of thung lũng A Sầu to Route 548?",
+      "qsrc": 0,
+      "qtgt": 15,
+      "qsrc_name": "thung lũng A Sầu",
+      "qtgt_name": "Route 548",
+      "gold": "no-relation",
+      "extracted_atomics": [
+        {
+          "a": "thung lũng A Sầu",
+          "b": "Thừa Thiên-Huế Province",
+          "type": "located_in",
+          "surface": "located in"
+        },
+        {
+          "a": "Thừa Thiên-Huế Province",
+          "b": "Vietnam",
+          "type": "located_in",
+          "surface": "located in"
+        }
+      ],
+      "certificate_decision": "ABSTAIN (no-relation)",
+      "certificate_info": null,
+      "raw_llm_committed": "contains",
+      "raw_llm_signals": {
+        "verbalized": 1.0,
+        "sc_margin": 1.0,
+        "ptrue": 1.0,
+        "negent": 1.0,
+        "H": 0.0,
+        "sc_k_eff": 10.0,
+        "sc10_abstain": 0.0
+      },
+      "queryside_verifier_related": true,
+      "queryside_verifier_conf": 1.0,
+      "prolog": {
+        "engine": "python-fallback",
+        "executed_in_swipl": false,
+        "prolog_results": null,
+        "python_reference": [],
+        "prolog_matches_python": null,
+        "discharge_method": "python-checked (swipl-unavailable)",
+        "program_chars": 752
+      },
+      "explanation": "The extracted located_in edges leave qsrc and qtgt as co-component SIBLINGS with NO directed containment path (located_in o contains is UNDEFINED), so the forward closure D[(qsrc,qtgt)] is EMPTY -> the certificate asserts no-relation. This is a GENUINE DEDUCTIVE abstention (not disconnected-component). The raw LLM instead committed a specific containment at high confidence -- a hallucination every confidence signal above its threshold would retain."
+    },
+    "worked_over_abstain_present": {
+      "doc_id": "re-docred::A Bridge Too Far (book)",
+      "title": "A Bridge Too Far (book)",
+      "story": "Cornelius Ryan's A Bridge Too Far gives an account of Operation Market Garden, a failed Allied attempt to break through German lines at Arnhem in the occupied Netherlands during World War II. The title of the book comes from a comment made by British Lieutenant General Frederick Browning, deputy commander of the First Allied Airborne Army, who told Field Marshal Bernard Montgomery before the operation,\" I think we may be going a bridge too far.\" Drawing on a wide variety of sources, Ryan also documented his account of the 1944 battle with pictures and maps and included a section on the survivors, “Soldiers and Civilians–What They Do Today”. One particular focus was on the tactical mistakes made in planning the operation. Until Ryan's book, Market Garden had been a classic example of victors writing the history. Popular accounts of World War II usually tended not to mention the battle at all or put Montgomery's spin on it as being a\" partial success\". The 1974 book was published by Simon & Schuster in New York and by Hamish Hamilton in London. There were frequent later editions, and a film based on it was released in 1977.",
+      "query_subtype": "held_out",
+      "question": "What is the geographic relationship of Market Garden to Netherlands?",
+      "gold_primitive": "located_in",
+      "gold_word": "located in",
+      "hop": 2,
+      "gold_read_certificate": "located in",
+      "llm_read_certificate_decision": "ABSTAIN (no_path)",
+      "n_gold_atomic_edges": 2,
+      "n_extracted_edges": 1,
+      "extracted_atomics": [
+        {
+          "a": "Arnhem",
+          "b": "Netherlands",
+          "type": "located_in",
+          "surface": "located in"
+        }
+      ],
+      "raw_llm_committed": "located in",
+      "explanation": "The GOLD-read certificate composes the connecting chain (held_out direct edge ablated) and solves this present pair, but the LLM extraction missed >=1 connecting edge, leaving the endpoints disconnected -> the LLM-read certificate ABSTAINS. This is the quantified extraction ceiling made concrete (sound, never a fabricated relation)."
+    },
+    "worked_present_composition_trace": {
+      "doc_id": "re-docred::Algarrobo, Spain",
+      "title": "Algarrobo, Spain",
+      "story": "Algarrobo is a town and municipality in the province of Málaga, part of the autonomous community of Andalusia in southern Spain. The municipality is situated in the coastal area of La Axarquía, 32 kilometers from the city of Málaga. It is bordered on the north by the municipality of Arenas and Sayalonga, to the east and west by Vélez-Málaga and to the south by the Mediterranean Sea. It is situated at an altitude of 86 meters. The main center for the population is Algarrobo, a town of Arab architecture situated 3.5 kilometers from the coast. Other towns in the municipality are Algarrobo Costa, Mezquitilla and Trayamar. It has a population of approximately 5,000 residents. Natives of the town are called Algarrobeños. Its surface area is 9.73   km and has a density of 639.16 inhabitants/km.",
+      "question": "What is the geographic relationship of Algarrobo Costa to Andalusia?",
+      "gold_primitive": "located_in",
+      "gold_word": "located in",
+      "certificate_primitive": "located_in",
+      "certificate_word": "located in",
+      "extracted_atomics": [
+        {
+          "a": "Algarrobo",
+          "b": "Málaga",
+          "type": "located_in",
+          "surface": "located in"
+        },
+        {
+          "a": "Málaga",
+          "b": "Andalusia",
+          "type": "located_in",
+          "surface": "located in"
+        },
+        {
+          "a": "Algarrobo",
+          "b": "La Axarquía",
+          "type": "located_in",
+          "surface": "located in"
+        },
+        {
+          "a": "Algarrobo",
+          "b": "Algarrobo Costa",
+          "type": "contains",
+          "surface": "contains"
+        },
+        {
+          "a": "Algarrobo",
+          "b": "Mezquitilla",
+          "type": "contains",
+          "surface": "contains"
+        },
+        {
+          "a": "Algarrobo",
+          "b": "Trayamar",
+          "type": "contains",
+          "surface": "contains"
+        }
+      ],
+      "modeA_narrowing_trace": [
+        {
+          "a": "Algarrobo Costa",
+          "b": "Algarrobo",
+          "c": "Málaga",
+          "t1": "located_in",
+          "t2": "located_in",
+          "t3": "located_in"
+        },
+        {
+          "a": "Algarrobo Costa",
+          "b": "Málaga",
+          "c": "Andalusia",
+          "t1": "located_in",
+          "t2": "located_in",
+          "t3": "located_in"
+        }
+      ],
+      "prolog": {
+        "engine": "python-fallback",
+        "executed_in_swipl": false,
+        "prolog_results": null,
+        "python_reference": [
+          "located_in"
+        ],
+        "prolog_matches_python": null,
+        "discharge_method": "python-checked (swipl-unavailable)",
+        "program_chars": 966
+      }
+    },
+    "prolog_discharge_summary": {
+      "n_discharged": 26,
+      "n_executed_in_swipl": 0,
+      "n_prolog_matches_python": 0,
+      "engines": {
+        "python-fallback": 26
+      },
+      "discharge_method": "python-checked (swipl-unavailable)",
+      "swipl_available": false,
+      "note": "Prolog program emits comp/3, conv/2, rel/3, solve_/4; discharged in real SWI-Prolog when available, else validated by the Python re-implementation of the same rules and labelled truthfully (never implying swipl execution)."
+    },
+    "cross_family_sensitivity": {
+      "reader": "mistralai/mistral-small-2603",
+      "n_records": 1215,
+      "n_present": 515,
+      "n_sibling": 450,
+      "FACT_A_per_regime": {
+        "same_component_sibling": {
+          "n": 450,
+          "n_hallucinated": 197,
+          "rate": 0.4378,
+          "hallucination_confidence_distribution": {
+            "mean": 0.9856,
+            "median": 0.99,
+            "frac_ge_0.7": 1.0,
+            "frac_ge_0.9": 1.0
+          }
+        },
+        "different_component": {
+          "n": 250,
+          "n_hallucinated": 25,
+          "rate": 0.1,
+          "hallucination_confidence_distribution": {
+            "mean": 0.986,
+            "median": 0.99,
+            "frac_ge_0.7": 1.0,
+            "frac_ge_0.9": 1.0
+          }
+        }
+      },
+      "FACT_B_crux_fraction_caught": {
+        "certificate": {
+          "fraction_caught": 0.7766,
+          "fraction_surviving": 0.2234
+        },
+        "ct_verbalized": {
+          "fraction_surviving": 0.533,
+          "fraction_caught": 0.467
+        },
+        "ct_sc_margin": {
+          "fraction_surviving": 0.6396,
+          "fraction_caught": 0.3604
+        },
+        "ct_ptrue": {
+          "fraction_surviving": 0.4975,
+          "fraction_caught": 0.5025
+        },
+        "ct_negent": {
+          "fraction_surviving": 0.6396,
+          "fraction_caught": 0.3604
+        },
+        "queryside_verifier": {
+          "fraction_surviving": 0.5533,
+          "fraction_caught": 0.4467,
+          "interpretation": "fraction of the raw LLM's absent-relation hallucinations that the query-side gate turns into an abstention (caught) vs still commits (survives)."
+        },
+        "queryside_selfverify": {
+          "fraction_surviving": 0.6904,
+          "fraction_caught": 0.3096,
+          "interpretation": "fraction of the raw LLM's absent-relation hallucinations that the query-side gate turns into an abstention (caught) vs still commits (survives)."
+        }
+      },
+      "mixed_sibling_showdown_selective_accuracy": {
+        "certificate": 0.5678,
+        "ct_verbalized": 0.8983,
+        "ct_sc_margin": 1.0,
+        "ct_ptrue": 0.822,
+        "ct_negent": 1.0,
+        "queryside_verifier": 1.0,
+        "queryside_selfverify": 1.0,
+        "matched_coverage": 0.12227979274611399
+      },
+      "mixed_sibling_confident_wrong_reduction_holm": {
+        "mixed_modeA_vs_ct_verbalized": {
+          "p": 1.0,
+          "p_adj": 1.0,
+          "reject": false,
+          "reduction": -0.0404,
+          "ci95": [
+            -0.0618,
+            -0.0208
+          ]
+        },
+        "mixed_modeA_vs_ct_sc_margin": {
+          "p": 1.0,
+          "p_adj": 1.0,
+          "reject": false,
+          "reduction": -0.0528,
+          "ci95": [
+            -0.0738,
+            -0.0339
+          ]
+        },
+        "mixed_modeA_vs_ct_ptrue": {
+          "p": 0.9998,
+          "p_adj": 1.0,
+          "reject": false,
+          "reduction": -0.0311,
+          "ci95": [
+            -0.0511,
+            -0.0124
+          ]
+        },
+        "mixed_modeA_vs_ct_negent": {
+          "p": 1.0,
+          "p_adj": 1.0,
+          "reject": false,
+          "reduction": -0.0528,
+          "ci95": [
+            -0.0738,
+            -0.0339
+          ]
+        },
+        "mixed_modeA_vs_queryside_verifier": {
+          "p": 1.0,
+          "p_adj": 1.0,
+          "reject": false,
+          "reduction": -0.0528,
+          "ci95": [
+            -0.0738,
+            -0.0339
+          ]
+        },
+        "mixed_modeA_vs_queryside_selfverify": {
+          "p": 1.0,
+          "p_adj": 1.0,
+          "reject": false,
+          "reduction": -0.0528,
+          "ci95": [
+            -0.0738,
+            -0.0339
+          ]
+        }
+      },
+      "abstention_decomposition": {
+        "n_total": 965,
+        "n_present": 515,
+        "n_absent": 450,
+        "certificate_named_total": 118,
+        "correct_absent_abstentions": 399,
+        "correct_absent_abstention_rate": 0.8867,
+        "over_abstain_present": 448,
+        "over_abstain_present_rate": 0.8699,
+        "present_coverage_llm_read": 0.1301,
+        "present_selective_accuracy_primitive": 1.0,
+        "gold_read_ceiling": {
+          "present_coverage": 1.0,
+          "correct_absent_abstention_rate": 1.0,
+          "present_selective_accuracy_primitive": 1.0,
+          "note": "the gold-read certificate (closure over GOLD atomic edges, held_out direct edge ablated) deduces ~100% of present golds & abstains on ~100% of absent pairs by construction; the gap to the LLM-read certificate is exactly the natural-prose EXTRACTION ceiling."
+        },
+        "interpretation": "On natural prose the extracted graph is no longer trivially complete, so the certificate can OVER-ABSTAIN on PRESENT pairs (missing connecting edges look disconnected). correct_absent + over_abstain_present + named == total decisions; high over_abstain_present with low present_coverage => extraction-limited."
+      },
+      "cost_usd": 0.3676,
+      "n_calls": 12647,
+      "n_cache_hits": 0,
+      "n_errors": 0
+    },
+    "dataset_build_stats_reference": {
+      "re-docred": {
+        "present_total": 3510,
+        "present_never_annotated": 118,
+        "present_held_out": 3392,
+        "absent_total": 24088,
+        "absent_different_component": 3274,
+        "absent_same_component_sibling": 20814
+      }
+    },
+    "honesty_caveats": {
+      "natural_prose": "input is genuinely-natural Wikipedia introductory prose (no templating/concatenation).",
+      "char_length": "DocRED intro prose averages ~1025 chars; none reach the umbrella's ~3000-char target (corpus-honest; no doc >= 3000).",
+      "sibling_non_structural": "the same_component_sibling absent regime is NOT structural-by-construction: both endpoints are in the same component, so abstention is a GENUINE deductive result (located_in o contains UNDEFINED), which is the containment-specific contribution over the iter-7 kinship different-component-only absent pool.",
+      "diffcomp_structural": "different_component absent is structural-by-construction (disconnected) -- kept only as the contrast.",
+      "closed_world_absent": "absent labels are closed-world within each document (a pair with no derivable containment path).",
+      "primitive_scoring": "located_in is gender-free; scoring is primitive-level (located_in/contains/no-relation).",
+      "extraction_measured": "atomic extraction is MEASURED not improved; recall is the binding natural-prose ceiling.",
+      "prolog": "swipl unavailable here => discharge is python-checked and labelled truthfully (iter-5/6/7 precedent); the Prolog program (comp/3,conv/2,rel/3,solve_/4) is emitted and cross-checked by the Python re-implementation.",
+      "pure_absent_degeneracy": "on the pure-absent pool confident-wrong==coverage so the dispersion signals coincide; the decisive signal-discriminating object is the MIXED-sibling view3 + crux survival + the query-side gate.",
+      "verifier_baseline": "the query-side false-premise verifier is the ESTABLISHED method for this failure mode (FalseQA/AbstentionBench/Wen2024); if it ties/beats the structural certificate on the sibling absent pool the verdict is VERIFIER-SUFFICES (honest negative).",
+      "matched_coverage_degeneracy_under_extraction_limit": "the MIXED-pool matched-coverage confident-wrong REDUCTION is DEGENERATE here: because LLM extraction recall is low (~0.15) the certificate's present coverage collapses to ~0.05, so every baseline is throttled to that tiny coverage and commits ~0 confident-wrong, and the certificate's own small present mis-derivation rate makes the matched reduction slightly NEGATIVE and identical across baselines. The LOAD-BEARING, non-degenerate comparison is therefore the crux FRACTION-CAUGHT and the NATURAL confident-wrong on the sibling absent pool (certificate << every dispersion signal AND the query-side verifier), NOT the matched-coverage reduction -- the latter is reported for completeness and is informative only when extraction recall lifts present coverage (see the gold-read ceiling)."
+    },
+    "budget": {
+      "cumulative_usd": 0.0,
+      "n_llm_calls": 0,
+      "n_cache_hits": 19005,
+      "n_parse_fail": 0,
+      "n_errors": 0,
+      "model": "google/gemini-3.1-flash-lite",
+      "fallbacks": [
+        "deepseek/deepseek-v3.2",
+        "google/gemini-3-flash-preview"
+      ],
+      "temperature": 0.0,
+      "budget_hard": 6.0,
+      "budget_soft": 5.0
+    },
+    "verdict": {
+      "overall": "EXTRACTION-LIMITED-BOUNDARY",
+      "decisive_pool": "same_component_sibling mixed (present + sibling-absent)",
+      "FACT_A_raw_sibling_hallucination_rate": 0.3,
+      "FACT_A_high": true,
+      "FACT_B_n_dispersion_signals_surviving_ge_0.5": 4,
+      "FACT_B_holds": true,
+      "certificate_beats_all_6_baselines_holm": false,
+      "certificate_beats_queryside_verifier_holm": false,
+      "verifier_suffices": false,
+      "certificate_confident_wrong_sibling": 0.0733,
+      "queryside_verifier_confident_wrong_sibling": 0.2178,
+      "present_coverage_llm_read": 0.0505,
+      "over_abstain_present_rate": 0.9495,
+      "natural_atomic_recall_primary": 0.1478,
+      "rationale": "Pre-registered on the SIBLING mixed pool (non-structural-by-construction). DEMONSTRATED-FIX iff the certificate's confident-wrong is strictly below ALL 6 competitors -- the 4 dispersion signals AND the query-side verifier + self-verify -- on the mixed pool (Holm CI excludes 0, reduction>0). Else VERIFIER-SUFFICES if the query-side verifier ties/beats the certificate's structural abstention on the sibling pool while FACT A is high (honest negative: the trained false-premise detector already handles the absent stratum, so the structural certificate is not NEEDED). Else EXTRACTION-LIMITED-BOUNDARY if the DIAGNOSTIC survives (FACT A high + >=2 dispersion signals still commit >=50% of the hallucinations) but the certificate over-abstains/ties on PRESENT due to natural-prose extraction recall (quantified by present_coverage, over_abstain_present, atomic recall, gold-read ceiling). Else DIAGNOSTIC-WEAKER-THAN-CLAIMED."
+    },
+    "runtime_sec": 808.0
+  },
+  "datasets": [
+    {
+      "dataset": "locatedin_absent_diffcomponent",
+      "examples": [
+        {
+          "input": "A. J. Stasny Music Co. was an American publisher of popular sheet music. The firm was chartered as a New York corporation in 1922 by Betty\" Bessie\" Stastny (née Fisher) (1882–1974) and her husband, Anthony John Stastny (1885–1923), and M. Kerr–although, there was music published from as early as 1908 bearing the name A. J. Stasny Music Co. Cleveland, Ohio. A. J. Stasny and his wife had moved from Cleveland to New York in 1910. The New York firm was based out of the Tin Pan Alley district of Manhattan, New York. By 1920, the firm had grown into one of the largest music publishing companies in the country with branch offices in 18 large cities, including Philadelphia, Chicago, San Francisco, and London–with over 200 employees and grossing over one million dollars a year. The company is currently privately held by an heir, Eleanor Fisher — 29 Green Grove Avenue, Keyport, New Jersey.  || Q: what is the geographic relationship of American to Green Grove Avenue?",
+          "output": "no-relation",
+          "predict_certificate": "ABSTAIN",
+          "predict_certificate_goldread": "ABSTAIN",
+          "predict_conf_thresh_verbalized": "contains",
+          "predict_conf_thresh_sc_margin": "contains",
+          "predict_conf_thresh_ptrue": "contains",
+          "predict_conf_thresh_negent": "contains",
+          "predict_queryside_verifier": "ABSTAIN",
+          "predict_queryside_selfverify": "contains",
+          "predict_commit_argmax": "contains",
+          "predict_pot": "ABSTAIN",
+          "predict_sc": "ABSTAIN",
+          "metadata_slice": "re-docred",
+          "metadata_regime": "different_component",
+          "metadata_is_absent": true,
+          "metadata_reader": "google/gemini-3.1-flash-lite",
+          "metadata_doc_id": "re-docred::A. J. Stasny Music Co.",
+          "metadata_title": "A. J. Stasny Music Co.",
+          "metadata_qsrc": 1,
+          "metadata_qtgt": 26,
+          "metadata_qsrc_name": "American",
+          "metadata_qtgt_name": "Green Grove Avenue",
+          "metadata_hop": 0,
+          "metadata_composed_only": false,
+          "metadata_gold_primitive": "no-relation",
+          "metadata_certificate_primitive": null,
+          "metadata_certificate_goldread_named": false,
+          "metadata_raw_named": true,
+          "metadata_verifier_related": false,
+          "metadata_conf_verbalized": 1.0,
+          "metadata_conf_sc_margin": 0.7,
+          "metadata_conf_ptrue": 1.0,
+          "metadata_conf_negent": 0.7347,
+          "metadata_conf_verifier": 1.0,
+          "metadata_conf_selfverify": 1.0,
+          "metadata_sc_semantic_entropy": 0.6109,
+          "metadata_n_extracted_edges": 5,
+          "metadata_certificate_info": null
+        },
+        {
+          "input": "A. J. Stasny Music Co. was an American publisher of popular sheet music. The firm was chartered as a New York corporation in 1922 by Betty\" Bessie\" Stastny (née Fisher) (1882–1974) and her husband, Anthony John Stastny (1885–1923), and M. Kerr–although, there was music published from as early as 1908 bearing the name A. J. Stasny Music Co. Cleveland, Ohio. A. J. Stasny and his wife had moved from Cleveland to New York in 1910. The New York firm was based out of the Tin Pan Alley district of Manhattan, New York. By 1920, the firm had grown into one of the largest music publishing companies in the country with branch offices in 18 large cities, including Philadelphia, Chicago, San Francisco, and London–with over 200 employees and grossing over one million dollars a year. The company is currently privately held by an heir, Eleanor Fisher — 29 Green Grove Avenue, Keyport, New Jersey.  || Q: what is the geographic relationship of American to New Jersey?",
+          "output": "no-relation",
+          "predict_certificate": "ABSTAIN",
+          "predict_certificate_goldread": "ABSTAIN",
+          "predict_conf_thresh_verbalized": "contains",
+          "predict_conf_thresh_sc_margin": "contains",
+          "predict_conf_thresh_ptrue": "contains",
+          "predict_conf_thresh_negent": "contains",
+          "predict_queryside_verifier": "ABSTAIN",
+          "predict_queryside_selfverify": "contains",
+          "predict_commit_argmax": "contains",
+          "predict_pot": "ABSTAIN",
+          "predict_sc": "ABSTAIN",
+          "metadata_slice": "re-docred",
+          "metadata_regime": "different_component",
+          "metadata_is_absent": true,
+          "metadata_reader": "google/gemini-3.1-flash-lite",
+          "metadata_doc_id": "re-docred::A. J. Stasny Music Co.",
+          "metadata_title": "A. J. Stasny Music Co.",
+          "metadata_qsrc": 1,
+          "metadata_qtgt": 28,
+          "metadata_qsrc_name": "American",
+          "metadata_qtgt_name": "New Jersey",
+          "metadata_hop": 0,
+          "metadata_composed_only": false,
+          "metadata_gold_primitive": "no-relation",
+          "metadata_certificate_primitive": null,
+          "metadata_certificate_goldread_named": false,
+          "metadata_raw_named": true,
+          "metadata_verifier_related": false,
+          "metadata_conf_verbalized": 1.0,
+          "metadata_conf_sc_margin": 0.6,
+          "metadata_conf_ptrue": 1.0,
+          "metadata_conf_negent": 0.7077,
+          "metadata_conf_verifier": 1.0,
+          "metadata_conf_selfverify": 1.0,
+          "metadata_sc_semantic_entropy": 0.673,
+          "metadata_n_extracted_edges": 5,
+          "metadata_certificate_info": null
+        },
+        {
+          "input": "A. J. Stasny Music Co. was an American publisher of popular sheet music. The firm was chartered as a New York corporation in 1922 by Betty\" Bessie\" Stastny (née Fisher) (1882–1974) and her husband, Anthony John Stastny (1885–1923), and M. Kerr–although, there was music published from as early as 1908 bearing the name A. J. Stasny Music Co. Cleveland, Ohio. A. J. Stasny and his wife had moved from Cleveland to New York in 1910. The New York firm was based out of the Tin Pan Alley district of Manhattan, New York. By 1920, the firm had grown into one of the largest music publishing companies in the country with branch offices in 18 large cities, including Philadelphia, Chicago, San Francisco, and London–with over 200 employees and grossing over one million dollars a year. The company is currently privately held by an heir, Eleanor Fisher — 29 Green Grove Avenue, Keyport, New Jersey.  || Q: what is the geographic relationship of Cleveland to Green Grove Avenue?",
+          "output": "no-relation",
+          "predict_certificate": "ABSTAIN",
+          "predict_certificate_goldread": "ABSTAIN",
+          "predict_conf_thresh_verbalized": "ABSTAIN",
+          "predict_conf_thresh_sc_margin": "ABSTAIN",
+          "predict_conf_thresh_ptrue": "ABSTAIN",
+          "predict_conf_thresh_negent": "ABSTAIN",
+          "predict_queryside_verifier": "ABSTAIN",
+          "predict_queryside_selfverify": "ABSTAIN",
+          "predict_commit_argmax": "ABSTAIN",
+          "predict_pot": "ABSTAIN",
+          "predict_sc": "ABSTAIN",
+          "metadata_slice": "re-docred",
+          "metadata_regime": "different_component",
+          "metadata_is_absent": true,
+          "metadata_reader": "google/gemini-3.1-flash-lite",
+          "metadata_doc_id": "re-docred::A. J. Stasny Music Co.",
+          "metadata_title": "A. J. Stasny Music Co.",
+          "metadata_qsrc": 11,
+          "metadata_qtgt": 26,
+          "metadata_qsrc_name": "Cleveland",
+          "metadata_qtgt_name": "Green Grove Avenue",
+          "metadata_hop": 0,
+          "metadata_composed_only": false,
+          "metadata_gold_primitive": "no-relation",
+          "metadata_certificate_primitive": null,
+          "metadata_certificate_goldread_named": false,
+          "metadata_raw_named": false,
+          "metadata_verifier_related": false,
+          "metadata_conf_verbalized": 1.0,
+          "metadata_conf_sc_margin": 1.0,
+          "metadata_conf_ptrue": 1.0,
+          "metadata_conf_negent": 1.0,
+          "metadata_conf_verifier": 1.0,
+          "metadata_conf_selfverify": 1.0,
+          "metadata_sc_semantic_entropy": 0.0,
+          "metadata_n_extracted_edges": 5,
+          "metadata_certificate_info": null
+        }
+      ]
+    },
+    {
+      "dataset": "locatedin_absent_sibling",
+      "examples": [
+        {
+          "input": ".cw is the Internet country code top-level domain (ccTLD) for Curaçao. It was created following the decision on December 15, 2010 by the ISO 3166 Maintenance Agency to allocate CW as the ISO 3166-1 alpha-2 code for Curaçao. This decision followed Curaçao's new status as an autonomous country within the Kingdom of the Netherlands on October 10, 2010. The University of Curaçao, which already was the sponsor for .an was designated as the sponsoring organization. Registration of .cw domains is available from 1 February 2012. Currently, many websites in Curaçao still use the former Netherlands Antilles's ccTLD, .an. Domains from .an will be able to switch to .sx (Sint Maarten) or .cw, depending on where they are based.  || Q: what is the geographic relationship of ISO 3166 - 1 alpha-2 code to Sint Maarten?",
+          "output": "no-relation",
+          "predict_certificate": "ABSTAIN",
+          "predict_certificate_goldread": "ABSTAIN",
+          "predict_conf_thresh_verbalized": "ABSTAIN",
+          "predict_conf_thresh_sc_margin": "ABSTAIN",
+          "predict_conf_thresh_ptrue": "ABSTAIN",
+          "predict_conf_thresh_negent": "ABSTAIN",
+          "predict_queryside_verifier": "ABSTAIN",
+          "predict_queryside_selfverify": "ABSTAIN",
+          "predict_commit_argmax": "ABSTAIN",
+          "predict_pot": "ABSTAIN",
+          "predict_sc": "ABSTAIN",
+          "metadata_slice": "re-docred",
+          "metadata_regime": "same_component_sibling",
+          "metadata_is_absent": true,
+          "metadata_reader": "google/gemini-3.1-flash-lite",
+          "metadata_doc_id": "re-docred::.cw",
+          "metadata_title": ".cw",
+          "metadata_qsrc": 0,
+          "metadata_qtgt": 7,
+          "metadata_qsrc_name": "ISO 3166 - 1 alpha-2 code",
+          "metadata_qtgt_name": "Sint Maarten",
+          "metadata_hop": 0,
+          "metadata_composed_only": false,
+          "metadata_gold_primitive": "no-relation",
+          "metadata_certificate_primitive": null,
+          "metadata_certificate_goldread_named": false,
+          "metadata_raw_named": false,
+          "metadata_verifier_related": false,
+          "metadata_conf_verbalized": 1.0,
+          "metadata_conf_sc_margin": 1.0,
+          "metadata_conf_ptrue": 0.0,
+          "metadata_conf_negent": 1.0,
+          "metadata_conf_verifier": 1.0,
+          "metadata_conf_selfverify": 1.0,
+          "metadata_sc_semantic_entropy": 0.0,
+          "metadata_n_extracted_edges": 1,
+          "metadata_certificate_info": null
+        },
+        {
+          "input": "The A Shau Valley (Vietnamese: thung lũng A Sầu) is a valley in Vietnam's Thừa Thiên-Huế Province, west of the coastal city of Huế, along the border of Laos. The valley runs north and south for 40 kilometers and is a 1.5- kilometer-wide flat bottomland covered with tall elephant grass, flanked by two densely forested mountain ridges whose summits vary in elevation from 900 to 1,800 meters. A Shau Valley was one of the key entry points into South Vietnam for men and material brought along the Ho Chi Minh trail by the North Vietnamese Army and was the scene of heavy fighting during the Vietnam War. The A Shau Valley is bisected lengthwise by Route 548. The Ho Chi Minh Highway now runs along the valley floor.  || Q: what is the geographic relationship of thung lũng A Sầu to Ho Chi Minh trail?",
+          "output": "no-relation",
+          "predict_certificate": "ABSTAIN",
+          "predict_certificate_goldread": "ABSTAIN",
+          "predict_conf_thresh_verbalized": "ABSTAIN",
+          "predict_conf_thresh_sc_margin": "ABSTAIN",
+          "predict_conf_thresh_ptrue": "ABSTAIN",
+          "predict_conf_thresh_negent": "ABSTAIN",
+          "predict_queryside_verifier": "ABSTAIN",
+          "predict_queryside_selfverify": "ABSTAIN",
+          "predict_commit_argmax": "ABSTAIN",
+          "predict_pot": "ABSTAIN",
+          "predict_sc": "ABSTAIN",
+          "metadata_slice": "re-docred",
+          "metadata_regime": "same_component_sibling",
+          "metadata_is_absent": true,
+          "metadata_reader": "google/gemini-3.1-flash-lite",
+          "metadata_doc_id": "re-docred::A Sầu Valley",
+          "metadata_title": "A Sầu Valley",
+          "metadata_qsrc": 0,
+          "metadata_qtgt": 12,
+          "metadata_qsrc_name": "thung lũng A Sầu",
+          "metadata_qtgt_name": "Ho Chi Minh trail",
+          "metadata_hop": 0,
+          "metadata_composed_only": false,
+          "metadata_gold_primitive": "no-relation",
+          "metadata_certificate_primitive": null,
+          "metadata_certificate_goldread_named": false,
+          "metadata_raw_named": false,
+          "metadata_verifier_related": false,
+          "metadata_conf_verbalized": 0.9,
+          "metadata_conf_sc_margin": 1.0,
+          "metadata_conf_ptrue": 0.0,
+          "metadata_conf_negent": 1.0,
+          "metadata_conf_verifier": 1.0,
+          "metadata_conf_selfverify": 1.0,
+          "metadata_sc_semantic_entropy": 0.0,
+          "metadata_n_extracted_edges": 2,
+          "metadata_certificate_info": null
+        },
+        {
+          "input": "The A Shau Valley (Vietnamese: thung lũng A Sầu) is a valley in Vietnam's Thừa Thiên-Huế Province, west of the coastal city of Huế, along the border of Laos. The valley runs north and south for 40 kilometers and is a 1.5- kilometer-wide flat bottomland covered with tall elephant grass, flanked by two densely forested mountain ridges whose summits vary in elevation from 900 to 1,800 meters. A Shau Valley was one of the key entry points into South Vietnam for men and material brought along the Ho Chi Minh trail by the North Vietnamese Army and was the scene of heavy fighting during the Vietnam War. The A Shau Valley is bisected lengthwise by Route 548. The Ho Chi Minh Highway now runs along the valley floor.  || Q: what is the geographic relationship of thung lũng A Sầu to Route 548?",
+          "output": "no-relation",
+          "predict_certificate": "ABSTAIN",
+          "predict_certificate_goldread": "ABSTAIN",
+          "predict_conf_thresh_verbalized": "contains",
+          "predict_conf_thresh_sc_margin": "contains",
+          "predict_conf_thresh_ptrue": "contains",
+          "predict_conf_thresh_negent": "contains",
+          "predict_queryside_verifier": "contains",
+          "predict_queryside_selfverify": "ABSTAIN",
+          "predict_commit_argmax": "contains",
+          "predict_pot": "ABSTAIN",
+          "predict_sc": "contains",
+          "metadata_slice": "re-docred",
+          "metadata_regime": "same_component_sibling",
+          "metadata_is_absent": true,
+          "metadata_reader": "google/gemini-3.1-flash-lite",
+          "metadata_doc_id": "re-docred::A Sầu Valley",
+          "metadata_title": "A Sầu Valley",
+          "metadata_qsrc": 0,
+          "metadata_qtgt": 15,
+          "metadata_qsrc_name": "thung lũng A Sầu",
+          "metadata_qtgt_name": "Route 548",
+          "metadata_hop": 0,
+          "metadata_composed_only": false,
+          "metadata_gold_primitive": "no-relation",
+          "metadata_certificate_primitive": null,
+          "metadata_certificate_goldread_named": false,
+          "metadata_raw_named": true,
+          "metadata_verifier_related": true,
+          "metadata_conf_verbalized": 1.0,
+          "metadata_conf_sc_margin": 1.0,
+          "metadata_conf_ptrue": 1.0,
+          "metadata_conf_negent": 1.0,
+          "metadata_conf_verifier": 1.0,
+          "metadata_conf_selfverify": 1.0,
+          "metadata_sc_semantic_entropy": 0.0,
+          "metadata_n_extracted_edges": 2,
+          "metadata_certificate_info": null
+        }
+      ]
+    },
+    {
+      "dataset": "locatedin_present",
+      "examples": [
+        {
+          "input": "Cornelius Ryan's A Bridge Too Far gives an account of Operation Market Garden, a failed Allied attempt to break through German lines at Arnhem in the occupied Netherlands during World War II. The title of the book comes from a comment made by British Lieutenant General Frederick Browning, deputy commander of the First Allied Airborne Army, who told Field Marshal Bernard Montgomery before the operation,\" I think we may be going a bridge too far.\" Drawing on a wide variety of sources, Ryan also documented his account of the 1944 battle with pictures and maps and included a section on the survivors, “Soldiers and Civilians–What They Do Today”. One particular focus was on the tactical mistakes made in planning the operation. Until Ryan's book, Market Garden had been a classic example of victors writing the history. Popular accounts of World War II usually tended not to mention the battle at all or put Montgomery's spin on it as being a\" partial success\". The 1974 book was published by Simon & Schuster in New York and by Hamish Hamilton in London. There were frequent later editions, and a film based on it was released in 1977.  || Q: what is the geographic relationship of Market Garden to Netherlands?",
+          "output": "located in",
+          "predict_certificate": "ABSTAIN",
+          "predict_certificate_goldread": "located in",
+          "predict_conf_thresh_verbalized": "located in",
+          "predict_conf_thresh_sc_margin": "located in",
+          "predict_conf_thresh_ptrue": "located in",
+          "predict_conf_thresh_negent": "located in",
+          "predict_queryside_verifier": "ABSTAIN",
+          "predict_queryside_selfverify": "located in",
+          "predict_commit_argmax": "located in",
+          "predict_pot": "located in",
+          "predict_sc": "located in",
+          "metadata_slice": "re-docred",
+          "metadata_regime": "held_out",
+          "metadata_is_absent": false,
+          "metadata_reader": "google/gemini-3.1-flash-lite",
+          "metadata_doc_id": "re-docred::A Bridge Too Far (book)",
+          "metadata_title": "A Bridge Too Far (book)",
+          "metadata_qsrc": 15,
+          "metadata_qtgt": 6,
+          "metadata_qsrc_name": "Market Garden",
+          "metadata_qtgt_name": "Netherlands",
+          "metadata_hop": 2,
+          "metadata_composed_only": false,
+          "metadata_gold_primitive": "located_in",
+          "metadata_certificate_primitive": null,
+          "metadata_certificate_goldread_named": true,
+          "metadata_raw_named": true,
+          "metadata_verifier_related": false,
+          "metadata_conf_verbalized": 1.0,
+          "metadata_conf_sc_margin": 1.0,
+          "metadata_conf_ptrue": 1.0,
+          "metadata_conf_negent": 1.0,
+          "metadata_conf_verifier": 1.0,
+          "metadata_conf_selfverify": 1.0,
+          "metadata_sc_semantic_entropy": 0.0,
+          "metadata_n_extracted_edges": 1,
+          "metadata_certificate_info": null
+        },
+        {
+          "input": "Aalborg County () is a former province in Denmark, located in north-eastern Jutland around the eastern approach to the Limfjord. Aalborg County was established in 1793 and abolished in 1970 when it merged with Hjørring County forming the new North Jutland County. The region belonged to Himmersyssel during the Middle Ages, with the exception of Kær Herred-located north of the Limfjord-which belonged to Vendsyssel. In 1542, the north Jutland region was reorganised as Aalborghus Len. This province was divided in 1662 forming Aalborghus County and Aastrup, Sejlstrup and Børglum County. The latter province was divided again in 1793 with the bulk of its territory being reorganized as Hjørring County. Smaller parts of the province became parts of the counties of Thisted and Aalborg. This division lasted from 1793 to 1970 when the two counties merged, forming the new North Jutland County. Aalborg County featured the market towns (købstæder) of Aalborg, Løgstør, Nibe, and Nørresundby.  || Q: what is the geographic relationship of Aalborg to Denmark?",
+          "output": "located in",
+          "predict_certificate": "ABSTAIN",
+          "predict_certificate_goldread": "located in",
+          "predict_conf_thresh_verbalized": "located in",
+          "predict_conf_thresh_sc_margin": "located in",
+          "predict_conf_thresh_ptrue": "located in",
+          "predict_conf_thresh_negent": "located in",
+          "predict_queryside_verifier": "located in",
+          "predict_queryside_selfverify": "located in",
+          "predict_commit_argmax": "located in",
+          "predict_pot": "located in",
+          "predict_sc": "located in",
+          "metadata_slice": "re-docred",
+          "metadata_regime": "held_out",
+          "metadata_is_absent": false,
+          "metadata_reader": "google/gemini-3.1-flash-lite",
+          "metadata_doc_id": "re-docred::Aalborg County",
+          "metadata_title": "Aalborg County",
+          "metadata_qsrc": 20,
+          "metadata_qtgt": 1,
+          "metadata_qsrc_name": "Aalborg",
+          "metadata_qtgt_name": "Denmark",
+          "metadata_hop": 2,
+          "metadata_composed_only": false,
+          "metadata_gold_primitive": "located_in",
+          "metadata_certificate_primitive": null,
+          "metadata_certificate_goldread_named": true,
+          "metadata_raw_named": true,
+          "metadata_verifier_related": true,
+          "metadata_conf_verbalized": 1.0,
+          "metadata_conf_sc_margin": 1.0,
+          "metadata_conf_ptrue": 1.0,
+          "metadata_conf_negent": 1.0,
+          "metadata_conf_verifier": 1.0,
+          "metadata_conf_selfverify": 1.0,
+          "metadata_sc_semantic_entropy": 0.0,
+          "metadata_n_extracted_edges": 6,
+          "metadata_certificate_info": null
+        },
+        {
+          "input": "The Immigration Depot (, Aapravasi Ghat) is a building complex located in Port Louis on the Indian Ocean island of Mauritius, the first British colony to receive indentured, or contracted, labour workforce from India. From 1849 to 1923, half a million Indian indentured labourers passed through the Immigration Depot, to be transported to plantations throughout the British Empire. The large-scale migration of the laborers left an indelible mark on the societies of many former British colonies, with Indians constituting a substantial proportion of their national populations. In Mauritius alone, 68 percent of the current total population is of Indian ancestry. The Immigration Depot has thus become an important reference point in the history and cultural identity of Mauritius. Unchecked infrastructural development in the mid-20th century means that only the partial remains of three stone buildings from the entire complex have survived. These are now protected as a national monument, under the Mauritian national heritage legislation. The Immigration Depot's role in social history was recognized by UNESCO when it was declared a World Heritage Site in 2006. The site is under the management  || Q: what is the geographic relationship of Aapravasi Ghat to Mauritian?",
+          "output": "located in",
+          "predict_certificate": "ABSTAIN",
+          "predict_certificate_goldread": "located in",
+          "predict_conf_thresh_verbalized": "located in",
+          "predict_conf_thresh_sc_margin": "located in",
+          "predict_conf_thresh_ptrue": "located in",
+          "predict_conf_thresh_negent": "located in",
+          "predict_queryside_verifier": "located in",
+          "predict_queryside_selfverify": "located in",
+          "predict_commit_argmax": "located in",
+          "predict_pot": "located in",
+          "predict_sc": "located in",
+          "metadata_slice": "re-docred",
+          "metadata_regime": "held_out",
+          "metadata_is_absent": false,
+          "metadata_reader": "google/gemini-3.1-flash-lite",
+          "metadata_doc_id": "re-docred::Aapravasi Ghat",
+          "metadata_title": "Aapravasi Ghat",
+          "metadata_qsrc": 1,
+          "metadata_qtgt": 16,
+          "metadata_qsrc_name": "Aapravasi Ghat",
+          "metadata_qtgt_name": "Mauritian",
+          "metadata_hop": 2,
+          "metadata_composed_only": false,
+          "metadata_gold_primitive": "located_in",
+          "metadata_certificate_primitive": null,
+          "metadata_certificate_goldread_named": true,
+          "metadata_raw_named": true,
+          "metadata_verifier_related": true,
+          "metadata_conf_verbalized": 1.0,
+          "metadata_conf_sc_margin": 1.0,
+          "metadata_conf_ptrue": 1.0,
+          "metadata_conf_negent": 1.0,
+          "metadata_conf_verifier": 0.9,
+          "metadata_conf_selfverify": 1.0,
+          "metadata_sc_semantic_entropy": 0.0,
+          "metadata_n_extracted_edges": 2,
+          "metadata_certificate_info": null
+        }
+      ]
+    }
+  ]
+}

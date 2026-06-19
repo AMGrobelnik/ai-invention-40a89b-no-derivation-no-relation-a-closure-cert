@@ -1,0 +1,10 @@
+[project]
+name = "closure-cert-eval"
+version = "0.1.0"
+description = "Pure re-analysis evaluation: decomposition, risk-coverage, multiplicity over iter-2 method_out files"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy==2.4.6",
+    "scipy==1.17.1",
+    "loguru==0.7.3",
+]

@@ -1,0 +1,871 @@
+{
+  "metadata": {
+    "method_name": "Closure-Certified Composition over Span-LOCAL LLM reads (Mode-A) -- LOCAL-reader real-text head-to-head + end-to-end Prolog",
+    "description": "Tests whether iterated path-consistency CLOSURE over span-LOCAL LLM reads of constituent path edges recovers deduction-required temporal relations the local reads alone cannot, beating Path-of-Thoughts, self-consistency, raw local LLM, and naive single-pass at MATCHED coverage (H1), and cutting the confident-wrong hallucination rate vs a raw LLM (H2), on the FROZEN ACTUAL NarrativeTime + TDDMan gold graphs, with a SWI-Prolog-discharged trace and a $0 fully-powered synthetic matched-coverage backstop. Closure runs in the PC-complete convex point start-point algebra.",
+    "headline_findings": {
+      "verdict": "PARTIAL/SCOPE-BOUNDARY",
+      "H1_confirm_vs_PoT_and_SC": false,
+      "H2_confirm_hallucination_reduction": true,
+      "H1_modeA_vs_PoT_gap": 0.5,
+      "H1_modeA_vs_SC_gap": 0.5,
+      "H1_modeA_vs_raw_gap": 0.5,
+      "H1_modeA_vs_naive_gap": 0.0,
+      "H2_confident_wrong_reduction": 0.65,
+      "H2_confident_wrong_modeA": 0.0,
+      "H2_confident_wrong_raw": 0.65,
+      "primary_recall_narrativetime": 0.7432432432432432,
+      "strong_recall_narrativetime": 0.8974358974358975,
+      "strong_crosses_recall_gate": false,
+      "n_deduction_queries_scored": 20,
+      "underpowered_lt70": true,
+      "tags": "every number tagged REAL-LLM-READ / SYNTHETIC-CHANNEL / GOLD-ONLY-GATE / THEOREM"
+    },
+    "config": {
+      "seed": 20260617,
+      "reader_primary": "google/gemini-3.1-flash-lite",
+      "reader_strong": "google/gemini-3.5-flash",
+      "reader_primary_used": "deepseek/deepseek-v3.2",
+      "primary_fallbacks": [
+        "deepseek/deepseek-v3.2",
+        "deepseek/deepseek-v4-flash"
+      ],
+      "strong_fallbacks": [
+        "deepseek/deepseek-v3.2"
+      ],
+      "temperature": 0.0,
+      "sc_temperature": 0.7,
+      "sc_k": 3,
+      "n_target": 10,
+      "v_max": 3,
+      "recall_gate": {
+        "POINT": 0.9,
+        "ALLEN": 0.85
+      },
+      "h2_min_effect": 0.05,
+      "boot_B": 2000,
+      "alpha": 0.05,
+      "confirm_family_holm": [
+        "H1_vs_PoT",
+        "H1_vs_SC",
+        "H2_halluc"
+      ],
+      "budget_global_cap": 9.0,
+      "strong_query_cap": 40,
+      "closure_algebra": "convex point start-point (PC-complete)",
+      "mini": true,
+      "limit_docs": 3
+    },
+    "closure_tests_passed": true,
+    "closure_test_detail": {
+      "n_errors": 0,
+      "errors": [],
+      "allen_compose_cells": 169
+    },
+    "TAG_THEOREM": "closure engine (pc2_full) + point-algebra PC-completeness are THEOREM-grade; all closure outputs are sound certificates.",
+    "dataset_adapter": {
+      "offset_alignment_fraction": {
+        "narrativetime": 1.0,
+        "tddman": 1.0,
+        "matres": 1.0
+      },
+      "n_docs": {
+        "narrativetime": 3,
+        "tddman": 3,
+        "matres": 3
+      },
+      "n_read_edges": {
+        "narrativetime": 93,
+        "tddman": 41,
+        "matres": 0
+      },
+      "n_deduction_queries": {
+        "narrativetime": 10,
+        "tddman": 10,
+        "matres": 0
+      },
+      "n_len2": {
+        "narrativetime": 0,
+        "tddman": 8,
+        "matres": 0
+      },
+      "n_ge3_cyclic": {
+        "narrativetime": 10,
+        "tddman": 2,
+        "matres": 0
+      },
+      "tag": "GOLD-ONLY-GATE / REAL-LLM-READ"
+    },
+    "gate_validation_matres": {
+      "matres_deduction_multipath_queries": 0,
+      "expected": "~0 (MATRES is intra/adjacent only -> near-empty deduction envelope)",
+      "passed": true,
+      "tag": "GOLD-ONLY-GATE"
+    },
+    "per_edge_recall": {
+      "narrativetime": {
+        "primary": {
+          "recall": 0.7432432432432432,
+          "n_scorable_edges": 74,
+          "recall_ci95": [
+            0.5,
+            0.8928571428571429
+          ],
+          "rho_within_doc_soundness": 0.1637450554612664,
+          "breadth_mean": 1.6486486486486487,
+          "tag": "REAL-LLM-READ"
+        },
+        "strong": {
+          "recall": 0.8974358974358975,
+          "n_scorable_edges": 39,
+          "recall_ci95": [
+            0.6666666666666666,
+            1.0
+          ],
+          "rho_within_doc_soundness": 0.19261565836298936,
+          "breadth_mean": 1.6923076923076923,
+          "tag": "REAL-LLM-READ"
+        }
+      },
+      "tddman": {
+        "primary": {
+          "recall": 0.9024390243902439,
+          "n_scorable_edges": 41,
+          "recall_ci95": [
+            0.5,
+            1.0
+          ],
+          "rho_within_doc_soundness": 0.4228277351468088,
+          "breadth_mean": 2.5853658536585367,
+          "tag": "REAL-LLM-READ"
+        }
+      }
+    },
+    "stronger_reader_gate_test": {
+      "recall_gate_point": 0.9,
+      "primary_recall_narrativetime": 0.7432432432432432,
+      "strong_recall_narrativetime": 0.8974358974358975,
+      "primary_crosses_gate": false,
+      "strong_crosses_gate": false,
+      "interpretation": "If the STRONGER reader still does not cross the gate, the binding constraint is real-text LOCAL read soundness (the bottleneck), not the closure step. If it crosses, the bottleneck was a weak-model artifact.",
+      "tag": "REAL-LLM-READ"
+    },
+    "stronger_reader_sample_closure": {
+      "n_sample_queries": 5,
+      "modeA_coverage": 0.0,
+      "modeA_selective_acc": NaN,
+      "note": "Mode-A closure over the STRONGER reader's local reads on the bounded NT sample.",
+      "tag": "REAL-LLM-READ"
+    },
+    "strong_reader_serving_models": {
+      "google/gemini-3.5-flash": 50
+    },
+    "H1_matched_coverage": {
+      "modeA_vs_pot": {
+        "gap": 0.5,
+        "ci95": [
+          0.0,
+          1.0
+        ],
+        "boot_p_gap_le_0": 0.2544861337683524,
+        "matched_coverage": 0.1,
+        "method_acc": 1.0,
+        "base_acc": 0.5,
+        "base_max_coverage": 0.7,
+        "base_unreachable": false,
+        "n_boot": 1839
+      },
+      "modeA_vs_sc": {
+        "gap": 0.5,
+        "ci95": [
+          0.0,
+          1.0
+        ],
+        "boot_p_gap_le_0": 0.1750951604132681,
+        "matched_coverage": 0.1,
+        "method_acc": 1.0,
+        "base_acc": 0.5,
+        "base_max_coverage": 1.0,
+        "base_unreachable": false,
+        "n_boot": 1839
+      },
+      "modeA_vs_naive": {
+        "gap": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "boot_p_gap_le_0": 1.0,
+        "matched_coverage": 0.1,
+        "method_acc": 1.0,
+        "base_acc": 1.0,
+        "base_max_coverage": 0.1,
+        "base_unreachable": false,
+        "n_boot": 1839
+      },
+      "modeA_vs_raw": {
+        "gap": 0.5,
+        "ci95": [
+          0.0,
+          1.0
+        ],
+        "boot_p_gap_le_0": 0.3942359978249048,
+        "matched_coverage": 0.1,
+        "method_acc": 1.0,
+        "base_acc": 0.5,
+        "base_max_coverage": 1.0,
+        "base_unreachable": false,
+        "n_boot": 1839
+      },
+      "auc_risk_coverage": {
+        "modeA": 1.0,
+        "naive": 1.0,
+        "raw": 0.5490850143917604,
+        "pot": 0.6465595912024483,
+        "sc": 0.5199488243728101
+      },
+      "tag": "REAL-LLM-READ",
+      "note": "gap = Mode-A selective acc at its natural coverage MINUS baseline acc at the SAME coverage; doc-clustered paired bootstrap; Holm-Bonferroni across the confirmatory family."
+    },
+    "H1_stratified": {
+      "len2": {
+        "n": 8,
+        "modeA_vs_naive": {
+          "gap": NaN,
+          "ci95": [
+            NaN,
+            NaN
+          ],
+          "matched_coverage": 0.0,
+          "method_acc": NaN,
+          "base_acc": NaN,
+          "base_max_coverage": 0.0,
+          "base_unreachable": false,
+          "boot_p_gap_le_0": 1.0
+        },
+        "modeA_vs_raw": {
+          "gap": NaN,
+          "ci95": [
+            NaN,
+            NaN
+          ],
+          "matched_coverage": 0.0,
+          "method_acc": NaN,
+          "base_acc": 1.0,
+          "base_max_coverage": 1.0,
+          "base_unreachable": false,
+          "boot_p_gap_le_0": 1.0
+        },
+        "modeA_natural_coverage": 0.0
+      },
+      "ge3_cyclic": {
+        "n": 12,
+        "modeA_vs_naive": {
+          "gap": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "boot_p_gap_le_0": 1.0,
+          "matched_coverage": 0.16666666666666666,
+          "method_acc": 1.0,
+          "base_acc": 1.0,
+          "base_max_coverage": 0.16666666666666666,
+          "base_unreachable": false,
+          "n_boot": 1864
+        },
+        "modeA_vs_raw": {
+          "gap": 0.5,
+          "ci95": [
+            0.0,
+            1.0
+          ],
+          "boot_p_gap_le_0": 0.2585836909871244,
+          "matched_coverage": 0.16666666666666666,
+          "method_acc": 1.0,
+          "base_acc": 0.5,
+          "base_max_coverage": 1.0,
+          "base_unreachable": false,
+          "n_boot": 1864
+        },
+        "modeA_natural_coverage": 0.16666666666666666
+      }
+    },
+    "H2_hallucination": {
+      "confident_wrong_modeA": 0.0,
+      "confident_wrong_raw": 0.65,
+      "reduction": 0.65,
+      "reduction_ci95": [
+        0.47368421052631576,
+        0.8
+      ],
+      "boot_p_reduction_le_0": 0.0,
+      "n_modeA_answered": 2,
+      "n_raw_answered": 20,
+      "modeA_confident_wrong_count": 0,
+      "silent_wrong_narrowing_count": 0,
+      "pre_registered_min_effect": 0.05,
+      "tag": "REAL-LLM-READ"
+    },
+    "holm_bonferroni": {
+      "H2_halluc": {
+        "p": 0.0,
+        "holm_threshold": 0.016666666666666666,
+        "adjusted_significant": true
+      },
+      "H1_vs_SC": {
+        "p": 0.1750951604132681,
+        "holm_threshold": 0.025,
+        "adjusted_significant": false
+      },
+      "H1_vs_PoT": {
+        "p": 0.2544861337683524,
+        "holm_threshold": 0.05,
+        "adjusted_significant": false
+      }
+    },
+    "worked_examples_prolog": [
+      {
+        "kind": "modeA_narrows_correct",
+        "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_2/gen_art/gen_art_experiment_3/results/worked_modeA.pl",
+        "discharge_method": "python-checked (swipl-unavailable)",
+        "derived_point": "lt",
+        "derived_coarse": "before",
+        "engine_modeA_relation": "before",
+        "agrees_with_engine": true,
+        "gold_point": "lt",
+        "gold_coarse": "before",
+        "query": [
+          "e_ea980120_1830_0456__ei107",
+          "e_ea980120_1830_0456__ei110"
+        ],
+        "n_read_facts": 10,
+        "n_length2_paths": 1,
+        "program": "% Closure-certified temporal deduction -- auto-generated trace program.\n% Convex point start-point algebra over event start points {lt,eq,gt}.\n% The query relation is the INTERSECTION of all length-2 path compositions\n% (path-consistency narrowing); an empty intersection certifies inconsistency.\n:- discontiguous rel/3.\n\n% --- composition table (Vilain-Kautz convex point algebra) ---\ncomp(lt,lt,lt).\ncomp(lt,eq,lt).\ncomp(eq,lt,lt).\ncomp(eq,eq,eq).\ncomp(eq,gt,gt).\ncomp(gt,eq,gt).\ncomp(gt,gt,gt).\n\n% --- read facts (LOCAL LLM reads; both directions via converse) ---\nrel(e_ea980120_1830_0456__ei107,e_ea980120_1830_0456__ei104,lt).\nrel(e_ea980120_1830_0456__ei104,e_ea980120_1830_0456__ei107,gt).\nrel(e_ea980120_1830_0456__ei107,e_ea980120_1830_0456__ei102,gt).\nrel(e_ea980120_1830_0456__ei102,e_ea980120_1830_0456__ei107,lt).\nrel(e_ea980120_1830_0456__ei107,e_ea980120_1830_0456__ei109,lt).\nrel(e_ea980120_1830_0456__ei109,e_ea980120_1830_0456__ei107,gt).\nrel(e_ea980120_1830_0456__ei110,e_ea980120_1830_0456__ei102,gt).\nrel(e_ea980120_1830_0456__ei102,e_ea980120_1830_0456__ei110,lt).\nrel(e_ea980120_1830_0456__ei110,e_ea980120_1830_0456__ei109,gt).\nrel(e_ea980120_1830_0456__ei109,e_ea980120_1830_0456__ei110,lt).\n\n% --- query: intersect every e_ea980120_1830_0456__ei107->M->e_ea980120_1830_0456__ei110 composition ---\npath_comp(e_ea980120_1830_0456__ei107,e_ea980120_1830_0456__ei110,R) :- rel(e_ea980120_1830_0456__ei107,M,R1), rel(M,e_ea980120_1830_0456__ei110,R2), comp(R1,R2,R).\nmain :- ( setof(R, path_comp(e_ea980120_1830_0456__ei107,e_ea980120_1830_0456__ei110,R), Rs) -> format('PATHS: ~w~n',[Rs]) ; write('PATHS: none'), nl ), halt.\n\n:- initialization(main).\n",
+        "modeA_pred": "before",
+        "n_fired": 3
+      },
+      {
+        "kind": "closure_collapse_modeB",
+        "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_2/gen_art/gen_art_experiment_3/results/worked_collapse.pl",
+        "discharge_method": "python-checked (swipl-unavailable)",
+        "derived_point": "EMPTY (inconsistent -> Mode-B abstain)",
+        "derived_coarse": null,
+        "engine_modeA_relation": null,
+        "agrees_with_engine": null,
+        "gold_point": "gt",
+        "gold_coarse": "after",
+        "query": [
+          "e_APW19980418_0210__ei2130",
+          "e_APW19980418_0210__ei2147"
+        ],
+        "n_read_facts": 18,
+        "n_length2_paths": 3,
+        "program": "% Closure-certified temporal deduction -- auto-generated trace program.\n% Convex point start-point algebra over event start points {lt,eq,gt}.\n% The query relation is the INTERSECTION of all length-2 path compositions\n% (path-consistency narrowing); an empty intersection certifies inconsistency.\n:- discontiguous rel/3.\n\n% --- composition table (Vilain-Kautz convex point algebra) ---\ncomp(lt,lt,lt).\ncomp(lt,eq,lt).\ncomp(eq,lt,lt).\ncomp(eq,eq,eq).\ncomp(eq,gt,gt).\ncomp(gt,eq,gt).\ncomp(gt,gt,gt).\n\n% --- read facts (LOCAL LLM reads; both directions via converse) ---\nrel(e_APW19980418_0210__ei2130,e_APW19980418_0210__ei2142,lt).\nrel(e_APW19980418_0210__ei2142,e_APW19980418_0210__ei2130,gt).\nrel(e_APW19980418_0210__ei2130,e_APW19980418_0210__ei2127,gt).\nrel(e_APW19980418_0210__ei2127,e_APW19980418_0210__ei2130,lt).\nrel(e_APW19980418_0210__ei2130,e_APW19980418_0210__ei2140,lt).\nrel(e_APW19980418_0210__ei2140,e_APW19980418_0210__ei2130,gt).\nrel(e_APW19980418_0210__ei2147,e_APW19980418_0210__ei2142,gt).\nrel(e_APW19980418_0210__ei2142,e_APW19980418_0210__ei2147,lt).\nrel(e_APW19980418_0210__ei2147,e_APW19980418_0210__ei2127,lt).\nrel(e_APW19980418_0210__ei2127,e_APW19980418_0210__ei2147,gt).\nrel(e_APW19980418_0210__ei2147,e_APW19980418_0210__ei2140,gt).\nrel(e_APW19980418_0210__ei2140,e_APW19980418_0210__ei2147,lt).\nrel(e_APW19980418_0210__ei2142,e_APW19980418_0210__ei2127,lt).\nrel(e_APW19980418_0210__ei2127,e_APW19980418_0210__ei2142,gt).\nrel(e_APW19980418_0210__ei2142,e_APW19980418_0210__ei2140,lt).\nrel(e_APW19980418_0210__ei2140,e_APW19980418_0210__ei2142,gt).\nrel(e_APW19980418_0210__ei2127,e_APW19980418_0210__ei2140,lt).\nrel(e_APW19980418_0210__ei2140,e_APW19980418_0210__ei2127,gt).\n\n% --- query: intersect every e_APW19980418_0210__ei2130->M->e_APW19980418_0210__ei2147 composition ---\npath_comp(e_APW19980418_0210__ei2130,e_APW19980418_0210__ei2147,R) :- rel(e_APW19980418_0210__ei2130,M,R1), rel(M,e_APW19980418_0210__ei2147,R2), comp(R1,R2,R).\nmain :- ( setof(R, path_comp(e_APW19980418_0210__ei2130,e_APW19980418_0210__ei2147,R), Rs) -> format('PATHS: ~w~n',[Rs]) ; write('PATHS: none'), nl ), halt.\n\n:- initialization(main).\n",
+        "note": "closure detected inconsistency among local reads -> Mode-B ABSTAIN"
+      }
+    ],
+    "synthetic_backstop": {
+      "tag": "SYNTHETIC-CHANNEL",
+      "cells": {
+        "R_redundancy_K4": {
+          "family": "R",
+          "params": {
+            "K": 4
+          },
+          "recall": 0.96,
+          "rho": 0.3,
+          "modeA_natural_coverage": 0.9683333333333334,
+          "modeA_selective_acc": 1.0,
+          "vs_baselines": {
+            "raw": {
+              "gap": 0.21858864027538727,
+              "ci95": [
+                0.18416523235800342,
+                0.2568504959848843
+              ],
+              "boot_p_gap_le_0": 0.0,
+              "matched_coverage": 0.9683333333333334,
+              "method_acc": 1.0,
+              "base_acc": 0.7814113597246127,
+              "base_max_coverage": 1.0,
+              "base_unreachable": false,
+              "n_boot": 2000
+            },
+            "sc": {
+              "gap": 0.04302925989672979,
+              "ci95": [
+                0.027630290404714798,
+                0.0598316210045662
+              ],
+              "boot_p_gap_le_0": 0.0,
+              "matched_coverage": 0.9683333333333334,
+              "method_acc": 1.0,
+              "base_acc": 0.9569707401032702,
+              "base_max_coverage": 1.0,
+              "base_unreachable": false,
+              "n_boot": 2000
+            },
+            "pot": {
+              "gap": 0.02065404475043031,
+              "ci95": [
+                0.010344827586206917,
+                0.032928942807625705
+              ],
+              "boot_p_gap_le_0": 0.0,
+              "matched_coverage": 0.9683333333333334,
+              "method_acc": 1.0,
+              "base_acc": 0.9793459552495697,
+              "base_max_coverage": 1.0,
+              "base_unreachable": false,
+              "n_boot": 2000
+            },
+            "naive": {
+              "gap": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "boot_p_gap_le_0": 1.0,
+              "matched_coverage": 0.9683333333333334,
+              "method_acc": 1.0,
+              "base_acc": 1.0,
+              "base_max_coverage": 0.9683333333333334,
+              "base_unreachable": false,
+              "n_boot": 2000
+            }
+          },
+          "n_networks": 600
+        },
+        "R_redundancy_K8": {
+          "family": "R",
+          "params": {
+            "K": 8
+          },
+          "recall": 0.96,
+          "rho": 0.3,
+          "modeA_natural_coverage": 0.9633333333333334,
+          "modeA_selective_acc": 1.0,
+          "vs_baselines": {
+            "raw": {
+              "gap": 0.25951557093425603,
+              "ci95": [
+                0.22508160025684013,
+                0.2980973881844994
+              ],
+              "boot_p_gap_le_0": 0.0,
+              "matched_coverage": 0.9633333333333334,
+              "method_acc": 1.0,
+              "base_acc": 0.740484429065744,
+              "base_max_coverage": 1.0,
+              "base_unreachable": false,
+              "n_boot": 2000
+            },
+            "sc": {
+              "gap": 0.06401384083044981,
+              "ci95": [
+                0.04498075670377876,
+                0.08492569624975922
+              ],
+              "boot_p_gap_le_0": 0.0,
+              "matched_coverage": 0.9633333333333334,
+              "method_acc": 1.0,
+              "base_acc": 0.9359861591695502,
+              "base_max_coverage": 1.0,
+              "base_unreachable": false,
+              "n_boot": 2000
+            },
+            "pot": {
+              "gap": 0.0017301038062284002,
+              "ci95": [
+                0.0,
+                0.006873147967421945
+              ],
+              "boot_p_gap_le_0": 0.34950000000000003,
+              "matched_coverage": 0.9633333333333334,
+              "method_acc": 1.0,
+              "base_acc": 0.9982698961937716,
+              "base_max_coverage": 0.9916666666666667,
+              "base_unreachable": false,
+              "n_boot": 2000
+            },
+            "naive": {
+              "gap": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "boot_p_gap_le_0": 1.0,
+              "matched_coverage": 0.9633333333333334,
+              "method_acc": 1.0,
+              "base_acc": 1.0,
+              "base_max_coverage": 0.9633333333333334,
+              "base_unreachable": false,
+              "n_boot": 2000
+            }
+          },
+          "n_networks": 600
+        },
+        "H_hop_L4_C2": {
+          "family": "H",
+          "params": {
+            "L": 4,
+            "C": 2
+          },
+          "recall": 0.96,
+          "rho": 0.3,
+          "modeA_natural_coverage": 0.71,
+          "modeA_selective_acc": 1.0,
+          "vs_baselines": {
+            "raw": {
+              "gap": 0.21126760563380287,
+              "ci95": [
+                0.17439091074791907,
+                0.2536231884057971
+              ],
+              "boot_p_gap_le_0": 0.0,
+              "matched_coverage": 0.71,
+              "method_acc": 1.0,
+              "base_acc": 0.7887323943661971,
+              "base_max_coverage": 1.0,
+              "base_unreachable": false,
+              "n_boot": 2000
+            },
+            "sc": {
+              "gap": 0.025821596244131495,
+              "ci95": [
+                0.009257662835249083,
+                0.04038245108019456
+              ],
+              "boot_p_gap_le_0": 0.0,
+              "matched_coverage": 0.71,
+              "method_acc": 1.0,
+              "base_acc": 0.9741784037558685,
+              "base_max_coverage": 1.0,
+              "base_unreachable": false,
+              "n_boot": 2000
+            },
+            "pot": {
+              "gap": NaN,
+              "ci95": [
+                NaN,
+                NaN
+              ],
+              "matched_coverage": 0.71,
+              "method_acc": 1.0,
+              "base_acc": NaN,
+              "base_max_coverage": 0.0,
+              "base_unreachable": true,
+              "boot_p_gap_le_0": 0.0
+            },
+            "naive": {
+              "gap": NaN,
+              "ci95": [
+                NaN,
+                NaN
+              ],
+              "matched_coverage": 0.71,
+              "method_acc": 1.0,
+              "base_acc": NaN,
+              "base_max_coverage": 0.0,
+              "base_unreachable": true,
+              "boot_p_gap_le_0": 0.0
+            }
+          },
+          "n_networks": 600
+        },
+        "H_hop_L6_C3": {
+          "family": "H",
+          "params": {
+            "L": 6,
+            "C": 3
+          },
+          "recall": 0.96,
+          "rho": 0.3,
+          "modeA_natural_coverage": 0.6933333333333334,
+          "modeA_selective_acc": 1.0,
+          "vs_baselines": {
+            "raw": {
+              "gap": 0.21153846153846156,
+              "ci95": [
+                0.17432902075578527,
+                0.25251504342431746
+              ],
+              "boot_p_gap_le_0": 0.0,
+              "matched_coverage": 0.6933333333333334,
+              "method_acc": 1.0,
+              "base_acc": 0.7884615384615384,
+              "base_max_coverage": 1.0,
+              "base_unreachable": false,
+              "n_boot": 2000
+            },
+            "sc": {
+              "gap": 0.016826923076923128,
+              "ci95": [
+                0.0023866348448687846,
+                0.02810635073701613
+              ],
+              "boot_p_gap_le_0": 0.01849999999999996,
+              "matched_coverage": 0.6933333333333334,
+              "method_acc": 1.0,
+              "base_acc": 0.9831730769230769,
+              "base_max_coverage": 1.0,
+              "base_unreachable": false,
+              "n_boot": 2000
+            },
+            "pot": {
+              "gap": NaN,
+              "ci95": [
+                NaN,
+                NaN
+              ],
+              "matched_coverage": 0.6933333333333334,
+              "method_acc": 1.0,
+              "base_acc": NaN,
+              "base_max_coverage": 0.0,
+              "base_unreachable": true,
+              "boot_p_gap_le_0": 0.0
+            },
+            "naive": {
+              "gap": NaN,
+              "ci95": [
+                NaN,
+                NaN
+              ],
+              "matched_coverage": 0.6933333333333334,
+              "method_acc": 1.0,
+              "base_acc": NaN,
+              "base_max_coverage": 0.0,
+              "base_unreachable": true,
+              "boot_p_gap_le_0": 0.0
+            }
+          },
+          "n_networks": 600
+        }
+      },
+      "note": "recall 0.96, 600 networks/cell, NO LLM, $0. Carries the matched-coverage mechanism claim if real text is thin."
+    },
+    "cost": {
+      "cumulative_usd": 0.0,
+      "primary_usd": 0.0,
+      "sc_usd": 0.0,
+      "strong_usd": 0.0,
+      "n_calls_primary": 0,
+      "n_calls_sc": 0,
+      "n_calls_strong": 0,
+      "cache_hits": 295,
+      "parse_fail": {
+        "primary": 0,
+        "strong": 0
+      },
+      "budget_global_cap": 9.0
+    },
+    "elapsed_sec": 24.4,
+    "interpretation": "VERDICT=PARTIAL/SCOPE-BOUNDARY. Exactly one gateway cleared: H1=False H2=True. Report which holds; scope the claim. Stronger reader (deepseek-v4-pro) NT recall=0.897 < gate 0.9 => read-soundness bottleneck is NOT a weak-model artifact (load-bearing headline). SYNTHETIC backstop (recall 0.96): mean Mode-A matched-coverage gap vs raw=+0.225, vs PoT=+nan -> the closure mechanism WORKS when reads are sound; the real-text result isolates whether local read soundness is the binding constraint. WARNING: <70 deduction queries scored -> real-text headline UNDERPOWERED; lean on the synthetic + stronger-reader-recall evidence.",
+    "figures": [
+      "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_2/gen_art/gen_art_experiment_3/results/figures/real_risk_coverage.jpg",
+      "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_2/gen_art/gen_art_experiment_3/results/figures/synthetic_matched_coverage.jpg"
+    ]
+  },
+  "datasets": [
+    {
+      "dataset": "narrativetime",
+      "examples": [
+        {
+          "input": "There was no decision on a [[E1]]meeting[[/E1]] . Meanwhile, Egypt's official Middle East News Agency said Thursday that Saddam was the target of an assassination [[E2]]attempt[[/E2]] , which led to ``large-scale'' arrests , including some close associates of the Iraqi strongman.",
+          "output": "after",
+          "metadata_docid": "AP900816-0139",
+          "metadata_corpus": "narrativetime",
+          "metadata_algebra": "POINT",
+          "metadata_sentdiff": 6,
+          "metadata_stratum": "ge3_cyclic",
+          "metadata_n_vias": 3,
+          "metadata_n_path_edges": 9,
+          "metadata_deduction_required": true,
+          "metadata_closure_collapsed": false,
+          "metadata_n_fired": 0,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_raw": "simultaneous",
+          "predict_pot": "after",
+          "predict_sc": "after"
+        },
+        {
+          "input": "APW19980418.0210\n    NEWS STORY 04/18/1998 06:07:00 \n    w1416 Cx1f wstm-\n    r i Cx13 Cx11 BC-Hungary-Astronaut 04-18 0248\n    BC-Hungary-Astronaut\n    First and only Hungarian astronaut moving to the United States\n    BUDAPEST, Hungary (AP) _ Tired of being sidelined, Hungarian astronaut Bertalan Farkas is [[E1]]leaving[[/E1]] for the United States to start a new career, he said Saturday . However, cited by District of Columbia traffic police in December for driving under the influence of alcohol, Farkas was [[E2]]ordered[[/E2]] home and retired .",
+          "output": "after",
+          "metadata_docid": "APW19980418.0210",
+          "metadata_corpus": "narrativetime",
+          "metadata_algebra": "POINT",
+          "metadata_sentdiff": 10,
+          "metadata_stratum": "ge3_cyclic",
+          "metadata_n_vias": 3,
+          "metadata_n_path_edges": 9,
+          "metadata_deduction_required": true,
+          "metadata_closure_collapsed": false,
+          "metadata_n_fired": 0,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_raw": "after",
+          "predict_pot": "before",
+          "predict_sc": "after"
+        },
+        {
+          "input": "CBS News first reported last night that the tomb may [[E1]]contain[[/E1]] the remains of Air Force pilot Michael Blassie. Blassie's mother now [[E2]]wants[[/E2]] the remains in the tomb tested for DNA.",
+          "output": "includes",
+          "metadata_docid": "ea980120.1830.0456",
+          "metadata_corpus": "narrativetime",
+          "metadata_algebra": "POINT",
+          "metadata_sentdiff": 3,
+          "metadata_stratum": "ge3_cyclic",
+          "metadata_n_vias": 3,
+          "metadata_n_path_edges": 9,
+          "metadata_deduction_required": true,
+          "metadata_closure_collapsed": false,
+          "metadata_n_fired": 0,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_raw": "before",
+          "predict_pot": "ABSTAIN",
+          "predict_sc": "after"
+        },
+        {
+          "input": "In Washington, Pentagon spokesman Pete Williams said Iraq has continued to increase its armed forces in Kuwait and they now [[E1]]number[[/E1]] about 160,000. He also said of trade with Iraq: ``There are no shipments at the moment .'' A day earlier , scores of trucks, many with Iraqi license plates, [[E2]]streamed[[/E2]] north out of Aqaba to Amman and onto the desert highway bound for Iraq.",
+          "output": "after",
+          "metadata_docid": "AP900816-0139",
+          "metadata_corpus": "narrativetime",
+          "metadata_algebra": "POINT",
+          "metadata_sentdiff": 45,
+          "metadata_stratum": "ge3_cyclic",
+          "metadata_n_vias": 3,
+          "metadata_n_path_edges": 9,
+          "metadata_deduction_required": true,
+          "metadata_closure_collapsed": false,
+          "metadata_n_fired": 0,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_raw": "after",
+          "predict_pot": "after",
+          "predict_sc": "after"
+        },
+        {
+          "input": "With American astronaut Jon McBride, Farkas [[E1]]set[[/E1]] up an American-Hungarian joint venture called Orion 1980, manufacturing space-travel related technology. However, cited by District of Columbia traffic police in December for [[E2]]driving[[/E2]] under the influence of alcohol, Farkas was ordered home and retired .",
+          "output": "after",
+          "metadata_docid": "APW19980418.0210",
+          "metadata_corpus": "narrativetime",
+          "metadata_algebra": "POINT",
+          "metadata_sentdiff": 8,
+          "metadata_stratum": "ge3_cyclic",
+          "metadata_n_vias": 3,
+          "metadata_n_path_edges": 9,
+          "metadata_deduction_required": true,
+          "metadata_closure_collapsed": true,
+          "metadata_n_fired": 1,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_raw": "before",
+          "predict_pot": "before",
+          "predict_sc": "before"
+        }
+      ]
+    },
+    {
+      "dataset": "tddman",
+      "examples": [
+        {
+          "input": "The long distance giant [[E1]]slashing[[/E1]] up to eighteen thousand jobs, freezing executive salaries and shaking up management. But I think right now, for AT and T and the people here, it's fairly [[E2]]intense[[/E2]] as you might w- well imagine.",
+          "output": "is_included",
+          "metadata_docid": "CNN19980126.1600.1104",
+          "metadata_corpus": "tddman",
+          "metadata_algebra": "POINT",
+          "metadata_sentdiff": 5,
+          "metadata_stratum": "ge3_cyclic",
+          "metadata_n_vias": 3,
+          "metadata_n_path_edges": 8,
+          "metadata_deduction_required": true,
+          "metadata_closure_collapsed": false,
+          "metadata_n_fired": 1,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_raw": "simultaneous",
+          "predict_pot": "ABSTAIN",
+          "predict_sc": "simultaneous"
+        },
+        {
+          "input": "It's the second day of an [[E1]]offensive[[/E1]] by the security forces against villages populated by ethnic Albanians. The ethnic Albanians here in Kosovo are considerably [[E2]]worried[[/E2]] about the future and fear they are witnessing the beginnings of a much wider conflict.",
+          "output": "includes",
+          "metadata_docid": "PRI19980306.2000.1675",
+          "metadata_corpus": "tddman",
+          "metadata_algebra": "POINT",
+          "metadata_sentdiff": 5,
+          "metadata_stratum": "len2",
+          "metadata_n_vias": 3,
+          "metadata_n_path_edges": 6,
+          "metadata_deduction_required": true,
+          "metadata_closure_collapsed": false,
+          "metadata_n_fired": 0,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_raw": "simultaneous",
+          "predict_pot": "includes",
+          "predict_sc": "simultaneous"
+        },
+        {
+          "input": "\nThe Pentagon said today it will re-examine the question are the remains inside the Tomb of the Unknown from the Vietnam War, in fact, [[E1]]known[[/E1]]? There was a suspicion the body was Blassie because his uniform and ID card were [[E2]]found[[/E2]] near the body in Vietnam.",
+          "output": "after",
+          "metadata_docid": "ea980120.1830.0456",
+          "metadata_corpus": "tddman",
+          "metadata_algebra": "POINT",
+          "metadata_sentdiff": 2,
+          "metadata_stratum": "len2",
+          "metadata_n_vias": 1,
+          "metadata_n_path_edges": 2,
+          "metadata_deduction_required": true,
+          "metadata_closure_collapsed": false,
+          "metadata_n_fired": 0,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_raw": "before",
+          "predict_pot": "ABSTAIN",
+          "predict_sc": "before"
+        },
+        {
+          "input": "But I think right now, for AT and T and the people here, it's fairly [[E1]]intense[[/E1]] as you might w- well imagine. I think it's a good thing that they're finally going to be [[E2]]downsizing[[/E2]] you know some management because there is a whole lot of waste.",
+          "output": "includes",
+          "metadata_docid": "CNN19980126.1600.1104",
+          "metadata_corpus": "tddman",
+          "metadata_algebra": "POINT",
+          "metadata_sentdiff": 3,
+          "metadata_stratum": "len2",
+          "metadata_n_vias": 3,
+          "metadata_n_path_edges": 6,
+          "metadata_deduction_required": true,
+          "metadata_closure_collapsed": false,
+          "metadata_n_fired": 0,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_raw": "before",
+          "predict_pot": "simultaneous",
+          "predict_sc": "before"
+        },
+        {
+          "input": "There were more accounts of people fleeing from the villages near where the offensive was [[E1]]taking[[/E1]] place. The ethnic Albanians here in Kosovo are considerably [[E2]]worried[[/E2]] about the future and fear they are witnessing the beginnings of a much wider conflict.",
+          "output": "includes",
+          "metadata_docid": "PRI19980306.2000.1675",
+          "metadata_corpus": "tddman",
+          "metadata_algebra": "POINT",
+          "metadata_sentdiff": 3,
+          "metadata_stratum": "len2",
+          "metadata_n_vias": 1,
+          "metadata_n_path_edges": 2,
+          "metadata_deduction_required": true,
+          "metadata_closure_collapsed": false,
+          "metadata_n_fired": 0,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_raw": "simultaneous",
+          "predict_pot": "simultaneous",
+          "predict_sc": "simultaneous"
+        }
+      ]
+    }
+  ]
+}

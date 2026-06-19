@@ -1,0 +1,4167 @@
+{
+  "metadata": {
+    "method_name": "Mode-A: closure-certified composition over disjunctive LLM reads (matched-coverage showdown)",
+    "evidence_tag": "REAL-LLM-READ-ON-SYNTHETIC",
+    "experiment": "RCC-8 real-LLM matched-coverage arm + 3-point algebra-richness scaling curve (point 3 -> RCC-8 8 -> Allen 13). experiment_iter3 gen_art_experiment_3.",
+    "config": {
+      "seed": 20260617,
+      "model_primary": "google/gemini-3.1-flash-lite",
+      "model_used": "google/gemini-3.1-flash-lite",
+      "model_fallbacks": [
+        "deepseek/deepseek-v3.2",
+        "deepseek/deepseek-v4-flash"
+      ],
+      "temperature": 0.0,
+      "temp_sample": 0.7,
+      "operating_knob": "S3_plausible",
+      "knob_sweep": {
+        "S3_plausible": {
+          "per_edge_recall": 1.0,
+          "n_edges": 1500
+        },
+        "S4_sound": {
+          "per_edge_recall": 1.0,
+          "n_edges": 1500
+        },
+        "S5_maximal": {
+          "per_edge_recall": 1.0,
+          "n_edges": 1500
+        }
+      },
+      "recall_gate_point": 0.9,
+      "recall_gate_allen": 0.85,
+      "recall_gate_rcc8": 0.85,
+      "folds_used": [
+        "dev"
+      ],
+      "algebras": [
+        "point",
+        "rcc8",
+        "allen"
+      ],
+      "n_networks": {
+        "point": 1260,
+        "allen": 1260,
+        "rcc8": 210
+      },
+      "comparison_cells": [
+        "red_P1_L2",
+        "red_P2_L2",
+        "red_P3_L2",
+        "red_P4_L2",
+        "red_P6_L2",
+        "red_P8_L2",
+        "hop_L2_P2",
+        "hop_L3_P2",
+        "hop_L4_P2",
+        "hop_L5_P2",
+        "cyc_mu0",
+        "cyc_mu1",
+        "cyc_mu2",
+        "cyc_mu3"
+      ],
+      "bite_pool_cells": [
+        "red_P2_L2",
+        "red_P3_L2",
+        "red_P4_L2",
+        "red_P6_L2",
+        "red_P8_L2",
+        "hop_L2_P2",
+        "hop_L3_P2",
+        "cyc_mu1",
+        "cyc_mu2",
+        "cyc_mu3"
+      ],
+      "baselines": [
+        "cot",
+        "pot",
+        "raw",
+        "sc"
+      ],
+      "sc_k": 5,
+      "linc_m": 3,
+      "ilp_m": 5,
+      "pot_path_cap": 5,
+      "bootstrap_B": 2000,
+      "cache_roundtrip_ok": true,
+      "mini": false,
+      "arm_provenance": {
+        "point": "iter-2 experiment_iter2_dir3 (cache replay; identical numbers)",
+        "allen": "iter-2 experiment_iter2_dir3 (cache replay; identical numbers)",
+        "rcc8": "THIS iter-3 run (fresh real-LLM reads on synthetic RCC-8)",
+        "note": "All three arms: SAME model google/gemini-3.1-flash-lite, temp 0, knob S4_sound, seed 20260617, matched-coverage protocol, paired-bootstrap + Holm. Legitimate apples-to-apples; point/allen merged from ..."
+      }
+    },
+    "data_provenance": {
+      "source": "gen_art_dataset_2 synthetic QCN backbone (consistent-by-construction)",
+      "note": "gold atomic relations read off the realization model; query DEDUCTION-REQUIRED"
+    },
+    "analysis_by_algebra": {
+      "point": {
+        "H1_bite_bearing_pool": {
+          "target_coverage": 0.6,
+          "n_networks": 900,
+          "selective_accuracy_ref": 1.0,
+          "leaderboard": {
+            "modeA": {
+              "coverage": 0.6,
+              "selective_accuracy": 1.0,
+              "n": 900
+            },
+            "pot": {
+              "coverage_matched": 0.6,
+              "selective_accuracy": 0.9574074074074074,
+              "gap_vs_ref": 0.042592592592592626,
+              "ci95": [
+                0.026266416510318913,
+                0.060377693622440415
+              ],
+              "p_one_sided": 0.0,
+              "gap_rematch": 0.042592592592592626,
+              "ci95_rematch": [
+                0.03703703703703709,
+                0.07592592592592595
+              ],
+              "ci95_bonferroni_m2": [
+                0.024207443261713042,
+                0.06295126700124136
+              ]
+            },
+            "sc": {
+              "coverage_matched": 0.6,
+              "selective_accuracy": 0.8537037037037037,
+              "gap_vs_ref": 0.14629629629629626,
+              "ci95": [
+                0.11719123243585773,
+                0.17681154361166604
+              ],
+              "p_one_sided": 0.0,
+              "gap_rematch": 0.14629629629629626,
+              "ci95_rematch": [
+                0.12777777777777777,
+                0.18888888888888888
+              ],
+              "ci95_bonferroni_m2": [
+                0.11380487566679241,
+                0.1811633585381223
+              ]
+            },
+            "raw": {
+              "coverage_matched": 0.6,
+              "selective_accuracy": 0.9296296296296296,
+              "gap_vs_ref": 0.07037037037037042,
+              "ci95": [
+                0.05009276437847865,
+                0.09158951376364066
+              ],
+              "p_one_sided": 0.0,
+              "gap_rematch": 0.07037037037037042,
+              "ci95_rematch": [
+                0.05180555555555552,
+                0.09259259259259256
+              ]
+            },
+            "cot": {
+              "coverage_matched": 0.6,
+              "selective_accuracy": 0.9111111111111111,
+              "gap_vs_ref": 0.0888888888888889,
+              "ci95": [
+                0.06568745852687462,
+                0.1135531135531136
+              ],
+              "p_one_sided": 0.0,
+              "gap_rematch": 0.0888888888888889,
+              "ci95_rematch": [
+                0.07592592592592595,
+                0.12592592592592589
+              ]
+            },
+            "linc": {
+              "coverage_matched": 0.6,
+              "selective_accuracy": 0.8611111111111112,
+              "gap_vs_ref": 0.13888888888888884,
+              "ci95": [
+                0.1098696461824954,
+                0.16920428712253802
+              ],
+              "p_one_sided": 0.0,
+              "gap_rematch": 0.13888888888888884,
+              "ci95_rematch": [
+                0.13148148148148153,
+                0.19259259259259254
+              ]
+            },
+            "naive": {
+              "coverage": 0.46555555555555556,
+              "selective_accuracy": 1.0,
+              "resolve_correct_rate": 0.46555555555555556
+            },
+            "off": {
+              "coverage": 0.0,
+              "selective_accuracy": NaN,
+              "resolve_correct_rate": 0.0
+            },
+            "ilp": {
+              "coverage_matched": 0.6,
+              "selective_accuracy": 0.8555555555555555,
+              "gap_vs_ref": 0.1444444444444445,
+              "ci95": [
+                0.11586313502673795,
+                0.174859867026295
+              ],
+              "p_one_sided": 0.0
+            },
+            "gold_full": {
+              "coverage": 0.6,
+              "selective_accuracy": 1.0,
+              "resolve_correct_rate": 0.6
+            },
+            "gold_naive": {
+              "coverage": 0.46555555555555556,
+              "selective_accuracy": 1.0,
+              "resolve_correct_rate": 0.46555555555555556
+            }
+          },
+          "comparisons": {
+            "pot": {
+              "gap": 0.042592592592592626,
+              "ci95": [
+                0.026266416510318913,
+                0.060377693622440415
+              ],
+              "p_one_sided": 0.0,
+              "selacc_a": 1.0,
+              "selacc_b": 0.9574074074074074,
+              "cov_a": 0.6,
+              "cov_b": 0.6,
+              "n_boot": 2000
+            },
+            "sc": {
+              "gap": 0.14629629629629626,
+              "ci95": [
+                0.11719123243585773,
+                0.17681154361166604
+              ],
+              "p_one_sided": 0.0,
+              "selacc_a": 1.0,
+              "selacc_b": 0.8537037037037037,
+              "cov_a": 0.6,
+              "cov_b": 0.6,
+              "n_boot": 2000
+            },
+            "raw": {
+              "gap": 0.07037037037037042,
+              "ci95": [
+                0.05009276437847865,
+                0.09158951376364066
+              ],
+              "p_one_sided": 0.0,
+              "selacc_a": 1.0,
+              "selacc_b": 0.9296296296296296,
+              "cov_a": 0.6,
+              "cov_b": 0.6,
+              "n_boot": 2000
+            },
+            "cot": {
+              "gap": 0.0888888888888889,
+              "ci95": [
+                0.06568745852687462,
+                0.1135531135531136
+              ],
+              "p_one_sided": 0.0,
+              "selacc_a": 1.0,
+              "selacc_b": 0.9111111111111111,
+              "cov_a": 0.6,
+              "cov_b": 0.6,
+              "n_boot": 2000
+            },
+            "linc": {
+              "gap": 0.13888888888888884,
+              "ci95": [
+                0.1098696461824954,
+                0.16920428712253802
+              ],
+              "p_one_sided": 0.0,
+              "selacc_a": 1.0,
+              "selacc_b": 0.8611111111111112,
+              "cov_a": 0.6,
+              "cov_b": 0.6,
+              "n_boot": 2000
+            }
+          }
+        },
+        "H1_all_comparison_pool": {
+          "target_coverage": 0.4873015873015873,
+          "n_networks": 1260,
+          "selective_accuracy_ref": 1.0,
+          "leaderboard": {
+            "modeA": {
+              "coverage": 0.4873015873015873,
+              "selective_accuracy": 1.0,
+              "n": 1260
+            },
+            "pot": {
+              "coverage_matched": 0.4873015873015873,
+              "selective_accuracy": 0.9446254071661238,
+              "gap_vs_ref": 0.055374592833876246,
+              "ci95": [
+                0.037766056324937215,
+                0.07388337311462086
+              ],
+              "p_one_sided": 0.0,
+              "gap_rematch": 0.055374592833876246,
+              "ci95_rematch": [
+                0.055374592833876246,
+                0.09609120521172643
+              ],
+              "ci95_bonferroni_m2": [
+                0.035654859357131655,
+                0.0765639352036741
+              ]
+            },
+            "sc": {
+              "coverage_matched": 0.4873015873015873,
+              "selective_accuracy": 0.8550488599348535,
+              "gap_vs_ref": 0.14495114006514653,
+              "ci95": [
+                0.11793980755970669,
+                0.17314454799046267
+              ],
+              "p_one_sided": 0.0,
+              "gap_rematch": 0.14495114006514653,
+              "ci95_rematch": [
+                0.1596091205211726,
+                0.21986970684039087
+              ],
+              "ci95_bonferroni_m2": [
+                0.11451265755180516,
+                0.17745070190104398
+              ]
+            },
+            "raw": {
+              "coverage_matched": 0.4873015873015873,
+              "selective_accuracy": 0.9283387622149837,
+              "gap_vs_ref": 0.07166123778501632,
+              "ci95": [
+                0.051361248557367,
+                0.09275373481212437
+              ],
+              "p_one_sided": 0.0,
+              "gap_rematch": 0.07166123778501632,
+              "ci95_rematch": [
+                0.05700325732899025,
+                0.09771986970684043
+              ]
+            },
+            "cot": {
+              "coverage_matched": 0.4873015873015873,
+              "selective_accuracy": 0.9087947882736156,
+              "gap_vs_ref": 0.0912052117263844,
+              "ci95": [
+                0.06955139359448087,
+                0.11367718049163406
+              ],
+              "p_one_sided": 0.0,
+              "gap_rematch": 0.0912052117263844,
+              "ci95_rematch": [
+                0.09446254071661242,
+                0.14495114006514653
+              ]
+            },
+            "linc": {
+              "coverage_matched": 0.4873015873015873,
+              "selective_accuracy": 0.8631921824104235,
+              "gap_vs_ref": 0.1368078175895765,
+              "ci95": [
+                0.11014784798886172,
+                0.16466702151645482
+              ],
+              "p_one_sided": 0.0,
+              "gap_rematch": 0.1368078175895765,
+              "ci95_rematch": [
+                0.1596091205211726,
+                0.22312703583061888
+              ]
+            },
+            "naive": {
+              "coverage": 0.373015873015873,
+              "selective_accuracy": 1.0,
+              "resolve_correct_rate": 0.373015873015873
+            },
+            "off": {
+              "coverage": 0.0,
+              "selective_accuracy": NaN,
+              "resolve_correct_rate": 0.0
+            },
+            "ilp": {
+              "coverage_matched": 0.4873015873015873,
+              "selective_accuracy": 0.8355048859934854,
+              "gap_vs_ref": 0.16449511400651462,
+              "ci95": [
+                0.13548219086021507,
+                0.19381232470149917
+              ],
+              "p_one_sided": 0.0
+            },
+            "gold_full": {
+              "coverage": 0.4873015873015873,
+              "selective_accuracy": 1.0,
+              "resolve_correct_rate": 0.4873015873015873
+            },
+            "gold_naive": {
+              "coverage": 0.373015873015873,
+              "selective_accuracy": 1.0,
+              "resolve_correct_rate": 0.373015873015873
+            }
+          },
+          "comparisons": {
+            "pot": {
+              "gap": 0.055374592833876246,
+              "ci95": [
+                0.037766056324937215,
+                0.07388337311462086
+              ],
+              "p_one_sided": 0.0,
+              "selacc_a": 1.0,
+              "selacc_b": 0.9446254071661238,
+              "cov_a": 0.4873015873015873,
+              "cov_b": 0.4873015873015873,
+              "n_boot": 2000
+            },
+            "sc": {
+              "gap": 0.14495114006514653,
+              "ci95": [
+                0.11793980755970669,
+                0.17314454799046267
+              ],
+              "p_one_sided": 0.0,
+              "selacc_a": 1.0,
+              "selacc_b": 0.8550488599348535,
+              "cov_a": 0.4873015873015873,
+              "cov_b": 0.4873015873015873,
+              "n_boot": 2000
+            },
+            "raw": {
+              "gap": 0.07166123778501632,
+              "ci95": [
+                0.051361248557367,
+                0.09275373481212437
+              ],
+              "p_one_sided": 0.0,
+              "selacc_a": 1.0,
+              "selacc_b": 0.9283387622149837,
+              "cov_a": 0.4873015873015873,
+              "cov_b": 0.4873015873015873,
+              "n_boot": 2000
+            },
+            "cot": {
+              "gap": 0.0912052117263844,
+              "ci95": [
+                0.06955139359448087,
+                0.11367718049163406
+              ],
+              "p_one_sided": 0.0,
+              "selacc_a": 1.0,
+              "selacc_b": 0.9087947882736156,
+              "cov_a": 0.4873015873015873,
+              "cov_b": 0.4873015873015873,
+              "n_boot": 2000
+            },
+            "linc": {
+              "gap": 0.1368078175895765,
+              "ci95": [
+                0.11014784798886172,
+                0.16466702151645482
+              ],
+              "p_one_sided": 0.0,
+              "selacc_a": 1.0,
+              "selacc_b": 0.8631921824104235,
+              "cov_a": 0.4873015873015873,
+              "cov_b": 0.4873015873015873,
+              "n_boot": 2000
+            }
+          }
+        },
+        "H1_confirmatory_holm": {
+          "family": [
+            "pot",
+            "sc"
+          ],
+          "holm": {
+            "pot": {
+              "p": 0.0,
+              "p_adj": 0.0,
+              "reject": true
+            },
+            "sc": {
+              "p": 0.0,
+              "p_adj": 0.0,
+              "reject": true
+            }
+          },
+          "gaps": {
+            "pot": 0.042592592592592626,
+            "sc": 0.14629629629629626
+          },
+          "cis": {
+            "pot": [
+              0.026266416510318913,
+              0.060377693622440415
+            ],
+            "sc": [
+              0.11719123243585773,
+              0.17681154361166604
+            ]
+          },
+          "adjusted_cis_bonferroni_m2": {
+            "pot": [
+              0.024207443261713042,
+              0.06295126700124136
+            ],
+            "sc": [
+              0.11380487566679241,
+              0.1811633585381223
+            ]
+          },
+          "PASS": true
+        },
+        "H3_iteration_real": {
+          "real_reads": true,
+          "metric_note": "'full'/'naive' = resolve-to-CORRECT-singleton rate; 'full_cov'/'naive_cov' = resolve-to-singleton (coverage) rate. The iteration advantage of full PC over naive single-pass shows as a positive coverag...",
+          "gap_by_hop": [
+            {
+              "cell": "hop_L2_P2",
+              "full": 0.6777777777777778,
+              "naive": 0.6777777777777778,
+              "gap": 0.0,
+              "n": 90,
+              "full_cov": 0.6777777777777778,
+              "naive_cov": 0.6777777777777778,
+              "cov_gap": 0.0
+            },
+            {
+              "cell": "hop_L3_P2",
+              "full": 0.34444444444444444,
+              "naive": 0.0,
+              "gap": 0.34444444444444444,
+              "n": 90,
+              "full_cov": 0.34444444444444444,
+              "naive_cov": 0.0,
+              "cov_gap": 0.34444444444444444
+            },
+            {
+              "cell": "hop_L4_P2",
+              "full": 0.03333333333333333,
+              "naive": 0.0,
+              "gap": 0.03333333333333333,
+              "n": 90,
+              "full_cov": 0.03333333333333333,
+              "naive_cov": 0.0,
+              "cov_gap": 0.03333333333333333
+            },
+            {
+              "cell": "hop_L5_P2",
+              "full": 0.022222222222222223,
+              "naive": 0.0,
+              "gap": 0.022222222222222223,
+              "n": 90,
+              "full_cov": 0.022222222222222223,
+              "naive_cov": 0.0,
+              "cov_gap": 0.022222222222222223
+            }
+          ],
+          "gap_by_cyclomatic": [
+            {
+              "cell": "cyc_mu0",
+              "full": 0.2,
+              "naive": 0.0,
+              "gap": 0.2,
+              "n": 90,
+              "full_cov": 0.2,
+              "naive_cov": 0.0,
+              "cov_gap": 0.2
+            },
+            {
+              "cell": "cyc_mu1",
+              "full": 0.2777777777777778,
+              "naive": 0.0,
+              "gap": 0.2777777777777778,
+              "n": 90,
+              "full_cov": 0.2777777777777778,
+              "naive_cov": 0.0,
+              "cov_gap": 0.2777777777777778
+            },
+            {
+              "cell": "cyc_mu2",
+              "full": 0.36666666666666664,
+              "naive": 0.0,
+              "gap": 0.36666666666666664,
+              "n": 90,
+              "full_cov": 0.36666666666666664,
+              "naive_cov": 0.0,
+              "cov_gap": 0.36666666666666664
+            },
+            {
+              "cell": "cyc_mu3",
+              "full": 0.35555555555555557,
+              "naive": 0.0,
+              "gap": 0.35555555555555557,
+              "n": 90,
+              "full_cov": 0.35555555555555557,
+              "naive_cov": 0.0,
+              "cov_gap": 0.35555555555555557
+            }
+          ],
+          "trend_hop": {
+            "spearman_rho": 0.19999999999999998,
+            "spearman_ci95": [
+              -0.39999999999999997,
+              0.39999999999999997
+            ],
+            "jonckheere_z": -0.8966530605331445,
+            "jonckheere_p": 0.8150479624378714
+          },
+          "trend_cyclomatic": {
+            "spearman_rho": 0.7999999999999999,
+            "spearman_ci95": [
+              0.19999999999999998,
+              1.0
+            ],
+            "jonckheere_z": 2.037847864848056,
+            "jonckheere_p": 0.02078257491865587
+          },
+          "length2_tie": {
+            "n": 630,
+            "full_resolve_correct": 0.746031746031746,
+            "naive_resolve_correct": 0.746031746031746,
+            "gap": 0.0
+          },
+          "iteration_coverage_gain_cyclomatic": 0.3
+        },
+        "H3_iteration_gold": {
+          "real_reads": false,
+          "metric_note": "'full'/'naive' = resolve-to-CORRECT-singleton rate; 'full_cov'/'naive_cov' = resolve-to-singleton (coverage) rate. The iteration advantage of full PC over naive single-pass shows as a positive coverag...",
+          "gap_by_hop": [
+            {
+              "cell": "hop_L2_P2",
+              "full": 0.6777777777777778,
+              "naive": 0.6777777777777778,
+              "gap": 0.0,
+              "n": 90,
+              "full_cov": 0.6777777777777778,
+              "naive_cov": 0.6777777777777778,
+              "cov_gap": 0.0
+            },
+            {
+              "cell": "hop_L3_P2",
+              "full": 0.34444444444444444,
+              "naive": 0.0,
+              "gap": 0.34444444444444444,
+              "n": 90,
+              "full_cov": 0.34444444444444444,
+              "naive_cov": 0.0,
+              "cov_gap": 0.34444444444444444
+            },
+            {
+              "cell": "hop_L4_P2",
+              "full": 0.03333333333333333,
+              "naive": 0.0,
+              "gap": 0.03333333333333333,
+              "n": 90,
+              "full_cov": 0.03333333333333333,
+              "naive_cov": 0.0,
+              "cov_gap": 0.03333333333333333
+            },
+            {
+              "cell": "hop_L5_P2",
+              "full": 0.022222222222222223,
+              "naive": 0.0,
+              "gap": 0.022222222222222223,
+              "n": 90,
+              "full_cov": 0.022222222222222223,
+              "naive_cov": 0.0,
+              "cov_gap": 0.022222222222222223
+            }
+          ],
+          "gap_by_cyclomatic": [
+            {
+              "cell": "cyc_mu0",
+              "full": 0.2,
+              "naive": 0.0,
+              "gap": 0.2,
+              "n": 90,
+              "full_cov": 0.2,
+              "naive_cov": 0.0,
+              "cov_gap": 0.2
+            },
+            {
+              "cell": "cyc_mu1",
+              "full": 0.2777777777777778,
+              "naive": 0.0,
+              "gap": 0.2777777777777778,
+              "n": 90,
+              "full_cov": 0.2777777777777778,
+              "naive_cov": 0.0,
+              "cov_gap": 0.2777777777777778
+            },
+            {
+              "cell": "cyc_mu2",
+              "full": 0.36666666666666664,
+              "naive": 0.0,
+              "gap": 0.36666666666666664,
+              "n": 90,
+              "full_cov": 0.36666666666666664,
+              "naive_cov": 0.0,
+              "cov_gap": 0.36666666666666664
+            },
+            {
+              "cell": "cyc_mu3",
+              "full": 0.35555555555555557,
+              "naive": 0.0,
+              "gap": 0.35555555555555557,
+              "n": 90,
+              "full_cov": 0.35555555555555557,
+              "naive_cov": 0.0,
+              "cov_gap": 0.35555555555555557
+            }
+          ],
+          "trend_hop": {
+            "spearman_rho": 0.19999999999999998,
+            "spearman_ci95": [
+              -0.39999999999999997,
+              0.39999999999999997
+            ],
+            "jonckheere_z": -0.8966530605331445,
+            "jonckheere_p": 0.8150479624378714
+          },
+          "trend_cyclomatic": {
+            "spearman_rho": 0.7999999999999999,
+            "spearman_ci95": [
+              0.19999999999999998,
+              1.0
+            ],
+            "jonckheere_z": 2.037847864848056,
+            "jonckheere_p": 0.02078257491865587
+          },
+          "length2_tie": {
+            "n": 630,
+            "full_resolve_correct": 0.746031746031746,
+            "naive_resolve_correct": 0.746031746031746,
+            "gap": 0.0
+          },
+          "iteration_coverage_gain_cyclomatic": 0.3
+        },
+        "C2_on_vs_off": {
+          "modeA_coverage": 0.4873015873015873,
+          "modeA_resolve_correct_rate": 0.4873015873015873,
+          "off_coverage": 0.0,
+          "deduction_required_gap": 0.4873015873015873,
+          "note": "OFF never reads the query edge locally (s,t never co-occur), so its single-relation coverage is 0; Mode-A coverage IS the deduction-required bite recovered by the composition floor."
+        },
+        "audit": {
+          "per_edge_recall": 1.0,
+          "per_edge_breadth_mean": 1.0,
+          "n_read_edges": 9000,
+          "within_doc_soundness_rho_icc": 0.0,
+          "read_error_type_distribution": {
+            "exact_correct": 1.0,
+            "sound_tight": 0.0,
+            "sound_loose": 0.0,
+            "overcommit_unsound": 0.0
+          },
+          "J_E_by_contributing_edges": {
+            "2": 1.0,
+            "3": 1.0,
+            "4": 1.0,
+            "6": 1.0,
+            "7": 1.0,
+            "8": 1.0,
+            "10": 1.0,
+            "12": 1.0,
+            "16": 1.0
+          },
+          "J_E_vs_independence": {
+            "2": {
+              "observed_J": 1.0,
+              "indep_r_pow_E": 1.0,
+              "n": 90
+            },
+            "3": {
+              "observed_J": 1.0,
+              "indep_r_pow_E": 1.0,
+              "n": 90
+            },
+            "4": {
+              "observed_J": 1.0,
+              "indep_r_pow_E": 1.0,
+              "n": 180
+            },
+            "6": {
+              "observed_J": 1.0,
+              "indep_r_pow_E": 1.0,
+              "n": 270
+            },
+            "7": {
+              "observed_J": 1.0,
+              "indep_r_pow_E": 1.0,
+              "n": 90
+            },
+            "8": {
+              "observed_J": 1.0,
+              "indep_r_pow_E": 1.0,
+              "n": 270
+            },
+            "10": {
+              "observed_J": 1.0,
+              "indep_r_pow_E": 1.0,
+              "n": 90
+            },
+            "12": {
+              "observed_J": 1.0,
+              "indep_r_pow_E": 1.0,
+              "n": 90
+            },
+            "16": {
+              "observed_J": 1.0,
+              "indep_r_pow_E": 1.0,
+              "n": 90
+            }
+          },
+          "silent_wrong_count": 0,
+          "covered_wrong_count": 0,
+          "n_modeA_covered": 614,
+          "silent_wrong_rate_among_covered": 0.0,
+          "zero_fp_contains_gold_rate_when_allsound": 1.0,
+          "n_allsound_networks": 1260,
+          "interpretation": "On all-sound networks Mode-A's closed query SET must contain gold (soundness of PC) -> zero-FP-conditional-on-soundness ~1.0; silent-wrong arises ONLY from unsound reads."
+        },
+        "per_stratum": {
+          "red_P1_L2": {
+            "n": 90,
+            "modeA_coverage": 0.5666666666666667,
+            "modeA_resolve_correct_rate": 0.5666666666666667,
+            "pot_acc_all": 0.5666666666666667,
+            "sc_acc_all": 0.7
+          },
+          "red_P2_L2": {
+            "n": 90,
+            "modeA_coverage": 0.6333333333333333,
+            "modeA_resolve_correct_rate": 0.6333333333333333,
+            "pot_acc_all": 0.6333333333333333,
+            "sc_acc_all": 0.7666666666666667
+          },
+          "red_P3_L2": {
+            "n": 90,
+            "modeA_coverage": 0.8,
+            "modeA_resolve_correct_rate": 0.8,
+            "pot_acc_all": 0.8,
+            "sc_acc_all": 0.8111111111111111
+          },
+          "red_P4_L2": {
+            "n": 90,
+            "modeA_coverage": 0.7555555555555555,
+            "modeA_resolve_correct_rate": 0.7555555555555555,
+            "pot_acc_all": 0.7555555555555555,
+            "sc_acc_all": 0.8333333333333334
+          },
+          "red_P6_L2": {
+            "n": 90,
+            "modeA_coverage": 0.8777777777777778,
+            "modeA_resolve_correct_rate": 0.8777777777777778,
+            "pot_acc_all": 0.8333333333333334,
+            "sc_acc_all": 0.9111111111111111
+          },
+          "red_P8_L2": {
+            "n": 90,
+            "modeA_coverage": 0.9111111111111111,
+            "modeA_resolve_correct_rate": 0.9111111111111111,
+            "pot_acc_all": 0.8222222222222222,
+            "sc_acc_all": 0.9
+          },
+          "hop_L2_P2": {
+            "n": 90,
+            "modeA_coverage": 0.6777777777777778,
+            "modeA_resolve_correct_rate": 0.6777777777777778,
+            "pot_acc_all": 0.6777777777777778,
+            "sc_acc_all": 0.7444444444444445
+          },
+          "hop_L3_P2": {
+            "n": 90,
+            "modeA_coverage": 0.34444444444444444,
+            "modeA_resolve_correct_rate": 0.34444444444444444,
+            "pot_acc_all": 0.4666666666666667,
+            "sc_acc_all": 0.7777777777777778
+          },
+          "hop_L4_P2": {
+            "n": 90,
+            "modeA_coverage": 0.03333333333333333,
+            "modeA_resolve_correct_rate": 0.03333333333333333,
+            "pot_acc_all": 0.3111111111111111,
+            "sc_acc_all": 0.7
+          },
+          "hop_L5_P2": {
+            "n": 90,
+            "modeA_coverage": 0.022222222222222223,
+            "modeA_resolve_correct_rate": 0.022222222222222223,
+            "pot_acc_all": 0.3333333333333333,
+            "sc_acc_all": 0.7222222222222222
+          },
+          "cyc_mu0": {
+            "n": 90,
+            "modeA_coverage": 0.2,
+            "modeA_resolve_correct_rate": 0.2,
+            "pot_acc_all": 0.23333333333333334,
+            "sc_acc_all": 0.5888888888888889
+          },
+          "cyc_mu1": {
+            "n": 90,
+            "modeA_coverage": 0.2777777777777778,
+            "modeA_resolve_correct_rate": 0.2777777777777778,
+            "pot_acc_all": 0.4,
+            "sc_acc_all": 0.7222222222222222
+          },
+          "cyc_mu2": {
+            "n": 90,
+            "modeA_coverage": 0.36666666666666664,
+            "modeA_resolve_correct_rate": 0.36666666666666664,
+            "pot_acc_all": 0.4888888888888889,
+            "sc_acc_all": 0.7666666666666667
+          },
+          "cyc_mu3": {
+            "n": 90,
+            "modeA_coverage": 0.35555555555555557,
+            "modeA_resolve_correct_rate": 0.35555555555555557,
+            "pot_acc_all": 0.5222222222222223,
+            "sc_acc_all": 0.8333333333333334
+          }
+        },
+        "worked_example": {
+          "mode_a_narrowing": {
+            "net_id": "point|red_P2_L2|0",
+            "cell": "red_P2_L2",
+            "query_pair": [
+              0,
+              1
+            ],
+            "query_entities": [
+              "the shareholder vote",
+              "the vendor negotiation"
+            ],
+            "gold_query": ">",
+            "paths": [
+              [
+                0,
+                2,
+                1
+              ],
+              [
+                0,
+                3,
+                1
+              ]
+            ],
+            "reads": [
+              {
+                "edge": [
+                  0,
+                  2
+                ],
+                "entities": [
+                  "the shareholder vote",
+                  "the maintenance window"
+                ],
+                "sentence": "The shareholder vote came after the maintenance window.",
+                "read": [
+                  ">"
+                ],
+                "gold": ">"
+              },
+              {
+                "edge": [
+                  0,
+                  3
+                ],
+                "entities": [
+                  "the shareholder vote",
+                  "the network upgrade"
+                ],
+                "sentence": "The shareholder vote came after the network upgrade.",
+                "read": [
+                  ">"
+                ],
+                "gold": ">"
+              },
+              {
+                "edge": [
+                  1,
+                  2
+                ],
+                "entities": [
+                  "the vendor negotiation",
+                  "the maintenance window"
+                ],
+                "sentence": "The vendor negotiation occurred before the maintenance window.",
+                "read": [
+                  "<"
+                ],
+                "gold": "<"
+              },
+              {
+                "edge": [
+                  1,
+                  3
+                ],
+                "entities": [
+                  "the vendor negotiation",
+                  "the network upgrade"
+                ],
+                "sentence": "The vendor negotiation came before the network upgrade.",
+                "read": [
+                  "<"
+                ],
+                "gold": "<"
+              }
+            ],
+            "closed_query_set": [
+              ">"
+            ],
+            "covered": true,
+            "answer": ">",
+            "mode_b": false
+          },
+          "mode_b_collapse": null
+        },
+        "figures": [
+          "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_2/gen_art/gen_art_experiment_1/results/figures/h1_leaderboard_point.jpg",
+          "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_2/gen_art/gen_art_experiment_1/results/figures/h3_hop_point.jpg",
+          "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_2/gen_art/gen_art_experiment_1/results/figures/h3_cyc_point.jpg"
+        ],
+        "pc_completeness": "PC-COMPLETE (exact): coverage/collapse are EXACT.",
+        "evidence_tags": [
+          "REAL-LLM-READ-ON-SYNTHETIC"
+        ],
+        "n_base_relations": 3,
+        "decomposition": {
+          "method": "cell-pooled (n-weighted) from this arm's leaderboard + H3 aggregates",
+          "evidence_tag": "REAL-LLM-READ-ON-SYNTHETIC",
+          "sound_lower_bound": false,
+          "selacc_modeA": 1.0,
+          "selacc_pot": 0.9574074074074074,
+          "selacc_naive": 1.0,
+          "total_vs_pot_gap": 0.042592592592592626,
+          "inherited_table_vs_llm_gap": 0.042592592592592626,
+          "novel_iteration_gap_real": {
+            "gap_weighted_mean": 0.23333333333333334,
+            "n": 540,
+            "by_cell": [
+              {
+                "cell": "hop_L3_P2",
+                "gap": 0.34444444444444444,
+                "n": 90
+              },
+              {
+                "cell": "hop_L4_P2",
+                "gap": 0.03333333333333333,
+                "n": 90
+              },
+              {
+                "cell": "hop_L5_P2",
+                "gap": 0.022222222222222223,
+                "n": 90
+              },
+              {
+                "cell": "cyc_mu1",
+                "gap": 0.2777777777777778,
+                "n": 90
+              },
+              {
+                "cell": "cyc_mu2",
+                "gap": 0.36666666666666664,
+                "n": 90
+              },
+              {
+                "cell": "cyc_mu3",
+                "gap": 0.35555555555555557,
+                "n": 90
+              }
+            ]
+          },
+          "novel_iteration_gap_gold": {
+            "gap_weighted_mean": 0.23333333333333334,
+            "n": 540,
+            "by_cell": [
+              {
+                "cell": "hop_L3_P2",
+                "gap": 0.34444444444444444,
+                "n": 90
+              },
+              {
+                "cell": "hop_L4_P2",
+                "gap": 0.03333333333333333,
+                "n": 90
+              },
+              {
+                "cell": "hop_L5_P2",
+                "gap": 0.022222222222222223,
+                "n": 90
+              },
+              {
+                "cell": "cyc_mu1",
+                "gap": 0.2777777777777778,
+                "n": 90
+              },
+              {
+                "cell": "cyc_mu2",
+                "gap": 0.36666666666666664,
+                "n": 90
+              },
+              {
+                "cell": "cyc_mu3",
+                "gap": 0.35555555555555557,
+                "n": 90
+              }
+            ]
+          },
+          "inherited_is": "INHERITED neuro-symbolic premise: a single exact composition-table step (naive single-pass) already beats LLM per-path composition.",
+          "novel_is": "NOVEL contribution of iterated PC closure: resolves deduction-deep (hop>=3 / cyclomatic>=1) queries a single naive pass leaves open."
+        },
+        "provenance": "point/allen reproduced from iter-2 experiment_iter2_dir3 (identical model/seed/knob/prompts/networks/cache); merged here for the 3-point algebra-richness scaling curve."
+      },
+      "rcc8": {
+        "evidence_tags": [
+          "REAL-LLM-READ-ON-SYNTHETIC",
+          "SOUND-LOWER-BOUND"
+        ],
+        "pc_completeness": "PC-SOUND-BUT-INCOMPLETE: coverage / Mode-B collapse / resolve-to-singleton are SOUND LOWER BOUNDS (true minimal network may resolve MORE). Every singleton Mode-A commits is still sound (contains gold ...",
+        "n_base_relations": 8,
+        "H1_bite_bearing_pool": {
+          "target_coverage": 0.19333333333333333,
+          "n_networks": 150,
+          "selective_accuracy_ref": 1.0,
+          "leaderboard": {
+            "modeA": {
+              "coverage": 0.19333333333333333,
+              "selective_accuracy": 1.0,
+              "n": 150
+            },
+            "pot": {
+              "coverage_matched": 0.19333333333333333,
+              "selective_accuracy": 0.5517241379310345,
+              "gap_vs_ref": 0.4482758620689655,
+              "ci95": [
+                0.2592592592592593,
+                0.6285714285714286
+              ],
+              "p_one_sided": 0.0,
+              "gap_rematch": 0.4482758620689655,
+              "ci95_rematch": [
+                0.31034482758620685,
+                0.6551724137931034
+              ],
+              "ci95_bonferroni_m2": [
+                0.24,
+                0.6428859447004609
+              ]
+            },
+            "sc": {
+              "coverage_matched": 0.19333333333333333,
+              "selective_accuracy": 0.3793103448275862,
+              "gap_vs_ref": 0.6206896551724138,
+              "ci95": [
+                0.43333333333333335,
+                0.7894736842105263
+              ],
+              "p_one_sided": 0.0,
+              "gap_rematch": 0.6206896551724138,
+              "ci95_rematch": [
+                0.3448275862068966,
+                0.7241379310344828
+              ],
+              "ci95_bonferroni_m2": [
+                0.40731481481481485,
+                0.8095899470899474
+              ]
+            },
+            "raw": {
+              "coverage_matched": 0.19333333333333333,
+              "selective_accuracy": 0.5862068965517241,
+              "gap_vs_ref": 0.4137931034482759,
+              "ci95": [
+                0.22571684587813623,
+                0.6
+              ],
+              "p_one_sided": 0.0,
+              "gap_rematch": 0.4137931034482759,
+              "ci95_rematch": [
+                0.275,
+                0.6206896551724138
+              ]
+            },
+            "cot": {
+              "coverage_matched": 0.19333333333333333,
+              "selective_accuracy": 0.4482758620689655,
+              "gap_vs_ref": 0.5517241379310345,
+              "ci95": [
+                0.37142857142857144,
+                0.7333333333333334
+              ],
+              "p_one_sided": 0.0,
+              "gap_rematch": 0.5517241379310345,
+              "ci95_rematch": [
+                0.3448275862068966,
+                0.6896551724137931
+              ]
+            },
+            "naive": {
+              "coverage": 0.18666666666666668,
+              "selective_accuracy": 1.0,
+              "resolve_correct_rate": 0.18666666666666668
+            },
+            "off": {
+              "coverage": 0.0,
+              "selective_accuracy": NaN,
+              "resolve_correct_rate": 0.0
+            },
+            "gold_full": {
+              "coverage": 0.19333333333333333,
+              "selective_accuracy": 1.0,
+              "resolve_correct_rate": 0.19333333333333333
+            },
+            "gold_naive": {
+              "coverage": 0.18666666666666668,
+              "selective_accuracy": 1.0,
+              "resolve_correct_rate": 0.18666666666666668
+            }
+          },
+          "comparisons": {
+            "pot": {
+              "gap": 0.4482758620689655,
+              "ci95": [
+                0.2592592592592593,
+                0.6285714285714286
+              ],
+              "p_one_sided": 0.0,
+              "selacc_a": 1.0,
+              "selacc_b": 0.5517241379310345,
+              "cov_a": 0.19333333333333333,
+              "cov_b": 0.19333333333333333,
+              "n_boot": 2000
+            },
+            "sc": {
+              "gap": 0.6206896551724138,
+              "ci95": [
+                0.43333333333333335,
+                0.7894736842105263
+              ],
+              "p_one_sided": 0.0,
+              "selacc_a": 1.0,
+              "selacc_b": 0.3793103448275862,
+              "cov_a": 0.19333333333333333,
+              "cov_b": 0.19333333333333333,
+              "n_boot": 2000
+            },
+            "raw": {
+              "gap": 0.4137931034482759,
+              "ci95": [
+                0.22571684587813623,
+                0.6
+              ],
+              "p_one_sided": 0.0,
+              "selacc_a": 1.0,
+              "selacc_b": 0.5862068965517241,
+              "cov_a": 0.19333333333333333,
+              "cov_b": 0.19333333333333333,
+              "n_boot": 2000
+            },
+            "cot": {
+              "gap": 0.5517241379310345,
+              "ci95": [
+                0.37142857142857144,
+                0.7333333333333334
+              ],
+              "p_one_sided": 0.0,
+              "selacc_a": 1.0,
+              "selacc_b": 0.4482758620689655,
+              "cov_a": 0.19333333333333333,
+              "cov_b": 0.19333333333333333,
+              "n_boot": 2000
+            }
+          }
+        },
+        "H1_all_comparison_pool": {
+          "target_coverage": 0.1619047619047619,
+          "n_networks": 210,
+          "selective_accuracy_ref": 1.0,
+          "leaderboard": {
+            "modeA": {
+              "coverage": 0.1619047619047619,
+              "selective_accuracy": 1.0,
+              "n": 210
+            },
+            "pot": {
+              "coverage_matched": 0.1619047619047619,
+              "selective_accuracy": 0.5882352941176471,
+              "gap_vs_ref": 0.4117647058823529,
+              "ci95": [
+                0.25,
+                0.5757575757575757
+              ],
+              "p_one_sided": 0.0,
+              "gap_rematch": 0.4117647058823529,
+              "ci95_rematch": [
+                0.32352941176470584,
+                0.6764705882352942
+              ],
+              "ci95_bonferroni_m2": [
+                0.2352696078431373,
+                0.6
+              ]
+            },
+            "sc": {
+              "coverage_matched": 0.1619047619047619,
+              "selective_accuracy": 0.5294117647058824,
+              "gap_vs_ref": 0.47058823529411764,
+              "ci95": [
+                0.3054924242424243,
+                0.6486486486486487
+              ],
+              "p_one_sided": 0.0,
+              "gap_rematch": 0.47058823529411764,
+              "ci95_rematch": [
+                0.38235294117647056,
+                0.7058823529411764
+              ],
+              "ci95_bonferroni_m2": [
+                0.28122274709302325,
+                0.6764705882352942
+              ]
+            },
+            "raw": {
+              "coverage_matched": 0.1619047619047619,
+              "selective_accuracy": 0.6176470588235294,
+              "gap_vs_ref": 0.38235294117647056,
+              "ci95": [
+                0.22499999999999998,
+                0.5517468239564427
+              ],
+              "p_one_sided": 0.0,
+              "gap_rematch": 0.38235294117647056,
+              "ci95_rematch": [
+                0.23529411764705888,
+                0.5588235294117647
+              ]
+            },
+            "cot": {
+              "coverage_matched": 0.1619047619047619,
+              "selective_accuracy": 0.5294117647058824,
+              "gap_vs_ref": 0.47058823529411764,
+              "ci95": [
+                0.3076388888888889,
+                0.6333333333333333
+              ],
+              "p_one_sided": 0.0,
+              "gap_rematch": 0.47058823529411764,
+              "ci95_rematch": [
+                0.2941176470588235,
+                0.6176470588235294
+              ]
+            },
+            "naive": {
+              "coverage": 0.15714285714285714,
+              "selective_accuracy": 1.0,
+              "resolve_correct_rate": 0.15714285714285714
+            },
+            "off": {
+              "coverage": 0.0,
+              "selective_accuracy": NaN,
+              "resolve_correct_rate": 0.0
+            },
+            "gold_full": {
+              "coverage": 0.1619047619047619,
+              "selective_accuracy": 1.0,
+              "resolve_correct_rate": 0.1619047619047619
+            },
+            "gold_naive": {
+              "coverage": 0.15714285714285714,
+              "selective_accuracy": 1.0,
+              "resolve_correct_rate": 0.15714285714285714
+            }
+          },
+          "comparisons": {
+            "pot": {
+              "gap": 0.4117647058823529,
+              "ci95": [
+                0.25,
+                0.5757575757575757
+              ],
+              "p_one_sided": 0.0,
+              "selacc_a": 1.0,
+              "selacc_b": 0.5882352941176471,
+              "cov_a": 0.1619047619047619,
+              "cov_b": 0.1619047619047619,
+              "n_boot": 2000
+            },
+            "sc": {
+              "gap": 0.47058823529411764,
+              "ci95": [
+                0.3054924242424243,
+                0.6486486486486487
+              ],
+              "p_one_sided": 0.0,
+              "selacc_a": 1.0,
+              "selacc_b": 0.5294117647058824,
+              "cov_a": 0.1619047619047619,
+              "cov_b": 0.1619047619047619,
+              "n_boot": 2000
+            },
+            "raw": {
+              "gap": 0.38235294117647056,
+              "ci95": [
+                0.22499999999999998,
+                0.5517468239564427
+              ],
+              "p_one_sided": 0.0,
+              "selacc_a": 1.0,
+              "selacc_b": 0.6176470588235294,
+              "cov_a": 0.1619047619047619,
+              "cov_b": 0.1619047619047619,
+              "n_boot": 2000
+            },
+            "cot": {
+              "gap": 0.47058823529411764,
+              "ci95": [
+                0.3076388888888889,
+                0.6333333333333333
+              ],
+              "p_one_sided": 0.0,
+              "selacc_a": 1.0,
+              "selacc_b": 0.5294117647058824,
+              "cov_a": 0.1619047619047619,
+              "cov_b": 0.1619047619047619,
+              "n_boot": 2000
+            }
+          }
+        },
+        "H1_confirmatory_holm": {
+          "family": [
+            "pot",
+            "sc"
+          ],
+          "holm": {
+            "pot": {
+              "p": 0.0,
+              "p_adj": 0.0,
+              "reject": true
+            },
+            "sc": {
+              "p": 0.0,
+              "p_adj": 0.0,
+              "reject": true
+            }
+          },
+          "gaps": {
+            "pot": 0.4482758620689655,
+            "sc": 0.6206896551724138
+          },
+          "cis": {
+            "pot": [
+              0.2592592592592593,
+              0.6285714285714286
+            ],
+            "sc": [
+              0.43333333333333335,
+              0.7894736842105263
+            ]
+          },
+          "adjusted_cis_bonferroni_m2": {
+            "pot": [
+              0.24,
+              0.6428859447004609
+            ],
+            "sc": [
+              0.40731481481481485,
+              0.8095899470899474
+            ]
+          },
+          "PASS": true
+        },
+        "H3_iteration_real": {
+          "real_reads": true,
+          "metric_note": "'full'/'naive' = resolve-to-CORRECT-singleton rate; 'full_cov'/'naive_cov' = resolve-to-singleton (coverage) rate. The iteration advantage of full PC over naive single-pass shows as a positive coverag...",
+          "gap_by_hop": [
+            {
+              "cell": "hop_L2_P2",
+              "full": 0.13333333333333333,
+              "naive": 0.13333333333333333,
+              "gap": 0.0,
+              "n": 15,
+              "full_cov": 0.13333333333333333,
+              "naive_cov": 0.13333333333333333,
+              "cov_gap": 0.0
+            },
+            {
+              "cell": "hop_L3_P2",
+              "full": 0.0,
+              "naive": 0.0,
+              "gap": 0.0,
+              "n": 15,
+              "full_cov": 0.0,
+              "naive_cov": 0.0,
+              "cov_gap": 0.0
+            },
+            {
+              "cell": "hop_L4_P2",
+              "full": 0.0,
+              "naive": 0.0,
+              "gap": 0.0,
+              "n": 15,
+              "full_cov": 0.0,
+              "naive_cov": 0.0,
+              "cov_gap": 0.0
+            },
+            {
+              "cell": "hop_L5_P2",
+              "full": 0.0,
+              "naive": 0.0,
+              "gap": 0.0,
+              "n": 15,
+              "full_cov": 0.0,
+              "naive_cov": 0.0,
+              "cov_gap": 0.0
+            }
+          ],
+          "gap_by_cyclomatic": [
+            {
+              "cell": "cyc_mu0",
+              "full": 0.0,
+              "naive": 0.0,
+              "gap": 0.0,
+              "n": 15,
+              "full_cov": 0.0,
+              "naive_cov": 0.0,
+              "cov_gap": 0.0
+            },
+            {
+              "cell": "cyc_mu1",
+              "full": 0.06666666666666667,
+              "naive": 0.0,
+              "gap": 0.06666666666666667,
+              "n": 15,
+              "full_cov": 0.06666666666666667,
+              "naive_cov": 0.0,
+              "cov_gap": 0.06666666666666667
+            },
+            {
+              "cell": "cyc_mu2",
+              "full": 0.0,
+              "naive": 0.0,
+              "gap": 0.0,
+              "n": 15,
+              "full_cov": 0.0,
+              "naive_cov": 0.0,
+              "cov_gap": 0.0
+            },
+            {
+              "cell": "cyc_mu3",
+              "full": 0.0,
+              "naive": 0.0,
+              "gap": 0.0,
+              "n": 15,
+              "full_cov": 0.0,
+              "naive_cov": 0.0,
+              "cov_gap": 0.0
+            }
+          ],
+          "trend_hop": {
+            "spearman_rho": NaN,
+            "spearman_ci95": [
+              -1.0,
+              1.0
+            ],
+            "jonckheere_z": 0.0,
+            "jonckheere_p": 0.5
+          },
+          "trend_cyclomatic": {
+            "spearman_rho": -0.2581988897471611,
+            "spearman_ci95": [
+              -0.7999999999999999,
+              0.7999999999999999
+            ],
+            "jonckheere_z": -0.09901475429766743,
+            "jonckheere_p": 0.5394367222819703
+          },
+          "length2_tie": {
+            "n": 105,
+            "full_resolve_correct": 0.3142857142857143,
+            "naive_resolve_correct": 0.3142857142857143,
+            "gap": 0.0
+          },
+          "iteration_coverage_gain_cyclomatic": 0.016666666666666666
+        },
+        "H3_iteration_gold": {
+          "real_reads": false,
+          "metric_note": "'full'/'naive' = resolve-to-CORRECT-singleton rate; 'full_cov'/'naive_cov' = resolve-to-singleton (coverage) rate. The iteration advantage of full PC over naive single-pass shows as a positive coverag...",
+          "gap_by_hop": [
+            {
+              "cell": "hop_L2_P2",
+              "full": 0.13333333333333333,
+              "naive": 0.13333333333333333,
+              "gap": 0.0,
+              "n": 15,
+              "full_cov": 0.13333333333333333,
+              "naive_cov": 0.13333333333333333,
+              "cov_gap": 0.0
+            },
+            {
+              "cell": "hop_L3_P2",
+              "full": 0.0,
+              "naive": 0.0,
+              "gap": 0.0,
+              "n": 15,
+              "full_cov": 0.0,
+              "naive_cov": 0.0,
+              "cov_gap": 0.0
+            },
+            {
+              "cell": "hop_L4_P2",
+              "full": 0.0,
+              "naive": 0.0,
+              "gap": 0.0,
+              "n": 15,
+              "full_cov": 0.0,
+              "naive_cov": 0.0,
+              "cov_gap": 0.0
+            },
+            {
+              "cell": "hop_L5_P2",
+              "full": 0.0,
+              "naive": 0.0,
+              "gap": 0.0,
+              "n": 15,
+              "full_cov": 0.0,
+              "naive_cov": 0.0,
+              "cov_gap": 0.0
+            }
+          ],
+          "gap_by_cyclomatic": [
+            {
+              "cell": "cyc_mu0",
+              "full": 0.0,
+              "naive": 0.0,
+              "gap": 0.0,
+              "n": 15,
+              "full_cov": 0.0,
+              "naive_cov": 0.0,
+              "cov_gap": 0.0
+            },
+            {
+              "cell": "cyc_mu1",
+              "full": 0.06666666666666667,
+              "naive": 0.0,
+              "gap": 0.06666666666666667,
+              "n": 15,
+              "full_cov": 0.06666666666666667,
+              "naive_cov": 0.0,
+              "cov_gap": 0.06666666666666667
+            },
+            {
+              "cell": "cyc_mu2",
+              "full": 0.0,
+              "naive": 0.0,
+              "gap": 0.0,
+              "n": 15,
+              "full_cov": 0.0,
+              "naive_cov": 0.0,
+              "cov_gap": 0.0
+            },
+            {
+              "cell": "cyc_mu3",
+              "full": 0.0,
+              "naive": 0.0,
+              "gap": 0.0,
+              "n": 15,
+              "full_cov": 0.0,
+              "naive_cov": 0.0,
+              "cov_gap": 0.0
+            }
+          ],
+          "trend_hop": {
+            "spearman_rho": NaN,
+            "spearman_ci95": [
+              -1.0,
+              1.0
+            ],
+            "jonckheere_z": 0.0,
+            "jonckheere_p": 0.5
+          },
+          "trend_cyclomatic": {
+            "spearman_rho": -0.2581988897471611,
+            "spearman_ci95": [
+              -0.7999999999999999,
+              0.7999999999999999
+            ],
+            "jonckheere_z": -0.09901475429766743,
+            "jonckheere_p": 0.5394367222819703
+          },
+          "length2_tie": {
+            "n": 105,
+            "full_resolve_correct": 0.3142857142857143,
+            "naive_resolve_correct": 0.3142857142857143,
+            "gap": 0.0
+          },
+          "iteration_coverage_gain_cyclomatic": 0.016666666666666666
+        },
+        "C2_on_vs_off": {
+          "modeA_coverage": 0.1619047619047619,
+          "modeA_resolve_correct_rate": 0.1619047619047619,
+          "off_coverage": 0.0,
+          "deduction_required_gap": 0.1619047619047619,
+          "note": "OFF never reads the query edge locally (s,t never co-occur), so its single-relation coverage is 0; Mode-A coverage IS the deduction-required bite recovered by the composition floor."
+        },
+        "audit": {
+          "per_edge_recall": 1.0,
+          "per_edge_breadth_mean": 1.0,
+          "n_read_edges": 1500,
+          "within_doc_soundness_rho_icc": 0.0,
+          "read_error_type_distribution": {
+            "exact_correct": 1.0,
+            "sound_tight": 0.0,
+            "sound_loose": 0.0,
+            "overcommit_unsound": 0.0
+          },
+          "J_E_by_contributing_edges": {
+            "2": 1.0,
+            "3": 1.0,
+            "4": 1.0,
+            "6": 1.0,
+            "7": 1.0,
+            "8": 1.0,
+            "10": 1.0,
+            "12": 1.0,
+            "16": 1.0
+          },
+          "J_E_vs_independence": {
+            "2": {
+              "observed_J": 1.0,
+              "indep_r_pow_E": 1.0,
+              "n": 15
+            },
+            "3": {
+              "observed_J": 1.0,
+              "indep_r_pow_E": 1.0,
+              "n": 15
+            },
+            "4": {
+              "observed_J": 1.0,
+              "indep_r_pow_E": 1.0,
+              "n": 30
+            },
+            "6": {
+              "observed_J": 1.0,
+              "indep_r_pow_E": 1.0,
+              "n": 45
+            },
+            "7": {
+              "observed_J": 1.0,
+              "indep_r_pow_E": 1.0,
+              "n": 15
+            },
+            "8": {
+              "observed_J": 1.0,
+              "indep_r_pow_E": 1.0,
+              "n": 45
+            },
+            "10": {
+              "observed_J": 1.0,
+              "indep_r_pow_E": 1.0,
+              "n": 15
+            },
+            "12": {
+              "observed_J": 1.0,
+              "indep_r_pow_E": 1.0,
+              "n": 15
+            },
+            "16": {
+              "observed_J": 1.0,
+              "indep_r_pow_E": 1.0,
+              "n": 15
+            }
+          },
+          "silent_wrong_count": 0,
+          "covered_wrong_count": 0,
+          "n_modeA_covered": 34,
+          "silent_wrong_rate_among_covered": 0.0,
+          "zero_fp_contains_gold_rate_when_allsound": 1.0,
+          "n_allsound_networks": 210,
+          "interpretation": "On all-sound networks Mode-A's closed query SET must contain gold (soundness of PC) -> zero-FP-conditional-on-soundness ~1.0; silent-wrong arises ONLY from unsound reads."
+        },
+        "per_stratum": {
+          "red_P1_L2": {
+            "n": 15,
+            "modeA_coverage": 0.3333333333333333,
+            "modeA_resolve_correct_rate": 0.3333333333333333,
+            "pot_acc_all": 0.4,
+            "sc_acc_all": 0.6
+          },
+          "red_P2_L2": {
+            "n": 15,
+            "modeA_coverage": 0.4,
+            "modeA_resolve_correct_rate": 0.4,
+            "pot_acc_all": 0.4,
+            "sc_acc_all": 0.5333333333333333
+          },
+          "red_P3_L2": {
+            "n": 15,
+            "modeA_coverage": 0.26666666666666666,
+            "modeA_resolve_correct_rate": 0.26666666666666666,
+            "pot_acc_all": 0.26666666666666666,
+            "sc_acc_all": 0.2
+          },
+          "red_P4_L2": {
+            "n": 15,
+            "modeA_coverage": 0.2,
+            "modeA_resolve_correct_rate": 0.2,
+            "pot_acc_all": 0.26666666666666666,
+            "sc_acc_all": 0.4666666666666667
+          },
+          "red_P6_L2": {
+            "n": 15,
+            "modeA_coverage": 0.4,
+            "modeA_resolve_correct_rate": 0.4,
+            "pot_acc_all": 0.6,
+            "sc_acc_all": 0.5333333333333333
+          },
+          "red_P8_L2": {
+            "n": 15,
+            "modeA_coverage": 0.4666666666666667,
+            "modeA_resolve_correct_rate": 0.4666666666666667,
+            "pot_acc_all": 0.26666666666666666,
+            "sc_acc_all": 0.7333333333333333
+          },
+          "hop_L2_P2": {
+            "n": 15,
+            "modeA_coverage": 0.13333333333333333,
+            "modeA_resolve_correct_rate": 0.13333333333333333,
+            "pot_acc_all": 0.2,
+            "sc_acc_all": 0.4
+          },
+          "hop_L3_P2": {
+            "n": 15,
+            "modeA_coverage": 0.0,
+            "modeA_resolve_correct_rate": 0.0,
+            "pot_acc_all": 0.13333333333333333,
+            "sc_acc_all": 0.26666666666666666
+          },
+          "hop_L4_P2": {
+            "n": 15,
+            "modeA_coverage": 0.0,
+            "modeA_resolve_correct_rate": 0.0,
+            "pot_acc_all": 0.06666666666666667,
+            "sc_acc_all": 0.4
+          },
+          "hop_L5_P2": {
+            "n": 15,
+            "modeA_coverage": 0.0,
+            "modeA_resolve_correct_rate": 0.0,
+            "pot_acc_all": 0.0,
+            "sc_acc_all": 0.2
+          },
+          "cyc_mu0": {
+            "n": 15,
+            "modeA_coverage": 0.0,
+            "modeA_resolve_correct_rate": 0.0,
+            "pot_acc_all": 0.0,
+            "sc_acc_all": 0.3333333333333333
+          },
+          "cyc_mu1": {
+            "n": 15,
+            "modeA_coverage": 0.06666666666666667,
+            "modeA_resolve_correct_rate": 0.06666666666666667,
+            "pot_acc_all": 0.2,
+            "sc_acc_all": 0.5333333333333333
+          },
+          "cyc_mu2": {
+            "n": 15,
+            "modeA_coverage": 0.0,
+            "modeA_resolve_correct_rate": 0.0,
+            "pot_acc_all": 0.13333333333333333,
+            "sc_acc_all": 0.4666666666666667
+          },
+          "cyc_mu3": {
+            "n": 15,
+            "modeA_coverage": 0.0,
+            "modeA_resolve_correct_rate": 0.0,
+            "pot_acc_all": 0.13333333333333333,
+            "sc_acc_all": 0.4
+          }
+        },
+        "decomposition": {
+          "evidence_tag": "REAL-LLM-READ-ON-SYNTHETIC",
+          "sound_lower_bound": true,
+          "total_vs_pot_gap": 0.4482758620689655,
+          "inherited_table_vs_llm_gap": 0.4482758620689655,
+          "inherited_is": "premise inherited from neuro-symbolic literature: a single exact composition-table step (naive single-pass) already beats LLM per-path composition (naive > PoT).",
+          "novel_iteration_gap_real": {
+            "n": 90,
+            "gap_mean": 0.011111111111111112,
+            "ci95": [
+              0.0,
+              0.03333333333333333
+            ],
+            "full_resolve_correct": 0.011111111111111112,
+            "naive_resolve_correct": 0.0
+          },
+          "novel_iteration_gap_gold": {
+            "n": 90,
+            "gap_mean": 0.011111111111111112,
+            "ci95": [
+              0.0,
+              0.03333333333333333
+            ],
+            "full_resolve_correct": 0.011111111111111112,
+            "naive_resolve_correct": 0.0
+          },
+          "novel_is": "the contribution of THIS method: iterated PC closure (full) resolves deduction-deep queries (hop>=3 / cyclomatic>=1) that a single naive pass leaves underdetermined (full > naive).",
+          "note": "decomposition selective accuracies are on the bite-bearing pool; RCC-8 full/naive resolve-correct rates are SOUND LOWER BOUNDS (PC-2 sound-but-incomplete)."
+        },
+        "worked_example": {
+          "mode_a_narrowing": {
+            "net_id": "rcc8|red_P2_L2|2",
+            "cell": "red_P2_L2",
+            "query_pair": [
+              0,
+              1
+            ],
+            "query_entities": [
+              "the embassy compound",
+              "the parking precinct"
+            ],
+            "gold_query": "EC",
+            "paths": [
+              [
+                0,
+                2,
+                1
+              ],
+              [
+                0,
+                3,
+                1
+              ]
+            ],
+            "reads": [
+              {
+                "edge": [
+                  0,
+                  2
+                ],
+                "entities": [
+                  "the embassy compound",
+                  "the riverside walk"
+                ],
+                "sentence": "The embassy compound is completely separate from the riverside walk.",
+                "read": [
+                  "DC"
+                ],
+                "gold": "DC"
+              },
+              {
+                "edge": [
+                  0,
+                  3
+                ],
+                "entities": [
+                  "the embassy compound",
+                  "the sports complex"
+                ],
+                "sentence": "The embassy compound and the sports complex meet at their boundary but share no interior.",
+                "read": [
+                  "EC"
+                ],
+                "gold": "EC"
+              },
+              {
+                "edge": [
+                  1,
+                  2
+                ],
+                "entities": [
+                  "the parking precinct",
+                  "the riverside walk"
+                ],
+                "sentence": "The parking precinct and the riverside walk partially overlap.",
+                "read": [
+                  "PO"
+                ],
+                "gold": "PO"
+              },
+              {
+                "edge": [
+                  1,
+                  3
+                ],
+                "entities": [
+                  "the parking precinct",
+                  "the sports complex"
+                ],
+                "sentence": "The parking precinct and the sports complex cover precisely the same region.",
+                "read": [
+                  "EQ"
+                ],
+                "gold": "EQ"
+              }
+            ],
+            "closed_query_set": [
+              "EC"
+            ],
+            "covered": true,
+            "answer": "EC",
+            "mode_b": false
+          },
+          "mode_b_collapse": null
+        },
+        "figures": [
+          "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_3/gen_art/gen_art_experiment_3/results/figures/h1_leaderboard_rcc8.jpg",
+          "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_3/gen_art/gen_art_experiment_3/results/figures/h3_hop_rcc8.jpg",
+          "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_3/gen_art/gen_art_experiment_3/results/figures/h3_cyc_rcc8.jpg"
+        ],
+        "decomposition_cellpooled": {
+          "method": "cell-pooled (n-weighted) from this arm's leaderboard + H3 aggregates",
+          "evidence_tag": "REAL-LLM-READ-ON-SYNTHETIC",
+          "sound_lower_bound": true,
+          "selacc_modeA": 1.0,
+          "selacc_pot": 0.5517241379310345,
+          "selacc_naive": 1.0,
+          "total_vs_pot_gap": 0.4482758620689655,
+          "inherited_table_vs_llm_gap": 0.4482758620689655,
+          "novel_iteration_gap_real": {
+            "gap_weighted_mean": 0.011111111111111112,
+            "n": 90,
+            "by_cell": [
+              {
+                "cell": "hop_L3_P2",
+                "gap": 0.0,
+                "n": 15
+              },
+              {
+                "cell": "hop_L4_P2",
+                "gap": 0.0,
+                "n": 15
+              },
+              {
+                "cell": "hop_L5_P2",
+                "gap": 0.0,
+                "n": 15
+              },
+              {
+                "cell": "cyc_mu1",
+                "gap": 0.06666666666666667,
+                "n": 15
+              },
+              {
+                "cell": "cyc_mu2",
+                "gap": 0.0,
+                "n": 15
+              },
+              {
+                "cell": "cyc_mu3",
+                "gap": 0.0,
+                "n": 15
+              }
+            ]
+          },
+          "novel_iteration_gap_gold": {
+            "gap_weighted_mean": 0.011111111111111112,
+            "n": 90,
+            "by_cell": [
+              {
+                "cell": "hop_L3_P2",
+                "gap": 0.0,
+                "n": 15
+              },
+              {
+                "cell": "hop_L4_P2",
+                "gap": 0.0,
+                "n": 15
+              },
+              {
+                "cell": "hop_L5_P2",
+                "gap": 0.0,
+                "n": 15
+              },
+              {
+                "cell": "cyc_mu1",
+                "gap": 0.06666666666666667,
+                "n": 15
+              },
+              {
+                "cell": "cyc_mu2",
+                "gap": 0.0,
+                "n": 15
+              },
+              {
+                "cell": "cyc_mu3",
+                "gap": 0.0,
+                "n": 15
+              }
+            ]
+          },
+          "inherited_is": "INHERITED neuro-symbolic premise: a single exact composition-table step (naive single-pass) already beats LLM per-path composition.",
+          "novel_is": "NOVEL contribution of iterated PC closure: resolves deduction-deep (hop>=3 / cyclomatic>=1) queries a single naive pass leaves open."
+        }
+      },
+      "allen": {
+        "H1_bite_bearing_pool": {
+          "target_coverage": 0.4766666666666667,
+          "n_networks": 900,
+          "selective_accuracy_ref": 0.9836829836829837,
+          "leaderboard": {
+            "modeA": {
+              "coverage": 0.4766666666666667,
+              "selective_accuracy": 0.9836829836829837,
+              "n": 900
+            },
+            "pot": {
+              "coverage_matched": 0.4766666666666667,
+              "selective_accuracy": 0.3076923076923077,
+              "gap_vs_ref": 0.675990675990676,
+              "ci95": [
+                0.6306649142589573,
+                0.7216007281283991
+              ],
+              "p_one_sided": 0.0,
+              "gap_rematch": 0.675990675990676,
+              "ci95_rematch": [
+                0.6409258313478075,
+                0.7316027258113589
+              ],
+              "ci95_bonferroni_m2": [
+                0.6236368056961156,
+                0.7284477391856425
+              ]
+            },
+            "sc": {
+              "coverage_matched": 0.4766666666666667,
+              "selective_accuracy": 0.34265734265734266,
+              "gap_vs_ref": 0.641025641025641,
+              "ci95": [
+                0.5961827108468678,
+                0.6864480628522842
+              ],
+              "p_one_sided": 0.0,
+              "gap_rematch": 0.641025641025641,
+              "ci95_rematch": [
+                0.6345007065427849,
+                0.724285224473802
+              ],
+              "ci95_bonferroni_m2": [
+                0.5875149728891295,
+                0.6913535656197198
+              ]
+            },
+            "raw": {
+              "coverage_matched": 0.4766666666666667,
+              "selective_accuracy": 0.3473193473193473,
+              "gap_vs_ref": 0.6363636363636364,
+              "ci95": [
+                0.5901094614851757,
+                0.6825148866587052
+              ],
+              "p_one_sided": 0.0,
+              "gap_rematch": 0.6363636363636364,
+              "ci95_rematch": [
+                0.6159659197925431,
+                0.707871218027468
+              ]
+            },
+            "cot": {
+              "coverage_matched": 0.4766666666666667,
+              "selective_accuracy": 0.3356643356643357,
+              "gap_vs_ref": 0.6480186480186481,
+              "ci95": [
+                0.602648053040915,
+                0.6936901094828866
+              ],
+              "p_one_sided": 0.0,
+              "gap_rematch": 0.6480186480186481,
+              "ci95_rematch": [
+                0.639463258543655,
+                0.7301980831668332
+              ]
+            },
+            "linc": {
+              "coverage_matched": 0.4766666666666667,
+              "selective_accuracy": 0.3333333333333333,
+              "gap_vs_ref": 0.6503496503496504,
+              "ci95": [
+                0.6048230863062783,
+                0.6940686240717742
+              ],
+              "p_one_sided": 0.0,
+              "gap_rematch": 0.6503496503496504,
+              "ci95_rematch": [
+                0.6414920788538008,
+                0.7314284673659672
+              ]
+            },
+            "naive": {
+              "coverage": 0.41333333333333333,
+              "selective_accuracy": 0.9811827956989247,
+              "resolve_correct_rate": 0.40555555555555556
+            },
+            "off": {
+              "coverage": 0.0,
+              "selective_accuracy": NaN,
+              "resolve_correct_rate": 0.0
+            },
+            "ilp": {
+              "coverage_matched": 0.4766666666666667,
+              "selective_accuracy": 0.5594405594405595,
+              "gap_vs_ref": 0.4242424242424242,
+              "ci95": [
+                0.37894811791694694,
+                0.47245672226489116
+              ],
+              "p_one_sided": 0.0
+            },
+            "gold_full": {
+              "coverage": 0.49444444444444446,
+              "selective_accuracy": 1.0,
+              "resolve_correct_rate": 0.49444444444444446
+            },
+            "gold_naive": {
+              "coverage": 0.42777777777777776,
+              "selective_accuracy": 1.0,
+              "resolve_correct_rate": 0.42777777777777776
+            }
+          },
+          "comparisons": {
+            "pot": {
+              "gap": 0.675990675990676,
+              "ci95": [
+                0.6306649142589573,
+                0.7216007281283991
+              ],
+              "p_one_sided": 0.0,
+              "selacc_a": 0.9836829836829837,
+              "selacc_b": 0.3076923076923077,
+              "cov_a": 0.4766666666666667,
+              "cov_b": 0.4766666666666667,
+              "n_boot": 2000
+            },
+            "sc": {
+              "gap": 0.641025641025641,
+              "ci95": [
+                0.5961827108468678,
+                0.6864480628522842
+              ],
+              "p_one_sided": 0.0,
+              "selacc_a": 0.9836829836829837,
+              "selacc_b": 0.34265734265734266,
+              "cov_a": 0.4766666666666667,
+              "cov_b": 0.4766666666666667,
+              "n_boot": 2000
+            },
+            "raw": {
+              "gap": 0.6363636363636364,
+              "ci95": [
+                0.5901094614851757,
+                0.6825148866587052
+              ],
+              "p_one_sided": 0.0,
+              "selacc_a": 0.9836829836829837,
+              "selacc_b": 0.3473193473193473,
+              "cov_a": 0.4766666666666667,
+              "cov_b": 0.4766666666666667,
+              "n_boot": 2000
+            },
+            "cot": {
+              "gap": 0.6480186480186481,
+              "ci95": [
+                0.602648053040915,
+                0.6936901094828866
+              ],
+              "p_one_sided": 0.0,
+              "selacc_a": 0.9836829836829837,
+              "selacc_b": 0.3356643356643357,
+              "cov_a": 0.4766666666666667,
+              "cov_b": 0.4766666666666667,
+              "n_boot": 2000
+            },
+            "linc": {
+              "gap": 0.6503496503496504,
+              "ci95": [
+                0.6048230863062783,
+                0.6940686240717742
+              ],
+              "p_one_sided": 0.0,
+              "selacc_a": 0.9836829836829837,
+              "selacc_b": 0.3333333333333333,
+              "cov_a": 0.4766666666666667,
+              "cov_b": 0.4766666666666667,
+              "n_boot": 2000
+            }
+          }
+        },
+        "H1_all_comparison_pool": {
+          "target_coverage": 0.3817460317460317,
+          "n_networks": 1260,
+          "selective_accuracy_ref": 0.9792099792099792,
+          "leaderboard": {
+            "modeA": {
+              "coverage": 0.3817460317460317,
+              "selective_accuracy": 0.9792099792099792,
+              "n": 1260
+            },
+            "pot": {
+              "coverage_matched": 0.3817460317460317,
+              "selective_accuracy": 0.30353430353430355,
+              "gap_vs_ref": 0.6756756756756757,
+              "ci95": [
+                0.6311664629972096,
+                0.7162529755490987
+              ],
+              "p_one_sided": 0.0,
+              "gap_rematch": 0.6756756756756757,
+              "ci95_rematch": [
+                0.6692145955040693,
+                0.7525987525987525
+              ],
+              "ci95_bonferroni_m2": [
+                0.6258837518262128,
+                0.7230958448273392
+              ]
+            },
+            "sc": {
+              "coverage_matched": 0.3817460317460317,
+              "selective_accuracy": 0.3264033264033264,
+              "gap_vs_ref": 0.6528066528066527,
+              "ci95": [
+                0.6092158322553434,
+                0.6950551763378614
+              ],
+              "p_one_sided": 0.0,
+              "gap_rematch": 0.6528066528066527,
+              "ci95_rematch": [
+                0.6559663329383156,
+                0.7398993504149134
+              ],
+              "ci95_bonferroni_m2": [
+                0.602468638565685,
+                0.7016265922869057
+              ]
+            },
+            "raw": {
+              "coverage_matched": 0.3817460317460317,
+              "selective_accuracy": 0.340956340956341,
+              "gap_vs_ref": 0.6382536382536382,
+              "ci95": [
+                0.5954607868018412,
+                0.6807955194939158
+              ],
+              "p_one_sided": 0.0,
+              "gap_rematch": 0.6382536382536382,
+              "ci95_rematch": [
+                0.622747132726223,
+                0.7077038088183686
+              ]
+            },
+            "cot": {
+              "coverage_matched": 0.3817460317460317,
+              "selective_accuracy": 0.3305613305613306,
+              "gap_vs_ref": 0.6486486486486487,
+              "ci95": [
+                0.6052789869438152,
+                0.6906017521906614
+              ],
+              "p_one_sided": 0.0,
+              "gap_rematch": 0.6486486486486487,
+              "ci95_rematch": [
+                0.6528516133832524,
+                0.7375048142045406
+              ]
+            },
+            "linc": {
+              "coverage_matched": 0.3817460317460317,
+              "selective_accuracy": 0.3305613305613306,
+              "gap_vs_ref": 0.6486486486486487,
+              "ci95": [
+                0.6046915286589349,
+                0.6926862060478735
+              ],
+              "p_one_sided": 0.0,
+              "gap_rematch": 0.6486486486486487,
+              "ci95_rematch": [
+                0.6627841006961468,
+                0.7468929830925346
+              ]
+            },
+            "naive": {
+              "coverage": 0.3253968253968254,
+              "selective_accuracy": 0.975609756097561,
+              "resolve_correct_rate": 0.31746031746031744
+            },
+            "off": {
+              "coverage": 0.0,
+              "selective_accuracy": NaN,
+              "resolve_correct_rate": 0.0
+            },
+            "ilp": {
+              "coverage_matched": 0.3817460317460317,
+              "selective_accuracy": 0.5405405405405406,
+              "gap_vs_ref": 0.43866943866943864,
+              "ci95": [
+                0.39232967812674857,
+                0.48238265992187995
+              ],
+              "p_one_sided": 0.0
+            },
+            "gold_full": {
+              "coverage": 0.396031746031746,
+              "selective_accuracy": 1.0,
+              "resolve_correct_rate": 0.396031746031746
+            },
+            "gold_naive": {
+              "coverage": 0.3357142857142857,
+              "selective_accuracy": 1.0,
+              "resolve_correct_rate": 0.3357142857142857
+            }
+          },
+          "comparisons": {
+            "pot": {
+              "gap": 0.6756756756756757,
+              "ci95": [
+                0.6311664629972096,
+                0.7162529755490987
+              ],
+              "p_one_sided": 0.0,
+              "selacc_a": 0.9792099792099792,
+              "selacc_b": 0.30353430353430355,
+              "cov_a": 0.3817460317460317,
+              "cov_b": 0.3817460317460317,
+              "n_boot": 2000
+            },
+            "sc": {
+              "gap": 0.6528066528066527,
+              "ci95": [
+                0.6092158322553434,
+                0.6950551763378614
+              ],
+              "p_one_sided": 0.0,
+              "selacc_a": 0.9792099792099792,
+              "selacc_b": 0.3264033264033264,
+              "cov_a": 0.3817460317460317,
+              "cov_b": 0.3817460317460317,
+              "n_boot": 2000
+            },
+            "raw": {
+              "gap": 0.6382536382536382,
+              "ci95": [
+                0.5954607868018412,
+                0.6807955194939158
+              ],
+              "p_one_sided": 0.0,
+              "selacc_a": 0.9792099792099792,
+              "selacc_b": 0.340956340956341,
+              "cov_a": 0.3817460317460317,
+              "cov_b": 0.3817460317460317,
+              "n_boot": 2000
+            },
+            "cot": {
+              "gap": 0.6486486486486487,
+              "ci95": [
+                0.6052789869438152,
+                0.6906017521906614
+              ],
+              "p_one_sided": 0.0,
+              "selacc_a": 0.9792099792099792,
+              "selacc_b": 0.3305613305613306,
+              "cov_a": 0.3817460317460317,
+              "cov_b": 0.3817460317460317,
+              "n_boot": 2000
+            },
+            "linc": {
+              "gap": 0.6486486486486487,
+              "ci95": [
+                0.6046915286589349,
+                0.6926862060478735
+              ],
+              "p_one_sided": 0.0,
+              "selacc_a": 0.9792099792099792,
+              "selacc_b": 0.3305613305613306,
+              "cov_a": 0.3817460317460317,
+              "cov_b": 0.3817460317460317,
+              "n_boot": 2000
+            }
+          }
+        },
+        "H1_confirmatory_holm": {
+          "family": [
+            "pot",
+            "sc"
+          ],
+          "holm": {
+            "pot": {
+              "p": 0.0,
+              "p_adj": 0.0,
+              "reject": true
+            },
+            "sc": {
+              "p": 0.0,
+              "p_adj": 0.0,
+              "reject": true
+            }
+          },
+          "gaps": {
+            "pot": 0.675990675990676,
+            "sc": 0.641025641025641
+          },
+          "cis": {
+            "pot": [
+              0.6306649142589573,
+              0.7216007281283991
+            ],
+            "sc": [
+              0.5961827108468678,
+              0.6864480628522842
+            ]
+          },
+          "adjusted_cis_bonferroni_m2": {
+            "pot": [
+              0.6236368056961156,
+              0.7284477391856425
+            ],
+            "sc": [
+              0.5875149728891295,
+              0.6913535656197198
+            ]
+          },
+          "PASS": true
+        },
+        "H3_iteration_real": {
+          "real_reads": true,
+          "metric_note": "'full'/'naive' = resolve-to-CORRECT-singleton rate; 'full_cov'/'naive_cov' = resolve-to-singleton (coverage) rate. The iteration advantage of full PC over naive single-pass shows as a positive coverag...",
+          "gap_by_hop": [
+            {
+              "cell": "hop_L2_P2",
+              "full": 0.5222222222222223,
+              "naive": 0.5222222222222223,
+              "gap": 0.0,
+              "n": 90,
+              "full_cov": 0.5555555555555556,
+              "naive_cov": 0.5555555555555556,
+              "cov_gap": 0.0
+            },
+            {
+              "cell": "hop_L3_P2",
+              "full": 0.14444444444444443,
+              "naive": 0.0,
+              "gap": 0.14444444444444443,
+              "n": 90,
+              "full_cov": 0.14444444444444443,
+              "naive_cov": 0.0,
+              "cov_gap": 0.14444444444444443
+            },
+            {
+              "cell": "hop_L4_P2",
+              "full": 0.044444444444444446,
+              "naive": 0.0,
+              "gap": 0.044444444444444446,
+              "n": 90,
+              "full_cov": 0.044444444444444446,
+              "naive_cov": 0.0,
+              "cov_gap": 0.044444444444444446
+            },
+            {
+              "cell": "hop_L5_P2",
+              "full": 0.0,
+              "naive": 0.0,
+              "gap": 0.0,
+              "n": 90,
+              "full_cov": 0.0,
+              "naive_cov": 0.0,
+              "cov_gap": 0.0
+            }
+          ],
+          "gap_by_cyclomatic": [
+            {
+              "cell": "cyc_mu0",
+              "full": 0.1111111111111111,
+              "naive": 0.0,
+              "gap": 0.1111111111111111,
+              "n": 90,
+              "full_cov": 0.1111111111111111,
+              "naive_cov": 0.0,
+              "cov_gap": 0.1111111111111111
+            },
+            {
+              "cell": "cyc_mu1",
+              "full": 0.17777777777777778,
+              "naive": 0.0,
+              "gap": 0.17777777777777778,
+              "n": 90,
+              "full_cov": 0.17777777777777778,
+              "naive_cov": 0.0,
+              "cov_gap": 0.17777777777777778
+            },
+            {
+              "cell": "cyc_mu2",
+              "full": 0.1111111111111111,
+              "naive": 0.0,
+              "gap": 0.1111111111111111,
+              "n": 90,
+              "full_cov": 0.1111111111111111,
+              "naive_cov": 0.0,
+              "cov_gap": 0.1111111111111111
+            },
+            {
+              "cell": "cyc_mu3",
+              "full": 0.2,
+              "naive": 0.0,
+              "gap": 0.2,
+              "n": 90,
+              "full_cov": 0.2,
+              "naive_cov": 0.0,
+              "cov_gap": 0.2
+            }
+          ],
+          "trend_hop": {
+            "spearman_rho": -0.10540925533894598,
+            "spearman_ci95": [
+              -0.39999999999999997,
+              0.19999999999999998
+            ],
+            "jonckheere_z": -0.36681261567265006,
+            "jonckheere_p": 0.6431206016615889
+          },
+          "trend_cyclomatic": {
+            "spearman_rho": 0.632455532033676,
+            "spearman_ci95": [
+              -0.6000000000000001,
+              1.0
+            ],
+            "jonckheere_z": 0.7336252313453001,
+            "jonckheere_p": 0.23158858944015992
+          },
+          "length2_tie": {
+            "n": 630,
+            "full_resolve_correct": 0.6349206349206349,
+            "naive_resolve_correct": 0.6349206349206349,
+            "gap": 0.0
+          },
+          "iteration_coverage_gain_cyclomatic": 0.15
+        },
+        "H3_iteration_gold": {
+          "real_reads": false,
+          "metric_note": "'full'/'naive' = resolve-to-CORRECT-singleton rate; 'full_cov'/'naive_cov' = resolve-to-singleton (coverage) rate. The iteration advantage of full PC over naive single-pass shows as a positive coverag...",
+          "gap_by_hop": [
+            {
+              "cell": "hop_L2_P2",
+              "full": 0.5888888888888889,
+              "naive": 0.5888888888888889,
+              "gap": 0.0,
+              "n": 90,
+              "full_cov": 0.5888888888888889,
+              "naive_cov": 0.5888888888888889,
+              "cov_gap": 0.0
+            },
+            {
+              "cell": "hop_L3_P2",
+              "full": 0.15555555555555556,
+              "naive": 0.0,
+              "gap": 0.15555555555555556,
+              "n": 90,
+              "full_cov": 0.15555555555555556,
+              "naive_cov": 0.0,
+              "cov_gap": 0.15555555555555556
+            },
+            {
+              "cell": "hop_L4_P2",
+              "full": 0.044444444444444446,
+              "naive": 0.0,
+              "gap": 0.044444444444444446,
+              "n": 90,
+              "full_cov": 0.044444444444444446,
+              "naive_cov": 0.0,
+              "cov_gap": 0.044444444444444446
+            },
+            {
+              "cell": "hop_L5_P2",
+              "full": 0.011111111111111112,
+              "naive": 0.0,
+              "gap": 0.011111111111111112,
+              "n": 90,
+              "full_cov": 0.011111111111111112,
+              "naive_cov": 0.0,
+              "cov_gap": 0.011111111111111112
+            }
+          ],
+          "gap_by_cyclomatic": [
+            {
+              "cell": "cyc_mu0",
+              "full": 0.12222222222222222,
+              "naive": 0.0,
+              "gap": 0.12222222222222222,
+              "n": 90,
+              "full_cov": 0.12222222222222222,
+              "naive_cov": 0.0,
+              "cov_gap": 0.12222222222222222
+            },
+            {
+              "cell": "cyc_mu1",
+              "full": 0.17777777777777778,
+              "naive": 0.0,
+              "gap": 0.17777777777777778,
+              "n": 90,
+              "full_cov": 0.17777777777777778,
+              "naive_cov": 0.0,
+              "cov_gap": 0.17777777777777778
+            },
+            {
+              "cell": "cyc_mu2",
+              "full": 0.1111111111111111,
+              "naive": 0.0,
+              "gap": 0.1111111111111111,
+              "n": 90,
+              "full_cov": 0.1111111111111111,
+              "naive_cov": 0.0,
+              "cov_gap": 0.1111111111111111
+            },
+            {
+              "cell": "cyc_mu3",
+              "full": 0.2222222222222222,
+              "naive": 0.0,
+              "gap": 0.2222222222222222,
+              "n": 90,
+              "full_cov": 0.2222222222222222,
+              "naive_cov": 0.0,
+              "cov_gap": 0.2222222222222222
+            }
+          ],
+          "trend_hop": {
+            "spearman_rho": 0.19999999999999998,
+            "spearman_ci95": [
+              -0.39999999999999997,
+              0.39999999999999997
+            ],
+            "jonckheere_z": -0.28529870107872785,
+            "jonckheere_p": 0.6122923460437508
+          },
+          "trend_cyclomatic": {
+            "spearman_rho": 0.39999999999999997,
+            "spearman_ci95": [
+              -0.6000000000000001,
+              1.0
+            ],
+            "jonckheere_z": 0.8558961032361835,
+            "jonckheere_p": 0.19602762529140838
+          },
+          "length2_tie": {
+            "n": 630,
+            "full_resolve_correct": 0.6714285714285714,
+            "naive_resolve_correct": 0.6714285714285714,
+            "gap": 0.0
+          },
+          "iteration_coverage_gain_cyclomatic": 0.15833333333333333
+        },
+        "C2_on_vs_off": {
+          "modeA_coverage": 0.3817460317460317,
+          "modeA_resolve_correct_rate": 0.3738095238095238,
+          "off_coverage": 0.0,
+          "deduction_required_gap": 0.3817460317460317,
+          "note": "OFF never reads the query edge locally (s,t never co-occur), so its single-relation coverage is 0; Mode-A coverage IS the deduction-required bite recovered by the composition floor."
+        },
+        "audit": {
+          "per_edge_recall": 0.966,
+          "per_edge_breadth_mean": 1.0,
+          "n_read_edges": 9000,
+          "within_doc_soundness_rho_icc": 0.0326683829446769,
+          "read_error_type_distribution": {
+            "exact_correct": 0.966,
+            "sound_tight": 0.0,
+            "sound_loose": 0.0,
+            "overcommit_unsound": 0.034
+          },
+          "J_E_by_contributing_edges": {
+            "2": 0.9111111111111111,
+            "3": 0.9111111111111111,
+            "4": 0.8277777777777777,
+            "6": 0.7962962962962963,
+            "7": 0.8,
+            "8": 0.7814814814814814,
+            "10": 0.7666666666666667,
+            "12": 0.5888888888888889,
+            "16": 0.7222222222222222
+          },
+          "J_E_vs_independence": {
+            "2": {
+              "observed_J": 0.9111111111111111,
+              "indep_r_pow_E": 0.933156,
+              "n": 90
+            },
+            "3": {
+              "observed_J": 0.9111111111111111,
+              "indep_r_pow_E": 0.9014286959999999,
+              "n": 90
+            },
+            "4": {
+              "observed_J": 0.8277777777777777,
+              "indep_r_pow_E": 0.8707801203359999,
+              "n": 180
+            },
+            "6": {
+              "observed_J": 0.7962962962962963,
+              "indep_r_pow_E": 0.8125736939722603,
+              "n": 270
+            },
+            "7": {
+              "observed_J": 0.8,
+              "indep_r_pow_E": 0.7849461883772034,
+              "n": 90
+            },
+            "8": {
+              "observed_J": 0.7814814814814814,
+              "indep_r_pow_E": 0.7582580179723785,
+              "n": 270
+            },
+            "10": {
+              "observed_J": 0.7666666666666667,
+              "indep_r_pow_E": 0.7075730190190327,
+              "n": 90
+            },
+            "12": {
+              "observed_J": 0.5888888888888889,
+              "indep_r_pow_E": 0.6602760081357245,
+              "n": 90
+            },
+            "16": {
+              "observed_J": 0.7222222222222222,
+              "indep_r_pow_E": 0.5749552218193998,
+              "n": 90
+            }
+          },
+          "silent_wrong_count": 10,
+          "covered_wrong_count": 10,
+          "n_modeA_covered": 481,
+          "silent_wrong_rate_among_covered": 0.02079002079002079,
+          "zero_fp_contains_gold_rate_when_allsound": 1.0,
+          "n_allsound_networks": 998,
+          "interpretation": "On all-sound networks Mode-A's closed query SET must contain gold (soundness of PC) -> zero-FP-conditional-on-soundness ~1.0; silent-wrong arises ONLY from unsound reads."
+        },
+        "per_stratum": {
+          "red_P1_L2": {
+            "n": 90,
+            "modeA_coverage": 0.4222222222222222,
+            "modeA_resolve_correct_rate": 0.3888888888888889,
+            "pot_acc_all": 0.2222222222222222,
+            "sc_acc_all": 0.2222222222222222
+          },
+          "red_P2_L2": {
+            "n": 90,
+            "modeA_coverage": 0.45555555555555555,
+            "modeA_resolve_correct_rate": 0.43333333333333335,
+            "pot_acc_all": 0.18888888888888888,
+            "sc_acc_all": 0.17777777777777778
+          },
+          "red_P3_L2": {
+            "n": 90,
+            "modeA_coverage": 0.6555555555555556,
+            "modeA_resolve_correct_rate": 0.6555555555555556,
+            "pot_acc_all": 0.26666666666666666,
+            "sc_acc_all": 0.2777777777777778
+          },
+          "red_P4_L2": {
+            "n": 90,
+            "modeA_coverage": 0.7333333333333333,
+            "modeA_resolve_correct_rate": 0.7222222222222222,
+            "pot_acc_all": 0.26666666666666666,
+            "sc_acc_all": 0.3333333333333333
+          },
+          "red_P6_L2": {
+            "n": 90,
+            "modeA_coverage": 0.8333333333333334,
+            "modeA_resolve_correct_rate": 0.8222222222222222,
+            "pot_acc_all": 0.3111111111111111,
+            "sc_acc_all": 0.4
+          },
+          "red_P8_L2": {
+            "n": 90,
+            "modeA_coverage": 0.9,
+            "modeA_resolve_correct_rate": 0.9,
+            "pot_acc_all": 0.34444444444444444,
+            "sc_acc_all": 0.4222222222222222
+          },
+          "hop_L2_P2": {
+            "n": 90,
+            "modeA_coverage": 0.5555555555555556,
+            "modeA_resolve_correct_rate": 0.5222222222222223,
+            "pot_acc_all": 0.2,
+            "sc_acc_all": 0.17777777777777778
+          },
+          "hop_L3_P2": {
+            "n": 90,
+            "modeA_coverage": 0.14444444444444443,
+            "modeA_resolve_correct_rate": 0.14444444444444443,
+            "pot_acc_all": 0.25555555555555554,
+            "sc_acc_all": 0.3111111111111111
+          },
+          "hop_L4_P2": {
+            "n": 90,
+            "modeA_coverage": 0.044444444444444446,
+            "modeA_resolve_correct_rate": 0.044444444444444446,
+            "pot_acc_all": 0.2,
+            "sc_acc_all": 0.25555555555555554
+          },
+          "hop_L5_P2": {
+            "n": 90,
+            "modeA_coverage": 0.0,
+            "modeA_resolve_correct_rate": 0.0,
+            "pot_acc_all": 0.13333333333333333,
+            "sc_acc_all": 0.16666666666666666
+          },
+          "cyc_mu0": {
+            "n": 90,
+            "modeA_coverage": 0.1111111111111111,
+            "modeA_resolve_correct_rate": 0.1111111111111111,
+            "pot_acc_all": 0.16666666666666666,
+            "sc_acc_all": 0.18888888888888888
+          },
+          "cyc_mu1": {
+            "n": 90,
+            "modeA_coverage": 0.17777777777777778,
+            "modeA_resolve_correct_rate": 0.17777777777777778,
+            "pot_acc_all": 0.18888888888888888,
+            "sc_acc_all": 0.2222222222222222
+          },
+          "cyc_mu2": {
+            "n": 90,
+            "modeA_coverage": 0.1111111111111111,
+            "modeA_resolve_correct_rate": 0.1111111111111111,
+            "pot_acc_all": 0.17777777777777778,
+            "sc_acc_all": 0.2
+          },
+          "cyc_mu3": {
+            "n": 90,
+            "modeA_coverage": 0.2,
+            "modeA_resolve_correct_rate": 0.2,
+            "pot_acc_all": 0.2222222222222222,
+            "sc_acc_all": 0.2222222222222222
+          }
+        },
+        "worked_example": {
+          "mode_a_narrowing": {
+            "net_id": "allen|red_P2_L2|2",
+            "cell": "red_P2_L2",
+            "query_pair": [
+              0,
+              1
+            ],
+            "query_entities": [
+              "the recruitment drive",
+              "the maintenance window"
+            ],
+            "gold_query": "M",
+            "paths": [
+              [
+                0,
+                2,
+                1
+              ],
+              [
+                0,
+                3,
+                1
+              ]
+            ],
+            "reads": [
+              {
+                "edge": [
+                  0,
+                  2
+                ],
+                "entities": [
+                  "the recruitment drive",
+                  "the venue booking"
+                ],
+                "sentence": "The recruitment drive and the venue booking began together, but the recruitment drive ended first.",
+                "read": [
+                  "S"
+                ],
+                "gold": "S"
+              },
+              {
+                "edge": [
+                  0,
+                  3
+                ],
+                "entities": [
+                  "the recruitment drive",
+                  "the trademark dispute"
+                ],
+                "sentence": "The recruitment drive and the trademark dispute occurred over precisely the same interval.",
+                "read": [
+                  "E"
+                ],
+                "gold": "E"
+              },
+              {
+                "edge": [
+                  1,
+                  2
+                ],
+                "entities": [
+                  "the maintenance window",
+                  "the venue booking"
+                ],
+                "sentence": "The maintenance window and the venue booking ended together, but the maintenance window began later.",
+                "read": [
+                  "F"
+                ],
+                "gold": "F"
+              },
+              {
+                "edge": [
+                  1,
+                  3
+                ],
+                "entities": [
+                  "the maintenance window",
+                  "the trademark dispute"
+                ],
+                "sentence": "The maintenance window began exactly as the trademark dispute ended.",
+                "read": [
+                  "MI"
+                ],
+                "gold": "MI"
+              }
+            ],
+            "closed_query_set": [
+              "M"
+            ],
+            "covered": true,
+            "answer": "M",
+            "mode_b": false
+          },
+          "mode_b_collapse": {
+            "net_id": "allen|red_P2_L2|83",
+            "cell": "red_P2_L2",
+            "query_pair": [
+              0,
+              1
+            ],
+            "query_entities": [
+              "the design review",
+              "the site inspection"
+            ],
+            "gold_query": "MI",
+            "paths": [
+              [
+                0,
+                2,
+                1
+              ],
+              [
+                0,
+                3,
+                1
+              ]
+            ],
+            "reads": [
+              {
+                "edge": [
+                  0,
+                  2
+                ],
+                "entities": [
+                  "the design review",
+                  "the curriculum update"
+                ],
+                "sentence": "The design review and the curriculum update spanned exactly the same period.",
+                "read": [
+                  "E"
+                ],
+                "gold": "E"
+              },
+              {
+                "edge": [
+                  0,
+                  3
+                ],
+                "entities": [
+                  "the design review",
+                  "the board meeting"
+                ],
+                "sentence": "The design review started at the very moment the board meeting finished.",
+                "read": [
+                  "BI"
+                ],
+                "gold": "MI"
+              },
+              {
+                "edge": [
+                  1,
+                  2
+                ],
+                "entities": [
+                  "the site inspection",
+                  "the curriculum update"
+                ],
+                "sentence": "The site inspection finished at the very moment the curriculum update started.",
+                "read": [
+                  "M"
+                ],
+                "gold": "M"
+              },
+              {
+                "edge": [
+                  1,
+                  3
+                ],
+                "entities": [
+                  "the site inspection",
+                  "the board meeting"
+                ],
+                "sentence": "The site inspection and the board meeting ended together, but the site inspection began later.",
+                "read": [
+                  "F"
+                ],
+                "gold": "F"
+              }
+            ],
+            "closed_query_set": [],
+            "covered": false,
+            "answer": null,
+            "mode_b": true
+          }
+        },
+        "figures": [
+          "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_2/gen_art/gen_art_experiment_1/results/figures/h1_leaderboard_allen.jpg",
+          "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_2/gen_art/gen_art_experiment_1/results/figures/h3_hop_allen.jpg",
+          "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_2/gen_art/gen_art_experiment_1/results/figures/h3_cyc_allen.jpg"
+        ],
+        "pc_completeness": "PC-SOUND-BUT-INCOMPLETE (Allen consistency NP-hard): coverage / collapse are SOUND LOWER BOUNDS.",
+        "evidence_tags": [
+          "REAL-LLM-READ-ON-SYNTHETIC",
+          "SOUND-LOWER-BOUND"
+        ],
+        "n_base_relations": 13,
+        "decomposition": {
+          "method": "cell-pooled (n-weighted) from this arm's leaderboard + H3 aggregates",
+          "evidence_tag": "REAL-LLM-READ-ON-SYNTHETIC",
+          "sound_lower_bound": true,
+          "selacc_modeA": 0.9836829836829837,
+          "selacc_pot": 0.3076923076923077,
+          "selacc_naive": 0.9811827956989247,
+          "total_vs_pot_gap": 0.675990675990676,
+          "inherited_table_vs_llm_gap": 0.673490488006617,
+          "novel_iteration_gap_real": {
+            "gap_weighted_mean": 0.11296296296296296,
+            "n": 540,
+            "by_cell": [
+              {
+                "cell": "hop_L3_P2",
+                "gap": 0.14444444444444443,
+                "n": 90
+              },
+              {
+                "cell": "hop_L4_P2",
+                "gap": 0.044444444444444446,
+                "n": 90
+              },
+              {
+                "cell": "hop_L5_P2",
+                "gap": 0.0,
+                "n": 90
+              },
+              {
+                "cell": "cyc_mu1",
+                "gap": 0.17777777777777778,
+                "n": 90
+              },
+              {
+                "cell": "cyc_mu2",
+                "gap": 0.1111111111111111,
+                "n": 90
+              },
+              {
+                "cell": "cyc_mu3",
+                "gap": 0.2,
+                "n": 90
+              }
+            ]
+          },
+          "novel_iteration_gap_gold": {
+            "gap_weighted_mean": 0.12037037037037036,
+            "n": 540,
+            "by_cell": [
+              {
+                "cell": "hop_L3_P2",
+                "gap": 0.15555555555555556,
+                "n": 90
+              },
+              {
+                "cell": "hop_L4_P2",
+                "gap": 0.044444444444444446,
+                "n": 90
+              },
+              {
+                "cell": "hop_L5_P2",
+                "gap": 0.011111111111111112,
+                "n": 90
+              },
+              {
+                "cell": "cyc_mu1",
+                "gap": 0.17777777777777778,
+                "n": 90
+              },
+              {
+                "cell": "cyc_mu2",
+                "gap": 0.1111111111111111,
+                "n": 90
+              },
+              {
+                "cell": "cyc_mu3",
+                "gap": 0.2222222222222222,
+                "n": 90
+              }
+            ]
+          },
+          "inherited_is": "INHERITED neuro-symbolic premise: a single exact composition-table step (naive single-pass) already beats LLM per-path composition.",
+          "novel_is": "NOVEL contribution of iterated PC closure: resolves deduction-deep (hop>=3 / cyclomatic>=1) queries a single naive pass leaves open."
+        },
+        "provenance": "point/allen reproduced from iter-2 experiment_iter2_dir3 (identical model/seed/knob/prompts/networks/cache); merged here for the 3-point algebra-richness scaling curve."
+      }
+    },
+    "read_bite_lost_widenings_point": 0,
+    "verdict": {
+      "headline": "H1 CONFIRMED on all arms (Mode-A > PoT AND > SC at matched coverage, Holm). point: vs POT \u0394=+0.043(sig), vs SC \u0394=+0.146(sig) | rcc8: vs POT \u0394=+0.448(sig), vs SC \u0394=+0.621(sig) | allen: vs POT \u0394=+0.676(...",
+      "H1_pass_by_algebra": {
+        "point": true,
+        "rcc8": true,
+        "allen": true
+      },
+      "cross_algebra_synthesis": {
+        "by_algebra": {
+          "point": {
+            "n_base_relations": 3,
+            "target_coverage": 0.6,
+            "selacc_modeA": 1.0,
+            "selacc_pot": 0.9574074074074074,
+            "selacc_sc": 0.8537037037037037,
+            "gap_vs_pot": 0.042592592592592626,
+            "gap_vs_sc": 0.14629629629629626,
+            "pot_holm_reject": true,
+            "sc_holm_reject": true,
+            "H1_PASS": true
+          },
+          "rcc8": {
+            "n_base_relations": 8,
+            "target_coverage": 0.19333333333333333,
+            "selacc_modeA": 1.0,
+            "selacc_pot": 0.5517241379310345,
+            "selacc_sc": 0.3793103448275862,
+            "gap_vs_pot": 0.4482758620689655,
+            "gap_vs_sc": 0.6206896551724138,
+            "pot_holm_reject": true,
+            "sc_holm_reject": true,
+            "H1_PASS": true
+          },
+          "allen": {
+            "n_base_relations": 13,
+            "target_coverage": 0.4766666666666667,
+            "selacc_modeA": 0.9836829836829837,
+            "selacc_pot": 0.3076923076923077,
+            "selacc_sc": 0.34265734265734266,
+            "gap_vs_pot": 0.675990675990676,
+            "gap_vs_sc": 0.641025641025641,
+            "pot_holm_reject": true,
+            "sc_holm_reject": true,
+            "H1_PASS": true
+          }
+        },
+        "ordered_by_richness": [
+          "point",
+          "rcc8",
+          "allen"
+        ],
+        "scaling_points_vs_pot": [
+          {
+            "algebra": "point",
+            "n_base_relations": 3,
+            "gap_vs_pot": 0.042592592592592626,
+            "gap_vs_sc": 0.14629629629629626,
+            "selacc_modeA": 1.0,
+            "selacc_pot": 0.9574074074074074
+          },
+          {
+            "algebra": "rcc8",
+            "n_base_relations": 8,
+            "gap_vs_pot": 0.4482758620689655,
+            "gap_vs_sc": 0.6206896551724138,
+            "selacc_modeA": 1.0,
+            "selacc_pot": 0.5517241379310345
+          },
+          {
+            "algebra": "allen",
+            "n_base_relations": 13,
+            "gap_vs_pot": 0.675990675990676,
+            "gap_vs_sc": 0.641025641025641,
+            "selacc_modeA": 0.9836829836829837,
+            "selacc_pot": 0.3076923076923077
+          }
+        ],
+        "finding": "The closure advantage over neural per-path reasoning scales with relation-algebra richness (point 3 -> RCC-8 8 -> Allen 13 base relations): on the 3-relation convex point algebra a strong neural basel...",
+        "advantage_grows_with_algebra_richness": true,
+        "advantage_grows_endpoint_gt_0p05": true,
+        "monotonicity_note": "advantage_grows_with_algebra_richness = gap_vs_pot is monotone non-decreasing across point<rcc8<allen (tol 0.0); an out-of-order RCC-8 point is reported honestly, not suppressed.",
+        "scaling_figure": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_3/gen_art/gen_art_experiment_3/results/figures/scaling_curve_vs_pot.jpg",
+        "decomposition_table_cellpooled": {
+          "point": {
+            "n_base_relations": 3,
+            "total_vs_pot_gap": 0.042592592592592626,
+            "inherited_table_vs_llm_gap": 0.042592592592592626,
+            "novel_iteration_gap_real": 0.23333333333333334,
+            "novel_iteration_gap_gold": 0.23333333333333334,
+            "sound_lower_bound": false
+          },
+          "rcc8": {
+            "n_base_relations": 8,
+            "total_vs_pot_gap": 0.4482758620689655,
+            "inherited_table_vs_llm_gap": 0.4482758620689655,
+            "novel_iteration_gap_real": 0.011111111111111112,
+            "novel_iteration_gap_gold": 0.011111111111111112,
+            "sound_lower_bound": true
+          },
+          "allen": {
+            "n_base_relations": 13,
+            "total_vs_pot_gap": 0.675990675990676,
+            "inherited_table_vs_llm_gap": 0.673490488006617,
+            "novel_iteration_gap_real": 0.11296296296296296,
+            "novel_iteration_gap_gold": 0.12037037037037036,
+            "sound_lower_bound": true
+          }
+        }
+      },
+      "scope": "REAL-LLM-READ-ON-SYNTHETIC; point=PC-complete exact arm, allen=NP-hard lower-bound generality"
+    },
+    "cost": {
+      "cumulative_openrouter_usd": 0.177724,
+      "n_llm_calls": 2113,
+      "n_cache_hits": 23,
+      "n_errors": 0,
+      "budget_hard": 9.0,
+      "point_allen_billed_usd_this_iter": 0.0,
+      "point_allen_source": "iter-2 cache (no new billing)",
+      "iter2_point_allen_billed_usd": 2.21114
+    },
+    "rcc8_run_elapsed_sec": 190.9,
+    "merge_note": "point/allen analysis + datasets are iter-2 cache replays (identical model/seed/protocol); rcc8 is fresh this iter. See config.arm_provenance."
+  },
+  "datasets": [
+    {
+      "dataset": "synthetic_qcn_point",
+      "examples": [
+        {
+          "input": "The earnings call came before the patent submission. The compliance training took place earlier than the patent submission.\nQuery: what is the temporal relation between the compliance training and the...",
+          "output": "before",
+          "metadata_net_id": "point|red_P1_L2|0",
+          "metadata_algebra": "point",
+          "metadata_cell": "red_P1_L2",
+          "metadata_fold": "test",
+          "metadata_query_pair": [
+            0,
+            1
+          ],
+          "metadata_cyclomatic": 0,
+          "metadata_num_simple_paths": 1,
+          "metadata_contributing_edges": 2,
+          "metadata_modeA_covered": false,
+          "metadata_modeA_correct": 0,
+          "metadata_naive_covered": false,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_off": "ABSTAIN",
+          "predict_raw": "after",
+          "predict_cot": "after",
+          "predict_sc": "before",
+          "predict_linc": "after",
+          "predict_pot": "ABSTAIN",
+          "predict_ilp": "after"
+        },
+        {
+          "input": "The funding round took place later than the safety drill. The trademark dispute came after the safety drill.\nQuery: what is the temporal relation between the funding round and the trademark dispute?",
+          "output": "simultaneous",
+          "metadata_net_id": "point|red_P1_L2|1",
+          "metadata_algebra": "point",
+          "metadata_cell": "red_P1_L2",
+          "metadata_fold": "test",
+          "metadata_query_pair": [
+            0,
+            1
+          ],
+          "metadata_cyclomatic": 0,
+          "metadata_num_simple_paths": 1,
+          "metadata_contributing_edges": 2,
+          "metadata_modeA_covered": false,
+          "metadata_modeA_correct": 0,
+          "metadata_naive_covered": false,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_off": "ABSTAIN",
+          "predict_raw": "after",
+          "predict_cot": "after",
+          "predict_sc": "after",
+          "predict_linc": "after",
+          "predict_pot": "ABSTAIN",
+          "predict_ilp": "after"
+        },
+        {
+          "input": "The seasonal promotion and the maintenance window coincided in time. The recall notice took place earlier than the maintenance window.\nQuery: what is the temporal relation between the recall notice an...",
+          "output": "before",
+          "metadata_net_id": "point|red_P1_L2|2",
+          "metadata_algebra": "point",
+          "metadata_cell": "red_P1_L2",
+          "metadata_fold": "test",
+          "metadata_query_pair": [
+            0,
+            1
+          ],
+          "metadata_cyclomatic": 0,
+          "metadata_num_simple_paths": 1,
+          "metadata_contributing_edges": 2,
+          "metadata_modeA_covered": true,
+          "metadata_modeA_correct": 1,
+          "metadata_naive_covered": true,
+          "predict_modeA": "before",
+          "predict_naive": "before",
+          "predict_off": "ABSTAIN",
+          "predict_raw": "before",
+          "predict_cot": "before",
+          "predict_sc": "before",
+          "predict_linc": "before",
+          "predict_pot": "before",
+          "predict_ilp": "before"
+        },
+        {
+          "input": "The warehouse expansion took place earlier than the product launch. The safety drill took place earlier than the product launch.\nQuery: what is the temporal relation between the warehouse expansion an...",
+          "output": "simultaneous",
+          "metadata_net_id": "point|red_P1_L2|3",
+          "metadata_algebra": "point",
+          "metadata_cell": "red_P1_L2",
+          "metadata_fold": "test",
+          "metadata_query_pair": [
+            0,
+            1
+          ],
+          "metadata_cyclomatic": 0,
+          "metadata_num_simple_paths": 1,
+          "metadata_contributing_edges": 2,
+          "metadata_modeA_covered": false,
+          "metadata_modeA_correct": 0,
+          "metadata_naive_covered": false,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_off": "ABSTAIN",
+          "predict_raw": "after",
+          "predict_cot": "ABSTAIN",
+          "predict_sc": "after",
+          "predict_linc": "ABSTAIN",
+          "predict_pot": "ABSTAIN",
+          "predict_ilp": "after"
+        },
+        {
+          "input": "The tax assessment occurred before the supplier handover. The strategy offsite came before the supplier handover.\nQuery: what is the temporal relation between the strategy offsite and the tax assessme...",
+          "output": "before",
+          "metadata_net_id": "point|red_P1_L2|4",
+          "metadata_algebra": "point",
+          "metadata_cell": "red_P1_L2",
+          "metadata_fold": "test",
+          "metadata_query_pair": [
+            0,
+            1
+          ],
+          "metadata_cyclomatic": 0,
+          "metadata_num_simple_paths": 1,
+          "metadata_contributing_edges": 2,
+          "metadata_modeA_covered": false,
+          "metadata_modeA_correct": 0,
+          "metadata_naive_covered": false,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_off": "ABSTAIN",
+          "predict_raw": "after",
+          "predict_cot": "after",
+          "predict_sc": "after",
+          "predict_linc": "after",
+          "predict_pot": "ABSTAIN",
+          "predict_ilp": "after"
+        },
+        {
+          "input": "The board meeting occurred before the contract signing. The merger announcement and the contract signing coincided in time.\nQuery: what is the temporal relation between the merger announcement and the...",
+          "output": "after",
+          "metadata_net_id": "point|red_P1_L2|5",
+          "metadata_algebra": "point",
+          "metadata_cell": "red_P1_L2",
+          "metadata_fold": "test",
+          "metadata_query_pair": [
+            0,
+            1
+          ],
+          "metadata_cyclomatic": 0,
+          "metadata_num_simple_paths": 1,
+          "metadata_contributing_edges": 2,
+          "metadata_modeA_covered": true,
+          "metadata_modeA_correct": 1,
+          "metadata_naive_covered": true,
+          "predict_modeA": "after",
+          "predict_naive": "after",
+          "predict_off": "ABSTAIN",
+          "predict_raw": "after",
+          "predict_cot": "after",
+          "predict_sc": "after",
+          "predict_linc": "after",
+          "predict_pot": "after",
+          "predict_ilp": "after"
+        },
+        {
+          "input": "The shareholder vote occurred simultaneously with the tax assessment. The seasonal promotion came before the tax assessment.\nQuery: what is the temporal relation between the shareholder vote and the s...",
+          "output": "after",
+          "metadata_net_id": "point|red_P1_L2|6",
+          "metadata_algebra": "point",
+          "metadata_cell": "red_P1_L2",
+          "metadata_fold": "test",
+          "metadata_query_pair": [
+            0,
+            1
+          ],
+          "metadata_cyclomatic": 0,
+          "metadata_num_simple_paths": 1,
+          "metadata_contributing_edges": 2,
+          "metadata_modeA_covered": true,
+          "metadata_modeA_correct": 1,
+          "metadata_naive_covered": true,
+          "predict_modeA": "after",
+          "predict_naive": "after",
+          "predict_off": "ABSTAIN",
+          "predict_raw": "after",
+          "predict_cot": "after",
+          "predict_sc": "after",
+          "predict_linc": "after",
+          "predict_pot": "after",
+          "predict_ilp": "after"
+        },
+        {
+          "input": "The freight shipment took place later than the system outage. The office relocation came after the system outage.\nQuery: what is the temporal relation between the freight shipment and the office reloc...",
+          "output": "before",
+          "metadata_net_id": "point|red_P1_L2|7",
+          "metadata_algebra": "point",
+          "metadata_cell": "red_P1_L2",
+          "metadata_fold": "test",
+          "metadata_query_pair": [
+            0,
+            1
+          ],
+          "metadata_cyclomatic": 0,
+          "metadata_num_simple_paths": 1,
+          "metadata_contributing_edges": 2,
+          "metadata_modeA_covered": false,
+          "metadata_modeA_correct": 0,
+          "metadata_naive_covered": false,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_off": "ABSTAIN",
+          "predict_raw": "after",
+          "predict_cot": "after",
+          "predict_sc": "after",
+          "predict_linc": "after",
+          "predict_pot": "ABSTAIN",
+          "predict_ilp": "after"
+        },
+        {
+          "input": "The security patch occurred before the press briefing. The software release occurred before the press briefing.\nQuery: what is the temporal relation between the security patch and the software release...",
+          "output": "before",
+          "metadata_net_id": "point|red_P1_L2|8",
+          "metadata_algebra": "point",
+          "metadata_cell": "red_P1_L2",
+          "metadata_fold": "test",
+          "metadata_query_pair": [
+            0,
+            1
+          ],
+          "metadata_cyclomatic": 0,
+          "metadata_num_simple_paths": 1,
+          "metadata_contributing_edges": 2,
+          "metadata_modeA_covered": false,
+          "metadata_modeA_correct": 0,
+          "metadata_naive_covered": false,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_off": "ABSTAIN",
+          "predict_raw": "simultaneous",
+          "predict_cot": "after",
+          "predict_sc": "after",
+          "predict_linc": "after",
+          "predict_pot": "ABSTAIN",
+          "predict_ilp": "after"
+        },
+        {
+          "input": "The franchise opening came after the membership renewal. The compliance training occurred after the membership renewal.\nQuery: what is the temporal relation between the compliance training and the fra...",
+          "output": "before",
+          "metadata_net_id": "point|red_P1_L2|9",
+          "metadata_algebra": "point",
+          "metadata_cell": "red_P1_L2",
+          "metadata_fold": "test",
+          "metadata_query_pair": [
+            0,
+            1
+          ],
+          "metadata_cyclomatic": 0,
+          "metadata_num_simple_paths": 1,
+          "metadata_contributing_edges": 2,
+          "metadata_modeA_covered": false,
+          "metadata_modeA_correct": 0,
+          "metadata_naive_covered": false,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_off": "ABSTAIN",
+          "predict_raw": "after",
+          "predict_cot": "after",
+          "predict_sc": "after",
+          "predict_linc": "simultaneous",
+          "predict_pot": "ABSTAIN",
+          "predict_ilp": "after"
+        }
+      ]
+    },
+    {
+      "dataset": "synthetic_qcn_rcc8",
+      "examples": [
+        {
+          "input": "The grazing common and the campus grounds are disconnected, sharing no points. The conservation area is completely separate from the campus grounds.\nQuery: what is the spatial relation between the gra...",
+          "output": "NTPPi",
+          "metadata_net_id": "rcc8|red_P1_L2|0",
+          "metadata_algebra": "rcc8",
+          "metadata_cell": "red_P1_L2",
+          "metadata_fold": "dev",
+          "metadata_query_pair": [
+            0,
+            1
+          ],
+          "metadata_cyclomatic": 0,
+          "metadata_num_simple_paths": 1,
+          "metadata_contributing_edges": 2,
+          "metadata_modeA_covered": false,
+          "metadata_modeA_correct": 0,
+          "metadata_naive_covered": false,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_off": "ABSTAIN",
+          "predict_raw": "DC",
+          "predict_cot": "DC",
+          "predict_sc": "DC",
+          "predict_pot": "ABSTAIN"
+        },
+        {
+          "input": "The utility easement touches the market square along its boundary without overlapping. The buffer strip and the market square share a common region while each also extends beyond the other.\nQuery: wha...",
+          "output": "PO",
+          "metadata_net_id": "rcc8|red_P1_L2|1",
+          "metadata_algebra": "rcc8",
+          "metadata_cell": "red_P1_L2",
+          "metadata_fold": "dev",
+          "metadata_query_pair": [
+            0,
+            1
+          ],
+          "metadata_cyclomatic": 0,
+          "metadata_num_simple_paths": 1,
+          "metadata_contributing_edges": 2,
+          "metadata_modeA_covered": false,
+          "metadata_modeA_correct": 0,
+          "metadata_naive_covered": false,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_off": "ABSTAIN",
+          "predict_raw": "DC",
+          "predict_cot": "DC",
+          "predict_sc": "DC",
+          "predict_pot": "DC"
+        },
+        {
+          "input": "The commercial block and the village green meet at their boundary but share no interior. The floodway channel occupies exactly the same area as the village green.\nQuery: what is the spatial relation b...",
+          "output": "EC",
+          "metadata_net_id": "rcc8|red_P1_L2|2",
+          "metadata_algebra": "rcc8",
+          "metadata_cell": "red_P1_L2",
+          "metadata_fold": "dev",
+          "metadata_query_pair": [
+            0,
+            1
+          ],
+          "metadata_cyclomatic": 0,
+          "metadata_num_simple_paths": 1,
+          "metadata_contributing_edges": 2,
+          "metadata_modeA_covered": true,
+          "metadata_modeA_correct": 1,
+          "metadata_naive_covered": true,
+          "predict_modeA": "EC",
+          "predict_naive": "EC",
+          "predict_off": "ABSTAIN",
+          "predict_raw": "EC",
+          "predict_cot": "EC",
+          "predict_sc": "EC",
+          "predict_pot": "EC"
+        },
+        {
+          "input": "The survey block and the highway verge share a common region while each also extends beyond the other. The freight terminal and the highway verge share a common region while each also extends beyond t...",
+          "output": "EQ",
+          "metadata_net_id": "rcc8|red_P1_L2|3",
+          "metadata_algebra": "rcc8",
+          "metadata_cell": "red_P1_L2",
+          "metadata_fold": "dev",
+          "metadata_query_pair": [
+            0,
+            1
+          ],
+          "metadata_cyclomatic": 0,
+          "metadata_num_simple_paths": 1,
+          "metadata_contributing_edges": 2,
+          "metadata_modeA_covered": false,
+          "metadata_modeA_correct": 0,
+          "metadata_naive_covered": false,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_off": "ABSTAIN",
+          "predict_raw": "PO",
+          "predict_cot": "PO",
+          "predict_sc": "PO",
+          "predict_pot": "ABSTAIN"
+        },
+        {
+          "input": "Parcel B touches the irrigation district along its boundary without overlapping. The construction site and the irrigation district partially overlap.\nQuery: what is the spatial relation between the co...",
+          "output": "PO",
+          "metadata_net_id": "rcc8|red_P1_L2|4",
+          "metadata_algebra": "rcc8",
+          "metadata_cell": "red_P1_L2",
+          "metadata_fold": "dev",
+          "metadata_query_pair": [
+            0,
+            1
+          ],
+          "metadata_cyclomatic": 0,
+          "metadata_num_simple_paths": 1,
+          "metadata_contributing_edges": 2,
+          "metadata_modeA_covered": false,
+          "metadata_modeA_correct": 0,
+          "metadata_naive_covered": false,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_off": "ABSTAIN",
+          "predict_raw": "PO",
+          "predict_cot": "PO",
+          "predict_sc": "PO",
+          "predict_pot": "ABSTAIN"
+        },
+        {
+          "input": "The survey block and the nature sanctuary partially overlap. The shopping precinct and the nature sanctuary cover precisely the same region.\nQuery: what is the spatial relation between the survey bloc...",
+          "output": "PO",
+          "metadata_net_id": "rcc8|red_P1_L2|5",
+          "metadata_algebra": "rcc8",
+          "metadata_cell": "red_P1_L2",
+          "metadata_fold": "dev",
+          "metadata_query_pair": [
+            0,
+            1
+          ],
+          "metadata_cyclomatic": 0,
+          "metadata_num_simple_paths": 1,
+          "metadata_contributing_edges": 2,
+          "metadata_modeA_covered": true,
+          "metadata_modeA_correct": 1,
+          "metadata_naive_covered": true,
+          "predict_modeA": "PO",
+          "predict_naive": "PO",
+          "predict_off": "ABSTAIN",
+          "predict_raw": "PO",
+          "predict_cot": "PO",
+          "predict_sc": "PO",
+          "predict_pot": "PO"
+        },
+        {
+          "input": "The village green touches the survey block along its boundary without overlapping. The orchard plot and the survey block meet at their boundary but share no interior.\nQuery: what is the spatial relati...",
+          "output": "EQ",
+          "metadata_net_id": "rcc8|red_P1_L2|6",
+          "metadata_algebra": "rcc8",
+          "metadata_cell": "red_P1_L2",
+          "metadata_fold": "dev",
+          "metadata_query_pair": [
+            0,
+            1
+          ],
+          "metadata_cyclomatic": 0,
+          "metadata_num_simple_paths": 1,
+          "metadata_contributing_edges": 2,
+          "metadata_modeA_covered": false,
+          "metadata_modeA_correct": 0,
+          "metadata_naive_covered": false,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_off": "ABSTAIN",
+          "predict_raw": "DC",
+          "predict_cot": "DC",
+          "predict_sc": "DC",
+          "predict_pot": "ABSTAIN"
+        },
+        {
+          "input": "The parking precinct and the buffer strip share a common region while each also extends beyond the other. The buffer strip lies inside the shopping precinct and meets the shopping precinct's boundary....",
+          "output": "PO",
+          "metadata_net_id": "rcc8|red_P1_L2|7",
+          "metadata_algebra": "rcc8",
+          "metadata_cell": "red_P1_L2",
+          "metadata_fold": "dev",
+          "metadata_query_pair": [
+            0,
+            1
+          ],
+          "metadata_cyclomatic": 0,
+          "metadata_num_simple_paths": 1,
+          "metadata_contributing_edges": 2,
+          "metadata_modeA_covered": false,
+          "metadata_modeA_correct": 0,
+          "metadata_naive_covered": false,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_off": "ABSTAIN",
+          "predict_raw": "PO",
+          "predict_cot": "PO",
+          "predict_sc": "PO",
+          "predict_pot": "PO"
+        },
+        {
+          "input": "The green belt and the watershed basin partially overlap. The municipal park and the watershed basin partially overlap.\nQuery: what is the spatial relation between the green belt and the municipal par...",
+          "output": "EC",
+          "metadata_net_id": "rcc8|red_P1_L2|8",
+          "metadata_algebra": "rcc8",
+          "metadata_cell": "red_P1_L2",
+          "metadata_fold": "dev",
+          "metadata_query_pair": [
+            0,
+            1
+          ],
+          "metadata_cyclomatic": 0,
+          "metadata_num_simple_paths": 1,
+          "metadata_contributing_edges": 2,
+          "metadata_modeA_covered": false,
+          "metadata_modeA_correct": 0,
+          "metadata_naive_covered": false,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_off": "ABSTAIN",
+          "predict_raw": "PO",
+          "predict_cot": "PO",
+          "predict_sc": "PO",
+          "predict_pot": "ABSTAIN"
+        },
+        {
+          "input": "The construction site and the meadow enclosure are disconnected, sharing no points. The commercial block contains the meadow enclosure, which touches the commercial block's boundary.\nQuery: what is th...",
+          "output": "EC",
+          "metadata_net_id": "rcc8|red_P1_L2|9",
+          "metadata_algebra": "rcc8",
+          "metadata_cell": "red_P1_L2",
+          "metadata_fold": "dev",
+          "metadata_query_pair": [
+            0,
+            1
+          ],
+          "metadata_cyclomatic": 0,
+          "metadata_num_simple_paths": 1,
+          "metadata_contributing_edges": 2,
+          "metadata_modeA_covered": false,
+          "metadata_modeA_correct": 0,
+          "metadata_naive_covered": false,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_off": "ABSTAIN",
+          "predict_raw": "DC",
+          "predict_cot": "DC",
+          "predict_sc": "DC",
+          "predict_pot": "PO"
+        }
+      ]
+    },
+    {
+      "dataset": "synthetic_qcn_allen",
+      "examples": [
+        {
+          "input": "The budget review and the site inspection spanned exactly the same period. The press briefing finished at the very moment the site inspection started.\nQuery: what is the temporal relation between the ...",
+          "output": "met-by",
+          "metadata_net_id": "allen|red_P1_L2|0",
+          "metadata_algebra": "allen",
+          "metadata_cell": "red_P1_L2",
+          "metadata_fold": "test",
+          "metadata_query_pair": [
+            0,
+            1
+          ],
+          "metadata_cyclomatic": 0,
+          "metadata_num_simple_paths": 1,
+          "metadata_contributing_edges": 2,
+          "metadata_modeA_covered": true,
+          "metadata_modeA_correct": 1,
+          "metadata_naive_covered": true,
+          "predict_modeA": "met-by",
+          "predict_naive": "met-by",
+          "predict_off": "ABSTAIN",
+          "predict_raw": "after",
+          "predict_cot": "after",
+          "predict_sc": "after",
+          "predict_linc": "after",
+          "predict_pot": "after",
+          "predict_ilp": "met-by"
+        },
+        {
+          "input": "The marketing campaign started first and was still ongoing when the staff onboarding began, yet the marketing campaign ended before the staff onboarding did. The system outage and the staff onboarding...",
+          "output": "meets",
+          "metadata_net_id": "allen|red_P1_L2|1",
+          "metadata_algebra": "allen",
+          "metadata_cell": "red_P1_L2",
+          "metadata_fold": "test",
+          "metadata_query_pair": [
+            0,
+            1
+          ],
+          "metadata_cyclomatic": 0,
+          "metadata_num_simple_paths": 1,
+          "metadata_contributing_edges": 2,
+          "metadata_modeA_covered": false,
+          "metadata_modeA_correct": 0,
+          "metadata_naive_covered": false,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_off": "ABSTAIN",
+          "predict_raw": "overlaps",
+          "predict_cot": "overlaps",
+          "predict_sc": "before",
+          "predict_linc": "overlaps",
+          "predict_pot": "before",
+          "predict_ilp": "contains"
+        },
+        {
+          "input": "The office relocation and the investor roadshow occurred over precisely the same interval. The prototype demo and the investor roadshow occurred over precisely the same interval.\nQuery: what is the te...",
+          "output": "equals",
+          "metadata_net_id": "allen|red_P1_L2|2",
+          "metadata_algebra": "allen",
+          "metadata_cell": "red_P1_L2",
+          "metadata_fold": "test",
+          "metadata_query_pair": [
+            0,
+            1
+          ],
+          "metadata_cyclomatic": 0,
+          "metadata_num_simple_paths": 1,
+          "metadata_contributing_edges": 2,
+          "metadata_modeA_covered": true,
+          "metadata_modeA_correct": 1,
+          "metadata_naive_covered": true,
+          "predict_modeA": "equals",
+          "predict_naive": "equals",
+          "predict_off": "ABSTAIN",
+          "predict_raw": "equals",
+          "predict_cot": "equals",
+          "predict_sc": "equals",
+          "predict_linc": "equals",
+          "predict_pot": "equals",
+          "predict_ilp": "equals"
+        },
+        {
+          "input": "The network upgrade began exactly as the recruitment drive ended. The curriculum update and the recruitment drive occurred over precisely the same interval.\nQuery: what is the temporal relation betwee...",
+          "output": "meets",
+          "metadata_net_id": "allen|red_P1_L2|3",
+          "metadata_algebra": "allen",
+          "metadata_cell": "red_P1_L2",
+          "metadata_fold": "test",
+          "metadata_query_pair": [
+            0,
+            1
+          ],
+          "metadata_cyclomatic": 0,
+          "metadata_num_simple_paths": 1,
+          "metadata_contributing_edges": 2,
+          "metadata_modeA_covered": true,
+          "metadata_modeA_correct": 1,
+          "metadata_naive_covered": true,
+          "predict_modeA": "meets",
+          "predict_naive": "meets",
+          "predict_off": "ABSTAIN",
+          "predict_raw": "meets",
+          "predict_cot": "before",
+          "predict_sc": "meets",
+          "predict_linc": "before",
+          "predict_pot": "before",
+          "predict_ilp": "before"
+        },
+        {
+          "input": "The price adjustment and the annual report finished at the same time, with the price adjustment starting later. The hiring freeze and the annual report finished at the same time, with the hiring freez...",
+          "output": "equals",
+          "metadata_net_id": "allen|red_P1_L2|4",
+          "metadata_algebra": "allen",
+          "metadata_cell": "red_P1_L2",
+          "metadata_fold": "test",
+          "metadata_query_pair": [
+            0,
+            1
+          ],
+          "metadata_cyclomatic": 0,
+          "metadata_num_simple_paths": 1,
+          "metadata_contributing_edges": 2,
+          "metadata_modeA_covered": false,
+          "metadata_modeA_correct": 0,
+          "metadata_naive_covered": false,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_off": "ABSTAIN",
+          "predict_raw": "equals",
+          "predict_cot": "equals",
+          "predict_sc": "equals",
+          "predict_linc": "equals",
+          "predict_pot": "equals",
+          "predict_ilp": "started-by"
+        },
+        {
+          "input": "The warehouse expansion finished at the very moment the recall notice started. The marketing campaign began before the recall notice and the two overlapped, with the marketing campaign finishing first...",
+          "output": "started-by",
+          "metadata_net_id": "allen|red_P1_L2|5",
+          "metadata_algebra": "allen",
+          "metadata_cell": "red_P1_L2",
+          "metadata_fold": "test",
+          "metadata_query_pair": [
+            0,
+            1
+          ],
+          "metadata_cyclomatic": 0,
+          "metadata_num_simple_paths": 1,
+          "metadata_contributing_edges": 2,
+          "metadata_modeA_covered": false,
+          "metadata_modeA_correct": 0,
+          "metadata_naive_covered": false,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_off": "ABSTAIN",
+          "predict_raw": "before",
+          "predict_cot": "before",
+          "predict_sc": "before",
+          "predict_linc": "before",
+          "predict_pot": "before",
+          "predict_ilp": "started-by"
+        },
+        {
+          "input": "The policy rollout started at the very moment the equipment delivery finished. The shareholder vote began only after the equipment delivery had ended.\nQuery: what is the temporal relation between the ...",
+          "output": "finished-by",
+          "metadata_net_id": "allen|red_P1_L2|6",
+          "metadata_algebra": "allen",
+          "metadata_cell": "red_P1_L2",
+          "metadata_fold": "test",
+          "metadata_query_pair": [
+            0,
+            1
+          ],
+          "metadata_cyclomatic": 0,
+          "metadata_num_simple_paths": 1,
+          "metadata_contributing_edges": 2,
+          "metadata_modeA_covered": false,
+          "metadata_modeA_correct": 0,
+          "metadata_naive_covered": false,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_off": "ABSTAIN",
+          "predict_raw": "before",
+          "predict_cot": "before",
+          "predict_sc": "before",
+          "predict_linc": "before",
+          "predict_pot": "before",
+          "predict_ilp": "started-by"
+        },
+        {
+          "input": "The security patch and the trademark dispute began together, but the security patch ended later. The network upgrade began before the trademark dispute and ended after it, spanning the trademark dispu...",
+          "output": "finished-by",
+          "metadata_net_id": "allen|red_P1_L2|7",
+          "metadata_algebra": "allen",
+          "metadata_cell": "red_P1_L2",
+          "metadata_fold": "test",
+          "metadata_query_pair": [
+            0,
+            1
+          ],
+          "metadata_cyclomatic": 0,
+          "metadata_num_simple_paths": 1,
+          "metadata_contributing_edges": 2,
+          "metadata_modeA_covered": false,
+          "metadata_modeA_correct": 0,
+          "metadata_naive_covered": false,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_off": "ABSTAIN",
+          "predict_raw": "overlaps",
+          "predict_cot": "overlaps",
+          "predict_sc": "overlaps",
+          "predict_linc": "overlaps",
+          "predict_pot": "ABSTAIN",
+          "predict_ilp": "started-by"
+        },
+        {
+          "input": "The grant disbursal and the seasonal promotion ended together, but the grant disbursal began later. The tax assessment took place entirely during the seasonal promotion.\nQuery: what is the temporal re...",
+          "output": "meets",
+          "metadata_net_id": "allen|red_P1_L2|8",
+          "metadata_algebra": "allen",
+          "metadata_cell": "red_P1_L2",
+          "metadata_fold": "test",
+          "metadata_query_pair": [
+            0,
+            1
+          ],
+          "metadata_cyclomatic": 0,
+          "metadata_num_simple_paths": 1,
+          "metadata_contributing_edges": 2,
+          "metadata_modeA_covered": false,
+          "metadata_modeA_correct": 0,
+          "metadata_naive_covered": false,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_off": "ABSTAIN",
+          "predict_raw": "during",
+          "predict_cot": "during",
+          "predict_sc": "during",
+          "predict_linc": "during",
+          "predict_pot": "before",
+          "predict_ilp": "after"
+        },
+        {
+          "input": "The merger announcement and the staff onboarding started at the same time, with the merger announcement finishing earlier. The compliance training took place entirely during the staff onboarding.\nQuer...",
+          "output": "finishes",
+          "metadata_net_id": "allen|red_P1_L2|9",
+          "metadata_algebra": "allen",
+          "metadata_cell": "red_P1_L2",
+          "metadata_fold": "test",
+          "metadata_query_pair": [
+            0,
+            1
+          ],
+          "metadata_cyclomatic": 0,
+          "metadata_num_simple_paths": 1,
+          "metadata_contributing_edges": 2,
+          "metadata_modeA_covered": false,
+          "metadata_modeA_correct": 0,
+          "metadata_naive_covered": false,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_off": "ABSTAIN",
+          "predict_raw": "during",
+          "predict_cot": "during",
+          "predict_sc": "during",
+          "predict_linc": "during",
+          "predict_pot": "during",
+          "predict_ilp": "overlapped-by"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+[project]
+name = "closure-cert-iter4-experiment-1"
+version = "0.1.0"
+description = "Closure-Certified Text-to-Logic iter-4 decisive real-text test: cross-path Allen-13 INTERSECTION vs BEST-SINGLE-PATH composition with a zero-LLM a-priori multi-path gate, bracketing-CI matched-coverage comparison, synthetic Allen positive control, and auditable Prolog trace-graphs."
+requires-python = ">=3.12"
+# Versions pinned to EXACTLY what is installed in .venv (verified via importlib.metadata).
+# pandas was in the iter-2 pyproject but is NOT imported by any module and NOT installed here.
+dependencies = [
+    "numpy==2.4.6",
+    "scipy==1.17.1",
+    "networkx==3.6.1",
+    "httpx==0.28.1",
+    "loguru==0.7.3",
+    "matplotlib==3.11.0",
+    "jsonschema==4.26.0",
+]

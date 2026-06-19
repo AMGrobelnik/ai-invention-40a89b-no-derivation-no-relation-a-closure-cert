@@ -1,0 +1,345 @@
+{
+  "relation_types": {
+    "child": {
+      "symmetric": false,
+      "inverse": "inv-child"
+    },
+    "inv-child": {
+      "symmetric": false,
+      "inverse": "child"
+    },
+    "SO": {
+      "symmetric": true,
+      "inverse": null
+    },
+    "sibling": {
+      "symmetric": true,
+      "inverse": null
+    },
+    "grand": {
+      "symmetric": false,
+      "inverse": "inv-grand"
+    },
+    "inv-grand": {
+      "symmetric": false,
+      "inverse": "grand"
+    },
+    "in-law": {
+      "symmetric": false,
+      "inverse": "inv-in-law"
+    },
+    "inv-in-law": {
+      "symmetric": false,
+      "inverse": "in-law"
+    },
+    "sibling-in-law": {
+      "symmetric": false,
+      "inverse": null
+    },
+    "un": {
+      "symmetric": false,
+      "inverse": "inv-un"
+    },
+    "inv-un": {
+      "symmetric": false,
+      "inverse": "un"
+    }
+  },
+  "symmetric_types": [
+    "sibling",
+    "SO"
+  ],
+  "inverse_pairs": {
+    "child": "inv-child",
+    "grand": "inv-grand",
+    "un": "inv-un",
+    "in-law": "inv-in-law"
+  },
+  "surface_forms": {
+    "child": {
+      "male": "son",
+      "female": "daughter"
+    },
+    "inv-child": {
+      "male": "father",
+      "female": "mother"
+    },
+    "SO": {
+      "male": "husband",
+      "female": "wife"
+    },
+    "sibling": {
+      "male": "brother",
+      "female": "sister"
+    },
+    "grand": {
+      "male": "grandson",
+      "female": "granddaughter"
+    },
+    "inv-grand": {
+      "male": "grandfather",
+      "female": "grandmother"
+    },
+    "in-law": {
+      "male": "son-in-law",
+      "female": "daughter-in-law"
+    },
+    "inv-in-law": {
+      "male": "father-in-law",
+      "female": "mother-in-law"
+    },
+    "sibling-in-law": {
+      "male": "brother-in-law",
+      "female": "sister-in-law"
+    },
+    "un": {
+      "male": "nephew",
+      "female": "niece"
+    },
+    "inv-un": {
+      "male": "uncle",
+      "female": "aunt"
+    },
+    "no-relation": {
+      "male": "no-relation",
+      "female": "no-relation"
+    }
+  },
+  "surface_reverse": {
+    "son": [
+      "child",
+      "male"
+    ],
+    "daughter": [
+      "child",
+      "female"
+    ],
+    "father": [
+      "inv-child",
+      "male"
+    ],
+    "mother": [
+      "inv-child",
+      "female"
+    ],
+    "husband": [
+      "SO",
+      "male"
+    ],
+    "wife": [
+      "SO",
+      "female"
+    ],
+    "brother": [
+      "sibling",
+      "male"
+    ],
+    "sister": [
+      "sibling",
+      "female"
+    ],
+    "grandson": [
+      "grand",
+      "male"
+    ],
+    "granddaughter": [
+      "grand",
+      "female"
+    ],
+    "grandfather": [
+      "inv-grand",
+      "male"
+    ],
+    "grandmother": [
+      "inv-grand",
+      "female"
+    ],
+    "son-in-law": [
+      "in-law",
+      "male"
+    ],
+    "daughter-in-law": [
+      "in-law",
+      "female"
+    ],
+    "father-in-law": [
+      "inv-in-law",
+      "male"
+    ],
+    "mother-in-law": [
+      "inv-in-law",
+      "female"
+    ],
+    "brother-in-law": [
+      "sibling-in-law",
+      "male"
+    ],
+    "sister-in-law": [
+      "sibling-in-law",
+      "female"
+    ],
+    "nephew": [
+      "un",
+      "male"
+    ],
+    "niece": [
+      "un",
+      "female"
+    ],
+    "uncle": [
+      "inv-un",
+      "male"
+    ],
+    "aunt": [
+      "inv-un",
+      "female"
+    ]
+  },
+  "composition_rules": {
+    "child": {
+      "child": "grand",
+      "SO": "in-law",
+      "sibling": "child",
+      "inv-un": "sibling",
+      "inv-grand": "inv-child"
+    },
+    "inv-child": {
+      "child": "sibling",
+      "inv-child": "inv-grand",
+      "sibling": "inv-un"
+    },
+    "SO": {
+      "inv-child": "inv-in-law",
+      "grand": "grand",
+      "child": "child"
+    },
+    "sibling": {
+      "sibling": "sibling",
+      "inv-grand": "inv-grand",
+      "child": "un",
+      "inv-child": "inv-child"
+    },
+    "grand": {
+      "sibling": "grand"
+    }
+  },
+  "derived_gendered_surface_composition": {
+    "son|son": "grandson",
+    "son|daughter": "granddaughter",
+    "son|husband": "son-in-law",
+    "son|wife": "daughter-in-law",
+    "son|brother": "son",
+    "son|sister": "daughter",
+    "son|grandfather": "father",
+    "son|grandmother": "mother",
+    "son|uncle": "brother",
+    "son|aunt": "sister",
+    "daughter|son": "grandson",
+    "daughter|daughter": "granddaughter",
+    "daughter|husband": "son-in-law",
+    "daughter|wife": "daughter-in-law",
+    "daughter|brother": "son",
+    "daughter|sister": "daughter",
+    "daughter|grandfather": "father",
+    "daughter|grandmother": "mother",
+    "daughter|uncle": "brother",
+    "daughter|aunt": "sister",
+    "father|son": "brother",
+    "father|daughter": "sister",
+    "father|father": "grandfather",
+    "father|mother": "grandmother",
+    "father|brother": "uncle",
+    "father|sister": "aunt",
+    "mother|son": "brother",
+    "mother|daughter": "sister",
+    "mother|father": "grandfather",
+    "mother|mother": "grandmother",
+    "mother|brother": "uncle",
+    "mother|sister": "aunt",
+    "husband|son": "son",
+    "husband|daughter": "daughter",
+    "husband|father": "father-in-law",
+    "husband|mother": "mother-in-law",
+    "husband|grandson": "grandson",
+    "husband|granddaughter": "granddaughter",
+    "wife|son": "son",
+    "wife|daughter": "daughter",
+    "wife|father": "father-in-law",
+    "wife|mother": "mother-in-law",
+    "wife|grandson": "grandson",
+    "wife|granddaughter": "granddaughter",
+    "brother|son": "nephew",
+    "brother|daughter": "niece",
+    "brother|father": "father",
+    "brother|mother": "mother",
+    "brother|brother": "brother",
+    "brother|sister": "sister",
+    "brother|grandfather": "grandfather",
+    "brother|grandmother": "grandmother",
+    "sister|son": "nephew",
+    "sister|daughter": "niece",
+    "sister|father": "father",
+    "sister|mother": "mother",
+    "sister|brother": "brother",
+    "sister|sister": "sister",
+    "sister|grandfather": "grandfather",
+    "sister|grandmother": "grandmother",
+    "grandson|brother": "grandson",
+    "grandson|sister": "granddaughter",
+    "granddaughter|brother": "grandson",
+    "granddaughter|sister": "granddaughter"
+  },
+  "label_map": {
+    "0": "aunt",
+    "1": "son-in-law",
+    "2": "grandfather",
+    "3": "brother",
+    "4": "sister",
+    "5": "father",
+    "6": "mother",
+    "7": "grandmother",
+    "8": "uncle",
+    "9": "daughter-in-law",
+    "10": "grandson",
+    "11": "granddaughter",
+    "12": "father-in-law",
+    "13": "mother-in-law",
+    "14": "nephew",
+    "15": "son",
+    "16": "daughter",
+    "17": "niece",
+    "18": "husband",
+    "19": "wife",
+    "20": "sister-in-law"
+  },
+  "label_map_reverse": {
+    "aunt": 0,
+    "son-in-law": 1,
+    "grandfather": 2,
+    "brother": 3,
+    "sister": 4,
+    "father": 5,
+    "mother": 6,
+    "grandmother": 7,
+    "uncle": 8,
+    "daughter-in-law": 9,
+    "grandson": 10,
+    "granddaughter": 11,
+    "father-in-law": 12,
+    "mother-in-law": 13,
+    "nephew": 14,
+    "son": 15,
+    "daughter": 16,
+    "niece": 17,
+    "husband": 18,
+    "wife": 19,
+    "sister-in-law": 20
+  },
+  "semantics": "Triple (h, r, t) reads 't is h's r'. Composition: A t1 B, B t2 C => A t3 C, where rules[t1][t2]=t3 and the surface form of t3 uses the gender of C.",
+  "note": "Finite composition table over kinship relation TYPES (facebookresearch/clutrr rules_store.yaml). NOT a full relation algebra: no general intersection/converse closure beyond these rules; some compositions yield no-relation; ambiguous compositions (e.g. grand o inv-child) are intentionally excluded in CLUTRR. Use to temper any generality claim.",
+  "source": {
+    "rules_store": "https://raw.githubusercontent.com/facebookresearch/clutrr/main/clutrr/store/rules_store.yaml",
+    "relations_store": "https://raw.githubusercontent.com/facebookresearch/clutrr/main/clutrr/store/relations_store.yaml",
+    "scope": "family relation type only (CLUTRR 'work' relation type excluded; the delivered configs are all kinship)."
+  }
+}

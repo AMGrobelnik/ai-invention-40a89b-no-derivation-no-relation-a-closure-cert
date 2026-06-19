@@ -1,0 +1,17 @@
+{
+  "title": "Closure certificate vs a strong 4-signal confidence-thresholded neural abstainer",
+  "layman_summary": "We show a logic-based 'no path, so no answer' certificate avoids confident false kinship claims that even the best LLM confidence checks miss.",
+  "summary": "STEP A executed (VERDICT=CONFIRM; one-time spend ~$0.30, far under the $9 cap; cached re-runs $0). We re-use the EXACT cached iter-3 CLUTRR pool (180 absent + 102 present) and iter-5 spatial RCC-8 pool (228 single-path queries). A reproduction gate rebuilds the 282 records from CLUTRR and verifies certificate/raw/sc/pot predictions are IDENTICAL to the published iter-3 pool (art_0a7i481ZRwS1; 0 mismatches, $0). We add a 4-signal confidence/uncertainty BATTERY to the raw LLM answerer: (a) verbalized confidence, (b) self-consistency vote-margin@k=10, (c) Kadavath P(True), (d) semantic-entropy negentropy; each defines a confidence-thresholded RAW-ABSTAIN baseline at matched coverage. KEY RESULTS (REAL-LLM-READ, gemini-3.1-flash-lite; story-clustered paired bootstrap B=10000, Holm/4): the raw LLM hallucinates a kinship on 47.2% of absent pairs vs the certificate's 2.8% (reduction 0.444, CI[0.317,0.583]); at the LLM's natural coverage NO signal removes any hallucination. CRUX survival table: verbalized confidence is >=0.5 on 100% of hallucinations; fractions surviving a certificate-matched rule are 0.435/0.718/0.247/0.718 for verbalized/sc_margin/ptrue/negent — only P(True) partially separates them (median 0.0) yet 24.7% still survive. DECISIVE mixed-pool matched-coverage showdown (coverage 0.266): certificate selective accuracy 0.827 vs every signal 0.37-0.44 (~2x); confident-wrong reductions 0.10-0.12 with Holm-adjusted CIs all excluding 0. HONEST scope boundary (P_O): on the genuine ordinary SINGLE-PATH stratum (spatial RCC-8) the certificate ties/loses (selective-accuracy gap -0.088, CI[-0.222,0.040]; confident-wrong 0.022 vs raw-abstain 0.035, CI includes 0); CLUTRR-present is multi-hop where the certificate also wins. Cross-family (deepseek-v3.2) reproduces the edge (48.3% absent hallucination; survival 0.672/0.224/0.103/0.224). Includes worked no-derivation and Mode-B-collapse abstentions with Prolog programs (python-checked, swipl unavailable, labelled truthfully) and the full leaderboard/risk-coverage/crux/Holm tables. Output method_out.json (exp_gen_sol_out) groups per-query rows into clutrr_no_derivation (180), clutrr_ordinary_deduction (102), spatial_rcc8_ordinary (228). Caveat: on the pure-absent pool confident-wrong==coverage, so per-signal discrimination lives in the mixed-pool view and the crux table (stated explicitly). Provides the load-bearing 'certificate beats the BEST uncertainty signal, not a strawman' evidence for the paper.",
+  "out_expected_files": {
+    "script": "method.py",
+    "full_output": "full_method_out.json",
+    "mini_output": "mini_method_out.json",
+    "preview_output": "preview_method_out.json"
+  },
+  "upload_ignore_regexes": [
+    "(^|/)cache/",
+    "(^|/)__pycache__/",
+    "(^|/)\\.venv/",
+    "(^|/)logs/"
+  ]
+}

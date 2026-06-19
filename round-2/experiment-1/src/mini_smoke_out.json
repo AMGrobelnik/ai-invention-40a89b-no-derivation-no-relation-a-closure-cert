@@ -1,0 +1,1034 @@
+{
+  "metadata": {
+    "method_name": "Mode-A: closure-certified composition over disjunctive LLM reads (matched-coverage showdown)",
+    "evidence_tag": "REAL-LLM-READ-ON-SYNTHETIC",
+    "config": {
+      "seed": 20260617,
+      "model_primary": "google/gemini-3.1-flash-lite",
+      "model_used": "google/gemini-3.1-flash-lite",
+      "model_fallbacks": [
+        "deepseek/deepseek-v3.2",
+        "deepseek/deepseek-v4-flash"
+      ],
+      "temperature": 0.0,
+      "temp_sample": 0.7,
+      "operating_knob": "S4_sound",
+      "knob_sweep": {},
+      "recall_gate_point": 0.9,
+      "recall_gate_allen": 0.85,
+      "folds_used": [
+        "test"
+      ],
+      "algebras": [
+        "point",
+        "allen"
+      ],
+      "n_networks": {
+        "point": 3,
+        "allen": 3
+      },
+      "comparison_cells": [
+        "red_P1_L2",
+        "red_P2_L2",
+        "red_P3_L2",
+        "red_P4_L2",
+        "red_P6_L2",
+        "red_P8_L2",
+        "hop_L2_P2",
+        "hop_L3_P2",
+        "hop_L4_P2",
+        "hop_L5_P2",
+        "cyc_mu0",
+        "cyc_mu1",
+        "cyc_mu2",
+        "cyc_mu3"
+      ],
+      "bite_pool_cells": [
+        "red_P2_L2",
+        "red_P3_L2",
+        "red_P4_L2",
+        "red_P6_L2",
+        "red_P8_L2",
+        "hop_L2_P2",
+        "hop_L3_P2",
+        "cyc_mu1",
+        "cyc_mu2",
+        "cyc_mu3"
+      ],
+      "baselines": [
+        "cot",
+        "ilp",
+        "linc",
+        "pot",
+        "raw",
+        "sc"
+      ],
+      "sc_k": 5,
+      "linc_m": 3,
+      "ilp_m": 5,
+      "pot_path_cap": 5,
+      "bootstrap_B": 2000,
+      "cache_roundtrip_ok": true,
+      "mini": true
+    },
+    "data_provenance": {
+      "source": "gen_art_dataset_2 synthetic QCN backbone (consistent-by-construction)",
+      "note": "gold atomic relations read off the realization model; query DEDUCTION-REQUIRED"
+    },
+    "analysis_by_algebra": {
+      "point": {
+        "H1_bite_bearing_pool": null,
+        "H1_all_comparison_pool": {
+          "target_coverage": 0.6666666666666666,
+          "n_networks": 3,
+          "selective_accuracy_ref": 1.0,
+          "leaderboard": {
+            "modeA": {
+              "coverage": 0.6666666666666666,
+              "selective_accuracy": 1.0,
+              "n": 3
+            },
+            "pot": {
+              "coverage_matched": 0.6666666666666666,
+              "selective_accuracy": 1.0,
+              "gap_vs_ref": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "p_one_sided": 1.0,
+              "gap_rematch": 0.0,
+              "ci95_rematch": [
+                0.0,
+                0.5
+              ]
+            },
+            "sc": {
+              "coverage_matched": 0.6666666666666666,
+              "selective_accuracy": 1.0,
+              "gap_vs_ref": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "p_one_sided": 1.0,
+              "gap_rematch": 0.0,
+              "ci95_rematch": [
+                0.0,
+                0.0
+              ]
+            },
+            "raw": {
+              "coverage_matched": 0.6666666666666666,
+              "selective_accuracy": 1.0,
+              "gap_vs_ref": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "p_one_sided": 1.0,
+              "gap_rematch": 0.0,
+              "ci95_rematch": [
+                0.0,
+                0.0
+              ]
+            },
+            "cot": {
+              "coverage_matched": 0.6666666666666666,
+              "selective_accuracy": 1.0,
+              "gap_vs_ref": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "p_one_sided": 1.0,
+              "gap_rematch": 0.0,
+              "ci95_rematch": [
+                0.0,
+                0.5
+              ]
+            },
+            "linc": {
+              "coverage_matched": 0.6666666666666666,
+              "selective_accuracy": 1.0,
+              "gap_vs_ref": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "p_one_sided": 1.0,
+              "gap_rematch": 0.0,
+              "ci95_rematch": [
+                0.0,
+                0.5
+              ]
+            },
+            "naive": {
+              "coverage": 0.6666666666666666,
+              "selective_accuracy": 1.0,
+              "resolve_correct_rate": 0.6666666666666666
+            },
+            "off": {
+              "coverage": 0.0,
+              "selective_accuracy": NaN,
+              "resolve_correct_rate": 0.0
+            },
+            "ilp": {
+              "coverage_matched": 0.6666666666666666,
+              "selective_accuracy": 0.5,
+              "gap_vs_ref": 0.5,
+              "ci95": [
+                0.0,
+                1.0
+              ],
+              "p_one_sided": 0.2830188679245283
+            },
+            "gold_full": {
+              "coverage": 0.6666666666666666,
+              "selective_accuracy": 1.0,
+              "resolve_correct_rate": 0.6666666666666666
+            },
+            "gold_naive": {
+              "coverage": 0.6666666666666666,
+              "selective_accuracy": 1.0,
+              "resolve_correct_rate": 0.6666666666666666
+            }
+          },
+          "comparisons": {
+            "pot": {
+              "gap": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "p_one_sided": 1.0,
+              "selacc_a": 1.0,
+              "selacc_b": 1.0,
+              "cov_a": 0.6666666666666666,
+              "cov_b": 0.6666666666666666,
+              "n_boot": 1920
+            },
+            "sc": {
+              "gap": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "p_one_sided": 1.0,
+              "selacc_a": 1.0,
+              "selacc_b": 1.0,
+              "cov_a": 0.6666666666666666,
+              "cov_b": 0.6666666666666666,
+              "n_boot": 1855
+            },
+            "raw": {
+              "gap": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "p_one_sided": 1.0,
+              "selacc_a": 1.0,
+              "selacc_b": 1.0,
+              "cov_a": 0.6666666666666666,
+              "cov_b": 0.6666666666666666,
+              "n_boot": 1920
+            },
+            "cot": {
+              "gap": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "p_one_sided": 1.0,
+              "selacc_a": 1.0,
+              "selacc_b": 1.0,
+              "cov_a": 0.6666666666666666,
+              "cov_b": 0.6666666666666666,
+              "n_boot": 1920
+            },
+            "linc": {
+              "gap": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "p_one_sided": 1.0,
+              "selacc_a": 1.0,
+              "selacc_b": 1.0,
+              "cov_a": 0.6666666666666666,
+              "cov_b": 0.6666666666666666,
+              "n_boot": 1920
+            }
+          }
+        },
+        "H1_confirmatory_holm": null,
+        "H3_iteration_real": {
+          "real_reads": true,
+          "gap_by_hop": [
+            {
+              "cell": "hop_L2_P2",
+              "full": NaN,
+              "naive": NaN,
+              "gap": NaN,
+              "n": 0
+            },
+            {
+              "cell": "hop_L3_P2",
+              "full": NaN,
+              "naive": NaN,
+              "gap": NaN,
+              "n": 0
+            },
+            {
+              "cell": "hop_L4_P2",
+              "full": NaN,
+              "naive": NaN,
+              "gap": NaN,
+              "n": 0
+            },
+            {
+              "cell": "hop_L5_P2",
+              "full": NaN,
+              "naive": NaN,
+              "gap": NaN,
+              "n": 0
+            }
+          ],
+          "gap_by_cyclomatic": [
+            {
+              "cell": "cyc_mu0",
+              "full": NaN,
+              "naive": NaN,
+              "gap": NaN,
+              "n": 0
+            },
+            {
+              "cell": "cyc_mu1",
+              "full": NaN,
+              "naive": NaN,
+              "gap": NaN,
+              "n": 0
+            },
+            {
+              "cell": "cyc_mu2",
+              "full": NaN,
+              "naive": NaN,
+              "gap": NaN,
+              "n": 0
+            },
+            {
+              "cell": "cyc_mu3",
+              "full": NaN,
+              "naive": NaN,
+              "gap": NaN,
+              "n": 0
+            }
+          ],
+          "trend_hop": {
+            "spearman_rho": null,
+            "note": "fewer than 3 non-empty levels"
+          },
+          "trend_cyclomatic": {
+            "spearman_rho": null,
+            "note": "fewer than 3 non-empty levels"
+          },
+          "length2_tie": {
+            "n": 3,
+            "full_resolve_correct": 0.6666666666666666,
+            "naive_resolve_correct": 0.6666666666666666,
+            "gap": 0.0
+          }
+        },
+        "H3_iteration_gold": {
+          "real_reads": false,
+          "gap_by_hop": [
+            {
+              "cell": "hop_L2_P2",
+              "full": NaN,
+              "naive": NaN,
+              "gap": NaN,
+              "n": 0
+            },
+            {
+              "cell": "hop_L3_P2",
+              "full": NaN,
+              "naive": NaN,
+              "gap": NaN,
+              "n": 0
+            },
+            {
+              "cell": "hop_L4_P2",
+              "full": NaN,
+              "naive": NaN,
+              "gap": NaN,
+              "n": 0
+            },
+            {
+              "cell": "hop_L5_P2",
+              "full": NaN,
+              "naive": NaN,
+              "gap": NaN,
+              "n": 0
+            }
+          ],
+          "gap_by_cyclomatic": [
+            {
+              "cell": "cyc_mu0",
+              "full": NaN,
+              "naive": NaN,
+              "gap": NaN,
+              "n": 0
+            },
+            {
+              "cell": "cyc_mu1",
+              "full": NaN,
+              "naive": NaN,
+              "gap": NaN,
+              "n": 0
+            },
+            {
+              "cell": "cyc_mu2",
+              "full": NaN,
+              "naive": NaN,
+              "gap": NaN,
+              "n": 0
+            },
+            {
+              "cell": "cyc_mu3",
+              "full": NaN,
+              "naive": NaN,
+              "gap": NaN,
+              "n": 0
+            }
+          ],
+          "trend_hop": {
+            "spearman_rho": null,
+            "note": "fewer than 3 non-empty levels"
+          },
+          "trend_cyclomatic": {
+            "spearman_rho": null,
+            "note": "fewer than 3 non-empty levels"
+          },
+          "length2_tie": {
+            "n": 3,
+            "full_resolve_correct": 0.6666666666666666,
+            "naive_resolve_correct": 0.6666666666666666,
+            "gap": 0.0
+          }
+        },
+        "C2_on_vs_off": {
+          "modeA_coverage": 0.6666666666666666,
+          "modeA_resolve_correct_rate": 0.6666666666666666,
+          "off_coverage": 0.0,
+          "deduction_required_gap": 0.6666666666666666,
+          "note": "OFF never reads the query edge locally (s,t never co-occur), so its single-relation coverage is 0; Mode-A coverage IS the deduction-required bite recovered by the composition floor."
+        },
+        "audit": {
+          "per_edge_recall": 1.0,
+          "n_read_edges": 6,
+          "within_doc_soundness_rho_icc": 0.0,
+          "J_E_by_contributing_edges": {
+            "2": 1.0
+          },
+          "silent_wrong_count": 0,
+          "covered_wrong_count": 0,
+          "n_modeA_covered": 2,
+          "silent_wrong_rate_among_covered": 0.0,
+          "zero_fp_contains_gold_rate_when_allsound": 1.0,
+          "n_allsound_networks": 3,
+          "interpretation": "On all-sound networks Mode-A's closed query SET must contain gold (soundness of PC) -> zero-FP-conditional-on-soundness ~1.0; silent-wrong arises ONLY from unsound reads."
+        },
+        "per_stratum": {
+          "red_P1_L2": {
+            "n": 3,
+            "modeA_coverage": 0.6666666666666666,
+            "modeA_resolve_correct_rate": 0.6666666666666666,
+            "pot_acc_all": 0.6666666666666666,
+            "sc_acc_all": 1.0
+          }
+        },
+        "worked_example": {
+          "mode_a_narrowing": null,
+          "mode_b_collapse": null
+        },
+        "figures": [
+          "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_2/gen_art/gen_art_experiment_1/results/figures/h3_hop_point.jpg",
+          "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_2/gen_art/gen_art_experiment_1/results/figures/h3_cyc_point.jpg"
+        ]
+      },
+      "allen": {
+        "H1_bite_bearing_pool": null,
+        "H1_all_comparison_pool": {
+          "target_coverage": 0.3333333333333333,
+          "n_networks": 3,
+          "selective_accuracy_ref": 1.0,
+          "leaderboard": {
+            "modeA": {
+              "coverage": 0.3333333333333333,
+              "selective_accuracy": 1.0,
+              "n": 3
+            },
+            "pot": {
+              "coverage_matched": 0.3333333333333333,
+              "selective_accuracy": 0.0,
+              "gap_vs_ref": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "p_one_sided": 0.0,
+              "gap_rematch": 1.0,
+              "ci95_rematch": [
+                0.0,
+                1.0
+              ]
+            },
+            "sc": {
+              "coverage_matched": 0.3333333333333333,
+              "selective_accuracy": 0.0,
+              "gap_vs_ref": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "p_one_sided": 0.0,
+              "gap_rematch": 1.0,
+              "ci95_rematch": [
+                0.0,
+                1.0
+              ]
+            },
+            "raw": {
+              "coverage_matched": 0.3333333333333333,
+              "selective_accuracy": 0.0,
+              "gap_vs_ref": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "p_one_sided": 0.0,
+              "gap_rematch": 1.0,
+              "ci95_rematch": [
+                0.0,
+                1.0
+              ]
+            },
+            "cot": {
+              "coverage_matched": 0.3333333333333333,
+              "selective_accuracy": 0.0,
+              "gap_vs_ref": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "p_one_sided": 0.0,
+              "gap_rematch": 1.0,
+              "ci95_rematch": [
+                0.0,
+                1.0
+              ]
+            },
+            "linc": {
+              "coverage_matched": 0.3333333333333333,
+              "selective_accuracy": 0.0,
+              "gap_vs_ref": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "p_one_sided": 0.0,
+              "gap_rematch": 1.0,
+              "ci95_rematch": [
+                0.0,
+                1.0
+              ]
+            },
+            "naive": {
+              "coverage": 0.3333333333333333,
+              "selective_accuracy": 1.0,
+              "resolve_correct_rate": 0.3333333333333333
+            },
+            "off": {
+              "coverage": 0.0,
+              "selective_accuracy": NaN,
+              "resolve_correct_rate": 0.0
+            },
+            "ilp": {
+              "coverage_matched": 0.3333333333333333,
+              "selective_accuracy": 1.0,
+              "gap_vs_ref": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "p_one_sided": 1.0
+            },
+            "gold_full": {
+              "coverage": 0.3333333333333333,
+              "selective_accuracy": 1.0,
+              "resolve_correct_rate": 0.3333333333333333
+            },
+            "gold_naive": {
+              "coverage": 0.3333333333333333,
+              "selective_accuracy": 1.0,
+              "resolve_correct_rate": 0.3333333333333333
+            }
+          },
+          "comparisons": {
+            "pot": {
+              "gap": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "p_one_sided": 0.0,
+              "selacc_a": 1.0,
+              "selacc_b": 0.0,
+              "cov_a": 0.3333333333333333,
+              "cov_b": 0.3333333333333333,
+              "n_boot": 884
+            },
+            "sc": {
+              "gap": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "p_one_sided": 0.0,
+              "selacc_a": 1.0,
+              "selacc_b": 0.0,
+              "cov_a": 0.3333333333333333,
+              "cov_b": 0.3333333333333333,
+              "n_boot": 884
+            },
+            "raw": {
+              "gap": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "p_one_sided": 0.0,
+              "selacc_a": 1.0,
+              "selacc_b": 0.0,
+              "cov_a": 0.3333333333333333,
+              "cov_b": 0.3333333333333333,
+              "n_boot": 884
+            },
+            "cot": {
+              "gap": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "p_one_sided": 0.0,
+              "selacc_a": 1.0,
+              "selacc_b": 0.0,
+              "cov_a": 0.3333333333333333,
+              "cov_b": 0.3333333333333333,
+              "n_boot": 884
+            },
+            "linc": {
+              "gap": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "p_one_sided": 0.0,
+              "selacc_a": 1.0,
+              "selacc_b": 0.0,
+              "cov_a": 0.3333333333333333,
+              "cov_b": 0.3333333333333333,
+              "n_boot": 884
+            }
+          }
+        },
+        "H1_confirmatory_holm": null,
+        "H3_iteration_real": {
+          "real_reads": true,
+          "gap_by_hop": [
+            {
+              "cell": "hop_L2_P2",
+              "full": NaN,
+              "naive": NaN,
+              "gap": NaN,
+              "n": 0
+            },
+            {
+              "cell": "hop_L3_P2",
+              "full": NaN,
+              "naive": NaN,
+              "gap": NaN,
+              "n": 0
+            },
+            {
+              "cell": "hop_L4_P2",
+              "full": NaN,
+              "naive": NaN,
+              "gap": NaN,
+              "n": 0
+            },
+            {
+              "cell": "hop_L5_P2",
+              "full": NaN,
+              "naive": NaN,
+              "gap": NaN,
+              "n": 0
+            }
+          ],
+          "gap_by_cyclomatic": [
+            {
+              "cell": "cyc_mu0",
+              "full": NaN,
+              "naive": NaN,
+              "gap": NaN,
+              "n": 0
+            },
+            {
+              "cell": "cyc_mu1",
+              "full": NaN,
+              "naive": NaN,
+              "gap": NaN,
+              "n": 0
+            },
+            {
+              "cell": "cyc_mu2",
+              "full": NaN,
+              "naive": NaN,
+              "gap": NaN,
+              "n": 0
+            },
+            {
+              "cell": "cyc_mu3",
+              "full": NaN,
+              "naive": NaN,
+              "gap": NaN,
+              "n": 0
+            }
+          ],
+          "trend_hop": {
+            "spearman_rho": null,
+            "note": "fewer than 3 non-empty levels"
+          },
+          "trend_cyclomatic": {
+            "spearman_rho": null,
+            "note": "fewer than 3 non-empty levels"
+          },
+          "length2_tie": {
+            "n": 3,
+            "full_resolve_correct": 0.3333333333333333,
+            "naive_resolve_correct": 0.3333333333333333,
+            "gap": 0.0
+          }
+        },
+        "H3_iteration_gold": {
+          "real_reads": false,
+          "gap_by_hop": [
+            {
+              "cell": "hop_L2_P2",
+              "full": NaN,
+              "naive": NaN,
+              "gap": NaN,
+              "n": 0
+            },
+            {
+              "cell": "hop_L3_P2",
+              "full": NaN,
+              "naive": NaN,
+              "gap": NaN,
+              "n": 0
+            },
+            {
+              "cell": "hop_L4_P2",
+              "full": NaN,
+              "naive": NaN,
+              "gap": NaN,
+              "n": 0
+            },
+            {
+              "cell": "hop_L5_P2",
+              "full": NaN,
+              "naive": NaN,
+              "gap": NaN,
+              "n": 0
+            }
+          ],
+          "gap_by_cyclomatic": [
+            {
+              "cell": "cyc_mu0",
+              "full": NaN,
+              "naive": NaN,
+              "gap": NaN,
+              "n": 0
+            },
+            {
+              "cell": "cyc_mu1",
+              "full": NaN,
+              "naive": NaN,
+              "gap": NaN,
+              "n": 0
+            },
+            {
+              "cell": "cyc_mu2",
+              "full": NaN,
+              "naive": NaN,
+              "gap": NaN,
+              "n": 0
+            },
+            {
+              "cell": "cyc_mu3",
+              "full": NaN,
+              "naive": NaN,
+              "gap": NaN,
+              "n": 0
+            }
+          ],
+          "trend_hop": {
+            "spearman_rho": null,
+            "note": "fewer than 3 non-empty levels"
+          },
+          "trend_cyclomatic": {
+            "spearman_rho": null,
+            "note": "fewer than 3 non-empty levels"
+          },
+          "length2_tie": {
+            "n": 3,
+            "full_resolve_correct": 0.3333333333333333,
+            "naive_resolve_correct": 0.3333333333333333,
+            "gap": 0.0
+          }
+        },
+        "C2_on_vs_off": {
+          "modeA_coverage": 0.3333333333333333,
+          "modeA_resolve_correct_rate": 0.3333333333333333,
+          "off_coverage": 0.0,
+          "deduction_required_gap": 0.3333333333333333,
+          "note": "OFF never reads the query edge locally (s,t never co-occur), so its single-relation coverage is 0; Mode-A coverage IS the deduction-required bite recovered by the composition floor."
+        },
+        "audit": {
+          "per_edge_recall": 0.6666666666666666,
+          "n_read_edges": 6,
+          "within_doc_soundness_rho_icc": 1.0,
+          "J_E_by_contributing_edges": {
+            "2": 0.6666666666666666
+          },
+          "silent_wrong_count": 0,
+          "covered_wrong_count": 0,
+          "n_modeA_covered": 1,
+          "silent_wrong_rate_among_covered": 0.0,
+          "zero_fp_contains_gold_rate_when_allsound": 1.0,
+          "n_allsound_networks": 2,
+          "interpretation": "On all-sound networks Mode-A's closed query SET must contain gold (soundness of PC) -> zero-FP-conditional-on-soundness ~1.0; silent-wrong arises ONLY from unsound reads."
+        },
+        "per_stratum": {
+          "red_P1_L2": {
+            "n": 3,
+            "modeA_coverage": 0.3333333333333333,
+            "modeA_resolve_correct_rate": 0.3333333333333333,
+            "pot_acc_all": 0.6666666666666666,
+            "sc_acc_all": 0.6666666666666666
+          }
+        },
+        "worked_example": {
+          "mode_a_narrowing": null,
+          "mode_b_collapse": null
+        },
+        "figures": [
+          "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_2/gen_art/gen_art_experiment_1/results/figures/h3_hop_allen.jpg",
+          "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_2/gen_art/gen_art_experiment_1/results/figures/h3_cyc_allen.jpg"
+        ]
+      }
+    },
+    "read_bite_lost_widenings_point": 0,
+    "verdict": {
+      "headline": "H1 NOT confirmed on point at the bite-bearing pool (honest REAL-LLM-ON-SYNTHETIC result); see per-stratum gaps, H3 iteration, and the zero-FP/J(E) audit.",
+      "H1_pass_by_algebra": {
+        "point": false,
+        "allen": false
+      },
+      "scope": "REAL-LLM-READ-ON-SYNTHETIC; point=PC-complete exact arm, allen=lower-bound generality"
+    },
+    "cost": {
+      "cumulative_openrouter_usd": 0.007089,
+      "n_llm_calls": 121,
+      "n_cache_hits": 1,
+      "n_errors": 0,
+      "budget_hard": 9.0
+    },
+    "elapsed_sec": 35.4
+  },
+  "datasets": [
+    {
+      "dataset": "synthetic_qcn_point",
+      "examples": [
+        {
+          "input": "The pilot program came before the loan disbursement. The tax assessment and the loan disbursement coincided in time.\nQuery: what is the temporal relation between the tax assessment and the pilot program?",
+          "output": "after",
+          "metadata_net_id": "point|mini|0",
+          "metadata_algebra": "point",
+          "metadata_cell": "red_P1_L2",
+          "metadata_fold": "test",
+          "metadata_query_pair": [
+            0,
+            1
+          ],
+          "metadata_cyclomatic": 0,
+          "metadata_num_simple_paths": 1,
+          "metadata_contributing_edges": 2,
+          "metadata_modeA_covered": true,
+          "metadata_modeA_correct": 1,
+          "metadata_naive_covered": true,
+          "predict_modeA": "after",
+          "predict_naive": "after",
+          "predict_off": "ABSTAIN",
+          "predict_raw": "after",
+          "predict_cot": "after",
+          "predict_sc": "after",
+          "predict_linc": "after",
+          "predict_pot": "after",
+          "predict_ilp": "after"
+        },
+        {
+          "input": "The procurement cycle came before the curriculum update. The data migration took place earlier than the curriculum update.\nQuery: what is the temporal relation between the data migration and the procurement cycle?",
+          "output": "before",
+          "metadata_net_id": "point|mini|1",
+          "metadata_algebra": "point",
+          "metadata_cell": "red_P1_L2",
+          "metadata_fold": "test",
+          "metadata_query_pair": [
+            0,
+            1
+          ],
+          "metadata_cyclomatic": 0,
+          "metadata_num_simple_paths": 1,
+          "metadata_contributing_edges": 2,
+          "metadata_modeA_covered": false,
+          "metadata_modeA_correct": 0,
+          "metadata_naive_covered": false,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_off": "ABSTAIN",
+          "predict_raw": "before",
+          "predict_cot": "after",
+          "predict_sc": "before",
+          "predict_linc": "simultaneous",
+          "predict_pot": "ABSTAIN",
+          "predict_ilp": "after"
+        },
+        {
+          "input": "The prototype demo took place earlier than the budget review. The price adjustment came after the budget review.\nQuery: what is the temporal relation between the price adjustment and the prototype demo?",
+          "output": "after",
+          "metadata_net_id": "point|mini|2",
+          "metadata_algebra": "point",
+          "metadata_cell": "red_P1_L2",
+          "metadata_fold": "test",
+          "metadata_query_pair": [
+            0,
+            1
+          ],
+          "metadata_cyclomatic": 0,
+          "metadata_num_simple_paths": 1,
+          "metadata_contributing_edges": 2,
+          "metadata_modeA_covered": true,
+          "metadata_modeA_correct": 1,
+          "metadata_naive_covered": true,
+          "predict_modeA": "after",
+          "predict_naive": "after",
+          "predict_off": "ABSTAIN",
+          "predict_raw": "after",
+          "predict_cot": "after",
+          "predict_sc": "after",
+          "predict_linc": "after",
+          "predict_pot": "after",
+          "predict_ilp": "after"
+        }
+      ]
+    },
+    {
+      "dataset": "synthetic_qcn_allen",
+      "examples": [
+        {
+          "input": "The price adjustment and the design review ended together, but the price adjustment began earlier. The patent submission ended before the design review began.\nQuery: what is the temporal relation between the patent submission and the price adjustment?",
+          "output": "starts",
+          "metadata_net_id": "allen|mini|0",
+          "metadata_algebra": "allen",
+          "metadata_cell": "red_P1_L2",
+          "metadata_fold": "test",
+          "metadata_query_pair": [
+            0,
+            1
+          ],
+          "metadata_cyclomatic": 0,
+          "metadata_num_simple_paths": 1,
+          "metadata_contributing_edges": 2,
+          "metadata_modeA_covered": false,
+          "metadata_modeA_correct": 0,
+          "metadata_naive_covered": false,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_off": "ABSTAIN",
+          "predict_raw": "before",
+          "predict_cot": "before",
+          "predict_sc": "before",
+          "predict_linc": "before",
+          "predict_pot": "before",
+          "predict_ilp": "starts"
+        },
+        {
+          "input": "The curriculum update started at the very moment the product launch finished. The site inspection started at the very moment the product launch finished.\nQuery: what is the temporal relation between the curriculum update and the site inspection?",
+          "output": "equals",
+          "metadata_net_id": "allen|mini|1",
+          "metadata_algebra": "allen",
+          "metadata_cell": "red_P1_L2",
+          "metadata_fold": "test",
+          "metadata_query_pair": [
+            0,
+            1
+          ],
+          "metadata_cyclomatic": 0,
+          "metadata_num_simple_paths": 1,
+          "metadata_contributing_edges": 2,
+          "metadata_modeA_covered": false,
+          "metadata_modeA_correct": 0,
+          "metadata_naive_covered": false,
+          "predict_modeA": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_off": "ABSTAIN",
+          "predict_raw": "equals",
+          "predict_cot": "equals",
+          "predict_sc": "equals",
+          "predict_linc": "equals",
+          "predict_pot": "equals",
+          "predict_ilp": "started-by"
+        },
+        {
+          "input": "The membership renewal started after the procurement cycle was completely finished. The maintenance window and the procurement cycle spanned exactly the same period.\nQuery: what is the temporal relation between the membership renewal and the maintenance window?",
+          "output": "after",
+          "metadata_net_id": "allen|mini|2",
+          "metadata_algebra": "allen",
+          "metadata_cell": "red_P1_L2",
+          "metadata_fold": "test",
+          "metadata_query_pair": [
+            0,
+            1
+          ],
+          "metadata_cyclomatic": 0,
+          "metadata_num_simple_paths": 1,
+          "metadata_contributing_edges": 2,
+          "metadata_modeA_covered": true,
+          "metadata_modeA_correct": 1,
+          "metadata_naive_covered": true,
+          "predict_modeA": "after",
+          "predict_naive": "after",
+          "predict_off": "ABSTAIN",
+          "predict_raw": "after",
+          "predict_cot": "after",
+          "predict_sc": "after",
+          "predict_linc": "after",
+          "predict_pot": "after",
+          "predict_ilp": "after"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+[project]
+name = "closure-cert-iter2-dir5"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy==2.4.6",
+    "scipy==1.17.1",
+    "pandas==3.0.3",
+    "networkx==3.6.1",
+    "httpx==0.28.1",
+    "loguru==0.7.3",
+    "matplotlib==3.11.0",
+    "jsonschema==4.26.0",
+]

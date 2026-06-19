@@ -1,0 +1,1422 @@
+{
+  "metadata": {
+    "method_name": "Cross-Path Allen-13 Intersection over Span-LOCAL LLM reads vs Best-Single-Path composition (decisive real-text test)",
+    "description": "Tests whether the cross-path full-PC INTERSECTION of disjunctive Allen interval reads narrows deduction-required real-text temporal queries strictly beyond the BEST SINGLE PATH's composition, at match...",
+    "headline_findings": {
+      "verdict": "SCOPE-BOUNDARY",
+      "gate_decision": "GO",
+      "combined_headline_eligible_N": 125,
+      "n_headline_queries_scored": 125,
+      "H_main_intersection_vs_best_single_gap": 0.0,
+      "H_main_gap_ci95": [
+        0.0,
+        0.0
+      ],
+      "H_main_gap_bootstrap_median": 0.0,
+      "H_main_ci_brackets_point": true,
+      "H_main_base_unreachable": false,
+      "H_main_holm_adjusted_significant": false,
+      "intersection_resolution_rate": 0.0,
+      "best_single_resolution_rate": 0.0,
+      "resolution_rate_gain_intersection_vs_best": 0.0,
+      "intersection_vs_naive_gap": 0.0,
+      "intersection_vs_pot_gap": 0.0,
+      "intersection_vs_raw_gap": 0.0,
+      "intersection_confident_wrong_rate": 1.0,
+      "realized_bite_mean": 0.0,
+      "tddman_per_edge_recall": 0.9016786570743405,
+      "tddman_recall_gate_verdict": "CI_excludes_above_gate",
+      "window_primary_read_underdetermined_rate": 0.7937649880095923,
+      "window_primary_read_breadth_mean": 11.468425259792166,
+      "local_primary_read_underdetermined_rate": 0.8659217877094972,
+      "crossfamily_read_underdetermined_rate": 0.988009592326139,
+      "crossfamily_read_breadth_mean": 12.87849720223821,
+      "synth_recall95_intersection_beats_best_single": true,
+      "binding_constraint": "real-text Allen-read informativeness (constituent edges read as near-universe/underdetermined by BOTH a weak and a strong cross-family reader) -> no composition bite -> mechanism cannot realize on rea...",
+      "underpowered_lt70": false,
+      "tags": "every number tagged REAL-LLM-READ / GOLD-ONLY-GATE / SYNTHETIC-ALLEN-CONTROL / THEOREM"
+    },
+    "config": {
+      "seed": 20260617,
+      "reader_primary": "google/gemini-3.1-flash-lite",
+      "reader_primary_used": {
+        "google/gemini-3.1-flash-lite": 2860,
+        "deepseek/deepseek-v3.2": 1252
+      },
+      "cross_family": "deepseek/deepseek-v3.2",
+      "primary_fallbacks": [
+        "deepseek/deepseek-v3.2",
+        "deepseek/deepseek-v4-flash"
+      ],
+      "temperature": 0.0,
+      "allen_recall_gate": 0.85,
+      "via_cap": 10,
+      "boot_B": 2000,
+      "alpha": 0.05,
+      "confirm_family_holm": [
+        "H_main_intersection_vs_best_single",
+        "H_iter_intersection_vs_naive",
+        "H_intersection_vs_pot"
+      ],
+      "confirm_min_n": 70,
+      "budget_global_cap": 9.0,
+      "nt_desc_sample": 40,
+      "closure_algebra": "FULL Allen interval algebra (13 base relations)",
+      "mini": false,
+      "limit_docs": null
+    },
+    "closure_tests_passed": true,
+    "closure_test_detail": {
+      "n_errors": 0,
+      "errors": [],
+      "allen_compose_cells": 169
+    },
+    "TAG_THEOREM": "Allen PC-2 closure engine is sound (incomplete) -> intersection of sound read sets is ALWAYS sound, so the cross-path NARROWING is a valid certificate even though Allen PC is not complete; coverage/co...",
+    "a_priori_gate": {
+      "per_corpus": {
+        "narrativetime": {
+          "n_eval_deduction_required": 47205,
+          "n_with_ge2_disjoint_paths": 47196,
+          "n_multipath_with_bite": 94,
+          "n_gold_singleton_headline": 0,
+          "n_singleton_resolvable": 0,
+          "n_ge3_stratum": 94,
+          "n_len2_stratum": 0,
+          "inter_not_superset_canon_excluded": 26156,
+          "inter_strictly_tighter_than_direct_annotation": 23920,
+          "bite_mean": 3.765957446808511,
+          "bite_median": 4.0,
+          "bite_hist": {
+            "2": 11,
+            "4": 83
+          },
+          "headline_bite_hist": {},
+          "n_disjoint_paths_mean": 10.0,
+          "docs_covered": 3,
+          "offset_alignment_fraction": 1.0
+        },
+        "tddman": {
+          "n_eval_deduction_required": 6130,
+          "n_with_ge2_disjoint_paths": 4655,
+          "n_multipath_with_bite": 125,
+          "n_gold_singleton_headline": 125,
+          "n_singleton_resolvable": 63,
+          "n_ge3_stratum": 113,
+          "n_len2_stratum": 12,
+          "inter_not_superset_canon_excluded": 1851,
+          "inter_strictly_tighter_than_direct_annotation": 1731,
+          "bite_mean": 3.008,
+          "bite_median": 4.0,
+          "bite_hist": {
+            "2": 62,
+            "4": 63
+          },
+          "headline_bite_hist": {
+            "2": 62,
+            "4": 63
+          },
+          "n_disjoint_paths_mean": 7.936,
+          "docs_covered": 15,
+          "offset_alignment_fraction": 1.0
+        }
+      },
+      "matres_validation": {
+        "n_deduction_required_multipath_structural": 0,
+        "allen_token_mappable": false,
+        "note": "MATRES is point-algebra start-point gold (tokens <,=,>; not Allen) and intra/adjacent only -> deduction envelope ~empty. Expected ~0; confirms the gate is discriminative (does not fire on a corpus wit...",
+        "tag": "GOLD-ONLY-GATE"
+      },
+      "combined_headline_eligible_N": 125,
+      "headline_go_threshold": 100,
+      "gate_decision": "GO",
+      "power_mde_table": {
+        "50": 0.26578171044889787,
+        "100": 0.18793604977377515,
+        "150": 0.15344914207335036,
+        "200": 0.13289085522444893
+      },
+      "via_cap": 10,
+      "tag": "GOLD-ONLY-GATE"
+    },
+    "read_conditions": {
+      "window_primary_HEADLINE": {
+        "context": "window",
+        "reader": "google/gemini-3.1-flash-lite",
+        "recall": {
+          "recall": 0.9016786570743405,
+          "n_scorable_edges": 1251,
+          "n_parse_fail_excluded": 1,
+          "parse_fail_rate": 0.0007987220447284345,
+          "recall_ci95": [
+            0.8773047539607133,
+            0.9308326126623141
+          ],
+          "rho_within_doc_soundness": 0.028831832921432383,
+          "breadth_mean": 11.436450839328538,
+          "gate": 0.85,
+          "gate_verdict": "CI_excludes_above_gate",
+          "binomial_p_recall_lt_gate_ANTICONSERVATIVE": 0.9999999736822838,
+          "tag": "REAL-LLM-READ"
+        },
+        "informativeness": {
+          "n": 1251,
+          "underdetermined_rate": 0.7937649880095923,
+          "breadth_mean": 11.468425259792166,
+          "near_universe_rate": 0.8225419664268585,
+          "parse_fail": 1,
+          "tag": "REAL-LLM-READ"
+        },
+        "leaderboard": {
+          "H_main_intersection_vs_best_single": {
+            "gap_point": 0.0,
+            "gap_bootstrap_median": 0.0,
+            "gap_ci95": [
+              0.0,
+              0.0
+            ],
+            "brackets": true,
+            "primary_ci95": [
+              0.0,
+              0.0
+            ],
+            "boot_p_gap_le_0": 1.0,
+            "matched_coverage": 0.024,
+            "method_acc": 0.0,
+            "base_acc": 0.0,
+            "base_max_coverage": 0.024,
+            "base_unreachable": false,
+            "n_boot": 1307,
+            "ci_note": "percentile CI brackets the bootstrap MEDIAN by construction; `brackets` reports whether it also contains the full-sample point gap (R1 fix: a CI that excludes its own point estimate is flagged, never ..."
+          },
+          "H_iter_intersection_vs_naive": {
+            "gap_point": 0.0,
+            "gap_bootstrap_median": 0.0,
+            "gap_ci95": [
+              0.0,
+              0.0
+            ],
+            "brackets": true,
+            "primary_ci95": [
+              0.0,
+              0.0
+            ],
+            "boot_p_gap_le_0": 1.0,
+            "matched_coverage": 0.024,
+            "method_acc": 0.0,
+            "base_acc": 0.0,
+            "base_max_coverage": 0.024,
+            "base_unreachable": false,
+            "n_boot": 1307,
+            "ci_note": "percentile CI brackets the bootstrap MEDIAN by construction; `brackets` reports whether it also contains the full-sample point gap (R1 fix: a CI that excludes its own point estimate is flagged, never ..."
+          },
+          "naive_vs_best_single": {
+            "gap_point": 0.0,
+            "gap_bootstrap_median": 0.0,
+            "gap_ci95": [
+              0.0,
+              0.0
+            ],
+            "brackets": true,
+            "primary_ci95": [
+              0.0,
+              0.0
+            ],
+            "boot_p_gap_le_0": 1.0,
+            "matched_coverage": 0.024,
+            "method_acc": 0.0,
+            "base_acc": 0.0,
+            "base_max_coverage": 0.024,
+            "base_unreachable": false,
+            "n_boot": 1307,
+            "ci_note": "percentile CI brackets the bootstrap MEDIAN by construction; `brackets` reports whether it also contains the full-sample point gap (R1 fix: a CI that excludes its own point estimate is flagged, never ..."
+          },
+          "H_intersection_vs_pot": {
+            "gap_point": 0.0,
+            "gap_bootstrap_median": 0.0,
+            "gap_ci95": [
+              -0.3333333333333333,
+              0.0
+            ],
+            "brackets": true,
+            "primary_ci95": [
+              -0.3333333333333333,
+              0.0
+            ],
+            "boot_p_gap_le_0": 1.0,
+            "matched_coverage": 0.024,
+            "method_acc": 0.0,
+            "base_acc": 0.0,
+            "base_max_coverage": 0.992,
+            "base_unreachable": false,
+            "n_boot": 1307,
+            "ci_note": "percentile CI brackets the bootstrap MEDIAN by construction; `brackets` reports whether it also contains the full-sample point gap (R1 fix: a CI that excludes its own point estimate is flagged, never ..."
+          },
+          "intersection_vs_raw": {
+            "gap_point": 0.0,
+            "gap_bootstrap_median": 0.0,
+            "gap_ci95": [
+              -0.3333333333333333,
+              0.0
+            ],
+            "brackets": true,
+            "primary_ci95": [
+              -0.3333333333333333,
+              0.0
+            ],
+            "boot_p_gap_le_0": 1.0,
+            "matched_coverage": 0.024,
+            "method_acc": 0.0,
+            "base_acc": 0.0,
+            "base_max_coverage": 1.0,
+            "base_unreachable": false,
+            "n_boot": 1307,
+            "ci_note": "percentile CI brackets the bootstrap MEDIAN by construction; `brackets` reports whether it also contains the full-sample point gap (R1 fix: a CI that excludes its own point estimate is flagged, never ..."
+          }
+        },
+        "resolution": {
+          "intersection": {
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "n": 125
+          },
+          "best_single": {
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "n": 125
+          },
+          "naive": {
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "n": 125
+          },
+          "pot": {
+            "rate": 0.04,
+            "ci95": [
+              0.0,
+              0.0991216216216215
+            ],
+            "n": 125
+          },
+          "raw": {
+            "rate": 0.032,
+            "ci95": [
+              0.0,
+              0.07407407407407407
+            ],
+            "n": 125
+          }
+        },
+        "n": 125
+      },
+      "local_primary": {
+        "context": "local",
+        "reader": "google/gemini-3.1-flash-lite",
+        "recall": {
+          "recall": 0.9577015163607342,
+          "n_scorable_edges": 1253,
+          "n_parse_fail_excluded": 1,
+          "parse_fail_rate": 0.0007974481658692185,
+          "recall_ci95": [
+            0.9327578495595211,
+            0.9737618104708496
+          ],
+          "rho_within_doc_soundness": 0.054073741332527854,
+          "breadth_mean": 12.013567438148444,
+          "gate": 0.85,
+          "gate_verdict": "CI_excludes_above_gate",
+          "binomial_p_recall_lt_gate_ANTICONSERVATIVE": 1.0,
+          "tag": "REAL-LLM-READ"
+        },
+        "informativeness": {
+          "n": 1253,
+          "underdetermined_rate": 0.8659217877094972,
+          "breadth_mean": 12.037509976057462,
+          "near_universe_rate": 0.8762968874700718,
+          "parse_fail": 1,
+          "tag": "REAL-LLM-READ"
+        },
+        "leaderboard": {
+          "H_main_intersection_vs_best_single": {
+            "gap_point": 0.0,
+            "gap_bootstrap_median": 0.0,
+            "gap_ci95": [
+              0.0,
+              0.0
+            ],
+            "brackets": true,
+            "primary_ci95": [
+              0.0,
+              0.0
+            ],
+            "boot_p_gap_le_0": 1.0,
+            "matched_coverage": 0.008,
+            "method_acc": 0.0,
+            "base_acc": 0.0,
+            "base_max_coverage": 0.008,
+            "base_unreachable": false,
+            "n_boot": 1307,
+            "ci_note": "percentile CI brackets the bootstrap MEDIAN by construction; `brackets` reports whether it also contains the full-sample point gap (R1 fix: a CI that excludes its own point estimate is flagged, never ..."
+          },
+          "H_iter_intersection_vs_naive": {
+            "gap_point": 0.0,
+            "gap_bootstrap_median": 0.0,
+            "gap_ci95": [
+              0.0,
+              0.0
+            ],
+            "brackets": true,
+            "primary_ci95": [
+              0.0,
+              0.0
+            ],
+            "boot_p_gap_le_0": 1.0,
+            "matched_coverage": 0.008,
+            "method_acc": 0.0,
+            "base_acc": 0.0,
+            "base_max_coverage": 0.008,
+            "base_unreachable": false,
+            "n_boot": 1307,
+            "ci_note": "percentile CI brackets the bootstrap MEDIAN by construction; `brackets` reports whether it also contains the full-sample point gap (R1 fix: a CI that excludes its own point estimate is flagged, never ..."
+          },
+          "naive_vs_best_single": {
+            "gap_point": 0.0,
+            "gap_bootstrap_median": 0.0,
+            "gap_ci95": [
+              0.0,
+              0.0
+            ],
+            "brackets": true,
+            "primary_ci95": [
+              0.0,
+              0.0
+            ],
+            "boot_p_gap_le_0": 1.0,
+            "matched_coverage": 0.008,
+            "method_acc": 0.0,
+            "base_acc": 0.0,
+            "base_max_coverage": 0.008,
+            "base_unreachable": false,
+            "n_boot": 1307,
+            "ci_note": "percentile CI brackets the bootstrap MEDIAN by construction; `brackets` reports whether it also contains the full-sample point gap (R1 fix: a CI that excludes its own point estimate is flagged, never ..."
+          },
+          "H_intersection_vs_pot": {
+            "gap_point": NaN,
+            "gap_ci95": [
+              NaN,
+              NaN
+            ],
+            "gap_bootstrap_median": NaN,
+            "brackets": null,
+            "primary_ci95": [
+              NaN,
+              NaN
+            ],
+            "matched_coverage": 0.008,
+            "method_acc": 0.0,
+            "base_acc": NaN,
+            "base_max_coverage": 0.0,
+            "base_unreachable": true,
+            "boot_p_gap_le_0": 0.0,
+            "n_boot": 0
+          },
+          "intersection_vs_raw": {
+            "gap_point": 0.0,
+            "gap_bootstrap_median": 0.0,
+            "gap_ci95": [
+              0.0,
+              0.0
+            ],
+            "brackets": true,
+            "primary_ci95": [
+              0.0,
+              0.0
+            ],
+            "boot_p_gap_le_0": 1.0,
+            "matched_coverage": 0.008,
+            "method_acc": 0.0,
+            "base_acc": 0.0,
+            "base_max_coverage": 1.0,
+            "base_unreachable": false,
+            "n_boot": 1307,
+            "ci_note": "percentile CI brackets the bootstrap MEDIAN by construction; `brackets` reports whether it also contains the full-sample point gap (R1 fix: a CI that excludes its own point estimate is flagged, never ..."
+          }
+        },
+        "resolution": {
+          "intersection": {
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "n": 125
+          },
+          "best_single": {
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "n": 125
+          },
+          "naive": {
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "n": 125
+          },
+          "pot": {
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "n": 125
+          },
+          "raw": {
+            "rate": 0.032,
+            "ci95": [
+              0.0,
+              0.06666666666666667
+            ],
+            "n": 125
+          }
+        },
+        "n": 125
+      },
+      "window_crossfamily": {
+        "model": "deepseek/deepseek-v3.2",
+        "context": "window",
+        "recall": {
+          "recall": 0.9872102318145484,
+          "n_scorable_edges": 1251,
+          "n_parse_fail_excluded": 1,
+          "parse_fail_rate": 0.0007987220447284345,
+          "recall_ci95": [
+            0.9770538418585762,
+            0.9969827857283667
+          ],
+          "rho_within_doc_soundness": 0.007129896895137041,
+          "breadth_mean": 12.826538768984813,
+          "gate": 0.85,
+          "gate_verdict": "CI_excludes_above_gate",
+          "binomial_p_recall_lt_gate_ANTICONSERVATIVE": 1.0,
+          "tag": "REAL-LLM-READ"
+        },
+        "informativeness": {
+          "n": 1251,
+          "underdetermined_rate": 0.988009592326139,
+          "breadth_mean": 12.87849720223821,
+          "near_universe_rate": 0.988009592326139,
+          "parse_fail": 1,
+          "tag": "REAL-LLM-READ"
+        },
+        "leaderboard": {
+          "H_main_intersection_vs_best_single": {
+            "gap_point": NaN,
+            "gap_ci95": [
+              NaN,
+              NaN
+            ],
+            "gap_bootstrap_median": NaN,
+            "brackets": null,
+            "primary_ci95": [
+              NaN,
+              NaN
+            ],
+            "matched_coverage": 0.0,
+            "method_acc": NaN,
+            "base_acc": NaN,
+            "base_max_coverage": 0.0,
+            "base_unreachable": false,
+            "boot_p_gap_le_0": 1.0,
+            "n_boot": 0
+          },
+          "H_iter_intersection_vs_naive": {
+            "gap_point": NaN,
+            "gap_ci95": [
+              NaN,
+              NaN
+            ],
+            "gap_bootstrap_median": NaN,
+            "brackets": null,
+            "primary_ci95": [
+              NaN,
+              NaN
+            ],
+            "matched_coverage": 0.0,
+            "method_acc": NaN,
+            "base_acc": NaN,
+            "base_max_coverage": 0.0,
+            "base_unreachable": false,
+            "boot_p_gap_le_0": 1.0,
+            "n_boot": 0
+          },
+          "naive_vs_best_single": {
+            "gap_point": NaN,
+            "gap_ci95": [
+              NaN,
+              NaN
+            ],
+            "gap_bootstrap_median": NaN,
+            "brackets": null,
+            "primary_ci95": [
+              NaN,
+              NaN
+            ],
+            "matched_coverage": 0.0,
+            "method_acc": NaN,
+            "base_acc": NaN,
+            "base_max_coverage": 0.0,
+            "base_unreachable": false,
+            "boot_p_gap_le_0": 1.0,
+            "n_boot": 0
+          },
+          "H_intersection_vs_pot": {
+            "gap_point": NaN,
+            "gap_ci95": [
+              NaN,
+              NaN
+            ],
+            "gap_bootstrap_median": NaN,
+            "brackets": null,
+            "primary_ci95": [
+              NaN,
+              NaN
+            ],
+            "matched_coverage": 0.0,
+            "method_acc": NaN,
+            "base_acc": NaN,
+            "base_max_coverage": 0.0,
+            "base_unreachable": false,
+            "boot_p_gap_le_0": 1.0,
+            "n_boot": 0
+          },
+          "intersection_vs_raw": {
+            "gap_point": NaN,
+            "gap_ci95": [
+              NaN,
+              NaN
+            ],
+            "gap_bootstrap_median": NaN,
+            "brackets": null,
+            "primary_ci95": [
+              NaN,
+              NaN
+            ],
+            "matched_coverage": 0.0,
+            "method_acc": NaN,
+            "base_acc": 1.0,
+            "base_max_coverage": 1.0,
+            "base_unreachable": false,
+            "boot_p_gap_le_0": 1.0,
+            "n_boot": 0
+          }
+        },
+        "resolution": {
+          "intersection": {
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "n": 125
+          },
+          "best_single": {
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "n": 125
+          },
+          "naive": {
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "n": 125
+          },
+          "pot": {
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "n": 125
+          },
+          "raw": {
+            "rate": 0.072,
+            "ci95": [
+              0.011232833957553059,
+              0.14474745331069605
+            ],
+            "n": 125
+          }
+        },
+        "mean_jaccard_vs_primary": 0.8714371228771228,
+        "n": 125,
+        "tag": "REAL-LLM-READ"
+      }
+    },
+    "read_informativeness_localization": {
+      "note": "Two read REGIMES x two READERS isolate read-informativeness from the MECHANISM. On TDDMan (the only corpus with the gold multi-path-redundant structure), constituent Allen reads are near-universe / un...",
+      "window_primary_underdet_rate": 0.7937649880095923,
+      "local_primary_underdet_rate": 0.8659217877094972,
+      "crossfamily_underdet_rate": 0.988009592326139,
+      "tag": "REAL-LLM-READ"
+    },
+    "per_edge_recall": {
+      "tddman": {
+        "recall": 0.9016786570743405,
+        "n_scorable_edges": 1251,
+        "n_parse_fail_excluded": 1,
+        "parse_fail_rate": 0.0007987220447284345,
+        "recall_ci95": [
+          0.8773047539607133,
+          0.9308326126623141
+        ],
+        "rho_within_doc_soundness": 0.028831832921432383,
+        "breadth_mean": 11.436450839328538,
+        "gate": 0.85,
+        "gate_verdict": "CI_excludes_above_gate",
+        "binomial_p_recall_lt_gate_ANTICONSERVATIVE": 0.9999999736822838,
+        "tag": "REAL-LLM-READ"
+      }
+    },
+    "leaderboard": {
+      "H_main_intersection_vs_best_single": {
+        "gap_point": 0.0,
+        "gap_bootstrap_median": 0.0,
+        "gap_ci95": [
+          0.0,
+          0.0
+        ],
+        "brackets": true,
+        "primary_ci95": [
+          0.0,
+          0.0
+        ],
+        "boot_p_gap_le_0": 1.0,
+        "matched_coverage": 0.024,
+        "method_acc": 0.0,
+        "base_acc": 0.0,
+        "base_max_coverage": 0.024,
+        "base_unreachable": false,
+        "n_boot": 1307,
+        "ci_note": "percentile CI brackets the bootstrap MEDIAN by construction; `brackets` reports whether it also contains the full-sample point gap (R1 fix: a CI that excludes its own point estimate is flagged, never ..."
+      },
+      "H_iter_intersection_vs_naive": {
+        "gap_point": 0.0,
+        "gap_bootstrap_median": 0.0,
+        "gap_ci95": [
+          0.0,
+          0.0
+        ],
+        "brackets": true,
+        "primary_ci95": [
+          0.0,
+          0.0
+        ],
+        "boot_p_gap_le_0": 1.0,
+        "matched_coverage": 0.024,
+        "method_acc": 0.0,
+        "base_acc": 0.0,
+        "base_max_coverage": 0.024,
+        "base_unreachable": false,
+        "n_boot": 1307,
+        "ci_note": "percentile CI brackets the bootstrap MEDIAN by construction; `brackets` reports whether it also contains the full-sample point gap (R1 fix: a CI that excludes its own point estimate is flagged, never ..."
+      },
+      "naive_vs_best_single": {
+        "gap_point": 0.0,
+        "gap_bootstrap_median": 0.0,
+        "gap_ci95": [
+          0.0,
+          0.0
+        ],
+        "brackets": true,
+        "primary_ci95": [
+          0.0,
+          0.0
+        ],
+        "boot_p_gap_le_0": 1.0,
+        "matched_coverage": 0.024,
+        "method_acc": 0.0,
+        "base_acc": 0.0,
+        "base_max_coverage": 0.024,
+        "base_unreachable": false,
+        "n_boot": 1307,
+        "ci_note": "percentile CI brackets the bootstrap MEDIAN by construction; `brackets` reports whether it also contains the full-sample point gap (R1 fix: a CI that excludes its own point estimate is flagged, never ..."
+      },
+      "H_intersection_vs_pot": {
+        "gap_point": 0.0,
+        "gap_bootstrap_median": 0.0,
+        "gap_ci95": [
+          -0.3333333333333333,
+          0.0
+        ],
+        "brackets": true,
+        "primary_ci95": [
+          -0.3333333333333333,
+          0.0
+        ],
+        "boot_p_gap_le_0": 1.0,
+        "matched_coverage": 0.024,
+        "method_acc": 0.0,
+        "base_acc": 0.0,
+        "base_max_coverage": 0.992,
+        "base_unreachable": false,
+        "n_boot": 1307,
+        "ci_note": "percentile CI brackets the bootstrap MEDIAN by construction; `brackets` reports whether it also contains the full-sample point gap (R1 fix: a CI that excludes its own point estimate is flagged, never ..."
+      },
+      "intersection_vs_raw": {
+        "gap_point": 0.0,
+        "gap_bootstrap_median": 0.0,
+        "gap_ci95": [
+          -0.3333333333333333,
+          0.0
+        ],
+        "brackets": true,
+        "primary_ci95": [
+          -0.3333333333333333,
+          0.0
+        ],
+        "boot_p_gap_le_0": 1.0,
+        "matched_coverage": 0.024,
+        "method_acc": 0.0,
+        "base_acc": 0.0,
+        "base_max_coverage": 1.0,
+        "base_unreachable": false,
+        "n_boot": 1307,
+        "ci_note": "percentile CI brackets the bootstrap MEDIAN by construction; `brackets` reports whether it also contains the full-sample point gap (R1 fix: a CI that excludes its own point estimate is flagged, never ..."
+      }
+    },
+    "singleton_resolution_rates": {
+      "intersection": {
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n": 125
+      },
+      "best_single": {
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n": 125
+      },
+      "naive": {
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n": 125
+      },
+      "pot": {
+        "rate": 0.04,
+        "ci95": [
+          0.0,
+          0.0991216216216215
+        ],
+        "n": 125
+      },
+      "raw": {
+        "rate": 0.032,
+        "ci95": [
+          0.0,
+          0.07407407407407407
+        ],
+        "n": 125
+      }
+    },
+    "resolution_rate_gain_intersection_vs_best": 0.0,
+    "holm_bonferroni": {
+      "H_main_intersection_vs_best_single": {
+        "p": 1.0,
+        "holm_threshold": 0.016666666666666666,
+        "adjusted_significant": false
+      },
+      "H_iter_intersection_vs_naive": {
+        "p": 1.0,
+        "holm_threshold": 0.025,
+        "adjusted_significant": false
+      },
+      "H_intersection_vs_pot": {
+        "p": 1.0,
+        "holm_threshold": 0.05,
+        "adjusted_significant": false
+      }
+    },
+    "stratified_exploratory": {
+      "len2": {
+        "n": 12,
+        "intersection_vs_best_single": {
+          "gap_point": NaN,
+          "gap_ci95": [
+            NaN,
+            NaN
+          ],
+          "gap_bootstrap_median": NaN,
+          "brackets": null,
+          "primary_ci95": [
+            NaN,
+            NaN
+          ],
+          "matched_coverage": 0.0,
+          "method_acc": NaN,
+          "base_acc": NaN,
+          "base_max_coverage": 0.0,
+          "base_unreachable": false,
+          "boot_p_gap_le_0": 1.0,
+          "n_boot": 0
+        },
+        "intersection_resolution_rate": 0.0,
+        "best_single_resolution_rate": 0.0
+      },
+      "ge3": {
+        "n": 113,
+        "intersection_vs_best_single": {
+          "gap_point": 0.0,
+          "gap_bootstrap_median": 0.0,
+          "gap_ci95": [
+            0.0,
+            0.0
+          ],
+          "brackets": true,
+          "primary_ci95": [
+            0.0,
+            0.0
+          ],
+          "boot_p_gap_le_0": 1.0,
+          "matched_coverage": 0.02654867256637168,
+          "method_acc": 0.0,
+          "base_acc": 0.0,
+          "base_max_coverage": 0.02654867256637168,
+          "base_unreachable": false,
+          "n_boot": 1287,
+          "ci_note": "percentile CI brackets the bootstrap MEDIAN by construction; `brackets` reports whether it also contains the full-sample point gap (R1 fix: a CI that excludes its own point estimate is flagged, never ..."
+        },
+        "intersection_resolution_rate": 0.0,
+        "best_single_resolution_rate": 0.0
+      }
+    },
+    "set_tightening_secondary": {
+      "mean_jaccard_intersection_to_gold": 0.11333969061241786,
+      "mean_jaccard_best_single_to_gold": 0.11112523839796566,
+      "n_queries": 165,
+      "note": "secondary, descriptive (includes NarrativeTime disjunctive gold where singleton-resolution is undefined); higher Jaccard = tighter toward gold.",
+      "tag": "REAL-LLM-READ"
+    },
+    "intersection_confident_wrong_rate": 1.0,
+    "realized_bite_mean": 0.0,
+    "precision_recall_impossibility": {
+      "high_recall_read_breadth_mean": 11.468425259792166,
+      "high_recall_read_recall": 0.9016786570743405,
+      "high_recall_intersection_resolution_rate": 0.0,
+      "forced_single_tight_read_correct_rate": 0.032,
+      "interpretation": "The high-recall disjunctive read (breadth ~11.5/13, recall 0.90) is SOUND but near-universe -> 0 intersection bite. Forcing a single tight Allen relation (raw) is tight but only 3.2% correct -> UNSOUN...",
+      "tag": "REAL-LLM-READ"
+    },
+    "cross_family_sensitivity": {
+      "model": "deepseek/deepseek-v3.2",
+      "context": "window",
+      "recall": {
+        "recall": 0.9872102318145484,
+        "n_scorable_edges": 1251,
+        "n_parse_fail_excluded": 1,
+        "parse_fail_rate": 0.0007987220447284345,
+        "recall_ci95": [
+          0.9770538418585762,
+          0.9969827857283667
+        ],
+        "rho_within_doc_soundness": 0.007129896895137041,
+        "breadth_mean": 12.826538768984813,
+        "gate": 0.85,
+        "gate_verdict": "CI_excludes_above_gate",
+        "binomial_p_recall_lt_gate_ANTICONSERVATIVE": 1.0,
+        "tag": "REAL-LLM-READ"
+      },
+      "informativeness": {
+        "n": 1251,
+        "underdetermined_rate": 0.988009592326139,
+        "breadth_mean": 12.87849720223821,
+        "near_universe_rate": 0.988009592326139,
+        "parse_fail": 1,
+        "tag": "REAL-LLM-READ"
+      },
+      "leaderboard": {
+        "H_main_intersection_vs_best_single": {
+          "gap_point": NaN,
+          "gap_ci95": [
+            NaN,
+            NaN
+          ],
+          "gap_bootstrap_median": NaN,
+          "brackets": null,
+          "primary_ci95": [
+            NaN,
+            NaN
+          ],
+          "matched_coverage": 0.0,
+          "method_acc": NaN,
+          "base_acc": NaN,
+          "base_max_coverage": 0.0,
+          "base_unreachable": false,
+          "boot_p_gap_le_0": 1.0,
+          "n_boot": 0
+        },
+        "H_iter_intersection_vs_naive": {
+          "gap_point": NaN,
+          "gap_ci95": [
+            NaN,
+            NaN
+          ],
+          "gap_bootstrap_median": NaN,
+          "brackets": null,
+          "primary_ci95": [
+            NaN,
+            NaN
+          ],
+          "matched_coverage": 0.0,
+          "method_acc": NaN,
+          "base_acc": NaN,
+          "base_max_coverage": 0.0,
+          "base_unreachable": false,
+          "boot_p_gap_le_0": 1.0,
+          "n_boot": 0
+        },
+        "naive_vs_best_single": {
+          "gap_point": NaN,
+          "gap_ci95": [
+            NaN,
+            NaN
+          ],
+          "gap_bootstrap_median": NaN,
+          "brackets": null,
+          "primary_ci95": [
+            NaN,
+            NaN
+          ],
+          "matched_coverage": 0.0,
+          "method_acc": NaN,
+          "base_acc": NaN,
+          "base_max_coverage": 0.0,
+          "base_unreachable": false,
+          "boot_p_gap_le_0": 1.0,
+          "n_boot": 0
+        },
+        "H_intersection_vs_pot": {
+          "gap_point": NaN,
+          "gap_ci95": [
+            NaN,
+            NaN
+          ],
+          "gap_bootstrap_median": NaN,
+          "brackets": null,
+          "primary_ci95": [
+            NaN,
+            NaN
+          ],
+          "matched_coverage": 0.0,
+          "method_acc": NaN,
+          "base_acc": NaN,
+          "base_max_coverage": 0.0,
+          "base_unreachable": false,
+          "boot_p_gap_le_0": 1.0,
+          "n_boot": 0
+        },
+        "intersection_vs_raw": {
+          "gap_point": NaN,
+          "gap_ci95": [
+            NaN,
+            NaN
+          ],
+          "gap_bootstrap_median": NaN,
+          "brackets": null,
+          "primary_ci95": [
+            NaN,
+            NaN
+          ],
+          "matched_coverage": 0.0,
+          "method_acc": NaN,
+          "base_acc": 1.0,
+          "base_max_coverage": 1.0,
+          "base_unreachable": false,
+          "boot_p_gap_le_0": 1.0,
+          "n_boot": 0
+        }
+      },
+      "resolution": {
+        "intersection": {
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n": 125
+        },
+        "best_single": {
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n": 125
+        },
+        "naive": {
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n": 125
+        },
+        "pot": {
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n": 125
+        },
+        "raw": {
+          "rate": 0.072,
+          "ci95": [
+            0.011232833957553059,
+            0.14474745331069605
+          ],
+          "n": 125
+        }
+      },
+      "mean_jaccard_vs_primary": 0.8714371228771228,
+      "n": 125,
+      "tag": "REAL-LLM-READ"
+    },
+    "narrativetime_descriptive": {
+      "n_real_read_queries": 40,
+      "note": "NarrativeTime's dense start-point-derived gold is structurally DISJUNCTIVE (0 gold-singleton multi-path-with-bite queries) and not globally path-consistent in tight Allen (intersection falls outside t...",
+      "tag": "REAL-LLM-READ / GOLD-ONLY-GATE"
+    },
+    "synthetic_allen_control": {
+      "tag": "SYNTHETIC-ALLEN-CONTROL",
+      "cells": {
+        "recall_95": {
+          "n_net": 500,
+          "n_events": 6,
+          "recall": 0.95,
+          "per_method": {
+            "intersection": {
+              "coverage": 0.25,
+              "selective_acc": 0.976
+            },
+            "best_single": {
+              "coverage": 0.226,
+              "selective_acc": 0.7168141592920354
+            },
+            "naive": {
+              "coverage": 0.316,
+              "selective_acc": 0.8417721518987342
+            }
+          },
+          "mean_bite": 2.252,
+          "intersection_resolves_more_than_best_single": true,
+          "coverage_gain_intersection_vs_best": 0.023999999999999994,
+          "singleton_resolved_rate": 0.25,
+          "tag": "SYNTHETIC-ALLEN-CONTROL"
+        },
+        "recall_85": {
+          "n_net": 500,
+          "n_events": 6,
+          "recall": 0.85,
+          "per_method": {
+            "intersection": {
+              "coverage": 0.086,
+              "selective_acc": 0.8372093023255814
+            },
+            "best_single": {
+              "coverage": 0.32,
+              "selective_acc": 0.51875
+            },
+            "naive": {
+              "coverage": 0.342,
+              "selective_acc": 0.6842105263157895
+            }
+          },
+          "mean_bite": 2.698,
+          "intersection_resolves_more_than_best_single": false,
+          "coverage_gain_intersection_vs_best": -0.234,
+          "singleton_resolved_rate": 0.086,
+          "tag": "SYNTHETIC-ALLEN-CONTROL"
+        },
+        "recall_70": {
+          "n_net": 500,
+          "n_events": 6,
+          "recall": 0.7,
+          "per_method": {
+            "intersection": {
+              "coverage": 0.026,
+              "selective_acc": 0.46153846153846156
+            },
+            "best_single": {
+              "coverage": 0.418,
+              "selective_acc": 0.35406698564593303
+            },
+            "naive": {
+              "coverage": 0.272,
+              "selective_acc": 0.5294117647058824
+            }
+          },
+          "mean_bite": 2.532,
+          "intersection_resolves_more_than_best_single": false,
+          "coverage_gain_intersection_vs_best": -0.39199999999999996,
+          "singleton_resolved_rate": 0.026,
+          "tag": "SYNTHETIC-ALLEN-CONTROL"
+        }
+      },
+      "note": "consistent-by-construction Allen QCNs, noisy reads; positive control that the comparison code detects a true intersection>best-single effect when reads are sound."
+    },
+    "worked_examples_prolog": [
+      {
+        "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_4/gen_art/gen_art_experiment_1/results/worked_intersection_0.pl",
+        "discharge_method": "python-checked (swipl-unavailable)",
+        "swipl_stdout": null,
+        "swipl_verdict": null,
+        "python_derived": "B",
+        "python_intersection": [
+          "B"
+        ],
+        "python_singleton": true,
+        "engine_intersection": [
+          "B"
+        ],
+        "python_matches_engine": true,
+        "gold": [
+          "DI"
+        ],
+        "n_disjoint_paths": 10,
+        "program": "% Closure-certified temporal deduction (Allen-13) -- auto-generated trace program.\n% Query: relation of e_ABC19980108_1830_0711__e4 to e_ABC19980108_1830_0711__e28 (held out), recovered by intersectin...",
+        "kind": "intersection_resolves",
+        "intersection_pred": "B",
+        "correct": 0
+      },
+      {
+        "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_4/gen_art/gen_art_experiment_1/results/worked_intersection_1.pl",
+        "discharge_method": "python-checked (swipl-unavailable)",
+        "swipl_stdout": null,
+        "swipl_verdict": null,
+        "python_derived": "BI",
+        "python_intersection": [
+          "BI"
+        ],
+        "python_singleton": true,
+        "engine_intersection": [
+          "BI"
+        ],
+        "python_matches_engine": true,
+        "gold": [
+          "D"
+        ],
+        "n_disjoint_paths": 10,
+        "program": "% Closure-certified temporal deduction (Allen-13) -- auto-generated trace program.\n% Query: relation of e_ABC19980108_1830_0711__e28 to e_ABC19980108_1830_0711__e67 (held out), recovered by intersecti...",
+        "kind": "intersection_resolves",
+        "intersection_pred": "BI",
+        "correct": 0
+      },
+      {
+        "prolog_path": "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_4/gen_art/gen_art_experiment_1/results/worked_intersection_2.pl",
+        "discharge_method": "python-checked (swipl-unavailable)",
+        "swipl_stdout": null,
+        "swipl_verdict": null,
+        "python_derived": "BI",
+        "python_intersection": [
+          "BI"
+        ],
+        "python_singleton": true,
+        "engine_intersection": [
+          "BI"
+        ],
+        "python_matches_engine": true,
+        "gold": [
+          "D"
+        ],
+        "n_disjoint_paths": 10,
+        "program": "% Closure-certified temporal deduction (Allen-13) -- auto-generated trace program.\n% Query: relation of e_ABC19980108_1830_0711__e32 to e_ABC19980108_1830_0711__e67 (held out), recovered by intersecti...",
+        "kind": "intersection_resolves",
+        "intersection_pred": "BI",
+        "correct": 0
+      }
+    ],
+    "cost": {
+      "this_run_incremental_usd": 0.0,
+      "primary_usd": 0.0,
+      "cross_family_usd": 0.0,
+      "n_calls": 0,
+      "n_cache_hits": 5102,
+      "parse_fail": 1,
+      "budget_global_cap": 9.0,
+      "note": "this_run_incremental_usd is the OpenRouter spend NOT served from the sha256 disk cache; the initial uncached full run cost ~$0.94 (< $9 hard guard, < $10 ceiling) and all reads are cached so reproduct...",
+      "tag": "REAL-LLM-READ"
+    },
+    "elapsed_sec": 81.1,
+    "verdict": "SCOPE-BOUNDARY",
+    "verdict_rationale": "VERDICT=SCOPE-BOUNDARY (gate GO, n_headline=125). Cross-path intersection does NOT narrow beyond best-single-path with adjusted-CI separation at power on real text -> the coding mechanism is honestly ...",
+    "honesty_caveats": [
+      "Allen PC is sound-but-INCOMPLETE: coverage/collapse are SOUND LOWER BOUNDS; but the intersection of sound read sets is always sound, so the narrowing claim is valid.",
+      "Headline is TDDMan-only (NarrativeTime contributes 0 gold-singleton queries by the pre-registered gate); the mechanism's real-text scope is the non-circular manually-annotated long-distance corpus.",
+      "Eligible queries require gold_canon subset of the gold intersection (path-consistent subset); ~30% of TDDMan multi-path edges are NOT path-consistent and are excluded (a property of independent human ..."
+    ],
+    "tags": "REAL-LLM-READ / GOLD-ONLY-GATE / SYNTHETIC-ALLEN-CONTROL / THEOREM",
+    "figures": [
+      "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_4/gen_art/gen_art_experiment_1/results/figures/intersection_vs_best_single_rc.jpg",
+      "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_4/gen_art/gen_art_experiment_1/results/figures/gold_gate_bite_hist.jpg",
+      "/ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_4/gen_art/gen_art_experiment_1/results/figures/realized_bite_vs_paths.jpg"
+    ]
+  },
+  "datasets": [
+    {
+      "dataset": "tddman",
+      "examples": [
+        {
+          "input": "[tddman] Allen temporal deduction over span-local reads; query relation of APW19980213.1320::e2 -> APW19980213.1320::e12 via 4 disjoint paths.",
+          "output": "DI",
+          "metadata_corpus": "tddman",
+          "metadata_docid": "APW19980213.1320",
+          "metadata_gold_is_singleton": "True",
+          "metadata_stratum": "ge3",
+          "metadata_n_disjoint_paths": 4,
+          "metadata_gold_best_single": "B|DI|FI|M|O",
+          "metadata_gold_inter": "DI|FI|O",
+          "metadata_realized_bite": 0,
+          "metadata_singleton_resolved": "False",
+          "metadata_inter_set": "B|BI|D|DI|E|F|FI|M|MI|O|OI|S|SI",
+          "metadata_best_single_set": "B|BI|D|DI|E|F|FI|M|MI|O|OI|S|SI",
+          "predict_intersection": "ABSTAIN",
+          "predict_best_single_path": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_pot": "B",
+          "predict_raw": "B"
+        },
+        {
+          "input": "[tddman] Allen temporal deduction over span-local reads; query relation of APW19980213.1320::e2 -> APW19980213.1320::e65 via 4 disjoint paths.",
+          "output": "DI",
+          "metadata_corpus": "tddman",
+          "metadata_docid": "APW19980213.1320",
+          "metadata_gold_is_singleton": "True",
+          "metadata_stratum": "ge3",
+          "metadata_n_disjoint_paths": 4,
+          "metadata_gold_best_single": "B|DI|FI|M|O",
+          "metadata_gold_inter": "DI|FI|O",
+          "metadata_realized_bite": 0,
+          "metadata_singleton_resolved": "False",
+          "metadata_inter_set": "B|BI|D|DI|E|F|FI|M|MI|O|OI|S|SI",
+          "metadata_best_single_set": "B|BI|D|DI|E|F|FI|M|MI|O|OI|S|SI",
+          "predict_intersection": "ABSTAIN",
+          "predict_best_single_path": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_pot": "B",
+          "predict_raw": "B"
+        },
+        {
+          "input": "[tddman] Allen temporal deduction over span-local reads; query relation of APW19980213.1320::e26 -> APW19980213.1320::e12 via 4 disjoint paths.",
+          "output": "DI",
+          "metadata_corpus": "tddman",
+          "metadata_docid": "APW19980213.1320",
+          "metadata_gold_is_singleton": "True",
+          "metadata_stratum": "ge3",
+          "metadata_n_disjoint_paths": 4,
+          "metadata_gold_best_single": "B|DI|FI|M|O",
+          "metadata_gold_inter": "DI|FI|O",
+          "metadata_realized_bite": 0,
+          "metadata_singleton_resolved": "False",
+          "metadata_inter_set": "B|BI|D|DI|E|F|FI|M|MI|O|OI|S|SI",
+          "metadata_best_single_set": "B|BI|D|DI|E|F|FI|M|MI|O|OI|S|SI",
+          "predict_intersection": "ABSTAIN",
+          "predict_best_single_path": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_pot": "B",
+          "predict_raw": "B"
+        }
+      ]
+    },
+    {
+      "dataset": "narrativetime",
+      "examples": [
+        {
+          "input": "[narrativetime] Allen temporal deduction over span-local reads; query relation of ABC19980108.1830.0711::ei431 -> ABC19980108.1830.0711::ei407 via 10 disjoint paths.",
+          "output": "B|M",
+          "metadata_corpus": "narrativetime",
+          "metadata_docid": "ABC19980108.1830.0711",
+          "metadata_gold_is_singleton": "False",
+          "metadata_stratum": "ge3",
+          "metadata_n_disjoint_paths": 10,
+          "metadata_gold_best_single": "B|D|M|O|S",
+          "metadata_gold_inter": "B|M|O",
+          "metadata_realized_bite": 0,
+          "metadata_singleton_resolved": "False",
+          "metadata_inter_set": "B|BI|D|DI|E|F|FI|M|MI|O|OI|S|SI",
+          "metadata_best_single_set": "B|BI|D|DI|E|F|FI|M|MI|O|OI|S|SI",
+          "predict_intersection": "ABSTAIN",
+          "predict_best_single_path": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_pot": "ABSTAIN",
+          "predict_raw": "B"
+        },
+        {
+          "input": "[narrativetime] Allen temporal deduction over span-local reads; query relation of ABC19980108.1830.0711::ei431 -> ABC19980108.1830.0711::ei424 via 10 disjoint paths.",
+          "output": "B|M",
+          "metadata_corpus": "narrativetime",
+          "metadata_docid": "ABC19980108.1830.0711",
+          "metadata_gold_is_singleton": "False",
+          "metadata_stratum": "ge3",
+          "metadata_n_disjoint_paths": 10,
+          "metadata_gold_best_single": "B|D|M|O|S",
+          "metadata_gold_inter": "B|M|O",
+          "metadata_realized_bite": 12,
+          "metadata_singleton_resolved": "True",
+          "metadata_inter_set": "B",
+          "metadata_best_single_set": "B|BI|D|DI|E|F|FI|M|MI|O|OI|S|SI",
+          "predict_intersection": "B",
+          "predict_best_single_path": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_pot": "ABSTAIN",
+          "predict_raw": "B"
+        },
+        {
+          "input": "[narrativetime] Allen temporal deduction over span-local reads; query relation of ABC19980108.1830.0711::ei431 -> ABC19980108.1830.0711::ei429 via 10 disjoint paths.",
+          "output": "B|M",
+          "metadata_corpus": "narrativetime",
+          "metadata_docid": "ABC19980108.1830.0711",
+          "metadata_gold_is_singleton": "False",
+          "metadata_stratum": "ge3",
+          "metadata_n_disjoint_paths": 10,
+          "metadata_gold_best_single": "B|D|M|O|S",
+          "metadata_gold_inter": "B|M|O",
+          "metadata_realized_bite": 0,
+          "metadata_singleton_resolved": "False",
+          "metadata_inter_set": "B|BI|D|DI|E|F|FI|M|MI|O|OI|S|SI",
+          "metadata_best_single_set": "B|BI|D|DI|E|F|FI|M|MI|O|OI|S|SI",
+          "predict_intersection": "ABSTAIN",
+          "predict_best_single_path": "ABSTAIN",
+          "predict_naive": "ABSTAIN",
+          "predict_pot": "ABSTAIN",
+          "predict_raw": "B"
+        }
+      ]
+    }
+  ]
+}

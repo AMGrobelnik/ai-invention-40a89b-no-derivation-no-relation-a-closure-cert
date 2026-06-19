@@ -1,0 +1,2151 @@
+{
+  "metadata": {
+    "evaluation_name": "eval_iter8_dir4: signal-agnostic mixed-pool capability-gap pivot + 16-cell caught scaffold",
+    "description": "Pure $0 re-analysis (numpy/json only; no LLM, no network). Reproduce-verifies every carried literal from per-query rows of two executed experiments (CLUTRR battery art_LeRQRGHJZcdQ; Re-DocRED battery art_htcr8yOZLCQy), then pivots the spine to the signal-agnostic mixed-pool CAPABILITY GAP, emits the per-signal x reader x corpus 16-cell SURVIVAL/CAUGHT table, splits robust FACT A from reader/signal-dependent FACT B, DROPS the family-level / reader-diverse blindness headline, softens overclaims, and carries clearly-labelled PENDING rows for the iter-9 located-in net-win and the query-side false-premise verifier.",
+    "spend": {
+      "cumulative_usd": 0.0,
+      "n_llm_calls": 0,
+      "n_network_calls": 0
+    },
+    "seed": 20260617,
+    "bootstrap_B": 10000,
+    "signals": [
+      "verbalized",
+      "sc_margin",
+      "ptrue",
+      "negent"
+    ],
+    "source_artifacts": {
+      "clutrr_battery": "art_LeRQRGHJZcdQ (iter6/experiment_1)",
+      "redocred_battery": "art_htcr8yOZLCQy (iter7/experiment_1)",
+      "clutrr_pipeline": "art_0a7i481ZRwS1 (iter3/experiment_1)",
+      "redocred_corpus": "art_NUWTxBVWENIJ (iter6/dataset_1)",
+      "fuzzy": "art_I22c-J7-OcXl (iter5/experiment_2)",
+      "located_in_pending": "art_RfjDpsGkBXDG (iter8 located-in dataset; filled iter-9)",
+      "inherited_decomposition_quoted": "art_D0cHQUJ8kY75 (prior eval; +0.673/+0.0025 not recomputed)"
+    },
+    "reproduction_gate": {
+      "n_checks": 80,
+      "n_pass": 80,
+      "n_recomputed": 62,
+      "reproduction_ok": true,
+      "seed": 20260617,
+      "bootstrap_B": 10000,
+      "tol": 0.001,
+      "checks": [
+        {
+          "key": "clutrr_factA_raw_absent_hallucination",
+          "carried": 0.4722,
+          "recomputed": 0.4722,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "clutrr_gemini_crux_survival_verbalized",
+          "carried": 0.4353,
+          "recomputed": 0.4353,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "clutrr_gemini_crux_survival_sc_margin",
+          "carried": 0.7176,
+          "recomputed": 0.7176,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "clutrr_gemini_crux_survival_ptrue",
+          "carried": 0.2471,
+          "recomputed": 0.2471,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "clutrr_gemini_crux_survival_negent",
+          "carried": 0.7176,
+          "recomputed": 0.7176,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "clutrr_certificate_absent_confident_wrong",
+          "carried": 0.0278,
+          "recomputed": 0.0278,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "clutrr_absent_confident_wrong_reduction_vs_raw",
+          "carried": 0.4444,
+          "recomputed": 0.4444,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "clutrr_mixed_selacc_certificate",
+          "carried": 0.8267,
+          "recomputed": 0.8267,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "clutrr_mixed_selacc_ct_verbalized",
+          "carried": 0.4133,
+          "recomputed": 0.4133,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "clutrr_mixed_selacc_ct_sc_margin",
+          "carried": 0.3733,
+          "recomputed": 0.3733,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "clutrr_mixed_selacc_ct_ptrue",
+          "carried": 0.44,
+          "recomputed": 0.44,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "clutrr_mixed_selacc_ct_negent",
+          "carried": 0.3733,
+          "recomputed": 0.3733,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "clutrr_mixed_matched_coverage",
+          "carried": 0.266,
+          "recomputed": 0.266,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "clutrr_mixed_cw_reduction_verbalized",
+          "carried": 0.1099,
+          "recomputed": 0.1099,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "clutrr_mixed_cw_reduction_ci_verbalized",
+          "carried": [
+            0.0543,
+            0.1703
+          ],
+          "recomputed": [
+            0.0543,
+            0.1703
+          ],
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "clutrr_mixed_cw_reduction_sc_margin",
+          "carried": 0.1206,
+          "recomputed": 0.1206,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "clutrr_mixed_cw_reduction_ci_sc_margin",
+          "carried": [
+            0.0486,
+            0.1957
+          ],
+          "recomputed": [
+            0.0486,
+            0.1957
+          ],
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "clutrr_mixed_cw_reduction_ptrue",
+          "carried": 0.1028,
+          "recomputed": 0.1028,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "clutrr_mixed_cw_reduction_ci_ptrue",
+          "carried": [
+            0.0395,
+            0.1706
+          ],
+          "recomputed": [
+            0.0395,
+            0.1706
+          ],
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "clutrr_mixed_cw_reduction_negent",
+          "carried": 0.1206,
+          "recomputed": 0.1206,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "clutrr_mixed_cw_reduction_ci_negent",
+          "carried": [
+            0.0486,
+            0.1957
+          ],
+          "recomputed": [
+            0.0486,
+            0.1957
+          ],
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "clutrr_holm_p_adj_verbalized",
+          "carried": 0.0004,
+          "recomputed": 0.0004,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "clutrr_holm_p_adj_sc_margin",
+          "carried": 0.0027,
+          "recomputed": 0.0027,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "clutrr_holm_p_adj_ptrue",
+          "carried": 0.0027,
+          "recomputed": 0.0027,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "clutrr_holm_p_adj_negent",
+          "carried": 0.0027,
+          "recomputed": 0.0027,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "spatial_certificate_confident_wrong",
+          "carried": 0.0219,
+          "recomputed": 0.0219,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "spatial_raw_abstain_confident_wrong",
+          "carried": 0.0351,
+          "recomputed": 0.0351,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "clutrr_multihop_present_selacc_certificate",
+          "carried": 0.8857,
+          "recomputed": 0.8857,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "clutrr_multihop_present_selacc_ct_verbalized",
+          "carried": 0.5429,
+          "recomputed": 0.5429,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "clutrr_multihop_present_coverage",
+          "carried": 0.6863,
+          "recomputed": 0.6863,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "clutrr_atomic_precision",
+          "carried": 0.5361,
+          "recomputed": 0.5361,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "clutrr_atomic_recall",
+          "carried": 0.5324,
+          "recomputed": 0.5324,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "clutrr_atomic_f1",
+          "carried": 0.5343,
+          "recomputed": 0.5343,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "clutrr_deepseek_factA",
+          "carried": 0.4833,
+          "recomputed": 0.4833,
+          "matches": true,
+          "was_recomputed": false,
+          "note": "separate-reader spot-check; carried from A_CLUTRR.cross_family_sensitivity"
+        },
+        {
+          "key": "clutrr_deepseek_crux_survival_verbalized",
+          "carried": 0.6724,
+          "recomputed": 0.6724,
+          "matches": true,
+          "was_recomputed": false,
+          "note": "carried from A_CLUTRR.cross_family_sensitivity.frac_surviving_by_signal"
+        },
+        {
+          "key": "clutrr_deepseek_crux_survival_sc_margin",
+          "carried": 0.2241,
+          "recomputed": 0.2241,
+          "matches": true,
+          "was_recomputed": false,
+          "note": "carried from A_CLUTRR.cross_family_sensitivity.frac_surviving_by_signal"
+        },
+        {
+          "key": "clutrr_deepseek_crux_survival_ptrue",
+          "carried": 0.1034,
+          "recomputed": 0.1034,
+          "matches": true,
+          "was_recomputed": false,
+          "note": "carried from A_CLUTRR.cross_family_sensitivity.frac_surviving_by_signal"
+        },
+        {
+          "key": "clutrr_deepseek_crux_survival_negent",
+          "carried": 0.2241,
+          "recomputed": 0.2241,
+          "matches": true,
+          "was_recomputed": false,
+          "note": "carried from A_CLUTRR.cross_family_sensitivity.frac_surviving_by_signal"
+        },
+        {
+          "key": "redocred_factA_raw_absent_hallucination",
+          "carried": 0.3261,
+          "recomputed": 0.3261,
+          "matches": true,
+          "was_recomputed": true,
+          "note": "120/368"
+        },
+        {
+          "key": "redocred_gemini_crux_survival_verbalized",
+          "carried": 0.5083,
+          "recomputed": 0.5083,
+          "matches": true,
+          "was_recomputed": true,
+          "note": "pool-median rule == method frac_surviving_certificate_matched_rule"
+        },
+        {
+          "key": "redocred_gemini_crux_survival_sc_margin",
+          "carried": 0.85,
+          "recomputed": 0.85,
+          "matches": true,
+          "was_recomputed": true,
+          "note": "pool-median rule == method frac_surviving_certificate_matched_rule"
+        },
+        {
+          "key": "redocred_gemini_crux_survival_ptrue",
+          "carried": 0.4833,
+          "recomputed": 0.4833,
+          "matches": true,
+          "was_recomputed": true,
+          "note": "pool-median rule == method frac_surviving_certificate_matched_rule"
+        },
+        {
+          "key": "redocred_gemini_crux_survival_negent",
+          "carried": 0.85,
+          "recomputed": 0.85,
+          "matches": true,
+          "was_recomputed": true,
+          "note": "pool-median rule == method frac_surviving_certificate_matched_rule"
+        },
+        {
+          "key": "redocred_mixed_selacc_certificate",
+          "carried": 0.475,
+          "recomputed": 0.475,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "redocred_mixed_selacc_ct_verbalized",
+          "carried": 0.675,
+          "recomputed": 0.675,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "redocred_mixed_selacc_ct_sc_margin",
+          "carried": 0.6,
+          "recomputed": 0.6,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "redocred_mixed_selacc_ct_ptrue",
+          "carried": 0.645,
+          "recomputed": 0.645,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "redocred_mixed_selacc_ct_negent",
+          "carried": 0.6,
+          "recomputed": 0.6,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "redocred_mixed_matched_coverage",
+          "carried": 0.2747,
+          "recomputed": 0.2747,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "redocred_mixed_cw_reduction_verbalized",
+          "carried": -0.0549,
+          "recomputed": -0.0549,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "redocred_mixed_cw_ci_excludes_0_verbalized",
+          "carried": false,
+          "recomputed": false,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "redocred_mixed_cw_ci_verbalized",
+          "carried": [
+            -0.1302,
+            0.0133
+          ],
+          "recomputed": [
+            -0.1302,
+            0.0133
+          ],
+          "matches": true,
+          "was_recomputed": false,
+          "note": "CARRIED; row-recompute bounds [-0.1301, 0.0113] agree to <2.1e-3 (doc-clustered bootstrap MC noise from doc-list ordering)"
+        },
+        {
+          "key": "redocred_mixed_cw_reduction_sc_margin",
+          "carried": -0.0343,
+          "recomputed": -0.0343,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "redocred_mixed_cw_ci_excludes_0_sc_margin",
+          "carried": false,
+          "recomputed": false,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "redocred_mixed_cw_ci_sc_margin",
+          "carried": [
+            -0.1145,
+            0.0396
+          ],
+          "recomputed": [
+            -0.1145,
+            0.0396
+          ],
+          "matches": true,
+          "was_recomputed": false,
+          "note": "CARRIED; row-recompute bounds [-0.1158, 0.0392] agree to <2.1e-3 (doc-clustered bootstrap MC noise from doc-list ordering)"
+        },
+        {
+          "key": "redocred_mixed_cw_reduction_ptrue",
+          "carried": -0.0467,
+          "recomputed": -0.0467,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "redocred_mixed_cw_ci_excludes_0_ptrue",
+          "carried": false,
+          "recomputed": false,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "redocred_mixed_cw_ci_ptrue",
+          "carried": [
+            -0.1223,
+            0.023
+          ],
+          "recomputed": [
+            -0.1223,
+            0.023
+          ],
+          "matches": true,
+          "was_recomputed": false,
+          "note": "CARRIED; row-recompute bounds [-0.1241, 0.0227] agree to <2.1e-3 (doc-clustered bootstrap MC noise from doc-list ordering)"
+        },
+        {
+          "key": "redocred_mixed_cw_reduction_negent",
+          "carried": -0.0343,
+          "recomputed": -0.0343,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "redocred_mixed_cw_ci_excludes_0_negent",
+          "carried": false,
+          "recomputed": false,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "redocred_mixed_cw_ci_negent",
+          "carried": [
+            -0.1145,
+            0.0396
+          ],
+          "recomputed": [
+            -0.1145,
+            0.0396
+          ],
+          "matches": true,
+          "was_recomputed": false,
+          "note": "CARRIED; row-recompute bounds [-0.1158, 0.0392] agree to <2.1e-3 (doc-clustered bootstrap MC noise from doc-list ordering)"
+        },
+        {
+          "key": "redocred_holm_p_adj_verbalized",
+          "carried": 1.0,
+          "recomputed": 1.0,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "redocred_holm_p_adj_sc_margin",
+          "carried": 1.0,
+          "recomputed": 1.0,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "redocred_holm_p_adj_ptrue",
+          "carried": 1.0,
+          "recomputed": 1.0,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "redocred_holm_p_adj_negent",
+          "carried": 1.0,
+          "recomputed": 1.0,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "redocred_llm_read_present_coverage",
+          "carried": 0.4833,
+          "recomputed": 0.4833,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "redocred_over_abstain_present_rate",
+          "carried": 0.5167,
+          "recomputed": 0.5167,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "redocred_present_selacc_primitive",
+          "carried": 0.546,
+          "recomputed": 0.546,
+          "matches": true,
+          "was_recomputed": true,
+          "note": "primitive-level present selective accuracy among covered present"
+        },
+        {
+          "key": "redocred_goldread_present_coverage",
+          "carried": 1.0,
+          "recomputed": 1.0,
+          "matches": true,
+          "was_recomputed": false,
+          "note": "gold-read ceiling = structural-by-construction (carried)"
+        },
+        {
+          "key": "redocred_goldread_correct_absent_abstention",
+          "carried": 1.0,
+          "recomputed": 1.0,
+          "matches": true,
+          "was_recomputed": false,
+          "note": "gold-read ceiling = structural-by-construction (carried)"
+        },
+        {
+          "key": "redocred_goldread_present_selacc",
+          "carried": 1.0,
+          "recomputed": 1.0,
+          "matches": true,
+          "was_recomputed": false,
+          "note": "gold-read ceiling = structural-by-construction (carried)"
+        },
+        {
+          "key": "redocred_atomic_precision",
+          "carried": 0.6203,
+          "recomputed": 0.6203,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "redocred_atomic_recall_converse_invariant",
+          "carried": 0.3762,
+          "recomputed": 0.3762,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "redocred_atomic_f1",
+          "carried": 0.4684,
+          "recomputed": 0.4684,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "redocred_atomic_recall_vs_locally_justifiable",
+          "carried": 0.4646,
+          "recomputed": 0.4646,
+          "matches": true,
+          "was_recomputed": false,
+          "note": "fair-ceiling recall vs span-extractable subset (carried)"
+        },
+        {
+          "key": "redocred_deepseek_factA",
+          "carried": 0.3178,
+          "recomputed": 0.3178,
+          "matches": true,
+          "was_recomputed": false,
+          "note": "separate-reader spot-check; carried from REDOCRED_EXP.cross_family_sensitivity"
+        },
+        {
+          "key": "redocred_deepseek_crux_survival_verbalized",
+          "carried": 0.4118,
+          "recomputed": 0.4118,
+          "matches": true,
+          "was_recomputed": false,
+          "note": "carried from REDOCRED_EXP.cross_family_sensitivity.FACT_B_crux_survival"
+        },
+        {
+          "key": "redocred_deepseek_crux_survival_sc_margin",
+          "carried": 0.2941,
+          "recomputed": 0.2941,
+          "matches": true,
+          "was_recomputed": false,
+          "note": "carried from REDOCRED_EXP.cross_family_sensitivity.FACT_B_crux_survival"
+        },
+        {
+          "key": "redocred_deepseek_crux_survival_ptrue",
+          "carried": 0.3235,
+          "recomputed": 0.3235,
+          "matches": true,
+          "was_recomputed": false,
+          "note": "carried from REDOCRED_EXP.cross_family_sensitivity.FACT_B_crux_survival"
+        },
+        {
+          "key": "redocred_deepseek_crux_survival_negent",
+          "carried": 0.2941,
+          "recomputed": 0.2941,
+          "matches": true,
+          "was_recomputed": false,
+          "note": "carried from REDOCRED_EXP.cross_family_sensitivity.FACT_B_crux_survival"
+        }
+      ],
+      "note": "Every load-bearing point estimate is RECOMPUTED from the per-query rows: CLUTRR (282 records, original iter-3 order) and Re-DocRED (728 primary records, original build order). Re-DocRED FACT A, crux survival (pool-median rule), mixed selective accuracy (cert+4 signals), confident-wrong reduction POINT estimates, Holm p_adj, and ci_excludes_0 booleans all recompute byte-faithfully. The Re-DocRED confident-wrong CI95 numeric BOUNDS are CARRIED (recomputed=False): the doc-clustered bootstrap is sensitive to the exact doc-list first-appearance order, so recomputed bounds agree only to <2.1e-3 (Monte-Carlo noise), not to TOL=1e-3 -- the fraction-caught (=1-survival) is exact regardless. Rows tagged recomputed=False are separate-reader (deepseek) spot-checks or prior-artifact CIs carried as provenance."
+    },
+    "crux_survival_caught_table": {
+      "clutrr": {
+        "gemini": {
+          "verbalized": {
+            "survival": 0.4353,
+            "caught": 0.5647,
+            "recomputed": true
+          },
+          "sc_margin": {
+            "survival": 0.7176,
+            "caught": 0.2824,
+            "recomputed": true
+          },
+          "ptrue": {
+            "survival": 0.2471,
+            "caught": 0.7529,
+            "recomputed": true
+          },
+          "negent": {
+            "survival": 0.7176,
+            "caught": 0.2824,
+            "recomputed": true
+          }
+        },
+        "deepseek": {
+          "verbalized": {
+            "survival": 0.6724,
+            "caught": 0.3276,
+            "recomputed": false
+          },
+          "sc_margin": {
+            "survival": 0.2241,
+            "caught": 0.7759,
+            "recomputed": false
+          },
+          "ptrue": {
+            "survival": 0.1034,
+            "caught": 0.8966,
+            "recomputed": false
+          },
+          "negent": {
+            "survival": 0.2241,
+            "caught": 0.7759,
+            "recomputed": false
+          }
+        }
+      },
+      "re-docred": {
+        "gemini": {
+          "verbalized": {
+            "survival": 0.5083,
+            "caught": 0.4917,
+            "recomputed": true
+          },
+          "sc_margin": {
+            "survival": 0.85,
+            "caught": 0.15,
+            "recomputed": true
+          },
+          "ptrue": {
+            "survival": 0.4833,
+            "caught": 0.5167,
+            "recomputed": true
+          },
+          "negent": {
+            "survival": 0.85,
+            "caught": 0.15,
+            "recomputed": true
+          }
+        },
+        "deepseek": {
+          "verbalized": {
+            "survival": 0.4118,
+            "caught": 0.5882,
+            "recomputed": false
+          },
+          "sc_margin": {
+            "survival": 0.2941,
+            "caught": 0.7059,
+            "recomputed": false
+          },
+          "ptrue": {
+            "survival": 0.3235,
+            "caught": 0.6765,
+            "recomputed": false
+          },
+          "negent": {
+            "survival": 0.2941,
+            "caught": 0.7059,
+            "recomputed": false
+          }
+        }
+      }
+    },
+    "fact_a_per_cell": {
+      "clutrr": {
+        "gemini": 0.4722,
+        "deepseek": 0.4833
+      },
+      "re-docred": {
+        "gemini": 0.3261,
+        "deepseek": 0.3178
+      }
+    },
+    "fact_a_vs_fact_b_reading": {
+      "FACT_A_robust": {
+        "claim": "the high-confidence absent-relation FABRICATION RATE is corpus-and-reader-transferable: all four FACT-A rates lie in a tight band across BOTH corpora AND BOTH readers -- this is the genuine non-circular content",
+        "fact_a_values": [
+          0.4722,
+          0.4833,
+          0.3261,
+          0.3178
+        ],
+        "band_lo": 0.3178,
+        "band_hi": 0.4833,
+        "in_0_32_to_0_48_band": true
+      },
+      "FACT_B_reader_signal_dependent": {
+        "claim": "verbalized confidence is the MOST robustly blind (its caught fraction never reaches a strong majority); the DISPERSION signals (sc_margin, ptrue, negent) swing from blind for gemini to catching the MAJORITY for the stronger deepseek reader",
+        "verbalized_caught_four_cells": [
+          0.5647,
+          0.3276,
+          0.4917,
+          0.5882
+        ],
+        "verbalized_max_caught": 0.5882,
+        "gemini_dispersion_caught_examples": {
+          "clutrr_gemini_negent": 0.2824,
+          "redocred_gemini_sc_margin": 0.15,
+          "redocred_gemini_negent": 0.15
+        },
+        "deepseek_dispersion_caught_examples": {
+          "clutrr_deepseek_sc_margin": 0.7759,
+          "clutrr_deepseek_ptrue": 0.8966,
+          "clutrr_deepseek_negent": 0.7759,
+          "redocred_deepseek_sc_margin": 0.7059,
+          "redocred_deepseek_ptrue": 0.6765,
+          "redocred_deepseek_negent": 0.7059
+        }
+      },
+      "decision": "DROP 'the entire confidence/uncertainty family is structurally blind' and 'reader-diverse blindness' as the headline; REPLACE with the signal-agnostic mixed-pool capability gap (see capability_gap_spine)"
+    },
+    "dropped_claims": [
+      "family-level structural blindness",
+      "reader-diverse blindness"
+    ],
+    "capability_gap_spine": {
+      "prose": "The load-bearing finding is a SIGNAL-AGNOSTIC MIXED-POOL CAPABILITY GAP, not a claim about any one confidence signal. On a mixed pool of answerable (present) and unanswerable (absent) relational queries, NO single confidence threshold can SIMULTANEOUSLY cover the present pairs and abstain on the absent pairs at matched coverage, because one scalar knob cannot separate 'confident-and-right (present)' from 'confident-and-wrong (absent)': the LLM emits both with the same high confidence (FACT A). A sound closure certificate separates them structurally -- it abstains exactly when no derivation path exists -- so it dominates every confidence threshold at matched coverage. This is a property of the DECISION GEOMETRY, so it survives the collapse of any per-signal blindness claim: it does not matter WHICH signal you pick. POWERED on clean templated CLUTRR: at matched coverage 0.266 the certificate's selective accuracy is 0.827 versus 0.413 / 0.373 / 0.440 / 0.373 for verbalized / sc-margin / P(True) / negentropy thresholds (~2x); the doc-clustered paired-bootstrap confident-wrong reductions are 0.110 / 0.121 / 0.103 / 0.121, every 95% CI excludes 0, and all four survive Holm correction (p_adj 0.0004 / 0.0027 / 0.0027 / 0.0027). We state plainly that the capability gap is currently POWERED ONLY on clean CLUTRR. On the natural Re-DocRED corpus it does NOT yet win: the confident-wrong reductions are slightly negative (-0.055 / -0.034 / -0.047 / -0.034), every CI includes 0, and Holm rejects none -- because natural-prose extraction recall is 0.376 and that is the binding constraint, not the certificate's logic. The gold-read ceiling (present coverage 1.0, correct-absent-abstention 1.0, present selective accuracy 1.0) isolates extraction, not closure, as the cause. PENDING: the parallel located-in same-component-sibling experiment lands the capability gap on a natural, NON-by-construction regime (iter-9), where abstention is a genuine deductive result rather than a disconnected-component artifact.",
+      "numbers": {
+        "powered_on": "clutrr",
+        "clutrr_certificate_selacc": 0.8267,
+        "clutrr_best_signal_selacc": 0.44,
+        "clutrr_worst_signal_selacc": 0.3733,
+        "clutrr_matched_coverage": 0.266,
+        "clutrr_cw_reductions": {
+          "verbalized": 0.1099,
+          "sc_margin": 0.1206,
+          "ptrue": 0.1028,
+          "negent": 0.1206
+        },
+        "clutrr_cw_reduction_cis": {
+          "verbalized": [
+            0.0543,
+            0.1703
+          ],
+          "sc_margin": [
+            0.0486,
+            0.1957
+          ],
+          "ptrue": [
+            0.0395,
+            0.1706
+          ],
+          "negent": [
+            0.0486,
+            0.1957
+          ]
+        },
+        "clutrr_holm_p_adj": {
+          "verbalized": 0.0004,
+          "sc_margin": 0.0027,
+          "ptrue": 0.0027,
+          "negent": 0.0027
+        },
+        "clutrr_all_cis_exclude_0": true,
+        "clutrr_all_holm_rejected": true,
+        "redocred_certificate_selacc": 0.475,
+        "redocred_best_signal_selacc": 0.675,
+        "redocred_cw_reductions": {
+          "verbalized": -0.0549,
+          "sc_margin": -0.0343,
+          "ptrue": -0.0467,
+          "negent": -0.0343
+        },
+        "redocred_holm_p_adj": {
+          "verbalized": 1.0,
+          "sc_margin": 1.0,
+          "ptrue": 1.0,
+          "negent": 1.0
+        },
+        "redocred_all_cis_include_0": true,
+        "redocred_any_holm_rejected": false,
+        "binding_constraint": "extraction recall 0.3762 (gold-read ceiling 1.0/1.0/1.0 isolates extraction)",
+        "pending": "located-in same-component-sibling net-win lands the gap on a NON-by-construction regime (iter-9)"
+      }
+    },
+    "definitional_vs_empirical": {
+      "definitional": "Definitional half (state ONCE, briefly, as the explanatory mechanism -- NOT a contribution): a high-confidence, self-consistent fabrication survives ANY dispersion threshold BY CONSTRUCTION. If the model commits an absent relation with maximal confidence and zero answer-dispersion, then no threshold tuned on that same dispersion can single it out -- this is true by definition of a dispersion signal and needs no experiment.",
+      "empirical": "Empirical half (LEAD with this -- it is the measured, non-obvious part): how OFTEN does the LLM actually emit absent-relation fabrications at high confidence and low dispersion, and how strongly does that fraction vary by reader? Answer: FACT A puts the high-confidence fabrication rate in a tight 0.32-0.48 band across two corpora and two readers, while the fraction a dispersion threshold can catch swings from ~15% (Re-DocRED/gemini) to ~90% (CLUTRR/deepseek). Neither the rate nor its reader-variance is derivable a priori; both are the 16-cell table's contribution."
+    },
+    "softened_overclaims": {
+      "removes_none_caveat": "The statement 'no confidence signal removes a single hallucination' holds ONLY at the LLM's NATURAL (no-abstention) operating point: at that coverage every named-on-absent answer is by definition wrong, so all four thresholded baselines coincide with the raw answerer and remove none. It is NOT a claim that confidence is useless at every coverage.",
+      "at_certificate_coverage": "At the CERTIFICATE's (lower) coverage the picture changes and we say so: a dispersion threshold tuned to the certificate's coverage already CATCHES a substantial share of the hallucinations. P(True) catches 75.3% on CLUTRR (1 - 0.247) and 51.7% on natural Re-DocRED prose (1 - 0.483) for the gemini reader. The certificate's advantage is that it catches them ALL via structural abstention, but the confidence signals are far from worthless once a non-natural coverage is permitted.",
+      "delete_marginal_framing": "DELETE the marginal '>=3 of 4 signals keep >=50%' / '>=2 of 4 commit >=50%' framing. It obscures the strong reader-dependence. Replace it with the per-cell caught fractions from the 16-cell table so the reader sees directly that the same signal swings from 15% to 90% caught depending on the reader.",
+      "ptrue_caught_clutrr_gemini": 0.7529,
+      "ptrue_caught_redocred_gemini": 0.5167,
+      "evidence_tag": "REAL-LLM-READ"
+    },
+    "fact_a_vs_fact_b_prose": "Read the 16-cell table as two separate facts. FACT A is ROBUST: the high-confidence absent-relation FABRICATION RATE sits in a tight 0.32-0.48 band across BOTH corpora and BOTH readers (CLUTRR 0.472 gemini / 0.483 deepseek; Re-DocRED 0.326 gemini / 0.318 deepseek). This corpus-and-reader-transferable rate is the genuine non-circular content. FACT B is READER- AND SIGNAL-DEPENDENT and must NOT be overstated. Verbalized confidence is the most robustly blind signal -- its caught fraction never reaches a strong majority (0.565 / 0.328 / 0.492 / 0.588 across the four reader x corpus cells). But the DISPERSION signals (self-consistency vote-margin, P(True), semantic-entropy negentropy) swing widely: they are blind for the weaker gemini reader (CLUTRR/gemini negentropy catches only 0.282; Re-DocRED/gemini sc-margin and negentropy catch only 0.15) yet catch the MAJORITY for the stronger deepseek reader (CLUTRR/deepseek sc-margin / P(True) / negentropy catch 0.776 / 0.897 / 0.776 = 78-90%; Re-DocRED/deepseek catch 0.706 / 0.676 / 0.706 = 68-71%). We therefore DROP the prior headline claims that 'the entire confidence/uncertainty family is structurally blind' and that the blindness is 'reader-diverse', and replace them with the signal-agnostic capability gap above, which does not depend on any signal being blind.",
+    "abstract_front_matter": "This paper studies a closure-certified DEDUCTION SUB-MODULE -- a sound symbolic forward-closure over LLM-extracted relations that abstains rather than guess -- and explicitly NOT a full operational text-to-FOL umbrella pipeline; we name the umbrella components OUT OF SCOPE / FUTURE WORK THIS PAPER DOES NOT CLAIM in the first sentence so no reader mistakes the contribution. Out of scope and not claimed: (a) atomic / multi-hop fact EXTRACTION and re-extraction, which we MEASURE but do not improve (CLUTRR atomic precision/recall/F1 ~0.536 / 0.532 / 0.534; natural Re-DocRED recall 0.376, vs 0.465 against the locally-justifiable subset); (b) upper-ontology / OpenCyc grounding and taxonomic background knowledge; (c) reasoning over genuine ~3000-character professional documents -- no benchmark document we use reaches that length (CLUTRR <=871 chars; Re-DocRED Wikipedia intros average ~1020 chars, none family-bearing reach 3000), and the operational case study is bracket-selected, not naturally long; and (d) general open-vocabulary fuzzy unification -- our fuzzy contribution is scoped to disjunctions over a KNOWN base vocabulary (RCC-8 base relations; CLUTRR kinship primitives), not open-vocabulary predicate invention. We state plainly that, until the located-in second-domain fork lands, the certificate's NET utility is demonstrated only on clean / templated graphs (CLUTRR): on natural prose the result is an EXTRACTION-GATED BOUNDARY -- atomic recall 0.376 natural vs ~0.53 templated, and the gold-read ceiling (1.0 / 1.0 / 1.0) shows the boundary is extraction recall, not the closure logic. We therefore target a neuro-symbolic / NeSy (EMNLP Findings) venue and frame the contribution as a COMPOSITIONAL FALSE-PREMISE diagnostic plus a gold-free structural detector, not a new end-to-end system.",
+    "operational_arm_cut": {
+      "cut": "concatenated-kinship",
+      "reason": "56/56 trivial-by-construction",
+      "keep": "bracket-selected temporal as feasibility only",
+      "recommendation": "CUT the concatenated-kinship arm of the operational ~3000-char case study ENTIRELY. Its 56/56 cross-story absent abstentions are trivial BY CONSTRUCTION -- concatenated stories share no entities, so the entities are in different connected components and a sound closure abstains by definition; the arm carries no evidential weight and reads as inflated coverage. KEEP ONLY the bracket-selected temporal arm, and demote it to a single one-paragraph feasibility note whose only claim is that the pipeline RUNS end-to-end at ~3000-character length. The reclaimed space (roughly a column) goes to the diagnostic (the 16-cell table + capability gap) and the second-domain located-in replication, which is the decisive evidence."
+    },
+    "structural_by_construction_paragraph": "A note on what the certificate's 2.8% confident-wrong rate on CLUTRR absent pairs does and does not establish. In the CLUTRR construction an absent pair is DEFINED as two entities in DIFFERENT connected components of the extracted kinship graph; a SOUND forward-closure least-fixpoint over that graph therefore derives the EMPTY relation set and ABSTAINS almost by definition. Imperfect extraction (atomic recall ~0.53) can only REMOVE edges, which can only INCREASE apparent disconnection, so it makes the certificate abstain MORE, never less, on absent pairs. The 2.8% is thus NEAR-TAUTOLOGICAL given the setup and must NOT carry the section. The genuinely non-circular content -- the headline -- is a property of the RAW LLM and the confidence signals, measured INDEPENDENTLY of the certificate: FACT A (the raw LLM confidently fabricates a kinship on 47.2% of absent pairs; deepseek 48.3%) and the signal-agnostic capability gap. This is also why the natural-corpus run is load-bearing: on natural prose extraction can DELETE a true edge and make the certificate OVER-abstain on a PRESENT pair, a cost the disconnected-by-construction CLUTRR regime hides.",
+    "one_thesis_table": [
+      {
+        "claim_id": "SPINE",
+        "claim_text": "FACT A (the raw LLM confidently FABRICATES absent relations: CLUTRR 47.2%/48.3%, Re-DocRED 32.6%/31.8%) + the SIGNAL-AGNOSTIC MIXED-POOL CAPABILITY GAP (no single confidence threshold can simultaneously cover present and abstain on absent; powered on CLUTRR: certificate selacc 0.827 vs 0.37-0.44, Holm-rejected), positioned as a COMPOSITIONAL FALSE-PREMISE / unanswerable-question instance, with a gold-free TRAINING-FREE STRUCTURAL detector.",
+        "headline_numbers": "FACT A 0.472/0.483/0.326/0.318; capability gap (CLUTRR) selacc 0.827 vs 0.37-0.44; Holm p_adj 0.0004/0.0027/0.0027/0.0027",
+        "mechanism_concession": "closure MECHANISM INHERITED: +0.673 inherited / +0.0025 novel",
+        "evidence_tag": "REAL-LLM-READ",
+        "role": "HEADLINE",
+        "is_spine": true,
+        "status": "ESTABLISHED on CLUTRR + cross-family; natural-prose capability gap PENDING (extraction-gated)"
+      },
+      {
+        "claim_id": "P1-located-in-net-win",
+        "claim_text": "PENDING: located-in SAME-COMPONENT-SIBLING net-win on art_RfjDpsGkBXDG (~20,814 same-component-sibling pairs -- entities in the SAME connected component with NO valid derivation path, so abstention is a genuine DEDUCTIVE result, NOT disconnected-trivially-empty). Run vs the four-signal battery AND the query-side verifier at matched coverage with Holm-adjusted doc-clustered CIs. FORK: if the certificate's Holm-adjusted cw reductions EXCLUDE 0 there -> DEMONSTRATED FIX (becomes headline); else extraction-limited boundary.",
+        "headline_numbers": "PENDING (filled iter-9)",
+        "mechanism_concession": "",
+        "evidence_tag": "NATURAL-CORPUS-PENDING",
+        "role": "PENDING",
+        "is_spine": false,
+        "status": "SLOT -- filled iter-9"
+      },
+      {
+        "claim_id": "P2-query-side-verifier",
+        "claim_text": "PENDING: the QUERY-SIDE FALSE-PREMISE VERIFIER baseline ('are these two entities related at all?' / self-verification pass) -- the established method for this failure mode. The certificate's claim is credible only if it MATCHES or BEATS this verifier at matched coverage.",
+        "headline_numbers": "PENDING (filled iter-9)",
+        "mechanism_concession": "",
+        "evidence_tag": "NATURAL-CORPUS-PENDING",
+        "role": "PENDING",
+        "is_spine": false,
+        "status": "SLOT -- filled iter-9"
+      },
+      {
+        "claim_id": "S1-fuzzy-unification",
+        "claim_text": "Fuzzy unification with a certificate-bounded hallucination guarantee: sound-violating reads are CAUGHT by abstain-on-collapse (spatial 5/5, 0 silent-wrong missed); calibrated sub-1.0 disjunctions (frac_conf_1.0 = 0.00 vs memorized 1.00; ECE 0.142/0.111).",
+        "headline_numbers": "5/5 caught; frac_conf_1.0 0.00 vs 1.00",
+        "mechanism_concession": "",
+        "evidence_tag": "REAL-LLM-READ-ON-SYNTHETIC",
+        "role": "SUPPORTING",
+        "is_spine": false,
+        "status": "ESTABLISHED (spatial); kinship catch UNTESTED"
+      },
+      {
+        "claim_id": "S2-cross-path",
+        "claim_text": "Cross-path intersection mechanism is a SYNTHETIC-CHANNEL-ONLY negative: iterated PC beats naive single-path only on synthetic long-hop redundancy; on real text it ties at length 2.",
+        "headline_numbers": "synthetic-only positive; real-text null",
+        "mechanism_concession": "",
+        "evidence_tag": "SYNTHETIC-CHANNEL",
+        "role": "SUPPORTING",
+        "is_spine": false,
+        "status": "HONEST NEGATIVE"
+      },
+      {
+        "claim_id": "S3-natural-temporal",
+        "claim_text": "Natural-temporal redundancy is at best WEAKLY protective: corrected CIs include 0.",
+        "headline_numbers": "CI includes 0",
+        "mechanism_concession": "",
+        "evidence_tag": "REAL-LLM-READ",
+        "role": "SUPPORTING",
+        "is_spine": false,
+        "status": "WEAK / NULL"
+      },
+      {
+        "claim_id": "S4-operational",
+        "claim_text": "Operational ~3000-char feasibility: the pipeline RUNS at length; the concatenated-kinship arm is CUT (56/56 cross-story abstentions trivial BY CONSTRUCTION); only the bracket-selected temporal arm is kept as a one-paragraph feasibility note.",
+        "headline_numbers": "feasibility only (concat arm CUT)",
+        "mechanism_concession": "",
+        "evidence_tag": "REAL-LLM-READ",
+        "role": "SUPPORTING",
+        "is_spine": false,
+        "status": "FEASIBILITY (compressed)"
+      },
+      {
+        "claim_id": "A1-mechanism-analysis",
+        "claim_text": "Mechanism analysis: algebra-richness scaling, redundancy inverted-U optimum, and a read-soundness-conditional zero-FP theorem.",
+        "headline_numbers": "P=1 zero-FP theorem; synthetic-channel scaling curves",
+        "mechanism_concession": "",
+        "evidence_tag": "THEOREM",
+        "role": "APPENDIX",
+        "is_spine": false,
+        "status": "ESTABLISHED (scoped)"
+      }
+    ],
+    "false_premise_positioning": "Position the contribution against the false-premise / unanswerable-question literature, NOT merely the neuro-symbolic literature. The raw LLM confidently answering an absent relational query is a COMPOSITIONAL FALSE-PREMISE / unanswerable-question instance: the question presupposes a relation that does not hold. Engage: FalseQA (Hu et al., ACL 2023) on questions with false presuppositions; AbstentionBench (NeurIPS 2025) on when models should abstain; and the query-side self-verification line (Wen et al., 'Know Your Limits', TACL 2025). The carved delta vs that literature is two-fold: (1) we operate in a MULTI-HOP RELATIONAL COMPOSITIONAL setting (the false premise is that a derivable kinship/located-in path exists), not single-fact factuality; and (2) our detector is GOLD-FREE and TRAINING-FREE -- a structural property of the extracted graph's closure -- rather than a learned or prompt-elicited confidence judgment. The credibility test for the certificate is whether it MATCHES OR BEATS a query-side false-premise verifier ('are these two entities related at all?') at matched coverage; that verifier is the established baseline for this failure mode and is a NAMED PENDING comparison (iter-9).",
+    "non_circular_vs_structural_ledger": [
+      {
+        "key": "FACT_A_clutrr_gemini",
+        "value": 0.4722,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "SPINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_A_clutrr_deepseek",
+        "value": 0.4833,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "SPINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_A_redocred_gemini",
+        "value": 0.3261,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "SPINE",
+        "source_artifact": "art_htcr8yOZLCQy",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_A_redocred_deepseek",
+        "value": 0.3178,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "SPINE",
+        "source_artifact": "art_htcr8yOZLCQy",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_B_survival_clutrr_gemini_verbalized",
+        "value": 0.4353,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_B_caught_clutrr_gemini_verbalized",
+        "value": 0.5647,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_B_survival_clutrr_gemini_sc_margin",
+        "value": 0.7176,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_B_caught_clutrr_gemini_sc_margin",
+        "value": 0.2824,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_B_survival_clutrr_gemini_ptrue",
+        "value": 0.2471,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_B_caught_clutrr_gemini_ptrue",
+        "value": 0.7529,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_B_survival_clutrr_gemini_negent",
+        "value": 0.7176,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_B_caught_clutrr_gemini_negent",
+        "value": 0.2824,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_B_survival_clutrr_deepseek_verbalized",
+        "value": 0.6724,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_B_caught_clutrr_deepseek_verbalized",
+        "value": 0.3276,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_B_survival_clutrr_deepseek_sc_margin",
+        "value": 0.2241,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_B_caught_clutrr_deepseek_sc_margin",
+        "value": 0.7759,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_B_survival_clutrr_deepseek_ptrue",
+        "value": 0.1034,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_B_caught_clutrr_deepseek_ptrue",
+        "value": 0.8966,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_B_survival_clutrr_deepseek_negent",
+        "value": 0.2241,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_B_caught_clutrr_deepseek_negent",
+        "value": 0.7759,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_B_survival_redocred_gemini_verbalized",
+        "value": 0.5083,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_htcr8yOZLCQy",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_B_caught_redocred_gemini_verbalized",
+        "value": 0.4917,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_htcr8yOZLCQy",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_B_survival_redocred_gemini_sc_margin",
+        "value": 0.85,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_htcr8yOZLCQy",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_B_caught_redocred_gemini_sc_margin",
+        "value": 0.15,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_htcr8yOZLCQy",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_B_survival_redocred_gemini_ptrue",
+        "value": 0.4833,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_htcr8yOZLCQy",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_B_caught_redocred_gemini_ptrue",
+        "value": 0.5167,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_htcr8yOZLCQy",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_B_survival_redocred_gemini_negent",
+        "value": 0.85,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_htcr8yOZLCQy",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_B_caught_redocred_gemini_negent",
+        "value": 0.15,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_htcr8yOZLCQy",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_B_survival_redocred_deepseek_verbalized",
+        "value": 0.4118,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_htcr8yOZLCQy",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_B_caught_redocred_deepseek_verbalized",
+        "value": 0.5882,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_htcr8yOZLCQy",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_B_survival_redocred_deepseek_sc_margin",
+        "value": 0.2941,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_htcr8yOZLCQy",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_B_caught_redocred_deepseek_sc_margin",
+        "value": 0.7059,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_htcr8yOZLCQy",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_B_survival_redocred_deepseek_ptrue",
+        "value": 0.3235,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_htcr8yOZLCQy",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_B_caught_redocred_deepseek_ptrue",
+        "value": 0.6765,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_htcr8yOZLCQy",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_B_survival_redocred_deepseek_negent",
+        "value": 0.2941,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_htcr8yOZLCQy",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_B_caught_redocred_deepseek_negent",
+        "value": 0.7059,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_htcr8yOZLCQy",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "capgap_clutrr_certificate_selacc",
+        "value": 0.8267,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR_CONDITIONAL",
+        "role": "SPINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "capgap_clutrr_best_signal_selacc",
+        "value": 0.44,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR_CONDITIONAL",
+        "role": "SPINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "capgap_clutrr_matched_coverage",
+        "value": 0.266,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR_CONDITIONAL",
+        "role": "SPINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "capgap_clutrr_worst_holm_p_adj",
+        "value": 0.0027,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR_CONDITIONAL",
+        "role": "SPINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "capgap_redocred_certificate_selacc",
+        "value": 0.475,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR_CONDITIONAL",
+        "role": "BOUNDARY",
+        "source_artifact": "art_htcr8yOZLCQy",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "capgap_redocred_best_signal_selacc",
+        "value": 0.675,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR_CONDITIONAL",
+        "role": "BOUNDARY",
+        "source_artifact": "art_htcr8yOZLCQy",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "capgap_redocred_worst_holm_p_adj",
+        "value": 1.0,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR_CONDITIONAL",
+        "role": "BOUNDARY",
+        "source_artifact": "art_htcr8yOZLCQy",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "capgap_clutrr_cw_reduction_verbalized",
+        "value": 0.1099,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR_CONDITIONAL",
+        "role": "SPINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "capgap_redocred_cw_reduction_verbalized",
+        "value": -0.0549,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR_CONDITIONAL",
+        "role": "BOUNDARY",
+        "source_artifact": "art_htcr8yOZLCQy",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "capgap_clutrr_cw_reduction_sc_margin",
+        "value": 0.1206,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR_CONDITIONAL",
+        "role": "SPINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "capgap_redocred_cw_reduction_sc_margin",
+        "value": -0.0343,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR_CONDITIONAL",
+        "role": "BOUNDARY",
+        "source_artifact": "art_htcr8yOZLCQy",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "capgap_clutrr_cw_reduction_ptrue",
+        "value": 0.1028,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR_CONDITIONAL",
+        "role": "SPINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "capgap_redocred_cw_reduction_ptrue",
+        "value": -0.0467,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR_CONDITIONAL",
+        "role": "BOUNDARY",
+        "source_artifact": "art_htcr8yOZLCQy",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "capgap_clutrr_cw_reduction_negent",
+        "value": 0.1206,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR_CONDITIONAL",
+        "role": "SPINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "capgap_redocred_cw_reduction_negent",
+        "value": -0.0343,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR_CONDITIONAL",
+        "role": "BOUNDARY",
+        "source_artifact": "art_htcr8yOZLCQy",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "ptrue_caught_clutrr_gemini",
+        "value": 0.7529,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "FRAMING",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "ptrue_caught_redocred_gemini",
+        "value": 0.5167,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "FRAMING",
+        "source_artifact": "art_htcr8yOZLCQy",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "clutrr_certificate_absent_confident_wrong",
+        "value": 0.0278,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "STRUCTURAL_BY_CONSTRUCTION",
+        "role": "SUPPORTING",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "clutrr_absent_cw_reduction_vs_raw",
+        "value": 0.4444,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "STRUCTURAL_BY_CONSTRUCTION",
+        "role": "SUPPORTING",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "redocred_goldread_present_coverage",
+        "value": 1.0,
+        "evidence_tag": "GOLD-ONLY-GATE",
+        "side": "STRUCTURAL_BY_CONSTRUCTION",
+        "role": "SUPPORTING",
+        "source_artifact": "art_htcr8yOZLCQy",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "redocred_goldread_correct_absent_abstention",
+        "value": 1.0,
+        "evidence_tag": "GOLD-ONLY-GATE",
+        "side": "STRUCTURAL_BY_CONSTRUCTION",
+        "role": "SUPPORTING",
+        "source_artifact": "art_htcr8yOZLCQy",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "redocred_goldread_present_selacc",
+        "value": 1.0,
+        "evidence_tag": "GOLD-ONLY-GATE",
+        "side": "STRUCTURAL_BY_CONSTRUCTION",
+        "role": "SUPPORTING",
+        "source_artifact": "art_htcr8yOZLCQy",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "combined_present_round_trip",
+        "value": 476,
+        "evidence_tag": "GOLD-ONLY-GATE",
+        "side": "STRUCTURAL_BY_CONSTRUCTION",
+        "role": "SUPPORTING",
+        "source_artifact": "art_NUWTxBVWENIJ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "combined_absent_round_trip",
+        "value": 577,
+        "evidence_tag": "GOLD-ONLY-GATE",
+        "side": "STRUCTURAL_BY_CONSTRUCTION",
+        "role": "SUPPORTING",
+        "source_artifact": "art_NUWTxBVWENIJ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "clutrr_multihop_present_selacc_certificate",
+        "value": 0.8857,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "INHERITED",
+        "role": "SUPPORTING",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "clutrr_multihop_present_selacc_ct_verbalized",
+        "value": 0.5429,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "INHERITED",
+        "role": "SUPPORTING",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "clutrr_multihop_present_coverage",
+        "value": 0.6863,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "INHERITED",
+        "role": "SUPPORTING",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "inherited_gap_increment",
+        "value": 0.673,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "INHERITED",
+        "role": "FRAMING",
+        "source_artifact": "art_D0cHQUJ8kY75",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "novel_empirical_isolation_increment",
+        "value": 0.0025,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "INHERITED",
+        "role": "FRAMING",
+        "source_artifact": "art_D0cHQUJ8kY75",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "clutrr_atomic_precision",
+        "value": 0.5361,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "MEASURED",
+        "role": "SUPPORTING",
+        "source_artifact": "art_0a7i481ZRwS1",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "clutrr_atomic_recall",
+        "value": 0.5324,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "MEASURED",
+        "role": "SUPPORTING",
+        "source_artifact": "art_0a7i481ZRwS1",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "clutrr_atomic_f1",
+        "value": 0.5343,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "MEASURED",
+        "role": "SUPPORTING",
+        "source_artifact": "art_0a7i481ZRwS1",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "redocred_atomic_precision",
+        "value": 0.6203,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "MEASURED",
+        "role": "SUPPORTING",
+        "source_artifact": "art_htcr8yOZLCQy",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "redocred_atomic_recall_natural",
+        "value": 0.3762,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "MEASURED",
+        "role": "BOUNDARY",
+        "source_artifact": "art_htcr8yOZLCQy",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "redocred_atomic_recall_vs_locally_justifiable",
+        "value": 0.4646,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "MEASURED",
+        "role": "BOUNDARY",
+        "source_artifact": "art_htcr8yOZLCQy",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "redocred_llm_read_present_coverage",
+        "value": 0.4833,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "MEASURED",
+        "role": "BOUNDARY",
+        "source_artifact": "art_htcr8yOZLCQy",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "redocred_over_abstain_present_rate",
+        "value": 0.5167,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "MEASURED",
+        "role": "BOUNDARY",
+        "source_artifact": "art_htcr8yOZLCQy",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "spatial_certificate_confident_wrong",
+        "value": 0.0219,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "STRUCTURAL_BY_CONSTRUCTION",
+        "role": "BOUNDARY",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "spatial_raw_abstain_confident_wrong",
+        "value": 0.0351,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "STRUCTURAL_BY_CONSTRUCTION",
+        "role": "BOUNDARY",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "spatial_selacc_gap_certificate_vs_raw_abstain",
+        "value": -0.0882,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "STRUCTURAL_BY_CONSTRUCTION",
+        "role": "BOUNDARY",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "spatial_selacc_gap_ci95_lo",
+        "value": -0.2222,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "STRUCTURAL_BY_CONSTRUCTION",
+        "role": "BOUNDARY",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "spatial_selacc_gap_ci95_hi",
+        "value": 0.04,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "STRUCTURAL_BY_CONSTRUCTION",
+        "role": "BOUNDARY",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "fuzzy_spatial_unsound_caught_fraction",
+        "value": 1.0,
+        "evidence_tag": "REAL-LLM-READ-ON-SYNTHETIC",
+        "side": "MEASURED",
+        "role": "SUPPORTING",
+        "source_artifact": "art_I22c-J7-OcXl",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "fuzzy_spatial_commit_argmax_cw",
+        "value": 0.364,
+        "evidence_tag": "REAL-LLM-READ-ON-SYNTHETIC",
+        "side": "MEASURED",
+        "role": "SUPPORTING",
+        "source_artifact": "art_I22c-J7-OcXl",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "fuzzy_kinship_commit_argmax_cw",
+        "value": 0.2162,
+        "evidence_tag": "REAL-LLM-READ-ON-SYNTHETIC",
+        "side": "MEASURED",
+        "role": "SUPPORTING",
+        "source_artifact": "art_I22c-J7-OcXl",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "located_in_same_component_sibling_pairs",
+        "value": 20814,
+        "evidence_tag": "NATURAL-CORPUS-PENDING",
+        "side": "PENDING",
+        "role": "PENDING",
+        "source_artifact": "art_RfjDpsGkBXDG",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "located_in_net_win",
+        "value": null,
+        "evidence_tag": "NATURAL-CORPUS-PENDING",
+        "side": "PENDING",
+        "role": "PENDING",
+        "source_artifact": "art_RfjDpsGkBXDG",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "query_side_false_premise_verifier",
+        "value": null,
+        "evidence_tag": "NATURAL-CORPUS-PENDING",
+        "side": "PENDING",
+        "role": "PENDING",
+        "source_artifact": "art_RfjDpsGkBXDG",
+        "recomputed": false,
+        "matches_carried": true
+      }
+    ],
+    "count_breakdown": {
+      "re_docred_primary": {
+        "present": 360,
+        "absent": 368
+      },
+      "docred_secondary": {
+        "present": 116,
+        "absent": 209,
+        "absent_status": "DOWNGRADED (vanilla DocRED false-negatives)"
+      },
+      "combined": {
+        "present": 476,
+        "absent": 577,
+        "arithmetic": "360+116=476 present; 368+209=577 absent"
+      },
+      "fix_sentence": "The Re-DocRED natural-text corpus reports two figure pairs that are sometimes confused: the PRIMARY trustworthy-absent slice (re-docred) supplies 360 present multi-hop queries and 368 absent pairs, while the engine round-trip verification (476 present / 577 absent) is the COMBINED re-docred (360 / 368) plus secondary docred (116 / 209) total -- 360+116 = 476 and 368+209 = 577 -- so the two pairs are not in conflict; the larger pair is the union over both sources, the smaller is the load-bearing Re-DocRED slice on which absent gold is trustworthy."
+    },
+    "fuzzy_numbers": {
+      "spatial_unsound_reads_caught": "5/5",
+      "spatial_certificate_caught_fraction": 1.0,
+      "spatial_n_silent_wrong_missed": 0,
+      "spatial_commit_argmax_confident_wrong": 0.364,
+      "kinship_commit_argmax_confident_wrong": 0.2162,
+      "spatial_frac_conf_1p0": 0.0,
+      "kinship_frac_conf_1p0": 0.0,
+      "modeP_memorized_frac_conf_1p0": 1.0,
+      "spatial_ece_per_candidate": 0.1423,
+      "kinship_ece_per_candidate": 0.1105
+    },
+    "headline_structure_guidance": [
+      "LEAD with the SIGNAL-AGNOSTIC MIXED-POOL CAPABILITY GAP (one scalar knob cannot separate confident-right-present from confident-wrong-absent), powered on CLUTRR. This is the spine and it survives the collapse of any per-signal blindness claim.",
+      "Present the 16-cell per-signal x reader x corpus SURVIVAL/CAUGHT table as the centerpiece evidence. Split FACT A (robust 0.32-0.48 fabrication band across both corpora and readers) from FACT B (reader/signal-dependent caught fraction, 15% to 90%).",
+      "DROP the prior headlines 'the entire confidence/uncertainty family is structurally blind' and 'reader-diverse blindness' -- the paper's own cross-reader data contradict them. The capability gap replaces them and does not depend on any signal being blind.",
+      "CONCEDE the closure MECHANISM up front as INHERITED (+0.673 inherited / +0.0025 novel). The novel contribution is the compositional-false-premise DIAGNOSTIC + the gold-free structural detector, not the certificate mechanism.",
+      "State the natural-corpus result as an EXTRACTION-GATED BOUNDARY, not a win: on Re-DocRED the capability gap does NOT yet hold (CIs include 0, Holm rejects none) because extraction recall 0.376 binds; the gold-read ceiling 1.0/1.0/1.0 isolates extraction, not closure.",
+      "Carry clearly-LABELED PENDING rows for (P1) the located-in same-component-sibling net-win and (P2) the query-side false-premise verifier baseline; do NOT assert them as wins.",
+      "Do NOT present the 2.8% CLUTRR certificate confident-wrong as load-bearing; it is structural-by-construction. Use the non-circular-facts ledger to police this.",
+      "Position against the false-premise / unanswerable-question literature (FalseQA; AbstentionBench; Know-Your-Limits), with the carved delta = multi-hop relational compositional setting + gold-free training-free structural detector.",
+      "CUT the concatenated-kinship operational arm (56/56 trivial-by-construction); keep only the bracket-selected temporal arm as a one-paragraph feasibility note.",
+      "Present evidence-class tags (REAL-LLM-READ / REAL-LLM-READ-ON-SYNTHETIC / SYNTHETIC-CHANNEL / GOLD-ONLY-GATE / THEOREM / NATURAL-CORPUS-PENDING) as table COLUMNS, not inline hedges."
+    ],
+    "evidence_tag_legend": {
+      "REAL-LLM-READ": "genuine OpenRouter LLM completion on real text",
+      "REAL-LLM-READ-ON-SYNTHETIC": "genuine LLM read but on templated/symbolic substrate",
+      "SYNTHETIC-CHANNEL": "calibrated synthetic error channel (no LLM)",
+      "GOLD-ONLY-GATE": "deterministic gold-graph engine check (0 LLM)",
+      "THEOREM": "proved by construction",
+      "NATURAL-CORPUS-PENDING": "slot to be filled by the iter-9 located-in run"
+    },
+    "ledger_side_legend": {
+      "NON_CIRCULAR": "property of the raw LLM / signals, independent of the certificate (load-bearing)",
+      "NON_CIRCULAR_CONDITIONAL": "certificate wins, interpretable only given FACT A + FACT B (the capability gap)",
+      "STRUCTURAL_BY_CONSTRUCTION": "near-tautological given the disconnected-components setup; must not headline",
+      "INHERITED": "standard neuro-symbolic premise inherited from prior work",
+      "MEASURED": "directly measured quantity (extraction; not improved)",
+      "PENDING": "to be filled by the iter-9 natural-corpus located-in run"
+    }
+  },
+  "metrics_agg": {
+    "total_llm_spend_usd": 0.0,
+    "n_gate_checks": 80.0,
+    "n_gate_pass": 80.0,
+    "n_gate_recomputed": 62.0,
+    "reproduction_ok": 1.0,
+    "factA_clutrr_gemini": 0.4722,
+    "factA_clutrr_deepseek": 0.4833,
+    "factA_redocred_gemini": 0.3261,
+    "factA_redocred_deepseek": 0.3178,
+    "factA_band_lo": 0.3178,
+    "factA_band_hi": 0.4833,
+    "capgap_clutrr_certificate_selacc": 0.8267,
+    "capgap_clutrr_best_signal_selacc": 0.44,
+    "capgap_clutrr_worst_holm_p_adj": 0.0027,
+    "capgap_redocred_certificate_selacc": 0.475,
+    "capgap_redocred_best_signal_selacc": 0.675,
+    "capgap_redocred_worst_holm_p_adj": 1.0,
+    "ptrue_caught_clutrr_gemini": 0.7529,
+    "ptrue_caught_redocred_gemini": 0.5167,
+    "redocred_gold_read_present_coverage": 1.0,
+    "redocred_llm_read_present_coverage": 0.4833,
+    "redocred_over_abstain_present": 0.5167,
+    "atomic_recall_natural": 0.3762,
+    "atomic_recall_templated": 0.5324,
+    "inherited_gap_increment": 0.673,
+    "novel_increment": 0.0025,
+    "count_redocred_present": 360.0,
+    "count_redocred_absent": 368.0,
+    "count_combined_present": 476.0,
+    "count_combined_absent": 577.0,
+    "caught_clutrr_gemini_verbalized": 0.5647,
+    "caught_clutrr_gemini_sc_margin": 0.2824,
+    "caught_clutrr_gemini_ptrue": 0.7529,
+    "caught_clutrr_gemini_negent": 0.2824,
+    "caught_clutrr_deepseek_verbalized": 0.3276,
+    "caught_clutrr_deepseek_sc_margin": 0.7759,
+    "caught_clutrr_deepseek_ptrue": 0.8966,
+    "caught_clutrr_deepseek_negent": 0.7759,
+    "caught_redocred_gemini_verbalized": 0.4917,
+    "caught_redocred_gemini_sc_margin": 0.15,
+    "caught_redocred_gemini_ptrue": 0.5167,
+    "caught_redocred_gemini_negent": 0.15,
+    "caught_redocred_deepseek_verbalized": 0.5882,
+    "caught_redocred_deepseek_sc_margin": 0.7059,
+    "caught_redocred_deepseek_ptrue": 0.6765,
+    "caught_redocred_deepseek_negent": 0.7059
+  },
+  "datasets": [
+    {
+      "dataset": "crux_caught_table",
+      "examples": [
+        {
+          "input": "clutrr/gemini/verbalized",
+          "output": "{\"survival\": 0.4353, \"caught\": 0.5647, \"fact_a\": 0.4722}",
+          "metadata_corpus": "clutrr",
+          "metadata_reader": "gemini",
+          "metadata_signal": "verbalized",
+          "metadata_recomputed": true,
+          "metadata_fact_a": 0.4722,
+          "eval_survival": 0.4353,
+          "eval_caught": 0.5647,
+          "eval_fact_a": 0.4722,
+          "eval_recomputed": 1.0
+        },
+        {
+          "input": "clutrr/gemini/sc_margin",
+          "output": "{\"survival\": 0.7176, \"caught\": 0.2824, \"fact_a\": 0.4722}",
+          "metadata_corpus": "clutrr",
+          "metadata_reader": "gemini",
+          "metadata_signal": "sc_margin",
+          "metadata_recomputed": true,
+          "metadata_fact_a": 0.4722,
+          "eval_survival": 0.7176,
+          "eval_caught": 0.2824,
+          "eval_fact_a": 0.4722,
+          "eval_recomputed": 1.0
+        },
+        {
+          "input": "clutrr/gemini/ptrue",
+          "output": "{\"survival\": 0.2471, \"caught\": 0.7529, \"fact_a\": 0.4722}",
+          "metadata_corpus": "clutrr",
+          "metadata_reader": "gemini",
+          "metadata_signal": "ptrue",
+          "metadata_recomputed": true,
+          "metadata_fact_a": 0.4722,
+          "eval_survival": 0.2471,
+          "eval_caught": 0.7529,
+          "eval_fact_a": 0.4722,
+          "eval_recomputed": 1.0
+        }
+      ]
+    },
+    {
+      "dataset": "non_circular_facts_ledger",
+      "examples": [
+        {
+          "input": "FACT_A_clutrr_gemini",
+          "output": "0.4722",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "NON_CIRCULAR",
+          "metadata_role": "SPINE",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": true,
+          "metadata_matches_carried": true,
+          "eval_value": 0.4722,
+          "eval_recomputed": 1.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "FACT_A_clutrr_deepseek",
+          "output": "0.4833",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "NON_CIRCULAR",
+          "metadata_role": "SPINE",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": false,
+          "metadata_matches_carried": true,
+          "eval_value": 0.4833,
+          "eval_recomputed": 0.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "FACT_A_redocred_gemini",
+          "output": "0.3261",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "NON_CIRCULAR",
+          "metadata_role": "SPINE",
+          "metadata_source_artifact": "art_htcr8yOZLCQy",
+          "metadata_recomputed": true,
+          "metadata_matches_carried": true,
+          "eval_value": 0.3261,
+          "eval_recomputed": 1.0,
+          "eval_matches_carried": 1.0
+        }
+      ]
+    },
+    {
+      "dataset": "one_thesis_contribution_table",
+      "examples": [
+        {
+          "input": "SPINE",
+          "output": "FACT A (the raw LLM confidently FABRICATES absent relations: CLUTRR 47.2%/48.3%, Re-DocRED 32.6%/31.8%) + the SIGNAL-AGNOSTIC MIXED-POOL CAPABILITY GAP (no single confidence threshold can simultaneously cover present and abstain on absent; powered on CLUTRR: certificate selacc 0.827 vs 0.37-0.44, Holm-rejected), positioned as a COMPOSITIONAL FALSE-PREMISE / unanswerable-question instance, with a gold-free TRAINING-FREE STRUCTURAL detector.",
+          "metadata_headline_numbers": "FACT A 0.472/0.483/0.326/0.318; capability gap (CLUTRR) selacc 0.827 vs 0.37-0.44; Holm p_adj 0.0004/0.0027/0.0027/0.0027",
+          "metadata_mechanism_concession": "closure MECHANISM INHERITED: +0.673 inherited / +0.0025 novel",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_role": "HEADLINE",
+          "metadata_status": "ESTABLISHED on CLUTRR + cross-family; natural-prose capability gap PENDING (extraction-gated)",
+          "eval_is_headline": 1.0,
+          "eval_is_pending": 0.0,
+          "eval_is_spine": 1.0
+        },
+        {
+          "input": "P1-located-in-net-win",
+          "output": "PENDING: located-in SAME-COMPONENT-SIBLING net-win on art_RfjDpsGkBXDG (~20,814 same-component-sibling pairs -- entities in the SAME connected component with NO valid derivation path, so abstention is a genuine DEDUCTIVE result, NOT disconnected-trivially-empty). Run vs the four-signal battery AND the query-side verifier at matched coverage with Holm-adjusted doc-clustered CIs. FORK: if the certificate's Holm-adjusted cw reductions EXCLUDE 0 there -> DEMONSTRATED FIX (becomes headline); else extraction-limited boundary.",
+          "metadata_headline_numbers": "PENDING (filled iter-9)",
+          "metadata_mechanism_concession": "",
+          "metadata_evidence_tag": "NATURAL-CORPUS-PENDING",
+          "metadata_role": "PENDING",
+          "metadata_status": "SLOT -- filled iter-9",
+          "eval_is_headline": 0.0,
+          "eval_is_pending": 1.0,
+          "eval_is_spine": 0.0
+        },
+        {
+          "input": "P2-query-side-verifier",
+          "output": "PENDING: the QUERY-SIDE FALSE-PREMISE VERIFIER baseline ('are these two entities related at all?' / self-verification pass) -- the established method for this failure mode. The certificate's claim is credible only if it MATCHES or BEATS this verifier at matched coverage.",
+          "metadata_headline_numbers": "PENDING (filled iter-9)",
+          "metadata_mechanism_concession": "",
+          "metadata_evidence_tag": "NATURAL-CORPUS-PENDING",
+          "metadata_role": "PENDING",
+          "metadata_status": "SLOT -- filled iter-9",
+          "eval_is_headline": 0.0,
+          "eval_is_pending": 1.0,
+          "eval_is_spine": 0.0
+        }
+      ]
+    },
+    {
+      "dataset": "reproduction_gate",
+      "examples": [
+        {
+          "input": "clutrr_factA_raw_absent_hallucination",
+          "output": "0.4722",
+          "metadata_carried": "0.4722",
+          "metadata_matches": true,
+          "metadata_was_recomputed": true,
+          "metadata_note": "",
+          "eval_matches": 1.0,
+          "eval_was_recomputed": 1.0
+        },
+        {
+          "input": "clutrr_gemini_crux_survival_verbalized",
+          "output": "0.4353",
+          "metadata_carried": "0.4353",
+          "metadata_matches": true,
+          "metadata_was_recomputed": true,
+          "metadata_note": "",
+          "eval_matches": 1.0,
+          "eval_was_recomputed": 1.0
+        },
+        {
+          "input": "clutrr_gemini_crux_survival_sc_margin",
+          "output": "0.7176",
+          "metadata_carried": "0.7176",
+          "metadata_matches": true,
+          "metadata_was_recomputed": true,
+          "metadata_note": "",
+          "eval_matches": 1.0,
+          "eval_was_recomputed": 1.0
+        }
+      ]
+    }
+  ]
+}

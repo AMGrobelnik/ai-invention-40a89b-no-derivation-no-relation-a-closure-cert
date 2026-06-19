@@ -1,0 +1,70 @@
+23:16:47|INFO   |STAGE 0: engine RCC-8 + CDC self-test (blocking) ...
+23:16:48|INFO   |Stage-0 self-tests PASSED (RCC-8 64 + CDC 81 cells; closure invariants).
+23:16:48|INFO   |Synthetic RCC-8 positive control ($0) ...
+23:16:48|INFO   |  recall_95: inter_cov=0.146 best_cov=0.138 inter_acc=0.890 best_acc=0.797 mean_bite=1.23 inter>best=True
+23:16:48|INFO   |  recall_85: inter_cov=0.100 best_cov=0.216 inter_acc=0.720 best_acc=0.713 mean_bite=2.25 inter>best=False
+23:16:48|INFO   |  recall_70: inter_cov=0.038 best_cov=0.244 inter_acc=0.526 best_acc=0.557 mean_bite=2.82 inter>best=False
+23:16:48|INFO   |  control PASS (r=0.95 selacc_gain=0.093, mean_bite=1.23).
+23:16:48|INFO   |STEP 1: a-priori multi-path gate (zero LLM, VERIFIED gold composition) ...
+23:16:50|INFO   |  GATE rcc8_decision=NO-GO (headline N=0) cardinal_decision=NO-GO (N=0) overall=NO-GO
+23:16:50|INFO   |    SpaRP-PS1|rcc8: q_gold=908 dedreq=228 ge2short=0 best_single_len_hist={} bite=0 maxdisjoint={1: 228}
+23:16:50|INFO   |    SpaRP-PS1|cardinal_direction: q_gold=719 dedreq=245 ge2short=57 best_single_len_hist={1: 54, 2: 2, 3: 1} bite=0 maxdisjoint={1: 188, 2: 55, 3: 2}
+23:16:50|INFO   |    SpartQA-Human|rcc8: q_gold=0 dedreq=0 ge2short=0 best_single_len_hist={} bite=0 maxdisjoint={}
+23:16:50|INFO   |    SpartQA-Human|cardinal_direction: q_gold=0 dedreq=0 ge2short=0 best_single_len_hist={} bite=0 maxdisjoint={}
+23:16:50|INFO   |  REAL single-path closure queries=228 desc_recovered_frac=1.000
+23:16:51|INFO   |[primary] disjunctive RCC-8 reads: 698 edges ...
+23:18:02|INFO   |[primary] chain-of-thought baseline: 228 queries ...
+23:18:34|INFO   |  done cost=$0.1629 cache=32 pfail=0
+23:18:34|INFO   |[crossfam] disjunctive RCC-8 reads: 368 edges ...
+23:19:26|INFO   |[crossfam] chain-of-thought baseline: 120 queries ...
+23:20:18|INFO   |  done cost=$0.0619 cache=32 pfail=0
+23:20:19|INFO   |  cross-family constituent_recall=0.581 underdet=0.569 jac_vs_primary=0.502
+23:20:21|INFO   |Q1=SCOPE-BOUNDARY Q2=CONFIRM n_scored=228 raw_hallu=0.1930 method_hallu=0.0219 reduction=0.1711 cost=$0.2248 t=213s
+ALL CLOSURE TESTS PASSED (RCC-8 8^2=64 + CDC 9^2=81 cells cross-checked; naive==full@len2, naive!=full@chain, Mode-B collapse, multi-path narrowing).
+
+=== HEADLINE ===
+  Q1_crosspath_intersection_verdict: SCOPE-BOUNDARY
+  Q1_reason: On the strongest real spatial venue (SpaRP-PS1, 27.4% structurally-flagged tight multipath), VERIFIED gold composition has ZERO same-algebra multi-path bite: the RCC-8 subgraph is a containment TREE (all 228 deduction queries have exactly 1 path), and cardinal short paths compose to SINGLETONS ({1: 54, 2: 2, 3: 1} best-single lengths over 57 >=2-path queries). The corpus's 27.4% flag is purely STRUCTURAL (undirected, no composition); the redundancy is CROSS-ALGEBRA (topology vs direction), not intersectable in one calculus. The mechanism is therefore synthetic-only here.
+  Q1_synthetic_control_proves_mechanism_real: True
+  Q1_synthetic_r95_selacc_gain: 0.09330950962874729
+  Q1_synthetic_r95_coverage_gain: 0.00799999999999998
+  Q2_closure_vs_neural_verdict: CONFIRM-REAL-VENUE-HALLUCINATION-REDUCTION
+  Q2_n_scored: 228
+  Q2_raw_llm_hallucination_rate: 0.19298245614035087
+  Q2_cot_hallucination_rate: 0.12280701754385964
+  Q2_closure_method_hallucination_rate: 0.021929824561403508
+  Q2_hallucination_reduction_vs_raw: 0.17105263157894735
+  Q2_hallucination_reduction_ci95: [0.11842105263157895, 0.22807017543859648]
+  Q2_method_resolution_rate: 0.12280701754385964
+  Q2_method_coverage: 0.14473684210526316
+  Q2_raw_resolution_rate: 0.8070175438596491
+  Q2_method_vs_raw_selacc_gap: -0.09090909090909094
+  Q2_method_vs_raw_selacc_ci95: [-0.23076923076923084, 0.03846153846153855]
+  constituent_read_recall_primary: 0.548936170212766
+  constituent_read_breadth_primary_of8: 2.108510638297872
+  constituent_read_underdet_rate_primary: 0.036170212765957444
+  query_deduction_read_recall_primary: 0.8991228070175439
+  gold_read_oracle_resolution_rate: 0.8903508771929824
+  gold_read_oracle_coverage: 0.8903508771929824
+  desc_recovered_frac: 1.0
+  spatial_vs_temporal_read_breadth_note: spatial RCC-8 reads breadth=2.11/8 (underdet=0.04) vs temporal-Allen breadth 11.5/13 (underdet 0.87) -- spatial templated reads are FAR more informative; the spatial negative is STRUCTURAL, not a read-informativeness failure (the distinct second binding constraint of the temporal venue).
+  powered: True
+  total_cost_usd: 0.224768
+  tags: REAL-LLM-READ / GOLD-ONLY-GATE / SYNTHETIC-RCC8-CONTROL / THEOREM
+
+=== real-venue leaderboard (matched-coverage selacc gaps) ===
+  H_method_vs_raw_selacc              : gap=-0.0909 ci95=[-0.2308,0.0385] m_cov=0.1447 m_acc=0.8485 b_acc=0.9394
+  H_method_vs_cot_selacc              : gap=-0.0303 ci95=[-0.1944,0.0882] m_cov=0.1447 m_acc=0.8485 b_acc=0.8788
+  method_vs_raw_abstain_selacc        : gap=-0.0909 ci95=[-0.2308,0.0400] m_cov=0.1447 m_acc=0.8485 b_acc=0.9394
+  oracle_vs_method_selacc             : gap=nan ci95=[nan,nan] m_cov=0.8904 m_acc=1.0000 b_acc=nan
+
+=== hallucination (confident-wrong) rates ===
+  method      : hallu=0.0219 resolve=0.1228 cov=0.1447
+  raw         : hallu=0.1930 resolve=0.8070 cov=1.0000
+  raw_abstain : hallu=0.0351 resolve=0.2500 cov=0.2851
+  cot         : hallu=0.1228 resolve=0.8772 cov=1.0000
+  oracle      : hallu=0.0000 resolve=0.8904 cov=0.8904
+
+  Holm: {"H_method_vs_raw_hallucination": {"p": 0.0, "holm_threshold": 0.016666666666666666, "adjusted_significant": true}, "H_method_vs_cot_hallucination": {"p": 0.0, "holm_threshold": 0.025, "adjusted_significant": true}, "H_method_vs_raw_selacc": {"p": 0.94, "holm_threshold": 0.05, "adjusted_significant": false}}
+
+TOTAL COST=$0.2248 Q1=SCOPE-BOUNDARY Q2_powered=True n_scored=228

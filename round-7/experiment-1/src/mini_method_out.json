@@ -1,0 +1,1843 @@
+{
+  "metadata": {
+    "method_name": "Closure certificate vs a 4-signal confidence battery (verbalized / SC-margin@k=10 / Kadavath P(True) / semantic-entropy) on the NATURAL Re-DocRED/DocRED absent-relation kinship corpus -- the decisive iter-7 STEP-B open test.",
+    "step": "STEP-B: iter-6 CLUTRR fair-baseline experiment re-run VERBATIM on genuinely-natural Wikipedia prose (no templating/concatenation). FACT A + FACT B + mixed-pool matched-coverage showdown + Holm confident-wrong reductions + abstention decomposition + pre-registered FORK verdict.",
+    "headline_summary": {
+      "slice_primary": "re-docred",
+      "n_present_deduction": 360,
+      "n_absent_no_derivation": 368,
+      "FACT_A_raw_llm_absent_hallucination_rate": 0.3261,
+      "FACT_A_n_hallucinations": 120,
+      "certificate_absent_confident_wrong": 0.0707,
+      "FACT_B_crux_frac_surviving_each_signal": {
+        "ct_verbalized": 0.5083,
+        "ct_sc_margin": 0.85,
+        "ct_ptrue": 0.4833,
+        "ct_negent": 0.85
+      },
+      "FACT_B_mean_signal_on_hallucinations": {
+        "ct_verbalized": 0.9458,
+        "ct_sc_margin": 0.9533,
+        "ct_ptrue": 0.5112,
+        "ct_negent": 0.9636
+      },
+      "FACT_B_frac_hallucinations_signal_ge_0.5": {
+        "ct_verbalized": 1.0,
+        "ct_sc_margin": 1.0,
+        "ct_ptrue": 0.5167,
+        "ct_negent": 1.0
+      },
+      "mixed_matched_coverage_selective_accuracy": {
+        "certificate": 0.475,
+        "ct_verbalized": 0.675,
+        "ct_sc_margin": 0.6,
+        "ct_ptrue": 0.645,
+        "ct_negent": 0.6,
+        "commit_argmax": 0.675,
+        "matched_coverage": 0.27472527472527475
+      },
+      "mixed_confident_wrong_reduction_certificate_vs_each_signal": {
+        "ct_verbalized": {
+          "reduction": -0.0549,
+          "ci95": [
+            -0.1302,
+            0.0133
+          ],
+          "holm_p_adj": 1.0,
+          "reject": false
+        },
+        "ct_sc_margin": {
+          "reduction": -0.0343,
+          "ci95": [
+            -0.1145,
+            0.0396
+          ],
+          "holm_p_adj": 1.0,
+          "reject": false
+        },
+        "ct_ptrue": {
+          "reduction": -0.0467,
+          "ci95": [
+            -0.1223,
+            0.023
+          ],
+          "holm_p_adj": 1.0,
+          "reject": false
+        },
+        "ct_negent": {
+          "reduction": -0.0343,
+          "ci95": [
+            -0.1145,
+            0.0396
+          ],
+          "holm_p_adj": 1.0,
+          "reject": false
+        }
+      },
+      "abstention_decomposition": {
+        "n_total": 728,
+        "n_present": 360,
+        "n_absent": 368,
+        "certificate_named_total": 200,
+        "correct_absent_abstentions": 342,
+        "correct_absent_abstention_rate": 0.9293,
+        "over_abstain_present": 186,
+        "over_abstain_present_rate": 0.5167,
+        "present_coverage_llm_read": 0.4833,
+        "present_selective_accuracy_primitive": 0.546,
+        "present_selective_accuracy_surface": 0.546,
+        "gold_read_ceiling": {
+          "present_coverage": 1.0,
+          "correct_absent_abstention_rate": 1.0,
+          "present_selective_accuracy_primitive": 1.0,
+          "note": "the gold-read certificate (closure over GOLD atomic edges) reproduces 100% of present golds & abstains on 100% of absent pairs by construction; the gap to the LLM-read certificate is exactly the natural-prose EXTRACTION ceiling."
+        },
+        "interpretation": "On natural prose the extracted graph is no longer trivially complete, so the certificate can OVER-ABSTAIN on PRESENT pairs (missing connecting edges look disconnected). correct_absent + over_abstain_present + named == total decisions; high over_abstain_present with low present_coverage => extraction-limited."
+      },
+      "natural_atomic_pr": {
+        "recall_converse_invariant": 0.3762,
+        "precision_converse_invariant": 0.6203,
+        "f1_converse_invariant": 0.4684,
+        "recall_strict": 0.1992
+      },
+      "fork_verdict": "EXTRACTION-LIMITED-BOUNDARY",
+      "one_line": "On 368 NATURAL Wikipedia absent-relation pairs the raw LLM hallucinates a kinship on 33% at high confidence; the certificate abstains structurally (confident-wrong 7%). FACT A + FACT B (crux survival) transfer from templated CLUTRR to real prose; the fork verdict is EXTRACTION-LIMITED-BOUNDARY."
+    },
+    "reader_model": "google/gemini-3.1-flash-lite",
+    "model_fallbacks": [
+      "deepseek/deepseek-v3.2",
+      "google/gemini-3-flash-preview"
+    ],
+    "cross_family_reader": "deepseek/deepseek-v3.2",
+    "seed": 20260618,
+    "temperature": 0.0,
+    "sc_k_battery": 10,
+    "bootstrap_B": 10000,
+    "signals": [
+      "verbalized",
+      "sc_margin",
+      "ptrue",
+      "negent"
+    ],
+    "signal_definitions": {
+      "verbalized": "the raw answerer's self-reported confidence in [0,1].",
+      "sc_margin": "self-consistency vote-margin: top-relation fraction across k=10 temp=0.7 samples.",
+      "ptrue": "Kadavath P(True): the model's probability that raw's committed answer is correct (1 call, temp=0).",
+      "negent": "semantic-entropy negentropy 1 - H/log(k_eff) over the k=10 SC samples clustered by relation."
+    },
+    "research_cross_check": "research_out.json loaded (signal specs cross-checked: 4-signal battery matches method.py)",
+    "tag": "REAL-LLM-READ (all reads are genuine OpenRouter completions; cached reads replay at $0).",
+    "scoring": "PRIMITIVE-level (gender is best-effort in DocRED): a method's surface is reduced to its gender-independent primitive before scoring; the human gendered word is reported as a secondary surface-level column. Absent pairs: ANY named answer is confident-wrong.",
+    "entity_grounding": "LLM-extracted person names are grounded to gold entity_ids via the mention-span alias table (exact + surname/substring single-hit); ungroundable names become isolated NAME:: nodes (honest recall penalty, never a fabricated link). Gold-surface grounding recall ~0.99 (measured).",
+    "pre_registration": {
+      "FACT_A": "raw LLM names a kinship on absent (different-component) pairs at high confidence.",
+      "FACT_B": ">=2 of 4 signals still COMMIT >=50% of those absent hallucinations at the certificate's coverage.",
+      "mixed_showdown": "at the certificate's matched coverage on the MIXED present+absent pool the certificate's selective accuracy & confident-wrong beat every signal (Holm, B=10000, doc-clustered paired bootstrap).",
+      "fork": "CONFIRM-HEADLINE (certificate wins mixed all signals post-Holm) | EXTRACTION-LIMITED-BOUNDARY (diagnostic FACT A+B survive but certificate over-abstains/ties on present due to extraction recall) | DIAGNOSTIC-WEAKER-THAN-CLAIMED (a signal filters absent hallucinations).",
+      "doc_cluster": "metadata_doc_id (Wikipedia document)",
+      "B": 10000,
+      "multiplicity": "Holm-Bonferroni across the 4 signals, one-sided."
+    },
+    "primary_reader_results": {
+      "n_present": 360,
+      "n_absent": 368,
+      "view1_absent": {
+        "ct_verbalized": {
+          "n_absent": 368,
+          "matched_coverage": 0.3261,
+          "ref": "modeA",
+          "compare": "ct_verbalized",
+          "confident_wrong_reduction": 0.2554,
+          "ci95": [
+            0.1377,
+            0.3845
+          ],
+          "p_one_sided": 0.0005,
+          "meets_0.20_bar": true,
+          "ci_excludes_0": true,
+          "natural_operating_points": {
+            "modeA": {
+              "natural_named_rate": 0.07065217391304347,
+              "natural_confident_wrong_rate": 0.07065217391304347
+            },
+            "ct_verbalized": {
+              "natural_named_rate": 0.32608695652173914,
+              "natural_confident_wrong_rate": 0.32608695652173914
+            }
+          },
+          "matched_operating_points": {
+            "modeA": {
+              "confident_wrong_rate_at_matched_cov": 0.0707
+            },
+            "ct_verbalized": {
+              "confident_wrong_rate_at_matched_cov": 0.3261
+            }
+          }
+        },
+        "ct_sc_margin": {
+          "n_absent": 368,
+          "matched_coverage": 0.3261,
+          "ref": "modeA",
+          "compare": "ct_sc_margin",
+          "confident_wrong_reduction": 0.2554,
+          "ci95": [
+            0.1377,
+            0.3845
+          ],
+          "p_one_sided": 0.0005,
+          "meets_0.20_bar": true,
+          "ci_excludes_0": true,
+          "natural_operating_points": {
+            "modeA": {
+              "natural_named_rate": 0.07065217391304347,
+              "natural_confident_wrong_rate": 0.07065217391304347
+            },
+            "ct_sc_margin": {
+              "natural_named_rate": 0.32608695652173914,
+              "natural_confident_wrong_rate": 0.32608695652173914
+            }
+          },
+          "matched_operating_points": {
+            "modeA": {
+              "confident_wrong_rate_at_matched_cov": 0.0707
+            },
+            "ct_sc_margin": {
+              "confident_wrong_rate_at_matched_cov": 0.3261
+            }
+          }
+        },
+        "ct_ptrue": {
+          "n_absent": 368,
+          "matched_coverage": 0.3261,
+          "ref": "modeA",
+          "compare": "ct_ptrue",
+          "confident_wrong_reduction": 0.2554,
+          "ci95": [
+            0.1377,
+            0.3845
+          ],
+          "p_one_sided": 0.0005,
+          "meets_0.20_bar": true,
+          "ci_excludes_0": true,
+          "natural_operating_points": {
+            "modeA": {
+              "natural_named_rate": 0.07065217391304347,
+              "natural_confident_wrong_rate": 0.07065217391304347
+            },
+            "ct_ptrue": {
+              "natural_named_rate": 0.32608695652173914,
+              "natural_confident_wrong_rate": 0.32608695652173914
+            }
+          },
+          "matched_operating_points": {
+            "modeA": {
+              "confident_wrong_rate_at_matched_cov": 0.0707
+            },
+            "ct_ptrue": {
+              "confident_wrong_rate_at_matched_cov": 0.3261
+            }
+          }
+        },
+        "ct_negent": {
+          "n_absent": 368,
+          "matched_coverage": 0.3261,
+          "ref": "modeA",
+          "compare": "ct_negent",
+          "confident_wrong_reduction": 0.2554,
+          "ci95": [
+            0.1377,
+            0.3845
+          ],
+          "p_one_sided": 0.0005,
+          "meets_0.20_bar": true,
+          "ci_excludes_0": true,
+          "natural_operating_points": {
+            "modeA": {
+              "natural_named_rate": 0.07065217391304347,
+              "natural_confident_wrong_rate": 0.07065217391304347
+            },
+            "ct_negent": {
+              "natural_named_rate": 0.32608695652173914,
+              "natural_confident_wrong_rate": 0.32608695652173914
+            }
+          },
+          "matched_operating_points": {
+            "modeA": {
+              "confident_wrong_rate_at_matched_cov": 0.0707
+            },
+            "ct_negent": {
+              "confident_wrong_rate_at_matched_cov": 0.3261
+            }
+          }
+        },
+        "commit_argmax": {
+          "n_absent": 368,
+          "matched_coverage": 0.3261,
+          "ref": "modeA",
+          "compare": "commit_argmax",
+          "confident_wrong_reduction": 0.2554,
+          "ci95": [
+            0.1377,
+            0.3845
+          ],
+          "p_one_sided": 0.0005,
+          "meets_0.20_bar": true,
+          "ci_excludes_0": true,
+          "natural_operating_points": {
+            "modeA": {
+              "natural_named_rate": 0.07065217391304347,
+              "natural_confident_wrong_rate": 0.07065217391304347
+            },
+            "commit_argmax": {
+              "natural_named_rate": 0.32608695652173914,
+              "natural_confident_wrong_rate": 0.32608695652173914
+            }
+          },
+          "matched_operating_points": {
+            "modeA": {
+              "confident_wrong_rate_at_matched_cov": 0.0707
+            },
+            "commit_argmax": {
+              "confident_wrong_rate_at_matched_cov": 0.3261
+            }
+          }
+        },
+        "_note": "On the pure-absent pool confident-wrong == coverage for every method (any named answer on an absent pair is wrong); matched to a baseline's natural naming rate the four signals coincide. Signal-level discrimination lives in the MIXED-pool view3 and the crux survival table."
+      },
+      "view2_risk_coverage_absent": {
+        "certificate_coverage": 0.0707,
+        "certificate_confident_wrong": 0.0707,
+        "n_pool": 368,
+        "per_signal": {
+          "ct_verbalized": {
+            "natural_coverage": 0.3261,
+            "coverage_at_equal_safety": 0.0707,
+            "coverage_gap_certificate_minus_baseline": 0.0,
+            "confident_wrong_at_certificate_coverage": 0.0707,
+            "cw_gap_baseline_minus_certificate": 0.0
+          },
+          "ct_sc_margin": {
+            "natural_coverage": 0.3261,
+            "coverage_at_equal_safety": 0.0707,
+            "coverage_gap_certificate_minus_baseline": 0.0,
+            "confident_wrong_at_certificate_coverage": 0.0707,
+            "cw_gap_baseline_minus_certificate": 0.0
+          },
+          "ct_ptrue": {
+            "natural_coverage": 0.3261,
+            "coverage_at_equal_safety": 0.0707,
+            "coverage_gap_certificate_minus_baseline": 0.0,
+            "confident_wrong_at_certificate_coverage": 0.0707,
+            "cw_gap_baseline_minus_certificate": 0.0
+          },
+          "ct_negent": {
+            "natural_coverage": 0.3261,
+            "coverage_at_equal_safety": 0.0707,
+            "coverage_gap_certificate_minus_baseline": 0.0,
+            "confident_wrong_at_certificate_coverage": 0.0707,
+            "cw_gap_baseline_minus_certificate": 0.0
+          }
+        }
+      },
+      "view2_risk_coverage_mixed": {
+        "certificate_coverage": 0.2747,
+        "certificate_confident_wrong": 0.1442,
+        "n_pool": 728,
+        "per_signal": {
+          "ct_verbalized": {
+            "natural_coverage": 0.5797,
+            "coverage_at_equal_safety": 0.4657,
+            "coverage_gap_certificate_minus_baseline": -0.1909,
+            "confident_wrong_at_certificate_coverage": 0.0893,
+            "cw_gap_baseline_minus_certificate": -0.0549
+          },
+          "ct_sc_margin": {
+            "natural_coverage": 0.5797,
+            "coverage_at_equal_safety": 0.3956,
+            "coverage_gap_certificate_minus_baseline": -0.1209,
+            "confident_wrong_at_certificate_coverage": 0.1099,
+            "cw_gap_baseline_minus_certificate": -0.0343
+          },
+          "ct_ptrue": {
+            "natural_coverage": 0.5797,
+            "coverage_at_equal_safety": 0.4849,
+            "coverage_gap_certificate_minus_baseline": -0.2102,
+            "confident_wrong_at_certificate_coverage": 0.0975,
+            "cw_gap_baseline_minus_certificate": -0.0467
+          },
+          "ct_negent": {
+            "natural_coverage": 0.5797,
+            "coverage_at_equal_safety": 0.3956,
+            "coverage_gap_certificate_minus_baseline": -0.1209,
+            "confident_wrong_at_certificate_coverage": 0.1099,
+            "cw_gap_baseline_minus_certificate": -0.0343
+          }
+        }
+      },
+      "view3_mixed_showdown": {
+        "c_star": 0.27472527472527475,
+        "ref": "modeA",
+        "leaderboard": {
+          "modeA": {
+            "coverage": 0.27472527472527475,
+            "selective_accuracy": 0.475,
+            "n_covered": 200
+          },
+          "ct_verbalized": {
+            "coverage_matched": 0.27472527472527475,
+            "natural_coverage": 0.5796703296703297,
+            "selective_accuracy": 0.675,
+            "n_covered": 200
+          },
+          "ct_sc_margin": {
+            "coverage_matched": 0.27472527472527475,
+            "natural_coverage": 0.5796703296703297,
+            "selective_accuracy": 0.6,
+            "n_covered": 200
+          },
+          "ct_ptrue": {
+            "coverage_matched": 0.27472527472527475,
+            "natural_coverage": 0.5796703296703297,
+            "selective_accuracy": 0.645,
+            "n_covered": 200
+          },
+          "ct_negent": {
+            "coverage_matched": 0.27472527472527475,
+            "natural_coverage": 0.5796703296703297,
+            "selective_accuracy": 0.6,
+            "n_covered": 200
+          },
+          "ct_sc_margin_maj": {
+            "coverage_matched": 0.27472527472527475,
+            "natural_coverage": 0.5796703296703297,
+            "selective_accuracy": 0.6,
+            "n_covered": 200
+          },
+          "commit_argmax": {
+            "coverage_matched": 0.27472527472527475,
+            "natural_coverage": 0.5796703296703297,
+            "selective_accuracy": 0.675,
+            "n_covered": 200
+          },
+          "pot": {
+            "coverage_matched": 0.27472527472527475,
+            "natural_coverage": 0.4491758241758242,
+            "selective_accuracy": 0.865,
+            "n_covered": 200
+          },
+          "sc": {
+            "coverage_matched": 0.27472527472527475,
+            "natural_coverage": 0.5796703296703297,
+            "selective_accuracy": 0.6,
+            "n_covered": 200
+          }
+        },
+        "gaps": {
+          "ct_verbalized": {
+            "gap": -0.20000000000000007,
+            "ci95": [
+              -0.37446000707242266,
+              -0.027406426859849575
+            ],
+            "p_one_sided": 0.9885,
+            "selacc_a": 0.475,
+            "selacc_b": 0.675,
+            "cov_a": 0.27472527472527475,
+            "cov_b": 0.27472527472527475,
+            "n_boot": 2000
+          },
+          "ct_sc_margin": {
+            "gap": -0.125,
+            "ci95": [
+              -0.344743864163181,
+              0.10370392898503393
+            ],
+            "p_one_sided": 0.831,
+            "selacc_a": 0.475,
+            "selacc_b": 0.6,
+            "cov_a": 0.27472527472527475,
+            "cov_b": 0.27472527472527475,
+            "n_boot": 2000
+          },
+          "ct_ptrue": {
+            "gap": -0.17000000000000004,
+            "ci95": [
+              -0.3725377449958538,
+              0.04133861458513622
+            ],
+            "p_one_sided": 0.937,
+            "selacc_a": 0.475,
+            "selacc_b": 0.645,
+            "cov_a": 0.27472527472527475,
+            "cov_b": 0.27472527472527475,
+            "n_boot": 2000
+          },
+          "ct_negent": {
+            "gap": -0.125,
+            "ci95": [
+              -0.344743864163181,
+              0.10370392898503393
+            ],
+            "p_one_sided": 0.831,
+            "selacc_a": 0.475,
+            "selacc_b": 0.6,
+            "cov_a": 0.27472527472527475,
+            "cov_b": 0.27472527472527475,
+            "n_boot": 2000
+          },
+          "ct_sc_margin_maj": {
+            "gap": -0.125,
+            "ci95": [
+              -0.34280117529773313,
+              0.10389610389610388
+            ],
+            "p_one_sided": 0.833,
+            "selacc_a": 0.475,
+            "selacc_b": 0.6,
+            "cov_a": 0.27472527472527475,
+            "cov_b": 0.27472527472527475,
+            "n_boot": 2000
+          },
+          "commit_argmax": {
+            "gap": -0.20000000000000007,
+            "ci95": [
+              -0.37446000707242266,
+              -0.027406426859849575
+            ],
+            "p_one_sided": 0.9885,
+            "selacc_a": 0.475,
+            "selacc_b": 0.675,
+            "cov_a": 0.27472527472527475,
+            "cov_b": 0.27472527472527475,
+            "n_boot": 2000
+          },
+          "pot": {
+            "gap": -0.39,
+            "ci95": [
+              -0.5604506599038642,
+              -0.18216229503158404
+            ],
+            "p_one_sided": 1.0,
+            "selacc_a": 0.475,
+            "selacc_b": 0.865,
+            "cov_a": 0.27472527472527475,
+            "cov_b": 0.27472527472527475,
+            "n_boot": 2000
+          },
+          "sc": {
+            "gap": -0.125,
+            "ci95": [
+              -0.34280117529773313,
+              0.10389610389610388
+            ],
+            "p_one_sided": 0.833,
+            "selacc_a": 0.475,
+            "selacc_b": 0.6,
+            "cov_a": 0.27472527472527475,
+            "cov_b": 0.27472527472527475,
+            "n_boot": 2000
+          }
+        },
+        "n_queries": 728,
+        "label": "primary mixed (present+absent)"
+      },
+      "view3_present_showdown": {
+        "c_star": 0.48333333333333334,
+        "ref": "modeA",
+        "leaderboard": {
+          "modeA": {
+            "coverage": 0.48333333333333334,
+            "selective_accuracy": 0.546,
+            "n_covered": 174
+          },
+          "ct_verbalized": {
+            "coverage_matched": 0.48333333333333334,
+            "natural_coverage": 0.8388888888888889,
+            "selective_accuracy": 0.8678,
+            "n_covered": 174
+          },
+          "ct_sc_margin": {
+            "coverage_matched": 0.48333333333333334,
+            "natural_coverage": 0.8388888888888889,
+            "selective_accuracy": 0.8908,
+            "n_covered": 174
+          },
+          "ct_ptrue": {
+            "coverage_matched": 0.48333333333333334,
+            "natural_coverage": 0.8388888888888889,
+            "selective_accuracy": 0.8736,
+            "n_covered": 174
+          },
+          "ct_negent": {
+            "coverage_matched": 0.48333333333333334,
+            "natural_coverage": 0.8388888888888889,
+            "selective_accuracy": 0.8908,
+            "n_covered": 174
+          },
+          "ct_sc_margin_maj": {
+            "coverage_matched": 0.48333333333333334,
+            "natural_coverage": 0.8416666666666667,
+            "selective_accuracy": 0.8908,
+            "n_covered": 174
+          },
+          "commit_argmax": {
+            "coverage_matched": 0.48333333333333334,
+            "natural_coverage": 0.8388888888888889,
+            "selective_accuracy": 0.8678,
+            "n_covered": 174
+          },
+          "pot": {
+            "coverage_matched": 0.48333333333333334,
+            "natural_coverage": 0.9083333333333333,
+            "selective_accuracy": 0.8563,
+            "n_covered": 174
+          },
+          "sc": {
+            "coverage_matched": 0.48333333333333334,
+            "natural_coverage": 0.8416666666666667,
+            "selective_accuracy": 0.8908,
+            "n_covered": 174
+          }
+        },
+        "gaps": {
+          "ct_verbalized": {
+            "gap": -0.32183908045977005,
+            "ci95": [
+              -0.5167439264843903,
+              -0.11454659153795849
+            ],
+            "p_one_sided": 0.9995,
+            "selacc_a": 0.5459770114942529,
+            "selacc_b": 0.867816091954023,
+            "cov_a": 0.48333333333333334,
+            "cov_b": 0.48333333333333334,
+            "n_boot": 2000
+          },
+          "ct_sc_margin": {
+            "gap": -0.34482758620689646,
+            "ci95": [
+              -0.5484003094772457,
+              -0.12709189902702164
+            ],
+            "p_one_sided": 0.9995,
+            "selacc_a": 0.5459770114942529,
+            "selacc_b": 0.8908045977011494,
+            "cov_a": 0.48333333333333334,
+            "cov_b": 0.48333333333333334,
+            "n_boot": 2000
+          },
+          "ct_ptrue": {
+            "gap": -0.3275862068965517,
+            "ci95": [
+              -0.5333663438715164,
+              -0.10503401319857071
+            ],
+            "p_one_sided": 0.9995,
+            "selacc_a": 0.5459770114942529,
+            "selacc_b": 0.8735632183908046,
+            "cov_a": 0.48333333333333334,
+            "cov_b": 0.48333333333333334,
+            "n_boot": 2000
+          },
+          "ct_negent": {
+            "gap": -0.34482758620689646,
+            "ci95": [
+              -0.5484003094772457,
+              -0.12709189902702164
+            ],
+            "p_one_sided": 0.9995,
+            "selacc_a": 0.5459770114942529,
+            "selacc_b": 0.8908045977011494,
+            "cov_a": 0.48333333333333334,
+            "cov_b": 0.48333333333333334,
+            "n_boot": 2000
+          },
+          "ct_sc_margin_maj": {
+            "gap": -0.34482758620689646,
+            "ci95": [
+              -0.5484003094772457,
+              -0.12709189902702164
+            ],
+            "p_one_sided": 0.9995,
+            "selacc_a": 0.5459770114942529,
+            "selacc_b": 0.8908045977011494,
+            "cov_a": 0.48333333333333334,
+            "cov_b": 0.48333333333333334,
+            "n_boot": 2000
+          },
+          "commit_argmax": {
+            "gap": -0.32183908045977005,
+            "ci95": [
+              -0.5167439264843903,
+              -0.11454659153795849
+            ],
+            "p_one_sided": 0.9995,
+            "selacc_a": 0.5459770114942529,
+            "selacc_b": 0.867816091954023,
+            "cov_a": 0.48333333333333334,
+            "cov_b": 0.48333333333333334,
+            "n_boot": 2000
+          },
+          "pot": {
+            "gap": -0.31034482758620685,
+            "ci95": [
+              -0.5256250587906233,
+              -0.08927931570103921
+            ],
+            "p_one_sided": 0.998,
+            "selacc_a": 0.5459770114942529,
+            "selacc_b": 0.8563218390804598,
+            "cov_a": 0.48333333333333334,
+            "cov_b": 0.48333333333333334,
+            "n_boot": 2000
+          },
+          "sc": {
+            "gap": -0.34482758620689646,
+            "ci95": [
+              -0.5484003094772457,
+              -0.12709189902702164
+            ],
+            "p_one_sided": 0.9995,
+            "selacc_a": 0.5459770114942529,
+            "selacc_b": 0.8908045977011494,
+            "cov_a": 0.48333333333333334,
+            "cov_b": 0.48333333333333334,
+            "n_boot": 2000
+          }
+        },
+        "n_queries": 360,
+        "label": "primary present (deduction)"
+      },
+      "mixed_4way_confident_wrong_reduction": {
+        "ct_verbalized": {
+          "n": 728,
+          "matched_coverage": 0.2747,
+          "ref_confident_wrong": 0.1442,
+          "compare_confident_wrong": 0.0893,
+          "confident_wrong_reduction": -0.0549,
+          "ci95": [
+            -0.1302,
+            0.0133
+          ],
+          "p_one_sided": 0.9397,
+          "ci_excludes_0": false
+        },
+        "ct_sc_margin": {
+          "n": 728,
+          "matched_coverage": 0.2747,
+          "ref_confident_wrong": 0.1442,
+          "compare_confident_wrong": 0.1099,
+          "confident_wrong_reduction": -0.0343,
+          "ci95": [
+            -0.1145,
+            0.0396
+          ],
+          "p_one_sided": 0.8057,
+          "ci_excludes_0": false
+        },
+        "ct_ptrue": {
+          "n": 728,
+          "matched_coverage": 0.2747,
+          "ref_confident_wrong": 0.1442,
+          "compare_confident_wrong": 0.0975,
+          "confident_wrong_reduction": -0.0467,
+          "ci95": [
+            -0.1223,
+            0.023
+          ],
+          "p_one_sided": 0.8956,
+          "ci_excludes_0": false
+        },
+        "ct_negent": {
+          "n": 728,
+          "matched_coverage": 0.2747,
+          "ref_confident_wrong": 0.1442,
+          "compare_confident_wrong": 0.1099,
+          "confident_wrong_reduction": -0.0343,
+          "ci95": [
+            -0.1145,
+            0.0396
+          ],
+          "p_one_sided": 0.8057,
+          "ci_excludes_0": false
+        }
+      },
+      "mixed_4way_holm": {
+        "mixed_modeA_vs_ct_verbalized": {
+          "p": 0.9397,
+          "p_adj": 1.0,
+          "reject": false,
+          "reduction": -0.0549,
+          "ci95": [
+            -0.1302,
+            0.0133
+          ]
+        },
+        "mixed_modeA_vs_ct_sc_margin": {
+          "p": 0.8057,
+          "p_adj": 1.0,
+          "reject": false,
+          "reduction": -0.0343,
+          "ci95": [
+            -0.1145,
+            0.0396
+          ]
+        },
+        "mixed_modeA_vs_ct_ptrue": {
+          "p": 0.8956,
+          "p_adj": 1.0,
+          "reject": false,
+          "reduction": -0.0467,
+          "ci95": [
+            -0.1223,
+            0.023
+          ]
+        },
+        "mixed_modeA_vs_ct_negent": {
+          "p": 0.8057,
+          "p_adj": 1.0,
+          "reject": false,
+          "reduction": -0.0343,
+          "ci95": [
+            -0.1145,
+            0.0396
+          ]
+        }
+      },
+      "crux_survival_table": {
+        "n_absent": 368,
+        "n_raw_confident_wrong": 120,
+        "raw_hallucination_rate_absent": 0.3261,
+        "certificate_coverage_absent": 0.0707,
+        "certificate_coverage_mixed": 0.2747,
+        "certificate_confident_wrong_absent": 0.0707,
+        "per_signal": {
+          "ct_verbalized": {
+            "tau_global_at_certificate_mixed_coverage": 1.0,
+            "tau_absent_only": 1.0,
+            "signal_distribution_on_hallucinations": {
+              "mean": 0.9458,
+              "median": 1.0,
+              "p10": 0.9,
+              "p25": 0.9,
+              "p75": 1.0,
+              "p90": 1.0
+            },
+            "frac_hallucinations_signal_ge_0.5": 1.0,
+            "frac_hallucinations_signal_ge_pool_median": 0.5083,
+            "frac_surviving_certificate_matched_rule": 0.5083,
+            "frac_surviving_absent_only_calibration": 0.5083,
+            "interpretation": "frac_surviving_certificate_matched_rule = fraction of the LLM's high-confidence absent-relation hallucinations that a SINGLE GLOBAL confidence threshold (tuned to the certificate's mixed coverage) would still COMMIT. The certificate abstains on ~all of them STRUCTURALLY (no derivation path), regardless of confidence."
+          },
+          "ct_sc_margin": {
+            "tau_global_at_certificate_mixed_coverage": 1.0,
+            "tau_absent_only": 1.0,
+            "signal_distribution_on_hallucinations": {
+              "mean": 0.9533,
+              "median": 1.0,
+              "p10": 0.79,
+              "p25": 1.0,
+              "p75": 1.0,
+              "p90": 1.0
+            },
+            "frac_hallucinations_signal_ge_0.5": 1.0,
+            "frac_hallucinations_signal_ge_pool_median": 0.85,
+            "frac_surviving_certificate_matched_rule": 0.85,
+            "frac_surviving_absent_only_calibration": 0.85,
+            "interpretation": "frac_surviving_certificate_matched_rule = fraction of the LLM's high-confidence absent-relation hallucinations that a SINGLE GLOBAL confidence threshold (tuned to the certificate's mixed coverage) would still COMMIT. The certificate abstains on ~all of them STRUCTURALLY (no derivation path), regardless of confidence."
+          },
+          "ct_ptrue": {
+            "tau_global_at_certificate_mixed_coverage": 1.0,
+            "tau_absent_only": 1.0,
+            "signal_distribution_on_hallucinations": {
+              "mean": 0.5112,
+              "median": 0.65,
+              "p10": 0.0,
+              "p25": 0.0,
+              "p75": 1.0,
+              "p90": 1.0
+            },
+            "frac_hallucinations_signal_ge_0.5": 0.5167,
+            "frac_hallucinations_signal_ge_pool_median": 0.4833,
+            "frac_surviving_certificate_matched_rule": 0.4833,
+            "frac_surviving_absent_only_calibration": 0.4833,
+            "interpretation": "frac_surviving_certificate_matched_rule = fraction of the LLM's high-confidence absent-relation hallucinations that a SINGLE GLOBAL confidence threshold (tuned to the certificate's mixed coverage) would still COMMIT. The certificate abstains on ~all of them STRUCTURALLY (no derivation path), regardless of confidence."
+          },
+          "ct_negent": {
+            "tau_global_at_certificate_mixed_coverage": 1.0,
+            "tau_absent_only": 1.0,
+            "signal_distribution_on_hallucinations": {
+              "mean": 0.9636,
+              "median": 1.0,
+              "p10": 0.7779,
+              "p25": 1.0,
+              "p75": 1.0,
+              "p90": 1.0
+            },
+            "frac_hallucinations_signal_ge_0.5": 1.0,
+            "frac_hallucinations_signal_ge_pool_median": 0.85,
+            "frac_surviving_certificate_matched_rule": 0.85,
+            "frac_surviving_absent_only_calibration": 0.85,
+            "interpretation": "frac_surviving_certificate_matched_rule = fraction of the LLM's high-confidence absent-relation hallucinations that a SINGLE GLOBAL confidence threshold (tuned to the certificate's mixed coverage) would still COMMIT. The certificate abstains on ~all of them STRUCTURALLY (no derivation path), regardless of confidence."
+          }
+        }
+      }
+    },
+    "abstention_decomposition": {
+      "n_total": 728,
+      "n_present": 360,
+      "n_absent": 368,
+      "certificate_named_total": 200,
+      "correct_absent_abstentions": 342,
+      "correct_absent_abstention_rate": 0.9293,
+      "over_abstain_present": 186,
+      "over_abstain_present_rate": 0.5167,
+      "present_coverage_llm_read": 0.4833,
+      "present_selective_accuracy_primitive": 0.546,
+      "present_selective_accuracy_surface": 0.546,
+      "gold_read_ceiling": {
+        "present_coverage": 1.0,
+        "correct_absent_abstention_rate": 1.0,
+        "present_selective_accuracy_primitive": 1.0,
+        "note": "the gold-read certificate (closure over GOLD atomic edges) reproduces 100% of present golds & abstains on 100% of absent pairs by construction; the gap to the LLM-read certificate is exactly the natural-prose EXTRACTION ceiling."
+      },
+      "interpretation": "On natural prose the extracted graph is no longer trivially complete, so the certificate can OVER-ABSTAIN on PRESENT pairs (missing connecting edges look disconnected). correct_absent + over_abstain_present + named == total decisions; high over_abstain_present with low present_coverage => extraction-limited."
+    },
+    "natural_prose_atomic_pr": {
+      "converse_invariant_primitive_PRIMARY": {
+        "precision": 0.6203,
+        "recall": 0.3762,
+        "f1": 0.4684,
+        "tp": 348,
+        "n_pred": 561,
+        "n_gold": 925,
+        "n_stories": 140,
+        "precision_ci": [
+          0.5533975761373746,
+          0.6846855559621517
+        ],
+        "recall_ci": [
+          0.33194495759092624,
+          0.4279688547414015
+        ],
+        "f1_ci": [
+          0.418235700469743,
+          0.5205200860832137
+        ],
+        "by_hop": {
+          "natural": {
+            "precision": 0.6203,
+            "recall": 0.3762,
+            "f1": 0.4684,
+            "tp": 348,
+            "n_pred": 561,
+            "n_gold": 925
+          }
+        },
+        "by_noise_type": {
+          "re-docred": {
+            "precision": 0.6203,
+            "recall": 0.3762,
+            "f1": 0.4684,
+            "tp": 348,
+            "n_pred": 561,
+            "n_gold": 925
+          }
+        }
+      },
+      "strict_direction_aware_secondary": {
+        "precision": 0.6037,
+        "recall": 0.1992,
+        "f1": 0.2996,
+        "tp": 358,
+        "n_pred": 593,
+        "n_gold": 1797,
+        "n_stories": 140,
+        "precision_ci": [
+          0.5368356867779204,
+          0.6708957980905714
+        ],
+        "recall_ci": [
+          0.17516312968121006,
+          0.22750316377031027
+        ],
+        "f1_ci": [
+          0.26600281583917373,
+          0.33727339310912885
+        ],
+        "by_hop": {
+          "natural": {
+            "precision": 0.6037,
+            "recall": 0.1992,
+            "f1": 0.2996,
+            "tp": 358,
+            "n_pred": 593,
+            "n_gold": 1797
+          }
+        },
+        "by_noise_type": {
+          "re-docred": {
+            "precision": 0.6037,
+            "recall": 0.1992,
+            "f1": 0.2996,
+            "tp": 358,
+            "n_pred": 593,
+            "n_gold": 1797
+          }
+        }
+      },
+      "vs_locally_justifiable_gold_FAIR_CEILING": {
+        "recall": 0.4646,
+        "recall_ci": [
+          0.4069559091991428,
+          0.5334482478909799
+        ],
+        "n_gold_justifiable": 579,
+        "note": "recall measured against ONLY the locally-justifiable (span-extractable) gold edges -- the fair ceiling for a span-local reader; the remaining ~38% are KB-implied edges no span-local extractor could recover."
+      },
+      "n_docs": 140,
+      "note": "Recall is capped well below 1.0 by extraction (the dataset README flags ~0.62 locally-justifiable atomic edges) -- extraction is MEASURED, not improved; this is the binding ceiling the certificate inherits on natural prose."
+    },
+    "docred_present_corroboration": {
+      "n_present": 116,
+      "present_showdown": {
+        "c_star": 0.49137931034482757,
+        "ref": "modeA",
+        "leaderboard": {
+          "modeA": {
+            "coverage": 0.49137931034482757,
+            "selective_accuracy": 0.6316,
+            "n_covered": 57
+          },
+          "ct_verbalized": {
+            "coverage_matched": 0.49137931034482757,
+            "natural_coverage": 0.8793103448275862,
+            "selective_accuracy": 0.8772,
+            "n_covered": 57
+          },
+          "ct_sc_margin": {
+            "coverage_matched": 0.49137931034482757,
+            "natural_coverage": 0.8793103448275862,
+            "selective_accuracy": 0.8947,
+            "n_covered": 57
+          },
+          "ct_ptrue": {
+            "coverage_matched": 0.49137931034482757,
+            "natural_coverage": 0.8793103448275862,
+            "selective_accuracy": 0.8246,
+            "n_covered": 57
+          },
+          "ct_negent": {
+            "coverage_matched": 0.49137931034482757,
+            "natural_coverage": 0.8793103448275862,
+            "selective_accuracy": 0.8947,
+            "n_covered": 57
+          },
+          "ct_sc_margin_maj": {
+            "coverage_matched": 0.49137931034482757,
+            "natural_coverage": 0.8706896551724138,
+            "selective_accuracy": 0.8947,
+            "n_covered": 57
+          },
+          "commit_argmax": {
+            "coverage_matched": 0.49137931034482757,
+            "natural_coverage": 0.8793103448275862,
+            "selective_accuracy": 0.8772,
+            "n_covered": 57
+          },
+          "pot": {
+            "coverage_matched": 0.49137931034482757,
+            "natural_coverage": 0.9741379310344828,
+            "selective_accuracy": 0.807,
+            "n_covered": 57
+          },
+          "sc": {
+            "coverage_matched": 0.49137931034482757,
+            "natural_coverage": 0.8706896551724138,
+            "selective_accuracy": 0.8947,
+            "n_covered": 57
+          }
+        },
+        "gaps": {
+          "ct_verbalized": {
+            "gap": -0.24561403508771928,
+            "ci95": [
+              -0.43859925730763644,
+              -0.05780167083235706
+            ],
+            "p_one_sided": 0.994,
+            "selacc_a": 0.631578947368421,
+            "selacc_b": 0.8771929824561403,
+            "cov_a": 0.49137931034482757,
+            "cov_b": 0.49137931034482757,
+            "n_boot": 2000
+          },
+          "ct_sc_margin": {
+            "gap": -0.26315789473684215,
+            "ci95": [
+              -0.4434551116043902,
+              -0.08720389629864883
+            ],
+            "p_one_sided": 0.9975,
+            "selacc_a": 0.631578947368421,
+            "selacc_b": 0.8947368421052632,
+            "cov_a": 0.49137931034482757,
+            "cov_b": 0.49137931034482757,
+            "n_boot": 2000
+          },
+          "ct_ptrue": {
+            "gap": -0.19298245614035092,
+            "ci95": [
+              -0.3935229309221245,
+              0.005568827348346431
+            ],
+            "p_one_sided": 0.972,
+            "selacc_a": 0.631578947368421,
+            "selacc_b": 0.8245614035087719,
+            "cov_a": 0.49137931034482757,
+            "cov_b": 0.49137931034482757,
+            "n_boot": 2000
+          },
+          "ct_negent": {
+            "gap": -0.26315789473684215,
+            "ci95": [
+              -0.4434551116043902,
+              -0.08720389629864883
+            ],
+            "p_one_sided": 0.9975,
+            "selacc_a": 0.631578947368421,
+            "selacc_b": 0.8947368421052632,
+            "cov_a": 0.49137931034482757,
+            "cov_b": 0.49137931034482757,
+            "n_boot": 2000
+          },
+          "ct_sc_margin_maj": {
+            "gap": -0.26315789473684215,
+            "ci95": [
+              -0.4434551116043902,
+              -0.08720389629864883
+            ],
+            "p_one_sided": 0.9975,
+            "selacc_a": 0.631578947368421,
+            "selacc_b": 0.8947368421052632,
+            "cov_a": 0.49137931034482757,
+            "cov_b": 0.49137931034482757,
+            "n_boot": 2000
+          },
+          "commit_argmax": {
+            "gap": -0.24561403508771928,
+            "ci95": [
+              -0.43859925730763644,
+              -0.05780167083235706
+            ],
+            "p_one_sided": 0.994,
+            "selacc_a": 0.631578947368421,
+            "selacc_b": 0.8771929824561403,
+            "cov_a": 0.49137931034482757,
+            "cov_b": 0.49137931034482757,
+            "n_boot": 2000
+          },
+          "pot": {
+            "gap": -0.17543859649122806,
+            "ci95": [
+              -0.40133801062152274,
+              0.04159769383135257
+            ],
+            "p_one_sided": 0.947,
+            "selacc_a": 0.631578947368421,
+            "selacc_b": 0.8070175438596491,
+            "cov_a": 0.49137931034482757,
+            "cov_b": 0.49137931034482757,
+            "n_boot": 2000
+          },
+          "sc": {
+            "gap": -0.26315789473684215,
+            "ci95": [
+              -0.4434551116043902,
+              -0.08720389629864883
+            ],
+            "p_one_sided": 0.9975,
+            "selacc_a": 0.631578947368421,
+            "selacc_b": 0.8947368421052632,
+            "cov_a": 0.49137931034482757,
+            "cov_b": 0.49137931034482757,
+            "n_boot": 2000
+          }
+        },
+        "n_queries": 116,
+        "label": "docred present (corroboration)"
+      },
+      "abstention_decomposition_present_only": {
+        "n_total": 116,
+        "n_present": 116,
+        "n_absent": 0,
+        "certificate_named_total": 57,
+        "correct_absent_abstentions": 0,
+        "correct_absent_abstention_rate": NaN,
+        "over_abstain_present": 59,
+        "over_abstain_present_rate": 0.5086,
+        "present_coverage_llm_read": 0.4914,
+        "present_selective_accuracy_primitive": 0.6316,
+        "present_selective_accuracy_surface": 0.6316,
+        "gold_read_ceiling": {
+          "present_coverage": 1.0,
+          "correct_absent_abstention_rate": NaN,
+          "present_selective_accuracy_primitive": 1.0,
+          "note": "the gold-read certificate (closure over GOLD atomic edges) reproduces 100% of present golds & abstains on 100% of absent pairs by construction; the gap to the LLM-read certificate is exactly the natural-prose EXTRACTION ceiling."
+        },
+        "interpretation": "On natural prose the extracted graph is no longer trivially complete, so the certificate can OVER-ABSTAIN on PRESENT pairs (missing connecting edges look disconnected). correct_absent + over_abstain_present + named == total decisions; high over_abstain_present with low present_coverage => extraction-limited."
+      },
+      "present_selective_accuracy_primitive": 0.6316,
+      "present_coverage_llm_read": 0.4914,
+      "note": "docred absent gold DOWNGRADED (DocRED false negatives) -> present-stratum corroboration only."
+    },
+    "worked_no_derivation_abstention": {
+      "doc_id": "re-docred::Albert Tatlock",
+      "title": "Albert Tatlock",
+      "story": "Albert Tatlock is a fictional character on the British television soap opera Coronation Street. Albert was played by actor Jack Howarth from 1960 to 1984. The character became something of an institution, so much so that grumpy old men were sometimes nicknamed\" Albert Tatlock\". A veteran of the First World War, Albert settled back into civilian life by marrying and starting a family, however his wife Bessie died in 1959 and he retired from his job at the Town Hall the following year, taking up a new occupation as the street's resident grumpy old man, forever complaining about the struggles of old age and living on the low income from his pension. Although Albert was never close to his daughter Beattie, he maintained close ties with his brother Alfred's family, particularly his niece Valerie, who married Albert's neighbour Ken Barlow in 1962. With Val's death in 1971, and Beattie's continued absence, Ken eventually moved into No.1 and took care of Albert in his twilight years until his death of a heart attack in May 1984.",
+      "question": "What is Ken Barlow to Albert Tatlock?",
+      "qsrc": 0,
+      "qtgt": 13,
+      "qsrc_name": "Albert Tatlock",
+      "qtgt_name": "Ken Barlow",
+      "gold": "no-relation",
+      "extracted_atomics": [
+        {
+          "a": "Albert Tatlock",
+          "b": "Bessie",
+          "type": "SO",
+          "surface": "wife"
+        },
+        {
+          "a": "Albert Tatlock",
+          "b": "Beattie",
+          "type": "child",
+          "surface": "daughter"
+        },
+        {
+          "a": "Albert Tatlock",
+          "b": "Alfred",
+          "type": "sibling",
+          "surface": "brother"
+        },
+        {
+          "a": "Albert Tatlock",
+          "b": "Valerie",
+          "type": "un",
+          "surface": "niece"
+        }
+      ],
+      "certificate_decision": "ABSTAIN (no-relation)",
+      "certificate_info": null,
+      "raw_llm_committed": "son-in-law",
+      "raw_llm_signals": {
+        "verbalized": 1.0,
+        "sc_margin": 0.9,
+        "ptrue": 1.0,
+        "negent": 0.8588,
+        "H": 0.3251,
+        "sc_k_eff": 10.0,
+        "sc10_abstain": 0.0
+      },
+      "prolog": {
+        "engine": "python-fallback",
+        "executed_in_swipl": false,
+        "prolog_results": null,
+        "python_reference": [],
+        "prolog_matches_python": null,
+        "discharge_method": "python-checked (swipl-unavailable)",
+        "program_chars": 1534
+      },
+      "explanation": "The extracted kinship edges leave qsrc and qtgt in DISCONNECTED components, so the forward closure D[(qsrc,qtgt)] is EMPTY -> the certificate asserts no-relation. The raw LLM instead committed a specific kinship at high verbalized confidence -- a hallucination every confidence signal above its threshold would retain."
+    },
+    "worked_over_abstain_present": {
+      "doc_id": "re-docred::Abdullah I Al-Sabah",
+      "title": "Abdullah I Al-Sabah",
+      "story": "Abdullah I bin Sabah Al-Sabah (Abdullah I; 1740–3 May 1814) was the second ruler of Kuwait, ruling from 1763 to 3 May 1814. He was the youngest son of Sabah bin Jaber, upon whose death he succeeded. He was elected to the position by chiefs and notables despite his standing as the youngest son. He is also the father of Jaber I Al-Sabah who succeeded him. Bin Sabah is credited with building the first defensive walls in Kuwait. During his reign, Kuwait also extended its commercial contacts into what is now India, Yemen, and Iraq. Also during this period, Kuwait established relations with the British East India Company.",
+      "question": "What is Sabah bin Jaber to Jaber I Al - Sabah?",
+      "gold_primitive": "inv-grand",
+      "gold_word": "grandfather",
+      "hop": 2,
+      "gold_read_certificate": "grandfather",
+      "llm_read_certificate_decision": "ABSTAIN (no_path)",
+      "n_gold_atomic_edges": 6,
+      "n_extracted_edges": 2,
+      "extracted_atomics": [
+        {
+          "a": "Sabah bin Jaber",
+          "b": "Abdullah I bin Sabah Al-Sabah",
+          "type": "child",
+          "surface": "son"
+        },
+        {
+          "a": "Abdullah I bin Sabah Al-Sabah",
+          "b": "Jaber I Al - Sabah",
+          "type": "inv-child",
+          "surface": "father"
+        }
+      ],
+      "raw_llm_committed": "grandfather",
+      "explanation": "The GOLD-read certificate composes the connecting chain and solves this present pair, but the LLM extraction missed >=1 connecting edge, leaving the endpoints disconnected -> the LLM-read certificate ABSTAINS. This is the quantified extraction ceiling made concrete (sound, never a fabricated relation)."
+    },
+    "worked_present_composition_trace": {
+      "doc_id": "re-docred::Afonso, Prince Imperial of Brazil",
+      "title": "Afonso, Prince Imperial of Brazil",
+      "story": "Dom Afonso (23 February 1845  –11 June 1847) was the Prince Imperial and heir apparent to the throne of the Empire of Brazil. Born in Rio de Janeiro, he was the eldest child of Emperor Dom Pedro   II and Dona Teresa Cristina of the Two Sicilies, and thus a member of the Brazilian branch of the House of Braganza. Afonso died from epilepsy at the age of two, devastating the emperor. The following year, Pedro and Teresa Cristina had another son, Pedro Afonso, but he too died in infancy. After the loss of his second son, doubts grew in Pedro   II's mind that the imperial system could be viable. He still had an heir in his daughter Isabel, but he was unconvinced that a female would prove to be a suitable successor. He showed less concern about the effects his policies had on the monarchy, provided his daughter Isabel with no training for her role as potential empress, and failed to cultivate her acceptance within the country's political class. Pedro   II's lack of interest in protecting the imperial system ultimately led to its downfall.",
+      "question": "What is Dona Teresa Cristina to Isabel?",
+      "gold_primitive": "inv-child",
+      "gold_word": "mother",
+      "certificate_primitive": "inv-child",
+      "certificate_word": "mother",
+      "extracted_atomics": [
+        {
+          "a": "Dom Afonso",
+          "b": "Dom Pedro   II",
+          "type": "inv-child",
+          "surface": "father"
+        },
+        {
+          "a": "Dom Afonso",
+          "b": "Dona Teresa Cristina",
+          "type": "inv-child",
+          "surface": "mother"
+        },
+        {
+          "a": "Pedro Afonso",
+          "b": "Pedro",
+          "type": "inv-child",
+          "surface": "father"
+        },
+        {
+          "a": "Pedro Afonso",
+          "b": "Teresa Cristina",
+          "type": "inv-child",
+          "surface": "mother"
+        },
+        {
+          "a": "Isabel",
+          "b": "Dom Pedro   II",
+          "type": "inv-child",
+          "surface": "father"
+        }
+      ],
+      "modeA_narrowing_trace": [
+        {
+          "a": "Dom Afonso",
+          "b": "Dom Pedro   II",
+          "c": "Isabel",
+          "t1": "inv-child",
+          "t2": "child",
+          "t3": "sibling"
+        },
+        {
+          "a": "Isabel",
+          "b": "Dom Afonso",
+          "c": "Dona Teresa Cristina",
+          "t1": "sibling",
+          "t2": "inv-child",
+          "t3": "inv-child"
+        }
+      ],
+      "prolog": {
+        "engine": "python-fallback",
+        "executed_in_swipl": false,
+        "prolog_results": null,
+        "python_reference": [],
+        "prolog_matches_python": null,
+        "discharge_method": "python-checked (swipl-unavailable)",
+        "program_chars": 1602
+      }
+    },
+    "prolog_discharge_summary": {
+      "n_discharged": 40,
+      "n_executed_in_swipl": 0,
+      "n_prolog_matches_python": 0,
+      "engines": {
+        "python-fallback": 40
+      },
+      "discharge_method": "python-checked (swipl-unavailable)",
+      "swipl_available": false,
+      "note": "Prolog program emits comp/3, conv/2, rel/3, solve_/4; discharged in real SWI-Prolog when available, else validated by the Python re-implementation of the same rules and labelled truthfully (never implying swipl execution)."
+    },
+    "cross_family_sensitivity": {
+      "reader": "deepseek/deepseek-v3.2",
+      "n_records": 174,
+      "n_present": 67,
+      "n_absent": 107,
+      "FACT_A_raw_absent_hallucination_rate": 0.3178,
+      "FACT_B_crux_survival": {
+        "ct_verbalized": 0.4118,
+        "ct_sc_margin": 0.2941,
+        "ct_ptrue": 0.3235,
+        "ct_negent": 0.2941
+      },
+      "mixed_showdown_selective_accuracy": {
+        "certificate": 0.0769,
+        "ct_verbalized": 0.6154,
+        "ct_sc_margin": 0.7692,
+        "ct_ptrue": 0.6154,
+        "ct_negent": 0.7692,
+        "matched_coverage": 0.22413793103448276
+      },
+      "mixed_confident_wrong_reduction_holm": {
+        "mixed_modeA_vs_ct_verbalized": {
+          "p": 0.939,
+          "p_adj": 1.0,
+          "reject": false,
+          "reduction": -0.1207,
+          "ci95": [
+            -0.298,
+            0.03
+          ]
+        },
+        "mixed_modeA_vs_ct_sc_margin": {
+          "p": 0.9873,
+          "p_adj": 1.0,
+          "reject": false,
+          "reduction": -0.1552,
+          "ci95": [
+            -0.3155,
+            -0.0145
+          ]
+        },
+        "mixed_modeA_vs_ct_ptrue": {
+          "p": 0.9173,
+          "p_adj": 1.0,
+          "reject": false,
+          "reduction": -0.1207,
+          "ci95": [
+            -0.3077,
+            0.0471
+          ]
+        },
+        "mixed_modeA_vs_ct_negent": {
+          "p": 0.9873,
+          "p_adj": 1.0,
+          "reject": false,
+          "reduction": -0.1552,
+          "ci95": [
+            -0.3155,
+            -0.0145
+          ]
+        }
+      },
+      "abstention_decomposition": {
+        "n_total": 174,
+        "n_present": 67,
+        "n_absent": 107,
+        "certificate_named_total": 39,
+        "correct_absent_abstentions": 97,
+        "correct_absent_abstention_rate": 0.9065,
+        "over_abstain_present": 38,
+        "over_abstain_present_rate": 0.5672,
+        "present_coverage_llm_read": 0.4328,
+        "present_selective_accuracy_primitive": 0.1034,
+        "present_selective_accuracy_surface": 0.1034,
+        "gold_read_ceiling": {
+          "present_coverage": 1.0,
+          "correct_absent_abstention_rate": 1.0,
+          "present_selective_accuracy_primitive": 1.0,
+          "note": "the gold-read certificate (closure over GOLD atomic edges) reproduces 100% of present golds & abstains on 100% of absent pairs by construction; the gap to the LLM-read certificate is exactly the natural-prose EXTRACTION ceiling."
+        },
+        "interpretation": "On natural prose the extracted graph is no longer trivially complete, so the certificate can OVER-ABSTAIN on PRESENT pairs (missing connecting edges look disconnected). correct_absent + over_abstain_present + named == total decisions; high over_abstain_present with low present_coverage => extraction-limited."
+      },
+      "cost_usd": 0.1851,
+      "n_calls": 1914,
+      "n_cache_hits": 350,
+      "n_errors": 0
+    },
+    "per_dataset_counts": {
+      "re-docred": {
+        "present": 360,
+        "absent": 368
+      },
+      "docred": {
+        "present": 116,
+        "absent": 209
+      },
+      "actual_loaded": {
+        "present": 360,
+        "absent": 368
+      }
+    },
+    "honesty_caveats": {
+      "natural_prose": "input is genuinely-natural Wikipedia introductory prose (no templating/concatenation).",
+      "char_length": "DocRED intro prose averages ~1020 chars; none reach the umbrella's ~3000-char target (corpus-honest).",
+      "absent_structural": "absent pairs are STRUCTURAL (different connected components) => conservative closed-world 'no-relation' gold; the certificate's absent abstention is therefore structural-by-construction (conceded) -- the load-bearing claim is FACT A+B + the mixed-pool signal-discrimination + the quantified present-extraction ceiling.",
+      "docred_absent_downgraded": "docred absent gold is DOWNGRADED (DocRED false negatives: Re-DocRED carries +80% more family edges on shared titles); only re-docred absent is trustworthy.",
+      "primitive_scoring": "gender best-effort => scoring is primitive-level (surface-level reported as secondary).",
+      "extraction_measured": "atomic extraction is MEASURED not improved; recall is the binding natural-prose ceiling.",
+      "prolog": "swipl unavailable here => discharge is python-checked and labelled truthfully (iter-5/6 precedent); the Prolog program (comp/3,conv/2,rel/3,solve_/4) is emitted and cross-checked by the Python re-implementation.",
+      "pure_absent_degeneracy": "on the pure-absent pool confident-wrong==coverage so the 4 signals coincide; the decisive signal-discriminating object is the MIXED-pool view3 + crux survival."
+    },
+    "budget": {
+      "cumulative_usd": 0.0,
+      "n_llm_calls": 0,
+      "n_cache_hits": 11450,
+      "n_parse_fail": 0,
+      "n_errors": 0,
+      "model": "google/gemini-3.1-flash-lite",
+      "fallbacks": [
+        "deepseek/deepseek-v3.2",
+        "google/gemini-3-flash-preview"
+      ],
+      "temperature": 0.0,
+      "budget_hard": 9.0,
+      "budget_soft": 5.0
+    },
+    "verdict": {
+      "overall": "EXTRACTION-LIMITED-BOUNDARY",
+      "slice": "re-docred",
+      "FACT_A_raw_absent_hallucination_rate": 0.3261,
+      "FACT_A_high": true,
+      "FACT_B_n_signals_surviving_ge_0.5": 3,
+      "FACT_B_holds": true,
+      "diagnostic_holds_corpus_robust": true,
+      "certificate_wins_mixed_all_signals_holm": false,
+      "present_coverage_llm_read": 0.4833,
+      "over_abstain_present_rate": 0.5167,
+      "natural_atomic_recall_primary": 0.3762,
+      "rationale": "CONFIRM-HEADLINE iff the natural-corpus certificate's confident-wrong is strictly below EVERY confidence signal on the MIXED pool (Holm CI excludes 0, reduction>0). Else if the DIAGNOSTIC survives (FACT A: raw hallucinates a kinship on absent pairs at high confidence; FACT B: >=2 signals still commit >=50% of those hallucinations at the certificate's coverage), EXTRACTION-LIMITED-BOUNDARY: FACT A+B are properties of the raw LLM + signals (reader-diverse, corpus-robust), while the certificate over-abstains/ties on PRESENT due to natural-prose extraction recall (quantified by present_coverage, over_abstain_present, atomic recall, and the gold-read ceiling). Else DIAGNOSTIC-WEAKER-THAN-CLAIMED (honest negative: a signal DOES filter confident absent hallucinations)."
+    },
+    "runtime_sec": 698.6,
+    "spend_ledger": {
+      "note": "The metadata.budget block reflects the FINAL reproduction run, whose PRIMARY reads replay deterministically at $0 from the sha256 disk cache (cumulative_usd=0, cache_hits=11450). The cross-family deepseek tail billed $0.1851 on this run. The TRUE cumulative OpenRouter spend across ALL runs (smoke 8/40-doc scaling + full primary gemini-3.1-flash-lite + docred present + deepseek-v3.2 cross-family) is approximately $1.5, far under the $9 hard cap / $10 limit. Every reported number is a genuine OpenRouter completion; warm reruns are $0.",
+      "final_run_primary_cumulative_usd": 0.0,
+      "final_run_cross_family_usd": 0.1851,
+      "approx_total_project_usd": 1.5,
+      "hard_cap_usd": 9.0
+    }
+  },
+  "datasets": [
+    {
+      "dataset": "docred_present",
+      "examples": [
+        {
+          "input": "Mário Cravo Neto (Salvador, April 20, 1947 — Salvador, August 9, 2009) was a Brazilian photographer, sculptor and draughtsman. Mário Cravo, son of the sculptor Mário Cravo Júnior, is considered one of the most important photographers of Brazil. Since his early life, he was in contact with circle of artists and, when an adolescent, he met with Pierre Verger, friend of his father. In 1968, he studied for two years at the Art Students League of New York. After that, he returned to Brazil and first exhibits the sculptures created in New York at the 12th São Paulo Art Biennial. He worked mainly with black-and-white photography, and representing the religion of Candomble. In 2005, he exhibited at Rencontres d'Arles festival. He died in 2009 in Salvador due to skin cancer. Neto is the father of Brazilian photographer Christian Cravo.  || Q: what is Mário Cravo Júnior to Christian Cravo?",
+          "output": "grandfather",
+          "predict_certificate": "grandson",
+          "predict_certificate_goldread": "grandfather",
+          "predict_conf_thresh_verbalized": "grandfather",
+          "predict_conf_thresh_sc_margin": "grandfather",
+          "predict_conf_thresh_ptrue": "grandfather",
+          "predict_conf_thresh_negent": "grandfather",
+          "predict_commit_argmax": "grandfather",
+          "predict_pot": "grandfather",
+          "predict_sc": "grandfather",
+          "metadata_slice": "docred",
+          "metadata_stratum": "deduction_required",
+          "metadata_is_absent": false,
+          "metadata_reader": "gemini-3.1-flash-lite",
+          "metadata_doc_id": "docred::Mário Cravo Neto",
+          "metadata_title": "Mário Cravo Neto",
+          "metadata_qsrc": 16,
+          "metadata_qtgt": 5,
+          "metadata_qsrc_name": "Christian Cravo",
+          "metadata_qtgt_name": "Mário Cravo Júnior",
+          "metadata_hop": 2,
+          "metadata_composed_only": true,
+          "metadata_gold_primitive": "inv-grand",
+          "metadata_certificate_primitive": "grand",
+          "metadata_raw_named": true,
+          "metadata_conf_verbalized": 1.0,
+          "metadata_conf_sc_margin": 1.0,
+          "metadata_conf_ptrue": 1.0,
+          "metadata_conf_negent": 1.0,
+          "metadata_sc_semantic_entropy": 0.0,
+          "metadata_n_extracted_edges": 2,
+          "metadata_certificate_info": null
+        },
+        {
+          "input": "In the Hindu epic Mahabharata, Uttarā or Anglicized as Uttaraa (उत्तरा) was daughter of King Virata, at whose court the Pandavas spent a year in concealment during their exile. She was sister of Prince Uttar. It is also believed that Uttaraa had learnt dance from Arjuna during the Pandavas' year of exile-in the Matsya Kingdom. Living incognito, as was the term of the banishment, Arjuna lived a life of a eunuch and practiced his art of dance learnt from the apsaras in heaven. Once King Virata realized who Uttaraa's dance teacher was, he immediately proposed to offer his daughter to Arjuna. However, Arjuna explained to King Virata the doting relationship that a teacher has with his/her student is like that of a parent and child. He then proposed to make Uttaraa his daughter by marrying her to his son, Abhimanyu. Uttaraa was widowed at a very young age when Abhimanyu was killed in the Kurukshetra war. When Abhimanyu died, Uttaraa tried to burn herself on the pyre of Abhimanyu, but Krishna stopped her from doing so, informing her of her pregnancy. Towards the end of the Mahabharata war, with Uttaraa in labor, Ashwathama, son of Dronacharya, while trying to avenge the defeat of Duryodha  || Q: what is Parikshit to Virata?",
+          "output": "grandson",
+          "predict_certificate": "ABSTAIN",
+          "predict_certificate_goldread": "grandson",
+          "predict_conf_thresh_verbalized": "grandson",
+          "predict_conf_thresh_sc_margin": "grandson",
+          "predict_conf_thresh_ptrue": "grandson",
+          "predict_conf_thresh_negent": "grandson",
+          "predict_commit_argmax": "grandson",
+          "predict_pot": "grandson",
+          "predict_sc": "grandson",
+          "metadata_slice": "docred",
+          "metadata_stratum": "deduction_required",
+          "metadata_is_absent": false,
+          "metadata_reader": "gemini-3.1-flash-lite",
+          "metadata_doc_id": "docred::Uttarā (Mahabharata)",
+          "metadata_title": "Uttarā (Mahabharata)",
+          "metadata_qsrc": 3,
+          "metadata_qtgt": 18,
+          "metadata_qsrc_name": "Virata",
+          "metadata_qtgt_name": "Parikshit",
+          "metadata_hop": 2,
+          "metadata_composed_only": true,
+          "metadata_gold_primitive": "grand",
+          "metadata_certificate_primitive": null,
+          "metadata_raw_named": true,
+          "metadata_conf_verbalized": 1.0,
+          "metadata_conf_sc_margin": 1.0,
+          "metadata_conf_ptrue": 1.0,
+          "metadata_conf_negent": 1.0,
+          "metadata_sc_semantic_entropy": 0.0,
+          "metadata_n_extracted_edges": 6,
+          "metadata_certificate_info": null
+        },
+        {
+          "input": "In the Hindu epic Mahabharata, Uttarā or Anglicized as Uttaraa (उत्तरा) was daughter of King Virata, at whose court the Pandavas spent a year in concealment during their exile. She was sister of Prince Uttar. It is also believed that Uttaraa had learnt dance from Arjuna during the Pandavas' year of exile-in the Matsya Kingdom. Living incognito, as was the term of the banishment, Arjuna lived a life of a eunuch and practiced his art of dance learnt from the apsaras in heaven. Once King Virata realized who Uttaraa's dance teacher was, he immediately proposed to offer his daughter to Arjuna. However, Arjuna explained to King Virata the doting relationship that a teacher has with his/her student is like that of a parent and child. He then proposed to make Uttaraa his daughter by marrying her to his son, Abhimanyu. Uttaraa was widowed at a very young age when Abhimanyu was killed in the Kurukshetra war. When Abhimanyu died, Uttaraa tried to burn herself on the pyre of Abhimanyu, but Krishna stopped her from doing so, informing her of her pregnancy. Towards the end of the Mahabharata war, with Uttaraa in labor, Ashwathama, son of Dronacharya, while trying to avenge the defeat of Duryodha  || Q: what is Parikshit to Arjuna?",
+          "output": "grandson",
+          "predict_certificate": "ABSTAIN",
+          "predict_certificate_goldread": "grandson",
+          "predict_conf_thresh_verbalized": "grandson",
+          "predict_conf_thresh_sc_margin": "grandson",
+          "predict_conf_thresh_ptrue": "grandson",
+          "predict_conf_thresh_negent": "grandson",
+          "predict_commit_argmax": "grandson",
+          "predict_pot": "grandson",
+          "predict_sc": "grandson",
+          "metadata_slice": "docred",
+          "metadata_stratum": "deduction_required",
+          "metadata_is_absent": false,
+          "metadata_reader": "gemini-3.1-flash-lite",
+          "metadata_doc_id": "docred::Uttarā (Mahabharata)",
+          "metadata_title": "Uttarā (Mahabharata)",
+          "metadata_qsrc": 6,
+          "metadata_qtgt": 18,
+          "metadata_qsrc_name": "Arjuna",
+          "metadata_qtgt_name": "Parikshit",
+          "metadata_hop": 2,
+          "metadata_composed_only": true,
+          "metadata_gold_primitive": "grand",
+          "metadata_certificate_primitive": null,
+          "metadata_raw_named": true,
+          "metadata_conf_verbalized": 1.0,
+          "metadata_conf_sc_margin": 1.0,
+          "metadata_conf_ptrue": 1.0,
+          "metadata_conf_negent": 1.0,
+          "metadata_sc_semantic_entropy": 0.0,
+          "metadata_n_extracted_edges": 6,
+          "metadata_certificate_info": null
+        }
+      ]
+    },
+    {
+      "dataset": "re-docred_absent",
+      "examples": [
+        {
+          "input": "Joe Garagiola Jr. (born 1952) is the senior vice president of standards and on-field operations for Major League Baseball. He was previously senior vice president of baseball operations, and before that the general manager of the Arizona Diamondbacks. He is the son of Joe Garagiola Sr., who played catcher for the St. Louis Cardinals and Pittsburgh Pirates in the late 1940s and early 1950s. In 1973, Garagiola, along with Chris Hart, appeared on the game show To Tell the Truth as impostors pretending to be police detective Richard Buggy. Garagiola's father and Hart's mother, Kitty Carlisle, were regular panelists on the show at the time and both appeared as part of a prank on their parents. He is an alumnus of Archbishop Stepinac High School, the University of Notre Dame and Georgetown University Law Center.  || Q: what is Chris Hart to Joe Garagiola Jr.?",
+          "output": "no-relation",
+          "predict_certificate": "ABSTAIN",
+          "predict_certificate_goldread": "ABSTAIN",
+          "predict_conf_thresh_verbalized": "ABSTAIN",
+          "predict_conf_thresh_sc_margin": "ABSTAIN",
+          "predict_conf_thresh_ptrue": "ABSTAIN",
+          "predict_conf_thresh_negent": "ABSTAIN",
+          "predict_commit_argmax": "ABSTAIN",
+          "predict_pot": "ABSTAIN",
+          "predict_sc": "ABSTAIN",
+          "metadata_slice": "re-docred",
+          "metadata_stratum": "no_derivation",
+          "metadata_is_absent": true,
+          "metadata_reader": "gemini-3.1-flash-lite",
+          "metadata_doc_id": "re-docred::Joe Garagiola Jr.",
+          "metadata_title": "Joe Garagiola Jr.",
+          "metadata_qsrc": 0,
+          "metadata_qtgt": 11,
+          "metadata_qsrc_name": "Joe Garagiola Jr.",
+          "metadata_qtgt_name": "Chris Hart",
+          "metadata_hop": 0,
+          "metadata_composed_only": false,
+          "metadata_gold_primitive": "no-relation",
+          "metadata_certificate_primitive": null,
+          "metadata_raw_named": false,
+          "metadata_conf_verbalized": 1.0,
+          "metadata_conf_sc_margin": 1.0,
+          "metadata_conf_ptrue": 1.0,
+          "metadata_conf_negent": 1.0,
+          "metadata_sc_semantic_entropy": 0.0,
+          "metadata_n_extracted_edges": 2,
+          "metadata_certificate_info": null
+        },
+        {
+          "input": "Joe Garagiola Jr. (born 1952) is the senior vice president of standards and on-field operations for Major League Baseball. He was previously senior vice president of baseball operations, and before that the general manager of the Arizona Diamondbacks. He is the son of Joe Garagiola Sr., who played catcher for the St. Louis Cardinals and Pittsburgh Pirates in the late 1940s and early 1950s. In 1973, Garagiola, along with Chris Hart, appeared on the game show To Tell the Truth as impostors pretending to be police detective Richard Buggy. Garagiola's father and Hart's mother, Kitty Carlisle, were regular panelists on the show at the time and both appeared as part of a prank on their parents. He is an alumnus of Archbishop Stepinac High School, the University of Notre Dame and Georgetown University Law Center.  || Q: what is Kitty Carlisle to Joe Garagiola Jr.?",
+          "output": "no-relation",
+          "predict_certificate": "ABSTAIN",
+          "predict_certificate_goldread": "ABSTAIN",
+          "predict_conf_thresh_verbalized": "ABSTAIN",
+          "predict_conf_thresh_sc_margin": "ABSTAIN",
+          "predict_conf_thresh_ptrue": "ABSTAIN",
+          "predict_conf_thresh_negent": "ABSTAIN",
+          "predict_commit_argmax": "ABSTAIN",
+          "predict_pot": "ABSTAIN",
+          "predict_sc": "ABSTAIN",
+          "metadata_slice": "re-docred",
+          "metadata_stratum": "no_derivation",
+          "metadata_is_absent": true,
+          "metadata_reader": "gemini-3.1-flash-lite",
+          "metadata_doc_id": "re-docred::Joe Garagiola Jr.",
+          "metadata_title": "Joe Garagiola Jr.",
+          "metadata_qsrc": 0,
+          "metadata_qtgt": 15,
+          "metadata_qsrc_name": "Joe Garagiola Jr.",
+          "metadata_qtgt_name": "Kitty Carlisle",
+          "metadata_hop": 0,
+          "metadata_composed_only": false,
+          "metadata_gold_primitive": "no-relation",
+          "metadata_certificate_primitive": null,
+          "metadata_raw_named": false,
+          "metadata_conf_verbalized": 1.0,
+          "metadata_conf_sc_margin": 1.0,
+          "metadata_conf_ptrue": 0.0,
+          "metadata_conf_negent": 1.0,
+          "metadata_sc_semantic_entropy": 0.0,
+          "metadata_n_extracted_edges": 2,
+          "metadata_certificate_info": null
+        },
+        {
+          "input": "Joe Garagiola Jr. (born 1952) is the senior vice president of standards and on-field operations for Major League Baseball. He was previously senior vice president of baseball operations, and before that the general manager of the Arizona Diamondbacks. He is the son of Joe Garagiola Sr., who played catcher for the St. Louis Cardinals and Pittsburgh Pirates in the late 1940s and early 1950s. In 1973, Garagiola, along with Chris Hart, appeared on the game show To Tell the Truth as impostors pretending to be police detective Richard Buggy. Garagiola's father and Hart's mother, Kitty Carlisle, were regular panelists on the show at the time and both appeared as part of a prank on their parents. He is an alumnus of Archbishop Stepinac High School, the University of Notre Dame and Georgetown University Law Center.  || Q: what is Chris Hart to Joe Garagiola Sr?",
+          "output": "no-relation",
+          "predict_certificate": "ABSTAIN",
+          "predict_certificate_goldread": "ABSTAIN",
+          "predict_conf_thresh_verbalized": "ABSTAIN",
+          "predict_conf_thresh_sc_margin": "ABSTAIN",
+          "predict_conf_thresh_ptrue": "ABSTAIN",
+          "predict_conf_thresh_negent": "ABSTAIN",
+          "predict_commit_argmax": "ABSTAIN",
+          "predict_pot": "ABSTAIN",
+          "predict_sc": "ABSTAIN",
+          "metadata_slice": "re-docred",
+          "metadata_stratum": "no_derivation",
+          "metadata_is_absent": true,
+          "metadata_reader": "gemini-3.1-flash-lite",
+          "metadata_doc_id": "re-docred::Joe Garagiola Jr.",
+          "metadata_title": "Joe Garagiola Jr.",
+          "metadata_qsrc": 4,
+          "metadata_qtgt": 11,
+          "metadata_qsrc_name": "Joe Garagiola Sr",
+          "metadata_qtgt_name": "Chris Hart",
+          "metadata_hop": 0,
+          "metadata_composed_only": false,
+          "metadata_gold_primitive": "no-relation",
+          "metadata_certificate_primitive": null,
+          "metadata_raw_named": false,
+          "metadata_conf_verbalized": 1.0,
+          "metadata_conf_sc_margin": 1.0,
+          "metadata_conf_ptrue": 0.0,
+          "metadata_conf_negent": 1.0,
+          "metadata_sc_semantic_entropy": 0.0,
+          "metadata_n_extracted_edges": 2,
+          "metadata_certificate_info": null
+        }
+      ]
+    },
+    {
+      "dataset": "re-docred_present",
+      "examples": [
+        {
+          "input": "Mário Cravo Neto (Salvador, April 20, 1947 — Salvador, August 9, 2009) was a Brazilian photographer, sculptor and draughtsman. Mário Cravo, son of the sculptor Mário Cravo Júnior, is considered one of the most important photographers of Brazil. Since his early life, he was in contact with circle of artists and, when an adolescent, he met with Pierre Verger, friend of his father. In 1968, he studied for two years at the Art Students League of New York. After that, he returned to Brazil and first exhibits the sculptures created in New York at the 12th São Paulo Art Biennial. He worked mainly with black-and-white photography, and representing the religion of Candomble. In 2005, he exhibited at Rencontres d'Arles festival. He died in 2009 in Salvador due to skin cancer. Neto is the father of Brazilian photographer Christian Cravo.  || Q: what is Mário Cravo Júnior to Christian Cravo?",
+          "output": "grandfather",
+          "predict_certificate": "grandson",
+          "predict_certificate_goldread": "grandfather",
+          "predict_conf_thresh_verbalized": "grandfather",
+          "predict_conf_thresh_sc_margin": "grandfather",
+          "predict_conf_thresh_ptrue": "grandfather",
+          "predict_conf_thresh_negent": "grandfather",
+          "predict_commit_argmax": "grandfather",
+          "predict_pot": "grandfather",
+          "predict_sc": "grandfather",
+          "metadata_slice": "re-docred",
+          "metadata_stratum": "deduction_required",
+          "metadata_is_absent": false,
+          "metadata_reader": "gemini-3.1-flash-lite",
+          "metadata_doc_id": "re-docred::Mário Cravo Neto",
+          "metadata_title": "Mário Cravo Neto",
+          "metadata_qsrc": 16,
+          "metadata_qtgt": 5,
+          "metadata_qsrc_name": "Christian Cravo",
+          "metadata_qtgt_name": "Mário Cravo Júnior",
+          "metadata_hop": 2,
+          "metadata_composed_only": true,
+          "metadata_gold_primitive": "inv-grand",
+          "metadata_certificate_primitive": "grand",
+          "metadata_raw_named": true,
+          "metadata_conf_verbalized": 1.0,
+          "metadata_conf_sc_margin": 1.0,
+          "metadata_conf_ptrue": 1.0,
+          "metadata_conf_negent": 1.0,
+          "metadata_sc_semantic_entropy": 0.0,
+          "metadata_n_extracted_edges": 2,
+          "metadata_certificate_info": null
+        },
+        {
+          "input": "Joe Garagiola Jr. (born 1952) is the senior vice president of standards and on-field operations for Major League Baseball. He was previously senior vice president of baseball operations, and before that the general manager of the Arizona Diamondbacks. He is the son of Joe Garagiola Sr., who played catcher for the St. Louis Cardinals and Pittsburgh Pirates in the late 1940s and early 1950s. In 1973, Garagiola, along with Chris Hart, appeared on the game show To Tell the Truth as impostors pretending to be police detective Richard Buggy. Garagiola's father and Hart's mother, Kitty Carlisle, were regular panelists on the show at the time and both appeared as part of a prank on their parents. He is an alumnus of Archbishop Stepinac High School, the University of Notre Dame and Georgetown University Law Center.  || Q: what is Garagiola to Joe Garagiola Jr.?",
+          "output": "brother",
+          "predict_certificate": "ABSTAIN",
+          "predict_certificate_goldread": "brother",
+          "predict_conf_thresh_verbalized": "father",
+          "predict_conf_thresh_sc_margin": "father",
+          "predict_conf_thresh_ptrue": "father",
+          "predict_conf_thresh_negent": "father",
+          "predict_commit_argmax": "father",
+          "predict_pot": "father",
+          "predict_sc": "father",
+          "metadata_slice": "re-docred",
+          "metadata_stratum": "deduction_required",
+          "metadata_is_absent": false,
+          "metadata_reader": "gemini-3.1-flash-lite",
+          "metadata_doc_id": "re-docred::Joe Garagiola Jr.",
+          "metadata_title": "Joe Garagiola Jr.",
+          "metadata_qsrc": 0,
+          "metadata_qtgt": 10,
+          "metadata_qsrc_name": "Joe Garagiola Jr.",
+          "metadata_qtgt_name": "Garagiola",
+          "metadata_hop": 2,
+          "metadata_composed_only": false,
+          "metadata_gold_primitive": "sibling",
+          "metadata_certificate_primitive": null,
+          "metadata_raw_named": true,
+          "metadata_conf_verbalized": 1.0,
+          "metadata_conf_sc_margin": 1.0,
+          "metadata_conf_ptrue": 1.0,
+          "metadata_conf_negent": 1.0,
+          "metadata_sc_semantic_entropy": 0.0,
+          "metadata_n_extracted_edges": 2,
+          "metadata_certificate_info": null
+        },
+        {
+          "input": "Paul MacDermid (born April 14, 1963 in Chesley, Ontario) is a retired professional ice hockey right winger who played 690 games in the National Hockey League (NHL) for the Hartford Whalers, Winnipeg Jets, Washington Capitals, and Quebec Nordiques. MacDermid was selected 61st overall in the 1981 NHL Entry Draft by Hartford. He played his junior career with the Windsor Spitfires of the Ontario Hockey League. His oldest son, Lane was selected by the Boston Bruins in the 2009 NHL Entry Draft. Lane scored his first career NHL goal exactly 31 years after the same was done by Paul. They are only the second pair of father and son who scored their first goals on one date. His younger son, Kurtis is a defenseman for the Los Angeles Kings.  || Q: what is Lane to Kurtis?",
+          "output": "brother",
+          "predict_certificate": "brother",
+          "predict_certificate_goldread": "brother",
+          "predict_conf_thresh_verbalized": "brother",
+          "predict_conf_thresh_sc_margin": "brother",
+          "predict_conf_thresh_ptrue": "brother",
+          "predict_conf_thresh_negent": "brother",
+          "predict_commit_argmax": "brother",
+          "predict_pot": "brother",
+          "predict_sc": "brother",
+          "metadata_slice": "re-docred",
+          "metadata_stratum": "deduction_required",
+          "metadata_is_absent": false,
+          "metadata_reader": "gemini-3.1-flash-lite",
+          "metadata_doc_id": "re-docred::Paul MacDermid",
+          "metadata_title": "Paul MacDermid",
+          "metadata_qsrc": 20,
+          "metadata_qtgt": 15,
+          "metadata_qsrc_name": "Kurtis",
+          "metadata_qtgt_name": "Lane",
+          "metadata_hop": 2,
+          "metadata_composed_only": false,
+          "metadata_gold_primitive": "sibling",
+          "metadata_certificate_primitive": "sibling",
+          "metadata_raw_named": true,
+          "metadata_conf_verbalized": 1.0,
+          "metadata_conf_sc_margin": 1.0,
+          "metadata_conf_ptrue": 1.0,
+          "metadata_conf_negent": 1.0,
+          "metadata_sc_semantic_entropy": 0.0,
+          "metadata_n_extracted_edges": 2,
+          "metadata_certificate_info": null
+        }
+      ]
+    }
+  ]
+}

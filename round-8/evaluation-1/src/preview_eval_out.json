@@ -1,0 +1,582 @@
+{
+  "metadata": {
+    "evaluation_name": "eval_iter8_dir4: signal-agnostic mixed-pool capability-gap pivot + 16-cell caught scaffold",
+    "description": "Pure $0 re-analysis (numpy/json only; no LLM, no network). Reproduce-verifies every carried literal from per-query rows of two executed experiments (CLUTRR battery art_LeRQRGHJZcdQ; Re-DocRED battery ...",
+    "spend": {
+      "cumulative_usd": 0.0,
+      "n_llm_calls": 0,
+      "n_network_calls": 0
+    },
+    "seed": 20260617,
+    "bootstrap_B": 10000,
+    "signals": [
+      "verbalized",
+      "sc_margin",
+      "ptrue"
+    ],
+    "source_artifacts": {
+      "clutrr_battery": "art_LeRQRGHJZcdQ (iter6/experiment_1)",
+      "redocred_battery": "art_htcr8yOZLCQy (iter7/experiment_1)",
+      "clutrr_pipeline": "art_0a7i481ZRwS1 (iter3/experiment_1)",
+      "redocred_corpus": "art_NUWTxBVWENIJ (iter6/dataset_1)",
+      "fuzzy": "art_I22c-J7-OcXl (iter5/experiment_2)",
+      "located_in_pending": "art_RfjDpsGkBXDG (iter8 located-in dataset; filled iter-9)",
+      "inherited_decomposition_quoted": "art_D0cHQUJ8kY75 (prior eval; +0.673/+0.0025 not recomputed)"
+    },
+    "reproduction_gate": {
+      "n_checks": 80,
+      "n_pass": 80,
+      "n_recomputed": 62,
+      "reproduction_ok": true,
+      "seed": 20260617,
+      "bootstrap_B": 10000,
+      "tol": 0.001,
+      "checks": [
+        {
+          "key": "clutrr_factA_raw_absent_hallucination",
+          "carried": 0.4722,
+          "recomputed": 0.4722,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "clutrr_gemini_crux_survival_verbalized",
+          "carried": 0.4353,
+          "recomputed": 0.4353,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        },
+        {
+          "key": "clutrr_gemini_crux_survival_sc_margin",
+          "carried": 0.7176,
+          "recomputed": 0.7176,
+          "matches": true,
+          "was_recomputed": true,
+          "note": ""
+        }
+      ],
+      "note": "Every load-bearing point estimate is RECOMPUTED from the per-query rows: CLUTRR (282 records, original iter-3 order) and Re-DocRED (728 primary records, original build order). Re-DocRED FACT A, crux s..."
+    },
+    "crux_survival_caught_table": {
+      "clutrr": {
+        "gemini": {
+          "verbalized": {
+            "survival": 0.4353,
+            "caught": 0.5647,
+            "recomputed": true
+          },
+          "sc_margin": {
+            "survival": 0.7176,
+            "caught": 0.2824,
+            "recomputed": true
+          },
+          "ptrue": {
+            "survival": 0.2471,
+            "caught": 0.7529,
+            "recomputed": true
+          },
+          "negent": {
+            "survival": 0.7176,
+            "caught": 0.2824,
+            "recomputed": true
+          }
+        },
+        "deepseek": {
+          "verbalized": {
+            "survival": 0.6724,
+            "caught": 0.3276,
+            "recomputed": false
+          },
+          "sc_margin": {
+            "survival": 0.2241,
+            "caught": 0.7759,
+            "recomputed": false
+          },
+          "ptrue": {
+            "survival": 0.1034,
+            "caught": 0.8966,
+            "recomputed": false
+          },
+          "negent": {
+            "survival": 0.2241,
+            "caught": 0.7759,
+            "recomputed": false
+          }
+        }
+      },
+      "re-docred": {
+        "gemini": {
+          "verbalized": {
+            "survival": 0.5083,
+            "caught": 0.4917,
+            "recomputed": true
+          },
+          "sc_margin": {
+            "survival": 0.85,
+            "caught": 0.15,
+            "recomputed": true
+          },
+          "ptrue": {
+            "survival": 0.4833,
+            "caught": 0.5167,
+            "recomputed": true
+          },
+          "negent": {
+            "survival": 0.85,
+            "caught": 0.15,
+            "recomputed": true
+          }
+        },
+        "deepseek": {
+          "verbalized": {
+            "survival": 0.4118,
+            "caught": 0.5882,
+            "recomputed": false
+          },
+          "sc_margin": {
+            "survival": 0.2941,
+            "caught": 0.7059,
+            "recomputed": false
+          },
+          "ptrue": {
+            "survival": 0.3235,
+            "caught": 0.6765,
+            "recomputed": false
+          },
+          "negent": {
+            "survival": 0.2941,
+            "caught": 0.7059,
+            "recomputed": false
+          }
+        }
+      }
+    },
+    "fact_a_per_cell": {
+      "clutrr": {
+        "gemini": 0.4722,
+        "deepseek": 0.4833
+      },
+      "re-docred": {
+        "gemini": 0.3261,
+        "deepseek": 0.3178
+      }
+    },
+    "fact_a_vs_fact_b_reading": {
+      "FACT_A_robust": {
+        "claim": "the high-confidence absent-relation FABRICATION RATE is corpus-and-reader-transferable: all four FACT-A rates lie in a tight band across BOTH corpora AND BOTH readers -- this is the genuine non-circul...",
+        "fact_a_values": [
+          0.4722,
+          0.4833,
+          0.3261
+        ],
+        "band_lo": 0.3178,
+        "band_hi": 0.4833,
+        "in_0_32_to_0_48_band": true
+      },
+      "FACT_B_reader_signal_dependent": {
+        "claim": "verbalized confidence is the MOST robustly blind (its caught fraction never reaches a strong majority); the DISPERSION signals (sc_margin, ptrue, negent) swing from blind for gemini to catching the MA...",
+        "verbalized_caught_four_cells": [
+          0.5647,
+          0.3276,
+          0.4917
+        ],
+        "verbalized_max_caught": 0.5882,
+        "gemini_dispersion_caught_examples": {
+          "clutrr_gemini_negent": 0.2824,
+          "redocred_gemini_sc_margin": 0.15,
+          "redocred_gemini_negent": 0.15
+        },
+        "deepseek_dispersion_caught_examples": {
+          "clutrr_deepseek_sc_margin": 0.7759,
+          "clutrr_deepseek_ptrue": 0.8966,
+          "clutrr_deepseek_negent": 0.7759,
+          "redocred_deepseek_sc_margin": 0.7059,
+          "redocred_deepseek_ptrue": 0.6765,
+          "redocred_deepseek_negent": 0.7059
+        }
+      },
+      "decision": "DROP 'the entire confidence/uncertainty family is structurally blind' and 'reader-diverse blindness' as the headline; REPLACE with the signal-agnostic mixed-pool capability gap (see capability_gap_spi..."
+    },
+    "dropped_claims": [
+      "family-level structural blindness",
+      "reader-diverse blindness"
+    ],
+    "capability_gap_spine": {
+      "prose": "The load-bearing finding is a SIGNAL-AGNOSTIC MIXED-POOL CAPABILITY GAP, not a claim about any one confidence signal. On a mixed pool of answerable (present) and unanswerable (absent) relational queri...",
+      "numbers": {
+        "powered_on": "clutrr",
+        "clutrr_certificate_selacc": 0.8267,
+        "clutrr_best_signal_selacc": 0.44,
+        "clutrr_worst_signal_selacc": 0.3733,
+        "clutrr_matched_coverage": 0.266,
+        "clutrr_cw_reductions": {
+          "verbalized": 0.1099,
+          "sc_margin": 0.1206,
+          "ptrue": 0.1028,
+          "negent": 0.1206
+        },
+        "clutrr_cw_reduction_cis": {
+          "verbalized": [
+            0.0543,
+            0.1703
+          ],
+          "sc_margin": [
+            0.0486,
+            0.1957
+          ],
+          "ptrue": [
+            0.0395,
+            0.1706
+          ],
+          "negent": [
+            0.0486,
+            0.1957
+          ]
+        },
+        "clutrr_holm_p_adj": {
+          "verbalized": 0.0004,
+          "sc_margin": 0.0027,
+          "ptrue": 0.0027,
+          "negent": 0.0027
+        },
+        "clutrr_all_cis_exclude_0": true,
+        "clutrr_all_holm_rejected": true,
+        "redocred_certificate_selacc": 0.475,
+        "redocred_best_signal_selacc": 0.675,
+        "redocred_cw_reductions": {
+          "verbalized": -0.0549,
+          "sc_margin": -0.0343,
+          "ptrue": -0.0467,
+          "negent": -0.0343
+        },
+        "redocred_holm_p_adj": {
+          "verbalized": 1.0,
+          "sc_margin": 1.0,
+          "ptrue": 1.0,
+          "negent": 1.0
+        },
+        "redocred_all_cis_include_0": true,
+        "redocred_any_holm_rejected": false,
+        "binding_constraint": "extraction recall 0.3762 (gold-read ceiling 1.0/1.0/1.0 isolates extraction)",
+        "pending": "located-in same-component-sibling net-win lands the gap on a NON-by-construction regime (iter-9)"
+      }
+    },
+    "definitional_vs_empirical": {
+      "definitional": "Definitional half (state ONCE, briefly, as the explanatory mechanism -- NOT a contribution): a high-confidence, self-consistent fabrication survives ANY dispersion threshold BY CONSTRUCTION. If the mo...",
+      "empirical": "Empirical half (LEAD with this -- it is the measured, non-obvious part): how OFTEN does the LLM actually emit absent-relation fabrications at high confidence and low dispersion, and how strongly does ..."
+    },
+    "softened_overclaims": {
+      "removes_none_caveat": "The statement 'no confidence signal removes a single hallucination' holds ONLY at the LLM's NATURAL (no-abstention) operating point: at that coverage every named-on-absent answer is by definition wron...",
+      "at_certificate_coverage": "At the CERTIFICATE's (lower) coverage the picture changes and we say so: a dispersion threshold tuned to the certificate's coverage already CATCHES a substantial share of the hallucinations. P(True) c...",
+      "delete_marginal_framing": "DELETE the marginal '>=3 of 4 signals keep >=50%' / '>=2 of 4 commit >=50%' framing. It obscures the strong reader-dependence. Replace it with the per-cell caught fractions from the 16-cell table so t...",
+      "ptrue_caught_clutrr_gemini": 0.7529,
+      "ptrue_caught_redocred_gemini": 0.5167,
+      "evidence_tag": "REAL-LLM-READ"
+    },
+    "fact_a_vs_fact_b_prose": "Read the 16-cell table as two separate facts. FACT A is ROBUST: the high-confidence absent-relation FABRICATION RATE sits in a tight 0.32-0.48 band across BOTH corpora and BOTH readers (CLUTRR 0.472 g...",
+    "abstract_front_matter": "This paper studies a closure-certified DEDUCTION SUB-MODULE -- a sound symbolic forward-closure over LLM-extracted relations that abstains rather than guess -- and explicitly NOT a full operational te...",
+    "operational_arm_cut": {
+      "cut": "concatenated-kinship",
+      "reason": "56/56 trivial-by-construction",
+      "keep": "bracket-selected temporal as feasibility only",
+      "recommendation": "CUT the concatenated-kinship arm of the operational ~3000-char case study ENTIRELY. Its 56/56 cross-story absent abstentions are trivial BY CONSTRUCTION -- concatenated stories share no entities, so t..."
+    },
+    "structural_by_construction_paragraph": "A note on what the certificate's 2.8% confident-wrong rate on CLUTRR absent pairs does and does not establish. In the CLUTRR construction an absent pair is DEFINED as two entities in DIFFERENT connect...",
+    "one_thesis_table": [
+      {
+        "claim_id": "SPINE",
+        "claim_text": "FACT A (the raw LLM confidently FABRICATES absent relations: CLUTRR 47.2%/48.3%, Re-DocRED 32.6%/31.8%) + the SIGNAL-AGNOSTIC MIXED-POOL CAPABILITY GAP (no single confidence threshold can simultaneous...",
+        "headline_numbers": "FACT A 0.472/0.483/0.326/0.318; capability gap (CLUTRR) selacc 0.827 vs 0.37-0.44; Holm p_adj 0.0004/0.0027/0.0027/0.0027",
+        "mechanism_concession": "closure MECHANISM INHERITED: +0.673 inherited / +0.0025 novel",
+        "evidence_tag": "REAL-LLM-READ",
+        "role": "HEADLINE",
+        "is_spine": true,
+        "status": "ESTABLISHED on CLUTRR + cross-family; natural-prose capability gap PENDING (extraction-gated)"
+      },
+      {
+        "claim_id": "P1-located-in-net-win",
+        "claim_text": "PENDING: located-in SAME-COMPONENT-SIBLING net-win on art_RfjDpsGkBXDG (~20,814 same-component-sibling pairs -- entities in the SAME connected component with NO valid derivation path, so abstention is...",
+        "headline_numbers": "PENDING (filled iter-9)",
+        "mechanism_concession": "",
+        "evidence_tag": "NATURAL-CORPUS-PENDING",
+        "role": "PENDING",
+        "is_spine": false,
+        "status": "SLOT -- filled iter-9"
+      },
+      {
+        "claim_id": "P2-query-side-verifier",
+        "claim_text": "PENDING: the QUERY-SIDE FALSE-PREMISE VERIFIER baseline ('are these two entities related at all?' / self-verification pass) -- the established method for this failure mode. The certificate's claim is ...",
+        "headline_numbers": "PENDING (filled iter-9)",
+        "mechanism_concession": "",
+        "evidence_tag": "NATURAL-CORPUS-PENDING",
+        "role": "PENDING",
+        "is_spine": false,
+        "status": "SLOT -- filled iter-9"
+      }
+    ],
+    "false_premise_positioning": "Position the contribution against the false-premise / unanswerable-question literature, NOT merely the neuro-symbolic literature. The raw LLM confidently answering an absent relational query is a COMP...",
+    "non_circular_vs_structural_ledger": [
+      {
+        "key": "FACT_A_clutrr_gemini",
+        "value": 0.4722,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "SPINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_A_clutrr_deepseek",
+        "value": 0.4833,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "SPINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_A_redocred_gemini",
+        "value": 0.3261,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "SPINE",
+        "source_artifact": "art_htcr8yOZLCQy",
+        "recomputed": true,
+        "matches_carried": true
+      }
+    ],
+    "count_breakdown": {
+      "re_docred_primary": {
+        "present": 360,
+        "absent": 368
+      },
+      "docred_secondary": {
+        "present": 116,
+        "absent": 209,
+        "absent_status": "DOWNGRADED (vanilla DocRED false-negatives)"
+      },
+      "combined": {
+        "present": 476,
+        "absent": 577,
+        "arithmetic": "360+116=476 present; 368+209=577 absent"
+      },
+      "fix_sentence": "The Re-DocRED natural-text corpus reports two figure pairs that are sometimes confused: the PRIMARY trustworthy-absent slice (re-docred) supplies 360 present multi-hop queries and 368 absent pairs, wh..."
+    },
+    "fuzzy_numbers": {
+      "spatial_unsound_reads_caught": "5/5",
+      "spatial_certificate_caught_fraction": 1.0,
+      "spatial_n_silent_wrong_missed": 0,
+      "spatial_commit_argmax_confident_wrong": 0.364,
+      "kinship_commit_argmax_confident_wrong": 0.2162,
+      "spatial_frac_conf_1p0": 0.0,
+      "kinship_frac_conf_1p0": 0.0,
+      "modeP_memorized_frac_conf_1p0": 1.0,
+      "spatial_ece_per_candidate": 0.1423,
+      "kinship_ece_per_candidate": 0.1105
+    },
+    "headline_structure_guidance": [
+      "LEAD with the SIGNAL-AGNOSTIC MIXED-POOL CAPABILITY GAP (one scalar knob cannot separate confident-right-present from confident-wrong-absent), powered on CLUTRR. This is the spine and it survives the ...",
+      "Present the 16-cell per-signal x reader x corpus SURVIVAL/CAUGHT table as the centerpiece evidence. Split FACT A (robust 0.32-0.48 fabrication band across both corpora and readers) from FACT B (reader...",
+      "DROP the prior headlines 'the entire confidence/uncertainty family is structurally blind' and 'reader-diverse blindness' -- the paper's own cross-reader data contradict them. The capability gap replac..."
+    ],
+    "evidence_tag_legend": {
+      "REAL-LLM-READ": "genuine OpenRouter LLM completion on real text",
+      "REAL-LLM-READ-ON-SYNTHETIC": "genuine LLM read but on templated/symbolic substrate",
+      "SYNTHETIC-CHANNEL": "calibrated synthetic error channel (no LLM)",
+      "GOLD-ONLY-GATE": "deterministic gold-graph engine check (0 LLM)",
+      "THEOREM": "proved by construction",
+      "NATURAL-CORPUS-PENDING": "slot to be filled by the iter-9 located-in run"
+    },
+    "ledger_side_legend": {
+      "NON_CIRCULAR": "property of the raw LLM / signals, independent of the certificate (load-bearing)",
+      "NON_CIRCULAR_CONDITIONAL": "certificate wins, interpretable only given FACT A + FACT B (the capability gap)",
+      "STRUCTURAL_BY_CONSTRUCTION": "near-tautological given the disconnected-components setup; must not headline",
+      "INHERITED": "standard neuro-symbolic premise inherited from prior work",
+      "MEASURED": "directly measured quantity (extraction; not improved)",
+      "PENDING": "to be filled by the iter-9 natural-corpus located-in run"
+    }
+  },
+  "metrics_agg": {
+    "total_llm_spend_usd": 0.0,
+    "n_gate_checks": 80.0,
+    "n_gate_pass": 80.0,
+    "n_gate_recomputed": 62.0,
+    "reproduction_ok": 1.0,
+    "factA_clutrr_gemini": 0.4722,
+    "factA_clutrr_deepseek": 0.4833,
+    "factA_redocred_gemini": 0.3261,
+    "factA_redocred_deepseek": 0.3178,
+    "factA_band_lo": 0.3178,
+    "factA_band_hi": 0.4833,
+    "capgap_clutrr_certificate_selacc": 0.8267,
+    "capgap_clutrr_best_signal_selacc": 0.44,
+    "capgap_clutrr_worst_holm_p_adj": 0.0027,
+    "capgap_redocred_certificate_selacc": 0.475,
+    "capgap_redocred_best_signal_selacc": 0.675,
+    "capgap_redocred_worst_holm_p_adj": 1.0,
+    "ptrue_caught_clutrr_gemini": 0.7529,
+    "ptrue_caught_redocred_gemini": 0.5167,
+    "redocred_gold_read_present_coverage": 1.0,
+    "redocred_llm_read_present_coverage": 0.4833,
+    "redocred_over_abstain_present": 0.5167,
+    "atomic_recall_natural": 0.3762,
+    "atomic_recall_templated": 0.5324,
+    "inherited_gap_increment": 0.673,
+    "novel_increment": 0.0025,
+    "count_redocred_present": 360.0,
+    "count_redocred_absent": 368.0,
+    "count_combined_present": 476.0,
+    "count_combined_absent": 577.0,
+    "caught_clutrr_gemini_verbalized": 0.5647,
+    "caught_clutrr_gemini_sc_margin": 0.2824,
+    "caught_clutrr_gemini_ptrue": 0.7529,
+    "caught_clutrr_gemini_negent": 0.2824,
+    "caught_clutrr_deepseek_verbalized": 0.3276,
+    "caught_clutrr_deepseek_sc_margin": 0.7759,
+    "caught_clutrr_deepseek_ptrue": 0.8966,
+    "caught_clutrr_deepseek_negent": 0.7759,
+    "caught_redocred_gemini_verbalized": 0.4917,
+    "caught_redocred_gemini_sc_margin": 0.15,
+    "caught_redocred_gemini_ptrue": 0.5167,
+    "caught_redocred_gemini_negent": 0.15,
+    "caught_redocred_deepseek_verbalized": 0.5882,
+    "caught_redocred_deepseek_sc_margin": 0.7059,
+    "caught_redocred_deepseek_ptrue": 0.6765,
+    "caught_redocred_deepseek_negent": 0.7059
+  },
+  "datasets": [
+    {
+      "dataset": "crux_caught_table",
+      "examples": [
+        {
+          "input": "clutrr/gemini/verbalized",
+          "output": "{\"survival\": 0.4353, \"caught\": 0.5647, \"fact_a\": 0.4722}",
+          "metadata_corpus": "clutrr",
+          "metadata_reader": "gemini",
+          "metadata_signal": "verbalized",
+          "metadata_recomputed": true,
+          "metadata_fact_a": 0.4722,
+          "eval_survival": 0.4353,
+          "eval_caught": 0.5647,
+          "eval_fact_a": 0.4722,
+          "eval_recomputed": 1.0
+        },
+        {
+          "input": "clutrr/gemini/sc_margin",
+          "output": "{\"survival\": 0.7176, \"caught\": 0.2824, \"fact_a\": 0.4722}",
+          "metadata_corpus": "clutrr",
+          "metadata_reader": "gemini",
+          "metadata_signal": "sc_margin",
+          "metadata_recomputed": true,
+          "metadata_fact_a": 0.4722,
+          "eval_survival": 0.7176,
+          "eval_caught": 0.2824,
+          "eval_fact_a": 0.4722,
+          "eval_recomputed": 1.0
+        },
+        {
+          "input": "clutrr/gemini/ptrue",
+          "output": "{\"survival\": 0.2471, \"caught\": 0.7529, \"fact_a\": 0.4722}",
+          "metadata_corpus": "clutrr",
+          "metadata_reader": "gemini",
+          "metadata_signal": "ptrue",
+          "metadata_recomputed": true,
+          "metadata_fact_a": 0.4722,
+          "eval_survival": 0.2471,
+          "eval_caught": 0.7529,
+          "eval_fact_a": 0.4722,
+          "eval_recomputed": 1.0
+        }
+      ]
+    },
+    {
+      "dataset": "non_circular_facts_ledger",
+      "examples": [
+        {
+          "input": "FACT_A_clutrr_gemini",
+          "output": "0.4722",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "NON_CIRCULAR",
+          "metadata_role": "SPINE",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": true,
+          "metadata_matches_carried": true,
+          "eval_value": 0.4722,
+          "eval_recomputed": 1.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "FACT_A_clutrr_deepseek",
+          "output": "0.4833",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "NON_CIRCULAR",
+          "metadata_role": "SPINE",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": false,
+          "metadata_matches_carried": true,
+          "eval_value": 0.4833,
+          "eval_recomputed": 0.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "FACT_A_redocred_gemini",
+          "output": "0.3261",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "NON_CIRCULAR",
+          "metadata_role": "SPINE",
+          "metadata_source_artifact": "art_htcr8yOZLCQy",
+          "metadata_recomputed": true,
+          "metadata_matches_carried": true,
+          "eval_value": 0.3261,
+          "eval_recomputed": 1.0,
+          "eval_matches_carried": 1.0
+        }
+      ]
+    },
+    {
+      "dataset": "one_thesis_contribution_table",
+      "examples": [
+        {
+          "input": "SPINE",
+          "output": "FACT A (the raw LLM confidently FABRICATES absent relations: CLUTRR 47.2%/48.3%, Re-DocRED 32.6%/31.8%) + the SIGNAL-AGNOSTIC MIXED-POOL CAPABILITY GAP (no single confidence threshold can simultaneous...",
+          "metadata_headline_numbers": "FACT A 0.472/0.483/0.326/0.318; capability gap (CLUTRR) selacc 0.827 vs 0.37-0.44; Holm p_adj 0.0004/0.0027/0.0027/0.0027",
+          "metadata_mechanism_concession": "closure MECHANISM INHERITED: +0.673 inherited / +0.0025 novel",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_role": "HEADLINE",
+          "metadata_status": "ESTABLISHED on CLUTRR + cross-family; natural-prose capability gap PENDING (extraction-gated)",
+          "eval_is_headline": 1.0,
+          "eval_is_pending": 0.0,
+          "eval_is_spine": 1.0
+        },
+        {
+          "input": "P1-located-in-net-win",
+          "output": "PENDING: located-in SAME-COMPONENT-SIBLING net-win on art_RfjDpsGkBXDG (~20,814 same-component-sibling pairs -- entities in the SAME connected component with NO valid derivation path, so abstention is...",
+          "metadata_headline_numbers": "PENDING (filled iter-9)",
+          "metadata_mechanism_concession": "",
+          "metadata_evidence_tag": "NATURAL-CORPUS-PENDING",
+          "metadata_role": "PENDING",
+          "metadata_status": "SLOT -- filled iter-9",
+          "eval_is_headline": 0.0,
+          "eval_is_pending": 1.0,
+          "eval_is_spine": 0.0
+        },
+        {
+          "input": "P2-query-side-verifier",
+          "output": "PENDING: the QUERY-SIDE FALSE-PREMISE VERIFIER baseline ('are these two entities related at all?' / self-verification pass) -- the established method for this failure mode. The certificate's claim is ...",
+          "metadata_headline_numbers": "PENDING (filled iter-9)",
+          "metadata_mechanism_concession": "",
+          "metadata_evidence_tag": "NATURAL-CORPUS-PENDING",
+          "metadata_role": "PENDING",
+          "metadata_status": "SLOT -- filled iter-9",
+          "eval_is_headline": 0.0,
+          "eval_is_pending": 1.0,
+          "eval_is_spine": 0.0
+        }
+      ]
+    }
+  ]
+}

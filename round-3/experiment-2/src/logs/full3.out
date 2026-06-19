@@ -1,0 +1,69 @@
+2026-06-17 19:21:40.101 | INFO     | __main__:main:1132 - Stage-0 closure + point-algebra self-verify PASSED.
+2026-06-17 19:21:40.113 | INFO     | __main__:main:1135 - Running synthetic matched-coverage backstop ($0) ...
+2026-06-17 19:22:00.267 | INFO     | __main__:main:1139 -   synth R_redundancy_K4    cov=0.97 acc=1.000 | gaps raw=+0.219 pot=+0.021 sc=+0.043 naive=+0.000
+2026-06-17 19:22:00.271 | INFO     | __main__:main:1139 -   synth R_redundancy_K8    cov=0.96 acc=1.000 | gaps raw=+0.260 pot=+0.002 sc=+0.064 naive=+0.000
+2026-06-17 19:22:00.274 | INFO     | __main__:main:1139 -   synth H_hop_L4_C2        cov=0.71 acc=1.000 | gaps raw=+0.211 pot=+nan sc=+0.026 naive=+nan
+2026-06-17 19:22:00.278 | INFO     | __main__:main:1139 -   synth H_hop_L6_C3        cov=0.69 acc=1.000 | gaps raw=+0.212 pot=+nan sc=+0.017 naive=+nan
+2026-06-17 19:22:00.280 | INFO     | __main__:main:1144 - Loading dataset /ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_1/gen_art/gen_art_dataset_1/full_data_out.json ...
+2026-06-17 19:22:16.331 | INFO     | __main__:main:1159 -   narrativetime  docs= 36 read_edges=2680 queries= 300 (len2=0 ge3=300) offset_ok=1.000
+2026-06-17 19:22:16.487 | INFO     | __main__:main:1159 -   tddman         docs= 34 read_edges=1429 queries= 300 (len2=150 ge3=150) offset_ok=1.000
+2026-06-17 19:22:16.513 | INFO     | __main__:main:1159 -   matres         docs=275 read_edges=   0 queries=   0 (len2=0 ge3=0) offset_ok=1.000
+2026-06-17 19:22:17.923 | INFO     | __main__:main:1226 - probe model=google/gemini-3.1-flash-lite cached_next? running again ...
+2026-06-17 19:22:17.983 | INFO     | __main__:main:1230 - cache round-trip cached=True (hits=2)
+2026-06-17 19:22:18.003 | INFO     | __main__:main:1239 - [primary] narrativetime: 2680 local edge reads ...
+2026-06-17 19:22:53.667 | INFO     | __main__:main:1247 -   done. cost=$0.0000 cache_hits=2682 pfail=0
+2026-06-17 19:22:53.677 | INFO     | __main__:main:1239 - [primary] tddman: 1429 local edge reads ...
+2026-06-17 19:23:13.047 | INFO     | __main__:main:1247 -   done. cost=$0.0000 cache_hits=4111 pfail=0
+2026-06-17 19:23:13.051 | INFO     | __main__:main:1239 - [primary] matres: 0 local edge reads ...
+2026-06-17 19:23:13.085 | INFO     | __main__:main:1247 -   done. cost=$0.0000 cache_hits=4111 pfail=0
+2026-06-17 19:23:13.089 | INFO     | __main__:main:1272 - [strong:deepseek/deepseek-v4-pro] narrativetime: 200 local edge reads (first 20 queries, ~163 scorable, cap 320) ...
+2026-06-17 19:23:16.356 | INFO     | __main__:main:1284 -   done. strong cost=$0.0000 pfail=3 models={'deepseek/deepseek-v4-pro': 200}
+2026-06-17 19:23:16.363 | INFO     | __main__:main:1272 - [strong:deepseek/deepseek-v4-pro] tddman: 162 local edge reads (first 25 queries, ~162 scorable, cap 320) ...
+2026-06-17 19:23:18.469 | INFO     | __main__:main:1284 -   done. strong cost=$0.0000 pfail=2 models={'deepseek/deepseek-v4-pro': 162}
+2026-06-17 19:23:18.689 | INFO     | __main__:main:1308 - [primary] PoT path-composition calls: 1651 ...
+2026-06-17 19:23:34.345 | INFO     | __main__:main:1334 - [primary@T=0.7] self-consistency samples: 3000 ...
+2026-06-17 19:24:17.693 | INFO     | __main__:main:1724 - Wrote /ai-inventor/aii_data/runs/run_IuSkWzF0As-P/3_invention_loop/iter_3/gen_art/gen_art_experiment_2/method_out.json (0.68 MB)
+2026-06-17 19:24:17.699 | INFO     | __main__:main:1725 - VERDICT=CONFIRM H1=True H2=True n_ded=600 cost=$0.0000 time=157s
+ALL CLOSURE TESTS PASSED (Allen 13^2=169 cells generated & cross-checked).
+
+=== HEADLINE ===
+  verdict: CONFIRM
+  H1_confirm_vs_PoT_and_SC: True
+  H2_confirm_hallucination_reduction: True
+  H1_modeA_vs_PoT_gap: 0.026548672566371723
+  H1_modeA_vs_SC_gap: 0.03539823008849563
+  H1_modeA_vs_raw_gap: -0.12389380530973448
+  H1_modeA_vs_naive_gap: 0.026548672566371723
+  H2_confident_wrong_reduction: 0.1852212389380531
+  H2_confident_wrong_modeA: 0.4247787610619469
+  H2_confident_wrong_raw: 0.61
+  primary_recall_narrativetime: 0.8563611491108071
+  strong_recall_narrativetime: 0.9316770186335404
+  strong_crosses_recall_gate: True
+  n_deduction_queries_scored: 600
+  modeA_singleton_to_correct_rate: 0.10833333333333334
+  modeA_resolution_coverage: 0.18833333333333332
+  applicability_verdict: GO-GENERAL
+  underpowered_lt70: False
+  tags: every number tagged REAL-LLM-READ / SYNTHETIC-CHANNEL / GOLD-ONLY-GATE / THEOREM
+
+=== H1 matched-coverage gaps (Mode-A minus baseline @ matched coverage) ===
+  vs pot   : gap=0.0265 ci95=[0.0454,0.3148] matched_cov=0.1883 modeA_acc=0.5752 base_acc=0.5487
+  vs sc    : gap=0.0354 ci95=[0.0161,0.2963] matched_cov=0.1883 modeA_acc=0.5752 base_acc=0.5398
+  vs raw   : gap=-0.1239 ci95=[-0.2130,0.0325] matched_cov=0.1883 modeA_acc=0.5752 base_acc=0.6991
+  vs naive : gap=0.0265 ci95=[-0.0068,0.0834] matched_cov=0.1883 modeA_acc=0.5752 base_acc=0.5487
+
+  H2 confident-wrong reduction=0.1852 ci95=[0.0864,0.2816] (modeA=0.4248 raw=0.6100)
+
+  Holm: {"H2_halluc": {"p": 0.0, "holm_threshold": 0.016666666666666666, "adjusted_significant": true}, "H1_vs_PoT": {"p": 0.007000000000000006, "holm_threshold": 0.025, "adjusted_significant": true}, "H1_vs_SC": {"p": 0.01849999999999996, "holm_threshold": 0.05, "adjusted_significant": true}}
+
+=== per-edge recall vs gate 0.9 (gate-crossing reconciliation) ===
+  narrativetime primary: recall=0.8564 ci95=[0.8322,0.8798] n=2193 verdict=CI_excludes_below_gate
+  narrativetime strong : recall=0.9317 ci95=[0.8882,0.9669] n= 161 verdict=CI_contains_gate
+  tddman        primary: recall=0.8279 ci95=[0.7777,0.8691] n=1429 verdict=CI_excludes_below_gate
+  tddman        strong : recall=0.8187 ci95=[0.7267,0.8970] n= 160 verdict=CI_excludes_below_gate
+  MATRES deduction queries=0 (gate PASS)
+  primary served models: {'google/gemini-3.1-flash-lite': 3897, 'deepseek/deepseek-v3.2': 212}
+  strong served models:  {'narrativetime': {'deepseek/deepseek-v4-pro': 200}, 'tddman': {'deepseek/deepseek-v4-pro': 162}}
+
+TOTAL COST=$0.0000  VERDICT=CONFIRM  n_ded=600 powered=True

@@ -1,0 +1,17 @@
+[project]
+name = "qcn-real-llm-showdown"
+version = "1.0.0"
+description = "Real-LLM matched-coverage baseline showdown on the synthetic QCN backbone (H1 + H3 iteration + zero-FP/J(E) audit). Mode-A iterated path-consistency closure over disjunctive LLM reads vs Path-of-Thoughts, self-consistency, raw/CoT/LINC/ILP/naive."
+requires-python = ">=3.12"
+dependencies = [
+    "numpy==2.4.6",
+    "scipy==1.17.1",
+    "matplotlib==3.11.0",
+    "httpx==0.28.1",
+    "loguru==0.7.3",
+    "jsonschema==4.26.0",
+    "pulp==2.9.0",
+]
+
+[tool.setuptools]
+py-modules = ["method", "engine", "llm", "stats", "dataio"]

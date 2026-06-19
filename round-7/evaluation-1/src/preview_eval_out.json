@@ -1,0 +1,357 @@
+{
+  "metadata": {
+    "evaluation_name": "eval_iter7_dir3: empirical-isolation reframe + FACT-A/FACT-B re-centering + framing scaffold",
+    "description": "Pure $0 re-analysis (numpy/scipy/json only; no LLM, no network). Reproduce-verifies every carried literal from per-query rows and emits a framing scaffold so the paper reads as an EMPIRICAL-ISOLATION ...",
+    "spend": {
+      "cumulative_usd": 0.0,
+      "n_llm_calls": 0,
+      "n_network_calls": 0
+    },
+    "seed": 20260617,
+    "bootstrap_B": 10000,
+    "signals": [
+      "verbalized",
+      "sc_margin",
+      "ptrue"
+    ],
+    "source_artifacts": {
+      "reframe_source": "art_LeRQRGHJZcdQ (iter6/experiment_1)",
+      "clutrr_pipeline": "art_0a7i481ZRwS1 (iter3/experiment_1)",
+      "redocred_corpus": "art_NUWTxBVWENIJ (iter6/dataset_1)",
+      "fuzzy": "art_I22c-J7-OcXl (iter5/experiment_2)",
+      "inherited_decomposition_quoted": "art_D0cHQUJ8kY75 (prior eval; +0.673/+0.0025 not recomputed)"
+    },
+    "reproduction_gate": {
+      "n_checks": 38,
+      "n_pass": 38,
+      "reproduction_ok": true,
+      "seed": 20260617,
+      "bootstrap_B": 10000,
+      "checks": [
+        {
+          "key": "factA_raw_absent_hallucination",
+          "carried": 0.4722,
+          "recomputed": 0.4722,
+          "matches": true
+        },
+        {
+          "key": "factB_crux_survival_verbalized",
+          "carried": 0.4353,
+          "recomputed": 0.4353,
+          "matches": true
+        },
+        {
+          "key": "factB_crux_survival_sc_margin",
+          "carried": 0.7176,
+          "recomputed": 0.7176,
+          "matches": true
+        }
+      ],
+      "note": "every point estimate recomputed from the per-query rows of art_LeRQRGHJZcdQ; rows tagged recomputed=False in the ledger are separate-reader passes (deepseek) or prior-artifact CIs not reconstructable ..."
+    },
+    "structural_by_construction_paragraph": "A note on what the certificate's 2.8% confident-wrong rate on CLUTRR absent pairs does and does not establish. In the CLUTRR construction an absent pair is DEFINED as two entities that fall in DIFFERE...",
+    "non_circular_vs_structural_ledger": [
+      {
+        "key": "FACT_A_raw_absent_hallucination",
+        "value": 0.4722,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_A_cross_family_deepseek",
+        "value": 0.4833,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": false,
+        "matches_carried": true
+      },
+      {
+        "key": "FACT_B_crux_survival_verbalized",
+        "value": 0.4353,
+        "evidence_tag": "REAL-LLM-READ",
+        "side": "NON_CIRCULAR",
+        "role": "HEADLINE",
+        "source_artifact": "art_LeRQRGHJZcdQ",
+        "recomputed": true,
+        "matches_carried": true
+      }
+    ],
+    "count_breakdown": {
+      "re_docred_primary": {
+        "present_multihop": 360,
+        "composed_only_non_circular": 222,
+        "hop_histogram": {
+          "2": 318,
+          "3": 38,
+          "4": 4
+        },
+        "absent_pairs": 368,
+        "n_docs": 575
+      },
+      "docred_secondary": {
+        "present": 116,
+        "absent": 209,
+        "n_docs": 400,
+        "absent_status": "DOWNGRADED (vanilla DocRED false-negatives)"
+      },
+      "combined_engine_round_trip": {
+        "present": 476,
+        "absent": 577,
+        "note": "476/476 present reproduced, 577/577 absent derive EMPTY"
+      },
+      "completeness_correction": {
+        "shared_titles": 400,
+        "re_docred_family_edges": 3087,
+        "docred_family_edges": 1716,
+        "extra_edges_recovered": 1371,
+        "pct_more": "+80%"
+      },
+      "arithmetic_check": {
+        "present": "360+116=476",
+        "absent": "368+209=577",
+        "passed": true
+      },
+      "fix_sentence": "The Re-DocRED natural-text corpus reports two figure pairs that are sometimes confused: the PRIMARY trustworthy-absent slice (re-docred) supplies 360 present multi-hop queries and 368 absent pairs, wh..."
+    },
+    "abstract_front_matter": "Scope. This paper studies a closure-certified DEDUCTION SUB-MODULE -- a sound symbolic forward-closure over LLM-extracted relations that abstains rather than guess -- and NOT a full operational text-t...",
+    "operational_compression_recommendation": "Compression recommendation for the operational ~3000-char case study (art_WQoePKrpsTPo): collapse its two arms -- the bracket-selected temporal arm and the concatenation-constructed kinship arm (in wh...",
+    "fuzzy_reframe": {
+      "prose": {
+        "lead": "The distinctive fuzzy-unification contribution is the abstain-on-collapse CATCH of SOUND-VIOLATING reads, not a calibration number. Worked case: the vague preposition 'around' is read as the RCC-8 dis...",
+        "calibration_contrast": "Supporting honesty contrast: on genuinely-vague reads the LLM emits calibrated sub-1.0 disjunctions -- the fraction of reads at confidence exactly 1.0 is 0.00 in BOTH settings, versus the memorized it...",
+        "supporting_number": "The clean within-artifact risk-coverage comparison: the certificate has confident-wrong 0.000 at coverage 0.535 on spatial (n=228, 38 multipath) and 0.000 at coverage 0.314 on kinship (n=1013), versus...",
+        "demoted_unit_caveat": "DEMOTED caveat (keep, but no headline table): an earlier 0.000-vs-0.415 framing is APPLES-TO-ORANGES, because the certificate's confident-wrong is measured at the closure-QUERY level while the confide..."
+      },
+      "numbers": {
+        "spatial": {
+          "n_pool": 228,
+          "certificate_confident_wrong": 0.0,
+          "certificate_coverage": 0.5351,
+          "commit_argmax_confident_wrong": 0.364,
+          "cw_reduction_ci95": [
+            0.3026,
+            0.4298
+          ],
+          "n_unsound_reads": 5,
+          "n_silent_wrong_missed": 0,
+          "certificate_caught_fraction": 1.0,
+          "ece_per_candidate": 0.1423,
+          "frac_conf_1p0": 0.0
+        },
+        "kinship": {
+          "n_pool": 1013,
+          "certificate_confident_wrong": 0.0,
+          "certificate_coverage": 0.3139,
+          "commit_argmax_confident_wrong": 0.2162,
+          "cw_reduction_ci95": [
+            0.1925,
+            0.2419
+          ],
+          "n_unsound_reads": 0,
+          "catch_status": "UNTESTED (0 unsound reads => zero-FP holds trivially)",
+          "ece_per_candidate": 0.1105,
+          "frac_conf_1p0": 0.0
+        },
+        "modeP_memorized_frac_conf_1p0": 1.0
+      }
+    },
+    "one_thesis_table": [
+      {
+        "claim_id": "SPINE/CLAIM-1",
+        "claim_text": "Empirical isolation of confidence-blindness: a raw LLM confidently fabricates absent relations (FACT A, 47.2%; deepseek 48.3%) and NO member of a strong 4-signal confidence battery removes them at mat...",
+        "headline_numbers": "FACT A 0.4722; FACT B 0.4353/0.7176/0.2471/0.7176; mixed 0.8267 vs 0.37-0.44; Holm p_adj 0.0004/0.0027/0.0027/0.0027",
+        "evidence_tag": "REAL-LLM-READ",
+        "role": "HEADLINE",
+        "status": "ESTABLISHED (CLUTRR + cross-family)"
+      },
+      {
+        "claim_id": "CLAIM-2",
+        "claim_text": "Natural-corpus run on Re-DocRED: does the certificate still beat the confidence battery when the extracted graph is NO LONGER trivially correct (extraction can over-abstain on PRESENT pairs)? Fill FAC...",
+        "headline_numbers": "PENDING (Re-DocRED 360 present / 368 absent slot)",
+        "evidence_tag": "NATURAL-CORPUS-PENDING",
+        "role": "PENDING",
+        "status": "SLOT (to be filled iter-7/iter-8)"
+      },
+      {
+        "claim_id": "CLAIM-3",
+        "claim_text": "Fuzzy unification with a certificate-bounded hallucination guarantee: sound-violating reads are CAUGHT by abstain-on-collapse (spatial 5/5, 0 silent-wrong missed); calibrated sub-1.0 disjunctions (fra...",
+        "headline_numbers": "5/5 caught; cert CW 0.000 vs commit-argmax 0.364 (spatial) / 0.216 (kinship)",
+        "evidence_tag": "REAL-LLM-READ-ON-SYNTHETIC",
+        "role": "SUPPORTING",
+        "status": "ESTABLISHED (spatial); kinship catch UNTESTED"
+      }
+    ],
+    "headline_structure_guidance": [
+      "LEAD with the empirical-isolation / confidence-blindness result (FACT A + FACT B + the mixed-pool showdown), NOT with the closure mechanism.",
+      "CONCEDE the mechanism up front as INHERITED: the multi-hop deduction win is a standard neuro-symbolic premise (+0.673 of the gap is inherited closure; the novel empirical-isolation increment is +0.002...",
+      "Do NOT present the 2.8% certificate confident-wrong on CLUTRR absent pairs as the load-bearing number; it is structural-by-construction (disconnected components => sound closure abstains by definition..."
+    ],
+    "evidence_tag_legend": {
+      "REAL-LLM-READ": "genuine OpenRouter LLM completion on real text",
+      "REAL-LLM-READ-ON-SYNTHETIC": "genuine LLM read but on templated/symbolic substrate",
+      "SYNTHETIC-CHANNEL": "calibrated synthetic error channel (no LLM)",
+      "GOLD-ONLY-GATE": "deterministic gold-graph engine check (0 LLM)",
+      "THEOREM": "proved by construction",
+      "NATURAL-CORPUS-PENDING": "slot to be filled by the iter-7 Re-DocRED run",
+      "MEASURED": "directly measured quantity (not improved)"
+    },
+    "ledger_side_legend": {
+      "NON_CIRCULAR": "property of the raw LLM / signals, independent of the certificate (load-bearing)",
+      "STRUCTURAL_BY_CONSTRUCTION": "near-tautological given the disconnected-components setup; must not headline",
+      "INHERITED": "standard neuro-symbolic premise inherited from prior work",
+      "NON_CIRCULAR_CONDITIONAL": "certificate wins, interpretable only given FACT A + FACT B",
+      "PENDING": "to be filled by the natural-corpus run"
+    }
+  },
+  "metrics_agg": {
+    "total_llm_spend_usd": 0.0,
+    "n_gate_checks": 38.0,
+    "n_gate_pass": 38.0,
+    "reproduction_ok": 1.0,
+    "factA_raw_absent_hallucination": 0.4722,
+    "factA_cross_family_deepseek": 0.4833,
+    "factB_crux_survival_verbalized": 0.4353,
+    "factB_crux_survival_sc_margin": 0.7176,
+    "factB_crux_survival_ptrue": 0.2471,
+    "factB_crux_survival_negent": 0.7176,
+    "certificate_absent_confident_wrong": 0.0278,
+    "absent_confident_wrong_reduction": 0.4444,
+    "mixed_selacc_certificate": 0.8267,
+    "mixed_selacc_best_signal": 0.44,
+    "mixed_cw_reduction_verbalized": 0.1099,
+    "mixed_cw_reduction_sc_margin": 0.1206,
+    "mixed_cw_reduction_ptrue": 0.1028,
+    "mixed_cw_reduction_negent": 0.1206,
+    "mixed_holm_p_adj_verbalized": 0.0004,
+    "mixed_holm_p_adj_worst": 0.0027,
+    "multihop_present_selacc_certificate": 0.8857,
+    "multihop_present_selacc_ct_verbalized": 0.5429,
+    "spatial_certificate_confident_wrong": 0.0219,
+    "spatial_raw_abstain_confident_wrong": 0.0351,
+    "atomic_precision": 0.5361,
+    "atomic_recall": 0.5324,
+    "atomic_f1": 0.5343,
+    "count_present_combined": 476.0,
+    "count_absent_combined": 577.0,
+    "count_redocred_present": 360.0,
+    "count_redocred_absent": 368.0,
+    "fuzzy_spatial_cw_reduction_vs_argmax": 0.364,
+    "fuzzy_kinship_cw_reduction_vs_argmax": 0.2162,
+    "fuzzy_spatial_unsound_caught_fraction": 1.0,
+    "inherited_gap_increment": 0.673,
+    "novel_empirical_isolation_increment": 0.0025
+  },
+  "datasets": [
+    {
+      "dataset": "non_circular_facts_ledger",
+      "examples": [
+        {
+          "input": "FACT_A_raw_absent_hallucination",
+          "output": "0.4722",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "NON_CIRCULAR",
+          "metadata_role": "HEADLINE",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": true,
+          "metadata_matches_carried": true,
+          "eval_value": 0.4722,
+          "eval_recomputed": 1.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "FACT_A_cross_family_deepseek",
+          "output": "0.4833",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "NON_CIRCULAR",
+          "metadata_role": "HEADLINE",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": false,
+          "metadata_matches_carried": true,
+          "eval_value": 0.4833,
+          "eval_recomputed": 0.0,
+          "eval_matches_carried": 1.0
+        },
+        {
+          "input": "FACT_B_crux_survival_verbalized",
+          "output": "0.4353",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_side": "NON_CIRCULAR",
+          "metadata_role": "HEADLINE",
+          "metadata_source_artifact": "art_LeRQRGHJZcdQ",
+          "metadata_recomputed": true,
+          "metadata_matches_carried": true,
+          "eval_value": 0.4353,
+          "eval_recomputed": 1.0,
+          "eval_matches_carried": 1.0
+        }
+      ]
+    },
+    {
+      "dataset": "one_thesis_contribution_table",
+      "examples": [
+        {
+          "input": "SPINE/CLAIM-1",
+          "output": "Empirical isolation of confidence-blindness: a raw LLM confidently fabricates absent relations (FACT A, 47.2%; deepseek 48.3%) and NO member of a strong 4-signal confidence battery removes them at mat...",
+          "metadata_headline_numbers": "FACT A 0.4722; FACT B 0.4353/0.7176/0.2471/0.7176; mixed 0.8267 vs 0.37-0.44; Holm p_adj 0.0004/0.0027/0.0027/0.0027",
+          "metadata_evidence_tag": "REAL-LLM-READ",
+          "metadata_role": "HEADLINE",
+          "metadata_status": "ESTABLISHED (CLUTRR + cross-family)",
+          "eval_is_headline": 1.0,
+          "eval_is_pending": 0.0
+        },
+        {
+          "input": "CLAIM-2",
+          "output": "Natural-corpus run on Re-DocRED: does the certificate still beat the confidence battery when the extracted graph is NO LONGER trivially correct (extraction can over-abstain on PRESENT pairs)? Fill FAC...",
+          "metadata_headline_numbers": "PENDING (Re-DocRED 360 present / 368 absent slot)",
+          "metadata_evidence_tag": "NATURAL-CORPUS-PENDING",
+          "metadata_role": "PENDING",
+          "metadata_status": "SLOT (to be filled iter-7/iter-8)",
+          "eval_is_headline": 0.0,
+          "eval_is_pending": 1.0
+        },
+        {
+          "input": "CLAIM-3",
+          "output": "Fuzzy unification with a certificate-bounded hallucination guarantee: sound-violating reads are CAUGHT by abstain-on-collapse (spatial 5/5, 0 silent-wrong missed); calibrated sub-1.0 disjunctions (fra...",
+          "metadata_headline_numbers": "5/5 caught; cert CW 0.000 vs commit-argmax 0.364 (spatial) / 0.216 (kinship)",
+          "metadata_evidence_tag": "REAL-LLM-READ-ON-SYNTHETIC",
+          "metadata_role": "SUPPORTING",
+          "metadata_status": "ESTABLISHED (spatial); kinship catch UNTESTED",
+          "eval_is_headline": 0.0,
+          "eval_is_pending": 0.0
+        }
+      ]
+    },
+    {
+      "dataset": "reproduction_gate",
+      "examples": [
+        {
+          "input": "factA_raw_absent_hallucination",
+          "output": "0.4722",
+          "metadata_carried": "0.4722",
+          "metadata_matches": true,
+          "eval_matches": 1.0
+        },
+        {
+          "input": "factB_crux_survival_verbalized",
+          "output": "0.4353",
+          "metadata_carried": "0.4353",
+          "metadata_matches": true,
+          "eval_matches": 1.0
+        },
+        {
+          "input": "factB_crux_survival_sc_margin",
+          "output": "0.7176",
+          "metadata_carried": "0.7176",
+          "metadata_matches": true,
+          "eval_matches": 1.0
+        }
+      ]
+    }
+  ]
+}

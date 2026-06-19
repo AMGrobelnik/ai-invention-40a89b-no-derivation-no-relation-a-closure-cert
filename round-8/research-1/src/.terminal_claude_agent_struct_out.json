@@ -1,0 +1,138 @@
+{
+  "title": "Reframing absent-relation hallucination as compositional false-premise abstention",
+  "layman_summary": "Surveys the false-premise/unanswerable-question literature to position a logic certificate that abstains when no derivation path exists, and designs a fair query-side verifier baseline to test it.",
+  "summary": "Pure-web ($0) research that retires the LITERATURE half of the reviewer NOVELTY MAJOR and de-risks the new mandatory query-side baseline for the closure-certificate paper (iter-8). (1) Pins the closest-neighbor false-premise / unanswerable abstention literature with verified BibTeX, exact detection-method TYPES, and verbatim quotes: FalseQA [Hu2023, ACL 2023, 2023.acl-long.309] = 2365 FPQs + a SENTENCE-LEVEL, TRAINED discriminator (256 examples); AbstentionBench [Kirichenko2025, NeurIPS 2025 D&B, arXiv:2506.09038] = false-premise abstention UNSOLVED at frontier scale and reasoning fine-tuning DEGRADES it 24%, models commit definitive answers while internally uncertain; and a CORRECTION of the dossier's Wen2024 framing -- the survey [Wen2024] is built on three perspectives (query answerability a(x) | model confidence c(x,y) | human values), with a(x) INDEPENDENT of confidence, so answerability is a distinct axis, not confidence thresholding. Venue reconciled: Wen2024 is authoritatively TACL Volume 13, 2025 (pp. 529-556, DOI 10.1162/tacl_a_00754); the iter-8 'TACL 2025' is correct (dossier's '2024' = preprint year); key Wen2024 retained for downstream cites. Optional adjacency ((QA)^2 [Kim2023], CREPE [Yu2023] 25%/8,400 Reddit Qs, Self-Align [Deng2024]) confirms prior false-premise QA is sentence-level and/or trained. (2) Carves the two-part delta into a drop-in Related-Work paragraph (real \\cite keys), a SETTING delta (compositional/multi-hop relational premise vs sentence-level) + METHOD delta (gold-free, training-free STRUCTURAL detector vs trained/prompt detectors), and one honest novelty sentence scoped to the corpus-robust diagnostic + capability gap (certificate mechanism = inherited NeSy premise). (3) Specifies the mandatory query-side verifier baseline grounded in self-ask [Press2023], self-verification [Weng2023], P(True) [Kadavath2022], self-consistency [Wang2023], and detect-then-respond [Hu2023, Deng2024]: two cheap prompt-based verifiers (RELATEDNESS check + SELF-VERIFICATION pass, each with a k=5 self-consistency variant), exact prompt templates for kinship and containment, parse/abstain rules, and a matched-coverage thresholding recipe (same single-relation coverage object on the mixed present/same-component-sibling-absent pool; Holm-adjusted doc-clustered B=10000 CIs). Credibility bar: the certificate must match-or-beat the query-side verifier at matched coverage, else honest negative. Reuses dossier BibTeX (Kadavath2022, Wang2023) verbatim. Feeds the iter-8 Related-Work and the experiment that decides the diagnostic-vs-demonstrated-fix fork.",
+  "out_expected_files": {
+    "output": "research_out.json"
+  },
+  "upload_ignore_regexes": [],
+  "answer": "This artifact supplies the two contribution-defining moves the empirical/dataset artifacts cannot produce: the LITERATURE half of the novelty reframe, and the design of the mandatory query-side false-premise verifier baseline. Three workstreams.\n\n(1) FALSE-PREMISE / UNANSWERABLE LITERATURE. Confident absent-relation hallucination is best positioned as a COMPOSITIONAL instance of the false-premise / unanswerable-question abstention problem. FalseQA [1,2,3] is the canonical anchor: it defines 'False Premise Questions' -- questions presupposing something untrue ('How many eyes does the sun have?' presupposes 'the sun can have eyes') -- and detects them with a TRAINED discriminator fine-tuned on ~256 examples, explicitly noting such premises 'rarely appear in the natural text' and are SENTENCE-LEVEL [3]. AbstentionBench [4,5,6] establishes that this family (false premises among six unanswerability scenarios over 20 datasets) is UNSOLVED at frontier scale, and -- decisively for our motivation -- that reasoning fine-tuning DEGRADES abstention by 24% on average, with models 'providing definitive final answers even when their reasoning chains express uncertainty' [5]: the obvious fix makes the confident-wrong regime worse. Critically, the dossier's framing of Wen et al. as a mere confidence-threshold survey is CORRECTED here: the survey's central framework organizes abstention around THREE perspectives -- query answerability a(x), model confidence c(x,y), and human values h(x,y) -- with refusal r(x,y)=1 if ANY of them is 0, and a(x) ('the degree to which an input x can be answered') is INDEPENDENT of confidence [7,8,9]. That answerability axis is exactly where our certificate lives. We also reconcile the venue: Wen et al. is authoritatively TACL Volume 13, YEAR 2025 (pp. 529-556, DOI 10.1162/tacl_a_00754) [7,9]; the dossier's 'TACL 2024' was the arXiv preprint year, and the iter-8 'TACL 2025' is correct -- we keep the key Wen2024 to preserve downstream \\cite's but set year=2025. Optional adjacency confirms the SENTENCE-LEVEL character of prior false-premise QA: (QA)^2 [14,15] and CREPE [16,17] (8,400 Reddit questions, 25% with false presuppositions) collect single-question presuppositions, and Self-Align [18] is a TRAINED detect-then-explain method.\n\n(2) THE TWO-PART DELTA. DELTA-1 (setting): we lift false-premise abstention from a SENTENCE-LEVEL presupposition [1,14,16] to a COMPOSITIONAL, multi-hop RELATIONAL premise -- the structural claim that 'a derivation path exists between X and Y'. The multi-hop axis is recognized for ANSWERING (the 'compositionality gap' [10,11]) and for missing-evidence unanswerability (MuSiQue, via [8]), but a compositional relational false premise as an abstention TARGET is absent from that literature. DELTA-2 (method): we detect it with a GOLD-FREE, TRAINING-FREE STRUCTURAL certificate (no derivation path => abstain), versus the TRAINED detectors that define prior work (FalseQA fine-tuning [1]; Self-Align [18]) -- and AbstentionBench shows training can even HURT [4]. The one-sentence novelty claim that survives iter-7's EXTRACTION-LIMITED boundary is honest: the contribution is the corpus-robust DIAGNOSTIC (confident absent-relation fabrication is a compositional false premise that transfers across readers/corpora, plus a present-vs-absent capability gap on a non-by-construction mixed pool) PLUS a structural detector whose NET utility off the structural-by-construction stratum is the open iter-8 test -- NOT a claim that the certificate mechanism itself is novel (it inherits the standard neuro-symbolic deduce-then-abstain premise).\n\n(3) QUERY-SIDE VERIFIER BASELINE. The hypothesis requires a query-side false-premise verifier the certificate must MATCH OR BEAT at matched coverage, because that -- not the dispersion signals -- is the recognized method for this failure mode. We ground it in self-ask decomposition [10], self-verification / backward checking [12,13], P(True) self-evaluation [19], self-consistency [20], and the detect-then-respond pattern [1,18], then specify TWO complementary prompt-based, zero-training verifiers run on the same reader: (i) a RELATEDNESS verifier ('are X and Y related by <kinship|containment> at all?' -> RELATED/UNRELATED + confidence; abstain on UNRELATED or confidence < tau) that tests the false premise directly, and (ii) a SELF-VERIFICATION pass on the SAME committed answer ('verify: is X really the <relation> of Y?' -> YES/NO + confidence; flip confident-wrong to abstain on NO or confidence < tau), each with a stronger k=5 self-consistency variant. Both are compared against the certificate and the four dispersion signals at the SAME coverage object (single-relation resolution) on the SAME mixed present / same-component-sibling-absent pool, with Holm-adjusted, doc-clustered (B=10000) confident-wrong reductions and CIs -- exactly the existing battery. CREDIBILITY BAR: a certificate win is meaningful only against this strong baseline; if the prompt-based verifier already catches the fabrications as well, that is an HONEST NEGATIVE (structural certificate not needed for the absent stratum) and must be reported, leaving the diagnostic + capability gap as the contribution.",
+  "sources": [
+    {
+      "index": 1,
+      "url": "https://arxiv.org/abs/2307.02394",
+      "title": "Won't Get Fooled Again: Answering Questions with False Premises (Hu et al., 2023)",
+      "summary": "FalseQA abstract: 2365 human-written false-premise questions (FPQs) + explanations + revised true-premise questions; PLMs discriminate FPQs by fine-tuning on ~256 examples; sentence-level, trained detector."
+    },
+    {
+      "index": 2,
+      "url": "https://aclanthology.org/2023.acl-long.309/",
+      "title": "FalseQA -- ACL Anthology (2023.acl-long.309)",
+      "summary": "Authoritative venue/pages: ACL 2023 Long Papers, Toronto, July 2023, pp. 5626-5643, DOI 10.18653/v1/2023.acl-long.309; full author list."
+    },
+    {
+      "index": 3,
+      "url": "https://arxiv.org/pdf/2307.02394",
+      "title": "FalseQA PDF (grepped) -- FPQ definition + discriminate quote",
+      "summary": "Exact FPQ definition ('How many eyes does the sun have?' presupposes 'the sun can have eyes'; 'always violate human knowledge or logic and rarely appear in the natural text') and the 256-example / >70% accuracy findings."
+    },
+    {
+      "index": 4,
+      "url": "https://arxiv.org/abs/2506.09038",
+      "title": "AbstentionBench: Reasoning LLMs Fail on Unanswerable Questions (Kirichenko et al., 2025)",
+      "summary": "20 datasets / 6 scenarios incl. false premises; abstention unsolved; reasoning fine-tuning degrades abstention by 24%; system prompt helps but doesn't resolve fundamental inability to reason about uncertainty."
+    },
+    {
+      "index": 5,
+      "url": "https://arxiv.org/pdf/2506.09038",
+      "title": "AbstentionBench PDF (grepped) -- 24% + scenario list + confident-wrong quote",
+      "summary": "Verbatim: scenario list incl. 'false premises'; '24% on average' degradation; 'hallucinating missing context and providing definitive final answers even when their reasoning chains express uncertainty'."
+    },
+    {
+      "index": 6,
+      "url": "https://neurips.cc/virtual/2025/poster/121675",
+      "title": "AbstentionBench -- NeurIPS 2025 poster page",
+      "summary": "Confirms NeurIPS 2025 (Datasets & Benchmarks) venue for AbstentionBench; OpenReview id OkHC30LLpO."
+    },
+    {
+      "index": 7,
+      "url": "https://aclanthology.org/2025.tacl-1.26/",
+      "title": "Know Your Limits: A Survey of Abstention in LLMs -- TACL Anthology (2025.tacl-1.26)",
+      "summary": "Authoritative venue/year reconciliation: TACL Volume 13, YEAR 2025, pp. 529-556, Cambridge MA, MIT Press, DOI 10.1162/tacl_a_00754. Confirms iter-8 'TACL 2025' (not dossier's 'TACL 2024')."
+    },
+    {
+      "index": 8,
+      "url": "https://arxiv.org/pdf/2407.18418",
+      "title": "Wen et al. 2024 survey PDF (grepped) -- query-side / answerability content",
+      "summary": "Three-perspective framework (query answerability a(x), model confidence c(x,y), human values h(x,y)); r(x,y)=1 if any of a,c,h = 0; a(x) independent of confidence; corrects the dossier's confidence-only framing."
+    },
+    {
+      "index": 9,
+      "url": "https://direct.mit.edu/tacl/article/doi/10.1162/tacl_a_00754/131566/Know-Your-Limits-A-Survey-of-Abstention-in-Large",
+      "title": "Know Your Limits -- MIT TACL journal page (DOI 10.1162/tacl_a_00754)",
+      "summary": "MIT Press TACL landing page; confirms the journal publication and DOI used in the corrected BibTeX."
+    },
+    {
+      "index": 10,
+      "url": "https://arxiv.org/abs/2210.03350",
+      "title": "Measuring and Narrowing the Compositionality Gap (Press et al., self-ask)",
+      "summary": "Introduces the 'compositionality gap' and self-ask (model asks itself follow-up questions before answering). Grounds the multi-hop framing and the relatedness-decomposition verifier."
+    },
+    {
+      "index": 11,
+      "url": "https://aclanthology.org/2023.findings-emnlp.378/",
+      "title": "self-ask -- Findings of EMNLP 2023 (2023.findings-emnlp.378)",
+      "summary": "Authoritative venue for Press et al.: Findings-EMNLP 2023, Singapore; used for the Press2023 BibTeX."
+    },
+    {
+      "index": 12,
+      "url": "https://arxiv.org/abs/2212.09561",
+      "title": "Large Language Models are Better Reasoners with Self-Verification (Weng et al., 2023)",
+      "summary": "Backward verification of CoT conclusions yields interpretable validation scores to select answers. Method family for the self-verification verifier."
+    },
+    {
+      "index": 13,
+      "url": "https://aclanthology.org/2023.findings-emnlp.167/",
+      "title": "self-verification -- Findings of EMNLP 2023 (2023.findings-emnlp.167)",
+      "summary": "Authoritative venue/pages (2550-2575) for Weng et al.; DOI 10.18653/v1/2023.findings-emnlp.167."
+    },
+    {
+      "index": 14,
+      "url": "https://aclanthology.org/2023.acl-long.472/",
+      "title": "(QA)^2: Question Answering with Questionable Assumptions (Kim et al., ACL 2023)",
+      "summary": "Authors Najoung Kim, Phu Mon Htut, Samuel R. Bowman, Jackson Petty; naturally occurring search queries with sentence-level questionable assumptions. Optional adjacency."
+    },
+    {
+      "index": 15,
+      "url": "https://arxiv.org/abs/2212.10003",
+      "title": "(QA)^2 -- arXiv abstract",
+      "summary": "Open-domain evaluation set of naturally occurring search-engine queries that may or may not contain questionable assumptions (sentence-level)."
+    },
+    {
+      "index": 16,
+      "url": "https://arxiv.org/pdf/2211.17257",
+      "title": "CREPE: Open-Domain QA with False Presuppositions (Yu et al., 2023) PDF",
+      "summary": "8,400 Reddit questions, natural distribution of presupposition failures; 25% contain false presuppositions; sentence-level; baseline detect/correct models. Optional adjacency."
+    },
+    {
+      "index": 17,
+      "url": "https://aclanthology.org/2023.acl-long.583/",
+      "title": "CREPE -- ACL Anthology (2023.acl-long.583)",
+      "summary": "Authoritative venue/pages: ACL 2023 Long, pp. 10457-10480; authors Xinyan Velocity Yu, Sewon Min, Luke Zettlemoyer, Hannaneh Hajishirzi."
+    },
+    {
+      "index": 18,
+      "url": "https://arxiv.org/abs/2402.15062",
+      "title": "Don't Just Say \"I don't know\"! Self-aligning LLMs for Unknown Questions (Deng et al., 2024)",
+      "summary": "Self-alignment FINE-TUNING for unknown questions with explanations (detect-then-explain, trained). arXiv id the planner labeled 'Gotcha'; canonical title corrected; EMNLP 2024 main (2024.emnlp-main.757)."
+    },
+    {
+      "index": 19,
+      "url": "https://arxiv.org/abs/2207.05221",
+      "title": "Language Models (Mostly) Know What They Know (Kadavath et al., 2022) -- reused",
+      "summary": "P(True)/P(IK) self-evaluation; reused dossier key for the confidence read inside the query-side verifiers."
+    },
+    {
+      "index": 20,
+      "url": "https://arxiv.org/abs/2203.11171",
+      "title": "Self-Consistency Improves Chain of Thought Reasoning (Wang et al., 2023) -- reused",
+      "summary": "Majority vote over sampled reasoning paths; reused dossier key for the k=5 self-consistency variants of both verifiers."
+    }
+  ],
+  "follow_up_questions": [
+    "On the iter-7 same-component-sibling-absent pool, does the cheap prompt-based RELATEDNESS verifier already match the structural certificate's confident-wrong reduction at matched coverage -- i.e. is the certificate necessary for the absent stratum, or is the contribution the diagnostic + capability gap alone?",
+    "Should the self-verification verifier use a SINGLE pass or the k=5 self-consistency variant as the headline baseline, given the $10 cap -- and does the self-consistency variant change the verdict on confident-wrong absent fabrications (where, by the dossier's argument, samples agree on the WRONG edge)?",
+    "Does AbstentionBench's released code (facebookresearch/AbstentionBench) include a runnable false-premise abstention detector that could be added as a third, recognized baseline beyond our two prompt-based verifiers, to further harden the certificate comparison?",
+    "Can we cite a paper that already treats MULTI-HOP / relational false premises specifically (beyond MuSiQue's removed-evidence unanswerability), or is the compositional-relational false-premise setting genuinely unclaimed -- which would strengthen DELTA-1?"
+  ]
+}

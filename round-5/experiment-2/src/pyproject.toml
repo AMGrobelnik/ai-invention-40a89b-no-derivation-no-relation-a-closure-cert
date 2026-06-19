@@ -1,0 +1,16 @@
+[project]
+name = "genuine-llm-fuzzy-unification-certificate"
+version = "2.0.0"
+description = "Genuine LLM fuzzy-unification with a certificate-bounded hallucination guarantee. Constructs GENUINELY-fuzzy reads from existing gold: (1) vague/out-of-table SPATIAL RCC-8 (SpaRP-PS1) rendered with vague prepositions that have no single RCC-8 answer, and (2) ambiguous/paraphrased KINSHIP (CLUTRR) informal terms mapping to a type-disjunction. Measures calibration (ECE, reliability) of the LLM's sub-1.0 disjunctions, feeds them into the closure engines (RCC-8 / kinship forward-union) under an abstain-on-collapse certificate, and reports risk-coverage vs commit-the-argmax and abstain-always baselines plus a calibration contrast with the memorized Mode-P (confidence exactly 1.0). Auditable trace-graphs flag each LLM-resolved fuzzy step distinctly from exact-table steps."
+requires-python = ">=3.12"
+dependencies = [
+    "numpy==2.4.6",
+    "scipy==1.17.1",
+    "matplotlib==3.11.0",
+    "httpx==0.28.1",
+    "loguru==0.7.3",
+    "jsonschema==4.26.0",
+]
+
+[tool.setuptools]
+py-modules = ["method", "figures", "llm", "stats", "dataio", "kinship"]

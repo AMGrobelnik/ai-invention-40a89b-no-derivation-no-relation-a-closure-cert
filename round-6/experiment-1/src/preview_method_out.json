@@ -1,0 +1,1504 @@
+{
+  "metadata": {
+    "method_name": "Closure certificate vs a strong confidence-thresholded neural abstainer (4-signal battery) on the no-derivation / absent-relation stratum",
+    "step": "STEP A (fair-baseline re-analysis of the cached iter-3 CLUTRR + iter-5 spatial pools + a confidence battery). NOT STEP B (no new natural corpus); cross-path RCC-8 not re-run.",
+    "headline_summary": {
+      "n_absent_no_derivation": 180,
+      "n_present_ordinary": 102,
+      "raw_llm_absent_hallucination_rate": 0.4722,
+      "certificate_absent_confident_wrong": 0.0278,
+      "absent_confident_wrong_reduction_vs_raw": 0.4444,
+      "absent_reduction_ci95": [
+        0.3167,
+        0.5833
+      ],
+      "mixed_matched_coverage_selective_accuracy": {
+        "certificate": 0.8267,
+        "ct_verbalized": 0.4133,
+        "ct_sc_margin": 0.3733,
+        "ct_ptrue": 0.44,
+        "ct_negent": 0.3733,
+        "matched_coverage": 0.26595744680851063
+      },
+      "mixed_confident_wrong_reduction_certificate_vs_each_signal": {
+        "ct_verbalized": {
+          "reduction": 0.1099,
+          "ci95": [
+            0.0543,
+            0.1703
+          ],
+          "holm_p_adj": 0.0004
+        },
+        "ct_sc_margin": {
+          "reduction": 0.1206,
+          "ci95": [
+            0.0486,
+            0.1957
+          ],
+          "holm_p_adj": 0.0027
+        },
+        "ct_ptrue": {
+          "reduction": 0.1028,
+          "ci95": [
+            0.0395,
+            0.1706
+          ],
+          "holm_p_adj": 0.0027
+        },
+        "ct_negent": {
+          "reduction": 0.1206,
+          "ci95": [
+            0.0486,
+            0.1957
+          ],
+          "holm_p_adj": 0.0027
+        }
+      },
+      "crux_frac_absent_hallucinations_surviving_each_signal": {
+        "ct_verbalized": 0.4353,
+        "ct_sc_margin": 0.7176,
+        "ct_ptrue": 0.2471,
+        "ct_negent": 0.7176
+      },
+      "best_calibrated_signal": "ct_ptrue (Kadavath P(True))",
+      "spatial_ordinary_certificate_ties_or_loses": {
+        "selective_accuracy_gap_vs_raw_abstain": -0.08823529411764708,
+        "gap_ci95": [
+          -0.2222222222222222,
+          0.039999999999999925
+        ]
+      },
+      "one_line": "Across CLUTRR absent-relation queries the raw LLM hallucinates a kinship on 47% of pairs at high confidence; NO confidence signal (verbalized / self-consistency / P(True) / semantic-entropy) removes t..."
+    },
+    "reader_model": "google/gemini-3.1-flash-lite",
+    "model_fallbacks": [
+      "deepseek/deepseek-v3.2",
+      "google/gemini-3-flash-preview"
+    ],
+    "seed": 20260617,
+    "temperature": 0.0,
+    "sc_k_battery": 10,
+    "bootstrap_B": 10000,
+    "signals": [
+      "verbalized",
+      "sc_margin",
+      "ptrue"
+    ],
+    "signal_definitions": {
+      "verbalized": "the raw answerer's self-reported confidence in [0,1] (already collected iter-3).",
+      "sc_margin": "self-consistency vote-margin: top-relation fraction across k=10 temp=0.7 samples.",
+      "ptrue": "Kadavath P(True): the model's probability that raw's committed answer is correct (1 call, temp=0).",
+      "negent": "semantic-entropy negentropy 1 - H/log(k_eff) over the k=10 SC samples clustered by relation (no new calls)."
+    },
+    "tag": "REAL-LLM-READ (all CLUTRR reads + battery are genuine OpenRouter completions; cached iter-3 reads replay deterministically at $0).",
+    "reproduction_gate": {
+      "n_records": 282,
+      "n_present": 102,
+      "n_absent": 180,
+      "missing_from_rebuild": 0,
+      "crosscheck_mismatches": {},
+      "cached_replay_cost_usd": 0.0,
+      "reproduction_ok": true,
+      "note": "the 282 scored records were rebuilt from CLUTRR and their certificate/raw/sc/pot predictions verified IDENTICAL to the published iter-3 method_out.json (pool art_0a7i481ZRwS1) before any new analysis ..."
+    },
+    "pre_registration": {
+      "P_A": "on the no_derivation/absent stratum the certificate's confident-wrong is below EVERY confidence-thresholded baseline at matched coverage; story-clustered paired bootstrap (B=10000) CI on the reduction...",
+      "P_O": "on ordinary SINGLE-PATH deduction (spatial RCC-8) the certificate TIES or LOSES the confidence baseline at matched coverage (CI includes 0 / favors baseline). NB: CLUTRR-present is MULTI-HOP, not sing...",
+      "P_CRUX": "frac_surviving (absent hallucinations with signal>=tau) is high for >=2 of 4 signals.",
+      "doc_cluster": "metadata_doc_id (CLUTRR story / spatial scene)",
+      "B": 10000,
+      "multiplicity": "Holm-Bonferroni across the 4 signals, one-sided."
+    },
+    "leaderboard_no_derivation": {
+      "view1_absent_reduction_by_signal": {
+        "ct_verbalized": {
+          "n_absent": 180,
+          "matched_coverage": 0.4722,
+          "ref": "modeA",
+          "compare": "ct_verbalized",
+          "confident_wrong_reduction": 0.4444,
+          "ci95": [
+            0.3167,
+            0.5833
+          ],
+          "p_one_sided": 0.0005,
+          "meets_0.20_bar": true,
+          "ci_excludes_0": true,
+          "natural_operating_points": {
+            "modeA": {
+              "natural_named_rate": 0.027777777777777776,
+              "natural_confident_wrong_rate": 0.027777777777777776
+            },
+            "ct_verbalized": {
+              "natural_named_rate": 0.4722222222222222,
+              "natural_confident_wrong_rate": 0.4722222222222222
+            }
+          },
+          "matched_operating_points": {
+            "modeA": {
+              "confident_wrong_rate_at_matched_cov": 0.0278
+            },
+            "ct_verbalized": {
+              "confident_wrong_rate_at_matched_cov": 0.4722
+            }
+          }
+        },
+        "ct_sc_margin": {
+          "n_absent": 180,
+          "matched_coverage": 0.4722,
+          "ref": "modeA",
+          "compare": "ct_sc_margin",
+          "confident_wrong_reduction": 0.4444,
+          "ci95": [
+            0.3167,
+            0.5833
+          ],
+          "p_one_sided": 0.0005,
+          "meets_0.20_bar": true,
+          "ci_excludes_0": true,
+          "natural_operating_points": {
+            "modeA": {
+              "natural_named_rate": 0.027777777777777776,
+              "natural_confident_wrong_rate": 0.027777777777777776
+            },
+            "ct_sc_margin": {
+              "natural_named_rate": 0.4722222222222222,
+              "natural_confident_wrong_rate": 0.4722222222222222
+            }
+          },
+          "matched_operating_points": {
+            "modeA": {
+              "confident_wrong_rate_at_matched_cov": 0.0278
+            },
+            "ct_sc_margin": {
+              "confident_wrong_rate_at_matched_cov": 0.4722
+            }
+          }
+        },
+        "ct_ptrue": {
+          "n_absent": 180,
+          "matched_coverage": 0.4722,
+          "ref": "modeA",
+          "compare": "ct_ptrue",
+          "confident_wrong_reduction": 0.4444,
+          "ci95": [
+            0.3167,
+            0.5833
+          ],
+          "p_one_sided": 0.0005,
+          "meets_0.20_bar": true,
+          "ci_excludes_0": true,
+          "natural_operating_points": {
+            "modeA": {
+              "natural_named_rate": 0.027777777777777776,
+              "natural_confident_wrong_rate": 0.027777777777777776
+            },
+            "ct_ptrue": {
+              "natural_named_rate": 0.4722222222222222,
+              "natural_confident_wrong_rate": 0.4722222222222222
+            }
+          },
+          "matched_operating_points": {
+            "modeA": {
+              "confident_wrong_rate_at_matched_cov": 0.0278
+            },
+            "ct_ptrue": {
+              "confident_wrong_rate_at_matched_cov": 0.4722
+            }
+          }
+        },
+        "ct_negent": {
+          "n_absent": 180,
+          "matched_coverage": 0.4722,
+          "ref": "modeA",
+          "compare": "ct_negent",
+          "confident_wrong_reduction": 0.4444,
+          "ci95": [
+            0.3167,
+            0.5833
+          ],
+          "p_one_sided": 0.0005,
+          "meets_0.20_bar": true,
+          "ci_excludes_0": true,
+          "natural_operating_points": {
+            "modeA": {
+              "natural_named_rate": 0.027777777777777776,
+              "natural_confident_wrong_rate": 0.027777777777777776
+            },
+            "ct_negent": {
+              "natural_named_rate": 0.4722222222222222,
+              "natural_confident_wrong_rate": 0.4722222222222222
+            }
+          },
+          "matched_operating_points": {
+            "modeA": {
+              "confident_wrong_rate_at_matched_cov": 0.0278
+            },
+            "ct_negent": {
+              "confident_wrong_rate_at_matched_cov": 0.4722
+            }
+          }
+        },
+        "commit_argmax": {
+          "n_absent": 180,
+          "matched_coverage": 0.4722,
+          "ref": "modeA",
+          "compare": "commit_argmax",
+          "confident_wrong_reduction": 0.4444,
+          "ci95": [
+            0.3167,
+            0.5833
+          ],
+          "p_one_sided": 0.0005,
+          "meets_0.20_bar": true,
+          "ci_excludes_0": true,
+          "natural_operating_points": {
+            "modeA": {
+              "natural_named_rate": 0.027777777777777776,
+              "natural_confident_wrong_rate": 0.027777777777777776
+            },
+            "commit_argmax": {
+              "natural_named_rate": 0.4722222222222222,
+              "natural_confident_wrong_rate": 0.4722222222222222
+            }
+          },
+          "matched_operating_points": {
+            "modeA": {
+              "confident_wrong_rate_at_matched_cov": 0.0278
+            },
+            "commit_argmax": {
+              "confident_wrong_rate_at_matched_cov": 0.4722
+            }
+          }
+        },
+        "_note": "On the pure-absent pool confident-wrong == coverage for every method (any named answer on an absent pair is wrong). Matched to the baseline's NATURAL naming rate, every confidence signal commits the s..."
+      },
+      "view2_risk_coverage_dominance_absent": {
+        "certificate_coverage": 0.0278,
+        "certificate_confident_wrong": 0.0278,
+        "n_pool": 180,
+        "per_signal": {
+          "ct_verbalized": {
+            "natural_coverage": 0.4722,
+            "coverage_at_equal_safety": 0.0278,
+            "coverage_gap_certificate_minus_baseline": 0.0,
+            "confident_wrong_at_certificate_coverage": 0.0278,
+            "cw_gap_baseline_minus_certificate": 0.0
+          },
+          "ct_sc_margin": {
+            "natural_coverage": 0.4722,
+            "coverage_at_equal_safety": 0.0278,
+            "coverage_gap_certificate_minus_baseline": 0.0,
+            "confident_wrong_at_certificate_coverage": 0.0278,
+            "cw_gap_baseline_minus_certificate": 0.0
+          },
+          "ct_ptrue": {
+            "natural_coverage": 0.4722,
+            "coverage_at_equal_safety": 0.0278,
+            "coverage_gap_certificate_minus_baseline": 0.0,
+            "confident_wrong_at_certificate_coverage": 0.0278,
+            "cw_gap_baseline_minus_certificate": 0.0
+          },
+          "ct_negent": {
+            "natural_coverage": 0.4722,
+            "coverage_at_equal_safety": 0.0278,
+            "coverage_gap_certificate_minus_baseline": 0.0,
+            "confident_wrong_at_certificate_coverage": 0.0278,
+            "cw_gap_baseline_minus_certificate": 0.0
+          }
+        }
+      },
+      "holm_no_derivation_pure_absent": {
+        "nod_modeA_vs_ct_verbalized": {
+          "p": 0.0005,
+          "p_adj": 0.002,
+          "reject": true
+        },
+        "nod_modeA_vs_ct_sc_margin": {
+          "p": 0.0005,
+          "p_adj": 0.002,
+          "reject": true
+        },
+        "nod_modeA_vs_ct_ptrue": {
+          "p": 0.0005,
+          "p_adj": 0.002,
+          "reject": true
+        },
+        "nod_modeA_vs_ct_negent": {
+          "p": 0.0005,
+          "p_adj": 0.002,
+          "reject": true
+        }
+      },
+      "subtlety": "On the PURE-absent pool confident-wrong == coverage (any named answer on an absent pair is wrong), so matched-coverage comparison is degenerate and the 4 signals coincide with raw at the baseline's na..."
+    },
+    "leaderboard_mixed": {
+      "view3_matched_coverage_showdown": {
+        "c_star": 0.26595744680851063,
+        "ref": "modeA",
+        "leaderboard": {
+          "modeA": {
+            "coverage": 0.26595744680851063,
+            "selective_accuracy": 0.8267,
+            "n_covered": 75
+          },
+          "ct_verbalized": {
+            "coverage_matched": 0.26595744680851063,
+            "natural_coverage": 0.5886524822695035,
+            "selective_accuracy": 0.4133,
+            "n_covered": 75
+          },
+          "ct_sc_margin": {
+            "coverage_matched": 0.26595744680851063,
+            "natural_coverage": 0.5886524822695035,
+            "selective_accuracy": 0.3733,
+            "n_covered": 75
+          },
+          "ct_ptrue": {
+            "coverage_matched": 0.26595744680851063,
+            "natural_coverage": 0.5886524822695035,
+            "selective_accuracy": 0.44,
+            "n_covered": 75
+          },
+          "ct_negent": {
+            "coverage_matched": 0.26595744680851063,
+            "natural_coverage": 0.5886524822695035,
+            "selective_accuracy": 0.3733,
+            "n_covered": 75
+          },
+          "ct_sc_margin_maj": {
+            "coverage_matched": 0.26595744680851063,
+            "natural_coverage": 0.5851063829787234,
+            "selective_accuracy": 0.36,
+            "n_covered": 75
+          },
+          "commit_argmax": {
+            "coverage_matched": 0.26595744680851063,
+            "natural_coverage": 0.5886524822695035,
+            "selective_accuracy": 0.4133,
+            "n_covered": 75
+          },
+          "pot": {
+            "coverage_matched": 0.26595744680851063,
+            "natural_coverage": 0.3191489361702128,
+            "selective_accuracy": 0.4533,
+            "n_covered": 75
+          },
+          "sc": {
+            "coverage_matched": 0.26595744680851063,
+            "natural_coverage": 0.5921985815602837,
+            "selective_accuracy": 0.3733,
+            "n_covered": 75
+          }
+        },
+        "gaps": {
+          "ct_verbalized": {
+            "gap": 0.41333333333333333,
+            "ci95": [
+              0.2782444574621485,
+              0.5415145806564017
+            ],
+            "p_one_sided": 0.0004997501249375312,
+            "selacc_a": 0.8266666666666667,
+            "selacc_b": 0.41333333333333333,
+            "cov_a": 0.26595744680851063,
+            "cov_b": 0.26595744680851063,
+            "n_boot": 2000
+          },
+          "ct_sc_margin": {
+            "gap": 0.4533333333333333,
+            "ci95": [
+              0.2696006479139009,
+              0.6063585778161632
+            ],
+            "p_one_sided": 0.0004997501249375312,
+            "selacc_a": 0.8266666666666667,
+            "selacc_b": 0.37333333333333335,
+            "cov_a": 0.26595744680851063,
+            "cov_b": 0.26595744680851063,
+            "n_boot": 2000
+          },
+          "ct_ptrue": {
+            "gap": 0.38666666666666666,
+            "ci95": [
+              0.22942779442779443,
+              0.5368242264981394
+            ],
+            "p_one_sided": 0.0004997501249375312,
+            "selacc_a": 0.8266666666666667,
+            "selacc_b": 0.44,
+            "cov_a": 0.26595744680851063,
+            "cov_b": 0.26595744680851063,
+            "n_boot": 2000
+          },
+          "ct_negent": {
+            "gap": 0.4533333333333333,
+            "ci95": [
+              0.2696006479139009,
+              0.6063585778161632
+            ],
+            "p_one_sided": 0.0004997501249375312,
+            "selacc_a": 0.8266666666666667,
+            "selacc_b": 0.37333333333333335,
+            "cov_a": 0.26595744680851063,
+            "cov_b": 0.26595744680851063,
+            "n_boot": 2000
+          },
+          "ct_sc_margin_maj": {
+            "gap": 0.4666666666666667,
+            "ci95": [
+              0.2942128916281459,
+              0.6130032467532467
+            ],
+            "p_one_sided": 0.0004997501249375312,
+            "selacc_a": 0.8266666666666667,
+            "selacc_b": 0.36,
+            "cov_a": 0.26595744680851063,
+            "cov_b": 0.26595744680851063,
+            "n_boot": 2000
+          },
+          "commit_argmax": {
+            "gap": 0.41333333333333333,
+            "ci95": [
+              0.2782444574621485,
+              0.5415145806564017
+            ],
+            "p_one_sided": 0.0004997501249375312,
+            "selacc_a": 0.8266666666666667,
+            "selacc_b": 0.41333333333333333,
+            "cov_a": 0.26595744680851063,
+            "cov_b": 0.26595744680851063,
+            "n_boot": 2000
+          },
+          "pot": {
+            "gap": 0.37333333333333335,
+            "ci95": [
+              0.21436764854742377,
+              0.5279211217872783
+            ],
+            "p_one_sided": 0.0005,
+            "selacc_a": 0.8266666666666667,
+            "selacc_b": 0.4533333333333333,
+            "cov_a": 0.26595744680851063,
+            "cov_b": 0.26595744680851063,
+            "n_boot": 2000
+          },
+          "sc": {
+            "gap": 0.4533333333333333,
+            "ci95": [
+              0.2706441134048785,
+              0.6050488009731233
+            ],
+            "p_one_sided": 0.0004997501249375312,
+            "selacc_a": 0.8266666666666667,
+            "selacc_b": 0.37333333333333335,
+            "cov_a": 0.26595744680851063,
+            "cov_b": 0.26595744680851063,
+            "n_boot": 2000
+          }
+        },
+        "n_queries": 282,
+        "label": "mixed (present+absent)"
+      },
+      "view2_risk_coverage_dominance_mixed": {
+        "certificate_coverage": 0.266,
+        "certificate_confident_wrong": 0.0461,
+        "n_pool": 282,
+        "per_signal": {
+          "ct_verbalized": {
+            "natural_coverage": 0.5887,
+            "coverage_at_equal_safety": 0.1312,
+            "coverage_gap_certificate_minus_baseline": 0.1348,
+            "confident_wrong_at_certificate_coverage": 0.156,
+            "cw_gap_baseline_minus_certificate": 0.1099
+          },
+          "ct_sc_margin": {
+            "natural_coverage": 0.5887,
+            "coverage_at_equal_safety": 0.1348,
+            "coverage_gap_certificate_minus_baseline": 0.1312,
+            "confident_wrong_at_certificate_coverage": 0.1667,
+            "cw_gap_baseline_minus_certificate": 0.1206
+          },
+          "ct_ptrue": {
+            "natural_coverage": 0.5887,
+            "coverage_at_equal_safety": 0.1312,
+            "coverage_gap_certificate_minus_baseline": 0.1348,
+            "confident_wrong_at_certificate_coverage": 0.1489,
+            "cw_gap_baseline_minus_certificate": 0.1028
+          },
+          "ct_negent": {
+            "natural_coverage": 0.5887,
+            "coverage_at_equal_safety": 0.1348,
+            "coverage_gap_certificate_minus_baseline": 0.1312,
+            "confident_wrong_at_certificate_coverage": 0.1667,
+            "cw_gap_baseline_minus_certificate": 0.1206
+          }
+        }
+      },
+      "decisive_4way_confident_wrong_reduction_at_matched_coverage": {
+        "ct_verbalized": {
+          "n": 282,
+          "matched_coverage": 0.266,
+          "ref_confident_wrong": 0.0461,
+          "compare_confident_wrong": 0.156,
+          "confident_wrong_reduction": 0.1099,
+          "ci95": [
+            0.0543,
+            0.1703
+          ],
+          "p_one_sided": 0.0001,
+          "ci_excludes_0": true
+        },
+        "ct_sc_margin": {
+          "n": 282,
+          "matched_coverage": 0.266,
+          "ref_confident_wrong": 0.0461,
+          "compare_confident_wrong": 0.1667,
+          "confident_wrong_reduction": 0.1206,
+          "ci95": [
+            0.0486,
+            0.1957
+          ],
+          "p_one_sided": 0.0009,
+          "ci_excludes_0": true
+        },
+        "ct_ptrue": {
+          "n": 282,
+          "matched_coverage": 0.266,
+          "ref_confident_wrong": 0.0461,
+          "compare_confident_wrong": 0.1489,
+          "confident_wrong_reduction": 0.1028,
+          "ci95": [
+            0.0395,
+            0.1706
+          ],
+          "p_one_sided": 0.0011,
+          "ci_excludes_0": true
+        },
+        "ct_negent": {
+          "n": 282,
+          "matched_coverage": 0.266,
+          "ref_confident_wrong": 0.0461,
+          "compare_confident_wrong": 0.1667,
+          "confident_wrong_reduction": 0.1206,
+          "ci95": [
+            0.0486,
+            0.1957
+          ],
+          "p_one_sided": 0.0009,
+          "ci_excludes_0": true
+        }
+      },
+      "holm_mixed_4way": {
+        "mixed_modeA_vs_ct_verbalized": {
+          "p": 0.0001,
+          "p_adj": 0.0004,
+          "reject": true,
+          "reduction": 0.1099,
+          "ci95": [
+            0.0543,
+            0.1703
+          ]
+        },
+        "mixed_modeA_vs_ct_sc_margin": {
+          "p": 0.0009,
+          "p_adj": 0.0027,
+          "reject": true,
+          "reduction": 0.1206,
+          "ci95": [
+            0.0486,
+            0.1957
+          ]
+        },
+        "mixed_modeA_vs_ct_ptrue": {
+          "p": 0.0011,
+          "p_adj": 0.0027,
+          "reject": true,
+          "reduction": 0.1028,
+          "ci95": [
+            0.0395,
+            0.1706
+          ]
+        },
+        "mixed_modeA_vs_ct_negent": {
+          "p": 0.0009,
+          "p_adj": 0.0027,
+          "reject": true,
+          "reduction": 0.1206,
+          "ci95": [
+            0.0486,
+            0.1957
+          ]
+        }
+      }
+    },
+    "leaderboard_ordinary_deduction": {
+      "clutrr_present_view3": {
+        "c_star": 0.6862745098039216,
+        "ref": "modeA",
+        "leaderboard": {
+          "modeA": {
+            "coverage": 0.6862745098039216,
+            "selective_accuracy": 0.8857,
+            "n_covered": 70
+          },
+          "ct_verbalized": {
+            "coverage_matched": 0.6862745098039216,
+            "natural_coverage": 0.7941176470588235,
+            "selective_accuracy": 0.5429,
+            "n_covered": 70
+          },
+          "ct_sc_margin": {
+            "coverage_matched": 0.6862745098039216,
+            "natural_coverage": 0.7941176470588235,
+            "selective_accuracy": 0.5429,
+            "n_covered": 70
+          },
+          "ct_ptrue": {
+            "coverage_matched": 0.6862745098039216,
+            "natural_coverage": 0.7941176470588235,
+            "selective_accuracy": 0.5429,
+            "n_covered": 70
+          },
+          "ct_negent": {
+            "coverage_matched": 0.6862745098039216,
+            "natural_coverage": 0.7941176470588235,
+            "selective_accuracy": 0.5429,
+            "n_covered": 70
+          },
+          "ct_sc_margin_maj": {
+            "coverage_matched": 0.6862745098039216,
+            "natural_coverage": 0.7843137254901961,
+            "selective_accuracy": 0.5429,
+            "n_covered": 70
+          },
+          "commit_argmax": {
+            "coverage_matched": 0.6862745098039216,
+            "natural_coverage": 0.7941176470588235,
+            "selective_accuracy": 0.5429,
+            "n_covered": 70
+          },
+          "pot": {
+            "coverage_matched": 0.6862745098039216,
+            "natural_coverage": 0.8823529411764706,
+            "selective_accuracy": 0.4571,
+            "n_covered": 70
+          },
+          "sc": {
+            "coverage_matched": 0.6862745098039216,
+            "natural_coverage": 0.7941176470588235,
+            "selective_accuracy": 0.5571,
+            "n_covered": 70
+          }
+        },
+        "gaps": {
+          "ct_verbalized": {
+            "gap": 0.34285714285714286,
+            "ci95": [
+              0.220956655059916,
+              0.4638413700727133
+            ],
+            "p_one_sided": 0.0004997501249375312,
+            "selacc_a": 0.8857142857142857,
+            "selacc_b": 0.5428571428571428,
+            "cov_a": 0.6862745098039216,
+            "cov_b": 0.6862745098039216,
+            "n_boot": 2000
+          },
+          "ct_sc_margin": {
+            "gap": 0.34285714285714286,
+            "ci95": [
+              0.2157784992784993,
+              0.4723813559322034
+            ],
+            "p_one_sided": 0.0004997501249375312,
+            "selacc_a": 0.8857142857142857,
+            "selacc_b": 0.5428571428571428,
+            "cov_a": 0.6862745098039216,
+            "cov_b": 0.6862745098039216,
+            "n_boot": 2000
+          },
+          "ct_ptrue": {
+            "gap": 0.34285714285714286,
+            "ci95": [
+              0.2239252283105022,
+              0.4657683962614049
+            ],
+            "p_one_sided": 0.0004997501249375312,
+            "selacc_a": 0.8857142857142857,
+            "selacc_b": 0.5428571428571428,
+            "cov_a": 0.6862745098039216,
+            "cov_b": 0.6862745098039216,
+            "n_boot": 2000
+          },
+          "ct_negent": {
+            "gap": 0.34285714285714286,
+            "ci95": [
+              0.2157784992784993,
+              0.4723813559322034
+            ],
+            "p_one_sided": 0.0004997501249375312,
+            "selacc_a": 0.8857142857142857,
+            "selacc_b": 0.5428571428571428,
+            "cov_a": 0.6862745098039216,
+            "cov_b": 0.6862745098039216,
+            "n_boot": 2000
+          },
+          "ct_sc_margin_maj": {
+            "gap": 0.34285714285714286,
+            "ci95": [
+              0.2157784992784993,
+              0.4723813559322034
+            ],
+            "p_one_sided": 0.0004997501249375312,
+            "selacc_a": 0.8857142857142857,
+            "selacc_b": 0.5428571428571428,
+            "cov_a": 0.6862745098039216,
+            "cov_b": 0.6862745098039216,
+            "n_boot": 2000
+          },
+          "commit_argmax": {
+            "gap": 0.34285714285714286,
+            "ci95": [
+              0.220956655059916,
+              0.4638413700727133
+            ],
+            "p_one_sided": 0.0004997501249375312,
+            "selacc_a": 0.8857142857142857,
+            "selacc_b": 0.5428571428571428,
+            "cov_a": 0.6862745098039216,
+            "cov_b": 0.6862745098039216,
+            "n_boot": 2000
+          },
+          "pot": {
+            "gap": 0.42857142857142855,
+            "ci95": [
+              0.2981117035738213,
+              0.5574053891947058
+            ],
+            "p_one_sided": 0.0004997501249375312,
+            "selacc_a": 0.8857142857142857,
+            "selacc_b": 0.45714285714285713,
+            "cov_a": 0.6862745098039216,
+            "cov_b": 0.6862745098039216,
+            "n_boot": 2000
+          },
+          "sc": {
+            "gap": 0.3285714285714285,
+            "ci95": [
+              0.2052428082670018,
+              0.45811901927598314
+            ],
+            "p_one_sided": 0.0004997501249375312,
+            "selacc_a": 0.8857142857142857,
+            "selacc_b": 0.5571428571428572,
+            "cov_a": 0.6862745098039216,
+            "cov_b": 0.6862745098039216,
+            "n_boot": 2000
+          }
+        },
+        "n_queries": 102,
+        "label": "ordinary_deduction (CLUTRR present)"
+      },
+      "spatial_rcc8": {
+        "n": 228,
+        "stratum": "ordinary_deduction (single-path RCC-8)",
+        "certificate_confident_wrong": 0.0219,
+        "raw_abstain_confident_wrong": 0.0351,
+        "raw_commit_confident_wrong": 0.193,
+        "cw_reduction_certificate_vs_raw_abstain": 0.0132,
+        "cw_reduction_ci95_docclustered": [
+          -0.0132,
+          0.0395
+        ],
+        "reused_matched_coverage_selacc_gap_certificate_vs_raw_abstain": {
+          "gap_point": -0.08823529411764708,
+          "gap_bootstrap_median": -0.08108108108108103,
+          "gap_ci95": [
+            -0.2222222222222222,
+            0.039999999999999925
+          ],
+          "brackets": true,
+          "boot_p_gap_le_0": 0.9319999999999999,
+          "matched_coverage": 0.14912280701754385,
+          "method_acc": 0.8529411764705882,
+          "base_acc": 0.9411764705882353,
+          "base_max_coverage": 0.2850877192982456,
+          "base_unreachable": false,
+          "n_boot": 2000,
+          "ci_note": "percentile CI brackets the bootstrap MEDIAN; `brackets` flags whether it also contains the full-sample point gap (R1 fix)."
+        },
+        "reused_hallucination_rates": {
+          "method": {
+            "rate": 0.021929824561403508,
+            "ci95": [
+              0.0043859649122807015,
+              0.043859649122807015
+            ],
+            "n": 228
+          },
+          "raw": {
+            "rate": 0.19298245614035087,
+            "ci95": [
+              0.14473684210526316,
+              0.24561403508771928
+            ],
+            "n": 228
+          },
+          "raw_abstain": {
+            "rate": 0.03508771929824561,
+            "ci95": [
+              0.013157894736842105,
+              0.06140350877192982
+            ],
+            "n": 228
+          },
+          "cot": {
+            "rate": 0.12280701754385964,
+            "ci95": [
+              0.08333333333333333,
+              0.16677631578947308
+            ],
+            "n": 228
+          },
+          "oracle": {
+            "rate": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "n": 228
+          }
+        },
+        "reused_resolution_rates": {
+          "method": {
+            "rate": 0.12719298245614036,
+            "ci95": [
+              0.08771929824561403,
+              0.17105263157894737
+            ],
+            "n": 228,
+            "coverage": 0.14912280701754385
+          },
+          "raw": {
+            "rate": 0.8070175438596491,
+            "ci95": [
+              0.7543859649122807,
+              0.8552631578947368
+            ],
+            "n": 228,
+            "coverage": 1.0
+          },
+          "raw_abstain": {
+            "rate": 0.25,
+            "ci95": [
+              0.19736842105263158,
+              0.30701754385964913
+            ],
+            "n": 228,
+            "coverage": 0.2850877192982456
+          },
+          "cot": {
+            "rate": 0.8771929824561403,
+            "ci95": [
+              0.8332236842105264,
+              0.9166666666666666
+            ],
+            "n": 228,
+            "coverage": 1.0
+          },
+          "oracle": {
+            "rate": 0.8903508771929824,
+            "ci95": [
+              0.8508771929824561,
+              0.9298245614035088
+            ],
+            "n": 228,
+            "coverage": 0.8903508771929824
+          }
+        },
+        "interpretation": "On ordinary single-path RCC-8 deduction the certificate does NOT dominate a confidence-thresholded abstainer: it matches/slightly beats on confident-wrong but the matched-coverage selective-accuracy g..."
+      },
+      "stratum_note": "CLUTRR-present is MULTI-HOP kinship deduction (hops 2..10): here the certificate also WINS at matched coverage (selective-accuracy gap CI excludes 0 vs every signal -- it abstains on the conflict/no-p..."
+    },
+    "crux_confidence_survival_table": {
+      "n_absent": 180,
+      "n_raw_confident_wrong": 85,
+      "raw_hallucination_rate_absent": 0.4722,
+      "certificate_coverage_absent": 0.0278,
+      "certificate_confident_wrong_absent": 0.0278,
+      "per_signal": {
+        "ct_verbalized": {
+          "tau_at_certificate_coverage": 1.0,
+          "signal_distribution_on_hallucinations": {
+            "mean": 0.9412,
+            "median": 0.9,
+            "p10": 0.9,
+            "p25": 0.9,
+            "p75": 1.0,
+            "p90": 1.0
+          },
+          "frac_hallucinations_signal_ge_0.5": 1.0,
+          "frac_hallucinations_signal_ge_pool_median": 0.4353,
+          "frac_surviving_certificate_matched_rule": 0.4353,
+          "interpretation": "fraction of the LLM's high-confidence absent-relation hallucinations that a confidence rule calibrated to the certificate's coverage would still COMMIT (the certificate abstains on ~all of them: no de..."
+        },
+        "ct_sc_margin": {
+          "tau_at_certificate_coverage": 1.0,
+          "signal_distribution_on_hallucinations": {
+            "mean": 0.9129,
+            "median": 1.0,
+            "p10": 0.6,
+            "p25": 0.9,
+            "p75": 1.0,
+            "p90": 1.0
+          },
+          "frac_hallucinations_signal_ge_0.5": 0.9882,
+          "frac_hallucinations_signal_ge_pool_median": 0.7176,
+          "frac_surviving_certificate_matched_rule": 0.7176,
+          "interpretation": "fraction of the LLM's high-confidence absent-relation hallucinations that a confidence rule calibrated to the certificate's coverage would still COMMIT (the certificate abstains on ~all of them: no de..."
+        },
+        "ct_ptrue": {
+          "tau_at_certificate_coverage": 1.0,
+          "signal_distribution_on_hallucinations": {
+            "mean": 0.2659,
+            "median": 0.0,
+            "p10": 0.0,
+            "p25": 0.0,
+            "p75": 0.8,
+            "p90": 1.0
+          },
+          "frac_hallucinations_signal_ge_0.5": 0.2706,
+          "frac_hallucinations_signal_ge_pool_median": 0.2471,
+          "frac_surviving_certificate_matched_rule": 0.2471,
+          "interpretation": "fraction of the LLM's high-confidence absent-relation hallucinations that a confidence rule calibrated to the certificate's coverage would still COMMIT (the certificate abstains on ~all of them: no de..."
+        },
+        "ct_negent": {
+          "tau_at_certificate_coverage": 1.0,
+          "signal_distribution_on_hallucinations": {
+            "mean": 0.9238,
+            "median": 1.0,
+            "p10": 0.7077,
+            "p25": 0.8588,
+            "p75": 1.0,
+            "p90": 1.0
+          },
+          "frac_hallucinations_signal_ge_0.5": 0.9882,
+          "frac_hallucinations_signal_ge_pool_median": 0.7176,
+          "frac_surviving_certificate_matched_rule": 0.7176,
+          "interpretation": "fraction of the LLM's high-confidence absent-relation hallucinations that a confidence rule calibrated to the certificate's coverage would still COMMIT (the certificate abstains on ~all of them: no de..."
+        }
+      }
+    },
+    "worked_no_derivation_abstention": {
+      "doc_id": "0525b833-4f03-4665-8eb4-a38656a6c48e",
+      "story": "Maida asked her daughter, Eleanor, if she would like to go to a movie with her on Saturday night. Rebecca and her brother Jerry enlisted in the army Kristin was happy to babysit her niece, Henriette. ...",
+      "qsrc": "Henriette",
+      "qtgt": "Jerry",
+      "gold": "no-relation",
+      "extracted_atomics": [
+        {
+          "a": "Maida",
+          "b": "Eleanor",
+          "type": "child",
+          "surface": "daughter"
+        },
+        {
+          "a": "Rebecca",
+          "b": "Jerry",
+          "type": "sibling",
+          "surface": "brother"
+        },
+        {
+          "a": "Kristin",
+          "b": "Henriette",
+          "type": "un",
+          "surface": "niece"
+        }
+      ],
+      "certificate_decision": "ABSTAIN (no-relation)",
+      "certificate_info": null,
+      "raw_llm_committed": "uncle",
+      "raw_llm_signals": {
+        "verbalized": 1.0,
+        "sc_margin": 1.0,
+        "ptrue": 1.0,
+        "negent": 1.0,
+        "H": 0.0,
+        "sc_k_eff": 10.0,
+        "sc10_abstain": 0.0
+      },
+      "prolog": {
+        "engine": "python-fallback",
+        "executed_in_swipl": false,
+        "prolog_results": null,
+        "python_reference": [],
+        "discharge_method": "python-checked (swipl-unavailable)",
+        "program_chars": 1645
+      },
+      "explanation": "The extracted kinship edges leave qsrc and qtgt in DISCONNECTED components, so the forward closure D[(qsrc,qtgt)] is EMPTY -> the certificate asserts no-relation. The raw LLM instead committed a speci..."
+    },
+    "worked_mode_b_collapse": {
+      "doc_id": "046af756-3997-4bfa-8944-690af4cc6a77",
+      "qsrc": "Tracy",
+      "qtgt": "Shantel",
+      "gold": "mother",
+      "derived_types": "inv-child|inv-in-law",
+      "n_derivations": 2,
+      "certificate_decision": "ABSTAIN (Mode-B conflict)",
+      "explanation": "Two incompatible derivations (e.g. blood vs in-law) for the same pair: |D|>1, so the certificate abstains rather than guess -- another hallucination-safe branch of the contract."
+    },
+    "worked_present_composition_trace": {
+      "doc_id": "0102334c-6264-4a27-bb07-ad211606bc8d",
+      "story": "Irvin's grandfather, James, went out to get groceries. In the mean time, Irvin's mother, Lena, cooked up some vegetables. James took his daughter Lynn out for dinner.",
+      "qsrc": "Lena",
+      "qtgt": "Lynn",
+      "gold": "sister",
+      "extracted_atomics": [
+        {
+          "a": "Irvin",
+          "b": "James",
+          "type": "inv-grand",
+          "surface": "grandfather"
+        },
+        {
+          "a": "Irvin",
+          "b": "Lena",
+          "type": "inv-child",
+          "surface": "mother"
+        },
+        {
+          "a": "James",
+          "b": "Lynn",
+          "type": "child",
+          "surface": "daughter"
+        }
+      ],
+      "modeA_narrowing_trace": [
+        {
+          "a": "Lena",
+          "b": "Irvin",
+          "c": "James",
+          "t1": "child",
+          "t2": "inv-grand",
+          "t3": "inv-child"
+        },
+        {
+          "a": "Lena",
+          "b": "James",
+          "c": "Lynn",
+          "t1": "inv-child",
+          "t2": "child",
+          "t3": "sibling"
+        }
+      ],
+      "prolog": {
+        "engine": "python-fallback",
+        "executed_in_swipl": false,
+        "prolog_results": null,
+        "python_reference": [],
+        "discharge_method": "python-checked (swipl-unavailable)",
+        "program_chars": 1545
+      }
+    },
+    "prolog_discharge_summary": {
+      "n_discharged": 40,
+      "n_executed_in_swipl": 0,
+      "n_prolog_matches_python": 0,
+      "engines": {
+        "python-fallback": 40
+      },
+      "discharge_method": "python-checked (swipl-unavailable)",
+      "swipl_available": false,
+      "note": "Prolog program emits comp/3, conv/2, rel/3, solve_/4; discharged in real SWI-Prolog when available, else validated by the Python re-implementation of the same rules and labelled truthfully (never impl..."
+    },
+    "cross_family_sensitivity": {
+      "reader": "deepseek/deepseek-v3.2",
+      "n_subset": 180,
+      "n_absent": 120,
+      "n_present": 60,
+      "raw_hallucination_rate_absent": 0.4833,
+      "cost_usd": 0.0,
+      "n_calls": 0,
+      "n_cache_hits": 2160,
+      "frac_surviving_by_signal": {
+        "verbalized": 0.6724,
+        "sc_margin": 0.2241,
+        "ptrue": 0.1034,
+        "negent": 0.2241
+      },
+      "certificate_coverage_absent": 0.0417,
+      "certificate_confident_wrong_absent": 0.0417
+    },
+    "iter3_atomic_pr_reference": {
+      "precision": 0.5361,
+      "recall": 0.5324,
+      "f1": 0.5343,
+      "tp": 230,
+      "n_pred": 429,
+      "n_gold": 432,
+      "n_stories": 72,
+      "precision_ci": [
+        0.48591500678710625,
+        0.5889963217396008
+      ],
+      "recall_ci": [
+        0.4831689927184466,
+        0.5831361081179327
+      ],
+      "f1_ci": [
+        0.4847726453553407,
+        0.5859927520316275
+      ],
+      "by_hop": {
+        "10": {
+          "precision": 0.4878,
+          "recall": 0.5,
+          "f1": 0.4938,
+          "tp": 40,
+          "n_pred": 82,
+          "n_gold": 80
+        },
+        "2": {
+          "precision": 0.5,
+          "recall": 0.5625,
+          "f1": 0.5294,
+          "tp": 9,
+          "n_pred": 18,
+          "n_gold": 16
+        },
+        "3": {
+          "precision": 0.5417,
+          "recall": 0.5417,
+          "f1": 0.5417,
+          "tp": 13,
+          "n_pred": 24,
+          "n_gold": 24
+        },
+        "4": {
+          "precision": 0.5161,
+          "recall": 0.5,
+          "f1": 0.5079,
+          "tp": 16,
+          "n_pred": 31,
+          "n_gold": 32
+        },
+        "5": {
+          "precision": 0.4359,
+          "recall": 0.425,
+          "f1": 0.4304,
+          "tp": 17,
+          "n_pred": 39,
+          "n_gold": 40
+        },
+        "6": {
+          "precision": 0.6383,
+          "recall": 0.625,
+          "f1": 0.6316,
+          "tp": 30,
+          "n_pred": 47,
+          "n_gold": 48
+        },
+        "7": {
+          "precision": 0.5636,
+          "recall": 0.5536,
+          "f1": 0.5586,
+          "tp": 31,
+          "n_pred": 55,
+          "n_gold": 56
+        },
+        "8": {
+          "precision": 0.55,
+          "recall": 0.5156,
+          "f1": 0.5323,
+          "tp": 33,
+          "n_pred": 60,
+          "n_gold": 64
+        },
+        "9": {
+          "precision": 0.5616,
+          "recall": 0.5694,
+          "f1": 0.5655,
+          "tp": 41,
+          "n_pred": 73,
+          "n_gold": 72
+        }
+      },
+      "by_noise_type": {
+        "none": {
+          "precision": 0.5361,
+          "recall": 0.5324,
+          "f1": 0.5343,
+          "tp": 230,
+          "n_pred": 429,
+          "n_gold": 432
+        }
+      }
+    },
+    "honesty_caveats": {
+      "clutrr_story_length": "CLUTRR stories are short (max 871 chars); none reach the umbrella's ~3000-char target.",
+      "spatial_story_length": "spatial RCC-8 scenes are templated (130-1338 chars); symbolic entity ids.",
+      "absent_pairs": "absent pairs are STRUCTURAL (different connected components) => conservative gold 'no-relation'.",
+      "rcc8_soundness": "RCC-8 path-consistency is sound-but-incomplete => closure coverage is a lower bound.",
+      "pure_absent_matched_coverage": "on the pure-absent pool confident-wrong==coverage; the headline is therefore (i) the certificate's structural abstention vs the LLM's natural answering (view1), (ii) the MIXED-pool 4-way where a singl...",
+      "prolog": "swipl unavailable in this environment => discharge is python-checked and labelled truthfully (iter-5 precedent); the Prolog program text is emitted and the Python re-implementation of comp/3,conv/2,re...",
+      "spatial_battery": "the optional spatial confidence panel was NOT reconstructed (scenes use templated symbolic ids); the cached predict_raw_llm_abstain baseline already supplies the honest ordinary-deduction tie/lose, re..."
+    },
+    "budget": {
+      "cumulative_usd": 0.0,
+      "n_llm_calls": 0,
+      "n_cache_hits": 4640,
+      "n_parse_fail": 0,
+      "n_errors": 0,
+      "model": "google/gemini-3.1-flash-lite",
+      "fallbacks": [
+        "deepseek/deepseek-v3.2",
+        "google/gemini-3-flash-preview"
+      ],
+      "temperature": 0.0,
+      "budget_hard": 9.0,
+      "budget_soft": 5.0
+    },
+    "spend_note": "the iter-3/iter-5 reads replay deterministically at $0 (sha256 disk cache). The NEW battery + cross-family calls were billed ONCE: primary gemini-3.1-flash-lite $0.166 (2024 calls = 1746 SC-tail + 278...",
+    "cross_family_spend_usd_one_time": 0.0,
+    "verdict": {
+      "overall": "CONFIRM",
+      "P_A_no_derivation_certificate_beats_every_signal": {
+        "pure_absent_reduction_ci_excludes_0_all_signals": true,
+        "best_signal_absent_reduction": 0.4444,
+        "mixed_pool_4way_holm_rejects_all_signals": true
+      },
+      "P_O_ordinary_deduction_ties_or_loses": true,
+      "P_CRUX_high_survival_ge2_signals": true,
+      "crux_frac_surviving_by_signal": {
+        "ct_verbalized": 0.4353,
+        "ct_sc_margin": 0.7176,
+        "ct_ptrue": 0.2471,
+        "ct_negent": 0.7176
+      },
+      "rationale": "CONFIRM iff the certificate's confident-wrong is strictly below every confidence-thresholded baseline on the no_derivation stratum (pure-absent reduction CI excludes 0 AND the decisive mixed-pool 4-wa..."
+    },
+    "runtime_sec": 99.3
+  },
+  "datasets": [
+    {
+      "dataset": "clutrr_ordinary_deduction",
+      "examples": [
+        {
+          "input": "Belva went with her grandmother, Ashley, to the grocery store to help her while she shopped. Nicolas and his sister, Belva love it when their grandmother visits because she spoils them. She is coming ...",
+          "output": "grandson",
+          "predict_certificate": "grandson",
+          "predict_conf_thresh_verbalized": "grandson",
+          "predict_conf_thresh_sc_margin": "grandson",
+          "predict_conf_thresh_ptrue": "grandson",
+          "predict_conf_thresh_negent": "grandson",
+          "predict_commit_argmax": "grandson",
+          "predict_pot": "grandson",
+          "predict_sc": "grandson",
+          "metadata_stratum": "ordinary_deduction",
+          "metadata_is_absent": false,
+          "metadata_doc_id": "0741bf9a-a8f6-4ff1-aac1-1a4f0828aed9",
+          "metadata_qsrc": "Ashley",
+          "metadata_qtgt": "Nicolas",
+          "metadata_hop": 2,
+          "metadata_noise_type": "none",
+          "metadata_raw_named": true,
+          "metadata_conf_verbalized": 1.0,
+          "metadata_conf_sc_margin": 1.0,
+          "metadata_conf_ptrue": 1.0,
+          "metadata_conf_negent": 1.0,
+          "metadata_sc_semantic_entropy": 0.0,
+          "metadata_certificate_info": null,
+          "metadata_n_extracted_edges": 4
+        },
+        {
+          "input": "Emily and her granddaughter Ashley went to the mall Michael likes to visit his sister. Her name is Emily.  || Q: what is Michael to Ashley?",
+          "output": "grandson",
+          "predict_certificate": "ABSTAIN",
+          "predict_conf_thresh_verbalized": "uncle",
+          "predict_conf_thresh_sc_margin": "uncle",
+          "predict_conf_thresh_ptrue": "uncle",
+          "predict_conf_thresh_negent": "uncle",
+          "predict_commit_argmax": "uncle",
+          "predict_pot": "uncle",
+          "predict_sc": "uncle",
+          "metadata_stratum": "ordinary_deduction",
+          "metadata_is_absent": false,
+          "metadata_doc_id": "0f226f4d-dc2d-4051-a875-9e555ecf0f22",
+          "metadata_qsrc": "Ashley",
+          "metadata_qtgt": "Michael",
+          "metadata_hop": 2,
+          "metadata_noise_type": "none",
+          "metadata_raw_named": true,
+          "metadata_conf_verbalized": 0.9,
+          "metadata_conf_sc_margin": 1.0,
+          "metadata_conf_ptrue": 0.0,
+          "metadata_conf_negent": 1.0,
+          "metadata_sc_semantic_entropy": 0.0,
+          "metadata_certificate_info": null,
+          "metadata_n_extracted_edges": 2
+        },
+        {
+          "input": "Heidi went to her brother Kevin's birthday party Ashley and her granddaughter Heidi prepared dinner as a family  || Q: what is Kevin to Ashley?",
+          "output": "grandson",
+          "predict_certificate": "grandson",
+          "predict_conf_thresh_verbalized": "grandson",
+          "predict_conf_thresh_sc_margin": "grandson",
+          "predict_conf_thresh_ptrue": "grandson",
+          "predict_conf_thresh_negent": "grandson",
+          "predict_commit_argmax": "grandson",
+          "predict_pot": "grandson",
+          "predict_sc": "grandson",
+          "metadata_stratum": "ordinary_deduction",
+          "metadata_is_absent": false,
+          "metadata_doc_id": "162070fb-1a46-44f2-91e5-50f8cc99daf3",
+          "metadata_qsrc": "Ashley",
+          "metadata_qtgt": "Kevin",
+          "metadata_hop": 2,
+          "metadata_noise_type": "none",
+          "metadata_raw_named": true,
+          "metadata_conf_verbalized": 1.0,
+          "metadata_conf_sc_margin": 1.0,
+          "metadata_conf_ptrue": 1.0,
+          "metadata_conf_negent": 1.0,
+          "metadata_sc_semantic_entropy": 0.0,
+          "metadata_certificate_info": null,
+          "metadata_n_extracted_edges": 2
+        }
+      ]
+    },
+    {
+      "dataset": "clutrr_no_derivation",
+      "examples": [
+        {
+          "input": "Rebecca invited her daughter-in-law Amanda to her birthday party. Stephen is his grandfather, Willie's favorite person Jerry took his son Willie to see his sister Patricia  || Q: what is Rebecca to Pa...",
+          "output": "no-relation",
+          "predict_certificate": "ABSTAIN",
+          "predict_conf_thresh_verbalized": "ABSTAIN",
+          "predict_conf_thresh_sc_margin": "ABSTAIN",
+          "predict_conf_thresh_ptrue": "ABSTAIN",
+          "predict_conf_thresh_negent": "ABSTAIN",
+          "predict_commit_argmax": "ABSTAIN",
+          "predict_pot": "ABSTAIN",
+          "predict_sc": "ABSTAIN",
+          "metadata_stratum": "no_derivation",
+          "metadata_is_absent": true,
+          "metadata_doc_id": "00255bf0-6440-4796-940a-5d7011062ffe",
+          "metadata_qsrc": "Patricia",
+          "metadata_qtgt": "Rebecca",
+          "metadata_hop": 3,
+          "metadata_noise_type": "disconnected",
+          "metadata_raw_named": false,
+          "metadata_conf_verbalized": 1.0,
+          "metadata_conf_sc_margin": 1.0,
+          "metadata_conf_ptrue": 1.0,
+          "metadata_conf_negent": 1.0,
+          "metadata_sc_semantic_entropy": 0.0,
+          "metadata_certificate_info": null,
+          "metadata_n_extracted_edges": 3
+        },
+        {
+          "input": "Rebecca invited her daughter-in-law Amanda to her birthday party. Stephen is his grandfather, Willie's favorite person Jerry took his son Willie to see his sister Patricia  || Q: what is Amanda to Pat...",
+          "output": "no-relation",
+          "predict_certificate": "ABSTAIN",
+          "predict_conf_thresh_verbalized": "ABSTAIN",
+          "predict_conf_thresh_sc_margin": "ABSTAIN",
+          "predict_conf_thresh_ptrue": "ABSTAIN",
+          "predict_conf_thresh_negent": "ABSTAIN",
+          "predict_commit_argmax": "ABSTAIN",
+          "predict_pot": "ABSTAIN",
+          "predict_sc": "ABSTAIN",
+          "metadata_stratum": "no_derivation",
+          "metadata_is_absent": true,
+          "metadata_doc_id": "00255bf0-6440-4796-940a-5d7011062ffe",
+          "metadata_qsrc": "Patricia",
+          "metadata_qtgt": "Amanda",
+          "metadata_hop": 3,
+          "metadata_noise_type": "disconnected",
+          "metadata_raw_named": false,
+          "metadata_conf_verbalized": 1.0,
+          "metadata_conf_sc_margin": 1.0,
+          "metadata_conf_ptrue": 1.0,
+          "metadata_conf_negent": 1.0,
+          "metadata_sc_semantic_entropy": 0.0,
+          "metadata_certificate_info": null,
+          "metadata_n_extracted_edges": 3
+        },
+        {
+          "input": "Rebecca invited her daughter-in-law Amanda to her birthday party. Stephen is his grandfather, Willie's favorite person Jerry took his son Willie to see his sister Patricia  || Q: what is Rebecca to Je...",
+          "output": "no-relation",
+          "predict_certificate": "ABSTAIN",
+          "predict_conf_thresh_verbalized": "ABSTAIN",
+          "predict_conf_thresh_sc_margin": "ABSTAIN",
+          "predict_conf_thresh_ptrue": "ABSTAIN",
+          "predict_conf_thresh_negent": "ABSTAIN",
+          "predict_commit_argmax": "ABSTAIN",
+          "predict_pot": "ABSTAIN",
+          "predict_sc": "ABSTAIN",
+          "metadata_stratum": "no_derivation",
+          "metadata_is_absent": true,
+          "metadata_doc_id": "00255bf0-6440-4796-940a-5d7011062ffe",
+          "metadata_qsrc": "Jerry",
+          "metadata_qtgt": "Rebecca",
+          "metadata_hop": 3,
+          "metadata_noise_type": "disconnected",
+          "metadata_raw_named": false,
+          "metadata_conf_verbalized": 1.0,
+          "metadata_conf_sc_margin": 1.0,
+          "metadata_conf_ptrue": 1.0,
+          "metadata_conf_negent": 1.0,
+          "metadata_sc_semantic_entropy": 0.0,
+          "metadata_certificate_info": null,
+          "metadata_n_extracted_edges": 3
+        }
+      ]
+    },
+    {
+      "dataset": "spatial_rcc8_ordinary",
+      "examples": [
+        {
+          "input": "[SpaRP-PS1] RCC-8 spatial deduction: relation of 0x0 -> 1 via a 2-hop stated containment path (deduction-required; read local constituents + compose).",
+          "output": "NTPP",
+          "predict_certificate": "ABSTAIN",
+          "predict_conf_thresh_raw_abstain": "ABSTAIN",
+          "predict_commit_argmax": "NTPP",
+          "predict_chain_of_thought": "NTPP",
+          "metadata_stratum": "ordinary_deduction",
+          "metadata_is_absent": false,
+          "metadata_doc_id": "SpaRP-PS1_test_1",
+          "metadata_hop": 2,
+          "metadata_method_collapse": "False",
+          "metadata_oracle_correct": "1"
+        },
+        {
+          "input": "[SpaRP-PS1] RCC-8 spatial deduction: relation of 2x0 -> 0 via a 2-hop stated containment path (deduction-required; read local constituents + compose).",
+          "output": "NTPP",
+          "predict_certificate": "ABSTAIN",
+          "predict_conf_thresh_raw_abstain": "DC",
+          "predict_commit_argmax": "DC",
+          "predict_chain_of_thought": "DC",
+          "metadata_stratum": "ordinary_deduction",
+          "metadata_is_absent": false,
+          "metadata_doc_id": "SpaRP-PS1_test_10",
+          "metadata_hop": 2,
+          "metadata_method_collapse": "False",
+          "metadata_oracle_correct": "1"
+        },
+        {
+          "input": "[SpaRP-PS1] RCC-8 spatial deduction: relation of 2 -> 1x1 via a 2-hop stated containment path (deduction-required; read local constituents + compose).",
+          "output": "NTPPi",
+          "predict_certificate": "ABSTAIN",
+          "predict_conf_thresh_raw_abstain": "ABSTAIN",
+          "predict_commit_argmax": "DC",
+          "predict_chain_of_thought": "NTPPi",
+          "metadata_stratum": "ordinary_deduction",
+          "metadata_is_absent": false,
+          "metadata_doc_id": "SpaRP-PS1_test_1022",
+          "metadata_hop": 2,
+          "metadata_method_collapse": "False",
+          "metadata_oracle_correct": "1"
+        }
+      ]
+    }
+  ]
+}
