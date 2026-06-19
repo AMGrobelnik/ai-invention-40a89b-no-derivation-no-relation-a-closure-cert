@@ -1,0 +1,536 @@
+\begin{thebibliography}{68}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Allen(1983)]{Allen1983}
+James~F. Allen.
+\newblock Maintaining knowledge about temporal intervals.
+\newblock In \emph{CACM}, volume~26, pages 832--843, 1983.
+\newblock \doi{10.1145/182.358434}.
+
+\bibitem[Cassidy et~al.(2014)Cassidy, McDowell, Chambers, and
+  Bethard]{Cassidy2014}
+Taylor Cassidy, Bill McDowell, Nathanael Chambers, and Steven Bethard.
+\newblock An annotation framework for dense event ordering.
+\newblock In \emph{Annual Meeting of the Association for Computational
+  Linguistics}, pages 501--506, 2014.
+\newblock \doi{10.3115/v1/P14-2082}.
+
+\bibitem[Chambers et~al.(2014)Chambers, Cassidy, McDowell, and
+  Bethard]{Chambers2014}
+Nathanael Chambers, Taylor Cassidy, Bill McDowell, and Steven Bethard.
+\newblock Dense event ordering with a multi-pass architecture.
+\newblock In \emph{Transactions of the Association for Computational
+  Linguistics}, volume~2, pages 273--284, 2014.
+\newblock \doi{10.1162/tacl_a_00182}.
+
+\bibitem[Chepurova et~al.(2025)Chepurova, Bulatov, Kuratov, and
+  Burtsev]{Chepurova2026Wikontic}
+Alla Chepurova, A.~Bulatov, Yuri Kuratov, and M.~Burtsev.
+\newblock Wikontic: Constructing wikidata-aligned, ontology-aware knowledge
+  graphs with large language models.
+\newblock In \emph{Conference of the European Chapter of the Association for
+  Computational Linguistics}, volume abs/2512.00590, 2025.
+\newblock \doi{10.48550/arXiv.2512.00590}.
+
+\bibitem[Clark et~al.(2020)Clark, Tafjord, and Richardson]{Clark2020}
+Peter Clark, Oyvind Tafjord, and Kyle Richardson.
+\newblock Transformers as soft reasoners over language.
+\newblock In \emph{International Joint Conference on Artificial Intelligence},
+  pages 3882--3890, 2020.
+\newblock \doi{10.24963/ijcai.2020/537}.
+
+\bibitem[Eirew et~al.(2025)Eirew, Bar, and Dagan]{Eirew2025}
+Alon Eirew, Kfir Bar, and Ido Dagan.
+\newblock Beyond pairwise: Global zero-shot temporal graph generation.
+\newblock In \emph{Conference on Empirical Methods in Natural Language
+  Processing}, pages 31440--31458, 2025.
+\newblock \doi{10.48550/arXiv.2502.11114}.
+
+\bibitem[Fan and Strube(2025)]{Fan2025}
+Yi~Fan and Michael Strube.
+\newblock Consistent discourse-level temporal relation extraction using large
+  language models.
+\newblock In \emph{Conference on Empirical Methods in Natural Language
+  Processing}, pages 18605--18622, 2025.
+\newblock \doi{10.18653/v1/2025.findings-emnlp.1010}.
+
+\bibitem[Farquhar et~al.(2024)Farquhar, Kossen, Kuhn, and Gal]{Farquhar2024}
+Sebastian Farquhar, Jannik Kossen, Lorenz Kuhn, and Y.~Gal.
+\newblock Detecting hallucinations in large language models using semantic
+  entropy.
+\newblock In \emph{Nature}, volume 630, pages 625 -- 630, 2024.
+\newblock \doi{10.1038/s41586-024-07421-0}.
+
+\bibitem[Feng et~al.(2024)Feng, Wu, and Meng]{Feng2024OntologyGrounded}
+Xiaohan Feng, Xixin Wu, and Helen~M. Meng.
+\newblock Ontology-grounded automatic knowledge graph construction by llm under
+  wikidata schema.
+\newblock In \emph{HI-AI@KDD}, pages 117--135, 2024.
+
+\bibitem[Frank(1996)]{Frank1996}
+Andrew~U. Frank.
+\newblock Qualitative spatial reasoning: Cardinal directions as an example.
+\newblock \emph{International Journal of Geographical Information Systems},
+  10\penalty0 (3):\penalty0 269--290, 1996.
+\newblock \doi{10.1080/02693799608902101}.
+
+\bibitem[Ge et~al.(2025)Ge, Romeo, Cai, Shu, Sunkara, Benajiba, and
+  Zhang]{Ge2025}
+Yubin Ge, Salvatore Romeo, Jason Cai, Raphael Shu, Monica Sunkara, Yassine
+  Benajiba, and Yi~Zhang.
+\newblock Tremu: Towards neuro-symbolic temporal reasoning for llm-agents with
+  memory in multi-session dialogues.
+\newblock In \emph{Annual Meeting of the Association for Computational
+  Linguistics}, volume abs/2502.01630, 2025.
+\newblock \doi{10.48550/arXiv.2502.01630}.
+
+\bibitem[Geifman and El-Yaniv(2017)]{Geifman2017}
+Yonatan Geifman and Ran El-Yaniv.
+\newblock Selective classification for deep neural networks.
+\newblock In \emph{Neural Information Processing Systems}, volume
+  abs/1705.08500, 2017.
+
+\bibitem[Geng et~al.(2023)Geng, Josifosky, Peyrard, and West]{Geng2023}
+Saibo Geng, Martin Josifosky, Maxime Peyrard, and Robert West.
+\newblock Grammar-constrained decoding for structured nlp tasks without
+  finetuning.
+\newblock In \emph{Conference on Empirical Methods in Natural Language
+  Processing}, pages 10932--10952, 2023.
+\newblock \doi{10.18653/v1/2023.emnlp-main.674}.
+
+\bibitem[He et~al.(2021)He, Gao, and Chen]{He2021}
+Pengcheng He, Jianfeng Gao, and Weizhu Chen.
+\newblock Debertav3: Improving deberta using electra-style pre-training with
+  gradient-disentangled embedding sharing.
+\newblock In \emph{International Conference on Learning Representations},
+  volume abs/2111.09543, 2021.
+
+\bibitem[Hu et~al.(2023)Hu, Luo, Wang, Cheng, Liu, and Sun]{Hu2023}
+Shengding Hu, Yifan Luo, Huadong Wang, Xingyi Cheng, Zhiyuan Liu, and Maosong
+  Sun.
+\newblock Won’t get fooled again: Answering questions with false premises.
+\newblock In \emph{Annual Meeting of the Association for Computational
+  Linguistics}, volume abs/2307.02394, 2023.
+\newblock \doi{10.48550/arXiv.2307.02394}.
+
+\bibitem[Hu et~al.(2024)Hu, Huang, and Feng]{Hu2024}
+Yutong Hu, Quzhe Huang, and Yansong Feng.
+\newblock Only one relation possible? modeling the ambiguity in event temporal
+  relation extraction.
+\newblock \emph{ArXiv}, abs/2408.07353, 2024.
+\newblock \doi{10.48550/arXiv.2408.07353}.
+
+\bibitem[Ji et~al.(2022)Ji, Lee, Frieske, Yu, Su, Xu, Ishii, Bang, Chen, Dai,
+  Madotto, and Fung]{Ji2022}
+Ziwei Ji, Nayeon Lee, Rita Frieske, Tiezheng Yu, D.~Su, Yan Xu, Etsuko Ishii,
+  Yejin Bang, Delong Chen, Wenliang Dai, Andrea Madotto, and Pascale Fung.
+\newblock Survey of hallucination in natural language generation.
+\newblock In \emph{ACM Computing Surveys}, volume~55, pages 1 -- 38, 2022.
+\newblock \doi{10.1145/3571730}.
+
+\bibitem[Kadavath et~al.(2022)Kadavath, Conerly, Askell, Henighan, Drain,
+  Perez, Schiefer, Dodds, Dassarma, Tran-Johnson, Johnston, El-Showk, Jones,
+  Elhage, Hume, Chen, Bai, Bowman, Fort, Ganguli, Hernandez, Jacobson, Kernion,
+  Kravec, Lovitt, Ndousse, Olsson, Ringer, Amodei, Brown, Clark, Joseph, Mann,
+  McCandlish, Olah, and Kaplan]{Kadavath2022}
+Saurav Kadavath, Tom Conerly, Amanda Askell, T.~Henighan, Dawn Drain, Ethan
+  Perez, Nicholas Schiefer, Zachary Dodds, Nova Dassarma, Eli Tran-Johnson,
+  Scott Johnston, S.~El-Showk, Andy Jones, Nelson Elhage, Tristan Hume, Anna
+  Chen, Yuntao Bai, Sam Bowman, Stanislav Fort, Deep Ganguli, Danny Hernandez,
+  Josh Jacobson, John Kernion, Shauna Kravec, Liane Lovitt, Kamal Ndousse,
+  Catherine Olsson, Sam Ringer, Dario Amodei, Tom~B. Brown, Jack Clark,
+  Nicholas Joseph, Benjamin Mann, Sam McCandlish, Chris Olah, and Jared Kaplan.
+\newblock Language models (mostly) know what they know.
+\newblock \emph{ArXiv}, abs/2207.05221, 2022.
+\newblock \doi{10.48550/arXiv.2207.05221}.
+
+\bibitem[Kazemi et~al.(2022)Kazemi, Kim, Bhatia, Xu, and
+  Ramachandran]{Kazemi2022}
+Seyed~Mehran Kazemi, Najoung Kim, Deepti Bhatia, Xinyuan Xu, and Deepak
+  Ramachandran.
+\newblock Lambada: Backward chaining for automated reasoning in natural
+  language.
+\newblock In \emph{Annual Meeting of the Association for Computational
+  Linguistics}, volume abs/2212.13894, 2022.
+\newblock \doi{10.48550/arXiv.2212.13894}.
+
+\bibitem[Ke et~al.(2017)Ke, Meng, Finley, Wang, Chen, Ma, Ye, and Liu]{Ke2017}
+Guolin Ke, Qi~Meng, Thomas Finley, Taifeng Wang, Wei Chen, Weidong Ma, Qiwei
+  Ye, and Tie-Yan Liu.
+\newblock Lightgbm: A highly efficient gradient boosting decision tree.
+\newblock In \emph{Neural Information Processing Systems}, pages 3146--3154,
+  2017.
+
+\bibitem[Kim et~al.(2022)Kim, Htut, Bowman, and Petty]{Kim2022}
+Najoung Kim, Phu~Mon Htut, Sam Bowman, and Jackson Petty.
+\newblock (qa)^2: Question answering with questionable assumptions.
+\newblock In \emph{Annual Meeting of the Association for Computational
+  Linguistics}, volume abs/2212.10003, 2022.
+\newblock \doi{10.48550/arXiv.2212.10003}.
+
+\bibitem[Kirichenko et~al.(2025)Kirichenko, Ibrahim, Chaudhuri, and
+  Bell]{Kirichenko2025}
+Polina Kirichenko, Mark Ibrahim, Kamalika Chaudhuri, and Samuel~J. Bell.
+\newblock Abstentionbench: Reasoning llms fail on unanswerable questions.
+\newblock \emph{ArXiv}, abs/2506.09038, 2025.
+\newblock \doi{10.48550/arXiv.2506.09038}.
+
+\bibitem[Kougia et~al.(2024)Kougia, Sedova, Stephan, Zaporojets, and
+  Roth]{Kougia2024}
+Vasiliki Kougia, Anastasiia Sedova, Andreas Stephan, Klim Zaporojets, and
+  Benjamin Roth.
+\newblock Analysing zero-shot temporal relation extraction on clinical notes
+  using temporal consistency.
+\newblock In \emph{Workshop on Biomedical Natural Language Processing}, pages
+  72--84, 2024.
+\newblock \doi{10.48550/arXiv.2406.11486}.
+
+\bibitem[Kuhn et~al.(2023)Kuhn, Gal, and Farquhar]{Kuhn2023}
+Lorenz Kuhn, Y.~Gal, and Sebastian Farquhar.
+\newblock Semantic uncertainty: Linguistic invariances for uncertainty
+  estimation in natural language generation.
+\newblock In \emph{International Conference on Learning Representations},
+  volume abs/2302.09664, 2023.
+\newblock \doi{10.48550/arXiv.2302.09664}.
+
+\bibitem[Lenat(1995)]{Lenat1995}
+D.~Lenat.
+\newblock Cyc: a large-scale investment in knowledge infrastructure.
+\newblock In \emph{CACM}, volume~38, pages 32--38, 1995.
+\newblock \doi{10.1145/219717.219745}.
+
+\bibitem[Li and Carenini(2025)]{Li2025}
+Chuyuan Li and Giuseppe Carenini.
+\newblock Bediscover: The benchmark of discourse understanding in the era of
+  reasoning language models.
+\newblock \emph{ArXiv}, abs/2511.13095, 2025.
+\newblock \doi{10.48550/arXiv.2511.13095}.
+
+\bibitem[Li et~al.(2024)Li, Chen, Long, and Zhang]{Li2024RelClassifier}
+Xingzuo Li, Kehai Chen, Yunfei Long, and Min Zhang.
+\newblock Llm with relation classifier for document-level relation extraction.
+\newblock In \emph{IEEE Transactions on Big Data}, volume abs/2408.13889, 2024.
+\newblock \doi{10.48550/arXiv.2408.13889}.
+
+\bibitem[Liang et~al.(2025)Liang, Zeng, Zhao, and Zhao]{Liang2025}
+Feng Liang, Weixin Zeng, Runhao Zhao, and Xiang Zhao.
+\newblock Nestr: A neuro-symbolic abductive framework for temporal reasoning in
+  large language models.
+\newblock In \emph{AAAI Conference on Artificial Intelligence}, volume
+  abs/2512.07218, 2025.
+\newblock \doi{10.48550/arXiv.2512.07218}.
+
+\bibitem[Ligozat(1998)]{Ligozat1998}
+G{\'e}rard Ligozat.
+\newblock Reasoning about cardinal directions.
+\newblock \emph{Journal of Visual Languages and Computing}, 9\penalty0
+  (1):\penalty0 23--44, 1998.
+\newblock \doi{10.1006/jvlc.1997.0079}.
+
+\bibitem[Lin et~al.(2022)Lin, Hilton, and Evans]{Lin2022}
+Stephanie~C. Lin, Jacob Hilton, and Owain Evans.
+\newblock Teaching models to express their uncertainty in words.
+\newblock In \emph{Trans. Mach. Learn. Res.}, volume 2022, 2022.
+\newblock \doi{10.48550/arXiv.2205.14334}.
+
+\bibitem[Loconte et~al.(2026)Loconte, Hospedales, and
+  Cornelio]{Loconte2026PostExtractionCorrection}
+Lorenzo Loconte, T.~Hospedales, and Cristina Cornelio.
+\newblock Better later than sooner: Neuro-symbolic knowledge graph construction
+  via ontology-grounded post-extraction correction.
+\newblock 2026.
+
+\bibitem[Mackworth(1977)]{Mackworth1977}
+Alan~K. Mackworth.
+\newblock Consistency in networks of relations.
+\newblock In \emph{Artificial Intelligence}, volume~8, pages 99--118, 1977.
+\newblock \doi{10.1016/0004-3702(77)90007-8}.
+
+\bibitem[Manakul et~al.(2023)Manakul, Liusie, and Gales]{Manakul2023}
+Potsawee Manakul, Adian Liusie, and M.~Gales.
+\newblock Selfcheckgpt: Zero-resource black-box hallucination detection for
+  generative large language models.
+\newblock In \emph{Conference on Empirical Methods in Natural Language
+  Processing}, volume abs/2303.08896, 2023.
+\newblock \doi{10.48550/arXiv.2303.08896}.
+
+\bibitem[Mirzaee and Kordjamshidi(2022)]{Mirzaee2022}
+Roshanak Mirzaee and Parisa Kordjamshidi.
+\newblock Transfer learning with synthetic corpora for spatial role labeling
+  and reasoning.
+\newblock In \emph{Conference on Empirical Methods in Natural Language
+  Processing}, pages 6148--6165, 2022.
+\newblock \doi{10.48550/arXiv.2210.16952}.
+
+\bibitem[Mirzaee et~al.(2021)Mirzaee, Faghihi, Ning, and
+  Kordjmashidi]{Mirzaee2021}
+Roshanak Mirzaee, Hossein~Rajaby Faghihi, Qiang Ning, and Parisa Kordjmashidi.
+\newblock Spartqa: A textual question answering benchmark for spatial
+  reasoning.
+\newblock In \emph{North American Chapter of the Association for Computational
+  Linguistics}, volume abs/2104.05832, 2021.
+\newblock \doi{10.18653/V1/2021.NAACL-MAIN.364}.
+
+\bibitem[Naik et~al.(2019)Naik, Breitfeller, and Rosé]{Naik2019}
+Aakanksha Naik, Luke Breitfeller, and C.~Rosé.
+\newblock Tddiscourse: A dataset for discourse-level temporal ordering of
+  events.
+\newblock In \emph{SIGDIAL Conferences}, pages 239--249, 2019.
+\newblock \doi{10.18653/v1/W19-5929}.
+
+\bibitem[Nebel and Bürckert(1994)]{Nebel1994}
+Bernhard Nebel and H.~Bürckert.
+\newblock Reasoning about temporal relations: a maximal tractable subclass of
+  allen's interval algebra.
+\newblock In \emph{JACM}, volume~42, pages 43--66, 1994.
+\newblock \doi{10.1145/200836.200848}.
+
+\bibitem[Ning et~al.(2017)Ning, Feng, and Roth]{Ning2017}
+Qiang Ning, Zhili Feng, and Dan Roth.
+\newblock A structured learning approach to temporal relation extraction.
+\newblock In \emph{Conference on Empirical Methods in Natural Language
+  Processing}, pages 1027--1037, 2017.
+\newblock \doi{10.18653/v1/D17-1108}.
+
+\bibitem[Ning et~al.(2018)Ning, Wu, and Roth]{Ning2018}
+Qiang Ning, Hao Wu, and Dan Roth.
+\newblock A multi-axis annotation scheme for event temporal relations.
+\newblock In \emph{Annual Meeting of the Association for Computational
+  Linguistics}, volume abs/1804.07828, 2018.
+\newblock \doi{10.18653/v1/P18-1122}.
+
+\bibitem[Olausson et~al.(2023)Olausson, Gu, Lipkin, Zhang, Solar-Lezama,
+  Tenenbaum, and Levy]{Olausson2023}
+Theo~X. Olausson, Alex Gu, Benjamin Lipkin, Cedegao~E. Zhang, Armando
+  Solar-Lezama, Josh Tenenbaum, and Roger Levy.
+\newblock Linc: A neurosymbolic approach for logical reasoning by combining
+  language models with first-order logic provers.
+\newblock In \emph{Conference on Empirical Methods in Natural Language
+  Processing}, pages 5153--5176, 2023.
+\newblock \doi{10.18653/v1/2023.emnlp-main.313}.
+
+\bibitem[Pan et~al.(2023)Pan, Albalak, Wang, and Wang]{Pan2023}
+Liangming Pan, Alon Albalak, Xinyi Wang, and William~Yang Wang.
+\newblock Logic-lm: Empowering large language models with symbolic solvers for
+  faithful logical reasoning.
+\newblock In \emph{Conference on Empirical Methods in Natural Language
+  Processing}, volume abs/2305.12295, 2023.
+\newblock \doi{10.48550/arXiv.2305.12295}.
+
+\bibitem[Pi et~al.(2025)Pi, Sun, Lu, Fan, Huang, and Wang]{Pi2025RelPrior}
+Qiankun Pi, Yepeng Sun, Jicang Lu, Qinlong Fan, Ningbo Huang, and Shiyu Wang.
+\newblock Relation as a prior: A novel paradigm for llm-based document-level
+  relation extraction.
+\newblock \emph{ArXiv}, abs/2511.08143, 2025.
+\newblock \doi{10.48550/arXiv.2511.08143}.
+
+\bibitem[Press et~al.(2022)Press, Zhang, Min, Schmidt, Smith, and
+  Lewis]{Press2022}
+Ofir Press, Muru Zhang, Sewon Min, Ludwig Schmidt, Noah~A. Smith, and M.~Lewis.
+\newblock Measuring and narrowing the compositionality gap in language models.
+\newblock In \emph{Conference on Empirical Methods in Natural Language
+  Processing}, volume abs/2210.03350, 2022.
+\newblock \doi{10.48550/arXiv.2210.03350}.
+
+\bibitem[Qin et~al.(2025)Qin, Li, Nian, Yu, Zhao, and
+  Ma]{Qin2026PremiseVerification}
+Yuehan Qin, Li~Li, Yi~Nian, Xinyan~Velocity Yu, Yue Zhao, and Xuezhe Ma.
+\newblock Don't let it hallucinate: Premise verification via
+  retrieval-augmented logical reasoning.
+\newblock In \emph{Trans. Mach. Learn. Res.}, volume 2026, 2025.
+\newblock \doi{10.48550/arXiv.2504.06438}.
+
+\bibitem[Randell et~al.(1992)Randell, Cui, and Cohn]{Randell1992}
+David~A. Randell, Zhan Cui, and Anthony~G. Cohn.
+\newblock A spatial logic based on regions and connection.
+\newblock In \emph{Proceedings of the Third International Conference on
+  Principles of Knowledge Representation and Reasoning (KR)}, pages 165--176,
+  1992.
+
+\bibitem[Reiter(1986)]{Reiter1986}
+R.~Reiter.
+\newblock A theory of diagnosis from first principles.
+\newblock In \emph{Artificial Intelligence}, volume~32, pages 57--95, 1986.
+\newblock \doi{10.1016/0004-3702(87)90062-2}.
+
+\bibitem[Renz and Nebel(1999)]{Renz1999}
+Jochen Renz and Bernhard Nebel.
+\newblock On the complexity of qualitative spatial reasoning: A maximal
+  tractable fragment of the region connection calculus.
+\newblock In \emph{Artificial Intelligence}, pages 522--527, 1999.
+\newblock \doi{10.1016/S0004-3702(99)00002-8}.
+
+\bibitem[Rogers et~al.(2019)Rogers, Karpinska, Gupta, Lialin, Smelkov, and
+  Rumshisky]{Rogers2019}
+Anna Rogers, Marzena Karpinska, Ankita Gupta, V.~Lialin, Gregory Smelkov, and
+  Anna Rumshisky.
+\newblock Narrativetime: Dense temporal annotation on a timeline.
+\newblock In \emph{International Conference on Language Resources and
+  Evaluation}, pages 12053--12073, 2019.
+\newblock \doi{10.63317/26ccybk54hp4}.
+
+\bibitem[Sansford et~al.(2024)Sansford, Richardson, Maretic, and
+  Saada]{Sansford2024GraphEval}
+Hannah Sansford, N.~Richardson, Hermina~Petric Maretic, and Juba~Nait Saada.
+\newblock Grapheval: A knowledge-graph based llm hallucination evaluation
+  framework.
+\newblock In \emph{KiL@KDD}, pages 20--31, 2024.
+\newblock \doi{10.48550/arXiv.2407.10793}.
+
+\bibitem[Shi et~al.(2022)Shi, Zhang, and Lipani]{Shi2022}
+Zhengxiang Shi, Qiang Zhang, and Aldo Lipani.
+\newblock Stepgame: A new benchmark for robust multi-hop spatial reasoning in
+  texts.
+\newblock In \emph{AAAI Conference on Artificial Intelligence}, pages
+  11321--11329, 2022.
+\newblock \doi{10.48550/arXiv.2204.08292}.
+
+\bibitem[Sinha et~al.(2019)Sinha, Sodhani, Dong, Pineau, and
+  Hamilton]{Sinha2019}
+Koustuv Sinha, Shagun Sodhani, Jin Dong, Joelle Pineau, and William~L.
+  Hamilton.
+\newblock Clutrr: A diagnostic benchmark for inductive reasoning from text.
+\newblock In \emph{Conference on Empirical Methods in Natural Language
+  Processing}, pages 4505--4514, 2019.
+\newblock \doi{10.18653/v1/D19-1458}.
+
+\bibitem[Tan et~al.(2022)Tan, Xu, Bing, Ng, and Aljunied]{Tan2022}
+Qingyu Tan, Lu~Xu, Lidong Bing, H.~Ng, and Sharifah~Mahani Aljunied.
+\newblock Revisiting docred - addressing the false negative problem in relation
+  extraction.
+\newblock In \emph{Conference on Empirical Methods in Natural Language
+  Processing}, pages 8472--8487, 2022.
+\newblock \doi{10.18653/v1/2022.emnlp-main.580}.
+
+\bibitem[Tian et~al.(2023)Tian, Mitchell, Zhou, Sharma, Rafailov, Yao, Finn,
+  and Manning]{Tian2023}
+Katherine Tian, E.~Mitchell, Allan Zhou, Archit Sharma, Rafael Rafailov, Huaxiu
+  Yao, Chelsea Finn, and Christopher~D. Manning.
+\newblock Just ask for calibration: Strategies for eliciting calibrated
+  confidence scores from language models fine-tuned with human feedback.
+\newblock In \emph{Conference on Empirical Methods in Natural Language
+  Processing}, volume abs/2305.14975, 2023.
+\newblock \doi{10.48550/arXiv.2305.14975}.
+
+\bibitem[Verhagen(2005)]{Verhagen2005}
+M.~Verhagen.
+\newblock Temporal closure in an annotation environment.
+\newblock In \emph{Language Resources and Evaluation}, volume~39, pages
+  211--241, 2005.
+\newblock \doi{10.1007/s10579-005-7884-5}.
+
+\bibitem[Vilain and Kautz(1986)]{Vilain1986}
+Marc Vilain and Henry Kautz.
+\newblock Constraint propagation algorithms for temporal reasoning.
+\newblock In \emph{Proceedings of the Fifth AAAI National Conference on
+  Artificial Intelligence (AAAI)}, pages 377--382, 1986.
+
+\bibitem[Wang et~al.(2022)Wang, Wei, Schuurmans, Le, Chi, and Zhou]{Wang2022}
+Xuezhi Wang, Jason Wei, Dale Schuurmans, Quoc Le, Ed~H. Chi, and Denny Zhou.
+\newblock Self-consistency improves chain of thought reasoning in language
+  models.
+\newblock In \emph{International Conference on Learning Representations},
+  volume abs/2203.11171, 2022.
+
+\bibitem[Wei et~al.(2022)Wei, Wang, Schuurmans, Bosma, Chi, Xia, Le, and
+  Zhou]{Wei2022}
+Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Ed~H. Chi, F.~Xia, Quoc
+  Le, and Denny Zhou.
+\newblock Chain of thought prompting elicits reasoning in large language
+  models.
+\newblock In \emph{Neural Information Processing Systems}, volume
+  abs/2201.11903, 2022.
+\newblock \doi{10.52202/068431-1800}.
+
+\bibitem[Wei et~al.(2024)Wei, Gautam, and Huang]{Wei2024}
+Kangda Wei, Aayush Gautam, and Ruihong Huang.
+\newblock Are llms good annotators for discourse-level event relation
+  extraction?
+\newblock In \emph{Conference on Empirical Methods in Natural Language
+  Processing}, volume abs/2407.19568, 2024.
+\newblock \doi{10.48550/arXiv.2407.19568}.
+
+\bibitem[Wen et~al.(2024)Wen, Yao, Feng, Xu, Tsvetkov, Howe, and Wang]{Wen2024}
+Bingbing Wen, Jihan Yao, Shangbin Feng, Chenjun Xu, Yulia Tsvetkov, Bill Howe,
+  and Lucy~Lu Wang.
+\newblock Know your limits: A survey of abstention in large language models.
+\newblock In \emph{Transactions of the Association for Computational
+  Linguistics}, volume~13, pages 529--556, 2024.
+\newblock \doi{10.1162/tacl_a_00754}.
+
+\bibitem[Weng et~al.(2022)Weng, Zhu, Xia, Li, He, Liu, and Zhao]{Weng2022}
+Yixuan Weng, Minjun Zhu, Fei Xia, Bin Li, Shizhu He, Kang Liu, and Jun Zhao.
+\newblock Large language models are better reasoners with self-verification.
+\newblock In \emph{Conference on Empirical Methods in Natural Language
+  Processing}, pages 2550--2575, 2022.
+\newblock \doi{10.18653/v1/2023.findings-emnlp.167}.
+
+\bibitem[Yang et~al.(2025)Yang, Feng, Yang, Deng, Qu, Huang, Tu, and
+  Xu]{Yang2025DEPTH}
+Yupei Yang, Fan Feng, Lin Yang, Wanxi Deng, Lin Qu, Biwei Huang, Shikui Tu, and
+  Lei Xu.
+\newblock Hallucination-resistant relation extraction via dependency-aware
+  sentence simplification and two-tiered hierarchical refinement.
+\newblock 2025.
+
+\bibitem[Yao et~al.(2019)Yao, Ye, Li, Han, Lin, Liu, Liu, Huang, Zhou, and
+  Sun]{Yao2019}
+Yuan Yao, Deming Ye, Peng Li, Xu~Han, Yankai Lin, Zhenghao Liu, Zhiyuan Liu,
+  Lixin Huang, Jie Zhou, and Maosong Sun.
+\newblock Docred: A large-scale document-level relation extraction dataset.
+\newblock In \emph{Annual Meeting of the Association for Computational
+  Linguistics}, volume abs/1906.06127, 2019.
+\newblock \doi{10.18653/v1/P19-1074}.
+
+\bibitem[Yu et~al.(2022)Yu, Min, Zettlemoyer, and Hajishirzi]{Yu2022}
+Xinyan~Velocity Yu, Sewon Min, Luke Zettlemoyer, and Hannaneh Hajishirzi.
+\newblock Crepe: Open-domain question answering with false presuppositions.
+\newblock In \emph{Annual Meeting of the Association for Computational
+  Linguistics}, pages 10457--10480, 2022.
+\newblock \doi{10.48550/arXiv.2211.17257}.
+
+\bibitem[Zhang et~al.(2024)Zhang, Alomrani, Gu, Zhou, Hu, Wang, Liu, Coates,
+  Zhang, and Hao]{Zhang2024}
+Ge~Zhang, Mohammad~Ali Alomrani, Hongjian Gu, Jiaming Zhou, Yaochen Hu, Bin
+  Wang, Qun Liu, Mark Coates, Yingxue Zhang, and Jianye Hao.
+\newblock Extracting and following paths for robust relational reasoning with
+  large language models.
+\newblock In \emph{Trans. Mach. Learn. Res.}, volume 2026, 2024.
+
+\bibitem[Zhang et~al.(2023)Zhang, Huang, Li, Naik, and Xing]{Zhang2023}
+Hanlin Zhang, Jiani Huang, Ziyang Li, M.~Naik, and Eric~P. Xing.
+\newblock Improved logical reasoning of language models via differentiable
+  symbolic programming.
+\newblock In \emph{Annual Meeting of the Association for Computational
+  Linguistics}, volume abs/2305.03742, 2023.
+\newblock \doi{10.48550/arXiv.2305.03742}.
+
+\bibitem[Zhao et~al.(2025)Zhao, Ning, Fei, Feng, and Li]{Zhao2025}
+Jie Zhao, Wanting Ning, Yuxiao Fei, Yubo Feng, and Lishuang Li.
+\newblock Gdllm: A global distance-aware modeling approach based on large
+  language models for event temporal relation extraction.
+\newblock In \emph{Conference on Empirical Methods in Natural Language
+  Processing}, pages 8080--8091, 2025.
+\newblock \doi{10.48550/arXiv.2508.20828}.
+
+\bibitem[Zhou et~al.(2026)Zhou, Jin, Eickhoff, Guo, and Bahrainian]{Zhou2026}
+Xinyu Zhou, Changhong Jin, Carsten Eickhoff, Zhijiang Guo, and Seyed~Ali
+  Bahrainian.
+\newblock When silence is golden: Can llms learn to abstain in temporal qa and
+  beyond?
+\newblock \emph{ArXiv}, abs/2602.04755, 2026.
+\newblock \doi{10.48550/arXiv.2602.04755}.
+
+\bibitem[Zhu et~al.(2023)Zhu, Xue, Chen, Zhou, Tang, Schuurmans, and
+  Dai]{Zhu2023}
+Zhaocheng Zhu, Y.~Xue, Xinyun Chen, Denny Zhou, Jian Tang, Dale Schuurmans, and
+  Hanjun Dai.
+\newblock Large language models can learn rules.
+\newblock \emph{ArXiv}, abs/2310.07064, 2023.
+\newblock \doi{10.48550/arXiv.2310.07064}.
+
+\end{thebibliography}

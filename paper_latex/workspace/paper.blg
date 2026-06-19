@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2022/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: paper.aux
+The style file: plainnat.bst
+Database file #1: references.bib
+Warning--empty booktitle in Loconte2026PostExtractionCorrection
+Warning--empty booktitle in Yang2025DEPTH
+You've used 68 entries,
+            2773 wiz_defined-function locations,
+            1050 strings with 19715 characters,
+and the built_in function-call counts, 43333 in all, are:
+= -- 3676
+> -- 3106
+< -- 81
++ -- 1040
+- -- 972
+* -- 3622
+:= -- 6421
+add.period$ -- 262
+call.type$ -- 68
+change.case$ -- 528
+chr.to.int$ -- 68
+cite$ -- 138
+duplicate$ -- 1909
+empty$ -- 3175
+format.name$ -- 1054
+if$ -- 9346
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 68
+newline$ -- 406
+num.names$ -- 272
+pop$ -- 1158
+preamble$ -- 1
+purify$ -- 460
+quote$ -- 0
+skip$ -- 1670
+stack$ -- 0
+substring$ -- 1238
+swap$ -- 486
+text.length$ -- 67
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 748
+warning$ -- 2
+while$ -- 276
+width$ -- 0
+write$ -- 1013
+(There were 2 warnings)

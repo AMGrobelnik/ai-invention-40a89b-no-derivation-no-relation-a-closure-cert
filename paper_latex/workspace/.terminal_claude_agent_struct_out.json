@@ -1,0 +1,16 @@
+{
+  "title": "No Derivation No Relation: Closure-Certificate Paper Assembled to PDF",
+  "summary": "Assembled the paper 'No Derivation, No Relation: A Closure Certificate for Compositional Absent-Relation Hallucination, and a Structural Net-Utility Boundary on Natural Prose' into a publication-ready LaTeX document and compiled it to a 24-page PDF. SECTIONS: Abstract, Introduction (with Summary of Contributions itemized list and the spine table tab:spine), Related Work (5 thematic paragraphs), Method (inverted output contract + notation table tab:notation, two value modes, definitional/empirical half, baselines, two absent regimes, precision-preserving extractor, datasets and metrics), Experimental Setup, Results (compositional false-premise diagnostic + 16-cell caught table tab:caught, query-side verifier section + stronger-verifier table tab:stronger, decisive located-in siblings test + table tab:locatedin, structural net-utility boundary + supervised-sweep table tab:supervised, end-to-end CLUTRR, boundaries of the mechanism), Discussion, Conclusion, Appendix A (Feasibility on commodity hardware), Appendix B (Mechanism analysis), and References. FIGURES: all 5 pre-generated figures included verbatim via \\includegraphics with their original captions and full-width figure* placement at their [FIGURE:figN] markers: fig1 (hero pipeline diagram, top of p.3), fig2 (FACT A robustness bar chart), fig3 (caught-fraction on located-in siblings), fig5 (precision-recall frontier dominance), fig4 (anti-correlation structural boundary). grep -c includegraphics = 5, exactly matching the 5 available figures. BIBLIOGRAPHY: references.bib built with the aii_semscholar_bib__fetch tool (batched DOI/ArXiv/title lookups) plus targeted web searches for ~14 recent/obscure papers; 68 entries, all verified, none fabricated. Four classic papers that failed Semantic Scholar title-match or returned a wrong record (Vilain1986, Randell1992, Frank1996, Ligozat1998) were hand-written from verified bibliographic data. Citation keys were renamed to match the paper's custom keys exactly (e.g. Yang2025DEPTH, Li2024RelClassifier, Pi2025RelPrior, Qin2026PremiseVerification, Sansford2024GraphEval, Loconte2026PostExtractionCorrection, Chepurova2026Wikontic, Feng2024OntologyGrounded). COMPILATION: ran pdflatex -> bibtex (bibtex.original, since plain bibtex was absent) -> pdflatex -> pdflatex. Final PDF has 0 undefined citations, 0 undefined references, 0 '??' markers, 0 overfull hboxes over 20pt, and 68 \\bibitem entries. All \\footnote{Code: \\url{...}} artifact links and \\usepackage{hyperref}/{url} preserved; internal [ARTIFACT:...] markers were stripped. VERIFICATION: rendered all 24 pages to PNG at 110 DPI and visually reviewed every page; layout is clean with no overlapping figures, no cut-off text, well-formed tables, and properly formatted references across pages 20-24. Section headings contain no inline math (hyperref-safe).",
+  "out_expected_files": {
+    "paper_tex_path": "paper.tex",
+    "paper_pdf_path": "paper.pdf",
+    "references_bib_path": "references.bib",
+    "figure_paths": [
+      "figures/fig1_v0.jpg",
+      "figures/fig2_v0.jpg",
+      "figures/fig3_v0.jpg",
+      "figures/fig4_v0.jpg",
+      "figures/fig5_v0.jpg"
+    ]
+  }
+}

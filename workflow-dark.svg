@@ -1,0 +1,1334 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1790" height="2138"
+  viewBox="0 0 1790 2138" role="img" aria-label="Artifact workflow">
+  <style>
+    a { cursor: pointer; }
+    a:hover rect.card { stroke-width: 2; }
+  </style>
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="2.5" flood-color="rgba(0,0,0,0.45)"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7"
+      orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#8b949e"/>
+    </marker>
+  </defs>
+  <rect width="100%" height="100%" fill="#0d1117"/>
+<g><title></title><path d="M 641.0 1914.0 C 641.0 1952.7, 927.0 1961.3, 927.0 2000.0" fill="none" stroke="#8b949e" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title></title><path d="M 927.0 1914.0 C 927.0 1952.7, 927.0 1961.3, 927.0 2000.0" fill="none" stroke="#8b949e" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title></title><path d="M 1213.0 1914.0 C 1213.0 1952.7, 927.0 1961.3, 927.0 2000.0" fill="none" stroke="#8b949e" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title></title><path d="M 927.0 74.0 C 927.0 112.7, 212.0 121.3, 212.0 160.0" fill="none" stroke="#8b949e" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title></title><path d="M 927.0 74.0 C 927.0 112.7, 498.0 121.3, 498.0 160.0" fill="none" stroke="#8b949e" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title></title><path d="M 927.0 74.0 C 927.0 112.7, 784.0 121.3, 784.0 160.0" fill="none" stroke="#8b949e" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title></title><path d="M 927.0 74.0 C 927.0 112.7, 1070.0 121.3, 1070.0 160.0" fill="none" stroke="#8b949e" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title></title><path d="M 927.0 74.0 C 927.0 112.7, 1356.0 121.3, 1356.0 160.0" fill="none" stroke="#8b949e" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title></title><path d="M 927.0 74.0 C 927.0 112.7, 1642.0 121.3, 1642.0 160.0" fill="none" stroke="#8b949e" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>extends: extends</title><path d="M 212.0 258.0 C 212.0 296.7, 355.0 305.3, 355.0 344.0" fill="none" stroke="#3b82f6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: dataset</title><path d="M 784.0 258.0 C 784.0 296.7, 927.0 305.3, 927.0 344.0" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: baseline-specs</title><path d="M 212.0 258.0 C 212.0 296.7, 927.0 305.3, 927.0 344.0" fill="none" stroke="#3b82f6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: dataset</title><path d="M 784.0 258.0 C 784.0 296.7, 1213.0 305.3, 1213.0 344.0" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: specs</title><path d="M 212.0 258.0 C 212.0 296.7, 1213.0 305.3, 1213.0 344.0" fill="none" stroke="#3b82f6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: dataset</title><path d="M 498.0 258.0 C 498.0 296.7, 641.0 305.3, 641.0 344.0" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: baseline-specs</title><path d="M 212.0 258.0 C 212.0 296.7, 641.0 305.3, 641.0 344.0" fill="none" stroke="#3b82f6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: dataset</title><path d="M 1499.0 442.0 C 1499.0 480.7, 1213.0 489.3, 1213.0 528.0" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: specs</title><path d="M 355.0 442.0 C 355.0 480.7, 1213.0 489.3, 1213.0 528.0" fill="none" stroke="#3b82f6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: dataset</title><path d="M 498.0 258.0 C 498.0 379.5, 355.0 406.5, 355.0 528.0" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: specs</title><path d="M 355.0 442.0 C 355.0 480.7, 355.0 489.3, 355.0 528.0" fill="none" stroke="#3b82f6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: engine-specs</title><path d="M 212.0 258.0 C 212.0 379.5, 355.0 406.5, 355.0 528.0" fill="none" stroke="#3b82f6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: dataset</title><path d="M 784.0 258.0 C 784.0 379.5, 927.0 406.5, 927.0 528.0" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: engine-specs</title><path d="M 212.0 258.0 C 212.0 379.5, 927.0 406.5, 927.0 528.0" fill="none" stroke="#3b82f6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: showdown-data</title><path d="M 927.0 442.0 C 927.0 480.7, 1499.0 489.3, 1499.0 528.0" fill="none" stroke="#8b5cf6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: channel-data</title><path d="M 1213.0 442.0 C 1213.0 480.7, 1499.0 489.3, 1499.0 528.0" fill="none" stroke="#8b5cf6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>differences: realtext-data</title><path d="M 641.0 442.0 C 641.0 480.7, 1499.0 489.3, 1499.0 528.0" fill="none" stroke="#8b5cf6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>extends: build-on</title><path d="M 355.0 442.0 C 355.0 480.7, 641.0 489.3, 641.0 528.0" fill="none" stroke="#3b82f6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: dataset</title><path d="M 498.0 258.0 C 498.0 462.3, 641.0 507.7, 641.0 712.0" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: engine-specs</title><path d="M 212.0 258.0 C 212.0 462.3, 641.0 507.7, 641.0 712.0" fill="none" stroke="#3b82f6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: schema-specs</title><path d="M 212.0 258.0 C 212.0 462.3, 355.0 507.7, 355.0 712.0" fill="none" stroke="#3b82f6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: dataset</title><path d="M 1499.0 442.0 C 1499.0 563.5, 1499.0 590.5, 1499.0 712.0" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: clean-table</title><path d="M 784.0 258.0 C 784.0 462.3, 1499.0 507.7, 1499.0 712.0" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: specs</title><path d="M 355.0 442.0 C 355.0 563.5, 1499.0 590.5, 1499.0 712.0" fill="none" stroke="#3b82f6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>differences: temporal-data</title><path d="M 355.0 626.0 C 355.0 664.7, 1213.0 673.3, 1213.0 712.0" fill="none" stroke="#8b5cf6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: clutrr-data</title><path d="M 1213.0 626.0 C 1213.0 664.7, 1213.0 673.3, 1213.0 712.0" fill="none" stroke="#8b5cf6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>extends: extends</title><path d="M 641.0 626.0 C 641.0 664.7, 927.0 673.3, 927.0 712.0" fill="none" stroke="#3b82f6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>differences: dataset</title><path d="M 355.0 810.0 C 355.0 848.7, 498.0 857.3, 498.0 896.0" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: algebra-tables</title><path d="M 927.0 810.0 C 927.0 848.7, 498.0 857.3, 498.0 896.0" fill="none" stroke="#3b82f6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: synthetic-control</title><path d="M 784.0 258.0 C 784.0 545.1, 498.0 608.9, 498.0 896.0" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: engine-specs</title><path d="M 212.0 258.0 C 212.0 545.1, 498.0 608.9, 498.0 896.0" fill="none" stroke="#3b82f6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: dataset</title><path d="M 1499.0 442.0 C 1499.0 646.3, 1070.0 691.7, 1070.0 896.0" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: dataset</title><path d="M 355.0 810.0 C 355.0 848.7, 1070.0 857.3, 1070.0 896.0" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: specs</title><path d="M 355.0 442.0 C 355.0 646.3, 1070.0 691.7, 1070.0 896.0" fill="none" stroke="#3b82f6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: dataset</title><path d="M 498.0 258.0 C 498.0 545.1, 784.0 608.9, 784.0 896.0" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: dataset</title><path d="M 1499.0 442.0 C 1499.0 646.3, 784.0 691.7, 784.0 896.0" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: engine-specs</title><path d="M 212.0 258.0 C 212.0 545.1, 784.0 608.9, 784.0 896.0" fill="none" stroke="#3b82f6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: pipeline-specs</title><path d="M 355.0 442.0 C 355.0 646.3, 784.0 691.7, 784.0 896.0" fill="none" stroke="#3b82f6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: synthetic-control</title><path d="M 641.0 810.0 C 641.0 848.7, 1356.0 857.3, 1356.0 896.0" fill="none" stroke="#8b5cf6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: inverted-u</title><path d="M 1213.0 442.0 C 1213.0 646.3, 1356.0 691.7, 1356.0 896.0" fill="none" stroke="#8b5cf6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: clutrr</title><path d="M 1213.0 626.0 C 1213.0 747.5, 1356.0 774.5, 1356.0 896.0" fill="none" stroke="#8b5cf6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: temporal</title><path d="M 355.0 626.0 C 355.0 747.5, 1356.0 774.5, 1356.0 896.0" fill="none" stroke="#8b5cf6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: kinship-table-specs</title><path d="M 355.0 442.0 C 355.0 729.1, 498.0 792.9, 498.0 1080.0" fill="none" stroke="#3b82f6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: dataset</title><path d="M 1499.0 442.0 C 1499.0 729.1, 784.0 792.9, 784.0 1080.0" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: dataset</title><path d="M 355.0 810.0 C 355.0 931.5, 784.0 958.5, 784.0 1080.0" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: baseline-specs</title><path d="M 355.0 442.0 C 355.0 729.1, 784.0 792.9, 784.0 1080.0" fill="none" stroke="#3b82f6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: engine-specs</title><path d="M 212.0 258.0 C 212.0 627.9, 784.0 710.1, 784.0 1080.0" fill="none" stroke="#3b82f6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: fuzzy</title><path d="M 1070.0 994.0 C 1070.0 1032.7, 1356.0 1041.3, 1356.0 1080.0" fill="none" stroke="#8b5cf6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: spatial-crosspath</title><path d="M 498.0 994.0 C 498.0 1032.7, 1356.0 1041.3, 1356.0 1080.0" fill="none" stroke="#8b5cf6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: clutrr</title><path d="M 1213.0 626.0 C 1213.0 830.3, 1356.0 875.7, 1356.0 1080.0" fill="none" stroke="#8b5cf6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>extends: prior-neighbors</title><path d="M 641.0 626.0 C 641.0 830.3, 1070.0 875.7, 1070.0 1080.0" fill="none" stroke="#3b82f6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: dataset</title><path d="M 498.0 1178.0 C 498.0 1216.7, 641.0 1225.3, 641.0 1264.0" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: methodology</title><path d="M 1070.0 1178.0 C 1070.0 1216.7, 641.0 1225.3, 641.0 1264.0" fill="none" stroke="#3b82f6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: methodology</title><path d="M 1070.0 1178.0 C 1070.0 1216.7, 1213.0 1225.3, 1213.0 1264.0" fill="none" stroke="#3b82f6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: reframe-source</title><path d="M 784.0 1178.0 C 784.0 1216.7, 927.0 1225.3, 927.0 1264.0" fill="none" stroke="#8b5cf6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: clutrr</title><path d="M 1213.0 626.0 C 1213.0 913.1, 927.0 976.9, 927.0 1264.0" fill="none" stroke="#8b5cf6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: fuzzy</title><path d="M 1070.0 994.0 C 1070.0 1115.5, 927.0 1142.5, 927.0 1264.0" fill="none" stroke="#8b5cf6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: count-breakdown</title><path d="M 498.0 1178.0 C 498.0 1216.7, 927.0 1225.3, 927.0 1264.0" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>extends: extends</title><path d="M 1070.0 1178.0 C 1070.0 1299.5, 1070.0 1326.5, 1070.0 1448.0" fill="none" stroke="#3b82f6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: dataset</title><path d="M 1213.0 1362.0 C 1213.0 1400.7, 1356.0 1409.3, 1356.0 1448.0" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: methodology</title><path d="M 1070.0 1178.0 C 1070.0 1299.5, 1356.0 1326.5, 1356.0 1448.0" fill="none" stroke="#3b82f6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: dataset</title><path d="M 1499.0 442.0 C 1499.0 894.7, 784.0 995.3, 784.0 1448.0" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: dataset</title><path d="M 498.0 1178.0 C 498.0 1299.5, 784.0 1326.5, 784.0 1448.0" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: methodology</title><path d="M 1070.0 1178.0 C 1070.0 1299.5, 784.0 1326.5, 784.0 1448.0" fill="none" stroke="#3b82f6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: reframe-source</title><path d="M 784.0 1178.0 C 784.0 1299.5, 498.0 1326.5, 498.0 1448.0" fill="none" stroke="#8b5cf6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: reframe-source</title><path d="M 641.0 1362.0 C 641.0 1400.7, 498.0 1409.3, 498.0 1448.0" fill="none" stroke="#8b5cf6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: dataset</title><path d="M 1213.0 1362.0 C 1213.0 1483.5, 641.0 1510.5, 641.0 1632.0" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: dataset</title><path d="M 498.0 1178.0 C 498.0 1382.3, 641.0 1427.7, 641.0 1632.0" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: methodology</title><path d="M 1070.0 1546.0 C 1070.0 1584.7, 641.0 1593.3, 641.0 1632.0" fill="none" stroke="#3b82f6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>extends: extends</title><path d="M 1070.0 1546.0 C 1070.0 1584.7, 1213.0 1593.3, 1213.0 1632.0" fill="none" stroke="#3b82f6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: reframe-source</title><path d="M 1356.0 1546.0 C 1356.0 1584.7, 927.0 1593.3, 927.0 1632.0" fill="none" stroke="#8b5cf6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: reframe-source</title><path d="M 784.0 1546.0 C 784.0 1584.7, 927.0 1593.3, 927.0 1632.0" fill="none" stroke="#8b5cf6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: capability-gap-source</title><path d="M 641.0 1362.0 C 641.0 1483.5, 927.0 1510.5, 927.0 1632.0" fill="none" stroke="#8b5cf6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: dataset</title><path d="M 1213.0 1362.0 C 1213.0 1566.3, 641.0 1611.7, 641.0 1816.0" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>background: dataset</title><path d="M 498.0 1178.0 C 498.0 1465.1, 641.0 1528.9, 641.0 1816.0" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: methodology</title><path d="M 1070.0 1546.0 C 1070.0 1667.5, 641.0 1694.5, 641.0 1816.0" fill="none" stroke="#3b82f6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: rigor-source</title><path d="M 641.0 1730.0 C 641.0 1768.7, 927.0 1777.3, 927.0 1816.0" fill="none" stroke="#8b5cf6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: reframe-source</title><path d="M 1356.0 1546.0 C 1356.0 1667.5, 927.0 1694.5, 927.0 1816.0" fill="none" stroke="#8b5cf6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>uses: verifier-source</title><path d="M 784.0 1546.0 C 784.0 1667.5, 927.0 1694.5, 927.0 1816.0" fill="none" stroke="#8b5cf6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<g><title>extends: extends</title><path d="M 1213.0 1730.0 C 1213.0 1768.7, 1213.0 1777.3, 1213.0 1816.0" fill="none" stroke="#3b82f6" stroke-width="1.6" stroke-opacity="0.8" marker-end="url(#arrow)"/></g>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert" target="_top">
+  <g class="node">
+    <rect class="card" x="842.0" y="22.0" width="170" height="52" rx="26"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <text x="927.0" y="44.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13">&#128161;</text>
+    <text x="927.0" y="60.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10.5"
+      font-weight="600" fill="#e6edf3">Hypothesis</text>
+  </g>
+</a>
+<text x="22" y="214.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="2" fill="#8b949e">R1</text>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-1/research-1" target="_top">
+  <g class="node">
+    <title>Implementation/Resource Dossier for the Closure-Certified Text-to-Logic Deduction Module</title>
+    <rect class="card" x="86.0" y="162.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="86.0" y="162.0" width="4" height="96" rx="2" fill="#3b82f6"/>
+    <rect x="98.0" y="173.0" width="68" height="17" rx="8.5" fill="#3b82f6"/>
+    <text x="131.8" y="185.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">RESEARCH</text>
+    <text x="173.6" y="185.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-1/research-1</text>
+    <text x="100.0" y="210.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="100.0" dy="0">Implementation/Resource Dossier for</tspan><tspan x="100.0" dy="14">the Closure-Certified Text-to-Logic</tspan><tspan x="100.0" dy="14">Deduction Module</tspan></text>
+  </g>
+</a>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-1/dataset-1" target="_top">
+  <g class="node">
+    <title>Fold-split gold temporal relation graphs: NarrativeTime, TDDMan, MATRES</title>
+    <rect class="card" x="372.0" y="162.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="372.0" y="162.0" width="4" height="96" rx="2" fill="#f59e0b"/>
+    <rect x="384.0" y="173.0" width="61" height="17" rx="8.5" fill="#f59e0b"/>
+    <text x="414.7" y="185.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">DATASET</text>
+    <text x="453.4" y="185.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-1/dataset-1</text>
+    <text x="386.0" y="210.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="386.0" dy="0">Fold-split gold temporal relation</tspan><tspan x="386.0" dy="14">graphs: NarrativeTime, TDDMan, MATRES</tspan></text>
+  </g>
+</a>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-1/dataset-2" target="_top">
+  <g class="node">
+    <title>Synthetic QCN Backbone: consistent Allen/Point/RCC-8 networks with NL realizations</title>
+    <rect class="card" x="658.0" y="162.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="658.0" y="162.0" width="4" height="96" rx="2" fill="#f59e0b"/>
+    <rect x="670.0" y="173.0" width="61" height="17" rx="8.5" fill="#f59e0b"/>
+    <text x="700.7" y="185.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">DATASET</text>
+    <text x="739.4" y="185.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-1/dataset-2</text>
+    <text x="672.0" y="210.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="672.0" dy="0">Synthetic QCN Backbone: consistent</tspan><tspan x="672.0" dy="14">Allen/Point/RCC-8 networks with NL</tspan><tspan x="672.0" dy="14">realizations</tspan></text>
+  </g>
+</a>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-1/experiment-1" target="_top">
+  <g class="node">
+    <title>Zero-LLM T0 Envelope Gate + QCN Path-Consistency Engine over Temporal Corpora</title>
+    <rect class="card" x="944.0" y="162.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="944.0" y="162.0" width="4" height="96" rx="2" fill="#8b5cf6"/>
+    <rect x="956.0" y="173.0" width="80" height="17" rx="8.5" fill="#8b5cf6"/>
+    <text x="996.0" y="185.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">EXPERIMENT</text>
+    <text x="1044.0" y="185.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-1/experiment-1</text>
+    <text x="958.0" y="210.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="958.0" dy="0">Zero-LLM T0 Envelope Gate + QCN</tspan><tspan x="958.0" dy="14">Path-Consistency Engine over Temporal</tspan><tspan x="958.0" dy="14">Corpora</tspan></text>
+  </g>
+</a>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-1/experiment-2" target="_top">
+  <g class="node">
+    <title>Synthetic QCN de-risking of iterated closure (H3) and redundancy inverted-U (H4)</title>
+    <rect class="card" x="1230.0" y="162.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="1230.0" y="162.0" width="4" height="96" rx="2" fill="#8b5cf6"/>
+    <rect x="1242.0" y="173.0" width="80" height="17" rx="8.5" fill="#8b5cf6"/>
+    <text x="1282.0" y="185.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">EXPERIMENT</text>
+    <text x="1330.0" y="185.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-1/experiment-2</text>
+    <text x="1244.0" y="210.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="1244.0" dy="0">Synthetic QCN de-risking of iterated</tspan><tspan x="1244.0" dy="14">closure (H3) and redundancy inverted-U</tspan><tspan x="1244.0" dy="14">(H4)</tspan></text>
+  </g>
+</a>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-1/experiment-3" target="_top">
+  <g class="node">
+    <title>Recall-Bite Frontier &amp; Go/No-Go Pilot for Closure-Certified Temporal Composition</title>
+    <rect class="card" x="1516.0" y="162.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="1516.0" y="162.0" width="4" height="96" rx="2" fill="#8b5cf6"/>
+    <rect x="1528.0" y="173.0" width="80" height="17" rx="8.5" fill="#8b5cf6"/>
+    <text x="1568.0" y="185.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">EXPERIMENT</text>
+    <text x="1616.0" y="185.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-1/experiment-3</text>
+    <text x="1530.0" y="210.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="1530.0" dy="0">Recall-Bite Frontier &amp; Go/No-Go Pilot</tspan><tspan x="1530.0" dy="14">for Closure-Certified Temporal</tspan><tspan x="1530.0" dy="14">Composition</tspan></text>
+  </g>
+</a>
+<text x="22" y="398.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="2" fill="#8b949e">R2</text>
+<line x1="86" y1="302.0" x2="1768" y2="302.0" stroke="#21262d" stroke-dasharray="3 5"/>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-2/research-1" target="_top">
+  <g class="node">
+    <title>Iter-2 Local-Reader / Prolog-Discharge / CLUTRR Implementation-Decision Dossier</title>
+    <rect class="card" x="229.0" y="346.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="229.0" y="346.0" width="4" height="96" rx="2" fill="#3b82f6"/>
+    <rect x="241.0" y="357.0" width="68" height="17" rx="8.5" fill="#3b82f6"/>
+    <text x="274.8" y="369.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">RESEARCH</text>
+    <text x="316.6" y="369.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-2/research-1</text>
+    <text x="243.0" y="394.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="243.0" dy="0">Iter-2 Local-Reader / Prolog-Discharge</tspan><tspan x="243.0" dy="14">/ CLUTRR Implementation-Decision</tspan><tspan x="243.0" dy="14">Dossier</tspan></text>
+  </g>
+</a>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-2/experiment-3" target="_top">
+  <g class="node">
+    <title>LOCAL-reader closure vs PoT/self-consistency on NarrativeTime+TDDMan with Prolog traces</title>
+    <rect class="card" x="515.0" y="346.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="515.0" y="346.0" width="4" height="96" rx="2" fill="#8b5cf6"/>
+    <rect x="527.0" y="357.0" width="80" height="17" rx="8.5" fill="#8b5cf6"/>
+    <text x="567.0" y="369.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">EXPERIMENT</text>
+    <text x="615.0" y="369.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-2/experiment-3</text>
+    <text x="529.0" y="394.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="529.0" dy="0">LOCAL-reader closure vs</tspan><tspan x="529.0" dy="14">PoT/self-consistency on</tspan><tspan x="529.0" dy="14">NarrativeTime+TDDMan with Prolog …</tspan></text>
+  </g>
+</a>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-2/experiment-1" target="_top">
+  <g class="node">
+    <title>Real-LLM Matched-Coverage Closure Showdown on the Synthetic QCN Backbone</title>
+    <rect class="card" x="801.0" y="346.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="801.0" y="346.0" width="4" height="96" rx="2" fill="#8b5cf6"/>
+    <rect x="813.0" y="357.0" width="80" height="17" rx="8.5" fill="#8b5cf6"/>
+    <text x="853.0" y="369.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">EXPERIMENT</text>
+    <text x="901.0" y="369.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-2/experiment-1</text>
+    <text x="815.0" y="394.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="815.0" dy="0">Real-LLM Matched-Coverage Closure</tspan><tspan x="815.0" dy="14">Showdown on the Synthetic QCN Backbone</tspan></text>
+  </g>
+</a>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-2/experiment-2" target="_top">
+  <g class="node">
+    <title>Realism-Matched Synthetic Channel: H3 gap, H4 inverted-U, silent-wrong re-established</title>
+    <rect class="card" x="1087.0" y="346.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="1087.0" y="346.0" width="4" height="96" rx="2" fill="#8b5cf6"/>
+    <rect x="1099.0" y="357.0" width="80" height="17" rx="8.5" fill="#8b5cf6"/>
+    <text x="1139.0" y="369.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">EXPERIMENT</text>
+    <text x="1187.0" y="369.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-2/experiment-2</text>
+    <text x="1101.0" y="394.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="1101.0" dy="0">Realism-Matched Synthetic Channel: H3</tspan><tspan x="1101.0" dy="14">gap, H4 inverted-U, silent-wrong</tspan><tspan x="1101.0" dy="14">re-established</tspan></text>
+  </g>
+</a>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-2/dataset-1" target="_top">
+  <g class="node">
+    <title>CLUTRR kinship gold graphs: two hop-stratified slices with absent-relation pairs</title>
+    <rect class="card" x="1373.0" y="346.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="1373.0" y="346.0" width="4" height="96" rx="2" fill="#f59e0b"/>
+    <rect x="1385.0" y="357.0" width="61" height="17" rx="8.5" fill="#f59e0b"/>
+    <text x="1415.7" y="369.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">DATASET</text>
+    <text x="1454.4" y="369.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-2/dataset-1</text>
+    <text x="1387.0" y="394.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="1387.0" dy="0">CLUTRR kinship gold graphs: two</tspan><tspan x="1387.0" dy="14">hop-stratified slices with</tspan><tspan x="1387.0" dy="14">absent-relation pairs</tspan></text>
+  </g>
+</a>
+<text x="22" y="582.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="2" fill="#8b949e">R3</text>
+<line x1="86" y1="486.0" x2="1768" y2="486.0" stroke="#21262d" stroke-dasharray="3 5"/>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-3/experiment-2" target="_top">
+  <g class="node">
+    <title>Powered closure-certified temporal deduction on real text: H1+H2 CONFIRM at n=600</title>
+    <rect class="card" x="229.0" y="530.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="229.0" y="530.0" width="4" height="96" rx="2" fill="#8b5cf6"/>
+    <rect x="241.0" y="541.0" width="80" height="17" rx="8.5" fill="#8b5cf6"/>
+    <text x="281.0" y="553.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">EXPERIMENT</text>
+    <text x="329.0" y="553.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-3/experiment-2</text>
+    <text x="243.0" y="578.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="243.0" dy="0">Powered closure-certified temporal</tspan><tspan x="243.0" dy="14">deduction on real text: H1+H2 CONFIRM</tspan><tspan x="243.0" dy="14">at n=600</tspan></text>
+  </g>
+</a>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-3/research-1" target="_top">
+  <g class="node">
+    <title>Pinned &amp; Differentiated 4 Closest Neuro-Symbolic Temporal/Abstention Neighbors</title>
+    <rect class="card" x="515.0" y="530.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="515.0" y="530.0" width="4" height="96" rx="2" fill="#3b82f6"/>
+    <rect x="527.0" y="541.0" width="68" height="17" rx="8.5" fill="#3b82f6"/>
+    <text x="560.8" y="553.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">RESEARCH</text>
+    <text x="602.6" y="553.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-3/research-1</text>
+    <text x="529.0" y="578.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="529.0" dy="0">Pinned &amp; Differentiated 4 Closest</tspan><tspan x="529.0" dy="14">Neuro-Symbolic Temporal/Abstention</tspan><tspan x="529.0" dy="14">Neighbors</tspan></text>
+  </g>
+</a>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-3/experiment-3" target="_top">
+  <g class="node">
+    <title>RCC-8 Real-LLM Arm: Third Point on the Closure Algebra-Richness Scaling Curve</title>
+    <rect class="card" x="801.0" y="530.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="801.0" y="530.0" width="4" height="96" rx="2" fill="#8b5cf6"/>
+    <rect x="813.0" y="541.0" width="80" height="17" rx="8.5" fill="#8b5cf6"/>
+    <text x="853.0" y="553.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">EXPERIMENT</text>
+    <text x="901.0" y="553.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-3/experiment-3</text>
+    <text x="815.0" y="578.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="815.0" dy="0">RCC-8 Real-LLM Arm: Third Point on the</tspan><tspan x="815.0" dy="14">Closure Algebra-Richness Scaling Curve</tspan></text>
+  </g>
+</a>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-3/experiment-1" target="_top">
+  <g class="node">
+    <title>CLUTRR kinship closure-certificate pipeline: atomic P/R, multi-hop accuracy, Prolog trace</title>
+    <rect class="card" x="1087.0" y="530.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="1087.0" y="530.0" width="4" height="96" rx="2" fill="#8b5cf6"/>
+    <rect x="1099.0" y="541.0" width="80" height="17" rx="8.5" fill="#8b5cf6"/>
+    <text x="1139.0" y="553.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">EXPERIMENT</text>
+    <text x="1187.0" y="553.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-3/experiment-1</text>
+    <text x="1101.0" y="578.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="1101.0" dy="0">CLUTRR kinship closure-certificate</tspan><tspan x="1101.0" dy="14">pipeline: atomic P/R, multi-hop</tspan><tspan x="1101.0" dy="14">accuracy, Prolog trace</tspan></text>
+  </g>
+</a>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-3/evaluation-1" target="_top">
+  <g class="node">
+    <title>Decompose the +0.676 gap, risk-coverage hallucination, H1-H4 multiplicity re-analysis</title>
+    <rect class="card" x="1373.0" y="530.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="1373.0" y="530.0" width="4" height="96" rx="2" fill="#10b981"/>
+    <rect x="1385.0" y="541.0" width="80" height="17" rx="8.5" fill="#10b981"/>
+    <text x="1425.0" y="553.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">EVALUATION</text>
+    <text x="1473.0" y="553.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-3/evaluation-1</text>
+    <text x="1387.0" y="578.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="1387.0" dy="0">Decompose the +0.676 gap,</tspan><tspan x="1387.0" dy="14">risk-coverage hallucination, H1-H4</tspan><tspan x="1387.0" dy="14">multiplicity re-analysis</tspan></text>
+  </g>
+</a>
+<text x="22" y="766.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="2" fill="#8b949e">R4</text>
+<line x1="86" y1="670.0" x2="1768" y2="670.0" stroke="#21262d" stroke-dasharray="3 5"/>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-4/dataset-1" target="_top">
+  <g class="node">
+    <title>Spatial multi-path-redundancy gold-QCN corpus: iter-5 prevalence gate</title>
+    <rect class="card" x="229.0" y="714.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="229.0" y="714.0" width="4" height="96" rx="2" fill="#f59e0b"/>
+    <rect x="241.0" y="725.0" width="61" height="17" rx="8.5" fill="#f59e0b"/>
+    <text x="271.7" y="737.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">DATASET</text>
+    <text x="310.4" y="737.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-4/dataset-1</text>
+    <text x="243.0" y="762.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="243.0" dy="0">Spatial multi-path-redundancy gold-QCN</tspan><tspan x="243.0" dy="14">corpus: iter-5 prevalence gate</tspan></text>
+  </g>
+</a>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-4/experiment-1" target="_top">
+  <g class="node">
+    <title>Decisive real-text test: cross-path Allen-13 intersection vs best-single-path</title>
+    <rect class="card" x="515.0" y="714.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="515.0" y="714.0" width="4" height="96" rx="2" fill="#8b5cf6"/>
+    <rect x="527.0" y="725.0" width="80" height="17" rx="8.5" fill="#8b5cf6"/>
+    <text x="567.0" y="737.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">EXPERIMENT</text>
+    <text x="615.0" y="737.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-4/experiment-1</text>
+    <text x="529.0" y="762.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="529.0" dy="0">Decisive real-text test: cross-path</tspan><tspan x="529.0" dy="14">Allen-13 intersection vs</tspan><tspan x="529.0" dy="14">best-single-path</tspan></text>
+  </g>
+</a>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-4/research-1" target="_top">
+  <g class="node">
+    <title>GDLLM/BeDiscovER citation+novelty pin and spatial composition-table de-risk</title>
+    <rect class="card" x="801.0" y="714.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="801.0" y="714.0" width="4" height="96" rx="2" fill="#3b82f6"/>
+    <rect x="813.0" y="725.0" width="68" height="17" rx="8.5" fill="#3b82f6"/>
+    <text x="846.8" y="737.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">RESEARCH</text>
+    <text x="888.6" y="737.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-4/research-1</text>
+    <text x="815.0" y="762.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="815.0" dy="0">GDLLM/BeDiscovER citation+novelty pin</tspan><tspan x="815.0" dy="14">and spatial composition-table de-risk</tspan></text>
+  </g>
+</a>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-4/evaluation-1" target="_top">
+  <g class="node">
+    <title>Zero-spend re-analysis: bracketing CIs, CLUTRR coverage, contribution split</title>
+    <rect class="card" x="1087.0" y="714.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="1087.0" y="714.0" width="4" height="96" rx="2" fill="#10b981"/>
+    <rect x="1099.0" y="725.0" width="80" height="17" rx="8.5" fill="#10b981"/>
+    <text x="1139.0" y="737.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">EVALUATION</text>
+    <text x="1187.0" y="737.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-4/evaluation-1</text>
+    <text x="1101.0" y="762.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="1101.0" dy="0">Zero-spend re-analysis: bracketing</tspan><tspan x="1101.0" dy="14">CIs, CLUTRR coverage, contribution</tspan><tspan x="1101.0" dy="14">split</tspan></text>
+  </g>
+</a>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-4/experiment-2" target="_top">
+  <g class="node">
+    <title>LLM fuzzy-unification composition-cell gap-filling on Allen/RCC-8/Point and CLUTRR kinship</title>
+    <rect class="card" x="1373.0" y="714.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="1373.0" y="714.0" width="4" height="96" rx="2" fill="#8b5cf6"/>
+    <rect x="1385.0" y="725.0" width="80" height="17" rx="8.5" fill="#8b5cf6"/>
+    <text x="1425.0" y="737.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">EXPERIMENT</text>
+    <text x="1473.0" y="737.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-4/experiment-2</text>
+    <text x="1387.0" y="762.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="1387.0" dy="0">LLM fuzzy-unification composition-cell</tspan><tspan x="1387.0" dy="14">gap-filling on Allen/RCC-8/Point and</tspan><tspan x="1387.0" dy="14">CLUTRR kinship</tspan></text>
+  </g>
+</a>
+<text x="22" y="950.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="2" fill="#8b949e">R5</text>
+<line x1="86" y1="854.0" x2="1768" y2="854.0" stroke="#21262d" stroke-dasharray="3 5"/>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-5/experiment-1" target="_top">
+  <g class="node">
+    <title>Spatial RCC-8 cross-path test: structural scope-boundary + closure hallucination audit</title>
+    <rect class="card" x="372.0" y="898.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="372.0" y="898.0" width="4" height="96" rx="2" fill="#8b5cf6"/>
+    <rect x="384.0" y="909.0" width="80" height="17" rx="8.5" fill="#8b5cf6"/>
+    <text x="424.0" y="921.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">EXPERIMENT</text>
+    <text x="472.0" y="921.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-5/experiment-1</text>
+    <text x="386.0" y="946.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="386.0" dy="0">Spatial RCC-8 cross-path test:</tspan><tspan x="386.0" dy="14">structural scope-boundary + closure</tspan><tspan x="386.0" dy="14">hallucination audit</tspan></text>
+  </g>
+</a>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-5/experiment-3" target="_top">
+  <g class="node">
+    <title>Operational ~3000-char end-to-end closure-certified deduction case study</title>
+    <rect class="card" x="658.0" y="898.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="658.0" y="898.0" width="4" height="96" rx="2" fill="#8b5cf6"/>
+    <rect x="670.0" y="909.0" width="80" height="17" rx="8.5" fill="#8b5cf6"/>
+    <text x="710.0" y="921.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">EXPERIMENT</text>
+    <text x="758.0" y="921.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-5/experiment-3</text>
+    <text x="672.0" y="946.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="672.0" dy="0">Operational ~3000-char end-to-end</tspan><tspan x="672.0" dy="14">closure-certified deduction case study</tspan></text>
+  </g>
+</a>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-5/experiment-2" target="_top">
+  <g class="node">
+    <title>Genuine LLM Fuzzy-Unification with a Certificate-Bounded Hallucination Guarantee</title>
+    <rect class="card" x="944.0" y="898.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="944.0" y="898.0" width="4" height="96" rx="2" fill="#8b5cf6"/>
+    <rect x="956.0" y="909.0" width="80" height="17" rx="8.5" fill="#8b5cf6"/>
+    <text x="996.0" y="921.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">EXPERIMENT</text>
+    <text x="1044.0" y="921.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-5/experiment-2</text>
+    <text x="958.0" y="946.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="958.0" dy="0">Genuine LLM Fuzzy-Unification with a</tspan><tspan x="958.0" dy="14">Certificate-Bounded Hallucination</tspan><tspan x="958.0" dy="14">Guarantee</tspan></text>
+  </g>
+</a>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-5/evaluation-1" target="_top">
+  <g class="node">
+    <title>Iter-5 $0 re-analysis: synthetic-Allen small-bite + one-thesis tags-in-columns table</title>
+    <rect class="card" x="1230.0" y="898.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="1230.0" y="898.0" width="4" height="96" rx="2" fill="#10b981"/>
+    <rect x="1242.0" y="909.0" width="80" height="17" rx="8.5" fill="#10b981"/>
+    <text x="1282.0" y="921.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">EVALUATION</text>
+    <text x="1330.0" y="921.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-5/evaluation-1</text>
+    <text x="1244.0" y="946.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="1244.0" dy="0">Iter-5 $0 re-analysis: synthetic-Allen</tspan><tspan x="1244.0" dy="14">small-bite + one-thesis</tspan><tspan x="1244.0" dy="14">tags-in-columns table</tspan></text>
+  </g>
+</a>
+<text x="22" y="1134.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="2" fill="#8b949e">R6</text>
+<line x1="86" y1="1038.0" x2="1768" y2="1038.0" stroke="#21262d" stroke-dasharray="3 5"/>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-6/dataset-1" target="_top">
+  <g class="node">
+    <title>Natural-Text Absent-Relation Kinship Corpus from Re-DocRED + DocRED</title>
+    <rect class="card" x="372.0" y="1082.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="372.0" y="1082.0" width="4" height="96" rx="2" fill="#f59e0b"/>
+    <rect x="384.0" y="1093.0" width="61" height="17" rx="8.5" fill="#f59e0b"/>
+    <text x="414.7" y="1105.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">DATASET</text>
+    <text x="453.4" y="1105.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-6/dataset-1</text>
+    <text x="386.0" y="1130.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="386.0" dy="0">Natural-Text Absent-Relation Kinship</tspan><tspan x="386.0" dy="14">Corpus from Re-DocRED + DocRED</tspan></text>
+  </g>
+</a>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-6/experiment-1" target="_top">
+  <g class="node">
+    <title>Closure certificate vs a strong 4-signal confidence-thresholded neural abstainer</title>
+    <rect class="card" x="658.0" y="1082.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="658.0" y="1082.0" width="4" height="96" rx="2" fill="#8b5cf6"/>
+    <rect x="670.0" y="1093.0" width="80" height="17" rx="8.5" fill="#8b5cf6"/>
+    <text x="710.0" y="1105.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">EXPERIMENT</text>
+    <text x="758.0" y="1105.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-6/experiment-1</text>
+    <text x="672.0" y="1130.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="672.0" dy="0">Closure certificate vs a strong</tspan><tspan x="672.0" dy="14">4-signal confidence-thresholded neural</tspan><tspan x="672.0" dy="14">abstainer</tspan></text>
+  </g>
+</a>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-6/research-1" target="_top">
+  <g class="node">
+    <title>No-Derivation Abstention vs Confidence Family; NeSy Reposition; Re-DocRED Absent Gold</title>
+    <rect class="card" x="944.0" y="1082.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="944.0" y="1082.0" width="4" height="96" rx="2" fill="#3b82f6"/>
+    <rect x="956.0" y="1093.0" width="68" height="17" rx="8.5" fill="#3b82f6"/>
+    <text x="989.8" y="1105.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">RESEARCH</text>
+    <text x="1031.6" y="1105.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-6/research-1</text>
+    <text x="958.0" y="1130.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="958.0" dy="0">No-Derivation Abstention vs Confidence</tspan><tspan x="958.0" dy="14">Family; NeSy Reposition; Re-DocRED</tspan><tspan x="958.0" dy="14">Absent Gold</tspan></text>
+  </g>
+</a>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-6/evaluation-1" target="_top">
+  <g class="node">
+    <title>Zero-spend fuzzy fair-baseline re-analysis: certificate vs confidence threshold</title>
+    <rect class="card" x="1230.0" y="1082.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="1230.0" y="1082.0" width="4" height="96" rx="2" fill="#10b981"/>
+    <rect x="1242.0" y="1093.0" width="80" height="17" rx="8.5" fill="#10b981"/>
+    <text x="1282.0" y="1105.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">EVALUATION</text>
+    <text x="1330.0" y="1105.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-6/evaluation-1</text>
+    <text x="1244.0" y="1130.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="1244.0" dy="0">Zero-spend fuzzy fair-baseline</tspan><tspan x="1244.0" dy="14">re-analysis: certificate vs confidence</tspan><tspan x="1244.0" dy="14">threshold</tspan></text>
+  </g>
+</a>
+<text x="22" y="1318.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="2" fill="#8b949e">R7</text>
+<line x1="86" y1="1222.0" x2="1768" y2="1222.0" stroke="#21262d" stroke-dasharray="3 5"/>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-7/experiment-1" target="_top">
+  <g class="node">
+    <title>Closure Certificate vs 4-Signal Confidence Battery on Natural Re-DocRED Kinship</title>
+    <rect class="card" x="515.0" y="1266.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="515.0" y="1266.0" width="4" height="96" rx="2" fill="#8b5cf6"/>
+    <rect x="527.0" y="1277.0" width="80" height="17" rx="8.5" fill="#8b5cf6"/>
+    <text x="567.0" y="1289.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">EXPERIMENT</text>
+    <text x="615.0" y="1289.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-7/experiment-1</text>
+    <text x="529.0" y="1314.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="529.0" dy="0">Closure Certificate vs 4-Signal</tspan><tspan x="529.0" dy="14">Confidence Battery on Natural</tspan><tspan x="529.0" dy="14">Re-DocRED Kinship</tspan></text>
+  </g>
+</a>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-7/evaluation-1" target="_top">
+  <g class="node">
+    <title>Zero-spend empirical-isolation reframe: non-circular FACT-A/FACT-B ledger + scaffold</title>
+    <rect class="card" x="801.0" y="1266.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="801.0" y="1266.0" width="4" height="96" rx="2" fill="#10b981"/>
+    <rect x="813.0" y="1277.0" width="80" height="17" rx="8.5" fill="#10b981"/>
+    <text x="853.0" y="1289.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">EVALUATION</text>
+    <text x="901.0" y="1289.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-7/evaluation-1</text>
+    <text x="815.0" y="1314.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="815.0" dy="0">Zero-spend empirical-isolation</tspan><tspan x="815.0" dy="14">reframe: non-circular FACT-A/FACT-B</tspan><tspan x="815.0" dy="14">ledger + scaffold</tspan></text>
+  </g>
+</a>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-7/dataset-1" target="_top">
+  <g class="node">
+    <title>Natural-Text Located-In Absent-Relation Corpus from Re-DocRED + DocRED</title>
+    <rect class="card" x="1087.0" y="1266.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="1087.0" y="1266.0" width="4" height="96" rx="2" fill="#f59e0b"/>
+    <rect x="1099.0" y="1277.0" width="61" height="17" rx="8.5" fill="#f59e0b"/>
+    <text x="1129.7" y="1289.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">DATASET</text>
+    <text x="1168.4" y="1289.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-7/dataset-1</text>
+    <text x="1101.0" y="1314.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="1101.0" dy="0">Natural-Text Located-In</tspan><tspan x="1101.0" dy="14">Absent-Relation Corpus from Re-DocRED</tspan><tspan x="1101.0" dy="14">+ DocRED</tspan></text>
+  </g>
+</a>
+<text x="22" y="1502.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="2" fill="#8b949e">R8</text>
+<line x1="86" y1="1406.0" x2="1768" y2="1406.0" stroke="#21262d" stroke-dasharray="3 5"/>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-8/evaluation-1" target="_top">
+  <g class="node">
+    <title>eval_iter8_dir4 — capability-gap pivot + 16-cell survival/caught reframe scaffold</title>
+    <rect class="card" x="372.0" y="1450.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="372.0" y="1450.0" width="4" height="96" rx="2" fill="#10b981"/>
+    <rect x="384.0" y="1461.0" width="80" height="17" rx="8.5" fill="#10b981"/>
+    <text x="424.0" y="1473.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">EVALUATION</text>
+    <text x="472.0" y="1473.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-8/evaluation-1</text>
+    <text x="386.0" y="1498.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="386.0" dy="0">eval_iter8_dir4 — capability-gap pivot</tspan><tspan x="386.0" dy="14">+ 16-cell survival/caught reframe</tspan><tspan x="386.0" dy="14">scaffold</tspan></text>
+  </g>
+</a>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-8/experiment-2" target="_top">
+  <g class="node">
+    <title>Query-side verifier vs no-derivation certificate on CLUTRR + Re-DocRED kinship pools</title>
+    <rect class="card" x="658.0" y="1450.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="658.0" y="1450.0" width="4" height="96" rx="2" fill="#8b5cf6"/>
+    <rect x="670.0" y="1461.0" width="80" height="17" rx="8.5" fill="#8b5cf6"/>
+    <text x="710.0" y="1473.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">EXPERIMENT</text>
+    <text x="758.0" y="1473.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-8/experiment-2</text>
+    <text x="672.0" y="1498.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="672.0" dy="0">Query-side verifier vs no-derivation</tspan><tspan x="672.0" dy="14">certificate on CLUTRR + Re-DocRED</tspan><tspan x="672.0" dy="14">kinship pools</tspan></text>
+  </g>
+</a>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-8/research-1" target="_top">
+  <g class="node">
+    <title>Reframing absent-relation hallucination as compositional false-premise abstention</title>
+    <rect class="card" x="944.0" y="1450.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="944.0" y="1450.0" width="4" height="96" rx="2" fill="#3b82f6"/>
+    <rect x="956.0" y="1461.0" width="68" height="17" rx="8.5" fill="#3b82f6"/>
+    <text x="989.8" y="1473.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">RESEARCH</text>
+    <text x="1031.6" y="1473.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-8/research-1</text>
+    <text x="958.0" y="1498.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="958.0" dy="0">Reframing absent-relation</tspan><tspan x="958.0" dy="14">hallucination as compositional</tspan><tspan x="958.0" dy="14">false-premise abstention</tspan></text>
+  </g>
+</a>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-8/experiment-1" target="_top">
+  <g class="node">
+    <title>Closure certificate vs confidence battery vs query-side verifier on natural located-in</title>
+    <rect class="card" x="1230.0" y="1450.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="1230.0" y="1450.0" width="4" height="96" rx="2" fill="#8b5cf6"/>
+    <rect x="1242.0" y="1461.0" width="80" height="17" rx="8.5" fill="#8b5cf6"/>
+    <text x="1282.0" y="1473.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">EXPERIMENT</text>
+    <text x="1330.0" y="1473.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-8/experiment-1</text>
+    <text x="1244.0" y="1498.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="1244.0" dy="0">Closure certificate vs confidence</tspan><tspan x="1244.0" dy="14">battery vs query-side verifier on</tspan><tspan x="1244.0" dy="14">natural located-in</tspan></text>
+  </g>
+</a>
+<text x="22" y="1686.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="2" fill="#8b949e">R9</text>
+<line x1="86" y1="1590.0" x2="1768" y2="1590.0" stroke="#21262d" stroke-dasharray="3 5"/>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-9/experiment-1" target="_top">
+  <g class="node">
+    <title>Extraction-Recall Booster for the Closure-Certificate Net-Utility Fork</title>
+    <rect class="card" x="515.0" y="1634.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="515.0" y="1634.0" width="4" height="96" rx="2" fill="#8b5cf6"/>
+    <rect x="527.0" y="1645.0" width="80" height="17" rx="8.5" fill="#8b5cf6"/>
+    <text x="567.0" y="1657.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">EXPERIMENT</text>
+    <text x="615.0" y="1657.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-9/experiment-1</text>
+    <text x="529.0" y="1682.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="529.0" dy="0">Extraction-Recall Booster for the</tspan><tspan x="529.0" dy="14">Closure-Certificate Net-Utility Fork</tspan></text>
+  </g>
+</a>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-9/evaluation-1" target="_top">
+  <g class="node">
+    <title>Zero-spend re-analysis: caught-fraction replaces located-in 0.227 coverage artifact</title>
+    <rect class="card" x="801.0" y="1634.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="801.0" y="1634.0" width="4" height="96" rx="2" fill="#10b981"/>
+    <rect x="813.0" y="1645.0" width="80" height="17" rx="8.5" fill="#10b981"/>
+    <text x="853.0" y="1657.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">EVALUATION</text>
+    <text x="901.0" y="1657.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-9/evaluation-1</text>
+    <text x="815.0" y="1682.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="815.0" dy="0">Zero-spend re-analysis:</tspan><tspan x="815.0" dy="14">caught-fraction replaces located-in</tspan><tspan x="815.0" dy="14">0.227 coverage artifact</tspan></text>
+  </g>
+</a>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-9/research-1" target="_top">
+  <g class="node">
+    <title>Retire NOVELTY MAJOR: RE NO_RELATION lit + structural premise-verification + ACL-KE venue</title>
+    <rect class="card" x="1087.0" y="1634.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="1087.0" y="1634.0" width="4" height="96" rx="2" fill="#3b82f6"/>
+    <rect x="1099.0" y="1645.0" width="68" height="17" rx="8.5" fill="#3b82f6"/>
+    <text x="1132.8" y="1657.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">RESEARCH</text>
+    <text x="1174.6" y="1657.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-9/research-1</text>
+    <text x="1101.0" y="1682.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="1101.0" dy="0">Retire NOVELTY MAJOR: RE NO_RELATION</tspan><tspan x="1101.0" dy="14">lit + structural premise-verification</tspan><tspan x="1101.0" dy="14">+ ACL-KE venue</tspan></text>
+  </g>
+</a>
+<text x="22" y="1870.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="2" fill="#8b949e">R10</text>
+<line x1="86" y1="1774.0" x2="1768" y2="1774.0" stroke="#21262d" stroke-dasharray="3 5"/>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-10/experiment-1" target="_top">
+  <g class="node">
+    <title>Supervised located_in extractor vs closure certificate: a net-utility boundary test</title>
+    <rect class="card" x="515.0" y="1818.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="515.0" y="1818.0" width="4" height="96" rx="2" fill="#8b5cf6"/>
+    <rect x="527.0" y="1829.0" width="80" height="17" rx="8.5" fill="#8b5cf6"/>
+    <text x="567.0" y="1841.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">EXPERIMENT</text>
+    <text x="615.0" y="1841.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-10/experiment-1</text>
+    <text x="529.0" y="1866.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="529.0" dy="0">Supervised located_in extractor vs</tspan><tspan x="529.0" dy="14">closure certificate: a net-utility</tspan><tspan x="529.0" dy="14">boundary test</tspan></text>
+  </g>
+</a>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-10/evaluation-1" target="_top">
+  <g class="node">
+    <title>iter-10 $0 re-analysis: stronger-verifier n=60 rigor fix + 4 MINOR fixes + FORK</title>
+    <rect class="card" x="801.0" y="1818.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="801.0" y="1818.0" width="4" height="96" rx="2" fill="#10b981"/>
+    <rect x="813.0" y="1829.0" width="80" height="17" rx="8.5" fill="#10b981"/>
+    <text x="853.0" y="1841.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">EVALUATION</text>
+    <text x="901.0" y="1841.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-10/evaluation-1</text>
+    <text x="815.0" y="1866.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="815.0" dy="0">iter-10 $0 re-analysis:</tspan><tspan x="815.0" dy="14">stronger-verifier n=60 rigor fix + 4</tspan><tspan x="815.0" dy="14">MINOR fixes + FORK</tspan></text>
+  </g>
+</a>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/tree/main/round-10/research-1" target="_top">
+  <g class="node">
+    <title>Pinning ontology-grounded post-extraction correction foils + ACL-KE novelty framing</title>
+    <rect class="card" x="1087.0" y="1818.0" width="252" height="96" rx="10"
+      fill="#161b22" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="1087.0" y="1818.0" width="4" height="96" rx="2" fill="#3b82f6"/>
+    <rect x="1099.0" y="1829.0" width="68" height="17" rx="8.5" fill="#3b82f6"/>
+    <text x="1132.8" y="1841.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+      font-size="9.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">RESEARCH</text>
+    <text x="1174.6" y="1841.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9"
+      fill="#8b949e">round-10/research-1</text>
+    <text x="1101.0" y="1866.0" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="600"
+      fill="#e6edf3"><tspan x="1101.0" dy="0">Pinning ontology-grounded</tspan><tspan x="1101.0" dy="14">post-extraction correction foils +</tspan><tspan x="1101.0" dy="14">ACL-KE novelty framing</tspan></text>
+  </g>
+</a>
+<a href="https://github.com/AMGrobelnik/ai-invention-40a89b-no-derivation-no-relation-a-closure-cert/blob/main/paper.pdf" target="_top">
+  <g class="node">
+    <rect class="card" x="832.0" y="2002.0" width="190" height="72" rx="10"
+      fill="#161b22" stroke="#e11d48" stroke-width="1.4" filter="url(#shadow)"/>
+    <text x="927.0" y="2032.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16">&#128196;</text>
+    <text x="927.0" y="2052.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11.5"
+      font-weight="700" fill="#e6edf3">Research Paper</text>
+  </g>
+</a>
+<g>
+  <title>extends: extends</title>
+  <rect x="255.7" y="293.0" width="56" height="16" rx="8"
+    fill="#0d1117" stroke="#3b82f6" stroke-width="1"/>
+  <text x="283.5" y="304.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#3b82f6">EXTENDS</text>
+</g>
+<g>
+  <title>uses: dataset</title>
+  <rect x="798.4" y="279.9" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#f59e0b" stroke-width="1"/>
+  <text x="818.6" y="290.9" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#f59e0b">USES</text>
+</g>
+<g>
+  <title>uses: baseline-specs</title>
+  <rect x="734.0" y="306.1" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#3b82f6" stroke-width="1"/>
+  <text x="754.2" y="317.1" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#3b82f6">USES</text>
+</g>
+<g>
+  <title>uses: dataset</title>
+  <rect x="927.3" y="287.3" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#f59e0b" stroke-width="1"/>
+  <text x="947.5" y="298.3" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#f59e0b">USES</text>
+</g>
+<g>
+  <title>uses: specs</title>
+  <rect x="573.2" y="287.3" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#3b82f6" stroke-width="1"/>
+  <text x="593.4" y="298.3" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#3b82f6">USES</text>
+</g>
+<g>
+  <title>uses: dataset</title>
+  <rect x="500.1" y="274.3" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#f59e0b" stroke-width="1"/>
+  <text x="520.3" y="285.3" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#f59e0b">USES</text>
+</g>
+<g>
+  <title>uses: baseline-specs</title>
+  <rect x="553.8" y="311.7" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#3b82f6" stroke-width="1"/>
+  <text x="574.0" y="322.7" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#3b82f6">USES</text>
+</g>
+<g>
+  <title>uses: dataset</title>
+  <rect x="1335.8" y="477.0" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#f59e0b" stroke-width="1"/>
+  <text x="1356.0" y="488.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#f59e0b">USES</text>
+</g>
+<g>
+  <title>uses: specs</title>
+  <rect x="542.1" y="463.9" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#3b82f6" stroke-width="1"/>
+  <text x="562.3" y="474.9" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#3b82f6">USES</text>
+</g>
+<g>
+  <title>uses: dataset</title>
+  <rect x="465.6" y="307.5" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#f59e0b" stroke-width="1"/>
+  <text x="485.8" y="318.5" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#f59e0b">USES</text>
+</g>
+<g>
+  <title>uses: specs</title>
+  <rect x="334.8" y="471.3" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#3b82f6" stroke-width="1"/>
+  <text x="355.0" y="482.3" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#3b82f6">USES</text>
+</g>
+<g>
+  <title>uses: engine-specs</title>
+  <rect x="204.0" y="307.5" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#3b82f6" stroke-width="1"/>
+  <text x="224.2" y="318.5" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#3b82f6">USES</text>
+</g>
+<g>
+  <title>uses: dataset</title>
+  <rect x="894.6" y="462.5" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#f59e0b" stroke-width="1"/>
+  <text x="914.8" y="473.5" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#f59e0b">USES</text>
+</g>
+<g>
+  <title>uses: engine-specs</title>
+  <rect x="845.6" y="462.5" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#3b82f6" stroke-width="1"/>
+  <text x="865.8" y="473.5" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#3b82f6">USES</text>
+</g>
+<g>
+  <title>uses: showdown-data</title>
+  <rect x="1192.8" y="477.0" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="1213.0" y="488.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#8b5cf6">USES</text>
+</g>
+<g>
+  <title>uses: channel-data</title>
+  <rect x="1261.9" y="463.9" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="1282.1" y="474.9" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#8b5cf6">USES</text>
+</g>
+<g>
+  <title>differences: realtext-data</title>
+  <rect x="1253.6" y="490.1" width="76" height="16" rx="8"
+    fill="#0d1117" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="1291.7" y="501.1" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#8b5cf6">DIFFERENCES</text>
+</g>
+<g>
+  <title>extends: build-on</title>
+  <rect x="436.1" y="471.3" width="56" height="16" rx="8"
+    fill="#0d1117" stroke="#3b82f6" stroke-width="1"/>
+  <text x="464.0" y="482.3" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#3b82f6">EXTENDS</text>
+</g>
+<g>
+  <title>uses: dataset</title>
+  <rect x="566.3" y="507.1" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#f59e0b" stroke-width="1"/>
+  <text x="586.5" y="518.1" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#f59e0b">USES</text>
+</g>
+<g>
+  <title>uses: engine-specs</title>
+  <rect x="355.3" y="446.9" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#3b82f6" stroke-width="1"/>
+  <text x="375.5" y="457.9" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#3b82f6">USES</text>
+</g>
+<g>
+  <title>uses: schema-specs</title>
+  <rect x="263.3" y="477.0" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#3b82f6" stroke-width="1"/>
+  <text x="283.5" y="488.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#3b82f6">USES</text>
+</g>
+<g>
+  <title>uses: dataset</title>
+  <rect x="1478.8" y="491.5" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#f59e0b" stroke-width="1"/>
+  <text x="1499.0" y="502.5" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#f59e0b">USES</text>
+</g>
+<g>
+  <title>uses: clean-table</title>
+  <rect x="1121.3" y="477.0" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#f59e0b" stroke-width="1"/>
+  <text x="1141.5" y="488.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#f59e0b">USES</text>
+</g>
+<g>
+  <title>uses: specs</title>
+  <rect x="432.7" y="491.5" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#3b82f6" stroke-width="1"/>
+  <text x="452.9" y="502.5" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#3b82f6">USES</text>
+</g>
+<g>
+  <title>differences: temporal-data</title>
+  <rect x="643.9" y="655.3" width="76" height="16" rx="8"
+    fill="#0d1117" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="681.9" y="666.3" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#8b5cf6">DIFFERENCES</text>
+</g>
+<g>
+  <title>uses: clutrr-data</title>
+  <rect x="1192.8" y="666.7" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="1213.0" y="677.7" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#8b5cf6">USES</text>
+</g>
+<g>
+  <title>extends: extends</title>
+  <rect x="756.1" y="661.0" width="56" height="16" rx="8"
+    fill="#0d1117" stroke="#3b82f6" stroke-width="1"/>
+  <text x="784.0" y="672.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#3b82f6">EXTENDS</text>
+</g>
+<g>
+  <title>differences: dataset</title>
+  <rect x="437.6" y="863.7" width="76" height="16" rx="8"
+    fill="#0d1117" stroke="#f59e0b" stroke-width="1"/>
+  <text x="475.7" y="874.7" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#f59e0b">DIFFERENCES</text>
+</g>
+<g>
+  <title>uses: algebra-tables</title>
+  <rect x="692.3" y="845.0" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#3b82f6" stroke-width="1"/>
+  <text x="712.5" y="856.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#3b82f6">USES</text>
+</g>
+<g>
+  <title>uses: synthetic-control</title>
+  <rect x="694.7" y="471.7" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#f59e0b" stroke-width="1"/>
+  <text x="714.9" y="482.7" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#f59e0b">USES</text>
+</g>
+<g>
+  <title>uses: engine-specs</title>
+  <rect x="408.7" y="666.3" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#3b82f6" stroke-width="1"/>
+  <text x="428.9" y="677.3" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#3b82f6">USES</text>
+</g>
+<g>
+  <title>uses: dataset</title>
+  <rect x="1315.3" y="630.9" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#f59e0b" stroke-width="1"/>
+  <text x="1335.5" y="641.9" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#f59e0b">USES</text>
+</g>
+<g>
+  <title>uses: dataset</title>
+  <rect x="777.4" y="850.7" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#f59e0b" stroke-width="1"/>
+  <text x="797.6" y="861.7" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#f59e0b">USES</text>
+</g>
+<g>
+  <title>uses: specs</title>
+  <rect x="607.2" y="630.9" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#3b82f6" stroke-width="1"/>
+  <text x="627.4" y="641.9" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#3b82f6">USES</text>
+</g>
+<g>
+  <title>uses: dataset</title>
+  <rect x="719.1" y="707.6" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#f59e0b" stroke-width="1"/>
+  <text x="739.3" y="718.6" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#f59e0b">USES</text>
+</g>
+<g>
+  <title>uses: dataset</title>
+  <rect x="1121.3" y="661.0" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#f59e0b" stroke-width="1"/>
+  <text x="1141.5" y="672.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#f59e0b">USES</text>
+</g>
+<g>
+  <title>uses: engine-specs</title>
+  <rect x="330.0" y="471.7" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#3b82f6" stroke-width="1"/>
+  <text x="350.2" y="482.7" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#3b82f6">USES</text>
+</g>
+<g>
+  <title>uses: pipeline-specs</title>
+  <rect x="549.3" y="661.0" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#3b82f6" stroke-width="1"/>
+  <text x="569.5" y="672.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#3b82f6">USES</text>
+</g>
+<g>
+  <title>uses: synthetic-control</title>
+  <rect x="893.2" y="839.3" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="913.4" y="850.3" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#8b5cf6">USES</text>
+</g>
+<g>
+  <title>uses: inverted-u</title>
+  <rect x="1281.3" y="691.1" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="1301.5" y="702.1" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#8b5cf6">USES</text>
+</g>
+<g>
+  <title>uses: clutrr</title>
+  <rect x="1323.6" y="830.5" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="1343.8" y="841.5" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#8b5cf6">USES</text>
+</g>
+<g>
+  <title>uses: temporal</title>
+  <rect x="1250.2" y="830.5" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="1270.4" y="841.5" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#8b5cf6">USES</text>
+</g>
+<g>
+  <title>uses: kinship-table-specs</title>
+  <rect x="439.4" y="839.0" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#3b82f6" stroke-width="1"/>
+  <text x="459.6" y="850.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#3b82f6">USES</text>
+</g>
+<g>
+  <title>uses: dataset</title>
+  <rect x="1306.0" y="655.7" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#f59e0b" stroke-width="1"/>
+  <text x="1326.2" y="666.7" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#f59e0b">USES</text>
+</g>
+<g>
+  <title>uses: dataset</title>
+  <rect x="371.5" y="859.5" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#f59e0b" stroke-width="1"/>
+  <text x="391.7" y="870.5" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#f59e0b">USES</text>
+</g>
+<g>
+  <title>uses: baseline-specs</title>
+  <rect x="498.3" y="710.7" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#3b82f6" stroke-width="1"/>
+  <text x="518.5" y="721.7" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#3b82f6">USES</text>
+</g>
+<g>
+  <title>uses: engine-specs</title>
+  <rect x="477.8" y="661.0" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#3b82f6" stroke-width="1"/>
+  <text x="498.0" y="672.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#3b82f6">USES</text>
+</g>
+<g>
+  <title>uses: fuzzy</title>
+  <rect x="1094.5" y="1010.3" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="1114.7" y="1021.3" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#8b5cf6">USES</text>
+</g>
+<g>
+  <title>uses: spatial-crosspath</title>
+  <rect x="1201.7" y="1047.7" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="1221.9" y="1058.7" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#8b5cf6">USES</text>
+</g>
+<g>
+  <title>uses: clutrr</title>
+  <rect x="1281.3" y="875.1" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="1301.5" y="886.1" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#8b5cf6">USES</text>
+</g>
+<g>
+  <title>extends: prior-neighbors</title>
+  <rect x="827.6" y="845.0" width="56" height="16" rx="8"
+    fill="#0d1117" stroke="#3b82f6" stroke-width="1"/>
+  <text x="855.5" y="856.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#3b82f6">EXTENDS</text>
+</g>
+<g>
+  <title>uses: dataset</title>
+  <rect x="586.2" y="1226.1" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#f59e0b" stroke-width="1"/>
+  <text x="606.4" y="1237.1" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#f59e0b">USES</text>
+</g>
+<g>
+  <title>uses: methodology</title>
+  <rect x="886.3" y="1207.3" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#3b82f6" stroke-width="1"/>
+  <text x="906.5" y="1218.3" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#3b82f6">USES</text>
+</g>
+<g>
+  <title>uses: methodology</title>
+  <rect x="1138.3" y="1218.7" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#3b82f6" stroke-width="1"/>
+  <text x="1158.5" y="1229.7" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#3b82f6">USES</text>
+</g>
+<g>
+  <title>uses: reframe-source</title>
+  <rect x="786.1" y="1194.3" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="806.3" y="1205.3" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#8b5cf6">USES</text>
+</g>
+<g>
+  <title>uses: clutrr</title>
+  <rect x="1116.1" y="851.0" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="1136.3" y="862.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#8b5cf6">USES</text>
+</g>
+<g>
+  <title>uses: fuzzy</title>
+  <rect x="1037.6" y="1043.5" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="1057.8" y="1054.5" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#8b5cf6">USES</text>
+</g>
+<g>
+  <title>uses: count-breakdown</title>
+  <rect x="581.5" y="1199.9" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#f59e0b" stroke-width="1"/>
+  <text x="601.7" y="1210.9" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#f59e0b">USES</text>
+</g>
+<g>
+  <title>extends: extends</title>
+  <rect x="1042.2" y="1227.5" width="56" height="16" rx="8"
+    fill="#0d1117" stroke="#3b82f6" stroke-width="1"/>
+  <text x="1070.0" y="1238.5" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#3b82f6">EXTENDS</text>
+</g>
+<g>
+  <title>uses: dataset</title>
+  <rect x="1247.3" y="1391.3" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#f59e0b" stroke-width="1"/>
+  <text x="1267.5" y="1402.3" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#f59e0b">USES</text>
+</g>
+<g>
+  <title>uses: methodology</title>
+  <rect x="1311.3" y="1382.5" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#3b82f6" stroke-width="1"/>
+  <text x="1331.5" y="1393.5" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#3b82f6">USES</text>
+</g>
+<g>
+  <title>uses: dataset</title>
+  <rect x="1206.4" y="870.2" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#f59e0b" stroke-width="1"/>
+  <text x="1226.6" y="881.2" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#f59e0b">USES</text>
+</g>
+<g>
+  <title>uses: dataset</title>
+  <rect x="502.3" y="1227.5" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#f59e0b" stroke-width="1"/>
+  <text x="522.5" y="1238.5" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#f59e0b">USES</text>
+</g>
+<g>
+  <title>uses: methodology</title>
+  <rect x="788.3" y="1382.5" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#3b82f6" stroke-width="1"/>
+  <text x="808.5" y="1393.5" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#3b82f6">USES</text>
+</g>
+<g>
+  <title>uses: reframe-source</title>
+  <rect x="739.3" y="1227.5" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="759.5" y="1238.5" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#8b5cf6">USES</text>
+</g>
+<g>
+  <title>uses: reframe-source</title>
+  <rect x="512.4" y="1410.1" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="532.6" y="1421.1" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#8b5cf6">USES</text>
+</g>
+<g>
+  <title>uses: dataset</title>
+  <rect x="1143.9" y="1411.5" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#f59e0b" stroke-width="1"/>
+  <text x="1164.1" y="1422.5" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#f59e0b">USES</text>
+</g>
+<g>
+  <title>uses: dataset</title>
+  <rect x="566.3" y="1427.1" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#f59e0b" stroke-width="1"/>
+  <text x="586.5" y="1438.1" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#f59e0b">USES</text>
+</g>
+<g>
+  <title>uses: methodology</title>
+  <rect x="982.8" y="1562.3" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#3b82f6" stroke-width="1"/>
+  <text x="1003.0" y="1573.3" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#3b82f6">USES</text>
+</g>
+<g>
+  <title>extends: extends</title>
+  <rect x="1162.8" y="1599.7" width="56" height="16" rx="8"
+    fill="#0d1117" stroke="#3b82f6" stroke-width="1"/>
+  <text x="1190.7" y="1610.7" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#3b82f6">EXTENDS</text>
+</g>
+<g>
+  <title>uses: reframe-source</title>
+  <rect x="1172.3" y="1575.3" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="1192.5" y="1586.3" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#8b5cf6">USES</text>
+</g>
+<g>
+  <title>uses: reframe-source</title>
+  <rect x="798.4" y="1567.9" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="818.6" y="1578.9" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#8b5cf6">USES</text>
+</g>
+<g>
+  <title>uses: capability-gap-source</title>
+  <rect x="645.3" y="1411.5" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="665.5" y="1422.5" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#8b5cf6">USES</text>
+</g>
+<g>
+  <title>uses: dataset</title>
+  <rect x="906.8" y="1581.0" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#f59e0b" stroke-width="1"/>
+  <text x="927.0" y="1592.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#f59e0b">USES</text>
+</g>
+<g>
+  <title>background: dataset</title>
+  <rect x="567.1" y="1575.0" width="71" height="16" rx="8"
+    fill="#0d1117" stroke="#f59e0b" stroke-width="1"/>
+  <text x="602.6" y="1586.0" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#f59e0b">BACKGROUND</text>
+</g>
+<g>
+  <title>uses: methodology</title>
+  <rect x="1013.1" y="1595.5" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#3b82f6" stroke-width="1"/>
+  <text x="1033.3" y="1606.5" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#3b82f6">USES</text>
+</g>
+<g>
+  <title>uses: rigor-source</title>
+  <rect x="862.1" y="1783.7" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="882.3" y="1794.7" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#8b5cf6">USES</text>
+</g>
+<g>
+  <title>uses: reframe-source</title>
+  <rect x="1299.1" y="1595.5" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="1319.3" y="1606.5" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#8b5cf6">USES</text>
+</g>
+<g>
+  <title>uses: verifier-source</title>
+  <rect x="776.0" y="1595.5" width="40" height="16" rx="8"
+    fill="#0d1117" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="796.2" y="1606.5" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#8b5cf6">USES</text>
+</g>
+<g>
+  <title>extends: extends</title>
+  <rect x="1185.2" y="1778.1" width="56" height="16" rx="8"
+    fill="#0d1117" stroke="#3b82f6" stroke-width="1"/>
+  <text x="1213.0" y="1789.1" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="8.5" font-weight="600" letter-spacing="0.4" fill="#3b82f6">EXTENDS</text>
+</g>
+<circle cx="27" cy="2110.0" r="5" fill="#3b82f6"/><text x="38" y="2113.5" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" fill="#8b949e">research</text><circle cx="120.2" cy="2110.0" r="5" fill="#f59e0b"/><text x="131.2" y="2113.5" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" fill="#8b949e">dataset</text><circle cx="207.0" cy="2110.0" r="5" fill="#8b5cf6"/><text x="218.0" y="2113.5" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" fill="#8b949e">experiment</text><circle cx="313.0" cy="2110.0" r="5" fill="#10b981"/><text x="324.0" y="2113.5" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" fill="#8b949e">evaluation</text><circle cx="419.0" cy="2110.0" r="5" fill="#e11d48"/><text x="430.0" y="2113.5" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" fill="#8b949e">paper</text><text x="496.0" y="2113.5" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" font-style="italic" fill="#8b949e">&#8594; arrows show what each artifact builds on &#183; click any card</text>
+</svg>
