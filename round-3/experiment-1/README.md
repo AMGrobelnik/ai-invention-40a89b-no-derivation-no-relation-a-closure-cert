@@ -1,0 +1,48 @@
+# CLUTRR kinship closure-certificate pipeline: atomic P/R, multi-hop accuracy, Prolog trace
+
+`demo/` — Self-contained demo (Colab-ready notebook or markdown). Run without setup.  
+`src/` — Full source code, data, and outputs from the experiment execution.
+
+**Type:** experiment  
+**ID:** `art_0a7i481ZRwS1`
+
+## Layman Summary
+
+A pipeline that reads family facts from a short story with an LLM, then uses a Prolog-style reasoner to deduce who-is-who, refusing to guess when the facts do not determine an answer.
+
+## Full Summary
+
+End-to-end neuro-symbolic experiment on the prepared CLUTRR kinship gold graphs (dependency art_HS7-lxhZnU9m; clutrr_gen + clutrr_disc), delivering all four umbrella goal items on real (non-synthetic, non-temporal) text in ONE run with an explicit CONFIRM verdict. A cheap LLM (google/gemini-3.1-flash-lite, automatic deepseek-v3.2 fallback on rate-limit) reads atomic kinship triples from each de-bracketed story; a finite-composition-table closure engine recovers the held-out query relation and emits a certificate.
+
+KEY ENGINEERING RESULT (load-bearing): CLUTRR's kinship table is a finite composition table, NOT a relation algebra. Porting the iter-2 PC-2 (Mackworth converse-INTERSECTION) closure is UNSOUND here -- it collapses ~13% of GOLD-clean chains to EMPTY. The SOUND closure is a forward least-fixpoint UNION derivation over DEFINED compositions only (mirrors CLUTRR's own gold_proof backward-chaining and the emitted Prolog derive/solve predicate). Output contract: |D[query]|==1 -> EMIT; >1 -> ABSTAIN (Mode-B conflict); ==0 -> ABSTAIN (no path = absent-relation, hallucination-safe). Decisive 0-LLM go/no-go on ALL 16,131 clean gen rows: 100% accuracy on every emitted answer (soundness) at 98.5% singleton-rate; the ~1.5% abstentions are a genuine table ambiguity (inv-child vs inv-in-law: the same surface chain 'husband-son-grandmother' yields gold 'mother' for one story and 'mother-in-law' for another -> the table provably cannot disambiguate), so Mode-A abstains rather than guess.
+
+RESULTS (scored set: 102 present + 180 absent queries spanning hops 2..10; all baselines thresholded to the SAME matched-coverage object; doc-clustered paired bootstrap; Holm over {H1_pot,H1_sc,H2}):
+(i) Atomic-extraction P/R/F1 = 0.536 / 0.532 / 0.534 (doc-clustered CIs; stable ~0.5 recall across hops; disc by-noise breakdown). 
+(ii) H1 CONFIRMED -- Mode-A selective accuracy 0.886 at matched coverage 0.686 vs Path-of-Thoughts 0.457 (gap +0.429, CI [0.298,0.557], p_adj=0.0015), self-consistency 0.557 (gap +0.329, CI [0.205,0.458]), raw-LLM 0.543, naive single-pass 0.229, off 0.0. Accuracy-vs-chain-length: Mode-A stays ~1.0 selective accuracy through hop-10 while raw->0.0 / PoT->0.2. H3 CONFIRMED -- full-minus-naive coverage gap is ~0 at hop-2 (naive ties full, as predicted) and grows to 0.6-0.9 for hop>=3 (naive resolves only hop-2; full PC derives the rest). Gold-read ORACLE (0-LLM upper bound): Mode-A 1.00 selective accuracy at 0.951 coverage -> the bottleneck is the neural READ (atomic recall ~0.53), not the symbolic closure (the iter-1 read-soundness localization, reproduced on real text).
+(iii) Trace-graph ACTUALLY discharged in SWI-Prolog (v9.0.4): 40/40 sampled queries executed in-engine (subprocess; pyswip also verified), 40/40 match the Python reference, 39/40 match gold; a worked 3-entity example records the extracted atomics, the Mode-A composition trace (fired t1 o t2 -> t3 steps), the Prolog proof, and one Mode-B collapse.
+(iv) H2 CONFIRMED -- absent-relation confident-wrong (hallucination) rate at matched coverage: raw-LLM 0.472 vs Mode-A 0.028 = 0.444 absolute reduction (CI [0.317,0.583], meets the pre-registered >=0.20 bar, CI excludes 0); full risk-coverage curves reported per method with abstention stated alongside every number, plus a mixed present/absent pool so abstain-on-everything cannot win.
+
+CROSS-FAMILY (reader-agnostic): with deepseek-v3.2 as the reader at matched per-edge recall (0.51), Mode-A selective accuracy 0.867 vs raw 0.511 -- the closure gain is not an artifact of one reader.
+
+FILES: method.py orchestrator (+ kinship.py forward-closure engine, dataio.py loader/go-no-go, readers.py LLM prompts+parsers, baselines.py matched-coverage/risk-coverage stats, prolog.py SWI-Prolog discharge, figures.py, tests.py 0-LLM unit tests; engine.py/llm.py/stats.py reused verbatim from iter-2). method_out.json (exp_gen_sol_out, schema-validated) carries per-query predict_modeA/modeA_goldread/naive/raw/sc/pot/off + gold and all metadata tables (atomic_pr, deduction_matched_coverage, deduction_goldread_oracle, accuracy_vs_hop, absent_relation_h2, risk_coverage curves, holm_family, prolog_discharge, worked_example_3entity, cross_family_sensitivity, gold_atomic_engine_sanity, verdict). Four figures in results/.
+
+HONEST CAVEATS: CLUTRR stories are short (max 871 chars; none reach the umbrella's ~3000-char target -- longer documents live only in the temporal corpora); entity grounding + gender use gold for surface realization (NOT the contribution); a minority of raw/SC/PoT baseline queries fell back to deepseek during a gemini rate-limit window (both cheap readers; cross-family confirms reader-agnosticity). Total LLM spend well under the $9 hard cap (sha256-cached, cost-guarded). Verdict: CONFIRM (H1, H2, H3).
+
+## Dependencies
+
+- `art_HS7-lxhZnU9m` — dataset
+- `art_Dm5vYXmD1R8h` — specs
+
+## Output Files
+
+- `method.py`
+- `full_method_out.json`
+- `mini_method_out.json`
+- `preview_method_out.json`
+
+## Demo Files
+
+- **method.py** — Research methodology implementation
+
+---
+*Generated by AI Inventor Pipeline*

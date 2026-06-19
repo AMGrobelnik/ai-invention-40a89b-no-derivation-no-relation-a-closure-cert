@@ -1,0 +1,3106 @@
+{
+ "metadata": {
+  "method_name": "Minimal LLM fuzzy-unification (composition-cell gap-filling) -- EXPLORATORY",
+  "headline_K": 0.2,
+  "net_faithful_bar": 0.5,
+  "seed": 20260617,
+  "reader_model": "google/gemini-3.1-flash-lite",
+  "clutrr_gap_pool_counts": {
+   "n_mixed_pool": 663,
+   "n_manufactured_gaps": 391,
+   "n_natural_gaps_total": 244,
+   "n_natural_conflict": 244,
+   "n_natural_no_path": 0,
+   "n_normal_in_pool": 272,
+   "n_distinct_ablated_cells": 5
+  },
+  "clutrr_full_coverage_point": {
+   "symbolic": {
+    "n_pool": 663,
+    "coverage": 0.41025641025641024,
+    "acc_among_answered": 1.0,
+    "confident_wrong_rate": 0.0,
+    "n_answered": 272,
+    "n_correct": 272,
+    "n_wrong": 0
+   },
+   "gapfill_P": {
+    "n_pool": 663,
+    "coverage": 1.0,
+    "acc_among_answered": 1.0,
+    "confident_wrong_rate": 0.0,
+    "n_answered": 663,
+    "n_correct": 663,
+    "n_wrong": 0
+   },
+   "gapfill_S": {
+    "n_pool": 663,
+    "coverage": 0.9969834087481146,
+    "acc_among_answered": 0.6051437216338881,
+    "confident_wrong_rate": 0.3936651583710407,
+    "n_answered": 661,
+    "n_correct": 400,
+    "n_wrong": 261
+   },
+   "raw_llm": {
+    "n_pool": 663,
+    "coverage": 1.0,
+    "acc_among_answered": 0.4781297134238311,
+    "confident_wrong_rate": 0.521870286576169,
+    "n_answered": 663,
+    "n_correct": 317,
+    "n_wrong": 346
+   }
+  },
+  "clutrr_hallucination_reduction": {
+   "confident_wrong_rate_raw_llm": 0.521870286576169,
+   "confident_wrong_rate_gapfill_S": 0.3936651583710407,
+   "confident_wrong_rate_gapfill_P": 0.0,
+   "confident_wrong_rate_symbolic": 0.0,
+   "abs_reduction_S_vs_raw": 0.12820512820512825,
+   "rel_reduction_S_vs_raw": 0.24566473988439314,
+   "abs_reduction_P_vs_raw": 0.521870286576169,
+   "rel_reduction_P_vs_raw": 1.0
+  },
+  "kinship_composition_cell_accuracy": {
+   "n_cells": 16,
+   "exact_match_acc": 1.0,
+   "parse_fail": 0
+  },
+  "flagged_fuzzy_step_traces": [
+   {
+    "doc_id": "1e8d47fa-2f44-46d8-80f9-2078b04c6042",
+    "qsrc": "James",
+    "qtgt": "Francisco",
+    "gold": "son",
+    "gap_origin": "manufactured",
+    "gap_kind": "no_path",
+    "story": "Lynn was always arguing with her mother's husband James. Lynn asked her daughter, Felicia, if she would like to go to a movie with her on Saturday night. Felicia was excited because today she was going to the zoo with her uncle Francisco.",
+    "trace": [
+     {
+      "a": "Lynn",
+      "b": "Felicia",
+      "c": "Francisco",
+      "t1": "child",
+      "t2": "inv-un",
+      "t3": "sibling",
+      "source": "llm_fuzzy",
+      "llm_confidence": 1.0,
+      "llm_predicted_t3": "sibling",
+      "matches_true_cell": true
+     },
+     {
+      "a": "James",
+      "b": "Lynn",
+      "c": "Francisco",
+      "t1": "child",
+      "t2": "sibling",
+      "t3": "child",
+      "source": "exact_table"
+     }
+    ],
+    "final_answer": "son",
+    "correct": true,
+    "n_llm_fuzzy_steps": 1
+   },
+   {
+    "doc_id": "2d3f144b-3176-48f4-9bc6-8cd031ec1666",
+    "qsrc": "Frances",
+    "qtgt": "Francisco",
+    "gold": "son",
+    "gap_origin": "manufactured",
+    "gap_kind": "no_path",
+    "story": "Tina and her uncle Francisco went to the pet shop. Tina saw a puppy that she loved, so Francisco bought it for her. Frances went to the mall, because she wanted to look for a present for her daughter, Lena. Lena had picked her daughter Tina out the cutest new dress to wear on her birthday.",
+    "trace": [
+     {
+      "a": "Lena",
+      "b": "Tina",
+      "c": "Francisco",
+      "t1": "child",
+      "t2": "inv-un",
+      "t3": "sibling",
+      "source": "llm_fuzzy",
+      "llm_confidence": 1.0,
+      "llm_predicted_t3": "sibling",
+      "matches_true_cell": true
+     },
+     {
+      "a": "Frances",
+      "b": "Lena",
+      "c": "Francisco",
+      "t1": "child",
+      "t2": "sibling",
+      "t3": "child",
+      "source": "exact_table"
+     }
+    ],
+    "final_answer": "son",
+    "correct": true,
+    "n_llm_fuzzy_steps": 1
+   },
+   {
+    "doc_id": "2fbc5e33-21f1-4458-b71e-8c9cdf16ae10",
+    "qsrc": "Frances",
+    "qtgt": "Joshua",
+    "gold": "son",
+    "gap_origin": "manufactured",
+    "gap_kind": "no_path",
+    "story": "Marie went to the baseball game with her uncle Joshua. Marie went to dinner with her daughter David. They then went to the park afterwards. Frances asked her daughter, David, if she would like to go to a movie with her on Saturday night.",
+    "trace": [
+     {
+      "a": "David",
+      "b": "Marie",
+      "c": "Joshua",
+      "t1": "child",
+      "t2": "inv-un",
+      "t3": "sibling",
+      "source": "llm_fuzzy",
+      "llm_confidence": 1.0,
+      "llm_predicted_t3": "sibling",
+      "matches_true_cell": true
+     },
+     {
+      "a": "Frances",
+      "b": "David",
+      "c": "Joshua",
+      "t1": "child",
+      "t2": "sibling",
+      "t3": "child",
+      "source": "exact_table"
+     }
+    ],
+    "final_answer": "son",
+    "correct": true,
+    "n_llm_fuzzy_steps": 1
+   },
+   {
+    "doc_id": "0087c2c0-06e0-45ba-b155-7e02b8d4b076",
+    "qsrc": "Dorothy",
+    "qtgt": "Shantel",
+    "gold": "mother",
+    "gap_origin": "natural",
+    "gap_kind": "conflict",
+    "story": "Pedro and his wife, Dorothy just got married in Las Vegas last month. Pedro was driving to pick up his daughter Rebecca and her brother James. Pedro was glad that James was able to spend time with his grandmother Shantel.",
+    "trace": [
+     {
+      "a": "Dorothy",
+      "b": "James",
+      "c": "Shantel",
+      "t1": "child",
+      "t2": "inv-grand",
+      "t3": "inv-child",
+      "source": "exact_table"
+     },
+     {
+      "a": "Dorothy",
+      "b": "Pedro",
+      "c": "Shantel",
+      "t1": "SO",
+      "t2": "inv-child",
+      "t3": "inv-in-law",
+      "source": "exact_table"
+     },
+     {
+      "source": "llm_fuzzy",
+      "kind": "story_disambiguation",
+      "candidates": [
+       "mother",
+       "mother-in-law"
+      ],
+      "llm_pick": "mother-in-law",
+      "llm_confidence": 1.0,
+      "resolved": true
+     }
+    ],
+    "final_answer": "mother-in-law",
+    "correct": false,
+    "n_llm_fuzzy_steps": 1
+   },
+   {
+    "doc_id": "033e3a5e-dac1-45aa-912f-a55d1720a1a1",
+    "qsrc": "Pedro",
+    "qtgt": "Shantel",
+    "gold": "mother-in-law",
+    "gap_origin": "natural",
+    "gap_kind": "conflict",
+    "story": "James and his aunt, Marie, were n't on speaking terms. Nobody remembered what the disagreement was anymore, but it had lasted for years. Shantel was so proud of her daughter Marie for getting straight A's this semester. Dorothy and her son James went shopping to get Dorothy 'husband Pedro a birthday gift yesterday.",
+    "trace": [
+     {
+      "a": "Pedro",
+      "b": "Marie",
+      "c": "Shantel",
+      "t1": "sibling",
+      "t2": "inv-child",
+      "t3": "inv-child",
+      "source": "exact_table"
+     },
+     {
+      "a": "Pedro",
+      "b": "Dorothy",
+      "c": "Shantel",
+      "t1": "SO",
+      "t2": "inv-child",
+      "t3": "inv-in-law",
+      "source": "exact_table"
+     },
+     {
+      "source": "llm_fuzzy",
+      "kind": "story_disambiguation",
+      "candidates": [
+       "mother",
+       "mother-in-law"
+      ],
+      "llm_pick": "mother-in-law",
+      "llm_confidence": 1.0,
+      "resolved": true
+     }
+    ],
+    "final_answer": "mother-in-law",
+    "correct": true,
+    "n_llm_fuzzy_steps": 1
+   }
+  ],
+  "honesty_caveats": [
+   "CLUTRR is a TEMPLATED kinship benchmark (max 871 chars), not natural text",
+   "gaps are composition CELLS, not ontology/common-sense grounding",
+   "manufactured gaps are clearly labelled and separated from natural gaps",
+   "a non-sound LLM fill is the silent-wrong-narrowing failure mode -> reported as confident-wrong",
+   "Mode-S and the raw_llm baseline see the same story; the neuro-symbolic system invokes the LLM ONLY on gap cells and uses the exact table elsewhere"
+  ],
+  "verdict": {
+   "adds_net_faithful_coverage_clutrr": "YES",
+   "recovered_precision": 1.0,
+   "net_recovered_correct_minus_wrong": 391,
+   "best_mode": "gapfill_P",
+   "composition_accuracy_degrades_with_richness": true,
+   "cell_fill_beats_story_fill": true,
+   "story_conditioning_helps_natural_conflicts": true,
+   "hallucination_rel_reduction_bestmode_vs_raw": 1.0,
+   "hallucination_rel_reduction_S_vs_raw": 0.24566473988439314,
+   "summary": "LLM abstract composition-cell exact-match falls with algebra richness (point=0.67/3rels, rcc8=0.52/8rels, allen=0.38/13rels; allen soundness only 0.44), so an LLM composes RICH algebras poorly and a non-sound fill is a silent-wrong-narrowing hazard. on CLUTRR kinship -- where the LLM knows the composition calculus (Mode-P cell accuracy 1.0) -- CELL-level gap-filling (symbolic does the multi-hop chaining, the LLM supplies only the missing atomic rule) recovers gap coverage at precision=1.00 (net +391), verdict=YES. by contrast STORY-level filling (asking the LLM to do the multi-hop read) recovers at only precision=0.33 (net -133) -- naive story gap-fill is NOT net-faithful. the cell-fill neuro-symbolic system cuts the confident-wrong (hallucination) rate by 100% vs the raw-LLM CoT baseline (0.522 -> 0.000) at FULL coverage."
+  }
+ },
+ "datasets": [
+  {
+   "dataset": "clutrr_gapfill",
+   "examples": [
+    {
+     "input": "Lynn was always arguing with her mother's husband James. Lynn asked her daughter, Felicia, if she would like to go to a movie with her on Saturday night. Felicia was excited because today she was going to the zoo with her uncle Francisco.",
+     "output": "son",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "son",
+     "predict_gapfill_S": "son",
+     "predict_raw_llm": "son",
+     "metadata_doc_id": "1e8d47fa-2f44-46d8-80f9-2078b04c6042",
+     "metadata_qsrc": "James",
+     "metadata_qtgt": "Francisco",
+     "metadata_hop": 3,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 0.8
+    },
+    {
+     "input": "James bought a new dress for his daughter Lena. Pamela went to the baseball game with her uncle Hugh. Lena had picked her daughter Pamela out the cutest new dress to wear on her birthday.",
+     "output": "son",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "son",
+     "predict_gapfill_S": "brother-in-law",
+     "predict_raw_llm": "brother-in-law",
+     "metadata_doc_id": "7bd0952f-b7a2-40e0-ab2a-a97f35d47504",
+     "metadata_qsrc": "James",
+     "metadata_qtgt": "Hugh",
+     "metadata_hop": 3,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": false,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 0.8,
+     "metadata_conf_raw": 0.8
+    },
+    {
+     "input": "Pamela went with her mother Lena to pick out a gift for Lena's mother, Frances. Pamela went to the baseball game with her uncle Francisco.",
+     "output": "son",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "son",
+     "predict_gapfill_S": "son",
+     "predict_raw_llm": "son",
+     "metadata_doc_id": "c76d7d97-55f1-4774-a0f4-073ea2638bfe",
+     "metadata_qsrc": "Frances",
+     "metadata_qtgt": "Francisco",
+     "metadata_hop": 3,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Marie fixed her husband Robert dinner and then they watched a movie they rented. Robert and his sister Dorothy were arguing about politics. Heather, Dorothy's daughter, heard them, but did n't want to get involved in the fight. Heather wanted to visit her grandmother Shantel, but Shantel was asleep.",
+     "output": "mother-in-law",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "mother-in-law",
+     "predict_gapfill_S": "mother-in-law",
+     "predict_raw_llm": "mother-in-law",
+     "metadata_doc_id": "7a77e744-db11-44a6-bc46-680d42bffd55",
+     "metadata_qsrc": "Marie",
+     "metadata_qtgt": "Shantel",
+     "metadata_hop": 4,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "SO",
+       "inv-child"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Gilbert wanted to buy his sister a birthday gift but her son William said she did n't want any gifts. Nancy and Gilbert left that evening to go bowling. Gilbert took his favorite son Samuel to a baseball game where he caught a foul ball as a souvenir. Angela went to visit her daughter Nancy the other day. Angela's son Gilbert was too busy at work to go along.",
+     "output": "brother",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "brother",
+     "predict_gapfill_S": "ABSTAIN",
+     "predict_raw_llm": "no-relation",
+     "metadata_doc_id": "050ade5d-088f-446d-97a7-d812a7b17b69",
+     "metadata_qsrc": "Samuel",
+     "metadata_qtgt": "William",
+     "metadata_hop": 5,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": false,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 0.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Benito likes to visit his sister. Her name is Patricia. Thelma took her brother Henry and other brother Benito with her to eat pasta at a pasta buffet. William took his daughter Patricia over to his sister Angela's house to see her new cat.",
+     "output": "nephew",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "nephew",
+     "predict_gapfill_S": "nephew",
+     "predict_raw_llm": "nephew",
+     "metadata_doc_id": "0f014b7a-8f44-4079-9491-84d20bc16ac8",
+     "metadata_qsrc": "Angela",
+     "metadata_qtgt": "Henry",
+     "metadata_hop": 5,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Milton invited his sister Melanie to dinner this Friday because it is her birthday. Victoria took her brothers William and Samuel to a baseball game. Victoria's son Richard went dancing instead. Melanie and her brother Samuel went to see a movie.",
+     "output": "nephew",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "nephew",
+     "predict_gapfill_S": "nephew",
+     "predict_raw_llm": "nephew",
+     "metadata_doc_id": "208fb2bd-9e06-49e4-a57d-bb0460012fcb",
+     "metadata_qsrc": "Milton",
+     "metadata_qtgt": "Richard",
+     "metadata_hop": 5,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Angela was making lunch for her son Gilbert and her husband Samuel. Hattie wanted to meet with her brother, Gilbert, but she had to cancel when her sister, Nancy, had an emergency that she needed to attend to. Samuel took his sister Victoria out to lunch after learning that she got accepted into her first choice for university.",
+     "output": "niece",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "niece",
+     "predict_gapfill_S": "no-relation",
+     "predict_raw_llm": "niece",
+     "metadata_doc_id": "3b6c9594-a2a6-46f4-a761-19fbdffdac8c",
+     "metadata_qsrc": "Victoria",
+     "metadata_qtgt": "Nancy",
+     "metadata_hop": 5,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": false,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Thelma wanted to visit an art museum, so she asked her father, William to take her. Patricia and her brother Benito went to see a movie. Thelma asked her mother, Melanie, what they were going to have for lunch. Donald likes to visit his sister. Her name is Melanie. William and his son Benito went to the cinema together.",
+     "output": "uncle",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "uncle",
+     "predict_gapfill_S": "father",
+     "predict_raw_llm": "uncle",
+     "metadata_doc_id": "4d79e72d-c26c-40af-ab83-4a69d47737e8",
+     "metadata_qsrc": "Patricia",
+     "metadata_qtgt": "Donald",
+     "metadata_hop": 5,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": false,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Angela loved her nephew, Benito. Benito likes to visit his sister. Her name is Patricia. William took his daughter Patricia and son Benito to the baseball game. Benito was sad that his brother Henry could n't go to the game because he was sick.",
+     "output": "aunt",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "aunt",
+     "predict_gapfill_S": "aunt",
+     "predict_raw_llm": "aunt",
+     "metadata_doc_id": "58d48c00-ff54-4b63-bde5-ad108d8b74c4",
+     "metadata_qsrc": "Henry",
+     "metadata_qtgt": "Angela",
+     "metadata_hop": 5,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Irene went to dinner with her daughter Guadalupe. They then went to the park afterwards. Richard adored his brother, Jeremy. Jeremy's brother, Charles, also adored him. Victoria went to her son Richard's House Irene went to her aunt Victoria's house for dinner. Victoria made meatloaf, and it was delicious.",
+     "output": "nephew",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "nephew",
+     "predict_gapfill_S": "uncle",
+     "predict_raw_llm": "no-relation",
+     "metadata_doc_id": "61efcd59-5cd3-4bd9-a161-385c557c340a",
+     "metadata_qsrc": "Guadalupe",
+     "metadata_qtgt": "Charles",
+     "metadata_hop": 5,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": false,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Margaretta, a female, took her husband who is a male, Angel, out for lunch. Milton took his daughter Irene to the baseball game. Irene's brother Pat hates baseball and stayed home. Margaretta enjoys playing cards with her brother. His name is Pat. Guadalupe went to the beach with her husband Milton.",
+     "output": "son-in-law",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "son-in-law",
+     "predict_gapfill_S": "son",
+     "predict_raw_llm": "son-in-law",
+     "metadata_doc_id": "706d8852-72b7-4cb8-9723-250f1845ef93",
+     "metadata_qsrc": "Guadalupe",
+     "metadata_qtgt": "Angel",
+     "metadata_hop": 5,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "SO"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": false,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Katherine went shoe shopping with her sister Erica. Joseph took his son Ross to the park to feed the squirrels. Ross loved going to the store with his mom Erica. She always bought him snacks Katherine went to the mall, because she wanted to look for a present for her daughter, Charlsie. Jon and her sister Charlsie were baking cake. Jon's brother James came in and tried to eat some of the mix, but they told him to wait until it was finished.",
+     "output": "nephew",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "nephew",
+     "predict_gapfill_S": "brother-in-law",
+     "predict_raw_llm": "nephew",
+     "metadata_doc_id": "0c949c9e-1fc6-4757-b22f-b0e01eff3933",
+     "metadata_qsrc": "Joseph",
+     "metadata_qtgt": "James",
+     "metadata_hop": 6,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": false,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Katherine and her son Ronald made hot dogs. Ronald's brother James ate one. James 'uncle, Clifton, always took him fishing on summer weekends. James loved going to the store with his mom Katherine. She always bought him snacks Robert took his son James and daughter Charlsie to the zoo on Saturday and they had a great time.",
+     "output": "uncle",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "uncle",
+     "predict_gapfill_S": "uncle",
+     "predict_raw_llm": "uncle",
+     "metadata_doc_id": "26ef6538-67ef-46e3-b142-c1a4142c9969",
+     "metadata_qsrc": "Charlsie",
+     "metadata_qtgt": "Clifton",
+     "metadata_hop": 6,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Dorothy's son, Warren, had to stay home from school with a cold. Clifton took his nephew Seth to the hockey game. Lilly went to dinner with her daughter Dorothy. They then went to the park afterwards. Arthur was so happy for his brother, Warren, getting a promotion. Seth took his son Alvin out for pizza. Lilly 'father Alvin became enraged when she failed to complete her homework. Lilly was grounded for a month and unable to spend time with friends.",
+     "output": "uncle",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "uncle",
+     "predict_gapfill_S": "uncle",
+     "predict_raw_llm": "no-relation",
+     "metadata_doc_id": "4690a981-9a1b-4f57-94a4-705d6053d5aa",
+     "metadata_qsrc": "Arthur",
+     "metadata_qtgt": "Clifton",
+     "metadata_hop": 6,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Bonnie and her brother Robert enlisted in the army Dorothy went shoe shopping with her sister Katherine. Mary baked chocolate muffins for her son Robert and daughter Dorothy. David is having a meal with his father Clifton. Bonnie and Clifton are happy with each other.",
+     "output": "nephew",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "nephew",
+     "predict_gapfill_S": "nephew",
+     "predict_raw_llm": "brother",
+     "metadata_doc_id": "5dd1bc53-36cb-410c-a53b-235a6d5b5fa0",
+     "metadata_qsrc": "Katherine",
+     "metadata_qtgt": "David",
+     "metadata_hop": 6,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "SO",
+       "inv-child"
+      ],
+      [
+       "child",
+       "SO"
+      ],
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 0.9
+    },
+    {
+     "input": "Erica loves cooking for her son. His name is Alfredo Alfredo and his brother, Ross run a turtle farm. Bonnie and her son, Kenneth, went to the park to fly a kite. They had fun doing it all day. Warren likes to spend time with his aunt, Bonnie, who was excellent at cooking chicken. Erica loves going to the park with her daughter's son. His name is Kenneth. Dorothy was excited to visit her son, Warren, at college.",
+     "output": "nephew",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "nephew",
+     "predict_gapfill_S": "grandson",
+     "predict_raw_llm": "brother",
+     "metadata_doc_id": "76ff4690-db3d-44e9-af0b-752d39aa84d5",
+     "metadata_qsrc": "Dorothy",
+     "metadata_qtgt": "Ross",
+     "metadata_hop": 6,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": false,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 0.9
+    },
+    {
+     "input": "Erica took her sister, Bonnie, out to dinner for her birthday. David and his brother Kenneth always played pranks on each other William and his brother Julie were grilling hamburgers outside. Bonnie, William's mother, came out to bring them cold sweet tea. Clifton was n't able to leave work early to go watch his son David play in his first high school football game. Clifton instead sent his oldest daughter, Julie, to film the game for him so that he could watch it later that night.",
+     "output": "aunt",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "aunt",
+     "predict_gapfill_S": "sister-in-law",
+     "predict_raw_llm": "aunt",
+     "metadata_doc_id": "7d47b4ab-4dee-436e-8306-5eb1d2093657",
+     "metadata_qsrc": "Kenneth",
+     "metadata_qtgt": "Erica",
+     "metadata_hop": 6,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": false,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Bonnie and her father, Daniel, went to the marina. Daniel's daughter, Dorothy, had purchased a boat, and they were eager to see it. Patrick invited his brothers Michael and Ross to play baskteball on Saturday at 4:00 p.m. Joseph and his son Michael loved to go to the movies with Joseph's sister Bonnie.",
+     "output": "aunt",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "aunt",
+     "predict_gapfill_S": "sister-in-law",
+     "predict_raw_llm": "aunt",
+     "metadata_doc_id": "9a27c4fc-cec1-4085-9733-645feacb7d80",
+     "metadata_qsrc": "Ross",
+     "metadata_qtgt": "Dorothy",
+     "metadata_hop": 6,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "inv-child",
+       "sibling"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": false,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Katherine was glad to see her father, Daniel, at her dance recital. Daniel took his daughter Dorothy to cheer practice. Robert bought toys for his son Ronald and his daughter Jon. Katherine was wondering where her daughter Charlsie was, so she texted her. Charlsie replied that she was with her brother Ronald at the mall.",
+     "output": "aunt",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "aunt",
+     "predict_gapfill_S": "sister",
+     "predict_raw_llm": "no-relation",
+     "metadata_doc_id": "afd734f7-894e-4a9a-8246-da3691b042f1",
+     "metadata_qsrc": "Jon",
+     "metadata_qtgt": "Dorothy",
+     "metadata_hop": 6,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": false,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Dorothy and her sisters Erica went to the spa. Bonnie, another sister of Dorothy, had to babysit and could n't join them. Erica fixed her husband Joseph dinner and then they watched a movie they rented. Michael bought a steak dinner for himself and his brother Alfredo. Patrick invited his father Joseph and his brother Michael to go on a weekend fishing trip.",
+     "output": "nephew",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "nephew",
+     "predict_gapfill_S": "no-relation",
+     "predict_raw_llm": "nephew",
+     "metadata_doc_id": "c46b35ec-3768-4556-9786-8edd10b1050c",
+     "metadata_qsrc": "Bonnie",
+     "metadata_qtgt": "Alfredo",
+     "metadata_hop": 6,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": false,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Susan and her Grandfather James enjoyed feeding the ducks at the park Susan took her sister, Maria, out to dinner for her birthday. Daniel and his son James went to look at cars. Daniel ended up buying the Mustang. Gayle had picked her daughter Maria out the cutest new dress to wear on her birthday. Daniel bought his son, Kyle, a new video game for his birthday. Kyle wanted his sister, Ethel, and Ethel's brother, Michael, to play the game with him.",
+     "output": "nephew",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "nephew",
+     "predict_gapfill_S": "son",
+     "predict_raw_llm": "no-relation",
+     "metadata_doc_id": "0a19eeb4-3b28-4eb4-b7c4-c0a753ee878a",
+     "metadata_qsrc": "Gayle",
+     "metadata_qtgt": "Michael",
+     "metadata_hop": 7,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": false,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Paul took his favorite son Carlos to a baseball game where he caught a foul ball as a souvenir. Daniel and his son James went to look at cars. Daniel ended up buying the Mustang. Stephen would n't let his son Alfred go to the park by himself. Alfred's brother Peter offered to go with him. Daniel 'son, Kyle, aced his math class and made his father proud. Kyle wanted to buy his sister a birthday gift but her son Stephen said she did n't want any gifts. Carlos took his nephew Peter out to get some ice cream to celebrate his baseball victory.",
+     "output": "grandson",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "grandson",
+     "predict_gapfill_S": "no-relation",
+     "predict_raw_llm": "no-relation",
+     "metadata_doc_id": "1e3afa89-da18-45d7-b817-bba266f16996",
+     "metadata_qsrc": "James",
+     "metadata_qtgt": "Paul",
+     "metadata_hop": 7,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": false,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Jennifer loves cooking for her son. His name is Peter Carlos's wife is Gayle. They went to pick up Carlos's son, Harry, from school together. Stephen's wife, Jennifer, surprised him on his birthday. He could n't believe she pulled it off. Harry and his uncle Stephen went to the movies Sunday after church and got popcorn and candy while they were there. Peter went to the game with his sister Diane. Diane and her brother Alfred went to see a movie.",
+     "output": "nephew",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "nephew",
+     "predict_gapfill_S": "brother-in-law",
+     "predict_raw_llm": "nephew",
+     "metadata_doc_id": "2c051fde-902e-45c4-8a55-e8cd30dfd6a9",
+     "metadata_qsrc": "Gayle",
+     "metadata_qtgt": "Alfred",
+     "metadata_hop": 7,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": false,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Patricia and her brother Paul went to see a movie. Patricia took her sister, Maria, out to dinner for her birthday. Carlos went out for pizza with his sister Mary and his daughter Susan. George got his son, William, a car for his birthday. Maria took her sister, Susan, out to dinner for her birthday. George's mother Mary had to help him with his homework because he was having a test soon.",
+     "output": "nephew",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "nephew",
+     "predict_gapfill_S": "uncle",
+     "predict_raw_llm": "no-relation",
+     "metadata_doc_id": "44553620-1cfe-4458-8957-bf67fe7313f2",
+     "metadata_qsrc": "William",
+     "metadata_qtgt": "Paul",
+     "metadata_hop": 7,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": false,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "James took his son Carlos to the park to feed the squirrels. Susan took her sister, Patricia, out to dinner for her birthday. Patricia and her sister, Susan, frequently bicker. However, they always make up quickly. Carlos went fishing with his daughter Maria. Maria's sister, Susan, was n't invited because she hates fishing. Stephen 'son, Peter, was late meeting his grandfather, James.",
+     "output": "niece",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "niece",
+     "predict_gapfill_S": "wife",
+     "predict_raw_llm": "daughter",
+     "metadata_doc_id": "4a2661fd-802e-4747-bafa-9f579c4148af",
+     "metadata_qsrc": "Stephen",
+     "metadata_qtgt": "Susan",
+     "metadata_hop": 7,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": false,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Bertha and Peter left that evening to go bowling. George took his Aunt Gayle out for her favorite meal Bertha and her aunt, Marguerite, went to the bookstore. Bertha bought some fantasy books, while Marguerite picked up some mysteries. Jose invited his father William and his brother George to go on a weekend fishing trip. William took his sister Marguerite out to lunch after learning that she got accepted into her first choice for university. Stephen 'son, Peter, aced his math class and made his father proud.",
+     "output": "sister",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "sister",
+     "predict_gapfill_S": "sister-in-law",
+     "predict_raw_llm": "no-relation",
+     "metadata_doc_id": "5adf1607-fd65-47b7-b686-1937c14a0912",
+     "metadata_qsrc": "Stephen",
+     "metadata_qtgt": "Gayle",
+     "metadata_hop": 7,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": false,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 0.9,
+     "metadata_conf_raw": 0.9
+    },
+    {
+     "input": "Carlos's mother, Madonna, told him he was in trouble. Her son Stephen had told her that Carlos had been stealing from her purse. Maria and Harry left that evening to go bowling. William played chess with his brother Stephen. George bought to dress for his father William Carlos was having trouble with his divorce because he only got to see his daughter Maria a few times a week Daniel's nephew George was happy to hear that he will be arriving at the airport later tonight.",
+     "output": "uncle",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "uncle",
+     "predict_gapfill_S": "father",
+     "predict_raw_llm": "no-relation",
+     "metadata_doc_id": "5ee9593b-9094-4dc0-8647-3952b23ab72a",
+     "metadata_qsrc": "Harry",
+     "metadata_qtgt": "Daniel",
+     "metadata_hop": 7,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": false,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "William rushed to the hospital to find out that his wife and already given birth to a boy and had named him George. Jose and his sister, Lisa love it when their grandmother visits because she spoils them. She is coming this week to watch them while their parents are out of town. Mary asked her husband William to take out the trash. William took it out quickly so he could get back to the game. George bought gifts for his lovely sister, Lisa Marguerite went to her son Kyle's House Kyle's aunt Jennifer likes to drink a little bit too much wine at family gatherings. Mary, who is the sister of Jenn",
+     "output": "nephew",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "nephew",
+     "predict_gapfill_S": "grandson",
+     "predict_raw_llm": "grandson",
+     "metadata_doc_id": "67fe8b49-52e0-4a06-aeca-da84f10a173d",
+     "metadata_qsrc": "Marguerite",
+     "metadata_qtgt": "Jose",
+     "metadata_hop": 7,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": false,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 0.9
+    },
+    {
+     "input": "Carlos and his sister, Mary love it when their grandmother visits because she spoils them. She is coming this week to watch them while their parents are out of town. Patricia just had a baby and presented the baby proudly to the new maternal grandmother, Gayle. Maria and her sister, Susan, frequently bicker. However, they always make up quickly. Gayle went to the mall, because she wanted to look for a present for her daughter, Susan. Paul has a few children, Carlos, Bradley and Claire Paul is Patricia's older brother. He has never liked any of her boyfriends. Mary took her sister, Marguerite, ",
+     "output": "niece",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "niece",
+     "predict_gapfill_S": "sister",
+     "predict_raw_llm": "no-relation",
+     "metadata_doc_id": "7b2a272c-8faf-4521-bf48-a42f1914e80a",
+     "metadata_qsrc": "Marguerite",
+     "metadata_qtgt": "Maria",
+     "metadata_hop": 7,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": false,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Kim decided to give her uncle, James, a call on his birthday. James and his brother Dallas went to the park to play basketball. John and his brother, Orlando run a turtle farm. Luis took his daughter Alice to cheer practice. Alice asked her daughter, Earline, if she would like to go to a movie with her on Saturday night. Marge and her brother Dallas walked to the park. Marge's son John joined them later on. Kim went to the store with her sister Earline",
+     "output": "grandson",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "grandson",
+     "predict_gapfill_S": "no-relation",
+     "predict_raw_llm": "no-relation",
+     "metadata_doc_id": "042c7e38-c293-428b-b540-d5f823f63bf3",
+     "metadata_qsrc": "Luis",
+     "metadata_qtgt": "Orlando",
+     "metadata_hop": 8,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": false,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Jeffery bought gifts for his lovely sister, Leslie Elizabeth gave birth to a son named James. Maria and her son, Jeffery, went to the park, and had a wonderful time. Manuel took his daughter Kim to the park. Mary, Emilie´s sister went with them. Manuel felt lonely when his wife Alice was gone to see her mother Elizabeth. Leslie went to her father James Birthday party",
+     "output": "niece",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "niece",
+     "predict_gapfill_S": "no-relation",
+     "predict_raw_llm": "no-relation",
+     "metadata_doc_id": "108d589b-e10d-4780-8f29-245424333489",
+     "metadata_qsrc": "Maria",
+     "metadata_qtgt": "Mary",
+     "metadata_hop": 8,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "SO",
+       "inv-child"
+      ],
+      [
+       "child",
+       "SO"
+      ],
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": false,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Richard and his brother Jeffery had a tie score. Jeffery asked his sister, Leslie, to come up with a tie-breaker. James's brother, Dallas, recently made it into town. Shana, who is the sister of Cecelia, is a lovely girl. Dallas and his wife Melody went to see a movie. Melody's daughter, Cecelia, came with them. James was so proud of his son, Richard. he received a great scholarship to college. Shana watched a golf tournament with her aunt Marge.",
+     "output": "aunt",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "aunt",
+     "predict_gapfill_S": "aunt",
+     "predict_raw_llm": "aunt",
+     "metadata_doc_id": "20691b30-5e09-4f17-9676-6c3d0f12a09e",
+     "metadata_qsrc": "Leslie",
+     "metadata_qtgt": "Marge",
+     "metadata_hop": 8,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 0.9
+    },
+    {
+     "input": "Manuel asked his uncle, Lucas, to pick him up. Lucas told him he was too heavy. Manuel was on the phone with his wife Alice. Alice kept getting interrupted by her daughter Kim. Elizabeth baked a cake for her son James. For her daughter, Melody, Elizabeth made some fudge brownies. Edgar and his Aunt Melody flew first class Marge loves her son Edgar very much. He loves her, too. Lucas got his son, James, a car for his birthday.",
+     "output": "niece",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "niece",
+     "predict_gapfill_S": "granddaughter",
+     "predict_raw_llm": "no-relation",
+     "metadata_doc_id": "32ea25f7-8189-49f6-a66b-d9cf85b3778f",
+     "metadata_qsrc": "Marge",
+     "metadata_qtgt": "Kim",
+     "metadata_hop": 8,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "SO"
+      ],
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": false,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "David meet with his mom, Melody, for dinner at her favorite restaurant. Katherine and her brother Gerald wanted to go out and play, but Katherine's mom, Melody, told them they had to stay in and do their chores. Katherine and her uncle Donald went to the pet shop. Katherine saw a puppy that she loved, so Donald bought it for her. Gerald went to visit his father Dallas to the hospital, but Gerald's sister Cecelia could n't go. Cecelia and Gerald are siblings who are enjoying lunch together. Dallas bought a new dress for his daughter Katherine.",
+     "output": "uncle",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "uncle",
+     "predict_gapfill_S": "uncle",
+     "predict_raw_llm": "uncle",
+     "metadata_doc_id": "4d7efcbf-526f-493d-802a-c736a7b94947",
+     "metadata_qsrc": "David",
+     "metadata_qtgt": "Donald",
+     "metadata_hop": 8,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Jeffery bought Christmas gifts for his brother Lucas and his sister Leslie. Orlando's aunt, Alice, took him to the zoo. Roger 'uncle, James, always took him fishing on summer weekends. Alice was mad at her son, Roger. She found he'd been stealing from her purse. Marge had picked her daughter Jodi out the cutest new dress to wear on her birthday. Lucas took his favorite son James to a baseball game where he caught a foul ball as a souvenir. Jodi and her brother Orlando went to see a movie.",
+     "output": "niece",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "niece",
+     "predict_gapfill_S": "no-relation",
+     "predict_raw_llm": "no-relation",
+     "metadata_doc_id": "6085ff26-7ba6-4c23-96b2-b0130b6639f3",
+     "metadata_qsrc": "Marge",
+     "metadata_qtgt": "Leslie",
+     "metadata_hop": 8,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": false,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Cecelia and her brother David went to see a movie. Dallas was having trouble with his divorce because he only got to see his daughter Cecelia a few times a week Melody and her sister Alice share a love of classical music. Alice's brother James and Melody's daughter Katherine both prefer rock. Cecelia went shoe shopping with her sister Katherine. Manuel and his brother James went to the park to play basketball. Dallas went to see his daughter Cecelia for parents day at college.",
+     "output": "nephew",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "nephew",
+     "predict_gapfill_S": "brother-in-law",
+     "predict_raw_llm": "no-relation",
+     "metadata_doc_id": "6983af91-a063-4674-812f-911c9b828499",
+     "metadata_qsrc": "Manuel",
+     "metadata_qtgt": "David",
+     "metadata_hop": 8,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": false,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "James and his son Luis went to look at cars. James ended up buying the Mustang. Roger took his sister Kim out to lunch after learning that she got accepted into her first choice for university. Mary asked her mother, Alice, what they were going to have for lunch. Luis and his son Donald went to the cinema together. James invited his sister Melody to dinner this Friday because it is her birthday. Donald bought tickets for him to see the game with his nephew, Roger. Alice enjoyed a homemade dinner with her son Roger Roger and his sister, Mary, went to a sneak preview of the Avengers movie and lo",
+     "output": "aunt",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "aunt",
+     "predict_gapfill_S": "aunt",
+     "predict_raw_llm": "no-relation",
+     "metadata_doc_id": "79e5ee96-d514-4cb8-b434-e505acdc0a3e",
+     "metadata_qsrc": "Kim",
+     "metadata_qtgt": "Melody",
+     "metadata_hop": 8,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 0.9
+    },
+    {
+     "input": "Dallas and his brother Donald played harmonicas together. Dallas's daughter Shana loved it. Donald took his son Orlando out for ice cream. John went to the Farmer's market with his mother Marge and his brother Orlando. Katherine and her siblings Shana and David went on a business trip to Asia Alice was happy to babysit her niece, Katherine. Katherine was a great child.",
+     "output": "sister",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "sister",
+     "predict_gapfill_S": "sister-in-law",
+     "predict_raw_llm": "sister-in-law",
+     "metadata_doc_id": "86330538-97a3-44a3-88b6-ccaf0840f915",
+     "metadata_qsrc": "Marge",
+     "metadata_qtgt": "Alice",
+     "metadata_hop": 8,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": false,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 0.9
+    },
+    {
+     "input": "Bryan was playing tennis with his sister Thelma. Afterwards, he was planning on playing chess with his sister Amanda. Susan spent a great day shopping with her daughter, Loren. Timothy and his sister, Amanda love it when their grandmother visits because she spoils them. She is coming this week to watch them while their parents are out of town. Ronald took his son Milton to the park to feed the squirrels. Willie went to the mall, because she wanted to look for a present for her daughter, Thelma. Milton has a aunt named Willie, routinely he went to school with his aunt Ronald and his daughter Sa",
+     "output": "nephew",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "nephew",
+     "predict_gapfill_S": "son",
+     "predict_raw_llm": "grandson",
+     "metadata_doc_id": "011690ba-3f31-4c69-8eed-a3f84e9df5e1",
+     "metadata_qsrc": "Susan",
+     "metadata_qtgt": "Timothy",
+     "metadata_hop": 9,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": false,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 0.9
+    },
+    {
+     "input": "John rushed to the hospital to find out that his wife and already given birth to a boy and had named him Bryan. Kyle took his son Albert out for ice cream. Susan had picked her daughter Betty out the cutest new dress to wear on her birthday. Bonita had to work a double shift and needed someone to watch her son Albert. Luckily his sister Maryann was free. Frank likes to visit his sister. Her name is Maryann. Susan loved her nephew, Bryan. John was thrilled his brother, Kyle, was able to make it to the party. Albert asked his brother Frank if he would come help him fix his car next weekend.",
+     "output": "niece",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "niece",
+     "predict_gapfill_S": "daughter",
+     "predict_raw_llm": "no-relation",
+     "metadata_doc_id": "098c0d45-4161-438e-9070-eff6fff1d846",
+     "metadata_qsrc": "Bonita",
+     "metadata_qtgt": "Betty",
+     "metadata_hop": 9,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": false,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Mark and Donna were married twenty years ago today, becoming husband and wife on a glorious spring day. Helen decided to give her uncle, Kyle, a call on his birthday. Susan's sisters Willie and Donna helped her decorate the house for the party, while Willie's daughter Amanda baked the desserts. Leah and her father, Mark, went to the marina. Mark's daughter, Helen, had purchased a boat, and they were eager to see it. Marie was eager to show her new house to her father, Mark. It was even better when her sister, Leah, showed up, too.",
+     "output": "uncle",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "uncle",
+     "predict_gapfill_S": "uncle",
+     "predict_raw_llm": "uncle",
+     "metadata_doc_id": "1b6722d6-8555-47ca-bb08-1d7a869765fd",
+     "metadata_qsrc": "Amanda",
+     "metadata_qtgt": "Kyle",
+     "metadata_hop": 9,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Donna baked a cake for her son Wallace. For her daughter, Marie, Donna made some fudge brownies. Wallace went to lunch with his aunt Bonita. Willie asked her brother Kyle if Kyle's son Frank was sick. Marie went shoe shopping with her sister Leah. Mark and his uncle Frank went to the county fair and went on the ferris wheel Helen was eager to show her new house to her father, Mark. It was even better when her sister, Leah, showed up, too.",
+     "output": "sister",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "sister",
+     "predict_gapfill_S": "aunt",
+     "predict_raw_llm": "no-relation",
+     "metadata_doc_id": "2614acae-2f71-475d-9277-6d1386570f8c",
+     "metadata_qsrc": "Willie",
+     "metadata_qtgt": "Bonita",
+     "metadata_hop": 9,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": false,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Santa watched a golf tournament with her aunt Donna. Ronald took his daughter Santa out for dinner. Santa and her sister, Betty, went to church. Betty's mom, Susan, was sick, and could n't make it, and Betty told the pastor so he would pray for a speedy recovery. Betty thought it would be nice to have a family dinner, so she asked her sister Santa and her mother Susan to go get Sushi together. Santa thought it would be best to not invite her sister Loren to the dinner. Santa and her brother Milton spent some time at the park. Milton's father Ronald watched them play.",
+     "output": "aunt",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "aunt",
+     "predict_gapfill_S": "aunt",
+     "predict_raw_llm": "aunt",
+     "metadata_doc_id": "3837112f-69b7-4fee-9231-826648c13a1d",
+     "metadata_qsrc": "Loren",
+     "metadata_qtgt": "Donna",
+     "metadata_hop": 9,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Maryann was watching the football game with her mother Bonita and father Kyle. Kyle's daughter Cheryl asked him if he could move over a bit so she could watch too. Willie and her brother Kyle went to see a movie. Albert received a novel for Christmas from his aunt Susan. Milton and his grandmother, Danielle, went to the gas station. Milton filled up the car, while Danielle went inside and paid for the gas. Susan enjoyed a homemade dinner with her son Milton Cheryl went to her aunt Willie's house for dinner. Willie made meatloaf, and it was delicious. Kyle rushed to the hospital to find out tha",
+     "output": "mother",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "mother",
+     "predict_gapfill_S": "mother-in-law",
+     "predict_raw_llm": "no-relation",
+     "metadata_doc_id": "413a71bd-232d-45f8-af63-d45adf69f814",
+     "metadata_qsrc": "Bonita",
+     "metadata_qtgt": "Danielle",
+     "metadata_hop": 9,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": false,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Kyle took his son Albert to his swimming lessons after school today and then he stopped by his sister Donna's house to visit her for awhile. Donna loves her son Wallace very much. He loves her, too. Marie went shoe shopping with her sister Leah. Mark took his daughter Marie to the park that afternoon to play. Donna was wondering where her daughter Helen was, so she texted her. Helen replied that she was with her brother Wallace at the mall. Leah went to the store with her sister Marie Marie just had a baby and presented the baby proudly to the new maternal grandmother, Donna.",
+     "output": "nephew",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "nephew",
+     "predict_gapfill_S": "nephew",
+     "predict_raw_llm": "no-relation",
+     "metadata_doc_id": "4cca2fc1-c9ab-49cc-ad72-28306f45fcd9",
+     "metadata_qsrc": "Mark",
+     "metadata_qtgt": "Albert",
+     "metadata_hop": 9,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Ronald and his brother Kyle always played pranks on each other Kyle played chess with his brother Mark. Mark took his sister Bonita out to lunch after learning that she got accepted into her first choice for university. Amanda and her sister Thelma were building a sand castle. Timothy, Amanda's brother, came by and kicked it, and the girls cried. Bonita, who is the sister of Willie, is a lovely girl. Timothy got his son, John, a car for his birthday. Willie took her daughter Amanda to the park. Amanda was sad her sister Thelma could not join.",
+     "output": "brother",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "brother",
+     "predict_gapfill_S": "uncle",
+     "predict_raw_llm": "no-relation",
+     "metadata_doc_id": "5e750d85-3bca-4042-9f94-b4e7f25897ba",
+     "metadata_qsrc": "John",
+     "metadata_qtgt": "Ronald",
+     "metadata_hop": 9,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": false,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Santa asked her brother Milton if he could babysit. When he said no, she asked her sister Loren instead. Wallace and his brother Helen were grilling hamburgers outside. Donna, Wallace's mother, came out to bring them cold sweet tea. Mark went to see his daughter Helen for parents day at college. Ronald and his wife Susan threw a surprise party for their daughter Betty. Ronald's sister Donna came. Loren took her sister, Betty, out to dinner for her birthday.",
+     "output": "nephew",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "nephew",
+     "predict_gapfill_S": "no-relation",
+     "predict_raw_llm": "no-relation",
+     "metadata_doc_id": "7b165392-f414-4590-b325-61a2ab539c85",
+     "metadata_qsrc": "Mark",
+     "metadata_qtgt": "Milton",
+     "metadata_hop": 9,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": false,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Kyle and his son Albert went to his mother Danielle's home Donna and her husband Mark are taking Donna's son Wallace and his sister Marie to the amusement park this weekend. Charles's wife, Danielle, surprised him on his birthday. He could n't believe she pulled it off. John's nephew Albert was happy to hear that he will be arriving at the airport later tonight. Wallace's sister, Marie, was in town unexpectedly, so he had to cancel his plans with his grandfather, Charles.",
+     "output": "brother",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "brother",
+     "predict_gapfill_S": "brother-in-law",
+     "predict_raw_llm": "no-relation",
+     "metadata_doc_id": "9a217b3f-7653-483f-8630-093d00a105ef",
+     "metadata_qsrc": "Mark",
+     "metadata_qtgt": "John",
+     "metadata_hop": 9,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "SO",
+       "inv-child"
+      ],
+      [
+       "child",
+       "SO"
+      ],
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": false,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 0.9,
+     "metadata_conf_raw": 0.9
+    },
+    {
+     "input": "Maryann and her brother Frank went to see a movie. Susan went to the store with her sister Donna Maryann called her mother, Bonita, and asked if she could borrow a book. Bonita said she could have her son, Albert, send it over. Kyle took his daughter Maryann to the park that afternoon to play. Susan went to her brother Kyle's birthday party Amanda went to dinner with her daughter Willie. They then went to the park afterwards. Albert took his sister Maryann out to lunch after learning that she got accepted into her first choice for university. Amanda went to her aunt Donna's house for dinner. D",
+     "output": "nephew",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "nephew",
+     "predict_gapfill_S": "nephew",
+     "predict_raw_llm": "no-relation",
+     "metadata_doc_id": "a9786369-18d6-408b-a7f7-1cf20a6735d6",
+     "metadata_qsrc": "Willie",
+     "metadata_qtgt": "Frank",
+     "metadata_hop": 9,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Beatrice asked her mother, Constance, what they were going to have for lunch. Monica went to her aunt Constance's house for dinner. Constance made meatloaf, and it was delicious. Don meet his uncle, James, at the baseball game, excited for their team to win. Margaret took her husband, William, to have dinner with his daughter, Monica. Constance and her son Sidney went out to lunch together yesterday. Constance always goes to the park with her son Don on Saturdays. Steve drove his daughter Beatrice to soccer practice. Cesar and his brother Steve went shopping at an electronics store. Cesar foun",
+     "output": "nephew",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "nephew",
+     "predict_gapfill_S": "brother-in-law",
+     "predict_raw_llm": "no-relation",
+     "metadata_doc_id": "0d4a7d8c-ec7e-4e00-9818-f52bb332ca76",
+     "metadata_qsrc": "Margaret",
+     "metadata_qtgt": "Sidney",
+     "metadata_hop": 10,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": false,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 0.9
+    },
+    {
+     "input": "William took his daughter, Teresita, to a baseball game. Margaret dropped off her daughter, Mary, at the mall before picking up her mother, Elsie. Elsie had a daughter named Constance. Mary bought a plant for her dad, William. William's daughter Mary was playing on the swings in the park. Teresita, his other daughter, was napping in the stroller. Teresita went shoe shopping with her sister Eula. Eula, who is the sister of Teresita, is a lovely girl. Monica went shoe shopping with her sister Mary.",
+     "output": "niece",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "niece",
+     "predict_gapfill_S": "daughter",
+     "predict_raw_llm": "niece",
+     "metadata_doc_id": "16bc4194-2044-4299-ab2d-c7fc06e00bfc",
+     "metadata_qsrc": "Constance",
+     "metadata_qtgt": "Monica",
+     "metadata_hop": 10,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": false,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Teresita just had a baby and presented the baby proudly to the new maternal grandmother, Margaret. Ellen and her brother Steve went to see a movie. William went fishing with his daughter Mary. Mary's sister, Teresita, was n't invited because she hates fishing. Teresita, who is the sister of Eula, is a lovely girl. William sat with his daughter, Teresita, for ice cream at a local shop. Margaret's daughters Monica and Teresita helped her bake cupcakes to give to Monica's sister Eula for her birthday. Ellen, who is the sister of Margaret, is a lovely girl.",
+     "output": "uncle",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "uncle",
+     "predict_gapfill_S": "brother",
+     "predict_raw_llm": "uncle",
+     "metadata_doc_id": "25c72317-11be-4354-9e13-8a3d0dba0f08",
+     "metadata_qsrc": "Teresita",
+     "metadata_qtgt": "Steve",
+     "metadata_hop": 10,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": false,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Margaret went shoe shopping with her sister Constance. Patrice's son Darryl made a crayon drawing for Elsie, Patrice's mother. Steven invited his children Constance, James, and Cesar, on a cruise vacation. James and his brother, Cesar, could not go because they had to work. Darryl and his brother Dan had a tie score. Dan asked his sister, Nora, to come up with a tie-breaker. Eric bought gifts for his lovely sister, Nora Elsie was excited to visit her son, Cesar, at college.",
+     "output": "aunt",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "aunt",
+     "predict_gapfill_S": "aunt",
+     "predict_raw_llm": "aunt",
+     "metadata_doc_id": "2e08abf3-dd53-4bc7-bc86-0c5ca70ed391",
+     "metadata_qsrc": "Eric",
+     "metadata_qtgt": "Margaret",
+     "metadata_hop": 10,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "inv-child",
+       "sibling"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 0.9
+    },
+    {
+     "input": "Constance went shoe shopping with her sister Ellen. Elsie had a daughter named Constance. Elsie had picked her daughter Margaret out the cutest new dress to wear on her birthday. Charles and his sister Kathleen have been best friends ever since childhood. Nadia and her father, James, went to the marina. James's daughter, Mabel, had purchased a boat, and they were eager to see it. Mabel bought her mother, Ellen, a puppy for her birthday. James hung his son Charles's finger paintings on the refrigerator. The paintings were right next to the paintings of Nadia, Charles's sister. Kathleen was n't ",
+     "output": "aunt",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "aunt",
+     "predict_gapfill_S": "sister",
+     "predict_raw_llm": "no-relation",
+     "metadata_doc_id": "3bead269-aec6-47f0-b22b-dbeffe3d7c3a",
+     "metadata_qsrc": "Charles",
+     "metadata_qtgt": "Margaret",
+     "metadata_hop": 10,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": false,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "William walked his daughter Eula down the aisle on her wedding day. Constance took her sister, Margaret, out to dinner for her birthday. William took his sister Patrice out to lunch after learning that she got accepted into her first choice for university. Patrice and Cesar are married. Darryl played scrabble with his mother Patrice and his brother Dan. Patrice was excited to visit her son, Dan, at college. Eula bought her mother, Margaret, a puppy for her birthday. Constance and her son Sidney made hot dogs. Sidney's brother Don ate one.",
+     "output": "nephew",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "nephew",
+     "predict_gapfill_S": "nephew",
+     "predict_raw_llm": "son",
+     "metadata_doc_id": "508931e4-755e-441b-9e26-df4936f44458",
+     "metadata_qsrc": "Cesar",
+     "metadata_qtgt": "Don",
+     "metadata_hop": 10,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "William and his brother Cesar had a tie score. Cesar asked his sister, Constance, to come up with a tie-breaker. Teresita went to the baseball game with her uncle James. William's wife Margaret bought him a watch Sidney played basketball with his brother Stanley. Stanley wanted to join the theater group his sister Beatrice was a part of. Beatrice's mother, Constance, signed him up for the group. Margaret asked her daughter, Teresita, if she would like to go to a movie with her on Saturday night. Beatrice went to her brother Sidney's birthday party Don and his sister Beatrice have been best fri",
+     "output": "uncle",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "uncle",
+     "predict_gapfill_S": "uncle",
+     "predict_raw_llm": "uncle",
+     "metadata_doc_id": "58a013f3-2f74-4d5f-8712-cb223cca2beb",
+     "metadata_qsrc": "Don",
+     "metadata_qtgt": "James",
+     "metadata_hop": 10,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 0.9
+    },
+    {
+     "input": "Elsie spent a great day shopping with her daughter, Constance. William took his daughter Teresita to the park. Mary, Emilie´s sister went with them. William wanted to have a family cookout so he invited his brother Cesar. Cesar wanted to invite his other brother Steve. Mary bought her mother, Margaret, a puppy for her birthday. Margaret asked her mother, Elsie, what they were going to have for lunch. James and his brother, Steve run a turtle farm. Nadia went to the mall with her father James and her sister Mabel.",
+     "output": "aunt",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "aunt",
+     "predict_gapfill_S": "aunt",
+     "predict_raw_llm": "no-relation",
+     "metadata_doc_id": "6d31aeee-472e-4b3b-87a4-0c45ede36f34",
+     "metadata_qsrc": "Mabel",
+     "metadata_qtgt": "Constance",
+     "metadata_hop": 10,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Margaret and her daughter Monica went to see a movie yesterday and then got ice cream afterwards. William went to the mall with his sisters Constance and Margaret. Later, Margaret went to the movies with her sister Patrice. William was so proud of his son, Willie. he received a great scholarship to college. Eula asked her mother, Margaret, what they were going to have for lunch. Margaret took her daughter Teresita out shopping for new clothes. Teresita's sister Monica came along. While she was there, Monica bought her brother Willie a new shirt. Eula went to dinner with her daughter Margaret. ",
+     "output": "aunt",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "aunt",
+     "predict_gapfill_S": "aunt",
+     "predict_raw_llm": "aunt",
+     "metadata_doc_id": "71e00bbd-e878-4e77-901e-cafe46ea8837",
+     "metadata_qsrc": "Monica",
+     "metadata_qtgt": "Patrice",
+     "metadata_hop": 10,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Eula and her sister Mary were arguing over a toy. While they were fighting, Eula's sister Monica grabbed the toy, and ran off to play with it by herself. Monica and her sister, Teresita, frequently bicker. However, they always make up quickly. Charles got his son, James, a car for his birthday. Eula went to dinner with her daughter Margaret. They then went to the park afterwards. Ellen 'daughter Nadia visited for Christmas. Nadia's brother Orville was out of town for the holidays. Charles's aunt, Margaret, took him fishing Orville was disappointed that his father, James, would n't be at the pl",
+     "output": "niece",
+     "predict_symbolic": "ABSTAIN",
+     "predict_gapfill_P": "niece",
+     "predict_gapfill_S": "daughter",
+     "predict_raw_llm": "no-relation",
+     "metadata_doc_id": "80f3f55e-c525-4dbf-b608-7598f5c3159e",
+     "metadata_qsrc": "Ellen",
+     "metadata_qtgt": "Mary",
+     "metadata_hop": 10,
+     "metadata_gap_origin": "manufactured",
+     "metadata_gap_kind": "no_path",
+     "metadata_blocked_cell": [
+      [
+       "child",
+       "inv-un"
+      ],
+      [
+       "inv-child",
+       "sibling"
+      ],
+      [
+       "sibling",
+       "child"
+      ]
+     ],
+     "metadata_correct_symbolic": false,
+     "metadata_correct_P": true,
+     "metadata_correct_S": false,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Belva went with her grandmother, Ashley, to the grocery store to help her while she shopped. Nicolas and his sister, Belva love it when their grandmother visits because she spoils them. She is coming this week to watch them while their parents are out of town.",
+     "output": "grandson",
+     "predict_symbolic": "grandson",
+     "predict_gapfill_P": "grandson",
+     "predict_gapfill_S": "grandson",
+     "predict_raw_llm": "grandson",
+     "metadata_doc_id": "0741bf9a-a8f6-4ff1-aac1-1a4f0828aed9",
+     "metadata_qsrc": "Ashley",
+     "metadata_qtgt": "Nicolas",
+     "metadata_hop": 2,
+     "metadata_gap_origin": "none",
+     "metadata_gap_kind": "none",
+     "metadata_blocked_cell": [],
+     "metadata_correct_symbolic": true,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Nicolas went to the game with his sister June. Clarence went to the museum with his grandson Nicolas.",
+     "output": "granddaughter",
+     "predict_symbolic": "granddaughter",
+     "predict_gapfill_P": "granddaughter",
+     "predict_gapfill_S": "granddaughter",
+     "predict_raw_llm": "granddaughter",
+     "metadata_doc_id": "25891fe4-fe88-437b-a9fe-6f70def094ae",
+     "metadata_qsrc": "Clarence",
+     "metadata_qtgt": "June",
+     "metadata_hop": 2,
+     "metadata_gap_origin": "none",
+     "metadata_gap_kind": "none",
+     "metadata_blocked_cell": [],
+     "metadata_correct_symbolic": true,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Ashley and her grandson Michael went to the store to buy a birthday present for Michael's sister Emily.",
+     "output": "granddaughter",
+     "predict_symbolic": "granddaughter",
+     "predict_gapfill_P": "granddaughter",
+     "predict_gapfill_S": "granddaughter",
+     "predict_raw_llm": "granddaughter",
+     "metadata_doc_id": "424413ca-1fa5-4c8e-96df-19827a1dfc9b",
+     "metadata_qsrc": "Ashley",
+     "metadata_qtgt": "Emily",
+     "metadata_hop": 2,
+     "metadata_gap_origin": "none",
+     "metadata_gap_kind": "none",
+     "metadata_blocked_cell": [],
+     "metadata_correct_symbolic": true,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Lorraine and her brother Kevin went to see a movie. Clarence took his granddaughter Lorraine to the movies and they enjoyed themselves.",
+     "output": "grandson",
+     "predict_symbolic": "grandson",
+     "predict_gapfill_P": "grandson",
+     "predict_gapfill_S": "grandson",
+     "predict_raw_llm": "grandson",
+     "metadata_doc_id": "51f8ec81-c2d2-4a64-b0ec-fa6d0f6f9480",
+     "metadata_qsrc": "Clarence",
+     "metadata_qtgt": "Kevin",
+     "metadata_hop": 2,
+     "metadata_gap_origin": "none",
+     "metadata_gap_kind": "none",
+     "metadata_blocked_cell": [],
+     "metadata_correct_symbolic": true,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Travis was n't sure what to write in his letter to his grandfather Clarence, so he decided to ask is sister June for some advice.",
+     "output": "granddaughter",
+     "predict_symbolic": "granddaughter",
+     "predict_gapfill_P": "granddaughter",
+     "predict_gapfill_S": "granddaughter",
+     "predict_raw_llm": "granddaughter",
+     "metadata_doc_id": "87bc4ce5-7b1e-4b0a-8ba2-1afc08650f4c",
+     "metadata_qsrc": "Clarence",
+     "metadata_qtgt": "June",
+     "metadata_hop": 2,
+     "metadata_gap_origin": "none",
+     "metadata_gap_kind": "none",
+     "metadata_blocked_cell": [],
+     "metadata_correct_symbolic": true,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Michael woke up on his 7th birthday to a surprise present sitting on his night stand. It was from his Grandma Ashley, and Michael's sister Emily looked on excitedly as he opened his present.",
+     "output": "granddaughter",
+     "predict_symbolic": "granddaughter",
+     "predict_gapfill_P": "granddaughter",
+     "predict_gapfill_S": "granddaughter",
+     "predict_raw_llm": "granddaughter",
+     "metadata_doc_id": "c5e1a350-9492-4d24-a808-532f35e22d52",
+     "metadata_qsrc": "Ashley",
+     "metadata_qtgt": "Emily",
+     "metadata_hop": 2,
+     "metadata_gap_origin": "none",
+     "metadata_gap_kind": "none",
+     "metadata_blocked_cell": [],
+     "metadata_correct_symbolic": true,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "James bought a new dress for his daughter Lynn. Theodore and his son Wesley went to look at cars. Theodore ended up buying the Mustang. James took his grandson Theodore to the baseball game.",
+     "output": "sister",
+     "predict_symbolic": "sister",
+     "predict_gapfill_P": "sister",
+     "predict_gapfill_S": "sister",
+     "predict_raw_llm": "aunt",
+     "metadata_doc_id": "01fba4d3-af56-421d-9c08-74455a9eacf8",
+     "metadata_qsrc": "Wesley",
+     "metadata_qtgt": "Lynn",
+     "metadata_hop": 3,
+     "metadata_gap_origin": "none",
+     "metadata_gap_kind": "none",
+     "metadata_blocked_cell": [],
+     "metadata_correct_symbolic": true,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "James took his son Francisco out on a hunting trip. Natasha, Francisco's daughter, wanted to come, but they thought she was too young. Instead, James's wife Frances stayed home with her.",
+     "output": "granddaughter",
+     "predict_symbolic": "granddaughter",
+     "predict_gapfill_P": "granddaughter",
+     "predict_gapfill_S": "granddaughter",
+     "predict_raw_llm": "granddaughter",
+     "metadata_doc_id": "0dc00534-8b9d-451d-a44f-291e48e1435d",
+     "metadata_qsrc": "Frances",
+     "metadata_qtgt": "Natasha",
+     "metadata_hop": 3,
+     "metadata_gap_origin": "none",
+     "metadata_gap_kind": "none",
+     "metadata_blocked_cell": [],
+     "metadata_correct_symbolic": true,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Frances loves her son Hugh very much. He loves her, too. Joshua and his daughter Juanita went to the hospital. Juanita's grandmother, Frances, was sick, and they wanted to pay her a visit and cheer her up.",
+     "output": "brother",
+     "predict_symbolic": "brother",
+     "predict_gapfill_P": "brother",
+     "predict_gapfill_S": "brother",
+     "predict_raw_llm": "brother",
+     "metadata_doc_id": "25bd7c0e-8a3c-4e09-9cb9-e2dc6146d069",
+     "metadata_qsrc": "Joshua",
+     "metadata_qtgt": "Hugh",
+     "metadata_hop": 3,
+     "metadata_gap_origin": "none",
+     "metadata_gap_kind": "none",
+     "metadata_blocked_cell": [],
+     "metadata_correct_symbolic": true,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 0.9
+    },
+    {
+     "input": "Frances's husband, James, surprised her with tickets to a football game for their anniversary. Joshua took his favorite son James to a baseball game where he caught a foul ball as a souvenir. Andrea wanted to visit an art museum, so she asked her father, Joshua to take her.",
+     "output": "granddaughter",
+     "predict_symbolic": "granddaughter",
+     "predict_gapfill_P": "granddaughter",
+     "predict_gapfill_S": "granddaughter",
+     "predict_raw_llm": "sister-in-law",
+     "metadata_doc_id": "40afb4fc-7999-4560-a6d2-67379bfa176f",
+     "metadata_qsrc": "Frances",
+     "metadata_qtgt": "Andrea",
+     "metadata_hop": 3,
+     "metadata_gap_origin": "none",
+     "metadata_gap_kind": "none",
+     "metadata_blocked_cell": [],
+     "metadata_correct_symbolic": true,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Mildred and her father Wesley went her grandfather James's House Frances's husband, James, surprised her with tickets to a football game for their anniversary.",
+     "output": "granddaughter",
+     "predict_symbolic": "granddaughter",
+     "predict_gapfill_P": "granddaughter",
+     "predict_gapfill_S": "granddaughter",
+     "predict_raw_llm": "granddaughter",
+     "metadata_doc_id": "5feffc0a-d9a6-45dc-8717-8f0a3acd8e20",
+     "metadata_qsrc": "Frances",
+     "metadata_qtgt": "Mildred",
+     "metadata_hop": 3,
+     "metadata_gap_origin": "none",
+     "metadata_gap_kind": "none",
+     "metadata_blocked_cell": [],
+     "metadata_correct_symbolic": true,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Don got his son, Joshua, a car for his birthday. Don loves talking to his grandfather James on the phone. James took his daughter, Cindy, to a baseball game.",
+     "output": "sister",
+     "predict_symbolic": "sister",
+     "predict_gapfill_P": "sister",
+     "predict_gapfill_S": "sister",
+     "predict_raw_llm": "aunt",
+     "metadata_doc_id": "7007be83-8fed-4a1b-8f4f-daa07b6ecf4d",
+     "metadata_qsrc": "Joshua",
+     "metadata_qtgt": "Cindy",
+     "metadata_hop": 3,
+     "metadata_gap_origin": "none",
+     "metadata_gap_kind": "none",
+     "metadata_blocked_cell": [],
+     "metadata_correct_symbolic": true,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Hugh was driving to pick up his daughter Vanetta, when his mother Frances called. She said her husband James was missing.",
+     "output": "granddaughter",
+     "predict_symbolic": "granddaughter",
+     "predict_gapfill_P": "granddaughter",
+     "predict_gapfill_S": "granddaughter",
+     "predict_raw_llm": "granddaughter",
+     "metadata_doc_id": "8d8f9581-0d30-4542-ad3f-bba110d6b6c6",
+     "metadata_qsrc": "James",
+     "metadata_qtgt": "Vanetta",
+     "metadata_hop": 3,
+     "metadata_gap_origin": "none",
+     "metadata_gap_kind": "none",
+     "metadata_blocked_cell": [],
+     "metadata_correct_symbolic": true,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "James, his wife Frances, and her son, Hugh, all went to the hospital. They were visiting Hugh's daughter, Gloria, who had just undergone surgery.",
+     "output": "granddaughter",
+     "predict_symbolic": "granddaughter",
+     "predict_gapfill_P": "granddaughter",
+     "predict_gapfill_S": "granddaughter",
+     "predict_raw_llm": "granddaughter",
+     "metadata_doc_id": "9b8fd698-70a8-4339-9ff3-4989434522e9",
+     "metadata_qsrc": "James",
+     "metadata_qtgt": "Gloria",
+     "metadata_hop": 3,
+     "metadata_gap_origin": "none",
+     "metadata_gap_kind": "none",
+     "metadata_blocked_cell": [],
+     "metadata_correct_symbolic": true,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Frances wanted to do something special for her son, Francisco, on his fifth birthday. She asked her husband James for gift ideas. Francisco took his daughter Carrie to the park that afternoon to play.",
+     "output": "granddaughter",
+     "predict_symbolic": "granddaughter",
+     "predict_gapfill_P": "granddaughter",
+     "predict_gapfill_S": "granddaughter",
+     "predict_raw_llm": "granddaughter",
+     "metadata_doc_id": "af6577fb-e9b8-45a9-a01a-d19d8b85fb93",
+     "metadata_qsrc": "James",
+     "metadata_qtgt": "Carrie",
+     "metadata_hop": 3,
+     "metadata_gap_origin": "none",
+     "metadata_gap_kind": "none",
+     "metadata_blocked_cell": [],
+     "metadata_correct_symbolic": true,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Frances's son Wesley decided to spend the night at a friend's house. Frances was happy as this meant she would have some alone time with her husband James. Wesley went to see his daughter Pamela for parents day at college.",
+     "output": "granddaughter",
+     "predict_symbolic": "granddaughter",
+     "predict_gapfill_P": "granddaughter",
+     "predict_gapfill_S": "granddaughter",
+     "predict_raw_llm": "granddaughter",
+     "metadata_doc_id": "cb9ec828-48cd-425a-89e3-ce00fdb2c0f0",
+     "metadata_qsrc": "James",
+     "metadata_qtgt": "Pamela",
+     "metadata_hop": 3,
+     "metadata_gap_origin": "none",
+     "metadata_gap_kind": "none",
+     "metadata_blocked_cell": [],
+     "metadata_correct_symbolic": true,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Tracy loves her son Aaron very much. He loves her, too. Tracy went to dinner with her daughter Shantel. They then went to the park afterwards. Harold took his daughter Marie out for dinner. Harold took his grandson Aaron to the zoo.",
+     "output": "daughter",
+     "predict_symbolic": "daughter",
+     "predict_gapfill_P": "daughter",
+     "predict_gapfill_S": "daughter",
+     "predict_raw_llm": "aunt",
+     "metadata_doc_id": "12225c9a-c358-4054-b117-9a9d4ac15b06",
+     "metadata_qsrc": "Shantel",
+     "metadata_qtgt": "Marie",
+     "metadata_hop": 4,
+     "metadata_gap_origin": "none",
+     "metadata_gap_kind": "none",
+     "metadata_blocked_cell": [],
+     "metadata_correct_symbolic": true,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 0.9
+    },
+    {
+     "input": "Shantel took her granddaughter Karen to the cinema. Shantel loves her son Antonio very much. He loves her, too. Beverly began teaching her daughter, Karen, how to sew clothes. Beverly had learned the trait from her father, Harold.",
+     "output": "son",
+     "predict_symbolic": "son",
+     "predict_gapfill_P": "son",
+     "predict_gapfill_S": "son",
+     "predict_raw_llm": "grandson",
+     "metadata_doc_id": "28433310-fb4b-4a75-a9ac-623f097863b6",
+     "metadata_qsrc": "Harold",
+     "metadata_qtgt": "Antonio",
+     "metadata_hop": 4,
+     "metadata_gap_origin": "none",
+     "metadata_gap_kind": "none",
+     "metadata_blocked_cell": [],
+     "metadata_correct_symbolic": true,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 0.9
+    },
+    {
+     "input": "Shantel asked her husband Harold if he could chop up some vegetables for dinner. Harold and his wife Shantel went to the beach to watch the fireworks on the 4th of July. Shantel has a grandson who is Jeffrey. Jeffrey and Heather asked their mother, if they could go play in the pool.",
+     "output": "granddaughter",
+     "predict_symbolic": "granddaughter",
+     "predict_gapfill_P": "granddaughter",
+     "predict_gapfill_S": "granddaughter",
+     "predict_raw_llm": "granddaughter",
+     "metadata_doc_id": "49912a55-1ab0-4d3f-ab5c-93d40c635e91",
+     "metadata_qsrc": "Shantel",
+     "metadata_qtgt": "Heather",
+     "metadata_hop": 4,
+     "metadata_gap_origin": "none",
+     "metadata_gap_kind": "none",
+     "metadata_blocked_cell": [],
+     "metadata_correct_symbolic": true,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Marie went to her father Harold Birthday party Shantel went to the mall, because she wanted to look for a present for her daughter, Marie. Dorothy and her son James went to visit Dorothy's mother Shantel in the hospital.",
+     "output": "grandfather",
+     "predict_symbolic": "grandfather",
+     "predict_gapfill_P": "grandfather",
+     "predict_gapfill_S": "grandfather",
+     "predict_raw_llm": "grandfather",
+     "metadata_doc_id": "6d8da500-f9ca-4c61-842b-8feba90e6ee8",
+     "metadata_qsrc": "James",
+     "metadata_qtgt": "Harold",
+     "metadata_hop": 4,
+     "metadata_gap_origin": "none",
+     "metadata_gap_kind": "none",
+     "metadata_blocked_cell": [],
+     "metadata_correct_symbolic": true,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Annie's father, Pedro, felt a wave of sadness when Annie left for college. Beverly and Pedro went to dinner with their mother, Shantel. Harold could n't join them that night.",
+     "output": "grandfather",
+     "predict_symbolic": "grandfather",
+     "predict_gapfill_P": "grandfather",
+     "predict_gapfill_S": "grandfather",
+     "predict_raw_llm": "uncle",
+     "metadata_doc_id": "89f24db8-d9ff-415b-8a3d-8593dceab67d",
+     "metadata_qsrc": "Annie",
+     "metadata_qtgt": "Harold",
+     "metadata_hop": 4,
+     "metadata_gap_origin": "none",
+     "metadata_gap_kind": "none",
+     "metadata_blocked_cell": [],
+     "metadata_correct_symbolic": true,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 0.8
+    },
+    {
+     "input": "Harold took his daughters Beverly and Tracy to the opera. Beverly's daughter Nicole hates the opera and did n't go. Shantel went to the mall, because she wanted to look for a present for her daughter, Tracy.",
+     "output": "granddaughter",
+     "predict_symbolic": "granddaughter",
+     "predict_gapfill_P": "granddaughter",
+     "predict_gapfill_S": "granddaughter",
+     "predict_raw_llm": "granddaughter",
+     "metadata_doc_id": "a427f561-193e-43e9-9c2d-c7512bdbe6c3",
+     "metadata_qsrc": "Shantel",
+     "metadata_qtgt": "Nicole",
+     "metadata_hop": 4,
+     "metadata_gap_origin": "none",
+     "metadata_gap_kind": "none",
+     "metadata_blocked_cell": [],
+     "metadata_correct_symbolic": true,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Tracy was making dinner for her son, Kevin. Shantel, Kevin's grandmother, stopped by, so Shantel made a bit more so they all had enough to eat. Louis was disappointed that his father, Harold, would n't be at the play to see him perform. Shantel enjoyed a homemade dinner with her son Louis",
+     "output": "father",
+     "predict_symbolic": "father",
+     "predict_gapfill_P": "father",
+     "predict_gapfill_S": "father",
+     "predict_raw_llm": "father-in-law",
+     "metadata_doc_id": "c44d75d8-226d-4308-8007-aa801bd4d945",
+     "metadata_qsrc": "Tracy",
+     "metadata_qtgt": "Harold",
+     "metadata_hop": 4,
+     "metadata_gap_origin": "none",
+     "metadata_gap_kind": "none",
+     "metadata_blocked_cell": [],
+     "metadata_correct_symbolic": true,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 0.9
+    },
+    {
+     "input": "Samuel has a few children, Louis, Bradley and Claire Samuel's mother, Beverly, waited impatiently for him at the diner. Beverly and her father, Harold, went to the marina. Harold's daughter, Tracy, had purchased a boat, and they were eager to see it.",
+     "output": "sister",
+     "predict_symbolic": "sister",
+     "predict_gapfill_P": "sister",
+     "predict_gapfill_S": "sister",
+     "predict_raw_llm": "aunt",
+     "metadata_doc_id": "eb85d10a-e5ad-43a2-8102-4fde406e2051",
+     "metadata_qsrc": "Louis",
+     "metadata_qtgt": "Tracy",
+     "metadata_hop": 4,
+     "metadata_gap_origin": "none",
+     "metadata_gap_kind": "none",
+     "metadata_blocked_cell": [],
+     "metadata_correct_symbolic": true,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Donald made sandwiches for his sons Andrew and Richard. Andrew's brother Charles ate a salad instead. Charles and his brother Andrew always played pranks on each other Jeremy bought to dress for his father Donald",
+     "output": "brother",
+     "predict_symbolic": "brother",
+     "predict_gapfill_P": "brother",
+     "predict_gapfill_S": "brother",
+     "predict_raw_llm": "brother",
+     "metadata_doc_id": "0c894609-8160-41e2-8e8c-08d67cb5ccc7",
+     "metadata_qsrc": "Andrew",
+     "metadata_qtgt": "Jeremy",
+     "metadata_hop": 5,
+     "metadata_gap_origin": "none",
+     "metadata_gap_kind": "none",
+     "metadata_blocked_cell": [],
+     "metadata_correct_symbolic": true,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Gilbert went to the game with his sister Adeline. Angela and her daughter Adeline went to see a movie yesterday and then got ice cream afterwards. Samuel was having trouble with his divorce because he only got to see his daughter Hattie a few times a week Gilbert has a few children, Samuel, Bradley and Claire Nancy went to dinner with her daughter Angela. They then went to the park afterwards.",
+     "output": "sister",
+     "predict_symbolic": "sister",
+     "predict_gapfill_P": "sister",
+     "predict_gapfill_S": "sister",
+     "predict_raw_llm": "brother",
+     "metadata_doc_id": "2893ef0d-b305-4ce6-a843-2814014e810b",
+     "metadata_qsrc": "Hattie",
+     "metadata_qtgt": "Nancy",
+     "metadata_hop": 5,
+     "metadata_gap_origin": "none",
+     "metadata_gap_kind": "none",
+     "metadata_blocked_cell": [],
+     "metadata_correct_symbolic": true,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 0.5
+    },
+    {
+     "input": "Hattie took her sister, Adeline, out to dinner for her birthday. Samuel took his daughter, Adeline, to a baseball game. Guadalupe took her brother Samuel and sister Victoria to the concert. Victoria's mom, Antonia, came too.",
+     "output": "granddaughter",
+     "predict_symbolic": "granddaughter",
+     "predict_gapfill_P": "granddaughter",
+     "predict_gapfill_S": "granddaughter",
+     "predict_raw_llm": "granddaughter",
+     "metadata_doc_id": "41e81015-3893-48c4-90a1-0e48724bf267",
+     "metadata_qsrc": "Antonia",
+     "metadata_qtgt": "Hattie",
+     "metadata_hop": 5,
+     "metadata_gap_origin": "none",
+     "metadata_gap_kind": "none",
+     "metadata_blocked_cell": [],
+     "metadata_correct_symbolic": true,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Angela was eager to spend time with her son, Gilbert. Samuel bought toys for his son Gilbert and his daughter Hattie. Nancy and her father, Samuel, went to the marina. Samuel's daughter, Hattie, had purchased a boat, and they were eager to see it.",
+     "output": "mother",
+     "predict_symbolic": "mother",
+     "predict_gapfill_P": "mother",
+     "predict_gapfill_S": "mother",
+     "predict_raw_llm": "no-relation",
+     "metadata_doc_id": "531582db-7b8a-4afb-b615-0e13a2cd52bb",
+     "metadata_qsrc": "Nancy",
+     "metadata_qtgt": "Angela",
+     "metadata_hop": 5,
+     "metadata_gap_origin": "none",
+     "metadata_gap_kind": "none",
+     "metadata_blocked_cell": [],
+     "metadata_correct_symbolic": true,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 0.9
+    },
+    {
+     "input": "Margaretta wanted to visit her grandmother Antonia, but Antonia was asleep. Guadalupe had picked her daughter Margaretta out the cutest new dress to wear on her birthday. Irene wanted to visit an art museum, so she asked her father, Milton to take her. Guadalupe told her son Pat to give the dog a bath. Pat's sister Irene helped him.",
+     "output": "mother",
+     "predict_symbolic": "mother",
+     "predict_gapfill_P": "mother",
+     "predict_gapfill_S": "mother",
+     "predict_raw_llm": "mother-in-law",
+     "metadata_doc_id": "7319093c-d909-4b70-8ba6-0fdf70d3a7a9",
+     "metadata_qsrc": "Milton",
+     "metadata_qtgt": "Antonia",
+     "metadata_hop": 5,
+     "metadata_gap_origin": "none",
+     "metadata_gap_kind": "none",
+     "metadata_blocked_cell": [],
+     "metadata_correct_symbolic": true,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 0.8
+    },
+    {
+     "input": "Ronald invited his father Robert and his brother James to go on a weekend fishing trip. Jon bought her mother, Katherine, a puppy for her birthday. James's mother Katherine had to help him with his homework because he was having a test soon. Katherine asked her daughter, Charlsie, if she would like to go to a movie with her on Saturday night. Katherine went to the mall, because she wanted to look for a present for her daughter, Jon.",
+     "output": "daughter",
+     "predict_symbolic": "daughter",
+     "predict_gapfill_P": "daughter",
+     "predict_gapfill_S": "daughter",
+     "predict_raw_llm": "daughter",
+     "metadata_doc_id": "4743f03a-c86d-410f-a445-9d47f9b2596c",
+     "metadata_qsrc": "Robert",
+     "metadata_qtgt": "Charlsie",
+     "metadata_hop": 6,
+     "metadata_gap_origin": "none",
+     "metadata_gap_kind": "none",
+     "metadata_blocked_cell": [],
+     "metadata_correct_symbolic": true,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Joseph took his son Patrick out for ice cream. Alfredo took his son Joseph out to play gold later that night. Joseph took his wife Erica and his son Ross on a road trip. They visited Mary Ross's grandmother as part of the road trip. Alfredo meet with his mom, Erica, for dinner at her favorite restaurant.",
+     "output": "grandmother",
+     "predict_symbolic": "grandmother",
+     "predict_gapfill_P": "grandmother",
+     "predict_gapfill_S": "grandmother",
+     "predict_raw_llm": "grandmother",
+     "metadata_doc_id": "96959759-475d-488d-ae95-11e38fd78830",
+     "metadata_qsrc": "Patrick",
+     "metadata_qtgt": "Mary",
+     "metadata_hop": 6,
+     "metadata_gap_origin": "none",
+     "metadata_gap_kind": "none",
+     "metadata_blocked_cell": [],
+     "metadata_correct_symbolic": true,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "David's brother Kenneth would not let him play the xbox game. Clifton and his son William went to the cinema together. Clifton and his daughter Julie took a day off school to go to the zoo. William and his brother David went hiking with William's mother, Bonnie. Bonnie's daughter, Julie, brought the supplies.",
+     "output": "brother",
+     "predict_symbolic": "brother",
+     "predict_gapfill_P": "brother",
+     "predict_gapfill_S": "brother",
+     "predict_raw_llm": "brother",
+     "metadata_doc_id": "b5b112f7-abbb-4d3d-b0c6-3acd03dd3a9a",
+     "metadata_qsrc": "William",
+     "metadata_qtgt": "Kenneth",
+     "metadata_hop": 6,
+     "metadata_gap_origin": "none",
+     "metadata_gap_kind": "none",
+     "metadata_blocked_cell": [],
+     "metadata_correct_symbolic": true,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "George was disappointed that his father, William, would n't be at the play to see him perform. Jose waited at dinner for his sister, Lisa. She was running late due to a phone call with her brother, George. Jose was thrilled his brother, George, was able to make it to the party. Jose got his son, William, a car for his birthday. Mary took her daughter Ruth to school before coming home to make breakfast for her son Jose",
+     "output": "sister",
+     "predict_symbolic": "sister",
+     "predict_gapfill_P": "sister",
+     "predict_gapfill_S": "sister",
+     "predict_raw_llm": "sister",
+     "metadata_doc_id": "2aa13f1b-bb91-4725-bca0-8d0dfd5b94c0",
+     "metadata_qsrc": "George",
+     "metadata_qtgt": "Ruth",
+     "metadata_hop": 7,
+     "metadata_gap_origin": "none",
+     "metadata_gap_kind": "none",
+     "metadata_blocked_cell": [],
+     "metadata_correct_symbolic": true,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Patricia threw a part for her sister, Maria, after she retired. Their brother, Paul, catered the event with the help of his father, Carlos. Daniel likes to visit his sister. Her name is Gayle. Stephen bought to dress for his father James Gayle enjoys playing cards with her brother. His name is Stephen. Carlos and his brother Daniel always played pranks on each other",
+     "output": "granddaughter",
+     "predict_symbolic": "granddaughter",
+     "predict_gapfill_P": "granddaughter",
+     "predict_gapfill_S": "granddaughter",
+     "predict_raw_llm": "no-relation",
+     "metadata_doc_id": "5ef1aa00-4a5a-4f3d-b37b-c9e0558d7ec4",
+     "metadata_qsrc": "James",
+     "metadata_qtgt": "Patricia",
+     "metadata_hop": 7,
+     "metadata_gap_origin": "none",
+     "metadata_gap_kind": "none",
+     "metadata_blocked_cell": [],
+     "metadata_correct_symbolic": true,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Alice and her sister, Maria, frequently bicker. However, they always make up quickly. Leslie's brother Jeffery went to visit James at the hospital. He met James's son Lucas at his bedside. Richard played scrabble with his mother Maria and his brother Lucas. Luis is Earline's beloved grandfather. They like to go to the park and eat ice cream with Alice, who is Earline's mother.",
+     "output": "grandfather",
+     "predict_symbolic": "grandfather",
+     "predict_gapfill_P": "grandfather",
+     "predict_gapfill_S": "grandfather",
+     "predict_raw_llm": "no-relation",
+     "metadata_doc_id": "01e29b45-c794-45d2-9f93-1d210f399e62",
+     "metadata_qsrc": "Leslie",
+     "metadata_qtgt": "Luis",
+     "metadata_hop": 8,
+     "metadata_gap_origin": "none",
+     "metadata_gap_kind": "none",
+     "metadata_blocked_cell": [],
+     "metadata_correct_symbolic": true,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Alice's son, Roger, had to stay home from school with a cold. Roger likes to visit his sister. Her name is Earline. Marge invited her brother James and her sister Alice over for dinner. Roger was playing tennis with his sister Kim. Afterwards, he was planning on playing chess with his sister Earline. James 'son, Jeffery, was late meeting his grandfather, Luis.",
+     "output": "grandfather",
+     "predict_symbolic": "grandfather",
+     "predict_gapfill_P": "grandfather",
+     "predict_gapfill_S": "grandfather",
+     "predict_raw_llm": "grandfather",
+     "metadata_doc_id": "2a9d3683-e7bc-432c-9028-f952eed795f4",
+     "metadata_qsrc": "Kim",
+     "metadata_qtgt": "Luis",
+     "metadata_hop": 8,
+     "metadata_gap_origin": "none",
+     "metadata_gap_kind": "none",
+     "metadata_blocked_cell": [],
+     "metadata_correct_symbolic": true,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Richard invited his sister Leslie to dinner this Friday because it is her birthday. Elizabeth took her son James and his wife Maria to see their son Richard perform at his school play. Marge wanted to visit an art museum, so she asked her father, Luis to take her. Lucas took his sister Leslie out to lunch after learning that she got accepted into her first choice for university. Alice's mother, Elizabeth, thought Alice should wear a black dress. Alice's sister Marge, however, thought she would look better in a blue one.",
+     "output": "grandson",
+     "predict_symbolic": "grandson",
+     "predict_gapfill_P": "grandson",
+     "predict_gapfill_S": "grandson",
+     "predict_raw_llm": "son",
+     "metadata_doc_id": "5ba1a514-78d3-4f1c-abe1-57ebeb442958",
+     "metadata_qsrc": "Luis",
+     "metadata_qtgt": "Lucas",
+     "metadata_hop": 8,
+     "metadata_gap_origin": "none",
+     "metadata_gap_kind": "none",
+     "metadata_blocked_cell": [],
+     "metadata_correct_symbolic": true,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": false,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Ronald 'son, Milton, was late meeting his grandfather, Charles. John asked his brother Kyle if he would come help him fix his car next weekend. Willie took her sister, Donna, out to dinner for her birthday. John invited his sister Donna to dinner this Friday because it is her birthday. Ronald took his sister Willie out to lunch after learning that she got accepted into her first choice for university. Danielle and her husband Charles danced together at the party. Mark and Ronald were both still very upset with their mother, Danielle.",
+     "output": "brother",
+     "predict_symbolic": "brother",
+     "predict_gapfill_P": "brother",
+     "predict_gapfill_S": "brother",
+     "predict_raw_llm": "brother",
+     "metadata_doc_id": "1dfe61de-cab8-4bf1-b822-5297a2384dcb",
+     "metadata_qsrc": "Kyle",
+     "metadata_qtgt": "Mark",
+     "metadata_hop": 9,
+     "metadata_gap_origin": "none",
+     "metadata_gap_kind": "none",
+     "metadata_blocked_cell": [],
+     "metadata_correct_symbolic": true,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 1.0
+    },
+    {
+     "input": "Kyle took his sister Susan out to lunch after learning that she got accepted into her first choice for university. Donna wanted to meet with her brother, John, but she had to cancel when her sister, Susan, had an emergency that she needed to attend to. John was so excited to surprise his son, Bryan, with the tickets to the playoffs. Albert's father, Kyle, and grandfather, Charles, went hiking during the first weekend of spring. Timothy likes to visit his sister. Her name is Amanda. John's son, Bryan, came first in a relay race at his school. John's son, Timothy, felt jealous of Bryan.",
+     "output": "grandfather",
+     "predict_symbolic": "grandfather",
+     "predict_gapfill_P": "grandfather",
+     "predict_gapfill_S": "grandfather",
+     "predict_raw_llm": "grandfather",
+     "metadata_doc_id": "72ae22e5-32d5-48e9-a89f-0e7ecf02a27f",
+     "metadata_qsrc": "Amanda",
+     "metadata_qtgt": "Charles",
+     "metadata_hop": 9,
+     "metadata_gap_origin": "none",
+     "metadata_gap_kind": "none",
+     "metadata_blocked_cell": [],
+     "metadata_correct_symbolic": true,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 0.9
+    },
+    {
+     "input": "James is very much in love with his wife. Her name is Ellen. Nora took her brother Darryl and other brother Dan with her to eat pasta at a pasta buffet. Cesar took his son Darryl out for ice cream. Cesar took his sister, Ellen, to a baseball game. Eric's brother Darryl would not let him play the xbox game. Elsie took her granddaughter Mabel to the cinema. Darryl bought a steak dinner for himself and his brother Dan. James dotes on his daughter, Kathleen. He does n't pay as much attention to Mabel, Kathleen's sister, because she's older.",
+     "output": "grandmother",
+     "predict_symbolic": "grandmother",
+     "predict_gapfill_P": "grandmother",
+     "predict_gapfill_S": "grandmother",
+     "predict_raw_llm": "grandmother",
+     "metadata_doc_id": "3bc5c319-a326-4859-a2f4-870bb7db2603",
+     "metadata_qsrc": "Eric",
+     "metadata_qtgt": "Elsie",
+     "metadata_hop": 10,
+     "metadata_gap_origin": "none",
+     "metadata_gap_kind": "none",
+     "metadata_blocked_cell": [],
+     "metadata_correct_symbolic": true,
+     "metadata_correct_P": true,
+     "metadata_correct_S": true,
+     "metadata_correct_raw": true,
+     "metadata_conf_S": 1.0,
+     "metadata_conf_raw": 0.9
+    }
+   ]
+  }
+ ]
+}

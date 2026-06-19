@@ -1,0 +1,46 @@
+# Closure Certificate vs 4-Signal Confidence Battery on Natural Re-DocRED Kinship
+
+`demo/` — Self-contained demo (Colab-ready notebook or markdown). Run without setup.  
+`src/` — Full source code, data, and outputs from the experiment execution.
+
+**Type:** experiment  
+**ID:** `art_htcr8yOZLCQy`
+
+## Layman Summary
+
+Tests on real Wikipedia text whether a logic 'no-proof-no-answer' certificate beats LLM confidence scores at avoiding made-up family relationships, instead of using templated puzzles.
+
+## Full Summary
+
+STEP-B (iter-7): the iter-6 CLUTRR fair-baseline experiment re-run VERBATIM on the GENUINELY-NATURAL Re-DocRED/DocRED Wikipedia kinship corpus (art_NUWTxBVWENIJ). It moves the load-bearing diagnostic off templated text onto real prose: a closure CERTIFICATE (forward least-fixpoint UNION over LLM-extracted kinship edges -> abstain when no derivation path) vs the strongest confidence/uncertainty BATTERY on the raw LLM answerer (verbalized, self-consistency vote-margin@k=10, Kadavath P(True), semantic-entropy negentropy).
+
+REUSE vs NEW: readers.py / kinship.py (forward-UNION engine, the correct one for the finite kinship table) / baselines.py / stats.py / llm.py / prolog.py are copied VERBATIM from iter-6. New code: dataio_redocred.py (natural-corpus loader + entity-name GROUNDING of LLM names to gold entity_ids via mention-span aliases; measured grounding recall ~0.99) and method.py orchestration (PRIMITIVE-level scoring since gender is best-effort, natural-prose atomic P/R, certificate-abstention DECOMPOSITION, gold-read ceiling, pre-registered FORK verdict).
+
+TWO READERS: PRIMARY google/gemini-3.1-flash-lite on FULL re-docred (360 present deduction-required + 368 absent no-derivation); CROSS-FAMILY deepseek/deepseek-v3.2 spot-check (25 docs: 67 present + 107 absent) with a reader-specific certificate (re-extract + re-ground). docred present-stratum (116) corroborates (its absent gold is DOWNGRADED).
+
+PRE-REGISTERED VERDICT = EXTRACTION-LIMITED-BOUNDARY. (1) FACT A TRANSFERS to natural prose AND across readers: the raw LLM commits a confident kinship on 32.6% of absent pairs (120/368, gemini) and 31.8% (deepseek) -- both well above the synthetic-vs-real bar. (2) FACT B (confidence blindness) holds on gemini: those absent hallucinations carry mean signal verbalized 0.95 / sc_margin 0.95 / negent 0.96, with only P(True) partly separating (mean 0.51, the best signal); >=2 of 4 signals still COMMIT >=50% of them at a global threshold matched to the certificate's coverage (frac_surviving 0.51/0.85/0.48/0.85). It is weaker under deepseek (top signal verbalized 0.41). (3) The certificate does NOT win the MIXED pool on natural prose: confident-wrong reductions vs every signal are slightly NEGATIVE (-0.034..-0.055, doc-clustered paired bootstrap B=10000 CIs all include 0, Holm not rejected) and mixed selective accuracy is certificate 0.475 vs signals 0.60-0.675 -- because natural-prose extraction is noisy (precision 0.62 propagates to wrong derivations -> certificate present selective accuracy only 0.55) and incomplete.
+
+The boundary is QUANTIFIED, not asserted: certificate present coverage 0.48 (LLM-read) vs 1.0 (gold-read ceiling, which reproduces 100% present / abstains 100% absent by construction); over-abstain-present 0.52; atomic recall 0.376 (converse-invariant primitive), 0.46 vs the locally-justifiable span-extractable subset, 0.20 strict-direction; certificate absent confident-wrong only 0.07 (near-perfect STRUCTURAL abstention). So on absent the certificate stays hallucination-safe; the mixed-pool advantage is erased by extraction RECALL, not by the certificate's logic.
+
+OUTPUT (exp_gen_sol_out, validated): 844 per-query rows across re-docred_present(360) / re-docred_absent(368) / docred_present(116) with predict_certificate (+ goldread), predict_conf_thresh_{verbalized,sc_margin,ptrue,negent}, predict_commit_argmax/pot/sc, and rich metadata. metadata.headline_summary carries FACT A, FACT B crux table, mixed leaderboard + Holm CIs, abstention decomposition, natural atomic P/R, cross-reader generality, and the fork verdict. Auditability: worked no-derivation abstention, over-abstain-present, and present-composition traces, each Prolog-discharged (python-checked: SWI-Prolog unavailable, labelled truthfully; 40 queries discharged, program comp/3,conv/2,rel/3,solve_/4 emitted + cross-checked).
+
+HONEST CAVEATS (downstream paper): natural prose averages ~1020 chars (no 3000-char doc; not padded); absent pairs are STRUCTURAL (different components) so absent abstention is structural-by-construction (conceded); docred absent gold downgraded; primitive-level scoring (surface secondary); extraction MEASURED not improved. Total OpenRouter spend ~$1.5 (final run replays primary at $0 from the sha256 cache; cross-family tail $0.19), far under the $9 cap. IMPLICATION: the diagnostic (confident absent hallucination invisible to confidence) is corpus-robust and reader-diverse, but the certificate's safety advantage is extraction-recall-limited on real prose -- CLUTRR stays the templated power demo; the natural contribution is the honest, quantified boundary plus the gold-read ceiling isolating extraction as the binding constraint.
+
+## Dependencies
+
+- `art_NUWTxBVWENIJ` — dataset
+- `art_dA_3iFe_7fn_` — methodology
+
+## Output Files
+
+- `method.py`
+- `full_method_out.json`
+- `mini_method_out.json`
+- `preview_method_out.json`
+
+## Demo Files
+
+- **method.py** — Research methodology implementation
+
+---
+*Generated by AI Inventor Pipeline*

@@ -1,0 +1,2733 @@
+{
+ "dataset": "narrativetime_3kchar",
+ "description": "Closure-certified text->logic deduction -- operational case study. Primary TEMPORAL arm: 3 complete NarrativeTime documents (90 held-out deduction queries) with per-query span-local reads (induced_path_edges) and four method predictions vs gold. Plus the finite kinship composition table + 3 verified worked chains for the symbolic forward-closure engine.",
+ "config": {
+  "seed": 20260617,
+  "reader_model": "google/gemini-3.1-flash-lite",
+  "temperature": 0.0,
+  "char_target": 3000,
+  "char_band": [
+   2500,
+   3500
+  ]
+ },
+ "coarse_labels": [
+  "before",
+  "after",
+  "simultaneous",
+  "includes",
+  "is_included"
+ ],
+ "point_composition_facts": [
+  [
+   "lt",
+   "lt",
+   "lt"
+  ],
+  [
+   "lt",
+   "eq",
+   "lt"
+  ],
+  [
+   "eq",
+   "lt",
+   "lt"
+  ],
+  [
+   "eq",
+   "eq",
+   "eq"
+  ],
+  [
+   "eq",
+   "gt",
+   "gt"
+  ],
+  [
+   "gt",
+   "eq",
+   "gt"
+  ],
+  [
+   "gt",
+   "gt",
+   "gt"
+  ]
+ ],
+ "case_study_summary": {
+  "descriptive_only": "ranges/means across a HANDFUL of documents; not a powered test",
+  "temporal": {
+   "n_documents": 5,
+   "char_len_range": [
+    2197,
+    4293
+   ],
+   "atomic_disjunctive_recall": {
+    "min": 0.7689,
+    "max": 0.9248,
+    "mean": 0.8693
+   },
+   "atomic_most_likely_precision": {
+    "min": 0.3571,
+    "max": 0.5619,
+    "mean": 0.482
+   },
+   "total_queries": 150,
+   "total_emit": 22,
+   "total_abstain": 126,
+   "total_collapse_modeB": 2,
+   "hallucination_reduction_vs_fulldoc_raw": {
+    "min": 0.2667,
+    "max": 0.6,
+    "mean": 0.4467
+   },
+   "coverage_modeA": {
+    "min": 0.0,
+    "max": 0.3333,
+    "mean": 0.1467
+   },
+   "coverage_raw_fulldoc": {
+    "min": 1.0,
+    "max": 1.0,
+    "mean": 1.0
+   },
+   "modeA_confident_wrong_rate_over_pool": {
+    "min": 0.0,
+    "max": 0.1667,
+    "mean": 0.06
+   },
+   "note": "Mode-A abstains where real-text span-local reads under-determine the start-point order (faithfulness-by-abstention); the whole-document raw LLM always commits (coverage 1.0) and is frequently wrong, so the per-document confident-wrong (hallucination) rate drops. Coverage is stated beside every number."
+  },
+  "kinship": {
+   "n_documents": 3,
+   "char_len_range": [
+    3246,
+    3602
+   ],
+   "atomic_recall": {
+    "min": 0.3902,
+    "max": 0.5556,
+    "mean": 0.4917
+   },
+   "atomic_precision": {
+    "min": 0.381,
+    "max": 0.5952,
+    "mean": 0.5091
+   },
+   "within_story_total_emit": 8,
+   "within_story_total_correct": 6,
+   "within_story_selective_accuracy": 0.75,
+   "absent_pairs_total": 56,
+   "absent_pairs_abstained": 56,
+   "absent_confident_wrong_total": 0,
+   "absent_abstention_rate": 1.0,
+   "note": "the kinship calculus is memorized, so the pipeline works FULLY: closure resolves the within-story chains it can EXTRACT (the ceiling is extraction-limited, not closure-limited), and ABSTAINS on every provably-absent cross-story pair (0 confident-wrong BY CONSTRUCTION)."
+  }
+ },
+ "honesty_commitments": [
+  "SUB-MODULE SCOPE ONLY: the contribution is the closure CERTIFICATE + abstain-on-collapse output contract; atomic extraction is MEASURED not improved; OpenCyc grounding and LLM fuzzy-unification are OUT OF SCOPE here.",
+  "Temporal NarrativeTime gold is interval-Allen; we project to the convex START-POINT POINT algebra (PC-complete) -- this is tighter than Allen (avoids the near-universe trap) but cannot express includes/is_included as singletons, so some queries are structurally extraction-limited. Reported, not hidden.",
+  "CLUTRR stories are short; the ~3000-char kinship document is CONCATENATED from disjoint-entity sub-stories (labelled), giving genuine cross-story ABSENT pairs.",
+  "NarrativeTime has NO single article in [2500,3500] chars; the temporal docs are the articles CLOSEST to 3000 (exact lengths reported).",
+  "SWI-Prolog execution is reported TRUTHFULLY per query (executed / engine-match / gold-match counts; python-checked fallback is labelled and never implies execution).",
+  "Certificate value on dense real prose is FAITHFULNESS-BY-ABSTENTION: where local reads under-determine, the pipeline abstains rather than hallucinate (0 confident-wrong on provably-absent pairs by construction)."
+ ],
+ "examples": [
+  {
+   "input": "The US military buildup in the Persian gulf continues apace, more planes headed from the united states and senior officials say Iraq's president Saddam Hussein can expect punishing air strikes to continue well into the future if he does n't stop [[E1]]building[[/E1]] biological and chemical weapons. Nevertheless, the president [[E2]]said[[/E2]] Washington would use force if diplomacy fails to force Saddam Hussein to back down.",
+   "output": "after",
+   "metadata_docid": "CNN19980213.2130.0155",
+   "metadata_doc_char_len": 2197,
+   "metadata_query": "CNN19980213.2130.0155::ei585->CNN19980213.2130.0155::ei619",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "CNN 19980213 .2130.0155\n    NEWS STORY\n    President Clinton says he is committed to a possible [[E1]]strike[[/E1]] against Iraq, despite objections from other countries. One contrary view of the issue presented itself to the president as he [[E2]]arrived[[/E2]] in Philadelphia later in the day .",
+   "output": "after",
+   "metadata_docid": "CNN19980213.2130.0155",
+   "metadata_doc_char_len": 2197,
+   "metadata_query": "CNN19980213.2130.0155::ei575->CNN19980213.2130.0155::ei618",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 1,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "after",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "President Clinton, meantime, glossed over stern warnings from Moscow on Thursday that US air [[E1]]strikes[[/E1]] against Iraq could do serious harm to relations with the Kremlin. The Russian foreign minister, meanwhile , [[E2]]sought[[/E2]] to soften the harsh words of his military counterpart, saying on Friday that Russia now feels the US must hold off at least until UN secretary general Kofi Annan visits Baghdad in a last-ditch effort at diplomacy.",
+   "output": "after",
+   "metadata_docid": "CNN19980213.2130.0155",
+   "metadata_doc_char_len": 2197,
+   "metadata_query": "CNN19980213.2130.0155::ei606->CNN19980213.2130.0155::ei624",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "Saddam will know by our actions and our warning that we will be prepared to act again if we have [[E1]]evidence[[/E1]] he is trying to rebuild his weapons of mass destruction capabilities. One contrary view of the issue [[E2]]presented[[/E2]] itself to the president as he arrived in Philadelphia later in the day .",
+   "output": "after",
+   "metadata_docid": "CNN19980213.2130.0155",
+   "metadata_doc_char_len": 2197,
+   "metadata_query": "CNN19980213.2130.0155::ei592->CNN19980213.2130.0155::ei617",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "The US military buildup in the Persian gulf continues apace, more planes headed from the united states and senior officials [[E1]]say[[/E1]] Iraq's president Saddam Hussein can expect punishing air strikes to continue well into the future if he does n't stop building biological and chemical weapons. We're trying to [[E2]]find[[/E2]] a diplomatic solution.",
+   "output": "before",
+   "metadata_docid": "CNN19980213.2130.0155",
+   "metadata_doc_char_len": 2197,
+   "metadata_query": "CNN19980213.2130.0155::ei580->CNN19980213.2130.0155::ei610",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 1,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "President Clinton, meantime, glossed over stern [[E1]]warnings[[/E1]] from Moscow on Thursday that US air strikes against Iraq could do serious harm to relations with the Kremlin. One contrary view of the issue presented itself to the president as he [[E2]]arrived[[/E2]] in Philadelphia later in the day .",
+   "output": "before",
+   "metadata_docid": "CNN19980213.2130.0155",
+   "metadata_doc_char_len": 2197,
+   "metadata_query": "CNN19980213.2130.0155::ei605->CNN19980213.2130.0155::ei618",
+   "metadata_outcome": "emit",
+   "metadata_query_class": "deduction_resolved",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 1,
+   "predict_modeA": "before",
+   "predict_naive": "before",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "President Clinton, meantime, glossed over stern warnings from Moscow on Thursday that US air strikes against Iraq could do serious [[E1]]harm[[/E1]] to relations with the Kremlin. Meanwhile , secretary of state Madeleine Albright, Berger and defense secretary William Cohen announced plans to travel to an unnamed city in the US heartland next week , to explain to the American people just why military force will be [[E2]]necessary[[/E2]] if diplomacy fails .",
+   "output": "after",
+   "metadata_docid": "CNN19980213.2130.0155",
+   "metadata_doc_char_len": 2197,
+   "metadata_query": "CNN19980213.2130.0155::ei608->CNN19980213.2130.0155::ei636",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "President Clinton, meantime, glossed over stern warnings from Moscow on Thursday that US air strikes against Iraq could do serious [[E1]]harm[[/E1]] to relations with the Kremlin. The Russian foreign minister, meanwhile , [[E2]]sought[[/E2]] to soften the harsh words of his military counterpart, saying on Friday that Russia now feels the US must hold off at least until UN secretary general Kofi Annan visits Baghdad in a last-ditch effort at diplomacy.",
+   "output": "after",
+   "metadata_docid": "CNN19980213.2130.0155",
+   "metadata_doc_char_len": 2197,
+   "metadata_query": "CNN19980213.2130.0155::ei608->CNN19980213.2130.0155::ei624",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "The Russian foreign minister, meanwhile , sought to soften the harsh words of his military counterpart, [[E1]]saying[[/E1]] on Friday that Russia now feels the US must hold off at least until UN secretary general Kofi Annan visits Baghdad in a last-ditch effort at diplomacy. Meanwhile , secretary of state Madeleine Albright, Berger and defense secretary William Cohen announced plans to travel to an unnamed city in the US heartland next week , to explain to the American people just why military force will be necessary if diplomacy [[E2]]fails[[/E2]] .",
+   "output": "before",
+   "metadata_docid": "CNN19980213.2130.0155",
+   "metadata_doc_char_len": 2197,
+   "metadata_query": "CNN19980213.2130.0155::ei626->CNN19980213.2130.0155::ei637",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "CNN 19980213 .2130.0155\n    NEWS STORY\n    President Clinton says he is committed to a possible [[E1]]strike[[/E1]] against Iraq, despite objections from other countries. The Russian foreign minister, meanwhile , [[E2]]sought[[/E2]] to soften the harsh words of his military counterpart, saying on Friday that Russia now feels the US must hold off at least until UN secretary general Kofi Annan visits Baghdad in a last-ditch effort at diplomacy.",
+   "output": "after",
+   "metadata_docid": "CNN19980213.2130.0155",
+   "metadata_doc_char_len": 2197,
+   "metadata_query": "CNN19980213.2130.0155::ei575->CNN19980213.2130.0155::ei624",
+   "metadata_outcome": "emit",
+   "metadata_query_class": "deduction_resolved",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 1,
+   "predict_modeA": "before",
+   "predict_naive": "before",
+   "predict_raw_local": "after",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "The US military buildup in the Persian gulf continues apace, more planes headed from the united states and senior officials say Iraq's president Saddam Hussein can expect punishing air strikes to continue well into the future if he does n't [[E1]]stop[[/E1]] building biological and chemical weapons. Meanwhile , secretary of state Madeleine Albright, Berger and defense secretary William Cohen announced plans to travel to an unnamed city in the US heartland next week , to explain to the American people just why military force will be necessary if diplomacy [[E2]]fails[[/E2]] .",
+   "output": "after",
+   "metadata_docid": "CNN19980213.2130.0155",
+   "metadata_doc_char_len": 2197,
+   "metadata_query": "CNN19980213.2130.0155::ei584->CNN19980213.2130.0155::ei637",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "Saddam will [[E1]]know[[/E1]] by our actions and our warning that we will be prepared to act again if we have evidence he is trying to rebuild his weapons of mass destruction capabilities. Meanwhile , secretary of state Madeleine Albright, Berger and defense secretary William Cohen announced plans to travel to an unnamed city in the US heartland next week , to explain to the American people just why military force will be necessary if diplomacy [[E2]]fails[[/E2]] .",
+   "output": "after",
+   "metadata_docid": "CNN19980213.2130.0155",
+   "metadata_doc_char_len": 2197,
+   "metadata_query": "CNN19980213.2130.0155::ei586->CNN19980213.2130.0155::ei637",
+   "metadata_outcome": "emit",
+   "metadata_query_class": "deduction_resolved",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 4,
+   "predict_modeA": "before",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "The US military buildup in the Persian gulf continues apace, more planes headed from the united states and senior officials say Iraq's president Saddam Hussein can expect punishing air strikes to [[E1]]continue[[/E1]] well into the future if he does n't stop building biological and chemical weapons. One contrary view of the issue [[E2]]presented[[/E2]] itself to the president as he arrived in Philadelphia later in the day .",
+   "output": "after",
+   "metadata_docid": "CNN19980213.2130.0155",
+   "metadata_doc_char_len": 2197,
+   "metadata_query": "CNN19980213.2130.0155::ei583->CNN19980213.2130.0155::ei617",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 1,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "after",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "In a bit of television diplomacy, Iraq's deputy foreign minister [[E1]]responded[[/E1]] from Baghdad in less than one hour , saying Washington would break international law by attacking without UN approval . We're [[E2]]trying[[/E2]] to find a diplomatic solution.",
+   "output": "is_included",
+   "metadata_docid": "CNN19980213.2130.0155",
+   "metadata_doc_char_len": 2197,
+   "metadata_query": "CNN19980213.2130.0155::ei596->CNN19980213.2130.0155::ei609",
+   "metadata_outcome": "emit",
+   "metadata_query_class": "deduction_resolved",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 2,
+   "predict_modeA": "after",
+   "predict_naive": "after",
+   "predict_raw_local": "after",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "The united states is not authorized to use force before [[E1]]going[[/E1]] to the council. Nevertheless, the president said Washington would [[E2]]use[[/E2]] force if diplomacy fails to force Saddam Hussein to back down.",
+   "output": "before",
+   "metadata_docid": "CNN19980213.2130.0155",
+   "metadata_doc_char_len": 2197,
+   "metadata_query": "CNN19980213.2130.0155::ei603->CNN19980213.2130.0155::ei620",
+   "metadata_outcome": "emit",
+   "metadata_query_class": "deduction_resolved",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 5,
+   "predict_modeA": "before",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "The Russian foreign minister, meanwhile , sought to soften the harsh words of his military counterpart, saying on Friday that Russia now feels the US must [[E1]]hold[[/E1]] off at least until UN secretary general Kofi Annan visits Baghdad in a last-ditch effort at diplomacy. Meanwhile , secretary of state Madeleine Albright, Berger and defense secretary William Cohen [[E2]]announced[[/E2]] plans to travel to an unnamed city in the US heartland next week , to explain to the American people just why military force will be necessary if diplomacy fails .",
+   "output": "after",
+   "metadata_docid": "CNN19980213.2130.0155",
+   "metadata_doc_char_len": 2197,
+   "metadata_query": "CNN19980213.2130.0155::ei628->CNN19980213.2130.0155::ei632",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "CNN 19980213 .2130.0155\n    NEWS STORY\n    President Clinton [[E1]]says[[/E1]] he is committed to a possible strike against Iraq, despite objections from other countries. Meanwhile , secretary of state Madeleine Albright, Berger and defense secretary William Cohen announced plans to travel to an unnamed city in the US heartland next week , to explain to the American people just why military force will be necessary if diplomacy [[E2]]fails[[/E2]] .",
+   "output": "before",
+   "metadata_docid": "CNN19980213.2130.0155",
+   "metadata_doc_char_len": 2197,
+   "metadata_query": "CNN19980213.2130.0155::ei573->CNN19980213.2130.0155::ei637",
+   "metadata_outcome": "emit",
+   "metadata_query_class": "deduction_resolved",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 2,
+   "predict_modeA": "before",
+   "predict_naive": "before",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "In a bit of television diplomacy, Iraq's deputy foreign minister [[E1]]responded[[/E1]] from Baghdad in less than one hour , saying Washington would break international law by attacking without UN approval . President Clinton, meantime, [[E2]]glossed[[/E2]] over stern warnings from Moscow on Thursday that US air strikes against Iraq could do serious harm to relations with the Kremlin.",
+   "output": "after",
+   "metadata_docid": "CNN19980213.2130.0155",
+   "metadata_doc_char_len": 2197,
+   "metadata_query": "CNN19980213.2130.0155::ei596->CNN19980213.2130.0155::ei604",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "simultaneous",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "Saddam will know by our actions and our warning that we will be [[E1]]prepared[[/E1]] to act again if we have evidence he is trying to rebuild his weapons of mass destruction capabilities. Meanwhile , secretary of state Madeleine Albright, Berger and defense secretary William Cohen announced [[E2]]plans[[/E2]] to travel to an unnamed city in the US heartland next week , to explain to the American people just why military force will be necessary if diplomacy fails .",
+   "output": "after",
+   "metadata_docid": "CNN19980213.2130.0155",
+   "metadata_doc_char_len": 2197,
+   "metadata_query": "CNN19980213.2130.0155::ei589->CNN19980213.2130.0155::ei633",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "after",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "Saddam will know by our actions and our [[E1]]warning[[/E1]] that we will be prepared to act again if we have evidence he is trying to rebuild his weapons of mass destruction capabilities. And I hope that, whatever happens today , that our relationships with Russia will continue to be [[E2]]productive[[/E2]] and constructive and strong , because that's very important to the future of our peoples.",
+   "output": "before",
+   "metadata_docid": "CNN19980213.2130.0155",
+   "metadata_doc_char_len": 2197,
+   "metadata_query": "CNN19980213.2130.0155::ei588->CNN19980213.2130.0155::ei614",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "after",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "CNN 19980213 .2130.0155\n    NEWS STORY\n    President Clinton says he is committed to a possible [[E1]]strike[[/E1]] against Iraq, despite objections from other countries. Saddam will know by our actions and our [[E2]]warning[[/E2]] that we will be prepared to act again if we have evidence he is trying to rebuild his weapons of mass destruction capabilities.",
+   "output": "after",
+   "metadata_docid": "CNN19980213.2130.0155",
+   "metadata_doc_char_len": 2197,
+   "metadata_query": "CNN19980213.2130.0155::ei575->CNN19980213.2130.0155::ei588",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "after"
+  },
+  {
+   "input": "In a bit of television diplomacy, Iraq's deputy foreign minister responded from Baghdad in less than one hour , saying Washington would break international law by [[E1]]attacking[[/E1]] without UN approval . One contrary view of the issue [[E2]]presented[[/E2]] itself to the president as he arrived in Philadelphia later in the day .",
+   "output": "after",
+   "metadata_docid": "CNN19980213.2130.0155",
+   "metadata_doc_char_len": 2197,
+   "metadata_query": "CNN19980213.2130.0155::ei599->CNN19980213.2130.0155::ei617",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 1,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "President Clinton, meantime, glossed over stern warnings from Moscow on Thursday that US air strikes against Iraq could do serious [[E1]]harm[[/E1]] to relations with the Kremlin. One contrary view of the issue presented itself to the president as he [[E2]]arrived[[/E2]] in Philadelphia later in the day .",
+   "output": "after",
+   "metadata_docid": "CNN19980213.2130.0155",
+   "metadata_doc_char_len": 2197,
+   "metadata_query": "CNN19980213.2130.0155::ei608->CNN19980213.2130.0155::ei618",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "The US military buildup in the Persian gulf continues apace, more planes headed from the united states and senior officials say Iraq's president Saddam Hussein can expect punishing air strikes to continue well into the future if he does n't [[E1]]stop[[/E1]] building biological and chemical weapons. The Russian foreign minister, meanwhile , sought to soften the harsh words of his military counterpart, saying on Friday that Russia now feels the US must [[E2]]hold[[/E2]] off at least until UN secretary general Kofi Annan visits Baghdad in a last-ditch effort at diplomacy.",
+   "output": "after",
+   "metadata_docid": "CNN19980213.2130.0155",
+   "metadata_doc_char_len": 2197,
+   "metadata_query": "CNN19980213.2130.0155::ei584->CNN19980213.2130.0155::ei628",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "after"
+  },
+  {
+   "input": "The US military buildup in the Persian gulf continues apace, more planes [[E1]]headed[[/E1]] from the united states and senior officials say Iraq's president Saddam Hussein can expect punishing air strikes to continue well into the future if he does n't stop building biological and chemical weapons. In a bit of television diplomacy, Iraq's deputy foreign minister responded from Baghdad in less than one hour , [[E2]]saying[[/E2]] Washington would break international law by attacking without UN approval .",
+   "output": "includes",
+   "metadata_docid": "CNN19980213.2130.0155",
+   "metadata_doc_char_len": 2197,
+   "metadata_query": "CNN19980213.2130.0155::ei579->CNN19980213.2130.0155::ei597",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "The US military buildup in the Persian gulf continues apace, more planes headed from the united states and senior officials say Iraq's president Saddam Hussein can expect punishing air strikes to continue well into the future if he does n't [[E1]]stop[[/E1]] building biological and chemical weapons. In a bit of television diplomacy, Iraq's deputy foreign minister responded from Baghdad in less than one hour , saying Washington would break international law by [[E2]]attacking[[/E2]] without UN approval .",
+   "output": "before",
+   "metadata_docid": "CNN19980213.2130.0155",
+   "metadata_doc_char_len": 2197,
+   "metadata_query": "CNN19980213.2130.0155::ei584->CNN19980213.2130.0155::ei599",
+   "metadata_outcome": "emit",
+   "metadata_query_class": "deduction_resolved",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 4,
+   "predict_modeA": "before",
+   "predict_naive": "before",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "One contrary view of the issue presented itself to the president as he [[E1]]arrived[[/E1]] in Philadelphia later in the day . The Russian foreign minister, meanwhile , sought to [[E2]]soften[[/E2]] the harsh words of his military counterpart, saying on Friday that Russia now feels the US must hold off at least until UN secretary general Kofi Annan visits Baghdad in a last-ditch effort at diplomacy.",
+   "output": "before",
+   "metadata_docid": "CNN19980213.2130.0155",
+   "metadata_doc_char_len": 2197,
+   "metadata_query": "CNN19980213.2130.0155::ei618->CNN19980213.2130.0155::ei625",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "simultaneous",
+   "predict_raw_fulldoc": "after"
+  },
+  {
+   "input": "Saddam will know by our actions and our warning that we will be prepared to act again if we have [[E1]]evidence[[/E1]] he is trying to rebuild his weapons of mass destruction capabilities. Meanwhile , secretary of state Madeleine Albright, Berger and defense secretary William Cohen [[E2]]announced[[/E2]] plans to travel to an unnamed city in the US heartland next week , to explain to the American people just why military force will be necessary if diplomacy fails .",
+   "output": "after",
+   "metadata_docid": "CNN19980213.2130.0155",
+   "metadata_doc_char_len": 2197,
+   "metadata_query": "CNN19980213.2130.0155::ei592->CNN19980213.2130.0155::ei632",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 1,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "after",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "Saddam will know by our [[E1]]actions[[/E1]] and our warning that we will be prepared to act again if we have evidence he is trying to rebuild his weapons of mass destruction capabilities. The Russian foreign minister, meanwhile , [[E2]]sought[[/E2]] to soften the harsh words of his military counterpart, saying on Friday that Russia now feels the US must hold off at least until UN secretary general Kofi Annan visits Baghdad in a last-ditch effort at diplomacy.",
+   "output": "after",
+   "metadata_docid": "CNN19980213.2130.0155",
+   "metadata_doc_char_len": 2197,
+   "metadata_query": "CNN19980213.2130.0155::ei587->CNN19980213.2130.0155::ei624",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "CNN 19980213 .2130.0155\n    NEWS STORY\n    President Clinton [[E1]]says[[/E1]] he is committed to a possible strike against Iraq, despite objections from other countries. The united states is not authorized to [[E2]]use[[/E2]] force before going to the council.",
+   "output": "is_included",
+   "metadata_docid": "CNN19980213.2130.0155",
+   "metadata_doc_char_len": 2197,
+   "metadata_query": "CNN19980213.2130.0155::ei573->CNN19980213.2130.0155::ei602",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "ABC 19980108 .1830.0711\n    NEWS STORY\n    On the other hand, it's [[E1]]turning[[/E1]] out to be another very bad financial week for Asia. Hotels are only [[E2]]thirty[[/E2]] percent full.",
+   "output": "simultaneous",
+   "metadata_docid": "ABC19980108.1830.0711",
+   "metadata_doc_char_len": 2311,
+   "metadata_query": "ABC19980108.1830.0711::ei375->ABC19980108.1830.0711::ei433",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "simultaneous",
+   "predict_raw_fulldoc": "simultaneous"
+  },
+  {
+   "input": "The Indonesian currency has [[E1]]lost[[/E1]] twenty six percent of its value. More [[E2]]problems[[/E2]] in Hong Kong for a place, for an economy, that many experts thought was once invincible .",
+   "output": "simultaneous",
+   "metadata_docid": "ABC19980108.1830.0711",
+   "metadata_doc_char_len": 2311,
+   "metadata_query": "ABC19980108.1830.0711::ei380->ABC19980108.1830.0711::ei383",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "simultaneous",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "You can [[E1]]get[[/E1]] seventy percent discounts at the shopping malls. To either [[E2]]hold[[/E2]] on tight or get out, as much of Asia goes into recession .",
+   "output": "before",
+   "metadata_docid": "ABC19980108.1830.0711",
+   "metadata_doc_char_len": 2311,
+   "metadata_query": "ABC19980108.1830.0711::ei414->ABC19980108.1830.0711::ei427",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "simultaneous",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "But in the past three months , stocks have plunged , interest rates have [[E1]]soared[[/E1]] and the downturn all across Asia means that people are not spending here. So for Hong Kong, it's time , as investment bankers like to say, to [[E2]]reposition[[/E2]] .",
+   "output": "before",
+   "metadata_docid": "ABC19980108.1830.0711",
+   "metadata_doc_char_len": 2311,
+   "metadata_query": "ABC19980108.1830.0711::ei409->ABC19980108.1830.0711::ei426",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 1,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "Pak can't [[E1]]find[[/E1]] buyers. I [[E2]]think[[/E2]] that the mood is fairly gloomy , and I think it's not going to change for a couple of years .",
+   "output": "simultaneous",
+   "metadata_docid": "ABC19980108.1830.0711",
+   "metadata_doc_char_len": 2311,
+   "metadata_query": "ABC19980108.1830.0711::ei401->ABC19980108.1830.0711::ei420",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "simultaneous",
+   "predict_raw_fulldoc": "simultaneous"
+  },
+  {
+   "input": "So when Wong Kwan spent seventy million dollars for this house, he [[E1]]thought[[/E1]] it was a great deal . So for Hong Kong, it's time , as investment bankers like to say, to [[E2]]reposition[[/E2]] .",
+   "output": "before",
+   "metadata_docid": "ABC19980108.1830.0711",
+   "metadata_doc_char_len": 2311,
+   "metadata_query": "ABC19980108.1830.0711::ei389->ABC19980108.1830.0711::ei426",
+   "metadata_outcome": "emit",
+   "metadata_query_class": "deduction_resolved",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 1,
+   "predict_modeA": "before",
+   "predict_naive": "before",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "Nobody [[E1]]believe[[/E1]] this any more. You can [[E2]]get[[/E2]] seventy percent discounts at the shopping malls.",
+   "output": "includes",
+   "metadata_docid": "ABC19980108.1830.0711",
+   "metadata_doc_char_len": 2311,
+   "metadata_query": "ABC19980108.1830.0711::ei407->ABC19980108.1830.0711::ei414",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "simultaneous",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "More [[E1]]problems[[/E1]] in Hong Kong for a place, for an economy, that many experts thought was once invincible . Not that long ago, before the Chinese [[E2]]takeover[[/E2]] , the news about real estate here was that the sky was the limit the highest prices in the world.",
+   "output": "after",
+   "metadata_docid": "ABC19980108.1830.0711",
+   "metadata_doc_char_len": 2311,
+   "metadata_query": "ABC19980108.1830.0711::ei383->ABC19980108.1830.0711::ei386",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "after",
+   "predict_raw_fulldoc": "after"
+  },
+  {
+   "input": "He [[E1]]sold[[/E1]] the property to five buyers and said he'd double his money. Hotels are only [[E2]]thirty[[/E2]] percent full.",
+   "output": "before",
+   "metadata_docid": "ABC19980108.1830.0711",
+   "metadata_doc_char_len": 2311,
+   "metadata_query": "ABC19980108.1830.0711::ei391->ABC19980108.1830.0711::ei433",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "Pamela Pak [[E1]]owns[[/E1]] eight condominiums here. But in the past three months , stocks have plunged , interest rates have soared and the downturn all across Asia means that people are not [[E2]]spending[[/E2]] here.",
+   "output": "includes",
+   "metadata_docid": "ABC19980108.1830.0711",
+   "metadata_doc_char_len": 2311,
+   "metadata_query": "ABC19980108.1830.0711::ei400->ABC19980108.1830.0711::ei412",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "simultaneous",
+   "predict_raw_fulldoc": "simultaneous"
+  },
+  {
+   "input": "They [[E1]]believe[[/E1]] ah it will be always up going up and up ah forever. So for Hong Kong, it's [[E2]]time[[/E2]] , as investment bankers like to say, to reposition .",
+   "output": "before",
+   "metadata_docid": "ABC19980108.1830.0711",
+   "metadata_doc_char_len": 2311,
+   "metadata_query": "ABC19980108.1830.0711::ei405->ABC19980108.1830.0711::ei425",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "simultaneous",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "Not that long ago, before the Chinese [[E1]]takeover[[/E1]] , the news about real estate here was that the sky was the limit the highest prices in the world. Pak can't [[E2]]find[[/E2]] buyers.",
+   "output": "before",
+   "metadata_docid": "ABC19980108.1830.0711",
+   "metadata_doc_char_len": 2311,
+   "metadata_query": "ABC19980108.1830.0711::ei386->ABC19980108.1830.0711::ei401",
+   "metadata_outcome": "emit",
+   "metadata_query_class": "deduction_resolved",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 1,
+   "predict_modeA": "before",
+   "predict_naive": "before",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "The financial [[E1]]assistance[[/E1]] from the World Bank and the International Monetary Fund are not helping . Pak can't [[E2]]find[[/E2]] buyers.",
+   "output": "before",
+   "metadata_docid": "ABC19980108.1830.0711",
+   "metadata_doc_char_len": 2311,
+   "metadata_query": "ABC19980108.1830.0711::ei377->ABC19980108.1830.0711::ei401",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 1,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "simultaneous",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "So when Wong Kwan [[E1]]spent[[/E1]] seventy million dollars for this house, he thought it was a great deal . Still, there are [[E2]]few[[/E2]] buyers.",
+   "output": "before",
+   "metadata_docid": "ABC19980108.1830.0711",
+   "metadata_doc_char_len": 2311,
+   "metadata_query": "ABC19980108.1830.0711::ei388->ABC19980108.1830.0711::ei437",
+   "metadata_outcome": "collapse",
+   "metadata_query_class": "closure_collapse",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 2,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "They believe ah it will be always up [[E1]]going[[/E1]] up and up ah forever. I think that the mood is fairly gloomy , and I [[E2]]think[[/E2]] it's not going to change for a couple of years .",
+   "output": "includes",
+   "metadata_docid": "ABC19980108.1830.0711",
+   "metadata_doc_char_len": 2311,
+   "metadata_query": "ABC19980108.1830.0711::ei406->ABC19980108.1830.0711::ei422",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "simultaneous",
+   "predict_raw_fulldoc": "simultaneous"
+  },
+  {
+   "input": "Still, there are [[E1]]few[[/E1]] buyers. I [[E2]]think[[/E2]] that the mood is fairly gloomy , and I think it's not going to change for a couple of years .",
+   "output": "simultaneous",
+   "metadata_docid": "ABC19980108.1830.0711",
+   "metadata_doc_char_len": 2311,
+   "metadata_query": "ABC19980108.1830.0711::ei437->ABC19980108.1830.0711::ei420",
+   "metadata_outcome": "emit",
+   "metadata_query_class": "deduction_resolved",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 3,
+   "predict_modeA": "simultaneous",
+   "predict_naive": "simultaneous",
+   "predict_raw_local": "simultaneous",
+   "predict_raw_fulldoc": "simultaneous"
+  },
+  {
+   "input": "ABC 19980108 .1830.0711\n    NEWS STORY\n    On the other hand, it's turning out to be another very [[E1]]bad[[/E1]] financial week for Asia. More problems in Hong Kong for a place, for an economy, that many experts [[E2]]thought[[/E2]] was once invincible .",
+   "output": "after",
+   "metadata_docid": "ABC19980108.1830.0711",
+   "metadata_doc_char_len": 2311,
+   "metadata_query": "ABC19980108.1830.0711::ei431->ABC19980108.1830.0711::ei384",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 2,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "after",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "He sold the property to five buyers and [[E1]]said[[/E1]] he'd double his money. I [[E2]]think[[/E2]] that the mood is fairly gloomy , and I think it's not going to change for a couple of years .",
+   "output": "before",
+   "metadata_docid": "ABC19980108.1830.0711",
+   "metadata_doc_char_len": 2311,
+   "metadata_query": "ABC19980108.1830.0711::ei392->ABC19980108.1830.0711::ei420",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "So when Wong Kwan [[E1]]spent[[/E1]] seventy million dollars for this house, he thought it was a great deal . But in the past three months , stocks have [[E2]]plunged[[/E2]] , interest rates have soared and the downturn all across Asia means that people are not spending here.",
+   "output": "before",
+   "metadata_docid": "ABC19980108.1830.0711",
+   "metadata_doc_char_len": 2311,
+   "metadata_query": "ABC19980108.1830.0711::ei388->ABC19980108.1830.0711::ei408",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "Not that long ago, before the Chinese [[E1]]takeover[[/E1]] , the news about real estate here was that the sky was the limit the highest prices in the world. But in the past three months , stocks have [[E2]]plunged[[/E2]] , interest rates have soared and the downturn all across Asia means that people are not spending here.",
+   "output": "simultaneous",
+   "metadata_docid": "ABC19980108.1830.0711",
+   "metadata_doc_char_len": 2311,
+   "metadata_query": "ABC19980108.1830.0711::ei386->ABC19980108.1830.0711::ei408",
+   "metadata_outcome": "emit",
+   "metadata_query_class": "deduction_resolved",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 3,
+   "predict_modeA": "after",
+   "predict_naive": "after",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "They [[E1]]believe[[/E1]] ah it will be always up going up and up ah forever. To either [[E2]]hold[[/E2]] on tight or get out, as much of Asia goes into recession .",
+   "output": "before",
+   "metadata_docid": "ABC19980108.1830.0711",
+   "metadata_doc_char_len": 2311,
+   "metadata_query": "ABC19980108.1830.0711::ei405->ABC19980108.1830.0711::ei427",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 1,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "after"
+  },
+  {
+   "input": "ABC 19980108 .1830.0711\n    NEWS STORY\n    On the other hand, it's [[E1]]turning[[/E1]] out to be another very bad financial week for Asia. I think that the mood is fairly [[E2]]gloomy[[/E2]] , and I think it's not going to change for a couple of years .",
+   "output": "simultaneous",
+   "metadata_docid": "ABC19980108.1830.0711",
+   "metadata_doc_char_len": 2311,
+   "metadata_query": "ABC19980108.1830.0711::ei375->ABC19980108.1830.0711::ei436",
+   "metadata_outcome": "emit",
+   "metadata_query_class": "deduction_resolved",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 5,
+   "predict_modeA": "simultaneous",
+   "predict_naive": "simultaneous",
+   "predict_raw_local": "simultaneous",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "And at the big brokerage houses, after ten years of [[E1]]boom[[/E1]] , they're talking about layoffs . So for Hong Kong, it's [[E2]]time[[/E2]] , as investment bankers like to say, to reposition .",
+   "output": "before",
+   "metadata_docid": "ABC19980108.1830.0711",
+   "metadata_doc_char_len": 2311,
+   "metadata_query": "ABC19980108.1830.0711::ei417->ABC19980108.1830.0711::ei425",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 1,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "So when Wong Kwan spent seventy million dollars for this house, he [[E1]]thought[[/E1]] it was a great deal . And at the big brokerage houses, after ten years of boom , they're [[E2]]talking[[/E2]] about layoffs .",
+   "output": "before",
+   "metadata_docid": "ABC19980108.1830.0711",
+   "metadata_doc_char_len": 2311,
+   "metadata_query": "ABC19980108.1830.0711::ei389->ABC19980108.1830.0711::ei418",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "Hotels are only [[E1]]thirty[[/E1]] percent full. I think that the mood is fairly [[E2]]gloomy[[/E2]] , and I think it's not going to change for a couple of years .",
+   "output": "simultaneous",
+   "metadata_docid": "ABC19980108.1830.0711",
+   "metadata_doc_char_len": 2311,
+   "metadata_query": "ABC19980108.1830.0711::ei433->ABC19980108.1830.0711::ei436",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "simultaneous",
+   "predict_raw_fulldoc": "simultaneous"
+  },
+  {
+   "input": "So when Wong Kwan spent seventy million dollars for this house, he thought it was a great [[E1]]deal[[/E1]] . I think that the mood is fairly gloomy , and I [[E2]]think[[/E2]] it's not going to change for a couple of years .",
+   "output": "before",
+   "metadata_docid": "ABC19980108.1830.0711",
+   "metadata_doc_char_len": 2311,
+   "metadata_query": "ABC19980108.1830.0711::ei390->ABC19980108.1830.0711::ei422",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "after",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "In Singapore, stocks [[E1]]hit[[/E1]] a five year low. I [[E2]]think[[/E2]] that the mood is fairly gloomy , and I think it's not going to change for a couple of years .",
+   "output": "before",
+   "metadata_docid": "ABC19980108.1830.0711",
+   "metadata_doc_char_len": 2311,
+   "metadata_query": "ABC19980108.1830.0711::ei381->ABC19980108.1830.0711::ei420",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "simultaneous",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "So when Wong Kwan spent seventy million dollars for this house, he [[E1]]thought[[/E1]] it was a great deal . Now with new construction under way , three of his buyers have [[E2]]backed[[/E2]] out.",
+   "output": "before",
+   "metadata_docid": "ABC19980108.1830.0711",
+   "metadata_doc_char_len": 2311,
+   "metadata_query": "ABC19980108.1830.0711::ei389->ABC19980108.1830.0711::ei397",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "The financial assistance from the World Bank and the International Monetary Fund are not [[E1]]helping[[/E1]] . In Singapore, stocks [[E2]]hit[[/E2]] a five year low.",
+   "output": "after",
+   "metadata_docid": "ABC19980108.1830.0711",
+   "metadata_doc_char_len": 2311,
+   "metadata_query": "ABC19980108.1830.0711::ei378->ABC19980108.1830.0711::ei381",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "simultaneous",
+   "predict_raw_fulldoc": "simultaneous"
+  },
+  {
+   "input": "So when Wong Kwan [[E1]]spent[[/E1]] seventy million dollars for this house, he thought it was a great deal . Now with new construction under way , three of his buyers have [[E2]]backed[[/E2]] out.",
+   "output": "before",
+   "metadata_docid": "ABC19980108.1830.0711",
+   "metadata_doc_char_len": 2311,
+   "metadata_query": "ABC19980108.1830.0711::ei388->ABC19980108.1830.0711::ei397",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "``I want a referendum ,'' Howard [[E1]]said[[/E1]] . ``The idea of a republic will fall to dust through the grace of almighty God.''\n    Polls have [[E2]]shown[[/E2]] public support for a republic increasing , rising from about 35 percent several years ago to about 51 percent this year , as pro-monarchist sentiment diminishes .",
+   "output": "after",
+   "metadata_docid": "APW19980213.1310",
+   "metadata_doc_char_len": 4025,
+   "metadata_query": "APW19980213.1310::ei2014->APW19980213.1310::ei2049",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "after",
+   "predict_raw_fulldoc": "after"
+  },
+  {
+   "input": "``Well may we [[E1]]say[[/E1]] `God save the Queen,' for nothing will save the republic,'' outraged monarchist delegate David Mitchell said . ``She is, I can assure you, from what I've been told , she's following the thing very closely and [[E2]]taking[[/E2]] the view it's our business .",
+   "output": "simultaneous",
+   "metadata_docid": "APW19980213.1310",
+   "metadata_doc_char_len": 4025,
+   "metadata_query": "APW19980213.1310::ei2043->APW19980213.1310::ei2065",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 1,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "after",
+   "predict_raw_fulldoc": "simultaneous"
+  },
+  {
+   "input": "Pro-republicans hope to [[E1]]have[[/E1]] an Australian president by the opening of the 2000 Olympics and the 100th anniversary of Australian federation. she is a 20th century democrat, understands that the role of the crown in Australia rests in the hands of the Australian people as it has for almost a hundred years .'' The model for a republic, adopted over bitter objections from those [[E2]]advocating[[/E2]] direct election of a president, is for presidential nominations to be made with public input and the winning candidate decided by a two-thirds majority of Parliament.",
+   "output": "after",
+   "metadata_docid": "APW19980213.1310",
+   "metadata_doc_char_len": 4025,
+   "metadata_query": "APW19980213.1310::ei2028->APW19980213.1310::ei2074",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 1,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "after"
+  },
+  {
+   "input": "[[E1]]Calling[[/E1]] for an amended constitution with a new preamble, to be written by Australian poets, republican Janet Holmes a Court said , ``We need the smell of eucalyptus in this, and the feel of red dust.''\n    Monarchists hope to defeat the republic at the referendum . ``It's no secret that she's [[E2]]indicated[[/E2]] to me ...",
+   "output": "after",
+   "metadata_docid": "APW19980213.1310",
+   "metadata_doc_char_len": 4025,
+   "metadata_query": "APW19980213.1310::ei2030->APW19980213.1310::ei2067",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "``The Australian people are [[E1]]owed[[/E1]] the opportunity of expressing an opinion on this.'' ``It would be a travesty in common sense terms of Australian democracy for that proposition not to be put to the Australian people,'' Howard said . Pro-republicans hope to have an Australian president by the [[E2]]opening[[/E2]] of the 2000 Olympics and the 100th anniversary of Australian federation.",
+   "output": "includes",
+   "metadata_docid": "APW19980213.1310",
+   "metadata_doc_char_len": 4025,
+   "metadata_query": "APW19980213.1310::ei2015->APW19980213.1310::ei2029",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "Australia has been independent since 1901 , but like many Commonwealth nations it still [[E1]]recognizes[[/E1]] the British monarch as its head of state. Former prime minister Paul Keating, who [[E2]]put[[/E2]] the republic issue in the spotlight in his unsuccessful 1996 campaign for re-election, welcomed the result .",
+   "output": "includes",
+   "metadata_docid": "APW19980213.1310",
+   "metadata_doc_char_len": 4025,
+   "metadata_query": "APW19980213.1310::ei2057->APW19980213.1310::ei2076",
+   "metadata_outcome": "emit",
+   "metadata_query_class": "deduction_resolved",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 1,
+   "predict_modeA": "after",
+   "predict_naive": "after",
+   "predict_raw_local": "after",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "``The Australian people are [[E1]]owed[[/E1]] the opportunity of expressing an opinion on this.'' ``It would be a travesty in common sense terms of Australian democracy for that proposition not to be put to the Australian people,'' Howard said . ``The phony [[E2]]war[[/E2]] has finished and the real referendum campaign has clearly begun ,'' Australians for a Constitutional Monarchy executive director Kerry Jones said .",
+   "output": "includes",
+   "metadata_docid": "APW19980213.1310",
+   "metadata_doc_char_len": 4025,
+   "metadata_query": "APW19980213.1310::ei2015->APW19980213.1310::ei2038",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "Spontaneous applause echoed through the chamber and public galleries as the crucial vote [[E1]]passed[[/E1]] by a wide margin. ``Well may we [[E2]]say[[/E2]] `God save the Queen,' for nothing will save the republic,'' outraged monarchist delegate David Mitchell said .",
+   "output": "before",
+   "metadata_docid": "APW19980213.1310",
+   "metadata_doc_char_len": 4025,
+   "metadata_query": "APW19980213.1310::ei2011->APW19980213.1310::ei2043",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "Treasurer Peter Costello, Environment Minister Robert Hill and Attorney General Daryl Williams all [[E1]]voted[[/E1]] to support the republic Friday . ``She is, I can assure you, from what I've been told , she's [[E2]]following[[/E2]] the thing very closely and taking the view it's our business .",
+   "output": "before",
+   "metadata_docid": "APW19980213.1310",
+   "metadata_doc_char_len": 4025,
+   "metadata_query": "APW19980213.1310::ei2023->APW19980213.1310::ei2063",
+   "metadata_outcome": "emit",
+   "metadata_query_class": "deduction_resolved",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 1,
+   "predict_modeA": "before",
+   "predict_naive": "before",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "Treasurer Peter Costello, Environment Minister Robert Hill and Attorney General Daryl Williams all voted to [[E1]]support[[/E1]] the republic Friday . Howard said Queen Elizabeth II is [[E2]]taking[[/E2]] a great interest in the convention .",
+   "output": "before",
+   "metadata_docid": "APW19980213.1310",
+   "metadata_doc_char_len": 4025,
+   "metadata_query": "APW19980213.1310::ei2024->APW19980213.1310::ei2059",
+   "metadata_outcome": "emit",
+   "metadata_query_class": "deduction_resolved",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 1,
+   "predict_modeA": "before",
+   "predict_naive": "before",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "simultaneous"
+  },
+  {
+   "input": "``The phony war has finished and the real referendum [[E1]]campaign[[/E1]] has clearly begun ,'' Australians for a Constitutional Monarchy executive director Kerry Jones said . Australia has been [[E2]]independent[[/E2]] since 1901 , but like many Commonwealth nations it still recognizes the British monarch as its head of state.",
+   "output": "is_included",
+   "metadata_docid": "APW19980213.1310",
+   "metadata_doc_char_len": 4025,
+   "metadata_query": "APW19980213.1310::ei2040->APW19980213.1310::ei2056",
+   "metadata_outcome": "emit",
+   "metadata_query_class": "deduction_resolved",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 2,
+   "predict_modeA": "after",
+   "predict_naive": "after",
+   "predict_raw_local": "after",
+   "predict_raw_fulldoc": "after"
+  },
+  {
+   "input": "Prime Minister John Howard, a monarchist himself, promised to put the question to a national referendum next year after convention delegates [[E1]]voted[[/E1]] 89-52 for a republic, with 11 abstentions. ``She is, I can assure you, from what I've been told , she's [[E2]]following[[/E2]] the thing very closely and taking the view it's our business .",
+   "output": "before",
+   "metadata_docid": "APW19980213.1310",
+   "metadata_doc_char_len": 4025,
+   "metadata_query": "APW19980213.1310::ei2007->APW19980213.1310::ei2063",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 1,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "``I want a referendum ,'' Howard [[E1]]said[[/E1]] . Howard said Queen Elizabeth II is [[E2]]taking[[/E2]] a great interest in the convention .",
+   "output": "simultaneous",
+   "metadata_docid": "APW19980213.1310",
+   "metadata_doc_char_len": 4025,
+   "metadata_query": "APW19980213.1310::ei2014->APW19980213.1310::ei2059",
+   "metadata_outcome": "emit",
+   "metadata_query_class": "deduction_resolved",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 2,
+   "predict_modeA": "includes",
+   "predict_naive": "includes",
+   "predict_raw_local": "simultaneous",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "Spontaneous applause echoed through the chamber and public galleries as the crucial vote [[E1]]passed[[/E1]] by a wide margin. ``The idea of a republic will [[E2]]fall[[/E2]] to dust through the grace of almighty God.''\n    Polls have shown public support for a republic increasing , rising from about 35 percent several years ago to about 51 percent this year , as pro-monarchist sentiment diminishes .",
+   "output": "before",
+   "metadata_docid": "APW19980213.1310",
+   "metadata_doc_char_len": 4025,
+   "metadata_query": "APW19980213.1310::ei2011->APW19980213.1310::ei2047",
+   "metadata_outcome": "emit",
+   "metadata_query_class": "deduction_resolved",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 2,
+   "predict_modeA": "before",
+   "predict_naive": "before",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "``The idea of a republic will [[E1]]fall[[/E1]] to dust through the grace of almighty God.''\n    Polls have shown public support for a republic increasing , rising from about 35 percent several years ago to about 51 percent this year , as pro-monarchist sentiment diminishes . she is a 20th century democrat, understands that the role of the crown in Australia rests in the hands of the Australian people as it has for almost a hundred years .'' The model for a republic, adopted over bitter objections from those [[E2]]advocating[[/E2]] direct election of a president, is for presidential nominations to be made with public input and the winning candidate decided by a two-thirds majority of Parliament.",
+   "output": "after",
+   "metadata_docid": "APW19980213.1310",
+   "metadata_doc_char_len": 4025,
+   "metadata_query": "APW19980213.1310::ei2047->APW19980213.1310::ei2074",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "after",
+   "predict_raw_fulldoc": "after"
+  },
+  {
+   "input": "``This convention will be seen as a turning point in our history,'' Australian Republican Movement spokeswoman Mary Delahunty [[E1]]said[[/E1]] . Calling for an amended constitution with a new preamble, to be written by Australian poets, republican Janet Holmes a Court said , ``We need the smell of eucalyptus in this, and the feel of red dust.''\n    Monarchists hope to [[E2]]defeat[[/E2]] the republic at the referendum .",
+   "output": "before",
+   "metadata_docid": "APW19980213.1310",
+   "metadata_doc_char_len": 4025,
+   "metadata_query": "APW19980213.1310::ei2026->APW19980213.1310::ei2036",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 1,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "Prime Minister John Howard, a monarchist himself, promised to put the [[E1]]question[[/E1]] to a national referendum next year after convention delegates voted 89-52 for a republic, with 11 abstentions. ``The phony war has finished and the real referendum [[E2]]campaign[[/E2]] has clearly begun ,'' Australians for a Constitutional Monarchy executive director Kerry Jones said .",
+   "output": "after",
+   "metadata_docid": "APW19980213.1310",
+   "metadata_doc_char_len": 4025,
+   "metadata_query": "APW19980213.1310::ei2005->APW19980213.1310::ei2040",
+   "metadata_outcome": "emit",
+   "metadata_query_class": "deduction_resolved",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 2,
+   "predict_modeA": "before",
+   "predict_naive": "before",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "``I want a referendum ,'' Howard [[E1]]said[[/E1]] . ``This convention will be [[E2]]seen[[/E2]] as a turning point in our history,'' Australian Republican Movement spokeswoman Mary Delahunty said .",
+   "output": "before",
+   "metadata_docid": "APW19980213.1310",
+   "metadata_doc_char_len": 4025,
+   "metadata_query": "APW19980213.1310::ei2014->APW19980213.1310::ei2025",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "``The idea of a republic will fall to dust through the grace of almighty God.''\n    Polls have shown public support for a republic increasing , rising from about [[E1]]35[[/E1]] percent several years ago to about 51 percent this year , as pro-monarchist sentiment diminishes . Howard said Queen Elizabeth II is taking a great interest in the [[E2]]convention[[/E2]] .",
+   "output": "before",
+   "metadata_docid": "APW19980213.1310",
+   "metadata_doc_char_len": 4025,
+   "metadata_query": "APW19980213.1310::ei2080->APW19980213.1310::ei2060",
+   "metadata_outcome": "collapse",
+   "metadata_query_class": "closure_collapse",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 1,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "Prime Minister John Howard, a monarchist himself, promised to put the [[E1]]question[[/E1]] to a national referendum next year after convention delegates voted 89-52 for a republic, with 11 abstentions. she is a 20th century democrat, understands that the role of the crown in Australia rests in the hands of the Australian people as it has for almost a hundred years .'' The model for a republic, [[E2]]adopted[[/E2]] over bitter objections from those advocating direct election of a president, is for presidential nominations to be made with public input and the winning candidate decided by a two-thirds majority of Parliament.",
+   "output": "after",
+   "metadata_docid": "APW19980213.1310",
+   "metadata_doc_char_len": 4025,
+   "metadata_query": "APW19980213.1310::ei2005->APW19980213.1310::ei2072",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "``Well may we [[E1]]say[[/E1]] `God save the Queen,' for nothing will save the republic,'' outraged monarchist delegate David Mitchell said . Howard said Queen Elizabeth II is taking a great interest in the [[E2]]convention[[/E2]] .",
+   "output": "simultaneous",
+   "metadata_docid": "APW19980213.1310",
+   "metadata_doc_char_len": 4025,
+   "metadata_query": "APW19980213.1310::ei2043->APW19980213.1310::ei2060",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 1,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "she is a 20th century democrat, understands that the role of the crown in Australia rests in the hands of the Australian people as it [[E1]]has[[/E1]] for almost a hundred years .'' The model for a republic, adopted over bitter objections from those advocating direct election of a president, is for presidential nominations to be made with public input and the winning candidate decided by a two-thirds majority of Parliament. Former prime minister Paul Keating, who put the republic issue in the spotlight in his unsuccessful 1996 campaign for re-election, [[E2]]welcomed[[/E2]] the result .",
+   "output": "includes",
+   "metadata_docid": "APW19980213.1310",
+   "metadata_doc_char_len": 4025,
+   "metadata_query": "APW19980213.1310::ei2071->APW19980213.1310::ei2078",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "Pro-republicans [[E1]]hope[[/E1]] to have an Australian president by the opening of the 2000 Olympics and the 100th anniversary of Australian federation. Howard said Queen Elizabeth II is taking a great interest in the [[E2]]convention[[/E2]] .",
+   "output": "includes",
+   "metadata_docid": "APW19980213.1310",
+   "metadata_doc_char_len": 4025,
+   "metadata_query": "APW19980213.1310::ei2027->APW19980213.1310::ei2060",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "Prime Minister John Howard, a monarchist himself, promised to put the [[E1]]question[[/E1]] to a national referendum next year after convention delegates voted 89-52 for a republic, with 11 abstentions. ``Well may we [[E2]]say[[/E2]] `God save the Queen,' for nothing will save the republic,'' outraged monarchist delegate David Mitchell said .",
+   "output": "after",
+   "metadata_docid": "APW19980213.1310",
+   "metadata_doc_char_len": 4025,
+   "metadata_query": "APW19980213.1310::ei2005->APW19980213.1310::ei2043",
+   "metadata_outcome": "emit",
+   "metadata_query_class": "deduction_resolved",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 1,
+   "predict_modeA": "after",
+   "predict_naive": "after",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "``Well may we say `God save the Queen,' for nothing will [[E1]]save[[/E1]] the republic,'' outraged monarchist delegate David Mitchell said . Australia has been [[E2]]independent[[/E2]] since 1901 , but like many Commonwealth nations it still recognizes the British monarch as its head of state.",
+   "output": "is_included",
+   "metadata_docid": "APW19980213.1310",
+   "metadata_doc_char_len": 4025,
+   "metadata_query": "APW19980213.1310::ei2045->APW19980213.1310::ei2056",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 1,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "after",
+   "predict_raw_fulldoc": "after"
+  },
+  {
+   "input": "Australia has been independent since 1901 , but like many Commonwealth nations it still [[E1]]recognizes[[/E1]] the British monarch as its head of state. ``She is, I can assure you, from what I've been told , she's [[E2]]following[[/E2]] the thing very closely and taking the view it's our business .",
+   "output": "includes",
+   "metadata_docid": "APW19980213.1310",
+   "metadata_doc_char_len": 4025,
+   "metadata_query": "APW19980213.1310::ei2057->APW19980213.1310::ei2063",
+   "metadata_outcome": "emit",
+   "metadata_query_class": "deduction_resolved",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 3,
+   "predict_modeA": "simultaneous",
+   "predict_naive": "simultaneous",
+   "predict_raw_local": "simultaneous",
+   "predict_raw_fulldoc": "simultaneous"
+  },
+  {
+   "input": "APW19980213.1310\n    NEWS STORY 02/13/1998 14:26:00 \n    w2112 Cx1f wstm-\n    r i Cx13 Cx11 BC-Australia-Republic 4thLd-Writethru 02-13 0603\n    BC-Australia-Republic, 4th Ld-Writethru,0602\n    Constitutional convention votes for republic, against links to\n    British monarchy QL\n    UR Eds: ADDS 2 grafs at end with reaction from former prime minister\n    Paul Keating QL\n    UR AP Photo CANB101,102,103 QL\n    UR By ALAN THORNHILL QC\n    UR Associated Press Writer QC\n    CANBERRA, Australia (AP) _ Turning its back on 210 years of loyalty to the British royal family, a constitutional convention [[E1]]voted[[/E1]] overwhelmingly Friday to make Australia a republic under its own president. Australia has been [[E2]]independent[[/E2]] since 1901 , but like many Commonwealth nations it still recognizes the British monarch as its head of state.",
+   "output": "is_included",
+   "metadata_docid": "APW19980213.1310",
+   "metadata_doc_char_len": 4025,
+   "metadata_query": "APW19980213.1310::ei2001->APW19980213.1310::ei2056",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 1,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "after",
+   "predict_raw_fulldoc": "after"
+  },
+  {
+   "input": "Spontaneous applause echoed through the chamber and public galleries as the crucial [[E1]]vote[[/E1]] passed by a wide margin. Howard said Queen Elizabeth II is taking a great interest in the [[E2]]convention[[/E2]] .",
+   "output": "before",
+   "metadata_docid": "APW19980213.1310",
+   "metadata_doc_char_len": 4025,
+   "metadata_query": "APW19980213.1310::ei2010->APW19980213.1310::ei2060",
+   "metadata_outcome": "emit",
+   "metadata_query_class": "deduction_resolved",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 1,
+   "predict_modeA": "before",
+   "predict_naive": "before",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  },
+  {
+   "input": "``The Australian people are owed the opportunity of expressing an opinion on this.'' ``It would be a [[E1]]travesty[[/E1]] in common sense terms of Australian democracy for that proposition not to be put to the Australian people,'' Howard said . ``She is, I can assure you, from what I've been told , she's following the thing very closely and [[E2]]taking[[/E2]] the view it's our business .",
+   "output": "after",
+   "metadata_docid": "APW19980213.1310",
+   "metadata_doc_char_len": 4025,
+   "metadata_query": "APW19980213.1310::ei2017->APW19980213.1310::ei2065",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 1,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "simultaneous",
+   "predict_raw_fulldoc": "simultaneous"
+  },
+  {
+   "input": "Calling for an amended constitution with a new preamble, to be written by Australian poets, republican Janet Holmes a Court said , ``We [[E1]]need[[/E1]] the smell of eucalyptus in this, and the feel of red dust.''\n    Monarchists hope to defeat the republic at the referendum . ``The idea of a republic will fall to [[E2]]dust[[/E2]] through the grace of almighty God.''\n    Polls have shown public support for a republic increasing , rising from about 35 percent several years ago to about 51 percent this year , as pro-monarchist sentiment diminishes .",
+   "output": "includes",
+   "metadata_docid": "APW19980213.1310",
+   "metadata_doc_char_len": 4025,
+   "metadata_query": "APW19980213.1310::ei2034->APW19980213.1310::ei2048",
+   "metadata_outcome": "abstain",
+   "metadata_query_class": "extraction_limited_abstain",
+   "metadata_stratum": "ge3_cyclic",
+   "metadata_n_pc2_fired": 0,
+   "predict_modeA": "ABSTAIN",
+   "predict_naive": "ABSTAIN",
+   "predict_raw_local": "before",
+   "predict_raw_fulldoc": "before"
+  }
+ ],
+ "per_document_published": [
+  {
+   "docid": "CNN19980213.2130.0155",
+   "char_len": 2197,
+   "atomic_PRF": {
+    "tag": "REAL-LLM-READ",
+    "disjunctive_set_recall": 0.8454,
+    "recall_ci95": [
+     0.8454106280193237,
+     0.8454106280193237
+    ],
+    "most_likely_precision": 0.4783,
+    "f1": 0.6109,
+    "n_scorable_edges": 207,
+    "n_committed_reads": 207,
+    "breadth_mean": 2.2947,
+    "note": "recall = P(gold start-point relation subseteq emitted disjunctive set); precision = P(single most-likely read == gold | a single relation committed). Held-fixed MEASURED control: atomic extraction is measured, not improved."
+   },
+   "outcomes": {
+    "emit": 7,
+    "abstain": 23,
+    "collapse_modeB": 0
+   },
+   "confident_wrong": {
+    "modeA": {
+     "n_queries": 30,
+     "coverage": 0.2333,
+     "abstention": 0.7667,
+     "n_answered": 7,
+     "confident_wrong_count": 3,
+     "confident_wrong_rate_over_pool": 0.1,
+     "confident_wrong_rate_among_answered": 0.4286
+    },
+    "raw_local": {
+     "n_queries": 30,
+     "coverage": 1.0,
+     "abstention": 0.0,
+     "n_answered": 30,
+     "confident_wrong_count": 19,
+     "confident_wrong_rate_over_pool": 0.6333,
+     "confident_wrong_rate_among_answered": 0.6333
+    },
+    "raw_fulldoc": {
+     "n_queries": 30,
+     "coverage": 1.0,
+     "abstention": 0.0,
+     "n_answered": 30,
+     "confident_wrong_count": 21,
+     "confident_wrong_rate_over_pool": 0.7,
+     "confident_wrong_rate_among_answered": 0.7
+    },
+    "naive": {
+     "n_queries": 30,
+     "coverage": 0.1667,
+     "abstention": 0.8333,
+     "n_answered": 5,
+     "confident_wrong_count": 2,
+     "confident_wrong_rate_over_pool": 0.0667,
+     "confident_wrong_rate_among_answered": 0.4
+    }
+   },
+   "hallucination_reduction_vs_fulldoc_raw": {
+    "comparison": "Mode-A (closure-certified) vs whole-document raw LLM",
+    "confident_wrong_rate_modeA_over_pool": 0.1,
+    "confident_wrong_rate_raw_over_pool": 0.7,
+    "hallucination_reduction_over_pool": 0.6,
+    "coverage_modeA": 0.2333,
+    "coverage_raw": 1.0,
+    "n_queries": 30,
+    "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point estimate, NOT a powered test."
+   }
+  },
+  {
+   "docid": "ABC19980108.1830.0711",
+   "char_len": 2311,
+   "atomic_PRF": {
+    "tag": "REAL-LLM-READ",
+    "disjunctive_set_recall": 0.9042,
+    "recall_ci95": [
+     0.9041666666666667,
+     0.9041666666666667
+    ],
+    "most_likely_precision": 0.4958,
+    "f1": 0.6404,
+    "n_scorable_edges": 240,
+    "n_committed_reads": 240,
+    "breadth_mean": 2.3417,
+    "note": "recall = P(gold start-point relation subseteq emitted disjunctive set); precision = P(single most-likely read == gold | a single relation committed). Held-fixed MEASURED control: atomic extraction is measured, not improved."
+   },
+   "outcomes": {
+    "emit": 5,
+    "abstain": 24,
+    "collapse_modeB": 1
+   },
+   "confident_wrong": {
+    "modeA": {
+     "n_queries": 30,
+     "coverage": 0.1667,
+     "abstention": 0.8333,
+     "n_answered": 5,
+     "confident_wrong_count": 1,
+     "confident_wrong_rate_over_pool": 0.0333,
+     "confident_wrong_rate_among_answered": 0.2
+    },
+    "raw_local": {
+     "n_queries": 30,
+     "coverage": 1.0,
+     "abstention": 0.0,
+     "n_answered": 30,
+     "confident_wrong_count": 10,
+     "confident_wrong_rate_over_pool": 0.3333,
+     "confident_wrong_rate_among_answered": 0.3333
+    },
+    "raw_fulldoc": {
+     "n_queries": 30,
+     "coverage": 1.0,
+     "abstention": 0.0,
+     "n_answered": 30,
+     "confident_wrong_count": 9,
+     "confident_wrong_rate_over_pool": 0.3,
+     "confident_wrong_rate_among_answered": 0.3
+    },
+    "naive": {
+     "n_queries": 30,
+     "coverage": 0.1667,
+     "abstention": 0.8333,
+     "n_answered": 5,
+     "confident_wrong_count": 1,
+     "confident_wrong_rate_over_pool": 0.0333,
+     "confident_wrong_rate_among_answered": 0.2
+    }
+   },
+   "hallucination_reduction_vs_fulldoc_raw": {
+    "comparison": "Mode-A (closure-certified) vs whole-document raw LLM",
+    "confident_wrong_rate_modeA_over_pool": 0.0333,
+    "confident_wrong_rate_raw_over_pool": 0.3,
+    "hallucination_reduction_over_pool": 0.2667,
+    "coverage_modeA": 0.1667,
+    "coverage_raw": 1.0,
+    "n_queries": 30,
+    "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point estimate, NOT a powered test."
+   }
+  },
+  {
+   "docid": "APW19980213.1310",
+   "char_len": 4025,
+   "atomic_PRF": {
+    "tag": "REAL-LLM-READ",
+    "disjunctive_set_recall": 0.7689,
+    "recall_ci95": [
+     0.7689075630252101,
+     0.7689075630252101
+    ],
+    "most_likely_precision": 0.3571,
+    "f1": 0.4877,
+    "n_scorable_edges": 238,
+    "n_committed_reads": 238,
+    "breadth_mean": 2.1429,
+    "note": "recall = P(gold start-point relation subseteq emitted disjunctive set); precision = P(single most-likely read == gold | a single relation committed). Held-fixed MEASURED control: atomic extraction is measured, not improved."
+   },
+   "outcomes": {
+    "emit": 10,
+    "abstain": 19,
+    "collapse_modeB": 1
+   },
+   "confident_wrong": {
+    "modeA": {
+     "n_queries": 30,
+     "coverage": 0.3333,
+     "abstention": 0.6667,
+     "n_answered": 10,
+     "confident_wrong_count": 5,
+     "confident_wrong_rate_over_pool": 0.1667,
+     "confident_wrong_rate_among_answered": 0.5
+    },
+    "raw_local": {
+     "n_queries": 30,
+     "coverage": 1.0,
+     "abstention": 0.0,
+     "n_answered": 30,
+     "confident_wrong_count": 18,
+     "confident_wrong_rate_over_pool": 0.6,
+     "confident_wrong_rate_among_answered": 0.6
+    },
+    "raw_fulldoc": {
+     "n_queries": 30,
+     "coverage": 1.0,
+     "abstention": 0.0,
+     "n_answered": 30,
+     "confident_wrong_count": 18,
+     "confident_wrong_rate_over_pool": 0.6,
+     "confident_wrong_rate_among_answered": 0.6
+    },
+    "naive": {
+     "n_queries": 30,
+     "coverage": 0.3333,
+     "abstention": 0.6667,
+     "n_answered": 10,
+     "confident_wrong_count": 5,
+     "confident_wrong_rate_over_pool": 0.1667,
+     "confident_wrong_rate_among_answered": 0.5
+    }
+   },
+   "hallucination_reduction_vs_fulldoc_raw": {
+    "comparison": "Mode-A (closure-certified) vs whole-document raw LLM",
+    "confident_wrong_rate_modeA_over_pool": 0.1667,
+    "confident_wrong_rate_raw_over_pool": 0.6,
+    "hallucination_reduction_over_pool": 0.4333,
+    "coverage_modeA": 0.3333,
+    "coverage_raw": 1.0,
+    "n_queries": 30,
+    "note": "Reduction = raw confident-wrong rate MINUS Mode-A confident-wrong rate, both over the full query pool; each method's coverage (fraction answered) is stated beside it. Operational case-study point estimate, NOT a powered test."
+   }
+  }
+ ],
+ "temporal_trace_graphs": [
+  {
+   "docid": "CNN19980213.2130.0155",
+   "kind": "trace_graph_narrowing",
+   "query": [
+    "CNN19980213.2130.0155::ei605",
+    "CNN19980213.2130.0155::ei618"
+   ],
+   "gold_coarse": "before",
+   "induced_path_edges": [
+    {
+     "from": "CNN19980213.2130.0155::ei605",
+     "to": "CNN19980213.2130.0155::ei637",
+     "local_read_point": "<",
+     "local_read_coarse": "before",
+     "most_likely": "before",
+     "conf": 0.9
+    },
+    {
+     "from": "CNN19980213.2130.0155::ei605",
+     "to": "CNN19980213.2130.0155::ei622",
+     "local_read_point": "<",
+     "local_read_coarse": "before",
+     "most_likely": "before",
+     "conf": 0.9
+    },
+    {
+     "from": "CNN19980213.2130.0155::ei605",
+     "to": "CNN19980213.2130.0155::ei606",
+     "local_read_point": "<",
+     "local_read_coarse": "before",
+     "most_likely": "before",
+     "conf": 0.9
+    },
+    {
+     "from": "CNN19980213.2130.0155::ei618",
+     "to": "CNN19980213.2130.0155::ei637",
+     "local_read_point": "<",
+     "local_read_coarse": "before",
+     "most_likely": "before",
+     "conf": 0.9
+    },
+    {
+     "from": "CNN19980213.2130.0155::ei618",
+     "to": "CNN19980213.2130.0155::ei622",
+     "local_read_point": "<",
+     "local_read_coarse": "before",
+     "most_likely": "before",
+     "conf": 0.9
+    },
+    {
+     "from": "CNN19980213.2130.0155::ei618",
+     "to": "CNN19980213.2130.0155::ei606",
+     "local_read_point": ">",
+     "local_read_coarse": "after",
+     "most_likely": "before",
+     "conf": 0.9
+    },
+    {
+     "from": "CNN19980213.2130.0155::ei637",
+     "to": "CNN19980213.2130.0155::ei622",
+     "local_read_point": ">",
+     "local_read_coarse": "after",
+     "most_likely": "before",
+     "conf": 0.9
+    },
+    {
+     "from": "CNN19980213.2130.0155::ei637",
+     "to": "CNN19980213.2130.0155::ei606",
+     "local_read_point": ">",
+     "local_read_coarse": "after",
+     "most_likely": "before",
+     "conf": 0.9
+    },
+    {
+     "from": "CNN19980213.2130.0155::ei622",
+     "to": "CNN19980213.2130.0155::ei606",
+     "local_read_point": ">",
+     "local_read_coarse": "after",
+     "most_likely": "before",
+     "conf": 0.9
+    }
+   ],
+   "naive_single_pass_pred": "before",
+   "modeA_closure_pred": "before",
+   "modeA_outcome": "emit",
+   "n_pc2_fired": 1
+  },
+  {
+   "docid": "CNN19980213.2130.0155",
+   "kind": "trace_graph_abstain",
+   "query": [
+    "CNN19980213.2130.0155::ei585",
+    "CNN19980213.2130.0155::ei619"
+   ],
+   "gold_coarse": "after",
+   "induced_path_edges": [
+    {
+     "from": "CNN19980213.2130.0155::ei585",
+     "to": "CNN19980213.2130.0155::ei592",
+     "local_read_point": "UNIVERSE",
+     "local_read_coarse": null,
+     "most_likely": "before",
+     "conf": 0.4
+    },
+    {
+     "from": "CNN19980213.2130.0155::ei585",
+     "to": "CNN19980213.2130.0155::ei599",
+     "local_read_point": "UNIVERSE",
+     "local_read_coarse": null,
+     "most_likely": "before",
+     "conf": 0.4
+    },
+    {
+     "from": "CNN19980213.2130.0155::ei585",
+     "to": "CNN19980213.2130.0155::ei609",
+     "local_read_point": "UNIVERSE",
+     "local_read_coarse": null,
+     "most_likely": "simultaneous",
+     "conf": 0.4
+    },
+    {
+     "from": "CNN19980213.2130.0155::ei619",
+     "to": "CNN19980213.2130.0155::ei592",
+     "local_read_point": "UNIVERSE",
+     "local_read_coarse": null,
+     "most_likely": "after",
+     "conf": 0.4
+    },
+    {
+     "from": "CNN19980213.2130.0155::ei619",
+     "to": "CNN19980213.2130.0155::ei599",
+     "local_read_point": "UNIVERSE",
+     "local_read_coarse": null,
+     "most_likely": "after",
+     "conf": 0.4
+    },
+    {
+     "from": "CNN19980213.2130.0155::ei619",
+     "to": "CNN19980213.2130.0155::ei609",
+     "local_read_point": "=|>",
+     "local_read_coarse": "is_included",
+     "most_likely": "simultaneous",
+     "conf": 0.7
+    },
+    {
+     "from": "CNN19980213.2130.0155::ei592",
+     "to": "CNN19980213.2130.0155::ei599",
+     "local_read_point": "<",
+     "local_read_coarse": "before",
+     "most_likely": "before",
+     "conf": 0.9
+    },
+    {
+     "from": "CNN19980213.2130.0155::ei592",
+     "to": "CNN19980213.2130.0155::ei609",
+     "local_read_point": "UNIVERSE",
+     "local_read_coarse": null,
+     "most_likely": "after",
+     "conf": 0.4
+    },
+    {
+     "from": "CNN19980213.2130.0155::ei599",
+     "to": "CNN19980213.2130.0155::ei609",
+     "local_read_point": "UNIVERSE",
+     "local_read_coarse": null,
+     "most_likely": "before",
+     "conf": 0.4
+    }
+   ],
+   "naive_single_pass_pred": "ABSTAIN",
+   "modeA_closure_pred": "ABSTAIN",
+   "modeA_outcome": "abstain",
+   "n_pc2_fired": 0
+  },
+  {
+   "docid": "ABC19980108.1830.0711",
+   "kind": "trace_graph_narrowing",
+   "query": [
+    "ABC19980108.1830.0711::ei389",
+    "ABC19980108.1830.0711::ei426"
+   ],
+   "gold_coarse": "before",
+   "induced_path_edges": [
+    {
+     "from": "ABC19980108.1830.0711::ei389",
+     "to": "ABC19980108.1830.0711::ei424",
+     "local_read_point": "<",
+     "local_read_coarse": "before",
+     "most_likely": "before",
+     "conf": 0.9
+    },
+    {
+     "from": "ABC19980108.1830.0711::ei389",
+     "to": "ABC19980108.1830.0711::ei402",
+     "local_read_point": "UNIVERSE",
+     "local_read_coarse": null,
+     "most_likely": "before",
+     "conf": 0.4
+    },
+    {
+     "from": "ABC19980108.1830.0711::ei389",
+     "to": "ABC19980108.1830.0711::ei412",
+     "local_read_point": "<",
+     "local_read_coarse": "before",
+     "most_likely": "before",
+     "conf": 0.9
+    },
+    {
+     "from": "ABC19980108.1830.0711::ei426",
+     "to": "ABC19980108.1830.0711::ei424",
+     "local_read_point": "UNIVERSE",
+     "local_read_coarse": null,
+     "most_likely": "before",
+     "conf": 0.4
+    },
+    {
+     "from": "ABC19980108.1830.0711::ei426",
+     "to": "ABC19980108.1830.0711::ei402",
+     "local_read_point": ">",
+     "local_read_coarse": "after",
+     "most_likely": "before",
+     "conf": 0.9
+    },
+    {
+     "from": "ABC19980108.1830.0711::ei426",
+     "to": "ABC19980108.1830.0711::ei412",
+     "local_read_point": "=|>",
+     "local_read_coarse": "is_included",
+     "most_likely": "before",
+     "conf": 0.7
+    },
+    {
+     "from": "ABC19980108.1830.0711::ei424",
+     "to": "ABC19980108.1830.0711::ei402",
+     "local_read_point": ">",
+     "local_read_coarse": "after",
+     "most_likely": "before",
+     "conf": 0.9
+    },
+    {
+     "from": "ABC19980108.1830.0711::ei424",
+     "to": "ABC19980108.1830.0711::ei412",
+     "local_read_point": ">",
+     "local_read_coarse": "after",
+     "most_likely": "before",
+     "conf": 0.9
+    },
+    {
+     "from": "ABC19980108.1830.0711::ei402",
+     "to": "ABC19980108.1830.0711::ei412",
+     "local_read_point": "UNIVERSE",
+     "local_read_coarse": null,
+     "most_likely": "after",
+     "conf": 0.4
+    }
+   ],
+   "naive_single_pass_pred": "before",
+   "modeA_closure_pred": "before",
+   "modeA_outcome": "emit",
+   "n_pc2_fired": 1
+  },
+  {
+   "docid": "ABC19980108.1830.0711",
+   "kind": "trace_graph_abstain",
+   "query": [
+    "ABC19980108.1830.0711::ei375",
+    "ABC19980108.1830.0711::ei433"
+   ],
+   "gold_coarse": "simultaneous",
+   "induced_path_edges": [
+    {
+     "from": "ABC19980108.1830.0711::ei375",
+     "to": "ABC19980108.1830.0711::ei393",
+     "local_read_point": "UNIVERSE",
+     "local_read_coarse": null,
+     "most_likely": "after",
+     "conf": 0.4
+    },
+    {
+     "from": "ABC19980108.1830.0711::ei375",
+     "to": "ABC19980108.1830.0711::ei398",
+     "local_read_point": "UNIVERSE",
+     "local_read_coarse": null,
+     "most_likely": "before",
+     "conf": 0.4
+    },
+    {
+     "from": "ABC19980108.1830.0711::ei375",
+     "to": "ABC19980108.1830.0711::ei428",
+     "local_read_point": "UNIVERSE",
+     "local_read_coarse": null,
+     "most_likely": "before",
+     "conf": 0.4
+    },
+    {
+     "from": "ABC19980108.1830.0711::ei433",
+     "to": "ABC19980108.1830.0711::ei393",
+     "local_read_point": "UNIVERSE",
+     "local_read_coarse": null,
+     "most_likely": "before",
+     "conf": 0.4
+    },
+    {
+     "from": "ABC19980108.1830.0711::ei433",
+     "to": "ABC19980108.1830.0711::ei398",
+     "local_read_point": "UNIVERSE",
+     "local_read_coarse": null,
+     "most_likely": "simultaneous",
+     "conf": 0.4
+    },
+    {
+     "from": "ABC19980108.1830.0711::ei433",
+     "to": "ABC19980108.1830.0711::ei428",
+     "local_read_point": "UNIVERSE",
+     "local_read_coarse": null,
+     "most_likely": "before",
+     "conf": 0.4
+    },
+    {
+     "from": "ABC19980108.1830.0711::ei393",
+     "to": "ABC19980108.1830.0711::ei398",
+     "local_read_point": "UNIVERSE",
+     "local_read_coarse": null,
+     "most_likely": "before",
+     "conf": 0.4
+    },
+    {
+     "from": "ABC19980108.1830.0711::ei393",
+     "to": "ABC19980108.1830.0711::ei428",
+     "local_read_point": "UNIVERSE",
+     "local_read_coarse": null,
+     "most_likely": "after",
+     "conf": 0.4
+    },
+    {
+     "from": "ABC19980108.1830.0711::ei398",
+     "to": "ABC19980108.1830.0711::ei428",
+     "local_read_point": "UNIVERSE",
+     "local_read_coarse": null,
+     "most_likely": "before",
+     "conf": 0.4
+    }
+   ],
+   "naive_single_pass_pred": "ABSTAIN",
+   "modeA_closure_pred": "ABSTAIN",
+   "modeA_outcome": "abstain",
+   "n_pc2_fired": 0
+  },
+  {
+   "docid": "APW19980213.1310",
+   "kind": "trace_graph_narrowing",
+   "query": [
+    "APW19980213.1310::ei2023",
+    "APW19980213.1310::ei2063"
+   ],
+   "gold_coarse": "before",
+   "induced_path_edges": [
+    {
+     "from": "APW19980213.1310::ei2023",
+     "to": "APW19980213.1310::ei2039",
+     "local_read_point": "<",
+     "local_read_coarse": "before",
+     "most_likely": "before",
+     "conf": 0.9
+    },
+    {
+     "from": "APW19980213.1310::ei2023",
+     "to": "APW19980213.1310::ei2061",
+     "local_read_point": "UNIVERSE",
+     "local_read_coarse": null,
+     "most_likely": "before",
+     "conf": 0.4
+    },
+    {
+     "from": "APW19980213.1310::ei2023",
+     "to": "APW19980213.1310::ei2026",
+     "local_read_point": "UNIVERSE",
+     "local_read_coarse": null,
+     "most_likely": "after",
+     "conf": 0.5
+    },
+    {
+     "from": "APW19980213.1310::ei2063",
+     "to": "APW19980213.1310::ei2039",
+     "local_read_point": ">",
+     "local_read_coarse": "after",
+     "most_likely": "before",
+     "conf": 0.9
+    },
+    {
+     "from": "APW19980213.1310::ei2063",
+     "to": "APW19980213.1310::ei2061",
+     "local_read_point": "UNIVERSE",
+     "local_read_coarse": null,
+     "most_likely": "simultaneous",
+     "conf": 0.4
+    },
+    {
+     "from": "APW19980213.1310::ei2063",
+     "to": "APW19980213.1310::ei2026",
+     "local_read_point": "=|>",
+     "local_read_coarse": "is_included",
+     "most_likely": "before",
+     "conf": 0.7
+    },
+    {
+     "from": "APW19980213.1310::ei2039",
+     "to": "APW19980213.1310::ei2061",
+     "local_read_point": "UNIVERSE",
+     "local_read_coarse": null,
+     "most_likely": "before",
+     "conf": 0.4
+    },
+    {
+     "from": "APW19980213.1310::ei2039",
+     "to": "APW19980213.1310::ei2026",
+     "local_read_point": "UNIVERSE",
+     "local_read_coarse": null,
+     "most_likely": "before",
+     "conf": 0.5
+    },
+    {
+     "from": "APW19980213.1310::ei2061",
+     "to": "APW19980213.1310::ei2026",
+     "local_read_point": "UNIVERSE",
+     "local_read_coarse": null,
+     "most_likely": "before",
+     "conf": 0.4
+    }
+   ],
+   "naive_single_pass_pred": "before",
+   "modeA_closure_pred": "before",
+   "modeA_outcome": "emit",
+   "n_pc2_fired": 1
+  },
+  {
+   "docid": "APW19980213.1310",
+   "kind": "trace_graph_abstain",
+   "query": [
+    "APW19980213.1310::ei2014",
+    "APW19980213.1310::ei2049"
+   ],
+   "gold_coarse": "after",
+   "induced_path_edges": [
+    {
+     "from": "APW19980213.1310::ei2014",
+     "to": "APW19980213.1310::ei2024",
+     "local_read_point": "UNIVERSE",
+     "local_read_coarse": null,
+     "most_likely": "before",
+     "conf": 0.6
+    },
+    {
+     "from": "APW19980213.1310::ei2014",
+     "to": "APW19980213.1310::ei2028",
+     "local_read_point": "<",
+     "local_read_coarse": "before",
+     "most_likely": "before",
+     "conf": 0.9
+    },
+    {
+     "from": "APW19980213.1310::ei2014",
+     "to": "APW19980213.1310::ei2070",
+     "local_read_point": "UNIVERSE",
+     "local_read_coarse": null,
+     "most_likely": "simultaneous",
+     "conf": 0.4
+    },
+    {
+     "from": "APW19980213.1310::ei2049",
+     "to": "APW19980213.1310::ei2024",
+     "local_read_point": "UNIVERSE",
+     "local_read_coarse": null,
+     "most_likely": "before",
+     "conf": 0.4
+    },
+    {
+     "from": "APW19980213.1310::ei2049",
+     "to": "APW19980213.1310::ei2028",
+     "local_read_point": "UNIVERSE",
+     "local_read_coarse": null,
+     "most_likely": "after",
+     "conf": 0.4
+    },
+    {
+     "from": "APW19980213.1310::ei2049",
+     "to": "APW19980213.1310::ei2070",
+     "local_read_point": "UNIVERSE",
+     "local_read_coarse": null,
+     "most_likely": "simultaneous",
+     "conf": 0.4
+    },
+    {
+     "from": "APW19980213.1310::ei2024",
+     "to": "APW19980213.1310::ei2028",
+     "local_read_point": "<",
+     "local_read_coarse": "before",
+     "most_likely": "before",
+     "conf": 0.9
+    },
+    {
+     "from": "APW19980213.1310::ei2024",
+     "to": "APW19980213.1310::ei2070",
+     "local_read_point": "UNIVERSE",
+     "local_read_coarse": null,
+     "most_likely": "simultaneous",
+     "conf": 0.4
+    },
+    {
+     "from": "APW19980213.1310::ei2028",
+     "to": "APW19980213.1310::ei2070",
+     "local_read_point": "UNIVERSE",
+     "local_read_coarse": null,
+     "most_likely": "before",
+     "conf": 0.4
+    }
+   ],
+   "naive_single_pass_pred": "ABSTAIN",
+   "modeA_closure_pred": "ABSTAIN",
+   "modeA_outcome": "abstain",
+   "n_pc2_fired": 0
+  }
+ ],
+ "kinship_composition_table": {
+  "relation_types": {
+   "child": {
+    "symmetric": false,
+    "inverse": "inv-child"
+   },
+   "inv-child": {
+    "symmetric": false,
+    "inverse": "child"
+   },
+   "SO": {
+    "symmetric": true,
+    "inverse": null
+   },
+   "sibling": {
+    "symmetric": true,
+    "inverse": null
+   },
+   "grand": {
+    "symmetric": false,
+    "inverse": "inv-grand"
+   },
+   "inv-grand": {
+    "symmetric": false,
+    "inverse": "grand"
+   },
+   "in-law": {
+    "symmetric": false,
+    "inverse": "inv-in-law"
+   },
+   "inv-in-law": {
+    "symmetric": false,
+    "inverse": "in-law"
+   },
+   "sibling-in-law": {
+    "symmetric": false,
+    "inverse": null
+   },
+   "un": {
+    "symmetric": false,
+    "inverse": "inv-un"
+   },
+   "inv-un": {
+    "symmetric": false,
+    "inverse": "un"
+   }
+  },
+  "symmetric_types": [
+   "sibling",
+   "SO"
+  ],
+  "inverse_pairs": {
+   "child": "inv-child",
+   "grand": "inv-grand",
+   "un": "inv-un",
+   "in-law": "inv-in-law"
+  },
+  "surface_forms": {
+   "child": {
+    "male": "son",
+    "female": "daughter"
+   },
+   "inv-child": {
+    "male": "father",
+    "female": "mother"
+   },
+   "SO": {
+    "male": "husband",
+    "female": "wife"
+   },
+   "sibling": {
+    "male": "brother",
+    "female": "sister"
+   },
+   "grand": {
+    "male": "grandson",
+    "female": "granddaughter"
+   },
+   "inv-grand": {
+    "male": "grandfather",
+    "female": "grandmother"
+   },
+   "in-law": {
+    "male": "son-in-law",
+    "female": "daughter-in-law"
+   },
+   "inv-in-law": {
+    "male": "father-in-law",
+    "female": "mother-in-law"
+   },
+   "sibling-in-law": {
+    "male": "brother-in-law",
+    "female": "sister-in-law"
+   },
+   "un": {
+    "male": "nephew",
+    "female": "niece"
+   },
+   "inv-un": {
+    "male": "uncle",
+    "female": "aunt"
+   },
+   "no-relation": {
+    "male": "no-relation",
+    "female": "no-relation"
+   }
+  },
+  "surface_reverse": {
+   "son": [
+    "child",
+    "male"
+   ],
+   "daughter": [
+    "child",
+    "female"
+   ],
+   "father": [
+    "inv-child",
+    "male"
+   ],
+   "mother": [
+    "inv-child",
+    "female"
+   ],
+   "husband": [
+    "SO",
+    "male"
+   ],
+   "wife": [
+    "SO",
+    "female"
+   ],
+   "brother": [
+    "sibling",
+    "male"
+   ],
+   "sister": [
+    "sibling",
+    "female"
+   ],
+   "grandson": [
+    "grand",
+    "male"
+   ],
+   "granddaughter": [
+    "grand",
+    "female"
+   ],
+   "grandfather": [
+    "inv-grand",
+    "male"
+   ],
+   "grandmother": [
+    "inv-grand",
+    "female"
+   ],
+   "son-in-law": [
+    "in-law",
+    "male"
+   ],
+   "daughter-in-law": [
+    "in-law",
+    "female"
+   ],
+   "father-in-law": [
+    "inv-in-law",
+    "male"
+   ],
+   "mother-in-law": [
+    "inv-in-law",
+    "female"
+   ],
+   "brother-in-law": [
+    "sibling-in-law",
+    "male"
+   ],
+   "sister-in-law": [
+    "sibling-in-law",
+    "female"
+   ],
+   "nephew": [
+    "un",
+    "male"
+   ],
+   "niece": [
+    "un",
+    "female"
+   ],
+   "uncle": [
+    "inv-un",
+    "male"
+   ],
+   "aunt": [
+    "inv-un",
+    "female"
+   ]
+  },
+  "composition_rules": {
+   "child": {
+    "child": "grand",
+    "SO": "in-law",
+    "sibling": "child",
+    "inv-un": "sibling",
+    "inv-grand": "inv-child"
+   },
+   "inv-child": {
+    "child": "sibling",
+    "inv-child": "inv-grand",
+    "sibling": "inv-un"
+   },
+   "SO": {
+    "inv-child": "inv-in-law",
+    "grand": "grand",
+    "child": "child"
+   },
+   "sibling": {
+    "sibling": "sibling",
+    "inv-grand": "inv-grand",
+    "child": "un",
+    "inv-child": "inv-child"
+   },
+   "grand": {
+    "sibling": "grand"
+   }
+  },
+  "derived_gendered_surface_composition": {
+   "son|son": "grandson",
+   "son|daughter": "granddaughter",
+   "son|husband": "son-in-law",
+   "son|wife": "daughter-in-law",
+   "son|brother": "son",
+   "son|sister": "daughter",
+   "son|grandfather": "father",
+   "son|grandmother": "mother",
+   "son|uncle": "brother",
+   "son|aunt": "sister",
+   "daughter|son": "grandson",
+   "daughter|daughter": "granddaughter",
+   "daughter|husband": "son-in-law",
+   "daughter|wife": "daughter-in-law",
+   "daughter|brother": "son",
+   "daughter|sister": "daughter",
+   "daughter|grandfather": "father",
+   "daughter|grandmother": "mother",
+   "daughter|uncle": "brother",
+   "daughter|aunt": "sister",
+   "father|son": "brother",
+   "father|daughter": "sister",
+   "father|father": "grandfather",
+   "father|mother": "grandmother",
+   "father|brother": "uncle",
+   "father|sister": "aunt",
+   "mother|son": "brother",
+   "mother|daughter": "sister",
+   "mother|father": "grandfather",
+   "mother|mother": "grandmother",
+   "mother|brother": "uncle",
+   "mother|sister": "aunt",
+   "husband|son": "son",
+   "husband|daughter": "daughter",
+   "husband|father": "father-in-law",
+   "husband|mother": "mother-in-law",
+   "husband|grandson": "grandson",
+   "husband|granddaughter": "granddaughter",
+   "wife|son": "son",
+   "wife|daughter": "daughter",
+   "wife|father": "father-in-law",
+   "wife|mother": "mother-in-law",
+   "wife|grandson": "grandson",
+   "wife|granddaughter": "granddaughter",
+   "brother|son": "nephew",
+   "brother|daughter": "niece",
+   "brother|father": "father",
+   "brother|mother": "mother",
+   "brother|brother": "brother",
+   "brother|sister": "sister",
+   "brother|grandfather": "grandfather",
+   "brother|grandmother": "grandmother",
+   "sister|son": "nephew",
+   "sister|daughter": "niece",
+   "sister|father": "father",
+   "sister|mother": "mother",
+   "sister|brother": "brother",
+   "sister|sister": "sister",
+   "sister|grandfather": "grandfather",
+   "sister|grandmother": "grandmother",
+   "grandson|brother": "grandson",
+   "grandson|sister": "granddaughter",
+   "granddaughter|brother": "grandson",
+   "granddaughter|sister": "granddaughter"
+  },
+  "label_map": {
+   "0": "aunt",
+   "1": "son-in-law",
+   "2": "grandfather",
+   "3": "brother",
+   "4": "sister",
+   "5": "father",
+   "6": "mother",
+   "7": "grandmother",
+   "8": "uncle",
+   "9": "daughter-in-law",
+   "10": "grandson",
+   "11": "granddaughter",
+   "12": "father-in-law",
+   "13": "mother-in-law",
+   "14": "nephew",
+   "15": "son",
+   "16": "daughter",
+   "17": "niece",
+   "18": "husband",
+   "19": "wife",
+   "20": "sister-in-law"
+  },
+  "label_map_reverse": {
+   "aunt": 0,
+   "son-in-law": 1,
+   "grandfather": 2,
+   "brother": 3,
+   "sister": 4,
+   "father": 5,
+   "mother": 6,
+   "grandmother": 7,
+   "uncle": 8,
+   "daughter-in-law": 9,
+   "grandson": 10,
+   "granddaughter": 11,
+   "father-in-law": 12,
+   "mother-in-law": 13,
+   "nephew": 14,
+   "son": 15,
+   "daughter": 16,
+   "niece": 17,
+   "husband": 18,
+   "wife": 19,
+   "sister-in-law": 20
+  },
+  "semantics": "Triple (h, r, t) reads 't is h's r'. Composition: A t1 B, B t2 C => A t3 C, where rules[t1][t2]=t3 and the surface form of t3 uses the gender of C.",
+  "note": "Finite composition table over kinship relation TYPES (facebookresearch/clutrr rules_store.yaml). NOT a full relation algebra: no general intersection/converse closure beyond these rules; some compositions yield no-relation; ambiguous compositions (e.g. grand o inv-child) are intentionally excluded in CLUTRR. Use to temper any generality claim.",
+  "source": {
+   "rules_store": "https://raw.githubusercontent.com/facebookresearch/clutrr/main/clutrr/store/rules_store.yaml",
+   "relations_store": "https://raw.githubusercontent.com/facebookresearch/clutrr/main/clutrr/store/relations_store.yaml",
+   "scope": "family relation type only (CLUTRR 'work' relation type excluded; the delivered configs are all kinship)."
+  }
+ },
+ "kinship_worked_examples": [
+  {
+   "name": "multihop_niece",
+   "atomic_edges": [
+    {
+     "a": "Lena",
+     "b": "Joshua",
+     "type": "sibling"
+    },
+    {
+     "a": "Joshua",
+     "b": "Lynn",
+     "type": "SO"
+    },
+    {
+     "a": "Lynn",
+     "b": "Andrea",
+     "type": "child"
+    }
+   ],
+   "query": [
+    "Lena",
+    "Andrea"
+   ],
+   "gold_surface": "niece",
+   "note": "3-hop chain: full closure derives 'un' (niece); the naive single-pass abstains (no atomic intermediate) -- the iteration contrast.",
+   "engine_modeA": {
+    "types": [
+     "un"
+    ],
+    "singleton": true,
+    "answer_type": "un",
+    "n_derivations": 1,
+    "mode_b_conflict": false,
+    "no_path": false,
+    "n_fired": 6
+   },
+   "engine_naive": {
+    "types": [],
+    "singleton": false,
+    "answer_type": null,
+    "n_derivations": 0,
+    "mode_b_conflict": false,
+    "no_path": true
+   },
+   "derivation_trace": [
+    {
+     "a": "Joshua",
+     "b": "Lynn",
+     "c": "Andrea",
+     "t1": "SO",
+     "t2": "child",
+     "t3": "child"
+    },
+    {
+     "a": "Lena",
+     "b": "Joshua",
+     "c": "Andrea",
+     "t1": "sibling",
+     "t2": "child",
+     "t3": "un"
+    }
+   ]
+  },
+  {
+   "name": "twohop_grandchild",
+   "atomic_edges": [
+    {
+     "a": "Mary",
+     "b": "Tom",
+     "type": "child"
+    },
+    {
+     "a": "Tom",
+     "b": "Sue",
+     "type": "child"
+    }
+   ],
+   "query": [
+    "Mary",
+    "Sue"
+   ],
+   "gold_surface": "granddaughter",
+   "note": "2-hop chain child o child = grand; BOTH naive and full closure emit.",
+   "engine_modeA": {
+    "types": [
+     "grand"
+    ],
+    "singleton": true,
+    "answer_type": "grand",
+    "n_derivations": 1,
+    "mode_b_conflict": false,
+    "no_path": false,
+    "n_fired": 1
+   },
+   "engine_naive": {
+    "types": [
+     "grand"
+    ],
+    "singleton": true,
+    "answer_type": "grand",
+    "n_derivations": 1,
+    "mode_b_conflict": false,
+    "no_path": false
+   },
+   "derivation_trace": [
+    {
+     "a": "Mary",
+     "b": "Tom",
+     "c": "Sue",
+     "t1": "child",
+     "t2": "child",
+     "t3": "grand"
+    }
+   ]
+  },
+  {
+   "name": "absent_disjoint",
+   "atomic_edges": [
+    {
+     "a": "Anna",
+     "b": "Beth",
+     "type": "child"
+    },
+    {
+     "a": "Beth",
+     "b": "Cara",
+     "type": "sibling"
+    },
+    {
+     "a": "Xander",
+     "b": "Yuki",
+     "type": "child"
+    }
+   ],
+   "query": [
+    "Anna",
+    "Yuki"
+   ],
+   "gold_surface": "no-relation",
+   "note": "Anna and Yuki live in DIFFERENT connected components -> empty derivation set -> Mode-A ABSTAINS by construction (0 confident-wrong).",
+   "engine_modeA": {
+    "types": [],
+    "singleton": false,
+    "answer_type": null,
+    "n_derivations": 0,
+    "mode_b_conflict": false,
+    "no_path": true,
+    "n_fired": 1
+   },
+   "engine_naive": {
+    "types": [],
+    "singleton": false,
+    "answer_type": null,
+    "n_derivations": 0,
+    "mode_b_conflict": false,
+    "no_path": true
+   },
+   "derivation_trace": []
+  }
+ ]
+}

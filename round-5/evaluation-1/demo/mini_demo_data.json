@@ -1,0 +1,2413 @@
+{
+  "iter4_eval": {
+    "metrics_agg": {
+      "temporal_modeA_vs_pot_gap": 0.026549,
+      "temporal_modeA_vs_pot_new_ci_lo": -0.088276,
+      "temporal_modeA_vs_pot_new_ci_hi": 0.139723,
+      "temporal_modeA_vs_pot_ci_brackets": 1.0,
+      "temporal_modeA_vs_pot_new_boot_p": 0.3322,
+      "temporal_modeA_vs_sc_new_boot_p": 0.2593,
+      "temporal_modeA_vs_pot_corrected_significant": 0.0,
+      "temporal_modeA_vs_sc_corrected_significant": 0.0,
+      "clutrr_naive_natural_coverage": 0.215686,
+      "clutrr_naive_natural_selacc": 0.727273,
+      "clutrr_naive_matched_selacc_forced": 0.2286,
+      "clutrr_modeA_vs_pot_gap": 0.428571,
+      "clutrr_modeA_selacc": 0.885714,
+      "temporal_confident_wrong_frac": 0.424779,
+      "temporal_confident_wrong_n": 48.0,
+      "temporal_synthetic_backstop_vs_raw_mean": 0.225228,
+      "allen_inherited_carried": 0.67349,
+      "allen_novel_selacc_carried": 0.0025,
+      "clutrr_h2_confident_wrong_reduction": 0.4444,
+      "clutrr_oracle_modeA_selacc": 1.0,
+      "clutrr_atomic_recall": 0.5324,
+      "temporal_modeA_coverage": 0.188333,
+      "llm_spend_usd": 0.0,
+      "n_reproduction_mismatches": 0.0,
+      "B_bootstrap": 10000.0
+    },
+    "metadata": {
+      "clutrr_matched_coverage_gaps": {
+        "gaps": {
+          "pot": {
+            "new_ci95": [
+              0.298589,
+              0.563015
+            ]
+          }
+        }
+      },
+      "temporal_confident_wrong_block": {
+        "tag": "REAL-LLM-READ",
+        "frac_confident_wrong_among_answered": 0.424779,
+        "n_confident_wrong": 48,
+        "denom_answered": 113,
+        "modeA_coverage": 0.188333,
+        "modeA_abstention_rate": 0.811667,
+        "confident_wrong_raw": 0.61,
+        "reduction_vs_raw_published": 0.185221,
+        "reduction_published_ci95": [
+          0.08645,
+          0.281589
+        ],
+        "reduction_recomputed_B10000": {
+          "reduction": 0.182705,
+          "ci95": [
+            0.086829,
+            0.280125
+          ],
+          "boot_p": 0.0003
+        },
+        "confident_wrong_recomputed": 0.424779,
+        "silent_wrong_narrowing_count": 48,
+        "all_confident_wrongs_are_silent_wrong_narrowing": true,
+        "raw_minus_modeA_acc_at_matched_coverage": -0.123894,
+        "reporting_block": "On natural temporal text, among the ~19% of queries Mode-A commits to, it is CONFIDENT-WRONG 42.5% (48/113). REPORT THIS BESIDE EVERY TEMPORAL CLAIM. Mechanism: silent-wrong-narrowing -- when gold is OMITTED from a contributing local read, closure narrows to a confident WRONG singleton with NO empty collapse, so Mode-B cannot flag it; ALL 48 Mode-A confident-wrongs are of this type. Bounded per-edge by (1-recall) and per-network by (1-J(E)). Hence 'faithfulness-by-abstention' is WEAKLY protective on dense temporal prose (~0.85 recall): raw actually out-accuracies Mode-A at matched coverage by 0.124. The temporal value of Mode-A is the gold-free certificate + abstention-as-an-OPTION, NOT selective-accuracy dominance, and even that is bounded by read recall.",
+        "read_soundness_rows": {
+          "narrativetime_primary": {
+            "recall": 0.856361,
+            "ci95": [
+              0.832217,
+              0.879756
+            ],
+            "verdict": "CI_excludes_below_gate",
+            "crosses_gate": false
+          },
+          "narrativetime_strong": {
+            "recall": 0.931677,
+            "ci95": [
+              0.888158,
+              0.966893
+            ],
+            "verdict": "CI_contains_gate",
+            "crosses_gate": true
+          },
+          "tddman_primary": {
+            "recall": 0.827852,
+            "ci95": [
+              0.777706,
+              0.869069
+            ],
+            "verdict": "CI_excludes_below_gate",
+            "crosses_gate": false
+          },
+          "tddman_strong": {
+            "recall": 0.81875,
+            "ci95": [
+              0.72673,
+              0.896998
+            ],
+            "verdict": "CI_excludes_below_gate",
+            "crosses_gate": false
+          }
+        },
+        "rho_within_doc_soundness_range": [
+          0.002828,
+          0.167214
+        ],
+        "synthetic_backstop_vs_raw_mean_gap": 0.225228,
+        "synthetic_backstop_cells_vs_raw": {
+          "R_redundancy_K4": 0.218589,
+          "R_redundancy_K8": 0.259516,
+          "H_hop_L4_C2": 0.211268,
+          "H_hop_L6_C3": 0.211538
+        },
+        "synthetic_backstop_recall": 0.96,
+        "read_soundness_localization": "At synthetic recall 0.96 Mode-A beats raw by ~+0.225 at matched coverage (mechanism works when reads are sound); on real text recall is ~0.83-0.86 (NT primary CI excludes-below-gate; NT strong CI straddles; TDDMan both below) -> the binding real-text constraint is the NEURAL READ (read soundness), NOT the symbolic closure step."
+      }
+    },
+    "datasets": [
+      {
+        "dataset": "clutrr_templated_kinship",
+        "examples": [
+          {
+            "input": "Belva went with her grandmother, Ashley, to the grocery store to help her while she shopped. Nicolas and his sister, Belva love it when their grandmother visits because she spoils them. She is coming this week to watch them while their parents are out of town.",
+            "output": "grandson",
+            "metadata_doc_id": "0741bf9a-a8f6-4ff1-aac1-1a4f0828aed9",
+            "metadata_hop": 2,
+            "metadata_is_absent": false,
+            "metadata_venue": "templated-CLUTRR",
+            "predict_modeA": "grandson",
+            "eval_modeA_correct": 1.0,
+            "eval_modeA_answered": 1.0,
+            "predict_naive": "grandson",
+            "eval_naive_correct": 1.0,
+            "eval_naive_answered": 1.0,
+            "predict_raw": "grandson",
+            "eval_raw_correct": 1.0,
+            "eval_raw_answered": 1.0,
+            "predict_sc": "grandson",
+            "eval_sc_correct": 1.0,
+            "eval_sc_answered": 1.0,
+            "predict_pot": "grandson",
+            "eval_pot_correct": 1.0,
+            "eval_pot_answered": 1.0
+          },
+          {
+            "input": "Emily and her granddaughter Ashley went to the mall Michael likes to visit his sister. Her name is Emily.",
+            "output": "grandson",
+            "metadata_doc_id": "0f226f4d-dc2d-4051-a875-9e555ecf0f22",
+            "metadata_hop": 2,
+            "metadata_is_absent": false,
+            "metadata_venue": "templated-CLUTRR",
+            "predict_modeA": "ABSTAIN",
+            "eval_modeA_correct": 0.0,
+            "eval_modeA_answered": 0.0,
+            "predict_naive": "ABSTAIN",
+            "eval_naive_correct": 0.0,
+            "eval_naive_answered": 0.0,
+            "predict_raw": "uncle",
+            "eval_raw_correct": 0.0,
+            "eval_raw_answered": 1.0,
+            "predict_sc": "uncle",
+            "eval_sc_correct": 0.0,
+            "eval_sc_answered": 1.0,
+            "predict_pot": "uncle",
+            "eval_pot_correct": 0.0,
+            "eval_pot_answered": 1.0
+          },
+          {
+            "input": "Heidi went to her brother Kevin's birthday party Ashley and her granddaughter Heidi prepared dinner as a family",
+            "output": "grandson",
+            "metadata_doc_id": "162070fb-1a46-44f2-91e5-50f8cc99daf3",
+            "metadata_hop": 2,
+            "metadata_is_absent": false,
+            "metadata_venue": "templated-CLUTRR",
+            "predict_modeA": "grandson",
+            "eval_modeA_correct": 1.0,
+            "eval_modeA_answered": 1.0,
+            "predict_naive": "grandson",
+            "eval_naive_correct": 1.0,
+            "eval_naive_answered": 1.0,
+            "predict_raw": "grandson",
+            "eval_raw_correct": 1.0,
+            "eval_raw_answered": 1.0,
+            "predict_sc": "grandson",
+            "eval_sc_correct": 1.0,
+            "eval_sc_answered": 1.0,
+            "predict_pot": "grandson",
+            "eval_pot_correct": 1.0,
+            "eval_pot_answered": 1.0
+          },
+          {
+            "input": "Tony woke up on his 7th birthday to a surprise present sitting on his night stand. It was from his Grandma Ashley, and Tony's sister Charlotte looked on excitedly as he opened his present.",
+            "output": "granddaughter",
+            "metadata_doc_id": "16b898d1-a77e-4e05-86d6-b6e614b030ab",
+            "metadata_hop": 2,
+            "metadata_is_absent": false,
+            "metadata_venue": "templated-CLUTRR",
+            "predict_modeA": "granddaughter",
+            "eval_modeA_correct": 1.0,
+            "eval_modeA_answered": 1.0,
+            "predict_naive": "granddaughter",
+            "eval_naive_correct": 1.0,
+            "eval_naive_answered": 1.0,
+            "predict_raw": "granddaughter",
+            "eval_raw_correct": 1.0,
+            "eval_raw_answered": 1.0,
+            "predict_sc": "granddaughter",
+            "eval_sc_correct": 1.0,
+            "eval_sc_answered": 1.0,
+            "predict_pot": "granddaughter",
+            "eval_pot_correct": 1.0,
+            "eval_pot_answered": 1.0
+          },
+          {
+            "input": "Heidi went on vacation to her grandfather's house Clarence. Jacob, Heidi brother, stayed home.",
+            "output": "grandson",
+            "metadata_doc_id": "191f63a8-716c-459c-a288-0b27f4b030cd",
+            "metadata_hop": 2,
+            "metadata_is_absent": false,
+            "metadata_venue": "templated-CLUTRR",
+            "predict_modeA": "grandson",
+            "eval_modeA_correct": 1.0,
+            "eval_modeA_answered": 1.0,
+            "predict_naive": "grandson",
+            "eval_naive_correct": 1.0,
+            "eval_naive_answered": 1.0,
+            "predict_raw": "grandson",
+            "eval_raw_correct": 1.0,
+            "eval_raw_answered": 1.0,
+            "predict_sc": "grandson",
+            "eval_sc_correct": 1.0,
+            "eval_sc_answered": 1.0,
+            "predict_pot": "grandson",
+            "eval_pot_correct": 1.0,
+            "eval_pot_answered": 1.0
+          }
+        ]
+      },
+      {
+        "dataset": "temporal_point_algebra_natural_text",
+        "examples": [
+          {
+            "input": "temporal point-algebra deduction query stratum=ge3_cyclic",
+            "output": "includes",
+            "metadata_docid": "ABC19980304.1830.1636",
+            "metadata_stratum": "ge3_cyclic",
+            "metadata_venue": "natural-temporal",
+            "predict_modeA": "ABSTAIN",
+            "eval_modeA_answered": 0.0,
+            "eval_modeA_correct": 0.0,
+            "eval_modeA_conf": 0.8,
+            "predict_naive": "ABSTAIN",
+            "eval_naive_answered": 0.0,
+            "eval_naive_correct": 0.0,
+            "eval_naive_conf": 0.8,
+            "predict_raw": "simultaneous",
+            "eval_raw_answered": 1.0,
+            "eval_raw_correct": 0.0,
+            "eval_raw_conf": 0.2,
+            "predict_pot": "ABSTAIN",
+            "eval_pot_answered": 0.0,
+            "eval_pot_correct": 0.0,
+            "eval_pot_conf": 0.45,
+            "predict_sc": "simultaneous",
+            "eval_sc_answered": 1.0,
+            "eval_sc_correct": 0.0,
+            "eval_sc_conf": 0.8
+          },
+          {
+            "input": "temporal point-algebra deduction query stratum=ge3_cyclic",
+            "output": "before",
+            "metadata_docid": "PRI19980213.2000.0313",
+            "metadata_stratum": "ge3_cyclic",
+            "metadata_venue": "natural-temporal",
+            "predict_modeA": "ABSTAIN",
+            "eval_modeA_answered": 0.0,
+            "eval_modeA_correct": 0.0,
+            "eval_modeA_conf": 0.7,
+            "predict_naive": "ABSTAIN",
+            "eval_naive_answered": 0.0,
+            "eval_naive_correct": 0.0,
+            "eval_naive_conf": 0.7,
+            "predict_raw": "before",
+            "eval_raw_answered": 1.0,
+            "eval_raw_correct": 1.0,
+            "eval_raw_conf": 0.9,
+            "predict_pot": "simultaneous",
+            "eval_pot_answered": 1.0,
+            "eval_pot_correct": 0.0,
+            "eval_pot_conf": 1.0,
+            "predict_sc": "before",
+            "eval_sc_answered": 1.0,
+            "eval_sc_correct": 1.0,
+            "eval_sc_conf": 1.0
+          },
+          {
+            "input": "temporal point-algebra deduction query stratum=ge3_cyclic",
+            "output": "after",
+            "metadata_docid": "APW19980213.1320",
+            "metadata_stratum": "ge3_cyclic",
+            "metadata_venue": "natural-temporal",
+            "predict_modeA": "ABSTAIN",
+            "eval_modeA_answered": 0.0,
+            "eval_modeA_correct": 0.0,
+            "eval_modeA_conf": 0.9,
+            "predict_naive": "ABSTAIN",
+            "eval_naive_answered": 0.0,
+            "eval_naive_correct": 0.0,
+            "eval_naive_conf": 0.9,
+            "predict_raw": "after",
+            "eval_raw_answered": 1.0,
+            "eval_raw_correct": 1.0,
+            "eval_raw_conf": 0.9,
+            "predict_pot": "ABSTAIN",
+            "eval_pot_answered": 0.0,
+            "eval_pot_correct": 0.0,
+            "eval_pot_conf": 0.333333,
+            "predict_sc": "before",
+            "eval_sc_answered": 1.0,
+            "eval_sc_correct": 0.0,
+            "eval_sc_conf": 1.0
+          },
+          {
+            "input": "temporal point-algebra deduction query stratum=ge3_cyclic",
+            "output": "before",
+            "metadata_docid": "ea980120.1830.0071",
+            "metadata_stratum": "ge3_cyclic",
+            "metadata_venue": "natural-temporal",
+            "predict_modeA": "ABSTAIN",
+            "eval_modeA_answered": 0.0,
+            "eval_modeA_correct": 0.0,
+            "eval_modeA_conf": 0.7,
+            "predict_naive": "before",
+            "eval_naive_answered": 1.0,
+            "eval_naive_correct": 1.0,
+            "eval_naive_conf": 0.7,
+            "predict_raw": "before",
+            "eval_raw_answered": 1.0,
+            "eval_raw_correct": 1.0,
+            "eval_raw_conf": 0.9,
+            "predict_pot": "before",
+            "eval_pot_answered": 1.0,
+            "eval_pot_correct": 1.0,
+            "eval_pot_conf": 1.0,
+            "predict_sc": "before",
+            "eval_sc_answered": 1.0,
+            "eval_sc_correct": 1.0,
+            "eval_sc_conf": 1.0
+          },
+          {
+            "input": "temporal point-algebra deduction query stratum=ge3_cyclic",
+            "output": "is_included",
+            "metadata_docid": "ABC19980108.1830.0711",
+            "metadata_stratum": "ge3_cyclic",
+            "metadata_venue": "natural-temporal",
+            "predict_modeA": "ABSTAIN",
+            "eval_modeA_answered": 0.0,
+            "eval_modeA_correct": 0.0,
+            "eval_modeA_conf": 0.7,
+            "predict_naive": "ABSTAIN",
+            "eval_naive_answered": 0.0,
+            "eval_naive_correct": 0.0,
+            "eval_naive_conf": 0.7,
+            "predict_raw": "before",
+            "eval_raw_answered": 1.0,
+            "eval_raw_correct": 0.0,
+            "eval_raw_conf": 0.4,
+            "predict_pot": "before",
+            "eval_pot_answered": 1.0,
+            "eval_pot_correct": 0.0,
+            "eval_pot_conf": 1.0,
+            "predict_sc": "simultaneous",
+            "eval_sc_answered": 1.0,
+            "eval_sc_correct": 0.0,
+            "eval_sc_conf": 0.8
+          }
+        ]
+      }
+    ]
+  },
+  "published_cell": {
+    "n_net": 500,
+    "n_events": 6,
+    "recall": 0.95,
+    "per_method": {
+      "intersection": {
+        "coverage": 0.25,
+        "selective_acc": 0.976
+      },
+      "best_single": {
+        "coverage": 0.226,
+        "selective_acc": 0.7168141592920354
+      },
+      "naive": {
+        "coverage": 0.316,
+        "selective_acc": 0.8417721518987342
+      }
+    },
+    "mean_bite": 2.252,
+    "intersection_resolves_more_than_best_single": true,
+    "coverage_gain_intersection_vs_best": 0.023999999999999994,
+    "singleton_resolved_rate": 0.25,
+    "tag": "SYNTHETIC-ALLEN-CONTROL"
+  },
+  "channel": {
+    "metadata": {
+      "H4": {
+        "curves": [
+          {
+            "recall": 0.5,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 1,
+            "benefit": 0.21166666666666667,
+            "benefit_ci": [
+              0.18,
+              0.245
+            ],
+            "cost_silent_wrong": 0.22833333333333333,
+            "cost_ci": [
+              0.195,
+              0.26166666666666666
+            ],
+            "net": -0.016666666666666666,
+            "net_ci": [
+              -0.06833333333333333,
+              0.03666666666666667
+            ],
+            "one_minus_JE": 0.7616666666666667,
+            "collapse_rate": 0.0,
+            "abstain_rate": 0.56,
+            "J_E": 0.23833333333333334,
+            "r_pow_E": 0.25,
+            "mean_E": 2.0,
+            "contains_gold_rate": 0.745,
+            "n": 600
+          },
+          {
+            "recall": 0.5,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 2,
+            "benefit": 0.295,
+            "benefit_ci": [
+              0.26,
+              0.33337499999999975
+            ],
+            "cost_silent_wrong": 0.28,
+            "cost_ci": [
+              0.24166666666666667,
+              0.31666666666666665
+            ],
+            "net": 0.015,
+            "net_ci": [
+              -0.043375,
+              0.075
+            ],
+            "one_minus_JE": 0.9316666666666666,
+            "collapse_rate": 0.13333333333333333,
+            "abstain_rate": 0.2916666666666667,
+            "J_E": 0.06833333333333333,
+            "r_pow_E": 0.0625,
+            "mean_E": 4.0,
+            "contains_gold_rate": 0.5666666666666667,
+            "n": 600
+          },
+          {
+            "recall": 0.5,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 3,
+            "benefit": 0.26,
+            "benefit_ci": [
+              0.226625,
+              0.29833333333333334
+            ],
+            "cost_silent_wrong": 0.285,
+            "cost_ci": [
+              0.24995833333333334,
+              0.32004166666666645
+            ],
+            "net": -0.025,
+            "net_ci": [
+              -0.085,
+              0.035
+            ],
+            "one_minus_JE": 0.9833333333333333,
+            "collapse_rate": 0.2866666666666667,
+            "abstain_rate": 0.16833333333333333,
+            "J_E": 0.016666666666666666,
+            "r_pow_E": 0.015625,
+            "mean_E": 6.0,
+            "contains_gold_rate": 0.41333333333333333,
+            "n": 600
+          },
+          {
+            "recall": 0.5,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 4,
+            "benefit": 0.22666666666666666,
+            "benefit_ci": [
+              0.195,
+              0.26166666666666666
+            ],
+            "cost_silent_wrong": 0.23666666666666666,
+            "cost_ci": [
+              0.20333333333333334,
+              0.27004166666666646
+            ],
+            "net": -0.01,
+            "net_ci": [
+              -0.06170833333333333,
+              0.045
+            ],
+            "one_minus_JE": 0.9983333333333333,
+            "collapse_rate": 0.4716666666666667,
+            "abstain_rate": 0.065,
+            "J_E": 0.0016666666666666668,
+            "r_pow_E": 0.00390625,
+            "mean_E": 8.0,
+            "contains_gold_rate": 0.285,
+            "n": 600
+          },
+          {
+            "recall": 0.5,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 5,
+            "benefit": 0.19,
+            "benefit_ci": [
+              0.16,
+              0.22166666666666668
+            ],
+            "cost_silent_wrong": 0.16666666666666666,
+            "cost_ci": [
+              0.13666666666666666,
+              0.19666666666666666
+            ],
+            "net": 0.023333333333333334,
+            "net_ci": [
+              -0.023375,
+              0.07
+            ],
+            "one_minus_JE": 0.995,
+            "collapse_rate": 0.575,
+            "abstain_rate": 0.06833333333333333,
+            "J_E": 0.005,
+            "r_pow_E": 0.0009765625,
+            "mean_E": 10.0,
+            "contains_gold_rate": 0.245,
+            "n": 600
+          },
+          {
+            "recall": 0.5,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 6,
+            "benefit": 0.13166666666666665,
+            "benefit_ci": [
+              0.105,
+              0.16
+            ],
+            "cost_silent_wrong": 0.13166666666666665,
+            "cost_ci": [
+              0.105,
+              0.16
+            ],
+            "net": 0.0,
+            "net_ci": [
+              -0.041708333333333326,
+              0.03833333333333333
+            ],
+            "one_minus_JE": 1.0,
+            "collapse_rate": 0.705,
+            "abstain_rate": 0.03166666666666667,
+            "J_E": 0.0,
+            "r_pow_E": 0.000244140625,
+            "mean_E": 12.0,
+            "contains_gold_rate": 0.155,
+            "n": 600
+          },
+          {
+            "recall": 0.5,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 7,
+            "benefit": 0.115,
+            "benefit_ci": [
+              0.09,
+              0.1417083333333331
+            ],
+            "cost_silent_wrong": 0.115,
+            "cost_ci": [
+              0.09,
+              0.14166666666666666
+            ],
+            "net": 0.0,
+            "net_ci": [
+              -0.035,
+              0.03833333333333333
+            ],
+            "one_minus_JE": 1.0,
+            "collapse_rate": 0.7633333333333333,
+            "abstain_rate": 0.006666666666666667,
+            "J_E": 0.0,
+            "r_pow_E": 6.103515625e-05,
+            "mean_E": 14.0,
+            "contains_gold_rate": 0.12,
+            "n": 600
+          },
+          {
+            "recall": 0.5,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 8,
+            "benefit": 0.09166666666666666,
+            "benefit_ci": [
+              0.06833333333333333,
+              0.115
+            ],
+            "cost_silent_wrong": 0.07666666666666666,
+            "cost_ci": [
+              0.055,
+              0.09833333333333333
+            ],
+            "net": 0.015,
+            "net_ci": [
+              -0.018333333333333333,
+              0.04837499999999977
+            ],
+            "one_minus_JE": 1.0,
+            "collapse_rate": 0.82,
+            "abstain_rate": 0.011666666666666667,
+            "J_E": 0.0,
+            "r_pow_E": 1.52587890625e-05,
+            "mean_E": 16.0,
+            "contains_gold_rate": 0.1,
+            "n": 600
+          },
+          {
+            "recall": 0.5,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 10,
+            "benefit": 0.06666666666666667,
+            "benefit_ci": [
+              0.04666666666666667,
+              0.08666666666666667
+            ],
+            "cost_silent_wrong": 0.035,
+            "cost_ci": [
+              0.021666666666666667,
+              0.051666666666666666
+            ],
+            "net": 0.03166666666666667,
+            "net_ci": [
+              0.005,
+              0.058333333333333334
+            ],
+            "one_minus_JE": 1.0,
+            "collapse_rate": 0.8983333333333333,
+            "abstain_rate": 0.0,
+            "J_E": 0.0,
+            "r_pow_E": 9.5367431640625e-07,
+            "mean_E": 20.0,
+            "contains_gold_rate": 0.06666666666666667,
+            "n": 600
+          },
+          {
+            "recall": 0.5,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 12,
+            "benefit": 0.028333333333333332,
+            "benefit_ci": [
+              0.016625,
+              0.043333333333333335
+            ],
+            "cost_silent_wrong": 0.021666666666666667,
+            "cost_ci": [
+              0.01,
+              0.03333333333333333
+            ],
+            "net": 0.006666666666666667,
+            "net_ci": [
+              -0.011666666666666667,
+              0.023374999999999774
+            ],
+            "one_minus_JE": 1.0,
+            "collapse_rate": 0.95,
+            "abstain_rate": 0.0,
+            "J_E": 0.0,
+            "r_pow_E": 5.960464477539063e-08,
+            "mean_E": 24.0,
+            "contains_gold_rate": 0.028333333333333332,
+            "n": 600
+          },
+          {
+            "recall": 0.5,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 14,
+            "benefit": 0.016666666666666666,
+            "benefit_ci": [
+              0.00829166666666667,
+              0.02666666666666667
+            ],
+            "cost_silent_wrong": 0.0033333333333333335,
+            "cost_ci": [
+              0.0,
+              0.008333333333333333
+            ],
+            "net": 0.013333333333333334,
+            "net_ci": [
+              0.0033333333333333335,
+              0.025
+            ],
+            "one_minus_JE": 1.0,
+            "collapse_rate": 0.98,
+            "abstain_rate": 0.0,
+            "J_E": 0.0,
+            "r_pow_E": 3.725290298461914e-09,
+            "mean_E": 28.0,
+            "contains_gold_rate": 0.016666666666666666,
+            "n": 600
+          },
+          {
+            "recall": 0.5,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 16,
+            "benefit": 0.015,
+            "benefit_ci": [
+              0.006666666666666667,
+              0.025
+            ],
+            "cost_silent_wrong": 0.006666666666666667,
+            "cost_ci": [
+              0.0016666666666666668,
+              0.013333333333333334
+            ],
+            "net": 0.008333333333333333,
+            "net_ci": [
+              -0.0033333333333333335,
+              0.021666666666666667
+            ],
+            "one_minus_JE": 1.0,
+            "collapse_rate": 0.9766666666666667,
+            "abstain_rate": 0.0016666666666666668,
+            "J_E": 0.0,
+            "r_pow_E": 2.3283064365386963e-10,
+            "mean_E": 32.0,
+            "contains_gold_rate": 0.016666666666666666,
+            "n": 600
+          },
+          {
+            "recall": 0.625,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 1,
+            "benefit": 0.245,
+            "benefit_ci": [
+              0.21166666666666667,
+              0.28
+            ],
+            "cost_silent_wrong": 0.14,
+            "cost_ci": [
+              0.111625,
+              0.17
+            ],
+            "net": 0.105,
+            "net_ci": [
+              0.055,
+              0.155
+            ],
+            "one_minus_JE": 0.565,
+            "collapse_rate": 0.0,
+            "abstain_rate": 0.615,
+            "J_E": 0.435,
+            "r_pow_E": 0.390625,
+            "mean_E": 2.0,
+            "contains_gold_rate": 0.8466666666666667,
+            "n": 600
+          },
+          {
+            "recall": 0.625,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 2,
+            "benefit": 0.405,
+            "benefit_ci": [
+              0.365,
+              0.44333333333333336
+            ],
+            "cost_silent_wrong": 0.15166666666666667,
+            "cost_ci": [
+              0.12333333333333334,
+              0.18
+            ],
+            "net": 0.25333333333333335,
+            "net_ci": [
+              0.2,
+              0.31
+            ],
+            "one_minus_JE": 0.86,
+            "collapse_rate": 0.07666666666666666,
+            "abstain_rate": 0.36666666666666664,
+            "J_E": 0.14,
+            "r_pow_E": 0.152587890625,
+            "mean_E": 4.0,
+            "contains_gold_rate": 0.7566666666666667,
+            "n": 600
+          },
+          {
+            "recall": 0.625,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 3,
+            "benefit": 0.3933333333333333,
+            "benefit_ci": [
+              0.355,
+              0.43
+            ],
+            "cost_silent_wrong": 0.14833333333333334,
+            "cost_ci": [
+              0.12166666666666667,
+              0.1767083333333331
+            ],
+            "net": 0.245,
+            "net_ci": [
+              0.19,
+              0.29833333333333334
+            ],
+            "one_minus_JE": 0.9433333333333334,
+            "collapse_rate": 0.22666666666666666,
+            "abstain_rate": 0.23166666666666666,
+            "J_E": 0.056666666666666664,
+            "r_pow_E": 0.059604644775390625,
+            "mean_E": 6.0,
+            "contains_gold_rate": 0.61,
+            "n": 600
+          },
+          {
+            "recall": 0.625,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 4,
+            "benefit": 0.4066666666666667,
+            "benefit_ci": [
+              0.36833333333333335,
+              0.44666666666666666
+            ],
+            "cost_silent_wrong": 0.14833333333333334,
+            "cost_ci": [
+              0.12,
+              0.17666666666666667
+            ],
+            "net": 0.25833333333333336,
+            "net_ci": [
+              0.2,
+              0.315
+            ],
+            "one_minus_JE": 0.98,
+            "collapse_rate": 0.315,
+            "abstain_rate": 0.13,
+            "J_E": 0.02,
+            "r_pow_E": 0.023283064365386963,
+            "mean_E": 8.0,
+            "contains_gold_rate": 0.5283333333333333,
+            "n": 600
+          },
+          {
+            "recall": 0.625,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 5,
+            "benefit": 0.37333333333333335,
+            "benefit_ci": [
+              0.33166666666666667,
+              0.41333333333333333
+            ],
+            "cost_silent_wrong": 0.11333333333333333,
+            "cost_ci": [
+              0.08833333333333333,
+              0.14
+            ],
+            "net": 0.26,
+            "net_ci": [
+              0.205,
+              0.31166666666666665
+            ],
+            "one_minus_JE": 0.9966666666666667,
+            "collapse_rate": 0.425,
+            "abstain_rate": 0.08833333333333333,
+            "J_E": 0.0033333333333333335,
+            "r_pow_E": 0.009094947017729282,
+            "mean_E": 10.0,
+            "contains_gold_rate": 0.45666666666666667,
+            "n": 600
+          },
+          {
+            "recall": 0.625,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 6,
+            "benefit": 0.33,
+            "benefit_ci": [
+              0.2949583333333333,
+              0.36666666666666664
+            ],
+            "cost_silent_wrong": 0.09166666666666666,
+            "cost_ci": [
+              0.06833333333333333,
+              0.11333333333333333
+            ],
+            "net": 0.23833333333333334,
+            "net_ci": [
+              0.19166666666666668,
+              0.28833333333333333
+            ],
+            "one_minus_JE": 0.995,
+            "collapse_rate": 0.5383333333333333,
+            "abstain_rate": 0.04,
+            "J_E": 0.005,
+            "r_pow_E": 0.003552713678800501,
+            "mean_E": 12.0,
+            "contains_gold_rate": 0.36833333333333335,
+            "n": 600
+          },
+          {
+            "recall": 0.625,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 7,
+            "benefit": 0.2966666666666667,
+            "benefit_ci": [
+              0.26,
+              0.33166666666666667
+            ],
+            "cost_silent_wrong": 0.06833333333333333,
+            "cost_ci": [
+              0.04833333333333333,
+              0.08833333333333333
+            ],
+            "net": 0.22833333333333333,
+            "net_ci": [
+              0.186625,
+              0.27166666666666667
+            ],
+            "one_minus_JE": 0.9983333333333333,
+            "collapse_rate": 0.5983333333333334,
+            "abstain_rate": 0.03666666666666667,
+            "J_E": 0.0016666666666666668,
+            "r_pow_E": 0.0013877787807814457,
+            "mean_E": 14.0,
+            "contains_gold_rate": 0.33166666666666667,
+            "n": 600
+          },
+          {
+            "recall": 0.625,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 8,
+            "benefit": 0.30833333333333335,
+            "benefit_ci": [
+              0.27166666666666667,
+              0.345
+            ],
+            "cost_silent_wrong": 0.043333333333333335,
+            "cost_ci": [
+              0.02666666666666667,
+              0.06
+            ],
+            "net": 0.265,
+            "net_ci": [
+              0.22166666666666668,
+              0.30833333333333335
+            ],
+            "one_minus_JE": 0.9983333333333333,
+            "collapse_rate": 0.6316666666666667,
+            "abstain_rate": 0.016666666666666666,
+            "J_E": 0.0016666666666666668,
+            "r_pow_E": 0.0005421010862427522,
+            "mean_E": 16.0,
+            "contains_gold_rate": 0.32,
+            "n": 600
+          },
+          {
+            "recall": 0.625,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 10,
+            "benefit": 0.22,
+            "benefit_ci": [
+              0.18829166666666666,
+              0.25333333333333335
+            ],
+            "cost_silent_wrong": 0.025,
+            "cost_ci": [
+              0.013333333333333334,
+              0.03833333333333333
+            ],
+            "net": 0.195,
+            "net_ci": [
+              0.15833333333333333,
+              0.23333333333333334
+            ],
+            "one_minus_JE": 1.0,
+            "collapse_rate": 0.7516666666666667,
+            "abstain_rate": 0.0033333333333333335,
+            "J_E": 0.0,
+            "r_pow_E": 8.271806125530277e-05,
+            "mean_E": 20.0,
+            "contains_gold_rate": 0.22333333333333333,
+            "n": 600
+          },
+          {
+            "recall": 0.625,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 12,
+            "benefit": 0.19,
+            "benefit_ci": [
+              0.15995833333333334,
+              0.22166666666666668
+            ],
+            "cost_silent_wrong": 0.013333333333333334,
+            "cost_ci": [
+              0.005,
+              0.023333333333333334
+            ],
+            "net": 0.17666666666666667,
+            "net_ci": [
+              0.14333333333333334,
+              0.21
+            ],
+            "one_minus_JE": 1.0,
+            "collapse_rate": 0.795,
+            "abstain_rate": 0.0016666666666666668,
+            "J_E": 0.0,
+            "r_pow_E": 1.2621774483536189e-05,
+            "mean_E": 24.0,
+            "contains_gold_rate": 0.19,
+            "n": 600
+          },
+          {
+            "recall": 0.625,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 14,
+            "benefit": 0.11333333333333333,
+            "benefit_ci": [
+              0.09,
+              0.14
+            ],
+            "cost_silent_wrong": 0.008333333333333333,
+            "cost_ci": [
+              0.0016666666666666668,
+              0.016666666666666666
+            ],
+            "net": 0.105,
+            "net_ci": [
+              0.07666666666666666,
+              0.13166666666666665
+            ],
+            "one_minus_JE": 1.0,
+            "collapse_rate": 0.8783333333333333,
+            "abstain_rate": 0.0,
+            "J_E": 0.0,
+            "r_pow_E": 1.9259299443872358e-06,
+            "mean_E": 28.0,
+            "contains_gold_rate": 0.11333333333333333,
+            "n": 600
+          },
+          {
+            "recall": 0.625,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 16,
+            "benefit": 0.11,
+            "benefit_ci": [
+              0.085,
+              0.13666666666666666
+            ],
+            "cost_silent_wrong": 0.0016666666666666668,
+            "cost_ci": [
+              0.0,
+              0.005
+            ],
+            "net": 0.10833333333333334,
+            "net_ci": [
+              0.08166666666666667,
+              0.135
+            ],
+            "one_minus_JE": 1.0,
+            "collapse_rate": 0.8883333333333333,
+            "abstain_rate": 0.0,
+            "J_E": 0.0,
+            "r_pow_E": 2.938735877055719e-07,
+            "mean_E": 32.0,
+            "contains_gold_rate": 0.11,
+            "n": 600
+          },
+          {
+            "recall": 0.78,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 1,
+            "benefit": 0.3,
+            "benefit_ci": [
+              0.2633333333333333,
+              0.33666666666666667
+            ],
+            "cost_silent_wrong": 0.03666666666666667,
+            "cost_ci": [
+              0.021666666666666667,
+              0.05333333333333334
+            ],
+            "net": 0.2633333333333333,
+            "net_ci": [
+              0.22,
+              0.30333333333333334
+            ],
+            "one_minus_JE": 0.42333333333333334,
+            "collapse_rate": 0.0,
+            "abstain_rate": 0.6633333333333333,
+            "J_E": 0.5766666666666667,
+            "r_pow_E": 0.6084,
+            "mean_E": 2.0,
+            "contains_gold_rate": 0.96,
+            "n": 600
+          },
+          {
+            "recall": 0.78,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 2,
+            "benefit": 0.49333333333333335,
+            "benefit_ci": [
+              0.455,
+              0.5333333333333333
+            ],
+            "cost_silent_wrong": 0.07166666666666667,
+            "cost_ci": [
+              0.051666666666666666,
+              0.09333333333333334
+            ],
+            "net": 0.4216666666666667,
+            "net_ci": [
+              0.371625,
+              0.47
+            ],
+            "one_minus_JE": 0.6183333333333334,
+            "collapse_rate": 0.035,
+            "abstain_rate": 0.4,
+            "J_E": 0.38166666666666665,
+            "r_pow_E": 0.3701505600000001,
+            "mean_E": 4.0,
+            "contains_gold_rate": 0.8883333333333333,
+            "n": 600
+          },
+          {
+            "recall": 0.78,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 3,
+            "benefit": 0.615,
+            "benefit_ci": [
+              0.5783333333333334,
+              0.6533333333333333
+            ],
+            "cost_silent_wrong": 0.056666666666666664,
+            "cost_ci": [
+              0.03995833333333334,
+              0.07666666666666666
+            ],
+            "net": 0.5583333333333333,
+            "net_ci": [
+              0.5132916666666666,
+              0.605
+            ],
+            "one_minus_JE": 0.775,
+            "collapse_rate": 0.08166666666666667,
+            "abstain_rate": 0.24666666666666667,
+            "J_E": 0.225,
+            "r_pow_E": 0.22519960070400005,
+            "mean_E": 6.0,
+            "contains_gold_rate": 0.8566666666666667,
+            "n": 600
+          },
+          {
+            "recall": 0.78,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 4,
+            "benefit": 0.6533333333333333,
+            "benefit_ci": [
+              0.6133333333333333,
+              0.69
+            ],
+            "cost_silent_wrong": 0.04666666666666667,
+            "cost_ci": [
+              0.03,
+              0.06333333333333334
+            ],
+            "net": 0.6066666666666667,
+            "net_ci": [
+              0.5616249999999999,
+              0.655
+            ],
+            "one_minus_JE": 0.8683333333333334,
+            "collapse_rate": 0.14,
+            "abstain_rate": 0.16,
+            "J_E": 0.13166666666666665,
+            "r_pow_E": 0.13701143706831365,
+            "mean_E": 8.0,
+            "contains_gold_rate": 0.8066666666666666,
+            "n": 600
+          },
+          {
+            "recall": 0.78,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 5,
+            "benefit": 0.6766666666666666,
+            "benefit_ci": [
+              0.64,
+              0.715
+            ],
+            "cost_silent_wrong": 0.051666666666666666,
+            "cost_ci": [
+              0.035,
+              0.06833333333333333
+            ],
+            "net": 0.625,
+            "net_ci": [
+              0.5783333333333334,
+              0.6716666666666666
+            ],
+            "one_minus_JE": 0.9133333333333333,
+            "collapse_rate": 0.17,
+            "abstain_rate": 0.10166666666666667,
+            "J_E": 0.08666666666666667,
+            "r_pow_E": 0.08335775831236203,
+            "mean_E": 10.0,
+            "contains_gold_rate": 0.7766666666666666,
+            "n": 600
+          },
+          {
+            "recall": 0.78,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 6,
+            "benefit": 0.675,
+            "benefit_ci": [
+              0.6383333333333333,
+              0.7133333333333334
+            ],
+            "cost_silent_wrong": 0.035,
+            "cost_ci": [
+              0.021666666666666667,
+              0.05
+            ],
+            "net": 0.64,
+            "net_ci": [
+              0.5966666666666667,
+              0.6833333333333333
+            ],
+            "one_minus_JE": 0.955,
+            "collapse_rate": 0.215,
+            "abstain_rate": 0.075,
+            "J_E": 0.045,
+            "r_pow_E": 0.05071486015724106,
+            "mean_E": 12.0,
+            "contains_gold_rate": 0.745,
+            "n": 600
+          },
+          {
+            "recall": 0.78,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 7,
+            "benefit": 0.68,
+            "benefit_ci": [
+              0.6416666666666667,
+              0.7166666666666667
+            ],
+            "cost_silent_wrong": 0.021666666666666667,
+            "cost_ci": [
+              0.01,
+              0.03337499999999977
+            ],
+            "net": 0.6583333333333333,
+            "net_ci": [
+              0.6166666666666667,
+              0.7
+            ],
+            "one_minus_JE": 0.9666666666666667,
+            "collapse_rate": 0.2683333333333333,
+            "abstain_rate": 0.03,
+            "J_E": 0.03333333333333333,
+            "r_pow_E": 0.030854920919665463,
+            "mean_E": 14.0,
+            "contains_gold_rate": 0.7066666666666667,
+            "n": 600
+          },
+          {
+            "recall": 0.78,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 8,
+            "benefit": 0.6266666666666667,
+            "benefit_ci": [
+              0.59,
+              0.6666666666666666
+            ],
+            "cost_silent_wrong": 0.018333333333333333,
+            "cost_ci": [
+              0.008333333333333333,
+              0.028333333333333332
+            ],
+            "net": 0.6083333333333333,
+            "net_ci": [
+              0.565,
+              0.6483333333333333
+            ],
+            "one_minus_JE": 0.965,
+            "collapse_rate": 0.31166666666666665,
+            "abstain_rate": 0.043333333333333335,
+            "J_E": 0.035,
+            "r_pow_E": 0.018772133887524467,
+            "mean_E": 16.0,
+            "contains_gold_rate": 0.6683333333333333,
+            "n": 600
+          },
+          {
+            "recall": 0.78,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 10,
+            "benefit": 0.5483333333333333,
+            "benefit_ci": [
+              0.5066666666666667,
+              0.5883333333333334
+            ],
+            "cost_silent_wrong": 0.013333333333333334,
+            "cost_ci": [
+              0.005,
+              0.023333333333333334
+            ],
+            "net": 0.535,
+            "net_ci": [
+              0.491625,
+              0.575
+            ],
+            "one_minus_JE": 0.9933333333333333,
+            "collapse_rate": 0.41833333333333333,
+            "abstain_rate": 0.02,
+            "J_E": 0.006666666666666667,
+            "r_pow_E": 0.00694851587086216,
+            "mean_E": 20.0,
+            "contains_gold_rate": 0.5666666666666667,
+            "n": 600
+          },
+          {
+            "recall": 0.78,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 12,
+            "benefit": 0.56,
+            "benefit_ci": [
+              0.5216666666666666,
+              0.5983333333333334
+            ],
+            "cost_silent_wrong": 0.005,
+            "cost_ci": [
+              0.0,
+              0.011666666666666667
+            ],
+            "net": 0.555,
+            "net_ci": [
+              0.5132916666666666,
+              0.595
+            ],
+            "one_minus_JE": 0.995,
+            "collapse_rate": 0.43,
+            "abstain_rate": 0.005,
+            "J_E": 0.005,
+            "r_pow_E": 0.0025719970407685165,
+            "mean_E": 24.0,
+            "contains_gold_rate": 0.565,
+            "n": 600
+          },
+          {
+            "recall": 0.78,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 14,
+            "benefit": 0.49333333333333335,
+            "benefit_ci": [
+              0.45166666666666666,
+              0.5333333333333333
+            ],
+            "cost_silent_wrong": 0.0016666666666666668,
+            "cost_ci": [
+              0.0,
+              0.005
+            ],
+            "net": 0.49166666666666664,
+            "net_ci": [
+              0.45166666666666666,
+              0.5300416666666664
+            ],
+            "one_minus_JE": 1.0,
+            "collapse_rate": 0.505,
+            "abstain_rate": 0.0,
+            "J_E": 0.0,
+            "r_pow_E": 0.0009520261449588093,
+            "mean_E": 28.0,
+            "contains_gold_rate": 0.49333333333333335,
+            "n": 600
+          },
+          {
+            "recall": 0.78,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 16,
+            "benefit": 0.45,
+            "benefit_ci": [
+              0.4116666666666667,
+              0.49
+            ],
+            "cost_silent_wrong": 0.0016666666666666668,
+            "cost_ci": [
+              0.0,
+              0.005
+            ],
+            "net": 0.4483333333333333,
+            "net_ci": [
+              0.41,
+              0.4883749999999998
+            ],
+            "one_minus_JE": 1.0,
+            "collapse_rate": 0.5483333333333333,
+            "abstain_rate": 0.0,
+            "J_E": 0.0,
+            "r_pow_E": 0.00035239301069114453,
+            "mean_E": 32.0,
+            "contains_gold_rate": 0.45,
+            "n": 600
+          },
+          {
+            "recall": 0.9,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 1,
+            "benefit": 0.30666666666666664,
+            "benefit_ci": [
+              0.27,
+              0.345
+            ],
+            "cost_silent_wrong": 0.0033333333333333335,
+            "cost_ci": [
+              0.0,
+              0.008333333333333333
+            ],
+            "net": 0.30333333333333334,
+            "net_ci": [
+              0.265,
+              0.3416666666666667
+            ],
+            "one_minus_JE": 0.15500000000000003,
+            "collapse_rate": 0.0,
+            "abstain_rate": 0.69,
+            "J_E": 0.845,
+            "r_pow_E": 0.81,
+            "mean_E": 2.0,
+            "contains_gold_rate": 0.995,
+            "n": 600
+          },
+          {
+            "recall": 0.9,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 2,
+            "benefit": 0.5566666666666666,
+            "benefit_ci": [
+              0.5166666666666667,
+              0.5967083333333332
+            ],
+            "cost_silent_wrong": 0.016666666666666666,
+            "cost_ci": [
+              0.006666666666666667,
+              0.02666666666666667
+            ],
+            "net": 0.54,
+            "net_ci": [
+              0.49833333333333335,
+              0.5816666666666667
+            ],
+            "one_minus_JE": 0.35,
+            "collapse_rate": 0.005,
+            "abstain_rate": 0.4216666666666667,
+            "J_E": 0.65,
+            "r_pow_E": 0.6561,
+            "mean_E": 4.0,
+            "contains_gold_rate": 0.9783333333333334,
+            "n": 600
+          },
+          {
+            "recall": 0.9,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 3,
+            "benefit": 0.7066666666666667,
+            "benefit_ci": [
+              0.6666666666666666,
+              0.7416666666666667
+            ],
+            "cost_silent_wrong": 0.0033333333333333335,
+            "cost_ci": [
+              0.0,
+              0.008333333333333333
+            ],
+            "net": 0.7033333333333334,
+            "net_ci": [
+              0.665,
+              0.7416666666666667
+            ],
+            "one_minus_JE": 0.46166666666666667,
+            "collapse_rate": 0.01,
+            "abstain_rate": 0.28,
+            "J_E": 0.5383333333333333,
+            "r_pow_E": 0.531441,
+            "mean_E": 6.0,
+            "contains_gold_rate": 0.9866666666666667,
+            "n": 600
+          },
+          {
+            "recall": 0.9,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 4,
+            "benefit": 0.7916666666666666,
+            "benefit_ci": [
+              0.7583333333333333,
+              0.8233333333333334
+            ],
+            "cost_silent_wrong": 0.011666666666666667,
+            "cost_ci": [
+              0.0033333333333333335,
+              0.021666666666666667
+            ],
+            "net": 0.78,
+            "net_ci": [
+              0.745,
+              0.815
+            ],
+            "one_minus_JE": 0.5583333333333333,
+            "collapse_rate": 0.02666666666666667,
+            "abstain_rate": 0.17,
+            "J_E": 0.44166666666666665,
+            "r_pow_E": 0.4304672100000001,
+            "mean_E": 8.0,
+            "contains_gold_rate": 0.9583333333333334,
+            "n": 600
+          },
+          {
+            "recall": 0.9,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 5,
+            "benefit": 0.82,
+            "benefit_ci": [
+              0.7883333333333333,
+              0.8516666666666667
+            ],
+            "cost_silent_wrong": 0.01,
+            "cost_ci": [
+              0.0033333333333333335,
+              0.018333333333333333
+            ],
+            "net": 0.81,
+            "net_ci": [
+              0.775,
+              0.8416666666666667
+            ],
+            "one_minus_JE": 0.6483333333333333,
+            "collapse_rate": 0.04833333333333333,
+            "abstain_rate": 0.12166666666666667,
+            "J_E": 0.3516666666666667,
+            "r_pow_E": 0.3486784401000001,
+            "mean_E": 10.0,
+            "contains_gold_rate": 0.9416666666666667,
+            "n": 600
+          },
+          {
+            "recall": 0.9,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 6,
+            "benefit": 0.875,
+            "benefit_ci": [
+              0.8482916666666667,
+              0.9016666666666666
+            ],
+            "cost_silent_wrong": 0.006666666666666667,
+            "cost_ci": [
+              0.0016666666666666668,
+              0.015
+            ],
+            "net": 0.8683333333333333,
+            "net_ci": [
+              0.8383333333333334,
+              0.895
+            ],
+            "one_minus_JE": 0.6983333333333333,
+            "collapse_rate": 0.05,
+            "abstain_rate": 0.06833333333333333,
+            "J_E": 0.3016666666666667,
+            "r_pow_E": 0.2824295364810001,
+            "mean_E": 12.0,
+            "contains_gold_rate": 0.9433333333333334,
+            "n": 600
+          },
+          {
+            "recall": 0.9,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 7,
+            "benefit": 0.9016666666666666,
+            "benefit_ci": [
+              0.8766666666666667,
+              0.925
+            ],
+            "cost_silent_wrong": 0.0033333333333333335,
+            "cost_ci": [
+              0.0,
+              0.008333333333333333
+            ],
+            "net": 0.8983333333333333,
+            "net_ci": [
+              0.8733333333333333,
+              0.9233333333333333
+            ],
+            "one_minus_JE": 0.77,
+            "collapse_rate": 0.043333333333333335,
+            "abstain_rate": 0.051666666666666666,
+            "J_E": 0.23,
+            "r_pow_E": 0.2287679245496101,
+            "mean_E": 14.0,
+            "contains_gold_rate": 0.9533333333333334,
+            "n": 600
+          },
+          {
+            "recall": 0.9,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 8,
+            "benefit": 0.8983333333333333,
+            "benefit_ci": [
+              0.875,
+              0.9216666666666666
+            ],
+            "cost_silent_wrong": 0.0,
+            "cost_ci": [
+              0.0,
+              0.0
+            ],
+            "net": 0.8983333333333333,
+            "net_ci": [
+              0.8733333333333333,
+              0.9216666666666666
+            ],
+            "one_minus_JE": 0.8233333333333334,
+            "collapse_rate": 0.06833333333333333,
+            "abstain_rate": 0.03333333333333333,
+            "J_E": 0.17666666666666667,
+            "r_pow_E": 0.18530201888518416,
+            "mean_E": 16.0,
+            "contains_gold_rate": 0.9316666666666666,
+            "n": 600
+          },
+          {
+            "recall": 0.9,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 10,
+            "benefit": 0.905,
+            "benefit_ci": [
+              0.8816666666666667,
+              0.9283333333333333
+            ],
+            "cost_silent_wrong": 0.0016666666666666668,
+            "cost_ci": [
+              0.0,
+              0.005
+            ],
+            "net": 0.9033333333333333,
+            "net_ci": [
+              0.8783333333333333,
+              0.9266666666666666
+            ],
+            "one_minus_JE": 0.88,
+            "collapse_rate": 0.08166666666666667,
+            "abstain_rate": 0.011666666666666667,
+            "J_E": 0.12,
+            "r_pow_E": 0.12157665459056935,
+            "mean_E": 20.0,
+            "contains_gold_rate": 0.915,
+            "n": 600
+          },
+          {
+            "recall": 0.9,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 12,
+            "benefit": 0.885,
+            "benefit_ci": [
+              0.86,
+              0.9083333333333333
+            ],
+            "cost_silent_wrong": 0.0,
+            "cost_ci": [
+              0.0,
+              0.0
+            ],
+            "net": 0.885,
+            "net_ci": [
+              0.8582916666666666,
+              0.91
+            ],
+            "one_minus_JE": 0.925,
+            "collapse_rate": 0.11166666666666666,
+            "abstain_rate": 0.0033333333333333335,
+            "J_E": 0.075,
+            "r_pow_E": 0.07976644307687256,
+            "mean_E": 24.0,
+            "contains_gold_rate": 0.8883333333333333,
+            "n": 600
+          },
+          {
+            "recall": 0.9,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 14,
+            "benefit": 0.8616666666666667,
+            "benefit_ci": [
+              0.835,
+              0.8883333333333333
+            ],
+            "cost_silent_wrong": 0.0,
+            "cost_ci": [
+              0.0,
+              0.0
+            ],
+            "net": 0.8616666666666667,
+            "net_ci": [
+              0.8333333333333334,
+              0.8883333333333333
+            ],
+            "one_minus_JE": 0.94,
+            "collapse_rate": 0.13833333333333334,
+            "abstain_rate": 0.0,
+            "J_E": 0.06,
+            "r_pow_E": 0.05233476330273609,
+            "mean_E": 28.0,
+            "contains_gold_rate": 0.8616666666666667,
+            "n": 600
+          },
+          {
+            "recall": 0.9,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 16,
+            "benefit": 0.8516666666666667,
+            "benefit_ci": [
+              0.8233333333333334,
+              0.88
+            ],
+            "cost_silent_wrong": 0.0,
+            "cost_ci": [
+              0.0,
+              0.0
+            ],
+            "net": 0.8516666666666667,
+            "net_ci": [
+              0.8233333333333334,
+              0.88
+            ],
+            "one_minus_JE": 0.9583333333333334,
+            "collapse_rate": 0.14833333333333334,
+            "abstain_rate": 0.0,
+            "J_E": 0.041666666666666664,
+            "r_pow_E": 0.03433683820292515,
+            "mean_E": 32.0,
+            "contains_gold_rate": 0.8516666666666667,
+            "n": 600
+          },
+          {
+            "recall": 0.95,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 1,
+            "benefit": 0.3566666666666667,
+            "benefit_ci": [
+              0.31833333333333336,
+              0.3917083333333331
+            ],
+            "cost_silent_wrong": 0.0,
+            "cost_ci": [
+              0.0,
+              0.0
+            ],
+            "net": 0.3566666666666667,
+            "net_ci": [
+              0.31833333333333336,
+              0.395
+            ],
+            "one_minus_JE": 0.11499999999999999,
+            "collapse_rate": 0.0,
+            "abstain_rate": 0.6433333333333333,
+            "J_E": 0.885,
+            "r_pow_E": 0.9025,
+            "mean_E": 2.0,
+            "contains_gold_rate": 0.9983333333333333,
+            "n": 600
+          },
+          {
+            "recall": 0.95,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 2,
+            "benefit": 0.6083333333333333,
+            "benefit_ci": [
+              0.5666666666666667,
+              0.6466666666666666
+            ],
+            "cost_silent_wrong": 0.01,
+            "cost_ci": [
+              0.0033333333333333335,
+              0.018333333333333333
+            ],
+            "net": 0.5983333333333334,
+            "net_ci": [
+              0.5582916666666666,
+              0.6367083333333331
+            ],
+            "one_minus_JE": 0.18333333333333335,
+            "collapse_rate": 0.0033333333333333335,
+            "abstain_rate": 0.37833333333333335,
+            "J_E": 0.8166666666666667,
+            "r_pow_E": 0.8145062499999999,
+            "mean_E": 4.0,
+            "contains_gold_rate": 0.9866666666666667,
+            "n": 600
+          },
+          {
+            "recall": 0.95,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 3,
+            "benefit": 0.7466666666666667,
+            "benefit_ci": [
+              0.7132916666666667,
+              0.78
+            ],
+            "cost_silent_wrong": 0.006666666666666667,
+            "cost_ci": [
+              0.0016666666666666668,
+              0.013333333333333334
+            ],
+            "net": 0.74,
+            "net_ci": [
+              0.7033333333333334,
+              0.7733333333333333
+            ],
+            "one_minus_JE": 0.2466666666666667,
+            "collapse_rate": 0.008333333333333333,
+            "abstain_rate": 0.23833333333333334,
+            "J_E": 0.7533333333333333,
+            "r_pow_E": 0.7350918906249998,
+            "mean_E": 6.0,
+            "contains_gold_rate": 0.9833333333333333,
+            "n": 600
+          },
+          {
+            "recall": 0.95,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 4,
+            "benefit": 0.8183333333333334,
+            "benefit_ci": [
+              0.7883333333333333,
+              0.85
+            ],
+            "cost_silent_wrong": 0.0033333333333333335,
+            "cost_ci": [
+              0.0,
+              0.008333333333333333
+            ],
+            "net": 0.815,
+            "net_ci": [
+              0.7833333333333333,
+              0.8466666666666667
+            ],
+            "one_minus_JE": 0.32833333333333337,
+            "collapse_rate": 0.013333333333333334,
+            "abstain_rate": 0.165,
+            "J_E": 0.6716666666666666,
+            "r_pow_E": 0.6634204312890623,
+            "mean_E": 8.0,
+            "contains_gold_rate": 0.9833333333333333,
+            "n": 600
+          },
+          {
+            "recall": 0.95,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 5,
+            "benefit": 0.88,
+            "benefit_ci": [
+              0.855,
+              0.9066666666666666
+            ],
+            "cost_silent_wrong": 0.0016666666666666668,
+            "cost_ci": [
+              0.0,
+              0.005
+            ],
+            "net": 0.8783333333333333,
+            "net_ci": [
+              0.8516666666666667,
+              0.9033333333333333
+            ],
+            "one_minus_JE": 0.41833333333333333,
+            "collapse_rate": 0.006666666666666667,
+            "abstain_rate": 0.11166666666666666,
+            "J_E": 0.5816666666666667,
+            "r_pow_E": 0.5987369392383787,
+            "mean_E": 10.0,
+            "contains_gold_rate": 0.9916666666666667,
+            "n": 600
+          },
+          {
+            "recall": 0.95,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 6,
+            "benefit": 0.9283333333333333,
+            "benefit_ci": [
+              0.9066666666666666,
+              0.9483333333333334
+            ],
+            "cost_silent_wrong": 0.0016666666666666668,
+            "cost_ci": [
+              0.0,
+              0.005
+            ],
+            "net": 0.9266666666666666,
+            "net_ci": [
+              0.905,
+              0.9466666666666667
+            ],
+            "one_minus_JE": 0.46499999999999997,
+            "collapse_rate": 0.016666666666666666,
+            "abstain_rate": 0.05333333333333334,
+            "J_E": 0.535,
+            "r_pow_E": 0.5403600876626367,
+            "mean_E": 12.0,
+            "contains_gold_rate": 0.9816666666666667,
+            "n": 600
+          },
+          {
+            "recall": 0.95,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 7,
+            "benefit": 0.9366666666666666,
+            "benefit_ci": [
+              0.915,
+              0.955
+            ],
+            "cost_silent_wrong": 0.0016666666666666668,
+            "cost_ci": [
+              0.0,
+              0.005
+            ],
+            "net": 0.935,
+            "net_ci": [
+              0.915,
+              0.955
+            ],
+            "one_minus_JE": 0.5183333333333333,
+            "collapse_rate": 0.015,
+            "abstain_rate": 0.04666666666666667,
+            "J_E": 0.4816666666666667,
+            "r_pow_E": 0.48767497911552954,
+            "mean_E": 14.0,
+            "contains_gold_rate": 0.9833333333333333,
+            "n": 600
+          },
+          {
+            "recall": 0.95,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 8,
+            "benefit": 0.94,
+            "benefit_ci": [
+              0.92,
+              0.9583333333333334
+            ],
+            "cost_silent_wrong": 0.0033333333333333335,
+            "cost_ci": [
+              0.0,
+              0.008333333333333333
+            ],
+            "net": 0.9366666666666666,
+            "net_ci": [
+              0.915,
+              0.9566666666666667
+            ],
+            "one_minus_JE": 0.55,
+            "collapse_rate": 0.02,
+            "abstain_rate": 0.03666666666666667,
+            "J_E": 0.45,
+            "r_pow_E": 0.44012666865176536,
+            "mean_E": 16.0,
+            "contains_gold_rate": 0.9766666666666667,
+            "n": 600
+          },
+          {
+            "recall": 0.95,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 10,
+            "benefit": 0.9616666666666667,
+            "benefit_ci": [
+              0.9466666666666667,
+              0.9766666666666667
+            ],
+            "cost_silent_wrong": 0.0,
+            "cost_ci": [
+              0.0,
+              0.0
+            ],
+            "net": 0.9616666666666667,
+            "net_ci": [
+              0.9466666666666667,
+              0.9766666666666667
+            ],
+            "one_minus_JE": 0.645,
+            "collapse_rate": 0.025,
+            "abstain_rate": 0.013333333333333334,
+            "J_E": 0.355,
+            "r_pow_E": 0.3584859224085419,
+            "mean_E": 20.0,
+            "contains_gold_rate": 0.975,
+            "n": 600
+          },
+          {
+            "recall": 0.95,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 12,
+            "benefit": 0.9666666666666667,
+            "benefit_ci": [
+              0.9516666666666667,
+              0.98
+            ],
+            "cost_silent_wrong": 0.0,
+            "cost_ci": [
+              0.0,
+              0.0
+            ],
+            "net": 0.9666666666666667,
+            "net_ci": [
+              0.9516666666666667,
+              0.98
+            ],
+            "one_minus_JE": 0.7083333333333333,
+            "collapse_rate": 0.03,
+            "abstain_rate": 0.0033333333333333335,
+            "J_E": 0.2916666666666667,
+            "r_pow_E": 0.2919890243387724,
+            "mean_E": 24.0,
+            "contains_gold_rate": 0.97,
+            "n": 600
+          },
+          {
+            "recall": 0.95,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 14,
+            "benefit": 0.965,
+            "benefit_ci": [
+              0.95,
+              0.9783333333333334
+            ],
+            "cost_silent_wrong": 0.0,
+            "cost_ci": [
+              0.0,
+              0.0
+            ],
+            "net": 0.965,
+            "net_ci": [
+              0.95,
+              0.98
+            ],
+            "one_minus_JE": 0.7333333333333334,
+            "collapse_rate": 0.03333333333333333,
+            "abstain_rate": 0.0016666666666666668,
+            "J_E": 0.26666666666666666,
+            "r_pow_E": 0.23782688525533216,
+            "mean_E": 28.0,
+            "contains_gold_rate": 0.9666666666666667,
+            "n": 600
+          },
+          {
+            "recall": 0.95,
+            "rho": 0.0,
+            "gate": "off",
+            "K": 16,
+            "benefit": 0.9683333333333334,
+            "benefit_ci": [
+              0.9533333333333334,
+              0.9816666666666667
+            ],
+            "cost_silent_wrong": 0.0,
+            "cost_ci": [
+              0.0,
+              0.0
+            ],
+            "net": 0.9683333333333334,
+            "net_ci": [
+              0.9533333333333334,
+              0.9816666666666667
+            ],
+            "one_minus_JE": 0.8116666666666666,
+            "collapse_rate": 0.03,
+            "abstain_rate": 0.0016666666666666668,
+            "J_E": 0.18833333333333332,
+            "r_pow_E": 0.19371148445850087,
+            "mean_E": 32.0,
+            "contains_gold_rate": 0.97,
+            "n": 600
+          }
+        ],
+        "peaks": [
+          {
+            "recall": 0.5,
+            "rho": 0.0,
+            "gate": "off",
+            "peak_K": 2,
+            "peak_idx": 1,
+            "peak_idx_ci": [
+              1.0,
+              2.0
+            ],
+            "resolution_at_peak": 0.295,
+            "resolution_at_K1": 0.21166666666666667,
+            "resolution_at_Kmax": 0.015,
+            "rise_above_K1": true,
+            "fall_below_Kmax": true,
+            "inverted_U": true,
+            "interior": true
+          },
+          {
+            "recall": 0.625,
+            "rho": 0.0,
+            "gate": "off",
+            "peak_K": 4,
+            "peak_idx": 3,
+            "peak_idx_ci": [
+              1.0,
+              4.0
+            ],
+            "resolution_at_peak": 0.4066666666666667,
+            "resolution_at_K1": 0.245,
+            "resolution_at_Kmax": 0.11,
+            "rise_above_K1": true,
+            "fall_below_Kmax": true,
+            "inverted_U": true,
+            "interior": true
+          },
+          {
+            "recall": 0.78,
+            "rho": 0.0,
+            "gate": "off",
+            "peak_K": 7,
+            "peak_idx": 6,
+            "peak_idx_ci": [
+              3.0,
+              6.0
+            ],
+            "resolution_at_peak": 0.68,
+            "resolution_at_K1": 0.3,
+            "resolution_at_Kmax": 0.45,
+            "rise_above_K1": true,
+            "fall_below_Kmax": true,
+            "inverted_U": true,
+            "interior": true
+          },
+          {
+            "recall": 0.9,
+            "rho": 0.0,
+            "gate": "off",
+            "peak_K": 10,
+            "peak_idx": 8,
+            "peak_idx_ci": [
+              6.0,
+              9.0
+            ],
+            "resolution_at_peak": 0.905,
+            "resolution_at_K1": 0.30666666666666664,
+            "resolution_at_Kmax": 0.8516666666666667,
+            "rise_above_K1": true,
+            "fall_below_Kmax": true,
+            "inverted_U": true,
+            "interior": true
+          },
+          {
+            "recall": 0.95,
+            "rho": 0.0,
+            "gate": "off",
+            "peak_K": 16,
+            "peak_idx": 11,
+            "peak_idx_ci": [
+              8.0,
+              11.0
+            ],
+            "resolution_at_peak": 0.9683333333333334,
+            "resolution_at_K1": 0.3566666666666667,
+            "resolution_at_Kmax": 0.9683333333333334,
+            "rise_above_K1": true,
+            "fall_below_Kmax": false,
+            "inverted_U": false,
+            "interior": false
+          }
+        ]
+      },
+      "silent_wrong_vs_recall": {
+        "curve": [
+          {
+            "recall": 0.5,
+            "silent_wrong_rate_pooled": 0.14564814814814814,
+            "ci_pooled": [
+              0.1423142361111111,
+              0.1490746527777778
+            ],
+            "silent_wrong_rate_ref_rho0_gateoff": 0.1322222222222222,
+            "ci_ref": [
+              0.12416319444444444,
+              0.13958333333333334
+            ],
+            "mean_JE_pooled": 0.14956018518518518,
+            "per_network_bound": 0.8504398148148148,
+            "per_edge_bound": 0.5,
+            "within_per_network_bound": true,
+            "within_per_edge_bound": true,
+            "E2_stratum": {
+              "silent_wrong_rate": 0.29194444444444445,
+              "ci": [
+                0.27694444444444444,
+                0.30666666666666664
+              ],
+              "mean_JE": 0.32861111111111113,
+              "per_network_bound": 0.6713888888888888,
+              "per_edge_bound": 0.5,
+              "within_per_network_bound": true,
+              "within_per_edge_bound": true
+            }
+          },
+          {
+            "recall": 0.625,
+            "silent_wrong_rate_pooled": 0.09462962962962963,
+            "ci_pooled": [
+              0.09203645833333333,
+              0.0975
+            ],
+            "silent_wrong_rate_ref_rho0_gateoff": 0.07944444444444444,
+            "ci_ref": [
+              0.07305555555555555,
+              0.08569444444444445
+            ],
+            "mean_JE_pooled": 0.24046296296296296,
+            "per_network_bound": 0.759537037037037,
+            "per_edge_bound": 0.375,
+            "within_per_network_bound": true,
+            "within_per_edge_bound": true,
+            "E2_stratum": {
+              "silent_wrong_rate": 0.18777777777777777,
+              "ci": [
+                0.17555555555555555,
+                0.20083333333333334
+              ],
+              "mean_JE": 0.4413888888888889,
+              "per_network_bound": 0.5586111111111112,
+              "per_edge_bound": 0.375,
+              "within_per_network_bound": true,
+              "within_per_edge_bound": true
+            }
+          },
+          {
+            "recall": 0.78,
+            "silent_wrong_rate_pooled": 0.043611111111111114,
+            "ci_pooled": [
+              0.04164351851851852,
+              0.04553240740740741
+            ],
+            "silent_wrong_rate_ref_rho0_gateoff": 0.03,
+            "ci_ref": [
+              0.02625,
+              0.03388888888888889
+            ],
+            "mean_JE_pooled": 0.44530092592592596,
+            "per_network_bound": 0.554699074074074,
+            "per_edge_bound": 0.21999999999999997,
+            "within_per_network_bound": true,
+            "within_per_edge_bound": true,
+            "E2_stratum": {
+              "silent_wrong_rate": 0.085,
+              "ci": [
+                0.07583333333333334,
+                0.09416666666666666
+              ],
+              "mean_JE": 0.6472222222222221,
+              "per_network_bound": 0.35277777777777786,
+              "per_edge_bound": 0.21999999999999997,
+              "within_per_network_bound": true,
+              "within_per_edge_bound": true
+            }
+          },
+          {
+            "recall": 0.9,
+            "silent_wrong_rate_pooled": 0.014814814814814815,
+            "ci_pooled": [
+              0.01363425925925926,
+              0.01597222222222222
+            ],
+            "silent_wrong_rate_ref_rho0_gateoff": 0.004722222222222222,
+            "ci_ref": [
+              0.0031944444444444446,
+              0.006388888888888889
+            ],
+            "mean_JE_pooled": 0.6816666666666666,
+            "per_network_bound": 0.31833333333333336,
+            "per_edge_bound": 0.09999999999999998,
+            "within_per_network_bound": true,
+            "within_per_edge_bound": true,
+            "E2_stratum": {
+              "silent_wrong_rate": 0.029166666666666667,
+              "ci": [
+                0.02388888888888889,
+                0.034722222222222224
+              ],
+              "mean_JE": 0.8352777777777778,
+              "per_network_bound": 0.16472222222222221,
+              "per_edge_bound": 0.09999999999999998,
+              "within_per_network_bound": true,
+              "within_per_edge_bound": true
+            }
+          },
+          {
+            "recall": 0.95,
+            "silent_wrong_rate_pooled": 0.006412037037037037,
+            "ci_pooled": [
+              0.005694444444444445,
+              0.007199074074074074
+            ],
+            "silent_wrong_rate_ref_rho0_gateoff": 0.002361111111111111,
+            "ci_ref": [
+              0.00125,
+              0.003472222222222222
+            ],
+            "mean_JE_pooled": 0.8046759259259259,
+            "per_network_bound": 0.19532407407407415,
+            "per_edge_bound": 0.050000000000000044,
+            "within_per_network_bound": true,
+            "within_per_edge_bound": true,
+            "E2_stratum": {
+              "silent_wrong_rate": 0.010555555555555556,
+              "ci": [
+                0.0075,
+                0.013888888888888888
+              ],
+              "mean_JE": 0.9002777777777777,
+              "per_network_bound": 0.09972222222222227,
+              "per_edge_bound": 0.050000000000000044,
+              "within_per_network_bound": true,
+              "within_per_edge_bound": true
+            }
+          }
+        ]
+      }
+    }
+  },
+  "clutrr_src": {
+    "metadata": {
+      "prolog_discharge": {
+        "n_discharged": 40,
+        "n_executed_in_swipl": 40,
+        "n_prolog_matches_python": 40,
+        "n_modeA_surface_matches_gold": 39
+      }
+    }
+  },
+  "engine_py": "#!/usr/bin/env python3\n\"\"\"Self-contained qualitative-constraint-network (QCN) closure engine.\n\nTwo algebras built PROGRAMMATICALLY (no external table files), each cross-checked\nagainst the verified GQR composition cells from the implementation dossier:\n\n  * POINT  -- convex point algebra over event START-points {<,=,>} (PC COMPLETE;\n              EXACT inconsistency certificate). The ONLY non-convex relation is\n              `{<,>}` (`!=`); per the dossier widening rule it is WIDENED to the\n              universal `{<,=,>}` to keep path-consistency complete, and every\n              widening is COUNTED (bite lost by convex restriction).\n  * ALLEN  -- Allen interval algebra (13 base relations). Composition is generated\n              by the ENDPOINT method (enumerate weak orders of the six interval\n              endpoints) and unit-tested against the dossier's GQR cells. Full Allen\n              PC is sound but INCOMPLETE -> closure-detectable inconsistency is a\n              LOWER BOUND there.\n\nClosure operators:\n  * close_triangle      -- the per-triangle length-2 path narrowing used for the\n                           frontier metrics (path = compose(AB,BC); inter = path & AC).\n  * pc2_full            -- Mackworth PC-2 worklist closure to fixpoint (OUR METHOD).\n  * naive_single_pass   -- BASELINE: one pass of length-2 path intersections at the\n                           query edge, no fixpoint / no re-propagation\n                           (\"Path-of-Thoughts + one intersection step\").\n\"\"\"\nfrom __future__ import annotations\n\nimport itertools\nfrom collections import deque\nfrom typing import Iterable\n\n# ----------------------------------------------------------------------------------\n# Allen-13 base relations (qualreas-compatible symbols) and their endpoint geometry.\n# Interval X = (Xs, Xe) with Xs < Xe. relation(X, Y) defined on (Xs, Xe, Ys, Ye).\n# ----------------------------------------------------------------------------------\nALLEN_BASE = [\"B\", \"BI\", \"D\", \"DI\", \"O\", \"OI\", \"M\", \"MI\", \"S\", \"SI\", \"F\", \"FI\", \"E\"]\nALLEN_CONVERSE = {\"B\": \"BI\", \"BI\": \"B\", \"D\": \"DI\", \"DI\": \"D\", \"O\": \"OI\", \"OI\": \"O\",\n                  \"M\": \"MI\", \"MI\": \"M\", \"S\": \"SI\", \"SI\": \"S\", \"F\": \"FI\", \"FI\": \"F\", \"E\": \"E\"}\n\n\ndef _allen_rel(xs: int, xe: int, ys: int, ye: int) -> str | None:\n    \"\"\"Atomic Allen relation of interval X=(xs,xe) to Y=(ys,ye) from endpoint ranks.\n\n    Assumes proper intervals (xs<xe, ys<ye). Returns one of the 13 base symbols.\n    \"\"\"\n    if not (xs < xe and ys < ye):\n        return None\n    if xs == ys and xe == ye:\n        return \"E\"\n    if xe < ys:\n        return \"B\"\n    if ye < xs:\n        return \"BI\"\n    if xe == ys:\n        return \"M\"\n    if ye == xs:\n        return \"MI\"\n    if xs == ys:\n        return \"S\" if xe < ye else \"SI\"\n    if xe == ye:\n        return \"F\" if xs > ys else \"FI\"\n    if xs < ys and ye < xe:\n        return \"DI\"\n    if ys < xs and xe < ye:\n        return \"D\"\n    if xs < ys < xe < ye:\n        return \"O\"\n    if ys < xs < ye < xe:\n        return \"OI\"\n    return None  # unreachable for proper intervals\n\n\ndef _build_allen_compose() -> dict[tuple[str, str], frozenset]:\n    \"\"\"Generate the Allen base x base composition table via endpoint enumeration.\n\n    Enumerate every rank assignment of the 6 endpoints (As,Ae,Bs,Be,Cs,Ce) in 0..5\n    (ties allowed; only relative order matters). For each that yields proper intervals,\n    record comp[r(A,B)][r(B,C)] |= {r(A,C)}.\n    \"\"\"\n    comp: dict[tuple[str, str], set] = {(a, b): set() for a in ALLEN_BASE for b in ALLEN_BASE}\n    for asg in itertools.product(range(6), repeat=6):\n        As, Ae, Bs, Be, Cs, Ce = asg\n        if not (As < Ae and Bs < Be and Cs < Ce):\n            continue\n        rab = _allen_rel(As, Ae, Bs, Be)\n        rbc = _allen_rel(Bs, Be, Cs, Ce)\n        rac = _allen_rel(As, Ae, Cs, Ce)\n        if rab is None or rbc is None or rac is None:\n            continue\n        comp[(rab, rbc)].add(rac)\n    return {k: frozenset(v) for k, v in comp.items()}\n\n\n# ----------------------------------------------------------------------------------\n# Point algebra over start-points.\n# ----------------------------------------------------------------------------------\nPOINT_BASE = [\"<\", \"=\", \">\"]\nPOINT_CONVERSE = {\"<\": \">\", \"=\": \"=\", \">\": \"<\"}\n# GQR point.comp (verified): = is identity; <o<={<}; >o>={>}; <o>=>o<=universal.\nPOINT_COMPOSE = {\n    (\"=\", \"=\"): frozenset({\"=\"}),\n    (\"<\", \"=\"): frozenset({\"<\"}), (\"=\", \"<\"): frozenset({\"<\"}),\n    (\">\", \"=\"): frozenset({\">\"}), (\"=\", \">\"): frozenset({\">\"}),\n    (\"<\", \"<\"): frozenset({\"<\"}),\n    (\">\", \">\"): frozenset({\">\"}),\n    (\"<\", \">\"): frozenset({\"<\", \"=\", \">\"}),\n    (\">\", \"<\"): frozenset({\"<\", \"=\", \">\"}),\n}\nPOINT_NONCONVEX = frozenset({\"<\", \">\"})  # the only non-convex point relation (`!=`)\n\n\nclass Algebra:\n    \"\"\"A qualitative calculus with relation sets stored as frozensets of base symbols.\"\"\"\n\n    def __init__(self, name: str, base: list[str], converse: dict[str, str],\n                 compose_bb: dict[tuple[str, str], frozenset], identity: frozenset,\n                 convex_widen: frozenset | None = None):\n        self.name = name\n        self.base = list(base)\n        self.universe = frozenset(base)\n        self.empty = frozenset()\n        self.identity = frozenset(identity)\n        self._conv = dict(converse)\n        self._comp = dict(compose_bb)\n        # `convex_widen` (point algebra only): the unique non-convex relation that must\n        # be widened to the universal set to keep PC complete. None => no widening.\n        self._nonconvex = convex_widen\n\n    # ---- set ops -----------------------------------------------------------------\n    def converse(self, s: frozenset) -> frozenset:\n        return frozenset(self._conv[r] for r in s)\n\n    def compose(self, a: frozenset, b: frozenset) -> frozenset:\n        if not a or not b:\n            return self.empty\n        out: set = set()\n        for x in a:\n            for y in b:\n                out |= self._comp[(x, y)]\n        return frozenset(out)\n\n    def is_nonconvex(self, s: frozenset) -> bool:\n        return self._nonconvex is not None and s == self._nonconvex\n\n    def widen(self, s: frozenset) -> tuple[frozenset, bool]:\n        \"\"\"Return (possibly-widened set, fired?). Widening only happens for the\n        unique non-convex relation of a convex algebra (point: `{<,>}` -> universe).\"\"\"\n        if self._nonconvex is not None and s == self._nonconvex:\n            return self.universe, True\n        return s, False\n\n    def label(self, s: frozenset) -> str:\n        if not s:\n            return \"EMPTY\"\n        if s == self.universe:\n            return \"UNIVERSE\"\n        return \"|\".join(r for r in self.base if r in s)\n\n\ndef build_point_algebra() -> Algebra:\n    return Algebra(\"POINT\", POINT_BASE, POINT_CONVERSE, POINT_COMPOSE,\n                   frozenset({\"=\"}), convex_widen=POINT_NONCONVEX)\n\n\ndef build_allen_algebra() -> Algebra:\n    return Algebra(\"ALLEN\", ALLEN_BASE, ALLEN_CONVERSE, _build_allen_compose(),\n                   frozenset({\"E\"}), convex_widen=None)\n\n\n# ----------------------------------------------------------------------------------\n# Triangle closure (frontier metric primitive)\n# ----------------------------------------------------------------------------------\ndef close_triangle(alg: Algebra, ab: frozenset, bc: frozenset, ac: frozenset):\n    \"\"\"Length-2 path A-B-C narrowing the query edge A-C.\n\n    path  = compose(ab, bc)                    (with convex widening applied + counted)\n    inter = path & ac                          (widening applied + counted)\n    Returns dict: path, inter, empty(collapse), singleton, n_widen.\n    \"\"\"\n    n_widen = 0\n    path = alg.compose(ab, bc)\n    path, w = alg.widen(path)\n    n_widen += int(w)\n    inter = path & ac\n    inter, w = alg.widen(inter)\n    n_widen += int(w)\n    return {\n        \"path\": path,\n        \"inter\": inter,\n        \"empty\": len(inter) == 0,\n        \"singleton\": len(inter) == 1,\n        \"n_widen\": n_widen,\n    }\n\n\n# ----------------------------------------------------------------------------------\n# Full QCN + closure variants (reused by whole-document consistency checks)\n# ----------------------------------------------------------------------------------\nclass QCN:\n    \"\"\"Constraint network: dense node list, edges = relation-set frozensets.\n\n    Missing edge => universe. Invariants on set_edge: M[j][i]==converse(M[i][j]),\n    M[i][i]==identity.\n    \"\"\"\n\n    def __init__(self, alg: Algebra, nodes: list):\n        self.alg = alg\n        self.nodes = list(nodes)\n        self.n = len(self.nodes)\n        self.index = {nd: i for i, nd in enumerate(self.nodes)}\n        U = alg.universe\n        self.M = [[U] * self.n for _ in range(self.n)]\n        for i in range(self.n):\n            self.M[i][i] = alg.identity\n        self.nbrs: list[set] = [set() for _ in range(self.n)]\n\n    def set_edge(self, i: int, j: int, s: frozenset) -> None:\n        if i == j:\n            return\n        self.M[i][j] = s\n        self.M[j][i] = self.alg.converse(s)\n        if s != self.alg.universe:\n            self.nbrs[i].add(j); self.nbrs[j].add(i)\n        else:\n            self.nbrs[i].discard(j); self.nbrs[j].discard(i)\n\n    def get(self, i: int, j: int) -> frozenset:\n        return self.M[i][j]\n\n    def known_edges(self) -> list[tuple[int, int]]:\n        U = self.alg.universe\n        return [(i, j) for i in range(self.n) for j in range(i + 1, self.n) if self.M[i][j] != U]\n\n\ndef pc2_full(qcn: QCN):\n    \"\"\"OUR METHOD: Mackworth PC-2 worklist closure to fixpoint.\n\n    Returns (consistent: bool, n_fired). Empty edge => inconsistent (Mode-B certificate).\n    Convex widening (point algebra) applied to every refined edge and absorbed silently\n    (it can only enlarge a set, never empties it).\n    \"\"\"\n    alg = qcn.alg\n    U = alg.universe\n    M = qcn.M\n    nbrs = qcn.nbrs\n    Q = deque()\n    inq = set()\n    for (i, j) in qcn.known_edges():\n        Q.append((i, j)); inq.add((i, j))\n        Q.append((j, i)); inq.add((j, i))\n    n_fired = 0\n\n    def enqueue(a, b):\n        if (a, b) not in inq:\n            inq.add((a, b)); Q.append((a, b))\n\n    while Q:\n        i, j = Q.popleft(); inq.discard((i, j))\n        rij = M[i][j]\n        if rij == U:\n            continue\n        for k in list(nbrs[j]):\n            if k == i:\n                continue\n            comp = alg.compose(rij, M[j][k])\n            new = M[i][k] & comp\n            new, _ = alg.widen(new)\n            if new != M[i][k]:\n                if not new:\n                    return False, n_fired\n                M[i][k] = new; M[k][i] = alg.converse(new)\n                nbrs[i].add(k); nbrs[k].add(i)\n                n_fired += 1\n                enqueue(i, k); enqueue(k, i)\n        for k in list(nbrs[i]):\n            if k == j:\n                continue\n            comp = alg.compose(M[k][i], rij)\n            new = M[k][j] & comp\n            new, _ = alg.widen(new)\n            if new != M[k][j]:\n                if not new:\n                    return False, n_fired\n                M[k][j] = new; M[j][k] = alg.converse(new)\n                nbrs[k].add(j); nbrs[j].add(k)\n                n_fired += 1\n                enqueue(k, j); enqueue(j, k)\n    return True, n_fired\n\n\ndef naive_single_pass(qcn: QCN, u: int, v: int) -> frozenset:\n    \"\"\"BASELINE: single pass of length-2 path compositions at the query edge (u,v).\n\n    Intersects compose(R(u,w), R(w,v)) over intermediate w with informative u-w & w-v.\n    NO fixpoint, NO re-propagation.\n    \"\"\"\n    alg = qcn.alg\n    U = alg.universe\n    M = qcn.M\n    R = U\n    for w in qcn.nbrs[u]:\n        if w in (u, v):\n            continue\n        if M[w][v] != U:\n            R = R & alg.compose(M[u][w], M[w][v])\n            R, _ = alg.widen(R)\n            if not R:\n                return alg.empty\n    return R\n\n\nif __name__ == \"__main__\":\n    import json\n    pt = build_point_algebra()\n    al = build_allen_algebra()\n    print(\"POINT base:\", pt.base)\n    print(\"ALLEN base:\", al.base, \"| n compose cells:\", sum(1 for _ in al._comp))\n    # quick spot prints\n    print(\"ALLEN B o B =\", sorted(al.compose(frozenset({'B'}), frozenset({'B'}))))\n    print(\"ALLEN D o DI =\", sorted(al.compose(frozenset({'D'}), frozenset({'DI'}))))\n    print(\"POINT < o > =\", sorted(pt.compose(frozenset({'<'}), frozenset({'>'}))))\n",
+  "synth_allen_py": "#!/usr/bin/env python3\n\"\"\"$0 SYNTHETIC ALLEN positive control / NO-GO backstop.\n\nConsistent-by-construction Allen QCNs (random proper intervals -> EXACT atomic Allen\nrelations between every pair) are read through a noisy channel with an EXACT recall knob;\nthe SAME five-method comparison the real-text pipeline runs (cross-path full-PC\nINTERSECTION vs BEST-SINGLE-PATH vs naive vs raw) is applied. When reads are sound\n(recall ~0.95) the intersection must resolve strictly MORE query singletons correctly than\nthe best single path -- a positive control that the comparison code can detect a true\neffect, and the publishable backstop if the real-text gate is NO-GO.\n\"\"\"\nfrom __future__ import annotations\n\nimport numpy as np\n\nimport engine\n\nAL = engine.build_allen_algebra()\n\n\ndef _atomic(intervals, a, b):\n    (xs, xe), (ys, ye) = intervals[a], intervals[b]\n    return engine._allen_rel(xs, xe, ys, ye)\n\n\ndef gen_network(n_events, rng):\n    \"\"\"Random proper intervals -> exact atomic Allen relation for every pair (consistent).\"\"\"\n    pts = rng.integers(0, 40, size=(n_events, 2))\n    intervals = []\n    for s, e in pts:\n        lo, hi = (int(s), int(e)) if s != e else (int(s), int(s) + 1)\n        if lo > hi:\n            lo, hi = hi, lo\n        if lo == hi:\n            hi += 1\n        intervals.append((lo, hi))\n    return intervals\n\n\ndef simulate_read(true_sym, r, rng, breadth=(0.45, 0.4, 0.15)):\n    \"\"\"Emit a relation SET for an edge whose atomic truth is true_sym. With prob r the read\n    is SOUND (contains the truth, optionally widened); else UNSOUND (excludes truth).\"\"\"\n    base = list(AL.base)\n    if rng.random() < r:\n        # sound: include the truth + (breadth) extra relations\n        roll = rng.random()\n        if roll < breadth[0]:\n            return frozenset({true_sym})\n        elif roll < breadth[0] + breadth[1]:\n            extra = rng.choice([x for x in base if x != true_sym], size=1, replace=False)\n            return frozenset({true_sym, *extra})\n        else:\n            k = int(rng.integers(2, 5))\n            extra = rng.choice([x for x in base if x != true_sym],\n                               size=min(k, len(base) - 1), replace=False)\n            return frozenset({true_sym, *extra})\n    else:\n        # unsound: a random non-empty set NOT containing the truth\n        pool = [x for x in base if x != true_sym]\n        k = int(rng.integers(1, 3))\n        return frozenset(rng.choice(pool, size=min(k, len(pool)), replace=False).tolist())\n\n\ndef run_one(n_events, r, rng):\n    intervals = gen_network(n_events, rng)\n    nodes = list(range(n_events))\n    s, t = 0, 1\n    vias = nodes[2:]\n    true_q = _atomic(intervals, s, t)\n    qcn = engine.QCN(AL, nodes)\n    reads = {}\n    confs = {}\n    induced = [(s, w) for w in vias] + [(w, t) for w in vias]\n    # include via-via edges for iteration\n    for i in range(len(vias)):\n        for j in range(i + 1, len(vias)):\n            induced.append((vias[i], vias[j]))\n    for (a, b) in induced:\n        tr = _atomic(intervals, a, b)\n        rd = simulate_read(tr, r, rng)\n        reads[(a, b)] = rd\n        confs[(a, b)] = float(min(1.0, max(0.0, rng.normal(0.7, 0.15))))\n        qcn.set_edge(qcn.index[a], qcn.index[b], rd)\n    qi, qj = qcn.index[s], qcn.index[t]\n    path_conf = float(min(confs.values())) if confs else 0.0\n    naive_set = engine.naive_single_pass(qcn, qi, qj)\n    per_path = []\n    for w in vias:\n        per_path.append(AL.compose(reads[(s, w)], reads[(w, t)]))\n    best = min(per_path, key=len) if per_path else AL.universe\n    ok, _ = engine.pc2_full(qcn)\n    inter = AL.empty if not ok else qcn.get(qi, qj)\n\n    def rec(R):\n        if not R:\n            return {\"answered\": False, \"correct\": None, \"conf\": path_conf}\n        if len(R) == 1:\n            return {\"answered\": True, \"correct\": int(next(iter(R)) == true_q), \"conf\": path_conf}\n        return {\"answered\": False, \"correct\": None, \"conf\": path_conf}\n    return {\"intersection\": rec(inter), \"best_single\": rec(best), \"naive\": rec(naive_set),\n            \"bite\": len(best) - len(inter), \"singleton_resolved\": int(len(inter) == 1)}\n\n\ndef run_control(n_net=600, n_events=6, r=0.95, seed=12345):\n    rng = np.random.default_rng(seed)\n    rows = {m: [] for m in (\"intersection\", \"best_single\", \"naive\")}\n    bites, res = [], 0\n    for _ in range(n_net):\n        out = run_one(n_events, r, rng)\n        for m in rows:\n            rows[m].append(out[m])\n        bites.append(out[\"bite\"])\n        res += out[\"singleton_resolved\"]\n\n    def cov_acc(recs):\n        ans = [x for x in recs if x[\"answered\"]]\n        cov = len(ans) / len(recs) if recs else float(\"nan\")\n        acc = float(np.mean([x[\"correct\"] for x in ans])) if ans else float(\"nan\")\n        return cov, acc\n    out = {}\n    for m in rows:\n        cov, acc = cov_acc(rows[m])\n        out[m] = {\"coverage\": cov, \"selective_acc\": acc}\n    inter_cov = out[\"intersection\"][\"coverage\"]\n    best_cov = out[\"best_single\"][\"coverage\"]\n    return {\"n_net\": n_net, \"n_events\": n_events, \"recall\": r,\n            \"per_method\": out, \"mean_bite\": float(np.mean(bites)),\n            \"intersection_resolves_more_than_best_single\": bool(inter_cov > best_cov + 1e-9),\n            \"coverage_gain_intersection_vs_best\": float(inter_cov - best_cov),\n            \"singleton_resolved_rate\": res / n_net, \"tag\": \"SYNTHETIC-ALLEN-CONTROL\"}\n\n\nif __name__ == \"__main__\":\n    import json\n    for r in (0.95, 0.85, 0.7):\n        print(json.dumps(run_control(n_net=400, r=r), indent=2, default=str))\n"
+}
