@@ -1,9 +1,9 @@
-# gen_hypo — create_idea
+# gen_hypo_1 — create_idea
 
-> Phase: `hypo_loop` · round 3 · Substep: `gen_hypo`
+> Phase: `hypo_loop` · round 3 · `gen_hypo`
 > Run: `run_IuSkWzF0As-P` — No Derivation, No Relation: A Closure Certificate for Compositional Absent-Relat
 >
-> Full, verbatim record of every prompt the AI Inventor pipeline gave the agent(s) in this substep — system-user, human-user and skill-input — in the order they landed. Nothing truncated.
+> Full, verbatim record of every prompt the AI Inventor pipeline gave this agent — system-user, human-user and skill-input — in the order they landed. Nothing truncated.
 
 ## Task: `gen_hypo_1` (terminal_claude_agent)
 

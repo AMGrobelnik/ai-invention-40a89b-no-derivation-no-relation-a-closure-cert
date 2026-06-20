@@ -1,9 +1,9 @@
 # gen_paper_text — test_idea
 
-> Phase: `invention_loop` · round 3 · Substep: `gen_paper_text`
+> Phase: `invention_loop` · round 3 · `gen_paper_text`
 > Run: `run_IuSkWzF0As-P` — No Derivation, No Relation: A Closure Certificate for Compositional Absent-Relat
 >
-> Full, verbatim record of every prompt the AI Inventor pipeline gave the agent(s) in this substep — system-user, human-user and skill-input — in the order they landed. Nothing truncated.
+> Full, verbatim record of every prompt the AI Inventor pipeline gave this agent — system-user, human-user and skill-input — in the order they landed. Nothing truncated.
 
 ## Task: `gen_paper_text` (terminal_claude_agent)
 
